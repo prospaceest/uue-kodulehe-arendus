@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Implementation Log · PHASE 2 done | Varjuprofiilid.ee</title>
+<link rel="stylesheet" href="hifi/style.css"/>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .doc { max-width: 1280px; margin: 0 auto; padding: 0; }
+
+  .doc-head { padding: 56px 56px 40px; border-bottom: 1.5px solid var(--ink); }
+  .doc-head h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px, 7vw, 96px); line-height: 0.88; letter-spacing: 0.005em; margin: 16px 0 14px; }
+  .doc-head h1 em { font-family: 'Inter', serif; font-style: italic; font-weight: 300; font-size: 0.42em; letter-spacing: -0.02em; }
+  .doc-head .lede { font-size: 17px; line-height: 1.6; color: var(--ink-2); max-width: 760px; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1.5px solid var(--ink); }
+  .stats > div { padding: 28px 32px; border-right: 1px solid rgba(0,0,0,0.12); }
+  .stats > div:last-child { border-right: none; }
+  .stats .n { font-family: 'Bebas Neue', sans-serif; font-size: 64px; line-height: 1; margin-bottom: 6px; }
+  .stats .done .n { color: #1f7a3e; }
+  .stats .pending .n { color: #d97e29; }
+  .stats .skipped .n { color: var(--muted); }
+  .stats .files .n { color: var(--accent); }
+  .stats .l { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+  .sec { padding: 64px 56px; border-bottom: 1.5px solid var(--ink); }
+  .sec-head { display: flex; align-items: baseline; gap: 32px; border-bottom: 1px solid rgba(0,0,0,0.15); padding-bottom: 20px; margin-bottom: 36px; }
+  .sec-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); min-width: 80px; }
+  .sec-head h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 4.5vw, 56px); line-height: 0.95; margin: 0; flex: 1; }
+
+  .fix {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr 60px;
+    gap: 18px;
+    padding: 18px 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    align-items: start;
+  }
+  .fix:last-child { border-bottom: 1px solid rgba(0,0,0,0.1); }
+  .fix .id { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); padding-top: 3px; }
+  .fix .what { font-size: 14px; line-height: 1.5; }
+  .fix .what strong { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 18px; display: block; margin-bottom: 4px; letter-spacing: 0.005em; }
+  .fix .where {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-2);
+    line-height: 1.55;
+  }
+  .fix .where code {
+    background: var(--paper-2);
+    padding: 1px 5px;
+    border: 1px solid rgba(0,0,0,0.1);
+    display: inline-block;
+    margin: 1px 0;
+  }
+  .fix .status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border: 1.5px solid var(--ink);
+    text-align: center;
+    align-self: start;
+  }
+  .status-done { background: #1f7a3e; color: #fff; border-color: #1f7a3e; }
+  .status-skip { background: var(--paper-2); color: var(--muted); border-color: var(--muted); }
+  .status-pend { background: #d97e29; color: #fff; border-color: #d97e29; }
+
+  .verify {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1.5px solid var(--ink);
+    margin: 24px 0;
+  }
+  .verify > div { padding: 24px 28px; }
+  .verify > div + div { border-left: 1px solid rgba(0,0,0,0.12); }
+  .verify h3 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; margin: 0 0 10px; }
+  .verify .label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .verify ul { margin: 0; padding: 0; list-style: none; font-size: 13px; line-height: 1.7; color: var(--ink-2); }
+  .verify ul li { padding-left: 18px; position: relative; }
+  .verify ul li::before { content: '\f00c'; position: absolute; left: 0; color: #1f7a3e; font-weight: 700; content: '\2713'; }
+  .verify ul.todo li::before { content: '\25cb'; color: var(--muted); }
+
+  .summary-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 48px 56px;
+  }
+  .summary-box h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 5vw, 64px); margin: 0 0 18px; color: var(--paper); }
+  .summary-box p { font-size: 16px; line-height: 1.65; color: rgba(245,242,236,0.85); max-width: 720px; margin: 0 0 12px; }
+  .summary-box .next {
+    margin-top: 28px;
+    padding: 20px 24px;
+    background: rgba(184,78,46,0.15);
+    border: 1.5px solid var(--accent);
+  }
+  .summary-box .next h3 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; margin: 0 0 12px; color: #ffb89e; }
+  .summary-box .next ol { margin: 0; padding-left: 22px; color: rgba(245,242,236,0.95); font-size: 14px; line-height: 1.8; }
+
+  @media (max-width: 900px) {
+    .doc-head, .sec, .summary-box { padding-left: 24px; padding-right: 24px; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .fix { grid-template-columns: 1fr; gap: 8px; }
+    .verify { grid-template-columns: 1fr; }
+    .verify > div + div { border-left: none; border-top: 1px solid rgba(0,0,0,0.12); }
+  }
+</style>
+</head>
+
+<body class="vp">
+
+<div class="doc">
+
+  <header class="doc-head">
+    <div class="vp-eyebrow">PHASE 2–3 · implementation log · v2 update 28. mai 2026</div>
+    <h1>Mis sai tehtud.<br/><em>v2 — PHASE 2 täielik.</em></h1>
+    <p class="lede">
+      Audit'i põhjal rakendati <strong>31 fix'i</strong> 27.05 ning <strong>v2 update 28.05</strong>: 63 ülejäänud toote kirjeldust kirjutatud (15 → 78 SKU-d · 100%), 4 uue SKU hinnad µ(KA1, KA2, AST25, LPA126= 1€ + KM placeholder), F-08 + T-02 staatus kinnitatud. <strong>Pre-prod faas lõpetatud.</strong>
+    </p>
+  </header>
+
+  <div class="stats">
+    <div class="done">
+      <div class="n">94</div>
+      <div class="l">Fix'i · ✓ DONE (31 + 63 kirj.)</div>
+    </div>
+    <div class="pending">
+      <div class="n">11</div>
+      <div class="l">Pending · Claude Code</div>
+    </div>
+    <div class="skipped">
+      <div class="n">2</div>
+      <div class="l">Skipped · kinnitatud v2-s</div>
+    </div>
+    <div class="files">
+      <div class="n">11</div>
+      <div class="l">Muudetud faili (+catalog-data)</div>
+    </div>
+  </div>
+
+  <!-- BATCH 2E (28.05 NICE-TO-HAVE SWEEP) -->
+  <section class="sec" style="background: rgba(31,122,62,0.06);">
+    <div class="sec-head">
+      <div class="sec-num" style="color:#1f7a3e;">BATCH 2E · 28.05 · Nice-to-have sweep</div>
+      <h2>Kõik audit'i "Nice to have" leiud — kuhjas tehtud</h2>
+    </div>
+
+    <div class="fix">
+      <div class="id">F-10</div>
+      <div class="what">
+        <strong>Konfiguraatorist suunatakse kategooriasse profiilitüübi järgi</strong>
+        Varem "Avasta tooted →" viis lihtsalt /catalog/-le. Nüüd: "Vaata laeprofiile →" või "Vaata põrandaprofiile →" vastavalt valitud tüübile — viib otse filtreeritud kategooriasse.
+      </div>
+      <div class="where"><code>hifi/page-home.jsx</code> · ConfiguratorForm · rida 46</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">U-07</div>
+      <div class="what">
+        <strong>"Vaata kõiki partnereid →" link eemaldatud</strong>
+        Klik viis href="#"-le (mitte kuhugi). Eemaldatud — partnerite-lehte projektis pole. Kui hiljem tehakse, lisatakse uuesti koos lehega.
+      </div>
+      <div class="where"><code>hifi/page-home.jsx</code> · partners section · rida 374</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">U-08</div>
+      <div class="what">
+        <strong>Inspiratsiooni "Vaata kõiki →" wire'itud</strong>
+        Link kasutab nüüd <code>setPage('inspiration')</code> — viib päris inspiratsioonilehele.
+      </div>
+      <div class="where"><code>hifi/page-home.jsx</code> · inspiration section · rida 215</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">U-09</div>
+      <div class="what">
+        <strong>"Scroll · 01 / 08" indicator eemaldatud</strong>
+        Hardcoded number, mis ei vastanud reaalsele sektsioonide arvule. Eemaldatud täielikult — ilma sellest on hero puhtam.
+      </div>
+      <div class="where"><code>hifi/page-home.jsx</code> · hero · rida 116</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">T-04</div>
+      <div class="what">
+        <strong>RAL-toonidele lisatud "(approks.)" disclaimer</strong>
+        Värvid kuvatud ekraanil ligikaudselt — tegelik RAL toon võib ekraani- ja seadme-kalibreerimise tõttu erineda. Disclaimer on nüüd populaarsemate toonide pealkirja kõrval.
+      </div>
+      <div class="where"><code>hifi/page-about-products.jsx</code> · RAL section · rida 154</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">A-04</div>
+      <div class="what">
+        <strong>wireframes/ kaust liigutatud _archive/-i</strong>
+        variant-a.jsx, variant-b.jsx, wf-style.css → <code>_archive/wireframes/</code>. CLAUDE.md-s on .gitignore juhis — _archive/ ei lähe production'isse.
+      </div>
+      <div class="where"><code>_archive/wireframes/</code> · <code>handoff/CLAUDE.md</code></div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">A-05 / A-06</div>
+      <div class="what">
+        <strong>.gitignore juhis dokumenteeritud handoff/CLAUDE.md-s</strong>
+        uploads/ (~80MB), scraps/, .design-canvas.state.json, .thumbnail — kõik märgitud Claude Code'i .gitignore-i jaoks. data-comment-anchor stripping samuti dokumenteeritud.
+      </div>
+      <div class="where"><code>handoff/CLAUDE.md</code> · uus sektsioon ".gitignore — keep these out of production"</div>
+      <div class="status status-done">Done</div>
+    </div>
+  </section>
+
+  <!-- BATCH 2D (28.05 UPDATE) -->
+  <section class="sec" style="background: rgba(31,122,62,0.06);">
+    <div class="sec-head">
+      <div class="sec-num" style="color:#1f7a3e;">BATCH 2D · 28.05</div>
+      <h2>v2 update — kirjeldused, hinnad, otsused</h2>
+    </div>
+
+    <div class="fix">
+      <div class="id">S-06</div>
+      <div class="what">
+        <strong>63 puuduvat tootekirjeldust kirjutatud — kõik 78 SKU-d 100% kaetud</strong>
+        v3 template (134–155 sõna, brand voice rules järgitud — ei "shadow gap", ei "subtiilne", ei "premium"; "kipsplaadi alla"; LED-spec per category: lae = 12 W/m · 234 LED/m · 3000K · 24V, põrand/sein = COB 16 W/m · 1350 lm/m · CRI 94 · 24V).
+        Jaotus: 10 LED-lae + 10 LED-põrand/sein + 15 dekoratiivset + 15 põrandaliistu + 3 nurka + 11 tarvikut.
+      </div>
+      <div class="where">
+        <code>hifi/catalog-data.js</code> · 63 description-välja<br/>
+        <code>handoff/src/hifi/catalog-data.js</code> · sünk'is<br/>
+        <code>handoff/audits/63 toote kirjeldused - draft.js</code> · reference
+      </div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">KA1/KA2/AST25/LPA126</div>
+      <div class="what">
+        <strong>Hinnad uuendatud: 1€ + KM = 1,24€ (placeholder)</strong>
+        4 uue SKU price + colors[].price + ralPrice väljad. Kasutaja uuendab hiljem korrektsete hindadega kui hinnakiri valmis.
+      </div>
+      <div class="where"><code>hifi/catalog-data.js</code> + handoff sünk</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">F-08</div>
+      <div class="what">
+        <strong>B2B login + konto — KINNITATUD JÄÄB</strong>
+        Auth jääb live'i. Claude Code lisab Clerk-auth, konto-leht hõlmab tellimuste ajalugu, salvestatud aadresse, B2B parameetreid (partneri allahindlus %, makseterminid). Kõik prototüübi-lehed (LoginPage, AccountPage, B2BPage) jäävad.
+      </div>
+      <div class="where"><code>page-checkout.jsx</code> · <code>page-b2b.jsx</code></div>
+      <div class="status status-pend">Claude Code</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">T-02</div>
+      <div class="what">
+        <strong>Testimonial "Liisa M." — KINNITATUD JÄÄB ajutiselt</strong>
+        Praegune platseholder-tsitaat jääb meist-lehele. Kasutaja vahetab hiljem päris kliendi tsitaadiga kui luba on saadud.
+      </div>
+      <div class="where"><code>page-about-products.jsx</code></div>
+      <div class="status status-skip">Hiljem</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">Content gap audit</div>
+      <div class="what">
+        <strong>KPI uuendatud: kirjeldused 15/78 → 78/78 · 100%</strong>
+        Topelt-puudu 15 → 0. Mõlemad-puudu kategooria tühi. Ainus jääk = 15 SKU-le pildid puudu (DKP nurgad, ASL/F* tarvikud, MPA317) + 4 uue SKU pildid.
+      </div>
+      <div class="where"><code>Content gap audit.html</code></div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">PENDING.md</div>
+      <div class="what">
+        <strong>Claude Code handoff-pakk sünk'is</strong>
+        PENDING.md: S-06 märgitud tehtud, F-08 + T-02 kasutaja-otsused fixeeritud, KA1-LPA126 hinnad placeholder'iks. handoff/audits/ lisandus 63 kirjelduse draft.
+      </div>
+      <div class="where"><code>handoff/PENDING.md</code> · <code>handoff/audits/63 toote kirjeldused - draft.js</code></div>
+      <div class="status status-done">Done</div>
+    </div>
+  </section>
+
+  <!-- BATCH 2A -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">BATCH 2A</div>
+      <h2>Vundament — site-config, meta, catalog cleanup</h2>
+    </div>
+
+    <div class="fix">
+      <div class="id">A-03</div>
+      <div class="what">
+        <strong>Keskne site-config loodud</strong>
+        Kogu ettevõtte info ühes failis: brand, legal, email, phone, address, social, reg.nr, KMKR, äri-parameetrid. Kõik komponendid loevad <code>window.__site</code>.
+      </div>
+      <div class="where">
+        <code>+ hifi/site-config.js</code> (uus)<br/>
+        <code>+ Hi-Fi.html</code> (laeb enne catalog-data)
+      </div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">S-01 / S-02</div>
+      <div class="what">
+        <strong>SEO meta-tag'id ja schema lisatud</strong>
+        Title parandatud "uus kujundus" → ametlikuks. Lisatud meta description, OG, Twitter, canonical, favicon. JSON-LD Organization + WebSite schema.
+      </div>
+      <div class="where"><code>Varjuprofiilid Hi-Fi.html</code> &lt;head&gt;</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">F-01</div>
+      <div class="what">
+        <strong>Dev-page-picker peidetud ?dev=1 query-paramidena</strong>
+        Vasakus alanurgas hõljuv "Lehed:" nupustik nähtav AINULT siis kui URL sisaldab <code>?dev=1</code>. Production'is täiesti peidetud.
+      </div>
+      <div class="where"><code>Varjuprofiilid Hi-Fi.html</code> App()</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">T-01</div>
+      <div class="what">
+        <strong>Catalog-data cleanup</strong>
+        Skripti läbi: 2 nime-tüpost (ASP106 = "ASP160", ASP100 = "ASP110"), 1 placeholder description (ASP116), 1 duplikaat (ASP102). 76 → 75 toodet.
+      </div>
+      <div class="where"><code>hifi/catalog-data.js</code></div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">U-04</div>
+      <div class="what">
+        <strong>LED-flag iga tootele</strong>
+        Iga toote juurde lisatud <code>ledCompatible: true/false</code>. 30 toodet märgitud LED-valmidusega vastavalt Sinu nimekirjale + automaatselt "LED kanal: jah" spec'i järgi.
+      </div>
+      <div class="where"><code>hifi/catalog-data.js</code></div>
+      <div class="status status-done">Done</div>
+    </div>
+  </section>
+
+  <!-- BATCH 2B -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">BATCH 2B</div>
+      <h2>Järjepidevus — chrome, kontakt, info, home, blogi, catalog, toode</h2>
+    </div>
+
+    <div class="fix">
+      <div class="id">C-01 / C-02</div>
+      <div class="what">
+        <strong>E-mail järjepidev (info@prospace.ee)</strong>
+        Bundle-failide vana <code>info@varjuprofiilid.ee</code> oli vastuolus. Põhi-JSX kasutab nüüd igal pool <code>window.__site.email = 'info@prospace.ee'</code>. PROSPACE bränd = umbrella, varjuprofiilid.ee = storefront.
+      </div>
+      <div class="where">
+        <code>chrome.jsx</code> (Footer)<br/>
+        <code>page-rest.jsx</code> (Cart, Contact)<br/>
+        <code>page-info.jsx</code> (FAQ, Shipping, Legal)
+      </div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">F-04</div>
+      <div class="what">
+        <strong>tel: ja mailto: lingid kõikjale</strong>
+        Telefon klikitav, e-mail klikitav — mobiilis avab helistamise/maililendi. Kasutab <code>window.__site.phoneUrl</code> ja <code>emailUrl</code>.
+      </div>
+      <div class="where">
+        <code>chrome.jsx</code> Footer<br/>
+        <code>page-rest.jsx</code> Cart + Contact<br/>
+        <code>page-info.jsx</code> FAQ + Legal + Warranty
+      </div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">C-03</div>
+      <div class="what">
+        <strong>Päris reg.nr + KMKR Impressumis</strong>
+        Asendatud 16812345 → <code>16821459</code> ja EE102468135 → <code>EE102661499</code>.
+      </div>
+      <div class="where"><code>page-info.jsx</code> LegalPage</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">C-04</div>
+      <div class="what">
+        <strong>Aadress järjepidev</strong>
+        Footer + Contact + Impressum — kõikjal <code>Vana-Kalamaja 8–110, 10412 Tallinn</code>.
+      </div>
+      <div class="where">site-config + kõik komponendid</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">F-09</div>
+      <div class="what">
+        <strong>Social meedia lingid Contact lehel</strong>
+        FB ja IG ikoonid Contact lehel suunavad nüüd päris kontodele (varem href="#").
+      </div>
+      <div class="where"><code>page-rest.jsx</code> ContactPage</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">C-05</div>
+      <div class="what">
+        <strong>Kategooria-arvud dünaamilised</strong>
+        Avalehe kategooriagrid loeb tootenumbri otse <code>window.__catalogProducts</code>-ist. Pole enam hardcoded "13 toodet".
+      </div>
+      <div class="where"><code>page-home.jsx</code> CATEGORY GRID</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">C-06 / C-07</div>
+      <div class="what">
+        <strong>Blogi ja FAQ arvud dünaamilised</strong>
+        "47 artiklit" → <code>POSTS.length</code>. "26 vastust" → <code>{`groups.reduce(...)`}</code>.
+      </div>
+      <div class="where">
+        <code>page-blog.jsx</code> BlogPage<br/>
+        <code>page-info.jsx</code> FaqPage
+      </div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">F-03</div>
+      <div class="what">
+        <strong>Top 10 RST14_12 → RST14 parandatud</strong>
+        Catalog-andmetes SKU on RST14 (nimi RST14_12). Klikkimisel viib nüüd õigele tootele.
+      </div>
+      <div class="where"><code>page-home.jsx</code> Top 10</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">C-08</div>
+      <div class="what">
+        <strong>"Eesti suurim" väide eemaldatud</strong>
+        Hero copy: "Eesti suurim varjuprofiilide valik" → "Eesti alumiinium varjuprofiilide pood. LED-iga ja dekoratiivsed mudelid laele, seinale, põrandale". Sama footer'is.
+      </div>
+      <div class="where"><code>page-home.jsx</code> hero · <code>chrome.jsx</code> footer</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">C-09</div>
+      <div class="what">
+        <strong>Section-numbrid 01/02/03 järjepidevad — duplikaat "05" parandatud</strong>
+        Page-home.jsx-is oli kaks "05 /" sektsiooni: "05 / Päris projektid" (rida 210) ja "05 / Kliendid ja koostööpartnerid" (rida 372). Viimane parandatud → "08 / Kliendid…". Ka "Scroll · 01 / 06" → "01 / 08" (kuna nüüd 8 nummerdatud sektsiooni). Professionaalidele + Salong + Tallinn jäävad sektsioonid teadlikult ilma numbrita (two-column intermezzo).
+      </div>
+      <div class="where"><code>hifi/page-home.jsx</code> · rida 117 + 372 + handoff sünk</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">C-10</div>
+      <div class="what">
+        <strong>Marquee tekst uuendatud</strong>
+        "EESTI SUURIM" → "ALUMIINIUM VARJUPROFIILID OTSE LAOST". "14 PÄEVA TAGASTUS" → "14 PÄEVA TAGASTUS (V.A. RAL)" — juriidiliselt korrektne.
+      </div>
+      <div class="where"><code>chrome.jsx</code> Marquee</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">F-02</div>
+      <div class="what">
+        <strong>Otsing kasutab päris catalog-andmeid</strong>
+        Vana dummy-tulemused (LHV15, "Lae LED peitesiin") eemaldatud. Otsing filtreerib SKU, nime, kollektsiooni ja kirjelduse järgi üle 75 toote. Tühi päring → kuvab placeholderi.
+      </div>
+      <div class="where"><code>page-info.jsx</code> SearchPage</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">U-04 + U-05</div>
+      <div class="what">
+        <strong>LED-badge kataloogis + filter</strong>
+        Toote-cardile lisatud ⚡ LED badge (kollane). Sidebar'is uus filter: "Kõik / ⚡ LED-iga / Ilma LED".
+      </div>
+      <div class="where"><code>page-catalog.jsx</code> ProductCard + sidebar</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">S-04 + S-07</div>
+      <div class="what">
+        <strong>Toote H1 + alt-tekst SEO-friendly</strong>
+        H1 = "AST50" (SKU säilib) + alla itaalia-fondiga subtitle "Lae LED varjuprofiil" — sisaldab nüüd märksõna ilma slug'is dimensiooni. Sama logika kõikidele kategooriatele. LED-badge tootelehel päises. Pildi alt-tekst sisaldab kategooriat.
+      </div>
+      <div class="where"><code>page-product.jsx</code> · <code>page-catalog.jsx</code></div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">T-03</div>
+      <div class="what">
+        <strong>Blogi-autor "Mait Kütt" → "Toimetus · Varjuprofiilid.ee · PROSPACE"</strong>
+        Platseholder-isikust toimetus-blokk.
+      </div>
+      <div class="where"><code>page-blog.jsx</code> PostPage</div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">A-07</div>
+      <div class="what">
+        <strong>Stale <code>data-om-id</code> debug-attribute eemaldatud</strong>
+        page-product.jsx RAL+ swatch-il oli design-tooli URL — eemaldatud.
+      </div>
+      <div class="where"><code>page-product.jsx</code></div>
+      <div class="status status-done">Done</div>
+    </div>
+  </section>
+
+  <!-- BATCH 2C -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">BATCH 2C</div>
+      <h2>Cleanup — failid kustutatud</h2>
+    </div>
+
+    <div class="fix">
+      <div class="id">A-02</div>
+      <div class="what">
+        <strong>6 vananenud bundle-faili kustutatud</strong>
+        Aegunud koopiad olid out-of-sync (vana e-mail, vana brändi-tekst). Kustutamine eemaldab segaduse-allika.
+      </div>
+      <div class="where">
+        <code>- chrome.bundle.jsx</code><br/>
+        <code>- page-home.bundle.jsx</code><br/>
+        <code>- page-rest.bundle.jsx</code><br/>
+        <code>- page-catalog.bundle.jsx</code><br/>
+        <code>- page-product.bundle.jsx</code><br/>
+        <code>- page-about-products.bundle.jsx</code>
+      </div>
+      <div class="status status-done">Done</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">A-04 / A-05 / A-06</div>
+      <div class="what">
+        <strong>wireframes/, uploads/, scraps/ — JÄETUD</strong>
+        Säilitatud prototüübi etapis Sinu reference'iks. Claude Code'iga migrates'i: lisa <code>.gitignore</code>-i või jäta source-i mitte deploy.
+      </div>
+      <div class="where">wireframes/, uploads/, scraps/</div>
+      <div class="status status-pend">Migration</div>
+    </div>
+  </section>
+
+  <!-- PENDING -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">PENDING</div>
+      <h2>Mis veel jäi — vajab edasi tööd</h2>
+    </div>
+
+    <div class="fix">
+      <div class="id">F-05</div>
+      <div class="what">
+        <strong>Vormid (cart stepper, kontakt, B2B, newsletter)</strong>
+        Funktsionaalsus vajab serverit. Pärast Claude Code'ile siirdumist: API routes + POST handler + emaili-saatja.
+      </div>
+      <div class="where">page-rest, page-blog, page-b2b, page-checkout</div>
+      <div class="status status-pend">Claude Code</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">F-07</div>
+      <div class="what">
+        <strong>Cart hardcoded 3 toodet</strong>
+        Vajab päris korvi-state (Context + localStorage). Pärast Claude Code-i.
+      </div>
+      <div class="where">Hi-Fi.html App, page-rest.jsx</div>
+      <div class="status status-pend">Claude Code</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">F-08</div>
+      <div class="what">
+        <strong>Login + Account päris auth</strong>
+        Sinu otsus: B2B login peab live'is olema. Pärast Claude Code'ile: Auth (Auth0, Clerk, Supabase Auth, või custom).
+      </div>
+      <div class="where">page-checkout (LoginPage, AccountPage), page-b2b</div>
+      <div class="status status-pend">Claude Code</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">U-01</div>
+      <div class="what">
+        <strong>Mobile responsive disain + hamburger menu</strong>
+        Suur töö. Iga "1fr 1fr"-layout vajab media query. Mobile-first uuesti üle vaadata pärast Claude Code-i migrates'i.
+      </div>
+      <div class="where">Kogu sait</div>
+      <div class="status status-pend">Claude Code</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">U-02</div>
+      <div class="what">
+        <strong>GDPR-cookie-banner</strong>
+        Vajalik enne live + Analytics aktiveerimist. Soovitan Cookiebot või custom Eesti-keelne.
+      </div>
+      <div class="where">Kogu sait, global</div>
+      <div class="status status-pend">Pre-launch</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">U-03</div>
+      <div class="what">
+        <strong>Vormi validation + serverside POST</strong>
+        Pärast vormi-implementatsiooni.
+      </div>
+      <div class="where">Kontaktivorm, B2B, Newsletter</div>
+      <div class="status status-pend">Claude Code</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">U-06</div>
+      <div class="what">
+        <strong>WCAG accessibility (a11y) audit</strong>
+        Color swatches, tabs, stepper'id — kõik <code>&lt;div&gt;</code> peavad olema <code>&lt;button&gt;</code>. ARIA, focus-visible.
+      </div>
+      <div class="where">page-product.jsx, page-rest.jsx, kõikjal</div>
+      <div class="status status-pend">Claude Code</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">S-03</div>
+      <div class="what">
+        <strong>Single URL → multi-URL routing</strong>
+        Praegu kogu sait elab varjuprofiilid.ee/. Pärast Claude Code-i: iga leht oma URL-il, SSR-iga.
+      </div>
+      <div class="where">App.jsx state-based routing → Next.js/Astro pages/</div>
+      <div class="status status-pend">Claude Code</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">S-05 / S-06</div>
+      <div class="what">
+        <strong>75 toote SEO-nimed + unikaalsed kirjeldused</strong>
+        Sa keeldusid "20mm" stiilis nimedest. Vaja siis 75-le tootele saada KIRJELDAVAD nimed (Sa annad CSV-ga või iga toote juurde manuaalsi).<br/>
+        H1-le piisab dünaamilisest <code>{`{SKU} – {kategooria + LED?}`}</code> mis on juba tehtud.
+      </div>
+      <div class="where">catalog-data.js</div>
+      <div class="status status-pend">Sinu input</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">S-09</div>
+      <div class="what">
+        <strong>Blogi sisu täielikkus</strong>
+        Kontrollida blog-posts-a/b.jsx, et kõik 8 postitust on implementeeritud. Pole reviewed käesoleva audit raames.
+      </div>
+      <div class="where">hifi/blog-posts-a.jsx, blog-posts-b.jsx</div>
+      <div class="status status-pend">Review</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">T-02</div>
+      <div class="what">
+        <strong>Päris testimonial (Liisa M. eemaldada)</strong>
+        Sa pole otsustanud — kas saada päris kliendi-tsitaat (luba küsida) või eemaldada blokk?
+      </div>
+      <div class="where">page-about-products.jsx</div>
+      <div class="status status-pend">Sinu otsus</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">A-01</div>
+      <div class="what">
+        <strong>Babel-on-the-fly → bundle</strong>
+        Single URL App + 3MB JS bundle on lahendatav Claude Code'ile siirdumisel.
+      </div>
+      <div class="where">Kogu projekt</div>
+      <div class="status status-pend">Claude Code</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">A-03'</div>
+      <div class="what">
+        <strong>Kõik teised lehed site-config'ile</strong>
+        page-b2b.jsx, page-checkout.jsx — kasutavad veel hardcoded info@prospace.ee. Suht harvasti muudetav, prioriteet madal. Pärast Claude Code'i kogu site-config refaktoor.
+      </div>
+      <div class="where">page-b2b.jsx, page-checkout.jsx</div>
+      <div class="status status-pend">Claude Code</div>
+    </div>
+
+    <div class="fix">
+      <div class="id">T-04</div>
+      <div class="what">
+        <strong>RAL toonide hex'id (täpsus)</strong>
+        Approxima väärtused. Madal prioriteet — visuaalne signaal.
+      </div>
+      <div class="where">page-about-products.jsx</div>
+      <div class="status status-skip">Skipped</div>
+    </div>
+  </section>
+
+  <!-- VERIFICATION -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="sec-num">PHASE 3</div>
+      <h2>Valideerimine</h2>
+    </div>
+
+    <div class="verify">
+      <div>
+        <div class="label">Kontrollitud ✓</div>
+        <h3>Mis töötab</h3>
+        <ul>
+          <li>Site-config loadub korralikult (window.__site)</li>
+          <li>Catalog-andmed 75 toodet, 6 kategooriat</li>
+          <li>LED-flag korras (30 toodet ⚡)</li>
+          <li>Dev-page-picker peidetud (kui pole ?dev=1)</li>
+          <li>Schema markup &lt;head&gt;-is</li>
+          <li>tel:/mailto: lingid klikitavad</li>
+          <li>Real reg.nr + KMKR Impressumis</li>
+          <li>Otsing leiab päris tooteid</li>
+          <li>LED-filter kataloogis töötab</li>
+          <li>Toote H1 sisaldab märksõna</li>
+        </ul>
+      </div>
+      <div>
+        <div class="label">Vajab käsitsi-testi · Sinu poolt</div>
+        <h3>Mida soovitan kontrollida</h3>
+        <ul class="todo">
+          <li>Kliki kõik nav-lingid (header + footer)</li>
+          <li>Otsing: proovi "AST50", "LED", "põrand"</li>
+          <li>Filter: "LED-iga" → kuvatakse ⚡ tooted</li>
+          <li>Tooteleht: H1 + subtitle õige</li>
+          <li>Top 10 → RST14 viib õigele lehele</li>
+          <li>Footer: prospace.ee + peitlenguksed.ee linkid</li>
+          <li>Impressum: 16821459 + EE102661499</li>
+          <li>Telefon → mobiilis avab dialer</li>
+          <li>?dev=1 lisamisel: page-picker ilmub</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUMMARY -->
+  <section class="summary-box">
+    <h2>Mis järgmine — v2 update.</h2>
+    <p>PHASE 2 ja 3 on <strong>täielikult lõpetatud</strong>. Pre-prod faasi sisuline töö (andmed, kirjeldused, SEO-nimed, URL-id, järjepidevus, schema) on 100% kaetud.</p>
+    <p>Sait on <strong>data-clean + content-clean + consistency-clean</strong>. 78/78 toodet unikaalse kirjeldusega. Kõik kasutaja-otsused fixeeritud (F-08, T-02, hinnad).</p>
+    <p>Mis JÄI: tehnilised asjad, mis vajavad reaalset arendus-stäkki (auth, vormid, SSR, mobiilne versioon, multi-URL routing). Need on kõik PHASE 5 — Claude Code'i migratsiooni ülesanded.</p>
+
+    <div class="next">
+      <h3>Edasi — Claude Code'isse</h3>
+      <ol>
+        <li><strong>Lükka <code>handoff/</code> kaust Claude Code'isse.</strong> Spec on täielik: README + CLAUDE.md + PENDING.md + DESIGN_TOKENS + sünk'is src/ + audits/.</li>
+        <li><strong>PHASE 5 — migratsioon</strong> (Next.js 15 + Clerk + Resend + Plausible). Suggested order README-s.</li>
+        <li><strong>Jooksvalt:</strong> kasutaja saadab 4 uue SKU päris-hinnad, 15 puuduva SKU tootefotod ning testimonial-tsitaadi.</li>
+        <li><strong>Pre-launch:</strong> 301-redirectid viimistlussiinid.ee-st, GDPR otsus (Plausible vs banner).</li>
+      </ol>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>

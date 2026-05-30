@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tarvikud · uus kategooria · ASP40 / ASP60 / ASP80 / ASP100</title>
+<link rel="stylesheet" href="hifi/style.css"/>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .doc { max-width: 1320px; margin: 0 auto; }
+  .head { padding: 56px 56px 32px; border-bottom: 1.5px solid var(--ink); }
+  .head h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px, 7vw, 96px); line-height: 0.88; margin: 12px 0; letter-spacing: 0.005em; }
+  .head h1 em { font-family: 'Inter', serif; font-style: italic; font-weight: 300; font-size: 0.42em; letter-spacing: -0.02em; color: var(--ink-2); }
+  .head p { font-size: 15px; line-height: 1.65; color: var(--ink-2); max-width: 760px; }
+
+  .v2-note {
+    margin-top: 18px;
+    padding: 14px 18px;
+    border-left: 4px solid var(--accent);
+    background: var(--paper-2);
+    font-size: 14px; line-height: 1.6; color: var(--ink-2);
+  }
+  .v2-note strong { color: var(--ink); }
+  .v2-note code { font-family: 'JetBrains Mono', monospace; font-size: 12px; background: var(--paper); padding: 1px 5px; border: 1px solid rgba(0,0,0,0.1); }
+
+  .sec { padding: 40px 56px; border-bottom: 1.5px solid var(--ink); }
+  .sec h2 { font-family: 'Bebas Neue', sans-serif; font-size: 40px; line-height: 1; margin: 0 0 6px; }
+  .sec .sub { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 18px; }
+
+  /* Hub-brief style intro cards */
+  .types {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px;
+    margin: 24px 0 12px;
+  }
+  .type-card {
+    border: 1px solid rgba(0,0,0,0.15);
+    background: var(--paper-2);
+    padding: 18px 16px;
+  }
+  .type-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; margin: 8px 0 6px; line-height: 1; }
+  .type-card .role { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  .type-card p { font-size: 12.5px; line-height: 1.55; color: var(--ink-2); margin: 6px 0 0; }
+
+  /* SEO/URL table */
+  table.seo { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+  table.seo th, table.seo td { padding: 9px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.1); vertical-align: top; }
+  table.seo th { background: var(--ink); color: var(--paper); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+  table.seo td.mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+  table.seo td .url-cell { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); word-break: break-all; }
+  table.seo td .badge { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10px; background: #2c7a4b; color: #fff; padding: 2px 6px; margin-right: 6px; letter-spacing: 0.04em; }
+  table.seo td .price { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; }
+  table.seo tr.size-divider td { background: var(--paper-2); font-family: 'Bebas Neue', sans-serif; font-size: 16px; padding: 8px 12px; letter-spacing: 0.04em; }
+
+  /* Product grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1.5px solid var(--ink);
+  }
+  .grid .card {
+    padding: 22px 22px 24px;
+    border-right: 1px solid rgba(0,0,0,0.12);
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    display: flex; flex-direction: column;
+    background: var(--paper);
+  }
+  .grid .card:nth-child(4n) { border-right: none; }
+
+  .card .imgwrap {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    aspect-ratio: 1 / 1;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+  .card .imgwrap img { width: 100%; height: 100%; object-fit: contain; }
+
+  .card .sku-row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+  .card .sku { font-family: 'Bebas Neue', sans-serif; font-size: 28px; line-height: 1; letter-spacing: 0.01em; }
+  .card .price { font-family: 'Bebas Neue', sans-serif; font-size: 22px; line-height: 1; color: var(--ink); }
+  .card .price small { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); display: block; text-align: right; margin-top: 2px; letter-spacing: 0.04em; }
+  .card .name { font-family: 'Inter', serif; font-style: italic; font-weight: 300; font-size: 14.5px; color: var(--ink-2); line-height: 1.3; margin: 4px 0 8px; }
+  .card .tags { display: flex; gap: 6px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .card .tags span.col-sw {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 2px 6px; border: 1px solid rgba(0,0,0,0.15);
+  }
+  .card .tags span.col-sw i { width: 9px; height: 9px; display: inline-block; border: 1px solid rgba(0,0,0,0.25); }
+  .card .desc { font-size: 12.5px; line-height: 1.55; color: var(--ink-2); margin: 0 0 10px; flex: 1; }
+  .card .url { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--accent); border-top: 1px dotted rgba(0,0,0,0.15); padding-top: 8px; word-break: break-all; }
+
+  .grid.diffuser-row { grid-template-columns: 1fr; }
+  .grid.diffuser-row .card { border-right: none; }
+
+  .footer-cta { background: var(--ink); color: var(--paper); padding: 56px 56px; }
+  .footer-cta h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 5vw, 64px); margin: 0 0 18px; color: var(--paper); }
+  .footer-cta p { font-size: 15px; line-height: 1.65; color: rgba(245,242,236,0.85); max-width: 720px; margin: 0 0 14px; }
+  .footer-cta ul { margin: 16px 0 0; padding-left: 22px; color: rgba(245,242,236,0.95); line-height: 1.8; font-size: 14px; }
+  .footer-cta code { font-family: 'JetBrains Mono', monospace; font-size: 12px; background: rgba(255,255,255,0.08); padding: 1px 6px; }
+
+  @media (max-width: 1100px) {
+    .types { grid-template-columns: repeat(2, 1fr); }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .grid .card:nth-child(4n) { border-right: 1px solid rgba(0,0,0,0.12); }
+    .grid .card:nth-child(2n) { border-right: none; }
+  }
+  @media (max-width: 700px) {
+    .head, .sec, .footer-cta { padding-left: 24px; padding-right: 24px; }
+    .types { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+
+<body class="vp">
+<div class="doc">
+
+  <header class="head">
+    <div class="vp-eyebrow">UUS KATEGOORIA · TARVIKUD · 28. mai 2026</div>
+    <h1>Tarvikud.<br/><em>nurgad, otsad, ühendused.</em></h1>
+    <p>
+      Põrandaliistude <strong>ASP40 / ASP60 / ASP80 / ASP100</strong> juurde kuuluvad metallist nurgad, otsakorgid ja ühenduselemendid. Lisaks LED-varianti kasutavatele liistudele matt silikoonhajuti. Pildid lõikan välja Sinu saadetud kuvatõmmistest — failinimi mustriga <code>ASP[suurus]-[tüüp].png</code>.
+    </p>
+    <div class="v2-note">
+      <strong>Soovitatud uus hub:</strong> <code>/tarvikud/</code> — eraldi kategoorialeht põhinavigatsiooni. Tarvikud ei sobi olemasolevatesse 5 hubi (LED-varjuprofiilid, varjuprofiilid, kardinaprofiilid, alumiinium-põrandaliistud, nurgaprofiilid), kuna need on <em>komplektaartooted</em> mille kõik 4 tüüpi (välimine nurk · sisemine nurk · otsakork · ühendus) korduvad iga liistu-suuruse kohta. Iga ASP-toote lehel <em>"Sarnased tooted"</em> blokk peaks linkima vastavatele tarvikutele.
+    </div>
+  </header>
+
+  <!-- SECTION: TÜÜBID -->
+  <section class="sec">
+    <h2>5 tarvikutüüpi</h2>
+    <div class="sub">Mida iga tüüp teeb · sama selgitus kehtib kõikidele suurustele</div>
+
+    <div class="types">
+      <div class="type-card">
+        <div class="role">Tüüp 01</div>
+        <h3>Välimine nurk</h3>
+        <p>Katab põrandaliistu lõppu seal, kus sein teeb <strong>väljapoole</strong> 90° pöörde (näiteks samba välimine nurk). Profiil liidetakse mõlemalt poolt liistu otsa, andes puhta viimistletud servaga ülemineku.</p>
+      </div>
+      <div class="type-card">
+        <div class="role">Tüüp 02</div>
+        <h3>Sisemine nurk</h3>
+        <p>Katab põrandaliistu lõppu seal, kus sein teeb <strong>sissepoole</strong> 90° pöörde (toa standardnurk). Tagaküljel on klipid, mis fikseerivad nurga liistu profiili kõhus — pole vaja erilist liimi ega kruvi.</p>
+      </div>
+      <div class="type-card">
+        <div class="role">Tüüp 03</div>
+        <h3>Otsakork</h3>
+        <p>Sulgeb liistu otsa kohas, kus liistu rida lõpeb (ukseava, kapinurk, üleminek karpetile). Vasak ja parem mudel — saadaval mõlema variandina. Annab visuaalselt lõpetatud otsa ilma alumiiniumi sisikonda näha jätmata.</p>
+      </div>
+      <div class="type-card">
+        <div class="role">Tüüp 04</div>
+        <h3>Ühendus</h3>
+        <p>Liidab kaks järjestikust liistu pikast otsast. Vajalik siis, kui ühe seina pikkus on suurem kui standardne liistu pikkus (2,5 m). Hoiab kahe paneeli liidesekoha sirgena ja varjab vuugi.</p>
+      </div>
+      <div class="type-card">
+        <div class="role">Tüüp 05</div>
+        <h3>Matt hajuti</h3>
+        <p>Silikoonist (PVC) <strong>matt hajuti riba</strong> LED-valgustusega liistude jaoks. Painutatav, lõigatav etteantud pikkusele. Hajutab LED-täppe ühtlaseks jooneks ja varjab LED-riba otsesest vaateväljast.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: SEO TABLE -->
+  <section class="sec">
+    <h2>SEO-nimed + URL-id + hinnad</h2>
+    <div class="sub">17 uut SKU-d · lisatav S-05 nimekirjale · uus hub /tarvikud/</div>
+    <table class="seo">
+      <thead><tr>
+        <th style="width:120px">SKU</th>
+        <th style="width:340px">SeoName</th>
+        <th style="width:90px">Hind</th>
+        <th style="width:80px">Värvid</th>
+        <th>URL</th>
+      </tr></thead>
+      <tbody>
+        <!-- 40mm -->
+        <tr class="size-divider"><td colspan="5">ASP40 · 40 mm liistu tarvikud</td></tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>ASP40-NV</strong></td>
+          <td>Välimine nurk · ASP40 põrandaliistule</td>
+          <td><span class="price">5,50 €</span></td>
+          <td class="mono">4 värvi</td>
+          <td><span class="url-cell">/tarvikud/asp40-valimine-nurk/</span></td>
+        </tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>ASP40-NS</strong></td>
+          <td>Sisemine nurk · ASP40 põrandaliistule</td>
+          <td><span class="price">5,50 €</span></td>
+          <td class="mono">4 värvi</td>
+          <td><span class="url-cell">/tarvikud/asp40-sisemine-nurk/</span></td>
+        </tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>ASP40-OK</strong></td>
+          <td>Otsakork · ASP40 põrandaliistule (V/P)</td>
+          <td><span class="price">5,50 €</span></td>
+          <td class="mono">4 värvi</td>
+          <td><span class="url-cell">/tarvikud/asp40-otsakork/</span></td>
+        </tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>ASP40-Y</strong></td>
+          <td>Ühenduselement · ASP40 põrandaliistule</td>
+          <td><span class="price">5,50 €</span></td>
+          <td class="mono">4 värvi</td>
+          <td><span class="url-cell">/tarvikud/asp40-uhendus/</span></td>
+        </tr>
+
+        <!-- 60mm -->
+        <tr class="size-divider"><td colspan="5">ASP60 · 60 mm liistu tarvikud</td></tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>ASP60-NV</strong></td>
+          <td>Välimine nurk · ASP60 põrandaliistule</td>
+          <td><span class="price">5,50 €</span></td>
+          <td class="mono">4 värvi</td>
+          <td><span class="url-cell">/tarvikud/asp60-valimine-nurk/</span></td>
+        </tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>ASP60-NS</strong></td>
+          <td>Sisemine nurk · ASP60 põrandaliistule</td>
+          <td><span class="price">5,50 €</span></td>
+          <td class="mono">4 värvi</td>
+          <td><span class="url-cell">/tarvikud/asp60-sisemine-nurk/</span></td>
+        </tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>ASP60-OK</strong></td>
+          <td>Otsakork · ASP60 põrandaliistule (V/P)</td>
+          <td><span class="price">5,50 €</span></td>
+          <td class="mono">4 värvi</td>
+          <td><span class="url-cell">/tarvikud/asp60-otsakork/</span></td>
+        </tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>ASP60-Y</strong></td>
+          <td>Ühenduselement · ASP60 põrandaliistule</td>
+          <td><span class="price">5,50 €</span></td>
+          <td class="mono">4 värvi</td>
+          <td><span class="url-cell">/tarvikud/asp60-uhendus/</span></td>
+        </tr>
+
+        <!-- 80mm -->
+        <tr class="size-divider"><td colspan="5">ASP80 · 80 mm liistu tarvikud</td></tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>ASP80-NV</strong></td>
+          <td>Välimine nurk · ASP80 põrandaliistule</td>
+          <td><span class="price">5,50 €</span></td>
+          <td class="mono">4 värvi</td>
+          <td><span class="url-cell">/tarvikud/asp80-valimine-nurk/</span></td>
+        </tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>ASP80-NS</strong></td>
+          <td>Sisemine nurk · ASP80 põrandaliistule</td>
+          <td><span class="price">5,50 €</span></td>
+          <td class="mono">4 värvi</td>
+          <td><span class="url-cell">/tarvikud/asp80-sisemine-nurk/</span></td>
+        </tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>ASP80-OK</strong></td>
+          <td>Otsakork · ASP80 põrandaliistule (V/P)</td>
+          <td><span class="price">5,50 €</span></td>
+          <td class="mono">4 värvi</td>
+          <td><span class="url-cell">/tarvikud/asp80-otsakork/</span></td>
+        </tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>ASP80-Y</strong></td>
+          <td>Ühenduselement · ASP80 põrandaliistule</td>
+          <td><span class="price">5,50 €</span></td>
+          <td class="mono">4 värvi</td>
+          <td><span class="url-cell">/tarvikud/asp80-uhendus/</span></td>
+        </tr>
+
+        <!-- 100mm -->
+        <tr class="size-divider"><td colspan="5">ASP100 · 100 mm liistu tarvikud</td></tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>ASP100-NV</strong></td>
+          <td>Välimine nurk · ASP100 põrandaliistule</td>
+          <td><span class="price">5,50 €</span></td>
+          <td class="mono">4 värvi</td>
+          <td><span class="url-cell">/tarvikud/asp100-valimine-nurk/</span></td>
+        </tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>ASP100-NS</strong></td>
+          <td>Sisemine nurk · ASP100 põrandaliistule</td>
+          <td><span class="price">5,50 €</span></td>
+          <td class="mono">4 värvi</td>
+          <td><span class="url-cell">/tarvikud/asp100-sisemine-nurk/</span></td>
+        </tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>ASP100-OK</strong></td>
+          <td>Otsakork · ASP100 põrandaliistule (V/P)</td>
+          <td><span class="price">5,50 €</span></td>
+          <td class="mono">4 värvi</td>
+          <td><span class="url-cell">/tarvikud/asp100-otsakork/</span></td>
+        </tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>ASP100-Y</strong></td>
+          <td>Ühenduselement · ASP100 põrandaliistule</td>
+          <td><span class="price">5,50 €</span></td>
+          <td class="mono">4 värvi</td>
+          <td><span class="url-cell">/tarvikud/asp100-uhendus/</span></td>
+        </tr>
+
+        <!-- Hajuti -->
+        <tr class="size-divider"><td colspan="5">Matt hajuti · LED-tarvik</td></tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>HAJUTI</strong></td>
+          <td>Matt silikoonhajuti LED-põrandaliistudele · 1 jm</td>
+          <td><span class="price">1,75 €</span> /jm</td>
+          <td class="mono">matt</td>
+          <td><span class="url-cell">/tarvikud/matt-hajuti/</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION: ASP40 -->
+  <section class="sec" style="padding-bottom: 0;">
+    <h2>ASP40 · 4 tarvikut</h2>
+    <div class="sub">40 mm laiusele alumiinium-põrandaliistule</div>
+  </section>
+  <div class="grid">
+
+    <!-- ASP40-NV -->
+    <article class="card">
+      <div class="imgwrap"><img src="assets/products/asp40-outer.png" alt="ASP40 välimine nurk"/></div>
+      <div class="sku-row">
+        <div class="sku">ASP40-NV</div>
+        <div class="price">5,50 €<small>+ KM / tk</small></div>
+      </div>
+      <div class="name">Välimine nurk · 40 mm</div>
+      <div class="tags">
+        <span class="col-sw"><i style="background:#c8c8c8"></i>hõbe</span>
+        <span class="col-sw"><i style="background:#ffffff"></i>valge</span>
+        <span class="col-sw"><i style="background:#1a1a1a"></i>must</span>
+        <span class="col-sw">RAL</span>
+      </div>
+      <p class="desc">Metallist välimine nurgaelement ASP40 põrandaliistule. Katab liistu otsa seal, kus sein teeb <strong>väljapoole</strong> 90° pöörde. <strong>Klik-süsteem</strong> — fikseerub liistu profiili külge ilma liimita.</p>
+      <div class="url">/tarvikud/asp40-valimine-nurk/</div>
+    </article>
+
+    <!-- ASP40-NS -->
+    <article class="card">
+      <div class="imgwrap"><img src="assets/products/asp40-inner.png" alt="ASP40 sisemine nurk"/></div>
+      <div class="sku-row">
+        <div class="sku">ASP40-NS</div>
+        <div class="price">5,50 €<small>+ KM / tk</small></div>
+      </div>
+      <div class="name">Sisemine nurk · 40 mm</div>
+      <div class="tags">
+        <span class="col-sw"><i style="background:#c8c8c8"></i>hõbe</span>
+        <span class="col-sw"><i style="background:#ffffff"></i>valge</span>
+        <span class="col-sw"><i style="background:#1a1a1a"></i>must</span>
+        <span class="col-sw">RAL</span>
+      </div>
+      <p class="desc">Sisemine nurgaelement ASP40 liistule — toa standardse <strong>sissepoole</strong> 90° nurga jaoks. Tagaküljel olevad klambrid fikseerivad nurga liistu profiili sisse.</p>
+      <div class="url">/tarvikud/asp40-sisemine-nurk/</div>
+    </article>
+
+    <!-- ASP40-OK -->
+    <article class="card">
+      <div class="imgwrap"><img src="assets/products/asp40-endcap.png" alt="ASP40 otsakork"/></div>
+      <div class="sku-row">
+        <div class="sku">ASP40-OK</div>
+        <div class="price">5,50 €<small>+ KM / tk</small></div>
+      </div>
+      <div class="name">Otsakork · 40 mm (V/P)</div>
+      <div class="tags">
+        <span class="col-sw"><i style="background:#c8c8c8"></i>hõbe</span>
+        <span class="col-sw"><i style="background:#ffffff"></i>valge</span>
+        <span class="col-sw"><i style="background:#1a1a1a"></i>must</span>
+        <span class="col-sw">RAL</span>
+      </div>
+      <p class="desc">Lõpetab ASP40 liistu otsa ukseaval, kapinurgal või karpeti üleminekul. Saadaval vasak- ja paremkäeline; <em>tellimisel märgi vajalik pool</em>.</p>
+      <div class="url">/tarvikud/asp40-otsakork/</div>
+    </article>
+
+    <!-- ASP40-Y -->
+    <article class="card">
+      <div class="imgwrap"><img src="assets/products/asp40-connector.png" alt="ASP40 ühenduselement"/></div>
+      <div class="sku-row">
+        <div class="sku">ASP40-Y</div>
+        <div class="price">5,50 €<small>+ KM / tk</small></div>
+      </div>
+      <div class="name">Ühenduselement · 40 mm</div>
+      <div class="tags">
+        <span class="col-sw"><i style="background:#c8c8c8"></i>hõbe</span>
+        <span class="col-sw"><i style="background:#ffffff"></i>valge</span>
+        <span class="col-sw"><i style="background:#1a1a1a"></i>must</span>
+        <span class="col-sw">RAL</span>
+      </div>
+      <p class="desc">Liidab kaks järjestikust ASP40 liistu pikast otsast. Vajalik üle 2,5 m seina-pikkuse korral. Hoiab liidesekoha sirgena ja varjab vuugi.</p>
+      <div class="url">/tarvikud/asp40-uhendus/</div>
+    </article>
+
+  </div>
+
+  <!-- SECTION: ASP60 -->
+  <section class="sec" style="padding-bottom: 0; border-top: none;">
+    <h2>ASP60 · 4 tarvikut</h2>
+    <div class="sub">60 mm laiusele alumiinium-põrandaliistule</div>
+  </section>
+  <div class="grid">
+
+    <article class="card">
+      <div class="imgwrap"><img src="assets/products/asp60-outer.png" alt="ASP60 välimine nurk"/></div>
+      <div class="sku-row">
+        <div class="sku">ASP60-NV</div>
+        <div class="price">5,50 €<small>+ KM / tk</small></div>
+      </div>
+      <div class="name">Välimine nurk · 60 mm</div>
+      <div class="tags">
+        <span class="col-sw"><i style="background:#c8c8c8"></i>hõbe</span>
+        <span class="col-sw"><i style="background:#ffffff"></i>valge</span>
+        <span class="col-sw"><i style="background:#1a1a1a"></i>must</span>
+        <span class="col-sw">RAL</span>
+      </div>
+      <p class="desc">Metallist välimine nurgaelement ASP60 põrandaliistule. Katab liistu otsa väljapoole 90° pöördes.</p>
+      <div class="url">/tarvikud/asp60-valimine-nurk/</div>
+    </article>
+
+    <article class="card">
+      <div class="imgwrap"><img src="assets/products/asp60-inner.png" alt="ASP60 sisemine nurk"/></div>
+      <div class="sku-row">
+        <div class="sku">ASP60-NS</div>
+        <div class="price">5,50 €<small>+ KM / tk</small></div>
+      </div>
+      <div class="name">Sisemine nurk · 60 mm</div>
+      <div class="tags">
+        <span class="col-sw"><i style="background:#c8c8c8"></i>hõbe</span>
+        <span class="col-sw"><i style="background:#ffffff"></i>valge</span>
+        <span class="col-sw"><i style="background:#1a1a1a"></i>must</span>
+        <span class="col-sw">RAL</span>
+      </div>
+      <p class="desc">Sisemine nurgaelement ASP60 liistule. Tagaküljel olevad klambrid fikseerivad nurga liistu profiili sisse — ei vaja eraldi liimi.</p>
+      <div class="url">/tarvikud/asp60-sisemine-nurk/</div>
+    </article>
+
+    <article class="card">
+      <div class="imgwrap"><img src="assets/products/asp60-endcap.png" alt="ASP60 otsakork"/></div>
+      <div class="sku-row">
+        <div class="sku">ASP60-OK</div>
+        <div class="price">5,50 €<small>+ KM / tk</small></div>
+      </div>
+      <div class="name">Otsakork · 60 mm (V/P)</div>
+      <div class="tags">
+        <span class="col-sw"><i style="background:#c8c8c8"></i>hõbe</span>
+        <span class="col-sw"><i style="background:#ffffff"></i>valge</span>
+        <span class="col-sw"><i style="background:#1a1a1a"></i>must</span>
+        <span class="col-sw">RAL</span>
+      </div>
+      <p class="desc">Lõpetab ASP60 liistu otsa puhta visuaaliga. Saadaval vasak- ja paremkäeline; tellimisel märgi vajalik pool.</p>
+      <div class="url">/tarvikud/asp60-otsakork/</div>
+    </article>
+
+    <article class="card">
+      <div class="imgwrap"><img src="assets/products/asp60-connector.png" alt="ASP60 ühenduselement"/></div>
+      <div class="sku-row">
+        <div class="sku">ASP60-Y</div>
+        <div class="price">5,50 €<small>+ KM / tk</small></div>
+      </div>
+      <div class="name">Ühenduselement · 60 mm</div>
+      <div class="tags">
+        <span class="col-sw"><i style="background:#c8c8c8"></i>hõbe</span>
+        <span class="col-sw"><i style="background:#ffffff"></i>valge</span>
+        <span class="col-sw"><i style="background:#1a1a1a"></i>must</span>
+        <span class="col-sw">RAL</span>
+      </div>
+      <p class="desc">Liidab kaks järjestikust ASP60 liistu pikast otsast.</p>
+      <div class="url">/tarvikud/asp60-uhendus/</div>
+    </article>
+
+  </div>
+
+  <!-- SECTION: ASP80 -->
+  <section class="sec" style="padding-bottom: 0; border-top: none;">
+    <h2>ASP80 · 4 tarvikut</h2>
+    <div class="sub">80 mm laiusele alumiinium-põrandaliistule</div>
+  </section>
+  <div class="grid">
+
+    <article class="card">
+      <div class="imgwrap"><img src="assets/products/asp80-outer.png" alt="ASP80 välimine nurk"/></div>
+      <div class="sku-row">
+        <div class="sku">ASP80-NV</div>
+        <div class="price">5,50 €<small>+ KM / tk</small></div>
+      </div>
+      <div class="name">Välimine nurk · 80 mm</div>
+      <div class="tags">
+        <span class="col-sw"><i style="background:#c8c8c8"></i>hõbe</span>
+        <span class="col-sw"><i style="background:#ffffff"></i>valge</span>
+        <span class="col-sw"><i style="background:#1a1a1a"></i>must</span>
+        <span class="col-sw">RAL</span>
+      </div>
+      <p class="desc">Välimine nurgaelement ASP80 põrandaliistule — 80 mm kõrgele liistule sobiv proportsionaalne nurk.</p>
+      <div class="url">/tarvikud/asp80-valimine-nurk/</div>
+    </article>
+
+    <article class="card">
+      <div class="imgwrap"><img src="assets/products/asp80-inner.png" alt="ASP80 sisemine nurk"/></div>
+      <div class="sku-row">
+        <div class="sku">ASP80-NS</div>
+        <div class="price">5,50 €<small>+ KM / tk</small></div>
+      </div>
+      <div class="name">Sisemine nurk · 80 mm</div>
+      <div class="tags">
+        <span class="col-sw"><i style="background:#c8c8c8"></i>hõbe</span>
+        <span class="col-sw"><i style="background:#ffffff"></i>valge</span>
+        <span class="col-sw"><i style="background:#1a1a1a"></i>must</span>
+        <span class="col-sw">RAL</span>
+      </div>
+      <p class="desc">Sisemine nurgaelement ASP80 liistule. Klambrid tagaküljel fikseerivad elemendi liistu sisse.</p>
+      <div class="url">/tarvikud/asp80-sisemine-nurk/</div>
+    </article>
+
+    <article class="card">
+      <div class="imgwrap"><img src="assets/products/asp80-endcap.png" alt="ASP80 otsakork"/></div>
+      <div class="sku-row">
+        <div class="sku">ASP80-OK</div>
+        <div class="price">5,50 €<small>+ KM / tk</small></div>
+      </div>
+      <div class="name">Otsakork · 80 mm (V/P)</div>
+      <div class="tags">
+        <span class="col-sw"><i style="background:#c8c8c8"></i>hõbe</span>
+        <span class="col-sw"><i style="background:#ffffff"></i>valge</span>
+        <span class="col-sw"><i style="background:#1a1a1a"></i>must</span>
+        <span class="col-sw">RAL</span>
+      </div>
+      <p class="desc">Lõpetab ASP80 liistu otsa. Saadaval vasak- ja paremkäeline.</p>
+      <div class="url">/tarvikud/asp80-otsakork/</div>
+    </article>
+
+    <article class="card">
+      <div class="imgwrap"><img src="assets/products/asp80-connector.png" alt="ASP80 ühenduselement"/></div>
+      <div class="sku-row">
+        <div class="sku">ASP80-Y</div>
+        <div class="price">5,50 €<small>+ KM / tk</small></div>
+      </div>
+      <div class="name">Ühenduselement · 80 mm</div>
+      <div class="tags">
+        <span class="col-sw"><i style="background:#c8c8c8"></i>hõbe</span>
+        <span class="col-sw"><i style="background:#ffffff"></i>valge</span>
+        <span class="col-sw"><i style="background:#1a1a1a"></i>must</span>
+        <span class="col-sw">RAL</span>
+      </div>
+      <p class="desc">Liidab kaks järjestikust ASP80 liistu pikast otsast. Hoiab vuugi sirgena ja peidab liite.</p>
+      <div class="url">/tarvikud/asp80-uhendus/</div>
+    </article>
+
+  </div>
+
+  <!-- SECTION: ASP100 -->
+  <section class="sec" style="padding-bottom: 0; border-top: none;">
+    <h2>ASP100 · 4 tarvikut</h2>
+    <div class="sub">100 mm laiusele alumiinium-põrandaliistule</div>
+  </section>
+  <div class="grid">
+
+    <article class="card">
+      <div class="imgwrap"><img src="assets/products/asp100-outer.png" alt="ASP100 välimine nurk"/></div>
+      <div class="sku-row">
+        <div class="sku">ASP100-NV</div>
+        <div class="price">5,50 €<small>+ KM / tk</small></div>
+      </div>
+      <div class="name">Välimine nurk · 100 mm</div>
+      <div class="tags">
+        <span class="col-sw"><i style="background:#c8c8c8"></i>hõbe</span>
+        <span class="col-sw"><i style="background:#ffffff"></i>valge</span>
+        <span class="col-sw"><i style="background:#1a1a1a"></i>must</span>
+        <span class="col-sw">RAL</span>
+      </div>
+      <p class="desc">Välimine nurgaelement ASP100 põrandaliistule — meie kõige kõrgemale liistule. Sobib kõrgematesse interjööridesse, kus liist on visuaalselt rohkem rõhuasetatav.</p>
+      <div class="url">/tarvikud/asp100-valimine-nurk/</div>
+    </article>
+
+    <article class="card">
+      <div class="imgwrap"><img src="assets/products/asp100-inner.png" alt="ASP100 sisemine nurk"/></div>
+      <div class="sku-row">
+        <div class="sku">ASP100-NS</div>
+        <div class="price">5,50 €<small>+ KM / tk</small></div>
+      </div>
+      <div class="name">Sisemine nurk · 100 mm</div>
+      <div class="tags">
+        <span class="col-sw"><i style="background:#c8c8c8"></i>hõbe</span>
+        <span class="col-sw"><i style="background:#ffffff"></i>valge</span>
+        <span class="col-sw"><i style="background:#1a1a1a"></i>must</span>
+        <span class="col-sw">RAL</span>
+      </div>
+      <p class="desc">Sisemine nurgaelement ASP100 liistule. Tagaküljel klambrid liistuprofiili fikseerimiseks.</p>
+      <div class="url">/tarvikud/asp100-sisemine-nurk/</div>
+    </article>
+
+    <article class="card">
+      <div class="imgwrap"><img src="assets/products/asp100-endcap.png" alt="ASP100 otsakork"/></div>
+      <div class="sku-row">
+        <div class="sku">ASP100-OK</div>
+        <div class="price">5,50 €<small>+ KM / tk</small></div>
+      </div>
+      <div class="name">Otsakork · 100 mm (V/P)</div>
+      <div class="tags">
+        <span class="col-sw"><i style="background:#c8c8c8"></i>hõbe</span>
+        <span class="col-sw"><i style="background:#ffffff"></i>valge</span>
+        <span class="col-sw"><i style="background:#1a1a1a"></i>must</span>
+        <span class="col-sw">RAL</span>
+      </div>
+      <p class="desc">Lõpetab ASP100 liistu otsa. Saadaval vasak- ja paremkäeline; tellimisel märgi vajalik pool.</p>
+      <div class="url">/tarvikud/asp100-otsakork/</div>
+    </article>
+
+    <article class="card">
+      <div class="imgwrap"><img src="assets/products/asp100-connector.png" alt="ASP100 ühenduselement"/></div>
+      <div class="sku-row">
+        <div class="sku">ASP100-Y</div>
+        <div class="price">5,50 €<small>+ KM / tk</small></div>
+      </div>
+      <div class="name">Ühenduselement · 100 mm</div>
+      <div class="tags">
+        <span class="col-sw"><i style="background:#c8c8c8"></i>hõbe</span>
+        <span class="col-sw"><i style="background:#ffffff"></i>valge</span>
+        <span class="col-sw"><i style="background:#1a1a1a"></i>must</span>
+        <span class="col-sw">RAL</span>
+      </div>
+      <p class="desc">Liidab kaks järjestikust ASP100 liistu pikast otsast. 100 mm laiale liistule kohandatud proportsioonid.</p>
+      <div class="url">/tarvikud/asp100-uhendus/</div>
+    </article>
+
+  </div>
+
+  <!-- SECTION: HAJUTI -->
+  <section class="sec" style="padding-bottom: 0; border-top: none;">
+    <h2>Matt hajuti · LED-tarvik</h2>
+    <div class="sub">Silikoonist hajuti riba LED-valgustusega liistude jaoks · müüakse meetri kaupa</div>
+  </section>
+  <div class="grid diffuser-row">
+    <article class="card" style="display: grid; grid-template-columns: 320px 1fr; gap: 28px; align-items: start;">
+      <div class="imgwrap" style="aspect-ratio: 4 / 3;">
+        <img src="assets/products/diffuser.png" alt="Matt hajuti silikoonriba"/>
+      </div>
+      <div>
+        <div class="sku-row">
+          <div class="sku">HAJUTI</div>
+          <div class="price">1,75 €<small>+ KM / jooksev meeter</small></div>
+        </div>
+        <div class="name">Matt silikoonhajuti LED võimalusega profiilidele</div>
+        <div class="tags">
+          <span class="col-sw">PVC / silikoon</span>
+          <span class="col-sw">painutatav</span>
+          <span class="col-sw">lõigatav</span>
+          <span class="col-sw">matt valge</span>
+        </div>
+        <p class="desc" style="max-width: 640px;">
+          Pehme matt-pinnaga hajuti riba, mis paigaldatakse teatud profiilidele, kus kasutatakse LED-i. <strong>Hajutab LED-täppe ühtlaseks valgusjooneks</strong> ja varjab LED-riba otsesest vaateväljast — paigaldatuna ei näe enam üksikuid LED-tulesid, vaid ainult pehmet hõõguvat joont.
+        </p>
+        <p class="desc" style="max-width: 640px;">
+          Kate on mõeldud ainult teatud profiilidele. Müüakse jooksva meetri kaupa — tellimisel märgi vajalik kogus täpsete meetritena (lõikame vastavalt tellitud pikkusele). Hajuti ei ole alati kaasatud, kuna osad kliendid kasutavad profiile ka ilma LED-ita.
+        </p>
+        <div class="url">/tarvikud/matt-hajuti/</div>
+      </div>
+    </article>
+  </div>
+
+  <!-- FOOTER -->
+  <section class="footer-cta">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.08em; color:rgba(245,242,236,0.6); margin-bottom:8px;">Mida kontrollida</div>
+    <h2>Vaata üle.</h2>
+    <p>
+      17 uut SKU-d valikus — kõik <em>komplektaartooted</em> olemasolevatele ASP-liistudele. Hinnastamine ühtne (5,50 € + KM tk; matt hajuti 1,75 €/jm + KM). Pildid lõikasin välja Sinu saadetud Tilda kuvatõmmistest, värvivalik hõbe/valge/must/RAL on tuletatud Sinu UA-poe valikust.
+    </p>
+    <ul>
+      <li><strong>Uus hub <code>/tarvikud/</code></strong> — soovitan luua eraldi kategoorialeht põhinavigatsioonis. Sobib ka, kui paigutada lehed olemasoleva /alumiinium-porandaliistud/ alla (näit. <code>/alumiinium-porandaliistud/tarvikud/asp40-valimine-nurk/</code>), kuid see teeb URL-id pikaks ja katab vähem otsinguliiklust.</li>
+      <li><strong>Iga ASP-toote leht peaks linkima vastavatele tarvikutele</strong> — "Sarnased tooted" plokis. ASP40 leht → 4 tarvikut + matt hajuti (kui LED-versioon). Sama loogika 60, 80, 100 jaoks.</li>
+      <li><strong>Otsakorgid V/P</strong> — vasak- ja parem versioon olemas, kuid mina ei tea, kas neid müüakse paarina või eraldi. Praegu kirjeldatud kui üks SKU, mille tellimisel saab täpsustada poole. Ütle, kui peaks olema 2 eraldi SKU-d (ASP40-OK-V, ASP40-OK-P).</li>
+      <li><strong>Matt hajuti laovaru ja pikkus</strong> — kas müüakse rull (5 m, 10 m), või igas pikkuses lõikega? Praegu kirjas kui jooksva meetri kaupa lõikega; kohanda kui rullidena.</li>
+      <li><strong>Kui pildid ei klapi</strong> — failid on kataloogis <code>assets/products/</code> nimega <code>asp40-outer.png</code>, <code>asp40-inner.png</code>, <code>asp40-endcap.png</code>, <code>asp40-connector.png</code> (sama muster 60/80/100), <code>diffuser.png</code>. Näitan praegu hõbe-versioone; valge/musta jaoks tuleb teha eraldi fotosessioon või cropida valgest variandist (kasutaja kuvatõmmised ka teised pakuvad nendele).</li>
+    </ul>
+  </section>
+
+</div>
+</body>
+</html>

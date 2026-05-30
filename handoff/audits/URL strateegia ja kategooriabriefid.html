@@ -1,0 +1,1512 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>URL strateegia ja kategooriabriefid · Master-dokument | Varjuprofiilid.ee</title>
+<link rel="stylesheet" href="hifi/style.css"/>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .doc { max-width: 1280px; margin: 0 auto; padding: 0; }
+
+  /* HEADER */
+  .doc-head {
+    padding: 56px 56px 40px;
+    border-bottom: 1.5px solid var(--ink);
+  }
+  .doc-head .vp-eyebrow { margin-bottom: 16px; }
+  .doc-head h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 7vw, 96px);
+    line-height: 0.9;
+    letter-spacing: 0.005em;
+    margin: 0 0 14px;
+  }
+  .doc-head h1 em {
+    font-family: 'Inter', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.42em;
+    letter-spacing: -0.02em;
+  }
+  .doc-head .meta {
+    display: flex; gap: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 24px;
+  }
+  .doc-head .meta b { color: var(--ink); font-weight: 500; }
+
+  /* TOC */
+  .doc-toc {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1.5px solid var(--ink);
+    background: var(--paper-2);
+  }
+  .doc-toc a {
+    padding: 16px 24px;
+    display: flex; gap: 12px;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    font-size: 13px;
+    transition: background .15s;
+  }
+  .doc-toc a:hover { background: var(--paper); }
+  .doc-toc a:nth-child(3n) { border-right: none; }
+  .doc-toc a .n {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--muted);
+    font-size: 11px;
+    min-width: 24px;
+  }
+
+  /* SECTIONS */
+  .sec {
+    padding: 80px 56px;
+    border-bottom: 1.5px solid var(--ink);
+  }
+  .sec-head {
+    display: flex; align-items: baseline; gap: 32px;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    padding-bottom: 24px;
+    margin-bottom: 48px;
+  }
+  .sec-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    min-width: 60px;
+  }
+  .sec h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 0.95;
+    margin: 0;
+    flex: 1;
+  }
+  .sec-lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    max-width: 720px;
+    margin-bottom: 36px;
+  }
+
+  /* REDIRECT TABLE */
+  .rdtable {
+    border: 1.5px solid var(--ink);
+    margin: 24px 0;
+    overflow: hidden;
+    font-size: 13px;
+  }
+  .rdtable-head, .rdtable-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 80px 100px;
+  }
+  .rdtable-head > div {
+    padding: 14px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--ink);
+    color: var(--paper);
+    border-right: 1px solid var(--paper);
+  }
+  .rdtable-head > div:last-child { border-right: none; }
+  .rdtable-row {
+    border-top: 1px solid rgba(0,0,0,0.12);
+  }
+  .rdtable-row > div {
+    padding: 12px 16px;
+    border-right: 1px solid rgba(0,0,0,0.12);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    word-break: break-all;
+    display: flex; align-items: center;
+  }
+  .rdtable-row > div:last-child { border-right: none; }
+  .rdtable-row .from { color: var(--muted); }
+  .rdtable-row .to { color: var(--ink); font-weight: 500; }
+  .rdtable-row .code {
+    background: #d3f4e0;
+    color: #0a4a23;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    display: inline-block;
+    width: fit-content;
+  }
+  .rdtable-row .code.new {
+    background: #fff4cd;
+    color: #5a3a00;
+  }
+  .rdtable-row .status {
+    font-size: 10px;
+    color: var(--muted);
+  }
+  .rdtable-section {
+    grid-column: 1 / -1;
+    padding: 18px 16px 10px !important;
+    background: var(--paper-2);
+    font-family: 'Bebas Neue', sans-serif !important;
+    font-size: 16px !important;
+    letter-spacing: 0.04em;
+    color: var(--ink) !important;
+  }
+
+  /* BRIEF CARDS */
+  .brief {
+    border: 1.5px solid var(--ink);
+    margin: 32px 0;
+  }
+  .brief-head {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 20px 28px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 28px;
+    align-items: baseline;
+  }
+  .brief-head .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: rgba(245,242,236,0.6);
+  }
+  .brief-head .url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+  .brief-head .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid rgba(245,242,236,0.4);
+    color: rgba(245,242,236,0.8);
+  }
+  .brief-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .brief-body > div {
+    padding: 28px;
+  }
+  .brief-body > div + div {
+    border-left: 1px solid rgba(0,0,0,0.12);
+  }
+  .brief-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+    margin-top: 18px;
+  }
+  .brief-label:first-child { margin-top: 0; }
+  .brief-body h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    line-height: 1.1;
+    margin: 0 0 6px;
+    letter-spacing: 0.005em;
+  }
+  .brief-body p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    margin: 0;
+  }
+  .brief-body .h1text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    line-height: 1.1;
+    color: var(--ink);
+    margin: 0 0 10px;
+  }
+  .brief-body ul {
+    margin: 6px 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .brief-body ul li {
+    padding-left: 18px;
+    position: relative;
+    color: var(--ink-2);
+  }
+  .brief-body ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+  .brief-body .kw {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-top: 4px;
+  }
+  .brief-body .kw span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 3px 8px;
+    background: var(--paper-2);
+    border: 1px solid rgba(0,0,0,0.12);
+  }
+  .brief-body .kw span.primary {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  .brief-body .skus {
+    display: flex; flex-wrap: wrap; gap: 4px;
+    margin-top: 4px;
+  }
+  .brief-body .skus code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 3px 6px;
+    background: var(--paper);
+    border: 1px solid var(--ink);
+  }
+  .brief-body .skus code.dec {
+    background: transparent;
+    border-color: rgba(0,0,0,0.3);
+    color: var(--muted);
+  }
+  .brief-body code.inline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    padding: 1px 5px;
+    background: var(--paper-2);
+    border: 1px solid rgba(0,0,0,0.1);
+    color: var(--accent);
+  }
+
+  /* TWO COL */
+  .twocol {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin: 24px 0;
+  }
+  .twocol > div {
+    border: 1.5px solid var(--ink);
+    padding: 28px;
+  }
+  .twocol h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    margin: 0 0 12px;
+  }
+  .twocol p { font-size: 14px; line-height: 1.6; color: var(--ink-2); margin: 0 0 12px; }
+
+  /* CHECKLIST */
+  .checklist {
+    margin: 24px 0;
+  }
+  .checklist-item {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 20px;
+    padding: 18px 0;
+    border-top: 1px solid rgba(0,0,0,0.12);
+  }
+  .checklist-item:last-child { border-bottom: 1px solid rgba(0,0,0,0.12); }
+  .checklist .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .checklist h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    margin: 0 0 6px;
+    letter-spacing: 0.005em;
+  }
+  .checklist p { font-size: 13px; line-height: 1.6; color: var(--ink-2); margin: 0; }
+  .checklist code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: var(--paper-2);
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 1px 6px;
+  }
+
+  /* LINK MATRIX */
+  .matrix-tbl {
+    border: 1.5px solid var(--ink);
+    margin: 24px 0;
+    font-size: 12px;
+    overflow: auto;
+  }
+  .matrix-tbl table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .matrix-tbl th, .matrix-tbl td {
+    padding: 10px 12px;
+    border-right: 1px solid rgba(0,0,0,0.12);
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    text-align: left;
+    font-size: 11px;
+  }
+  .matrix-tbl th {
+    background: var(--ink);
+    color: var(--paper);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+  .matrix-tbl td.dot { text-align: center; }
+  .matrix-tbl .yes { color: #0a7a3b; font-weight: 700; }
+  .matrix-tbl .row-label { background: var(--paper-2); font-weight: 500; }
+
+  /* PULL */
+  .pull {
+    border-left: 4px solid var(--accent);
+    padding: 18px 0 18px 24px;
+    margin: 24px 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    line-height: 1.15;
+    max-width: 720px;
+  }
+
+  @media (max-width: 900px) {
+    .doc-head, .sec { padding-left: 24px; padding-right: 24px; }
+    .doc-toc { grid-template-columns: 1fr; }
+    .brief-body, .twocol { grid-template-columns: 1fr; }
+    .brief-body > div + div { border-left: none; border-top: 1px solid rgba(0,0,0,0.12); }
+    .rdtable-head, .rdtable-row { grid-template-columns: 1fr; }
+    .rdtable-row > div { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .brief-head { grid-template-columns: 1fr; gap: 8px; }
+  }
+</style>
+</head>
+
+<body class="vp">
+
+<div class="doc">
+
+  <!-- HEADER -->
+  <header class="doc-head">
+    <div class="vp-eyebrow">Master-dokument · Versioon 1.0 · 27. mai 2026</div>
+    <h1>URL strateegia<br/>+ kategooria<br/>briefid.<br/><em>single source of truth.</em></h1>
+    <p style="font-size: 17px; line-height: 1.6; color: var(--ink-2); max-width: 720px; margin: 18px 0 0;">
+      See dokument on kogu Sinu SEO-restruktureerimise spetsifikatsioon enne Claude Code'i siirdumist. Sisaldab täielikku URL-redirect-tabelit, kõikide kategoorialehtede sisubriefe, toote-malli ja tehnilist checklist'i. Iga arendaja peaks suutma selle dokumendi põhjal arenduse läbi viia.
+    </p>
+    <div class="meta">
+      <span><b>10</b> · kategoorialehte</span>
+      <span><b>40+</b> · toodet</span>
+      <span><b>2</b> · sammast (LED / dekoratiivne)</span>
+      <span><b>1</b> · cornerstone</span>
+    </div>
+  </header>
+
+  <!-- TOC -->
+  <nav class="doc-toc">
+    <a href="#strateegia"><span class="n">01</span><span>Strateegia kokkuvõte</span></a>
+    <a href="#redirects"><span class="n">02</span><span>URL redirect-tabel</span></a>
+    <a href="#avaleht"><span class="n">03</span><span>Avalehe brief</span></a>
+    <a href="#hub-led"><span class="n">04</span><span>HUB 1 · LED varjuprofiilid</span></a>
+    <a href="#hub-dek"><span class="n">05</span><span>HUB 2 · Varjuprofiilid (dekor.)</span></a>
+    <a href="#kategooriad"><span class="n">06</span><span>10 kategoorialehe brief</span></a>
+    <a href="#tooteleht"><span class="n">07</span><span>Toote-malli definitsioon</span></a>
+    <a href="#linkimine"><span class="n">08</span><span>Sisemise linkimise maatriks</span></a>
+    <a href="#tehniline"><span class="n">09</span><span>Tehniline checklist</span></a>
+  </nav>
+
+  <!-- 01 — STRATEEGIA -->
+  <section class="sec" id="strateegia">
+    <div class="sec-head"><div class="sec-num">01 / Kokkuvõte</div><h2>Strateegia kokkuvõte</h2></div>
+    <p class="sec-lede">Kogu restruktureerimise eesmärk on kaks asja: <strong>kinnistada termin "varjuprofiil"</strong> Sinu brändisõnaks ning <strong>püüda olemasoleva otsingumahu</strong> ("LED laeprofiil", "LED põrandaprofiil", "süvisprofiil"). Kahesammas-arhitektuur teenib mõlemad eesmärgid samaaegselt.</p>
+
+    <div class="twocol">
+      <div>
+        <h3>Sammas 1 · LED-iga</h3>
+        <p style="font-size: 11px; font-family: 'JetBrains Mono', monospace; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px;">/led-varjuprofiilid/</p>
+        <p>Püüdab transaktsioonilist otsingumahu — kasutajad, kes guuglavad <em>"LED laeprofiil"</em>, <em>"LED põrandaprofiil"</em>, <em>"LED süvisprofiil"</em>. Iga leht järgib mustrit: H1-s on nii varjuprofiil kui ka tuntud sünonüüm.</p>
+        <div class="kw" style="margin-top: 12px;">
+          <span class="primary">LED varjuprofiil</span>
+          <span>LED laeprofiil</span>
+          <span>LED põrandaprofiil</span>
+          <span>LED süvisprofiil</span>
+        </div>
+      </div>
+      <div>
+        <h3>Sammas 2 · Dekoratiivne</h3>
+        <p style="font-size: 11px; font-family: 'JetBrains Mono', monospace; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px;">/varjuprofiilid/</p>
+        <p>Püüdab arhitektuurset otsingumahu — kasutajad, kes guuglavad <em>"shadow gap"</em>, <em>"süvisliist"</em>, <em>"varjuliist lakke"</em>, <em>"laeliist"</em>. AST5/8/10/20, LPA909, ASP116/117 saavad õige kategoria — ilma "LED" sildita, mida nad pole.</p>
+        <div class="kw" style="margin-top: 12px;">
+          <span class="primary">varjuprofiil</span>
+          <span>shadow gap</span>
+          <span>süvisliist</span>
+          <span>varjuliist</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pull">
+      "Kõik LED profiilid on varjuprofiilid, kuid kõik varjuprofiilid ei ole LED profiilid."
+    </div>
+
+    <p style="font-size: 15px; line-height: 1.6; color: var(--ink-2); max-width: 720px;">Eraldi kategooria <code class="inline" style="background: var(--paper-2); border: 1px solid rgba(0,0,0,0.1); padding: 1px 5px; font-family: 'JetBrains Mono', monospace; font-size: 13px;">/alumiinium-porandaliistud/</code> püsib oma sammbas — need pole varjuprofiilid, vaid moodsad asendused traditsioonilistele põrandaliistudele. Erinev otsing, erinev kategooria.</p>
+  </section>
+
+  <!-- 02 — REDIRECTS -->
+  <section class="sec" id="redirects">
+    <div class="sec-head"><div class="sec-num">02 / Redirects</div><h2>URL ümbersuunamiste tabel</h2></div>
+    <p class="sec-lede">Kõik praegused URL-id ja nende uus sihtmärk. Iga rida tuleb <strong>arenduses 301-redirectina</strong> implementeerida. Ilma korraliku 301-tabelita kaotad SEO-väärtuse, mida olemasolevad URL-id juba Google'is omavad.</p>
+
+    <div class="rdtable">
+      <div class="rdtable-head">
+        <div>Praegune URL</div>
+        <div>Uus URL</div>
+        <div>Kood</div>
+        <div>Märkmed</div>
+      </div>
+
+      <div class="rdtable-row"><div class="rdtable-section">Põhilehed</div></div>
+
+      <div class="rdtable-row">
+        <div class="from">/</div>
+        <div class="to">/</div>
+        <div><span class="code">200</span></div>
+        <div class="status">säilib · sisu uueneb</div>
+      </div>
+      <div class="rdtable-row">
+        <div class="from">/tooted</div>
+        <div class="to">/tooted/</div>
+        <div><span class="code">200</span></div>
+        <div class="status">säilib · trailing slash</div>
+      </div>
+      <div class="rdtable-row">
+        <div class="from">—</div>
+        <div class="to">/mis-on-varjuprofiil/</div>
+        <div><span class="code new">UUS</span></div>
+        <div class="status">cornerstone leht</div>
+      </div>
+      <div class="rdtable-row">
+        <div class="from">—</div>
+        <div class="to">/led-varjuprofiilid/</div>
+        <div><span class="code new">UUS</span></div>
+        <div class="status">HUB 1</div>
+      </div>
+      <div class="rdtable-row">
+        <div class="from">—</div>
+        <div class="to">/varjuprofiilid/</div>
+        <div><span class="code new">UUS</span></div>
+        <div class="status">HUB 2</div>
+      </div>
+
+      <div class="rdtable-row"><div class="rdtable-section">Kategoorialehed</div></div>
+
+      <div class="rdtable-row">
+        <div class="from">/lae-led-varjuprofiilid</div>
+        <div class="to">/led-varjuprofiilid/lae/</div>
+        <div><span class="code">301</span></div>
+        <div class="status">primary</div>
+      </div>
+      <div class="rdtable-row">
+        <div class="from">/kesklae-led-varjuprofiilid</div>
+        <div class="to">/led-varjuprofiilid/kesklae/</div>
+        <div><span class="code">301</span></div>
+        <div class="status">primary</div>
+      </div>
+      <div class="rdtable-row">
+        <div class="from">/poranda-led-varjuprofiilid</div>
+        <div class="to">/led-varjuprofiilid/poranda/</div>
+        <div><span class="code">301</span></div>
+        <div class="status">primary</div>
+      </div>
+      <div class="rdtable-row">
+        <div class="from">/seina-varjuprofiilid</div>
+        <div class="to">/led-varjuprofiilid/seina/</div>
+        <div><span class="code">301</span></div>
+        <div class="status">seina peiteprofiilid · LED</div>
+      </div>
+      <div class="rdtable-row">
+        <div class="from">/lae-varjuprofiilid</div>
+        <div class="to">/varjuprofiilid/lae/</div>
+        <div><span class="code">301</span></div>
+        <div class="status">dekoratiivsed (AST5/8/10/20)</div>
+      </div>
+      <div class="rdtable-row">
+        <div class="from">/poranda-alumiiniumist-varjuprofiilid</div>
+        <div class="to">/varjuprofiilid/poranda/</div>
+        <div><span class="code">301</span></div>
+        <div class="status">dekoratiivsed (ASP112/116/117/168)</div>
+      </div>
+      <div class="rdtable-row">
+        <div class="from">—</div>
+        <div class="to">/varjuprofiilid/seina/</div>
+        <div><span class="code new">UUS</span></div>
+        <div class="status">LPA909 jt dekoratiivsed</div>
+      </div>
+      <div class="rdtable-row">
+        <div class="from">/alumiinium-porandaliistud</div>
+        <div class="to">/alumiinium-porandaliistud/</div>
+        <div><span class="code">200</span></div>
+        <div class="status">säilib · sisu uueneb</div>
+      </div>
+
+      <div class="rdtable-row"><div class="rdtable-section">Tooted (slug-näited)</div></div>
+
+      <div class="rdtable-row">
+        <div class="from">/product-page/universaalne-lae-led-varjuprofiil</div>
+        <div class="to">/led-varjuprofiilid/lae/ast50/</div>
+        <div><span class="code">301</span></div>
+        <div class="status">SKU-põhine slug</div>
+      </div>
+      <div class="rdtable-row">
+        <div class="from">/product-page/põranda-led-varjuprofiil-30mm</div>
+        <div class="to">/led-varjuprofiilid/poranda/aspl130/</div>
+        <div><span class="code">301</span></div>
+        <div class="status">SKU-põhine slug</div>
+      </div>
+      <div class="rdtable-row">
+        <div class="from">/product-page/asp102</div>
+        <div class="to">/led-varjuprofiilid/poranda/asp102/</div>
+        <div><span class="code">301</span></div>
+        <div class="status">SKU-põhine slug</div>
+      </div>
+      <div class="rdtable-row">
+        <div class="from">/product-page/alumiinium-põrandaliist-mini-6-6mm</div>
+        <div class="to">/alumiinium-porandaliistud/mpa-6-6/</div>
+        <div><span class="code">301</span></div>
+        <div class="status">SKU-põhine slug</div>
+      </div>
+
+      <div class="rdtable-row">
+        <div class="rdtable-section">Kõik teised /product-page/* URL-id → vastav kategooria/sku struktuur (täielik tabel kogutakse arenduse käigus admin-eksportist)</div>
+      </div>
+    </div>
+
+    <p style="font-size: 13px; color: var(--muted); margin-top: 16px; font-family: 'JetBrains Mono', monospace; line-height: 1.5;">MÄRKUS · Toote URL-i muster on alati <code class="inline">/[kategooria]/[asukoht]/[sku-väiketähtedes]/</code>. SKU sisaldab tüüpiliselt tähti ja numbreid (nt <code class="inline">ast50</code>, <code class="inline">aspl130</code>). Alakriipsude asemel kasutage sidekriipsu (<code class="inline">ast14-12</code>, mitte <code class="inline">ast14_12</code>).</p>
+  </section>
+
+  <!-- 03 — AVALEHE BRIEF -->
+  <section class="sec" id="avaleht">
+    <div class="sec-head"><div class="sec-num">03 / Avaleht</div><h2>Avalehe SEO-brief</h2></div>
+    <p class="sec-lede">Avalehel on uus topic-eesmärk: kinnitada termin "varjuprofiilid" ülemkategoorina ja viia kasutaja kiiresti õigesse sambasse (LED või dekoratiivne).</p>
+
+    <div class="brief">
+      <div class="brief-head">
+        <div class="num">03.1</div>
+        <div class="url">varjuprofiilid.ee/</div>
+        <div class="tag">Avaleht · Brand hub</div>
+      </div>
+      <div class="brief-body">
+        <div>
+          <div class="brief-label">Title-tag</div>
+          <p class="h1text">Varjuprofiilid – LED ja dekoratiivsed alumiiniumprofiilid | Eesti</p>
+
+          <div class="brief-label">Meta-description</div>
+          <p>Varjuprofiilid.ee on Eesti suurim valik alumiinium varjuprofiile – LED ja dekoratiivsed mudelid laele, seinale ja põrandale. Inglise k. shadow gap profiles. Tasuta konsultatsioon.</p>
+
+          <div class="brief-label">H1</div>
+          <p class="h1text">Varjuprofiilid – alumiiniumprofiilid LED-iga ja ilma</p>
+
+          <div class="brief-label">H2 hierarhia</div>
+          <ul>
+            <li>Mis on varjuprofiil?</li>
+            <li>LED varjuprofiilid · valgustusega</li>
+            <li>Dekoratiivsed varjuprofiilid · arhitektuurseks detailiks</li>
+            <li>Kuhu varjuprofiile paigaldatakse</li>
+            <li>Miks valida alumiinium varjuprofiil</li>
+            <li>Kuidas tellida</li>
+            <li>Tasuta konsultatsioon</li>
+          </ul>
+        </div>
+        <div>
+          <div class="brief-label">Sissejuhatav lõik (~120 sõna)</div>
+          <p>Varjuprofiilid (inglise k. shadow gap profiles) on alumiiniumprofiilid, mis loovad kahe pinna vahele tahtliku eraldusjoone — varju. Need on tuntud ka kui <em>LED laeprofiilid</em>, <em>LED põrandaprofiilid</em> või <em>süvisprofiilid</em>. Varjuprofiilid.ee pakub Eesti suurimat valikut alumiinium varjuprofiile nii LED-valmidusega kui ka puhtalt dekoratiivseid mudeleid. Aitame Sul valida õige profiili lae-, seina- või põrandapinna jaoks ning pakume tasuta konsultatsiooni iga projekti juures.</p>
+
+          <div class="brief-label">Märksõnad (primary · secondary)</div>
+          <div class="kw">
+            <span class="primary">varjuprofiilid</span>
+            <span class="primary">LED varjuprofiilid</span>
+            <span>shadow gap</span>
+            <span>alumiinium profiilid</span>
+            <span>LED laeprofiilid</span>
+            <span>süvisprofiil</span>
+          </div>
+
+          <div class="brief-label">CTA</div>
+          <ul>
+            <li>Sirvi tooteid → /tooted/</li>
+            <li>Loe lähemalt → /mis-on-varjuprofiil/</li>
+            <li>Tasuta konsultatsioon → /kontakt/</li>
+          </ul>
+
+          <div class="brief-label">Schema</div>
+          <ul>
+            <li>Organization + WebSite + SearchAction</li>
+            <li>BreadcrumbList</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 — HUB 1 -->
+  <section class="sec" id="hub-led">
+    <div class="sec-head"><div class="sec-num">04 / HUB 1</div><h2>LED varjuprofiilid · hub</h2></div>
+    <p class="sec-lede">Sambapealne hub-leht kõikidele LED-valmidusega profiilidele. Tema roll on otsijaid suunata õigesse alamkategooriasse (lae / kesklae / sein / põrand) ning kinnitada terminite ekvivalentsus ("LED varjuprofiil = LED laeprofiil = LED põrandaprofiil").</p>
+
+    <div class="brief">
+      <div class="brief-head">
+        <div class="num">04.1</div>
+        <div class="url">/led-varjuprofiilid/</div>
+        <div class="tag">Hub · LED-sammas</div>
+      </div>
+      <div class="brief-body">
+        <div>
+          <div class="brief-label">Title-tag</div>
+          <p class="h1text">LED varjuprofiilid – LED laeprofiilid ja LED põrandaprofiilid | Varjuprofiilid.ee</p>
+
+          <div class="brief-label">H1</div>
+          <p class="h1text">LED varjuprofiilid – LED riba paigalduseks alumiiniumprofiilid</p>
+
+          <div class="brief-label">H2 hierarhia</div>
+          <ul>
+            <li>Mis on LED varjuprofiil?</li>
+            <li>LED varjuprofiilide tüübid asukoha järgi</li>
+            <li>Lae LED varjuprofiilid · → /lae/</li>
+            <li>Kesklae LED varjuprofiilid · → /kesklae/</li>
+            <li>Seina LED varjuprofiilid · → /seina/</li>
+            <li>Põranda LED varjuprofiilid · → /poranda/</li>
+            <li>Kuidas valida LED varjuprofiili</li>
+            <li>LED riba ja hajuti</li>
+            <li>KKK · LED varjuprofiilide kohta</li>
+          </ul>
+
+          <div class="brief-label">Märksõnad</div>
+          <div class="kw">
+            <span class="primary">LED varjuprofiilid</span>
+            <span class="primary">LED profiilid</span>
+            <span>LED laeprofiil</span>
+            <span>LED põrandaprofiil</span>
+            <span>LED süvisprofiil</span>
+          </div>
+        </div>
+        <div>
+          <div class="brief-label">Sissejuhatav lõik (~140 sõna)</div>
+          <p>LED varjuprofiilid on alumiiniumprofiilid, mille soonde paigaldatakse LED-riba — nii saad ühe lahendusega <strong>tahtliku varjujoone</strong> ja <strong>integreeritud valgustuse</strong>. Eesti turul tuntakse neid ka kui <em>LED laeprofiile</em>, <em>LED põrandaprofiile</em> või <em>LED süvisprofiile</em>. LED varjuprofiile kasutatakse köögitööpinna alla, voodi taha, lae perimeetrisse, magamistuppa, vannitubades, ärihoonetesse — kõikjale, kus on vaja peidetud, hajutatud valgust koos kaasaegse arhitektuurse detailiga.</p>
+
+          <div class="brief-label">Sisemine linkimine (vajalik)</div>
+          <ul>
+            <li>→ 4 alamkategooriat (lae, kesklae, sein, põrand)</li>
+            <li>→ /varjuprofiilid/ (dekoratiivne sammas)</li>
+            <li>→ /mis-on-varjuprofiil/ (cornerstone)</li>
+            <li>→ /alumiinium-porandaliistud/ (seotud kategooria)</li>
+          </ul>
+
+          <div class="brief-label">KKK küsimused</div>
+          <ul>
+            <li>Mis vahe on LED varjuprofiilil ja tavalisel LED profiilil?</li>
+            <li>Millise LED-riba valida?</li>
+            <li>Kas LED varjuprofiilid sobivad niiskesse ruumi?</li>
+            <li>Kuidas paigaldada LED-riba varjuprofiili?</li>
+            <li>Milline värvitemperatuur valida?</li>
+          </ul>
+
+          <div class="brief-label">Sõnu kokku</div>
+          <p>800–1200 sõna</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 — HUB 2 -->
+  <section class="sec" id="hub-dek">
+    <div class="sec-head"><div class="sec-num">05 / HUB 2</div><h2>Dekoratiivsed varjuprofiilid · hub</h2></div>
+    <p class="sec-lede">Sammas dekoratiivsetele profiilidele — ilma LED-ita. Optimeeritud "shadow gap", "süvisliist", "varjuliist" otsingute jaoks. Kriitiline, et copy ei räägi LED-ist (selge intent-eraldus).</p>
+
+    <div class="brief">
+      <div class="brief-head">
+        <div class="num">05.1</div>
+        <div class="url">/varjuprofiilid/</div>
+        <div class="tag">Hub · Dekoratiivne sammas</div>
+      </div>
+      <div class="brief-body">
+        <div>
+          <div class="brief-label">Title-tag</div>
+          <p class="h1text">Varjuprofiilid – alumiinium shadow gap profiilid laele, seinale, põrandale | Varjuprofiilid.ee</p>
+
+          <div class="brief-label">H1</div>
+          <p class="h1text">Varjuprofiilid – arhitektuurne shadow gap alumiiniumist</p>
+
+          <div class="brief-label">H2 hierarhia</div>
+          <ul>
+            <li>Mis on varjuprofiil?</li>
+            <li>Dekoratiivsed varjuprofiilid asukoha järgi</li>
+            <li>Lae varjuprofiilid · → /lae/</li>
+            <li>Seina varjuprofiilid · → /seina/</li>
+            <li>Põranda varjuprofiilid · → /poranda/</li>
+            <li>Varjuprofiil vs LED varjuprofiil – kumb valida?</li>
+            <li>Varjuprofiili sügavused (5 / 8 / 10 / 20mm)</li>
+            <li>KKK · Dekoratiivsete varjuprofiilide kohta</li>
+          </ul>
+
+          <div class="brief-label">Märksõnad</div>
+          <div class="kw">
+            <span class="primary">varjuprofiilid</span>
+            <span class="primary">shadow gap</span>
+            <span>süvisliist</span>
+            <span>varjuliist</span>
+            <span>alumiinium laeliist</span>
+          </div>
+        </div>
+        <div>
+          <div class="brief-label">Sissejuhatav lõik (~140 sõna)</div>
+          <p>Varjuprofiilid (inglise k. shadow gap profiles) on alumiiniumprofiilid, mis loovad kahe pinna vahele tahtliku, ühtlase varjujoone — ilma valgustuseta. Need on puhtalt arhitektuursed detailid, mis asendavad traditsioonilised katteliistud kaasaegse, sirgejooneliste viimistlusega. Dekoratiivseid varjuprofiile kasutatakse seal, kus eesmärk on visuaalne eraldus, mitte valgustus: lae ja seina kohtumiskohas, seina ja põranda üleminekuna, seinasiseste pindade peitmiseks. Pinnaviimistlus on anodeeritud või pulbervärvitud mistahes RAL-toonis.</p>
+
+          <div class="brief-label">Sisemine linkimine</div>
+          <ul>
+            <li>→ 3 alamkategooriat (lae, sein, põrand)</li>
+            <li>→ /led-varjuprofiilid/ (LED-sammas)</li>
+            <li>→ /mis-on-varjuprofiil/ (cornerstone)</li>
+          </ul>
+
+          <div class="brief-label">Sõnu kokku</div>
+          <p>700–1000 sõna</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 — KATEGOORIAD -->
+  <section class="sec" id="kategooriad">
+    <div class="sec-head"><div class="sec-num">06 / Kategooriad</div><h2>10 kategoorialehe sisubrief</h2></div>
+    <p class="sec-lede">Iga alamkategooria briefiga — title, H1, H2-hierarhia, märksõnad, SKU-d ja sisukava põhipunktid. Kõik järgivad kolmekihilist vormelit: kinnitus → sild → korda.</p>
+
+    <!-- LED LAE -->
+    <div class="brief">
+      <div class="brief-head">
+        <div class="num">06.1</div>
+        <div class="url">/led-varjuprofiilid/lae/</div>
+        <div class="tag">LED · Lagi</div>
+      </div>
+      <div class="brief-body">
+        <div>
+          <div class="brief-label">Title</div>
+          <p class="h1text">Lae LED varjuprofiilid – LED laeprofiilid alumiiniumist | Varjuprofiilid.ee</p>
+          <div class="brief-label">H1</div>
+          <p class="h1text">Lae LED varjuprofiilid – LED laeprofiilid alumiiniumist</p>
+          <div class="brief-label">H2-d</div>
+          <ul>
+            <li>Mis on lae LED varjuprofiil?</li>
+            <li>Lae LED varjuprofiili tüübid</li>
+            <li>Süvisprofiilid (kipsplaadi sisse)</li>
+            <li>Pinnale paigaldatavad</li>
+            <li>Universaalsed mudelid</li>
+            <li>Kuidas valida õige lae LED varjuprofiil?</li>
+            <li>LED-riba paigaldamine varjuprofiili</li>
+            <li>KKK</li>
+            <li>Seotud tooted (lae varjuprofiilid · kesklae · seina LED)</li>
+          </ul>
+          <div class="brief-label">Märksõnad</div>
+          <div class="kw">
+            <span class="primary">LED laeprofiilid</span>
+            <span class="primary">Lae LED varjuprofiilid</span>
+            <span>LED süvisprofiil</span>
+            <span>lae LED profiil</span>
+          </div>
+        </div>
+        <div>
+          <div class="brief-label">Sissejuhatus (~110 sõna)</div>
+          <p>Lae LED varjuprofiilid (tuntud ka kui <em>LED laeprofiilid</em> või <em>LED süvisprofiilid</em>) on alumiiniumprofiilid, mis paigaldatakse lae ja seina ühenduskohta. Profiili soonde paigaldatakse LED-riba, mis loob nii tahtliku varjujoone kui ka pehme perimeetrivalgustuse. Lae LED varjuprofiile kasutatakse moodsates eluruumides, hotellides, kontorites — kõikjal, kus on vaja "hõljuva lae" efekti ja peidetud valgustust.</p>
+
+          <div class="brief-label">Tooted (SKU-d)</div>
+          <div class="skus">
+            <code>LHV10</code><code>RST14</code><code>AST201</code><code>AST50</code><code>AST35</code><code>AST30</code><code>AST22</code><code>AST14-12</code><code>RST25</code><code>AST12</code><code>RST22</code><code>RST40</code>
+          </div>
+
+          <div class="brief-label">KKK</div>
+          <ul>
+            <li>Mis vahe on süvis- ja pinnaprofiilil?</li>
+            <li>Kui pikk LED laeprofiil tellida?</li>
+            <li>Kas LED laeprofiil sobib niiskesse ruumi?</li>
+            <li>Millise võimsusega LED-riba valida?</li>
+          </ul>
+
+          <div class="brief-label">Sõnu kokku</div>
+          <p>600–900 sõna</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LED KESKLAE -->
+    <div class="brief">
+      <div class="brief-head">
+        <div class="num">06.2</div>
+        <div class="url">/led-varjuprofiilid/kesklae/</div>
+        <div class="tag">LED · Kesklagi</div>
+      </div>
+      <div class="brief-body">
+        <div>
+          <div class="brief-label">Title</div>
+          <p class="h1text">Kesklae LED varjuprofiilid – dekoratiivne LED-joon laes | Varjuprofiilid.ee</p>
+          <div class="brief-label">H1</div>
+          <p class="h1text">Kesklae LED varjuprofiilid – graafiline LED-detail laes</p>
+          <div class="brief-label">H2-d</div>
+          <ul>
+            <li>Mis on kesklae LED varjuprofiil?</li>
+            <li>Kuhu kesklae varjuprofiili kasutada</li>
+            <li>Paigutuse kujundid (joon · ring · ruut)</li>
+            <li>Tehnilised tingimused</li>
+            <li>KKK</li>
+          </ul>
+          <div class="brief-label">Märksõnad</div>
+          <div class="kw">
+            <span class="primary">Kesklae LED varjuprofiilid</span>
+            <span>LED-joon laes</span>
+            <span>dekoratiivne LED lakke</span>
+          </div>
+        </div>
+        <div>
+          <div class="brief-label">Sissejuhatus (~100 sõna)</div>
+          <p>Kesklae LED varjuprofiilid paigaldatakse lae keskele dekoratiivse elemendina — eraldi joonena, ringina või muu kujundina. Erinevalt lae perimeetri-profiilidest defineerivad need ruumi <strong>graafilise valgusjoonena</strong>, sageli kõige nähtavama valguselemendina ruumis. Sobib eriti hästi avatud planeeringutega kodudesse, restoranidesse, esindusruumidesse.</p>
+
+          <div class="brief-label">Tooted</div>
+          <div class="skus"><code>(eraldi kesklae kategooria SKU-d)</code></div>
+
+          <div class="brief-label">Sõnu kokku</div>
+          <p>500–700 sõna</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LED SEINA -->
+    <div class="brief">
+      <div class="brief-head">
+        <div class="num">06.3</div>
+        <div class="url">/led-varjuprofiilid/seina/</div>
+        <div class="tag">LED · Sein</div>
+      </div>
+      <div class="brief-body">
+        <div>
+          <div class="brief-label">Title</div>
+          <p class="h1text">Seina LED varjuprofiilid – seina peiteprofiilid LED-iga | Varjuprofiilid.ee</p>
+          <div class="brief-label">H1</div>
+          <p class="h1text">Seina LED varjuprofiilid – peiteprofiilid LED valgustusega</p>
+          <div class="brief-label">H2-d</div>
+          <ul>
+            <li>Mis on seina LED varjuprofiil?</li>
+            <li>Seina peiteprofiilide tüübid</li>
+            <li>Vertikaalne LED-joon seinas</li>
+            <li>Akende ja uste raamiprofiilid</li>
+            <li>KKK</li>
+            <li>Seotud · seina dekoratiivsed varjuprofiilid</li>
+          </ul>
+          <div class="brief-label">Märksõnad</div>
+          <div class="kw">
+            <span class="primary">Seina LED varjuprofiilid</span>
+            <span class="primary">LED seinaprofiilid</span>
+            <span>seina peiteprofiil</span>
+          </div>
+        </div>
+        <div>
+          <div class="brief-label">Sissejuhatus (~110 sõna)</div>
+          <p>Seina LED varjuprofiilid (ka <em>LED seinaprofiilid</em> või <em>seina peiteprofiilid</em>) paigaldatakse seinasiseste pindade üleminekutesse — kahe seinakihi vahele, akna või ukse raami ümber, või dekoratiivse vertikaalse LED-joonena. Loovad ambient-valguse ning peidavad ehituslikud üleminekud kaasaegseks disainidetailiks.</p>
+          <div class="brief-label">Tooted</div>
+          <div class="skus">
+            <code>ASP610</code><code>ASPL100</code><code>ASPL60</code><code>ASPL35</code><code>ASP410</code><code>ASP106</code>
+          </div>
+          <div class="brief-label">Sõnu kokku</div>
+          <p>500–800 sõna</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LED PÕRANDA -->
+    <div class="brief">
+      <div class="brief-head">
+        <div class="num">06.4</div>
+        <div class="url">/led-varjuprofiilid/poranda/</div>
+        <div class="tag">LED · Põrand</div>
+      </div>
+      <div class="brief-body">
+        <div>
+          <div class="brief-label">Title</div>
+          <p class="h1text">Põranda LED varjuprofiilid – LED põrandaprofiilid alumiiniumist | Varjuprofiilid.ee</p>
+          <div class="brief-label">H1</div>
+          <p class="h1text">Põranda LED varjuprofiilid – LED põrandaprofiilid alumiiniumist</p>
+          <div class="brief-label">H2-d</div>
+          <ul>
+            <li>Mis on põranda LED varjuprofiil?</li>
+            <li>Erinevus alumiinium põrandaliistust</li>
+            <li>Süvis- ja pinnaprofiilid</li>
+            <li>Pehme peitevalgustus põranda perimeetril</li>
+            <li>Paigaldus ja LED-riba valik</li>
+            <li>KKK</li>
+            <li>Seotud · alumiinium põrandaliistud · põranda varjuprofiilid</li>
+          </ul>
+          <div class="brief-label">Märksõnad</div>
+          <div class="kw">
+            <span class="primary">LED põrandaprofiilid</span>
+            <span class="primary">Põranda LED varjuprofiilid</span>
+            <span>LED põrandaliist</span>
+          </div>
+        </div>
+        <div>
+          <div class="brief-label">Sissejuhatus (~120 sõna)</div>
+          <p>Põranda LED varjuprofiilid (tuntud ka kui <em>LED põrandaprofiilid</em> või <em>LED põrandaliistud</em>) on alumiiniumprofiilid, mis paigaldatakse seina ja põranda ühenduskohta — asendades traditsioonilise põrandaliistu. Profiili soonde paigaldatakse LED-riba, mis valgustab põranda perimeetri pehmelt ja loob "hõljuva mööbli" efekti. Eriti populaarsed magamistubades, koridorides ja avaramates eluruumides.</p>
+          <div class="brief-label">Tooted</div>
+          <div class="skus">
+            <code>ASP102</code><code>LHV10</code><code>ASPL100</code><code>ASPL60</code><code>ASPL35</code><code>ASP905</code><code>ASP904</code><code>ASP238</code><code>ASPL130</code><code>ASP106</code><code>ASPL120</code>
+          </div>
+          <div class="brief-label">Sõnu kokku</div>
+          <p>700–1000 sõna</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEK LAE -->
+    <div class="brief">
+      <div class="brief-head">
+        <div class="num">06.5</div>
+        <div class="url">/varjuprofiilid/lae/</div>
+        <div class="tag">Dekoratiivne · Lagi</div>
+      </div>
+      <div class="brief-body">
+        <div>
+          <div class="brief-label">Title</div>
+          <p class="h1text">Lae varjuprofiilid – dekoratiivne shadow gap lakke | Varjuprofiilid.ee</p>
+          <div class="brief-label">H1</div>
+          <p class="h1text">Lae varjuprofiilid – arhitektuurne shadow gap lakke</p>
+          <div class="brief-label">H2-d</div>
+          <ul>
+            <li>Mis on lae varjuprofiil?</li>
+            <li>Lae varjuprofiili sügavused (5 / 8 / 10 / 20 mm)</li>
+            <li>5 mm – AST5 (subtiilseim)</li>
+            <li>8 mm – AST8</li>
+            <li>10 mm – AST10</li>
+            <li>20 mm – AST20 (dramaatiline)</li>
+            <li>Lae varjuprofiil vs LED laeprofiil – kumb valida?</li>
+            <li>Paigaldus</li>
+            <li>KKK</li>
+            <li>Seotud · lae LED varjuprofiilid</li>
+          </ul>
+          <div class="brief-label">Märksõnad</div>
+          <div class="kw">
+            <span class="primary">Lae varjuprofiilid</span>
+            <span class="primary">shadow gap lakke</span>
+            <span>süvisliist lakke</span>
+            <span>laeliist alumiinium</span>
+          </div>
+        </div>
+        <div>
+          <div class="brief-label">Sissejuhatus (~120 sõna)</div>
+          <p>Lae varjuprofiilid on dekoratiivsed alumiiniumprofiilid, mis paigaldatakse lae ja seina ühenduskohta — loovad tahtliku, ühtlase varjujoone <strong>ilma LED-valgustuseta</strong>. Inglise keeles tuntakse seda lahendust kui <em>shadow gap</em>. Need on puhtalt arhitektuursed detailid: asendavad traditsioonilised katteliisud kaasaegse, sirgejoonelise viimistlusega. Saadaval erinevate sügavustega (5–20 mm) — väiksem süvend on subtiilsem, suurem dramaatilisem.</p>
+          <div class="brief-label">Tooted</div>
+          <div class="skus">
+            <code class="dec">AST20</code><code class="dec">AST10</code><code class="dec">AST8</code><code class="dec">AST5</code>
+          </div>
+          <div class="brief-label">Sõnu kokku</div>
+          <p>500–800 sõna</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEK SEINA -->
+    <div class="brief">
+      <div class="brief-head">
+        <div class="num">06.6</div>
+        <div class="url">/varjuprofiilid/seina/</div>
+        <div class="tag">Dekoratiivne · Sein</div>
+      </div>
+      <div class="brief-body">
+        <div>
+          <div class="brief-label">Title</div>
+          <p class="h1text">Seina varjuprofiilid – dekoratiivne shadow gap seinale | Varjuprofiilid.ee</p>
+          <div class="brief-label">H1</div>
+          <p class="h1text">Seina varjuprofiilid – arhitektuurne shadow gap seinale</p>
+          <div class="brief-label">H2-d</div>
+          <ul>
+            <li>Mis on seina varjuprofiil?</li>
+            <li>Kuhu paigaldada</li>
+            <li>Seina varjuprofiil vs seina peiteprofiil</li>
+            <li>Paigaldus</li>
+            <li>KKK</li>
+          </ul>
+          <div class="brief-label">Märksõnad</div>
+          <div class="kw">
+            <span class="primary">Seina varjuprofiilid</span>
+            <span>shadow gap seinale</span>
+          </div>
+        </div>
+        <div>
+          <div class="brief-label">Sissejuhatus (~100 sõna)</div>
+          <p>Seina varjuprofiilid on dekoratiivsed alumiiniumprofiilid, mis paigaldatakse seinapinnale arhitektuurseks detailiks — kahe seinakihi vahele või dekoratiivse vertikaalse joonena. Loovad puhta varjujoone <strong>ilma valgustuseta</strong>.</p>
+          <div class="brief-label">Tooted</div>
+          <div class="skus">
+            <code class="dec">LPA909</code>
+          </div>
+          <div class="brief-label">Sõnu kokku</div>
+          <p>400–600 sõna</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEK PÕRANDA -->
+    <div class="brief">
+      <div class="brief-head">
+        <div class="num">06.7</div>
+        <div class="url">/varjuprofiilid/poranda/</div>
+        <div class="tag">Dekoratiivne · Põrand</div>
+      </div>
+      <div class="brief-body">
+        <div>
+          <div class="brief-label">Title</div>
+          <p class="h1text">Põranda varjuprofiilid – dekoratiivsed shadow gap profiilid põrandale | Varjuprofiilid.ee</p>
+          <div class="brief-label">H1</div>
+          <p class="h1text">Põranda varjuprofiilid – arhitektuurne shadow gap põrandale</p>
+          <div class="brief-label">H2-d</div>
+          <ul>
+            <li>Mis on põranda varjuprofiil?</li>
+            <li>Põranda varjuprofiil vs alumiinium põrandaliist</li>
+            <li>Põranda varjuprofiil vs LED põranda varjuprofiil</li>
+            <li>Paigaldus</li>
+            <li>KKK</li>
+          </ul>
+          <div class="brief-label">Märksõnad</div>
+          <div class="kw">
+            <span class="primary">Põranda varjuprofiilid</span>
+            <span>varjatud põrandaliist</span>
+            <span>shadow gap põrandale</span>
+          </div>
+        </div>
+        <div>
+          <div class="brief-label">Sissejuhatus (~120 sõna)</div>
+          <p>Põranda varjuprofiilid on dekoratiivsed alumiiniumprofiilid, mis paigaldatakse seina ja põranda ühenduskohta — asendades traditsioonilise põrandaliistu. Loovad <strong>nähtamatu</strong> ülemineku seina ja põranda vahel, ilma LED-valgustuseta. Erinevad alumiinium põrandaliistust selle poolest, et profiil paigaldatakse seina sisse (kipsplaadi taha), mitte seina peale.</p>
+          <div class="brief-label">Tooted</div>
+          <div class="skus">
+            <code class="dec">ASP112</code><code class="dec">ASP116</code><code class="dec">ASP117</code><code class="dec">ASP168</code>
+          </div>
+          <div class="brief-label">Sõnu kokku</div>
+          <p>500–800 sõna</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALUMIINIUM PÕRANDALIISTUD -->
+    <div class="brief">
+      <div class="brief-head">
+        <div class="num">06.8</div>
+        <div class="url">/alumiinium-porandaliistud/</div>
+        <div class="tag">Põrandaliistud · eraldi</div>
+      </div>
+      <div class="brief-body">
+        <div>
+          <div class="brief-label">Title</div>
+          <p class="h1text">Alumiinium põrandaliistud – moodsad asendused puit- ja plastliistudele | Varjuprofiilid.ee</p>
+          <div class="brief-label">H1</div>
+          <p class="h1text">Alumiinium põrandaliistud – moodne valik traditsioonilisele liistule</p>
+          <div class="brief-label">H2-d</div>
+          <ul>
+            <li>Mis on alumiinium põrandaliist?</li>
+            <li>Erinevus varjuprofiilist</li>
+            <li>Arrow seeria (ASP78 / ASP58 / ASP36)</li>
+            <li>Mini seeria (MPA217 / MPA015)</li>
+            <li>Standard seeria (ASP110 / ASP80 / ASP60 / ASP40)</li>
+            <li>Paigaldus</li>
+            <li>KKK</li>
+            <li>Seotud · põranda varjuprofiilid · põranda LED varjuprofiilid</li>
+          </ul>
+          <div class="brief-label">Märksõnad</div>
+          <div class="kw">
+            <span class="primary">Alumiinium põrandaliistud</span>
+            <span>moodne põrandaliist</span>
+            <span>Arrow põrandaliist</span>
+          </div>
+        </div>
+        <div>
+          <div class="brief-label">Sissejuhatus (~120 sõna)</div>
+          <p>Alumiinium põrandaliistud on moodne asendus traditsioonilistele puidust või plastikust põrandaliistudele. Erinevalt varjuprofiilidest paigaldatakse need seina pinnale — mitte sisse — ning on seetõttu kasutatavad ka renoveerimistöödel ilma kipsplaadi avamiseta. Pakume kolme seeriat: <em>Arrow</em> (kõrgemad), <em>Standard</em> (klassikalised) ja <em>Mini</em> (peaaegu nähtamatud).</p>
+          <div class="brief-label">Tooted</div>
+          <div class="skus">
+            <code>ASP78</code><code>ASP58</code><code>ASP36</code><code>MPA217</code><code>MPA015</code><code>ASP110</code><code>ASP80</code><code>ASP60</code><code>ASP40</code>
+          </div>
+          <div class="brief-label">Sõnu kokku</div>
+          <p>500–800 sõna</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOOTED OVERVIEW -->
+    <div class="brief">
+      <div class="brief-head">
+        <div class="num">06.9</div>
+        <div class="url">/tooted/</div>
+        <div class="tag">Catalog · Overview</div>
+      </div>
+      <div class="brief-body">
+        <div>
+          <div class="brief-label">Title</div>
+          <p class="h1text">Tooted – kõik varjuprofiilid ja alumiiniumprofiilid | Varjuprofiilid.ee</p>
+          <div class="brief-label">H1</div>
+          <p class="h1text">Tooted – varjuprofiilid, LED-iga ja ilma</p>
+          <div class="brief-label">H2-d</div>
+          <ul>
+            <li>Sirvi kategooriate kaupa</li>
+            <li>LED varjuprofiilid (→ /led-varjuprofiilid/)</li>
+            <li>Dekoratiivsed varjuprofiilid (→ /varjuprofiilid/)</li>
+            <li>Alumiinium põrandaliistud (→ /alumiinium-porandaliistud/)</li>
+            <li>Populaarsed tooted</li>
+            <li>Kuidas tellida</li>
+          </ul>
+          <div class="brief-label">Filterloogika</div>
+          <ul>
+            <li>Asukoht (lagi / sein / põrand / kesklagi)</li>
+            <li>LED-võimalus (jah / ei)</li>
+            <li>Värv (anodeeritud / must / valge / RAL)</li>
+            <li>Sügavus (5mm / 8mm / 10mm / 20mm / 30mm+)</li>
+            <li>Laos (jah / kõik)</li>
+          </ul>
+        </div>
+        <div>
+          <div class="brief-label">Toote-kaardi badge-loogika</div>
+          <ul>
+            <li><code class="inline">LAOS</code> – kui toode on saadaval (säilitada praegune)</li>
+            <li><code class="inline">⚡ LED</code> – kui toode on LED-valmidusega</li>
+            <li>Tühi – dekoratiivsed (default)</li>
+          </ul>
+          <div class="brief-label">Sissejuhatus (~80 sõna)</div>
+          <p>Avasta kogu Sinu valikus varjuprofiilide tooted — alumiinium LED varjuprofiilid valgustusega ja dekoratiivsed shadow gap profiilid arhitektuurseks viimistluseks. Lisaks moodsad alumiinium põrandaliistud traditsiooniliste asemele. Iga toote juures märgitud <code class="inline">⚡ LED</code> badge'iga, kui profiil sobib LED-riba paigalduseks.</p>
+          <div class="brief-label">Sõnu kokku</div>
+          <p>300–500 sõna (catalog-mõõt, fookus toodete kuvamisel)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MIS ON VARJUPROFIIL -->
+    <div class="brief">
+      <div class="brief-head">
+        <div class="num">06.10</div>
+        <div class="url">/mis-on-varjuprofiil/</div>
+        <div class="tag">Cornerstone · valmis</div>
+      </div>
+      <div class="brief-body">
+        <div>
+          <div class="brief-label">Staatus</div>
+          <p class="h1text">✓ Valmis — vt faili "Mis on varjuprofiil.html"</p>
+          <div class="brief-label">Sõnu kokku</div>
+          <p>~2400 sõna</p>
+          <div class="brief-label">Schema</div>
+          <ul>
+            <li>Article</li>
+            <li>FAQPage (10 küsimust)</li>
+            <li>BreadcrumbList</li>
+          </ul>
+        </div>
+        <div>
+          <div class="brief-label">Roll struktuuris</div>
+          <p>Sinu kõige tähtsam SEO-vara. Lingitakse iga teise lehe poolt (avaleht, kõik hub-id, kategoorialehed). See kogub maksimaalse sisemise PageRank'i ning muutub aja jooksul autoriteetseks tagasilinkide allikaks (arhitektid, blogid, Pinterest, Wikipedia jne).</p>
+          <div class="brief-label">Üks oluline täpsustus</div>
+          <p>Lehe URL on praegu dokumendis <code class="inline">/mis-on-varjuprofiil/</code>. Tegele sellega arenduses, et see leht <strong>EI OLEKS</strong> /tooted/ ümbersuunatud — see on eraldi info-leht, mitte tootenimekiri.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 07 — TOOTELEHE MALL -->
+  <section class="sec" id="tooteleht">
+    <div class="sec-head"><div class="sec-num">07 / Toode</div><h2>Toote-malli definitsioon</h2></div>
+    <p class="sec-lede">Üks template, mida saab korrata 40+ toote jaoks. Kõik tooted järgivad sama H1/H2 mustrit ning Product schema markup'i — see annab Google'ile maksimaalse struktureeritud info iga toote kohta.</p>
+
+    <div class="brief">
+      <div class="brief-head">
+        <div class="num">07.1</div>
+        <div class="url">/[kategooria]/[asukoht]/[sku]/</div>
+        <div class="tag">Template · Product</div>
+      </div>
+      <div class="brief-body">
+        <div>
+          <div class="brief-label">URL-muster</div>
+          <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px;"><code class="inline">/led-varjuprofiilid/lae/ast50/</code></p>
+          <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px;"><code class="inline">/varjuprofiilid/lae/ast20/</code></p>
+          <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px;"><code class="inline">/alumiinium-porandaliistud/asp78/</code></p>
+
+          <div class="brief-label">Title-tag muster</div>
+          <p>[SKU] – [Toote nimi, märksõnaga] | Varjuprofiilid.ee</p>
+          <p style="font-size: 12px; color: var(--muted);">Näide: "AST50 – Universaalne lae LED varjuprofiil 22.5mm | Varjuprofiilid.ee"</p>
+
+          <div class="brief-label">H1 muster</div>
+          <p>[SKU] – [Toote nimi koos asukoha-märksõnaga]</p>
+
+          <div class="brief-label">H2 hierarhia</div>
+          <ul>
+            <li>Toote kirjeldus</li>
+            <li>Tehnilised andmed</li>
+            <li>Kasutusotstarve ja paigaldus</li>
+            <li>Mis komplektis (LED-versioon)</li>
+            <li>Paigaldusjuhend</li>
+            <li>Korduma kippuvad küsimused</li>
+            <li>Sarnased tooted</li>
+          </ul>
+        </div>
+        <div>
+          <div class="brief-label">Sisu-elemendid (kõikidel toodetel)</div>
+          <ul>
+            <li>Tootepildid (vähemalt 3 – ristlõige, paigaldus, in-situ)</li>
+            <li>SKU + lühikirjeldus 150–250 sõnaga</li>
+            <li>Tehnilised andmed: pikkus, sügavus, laius, materjal, viimistlus</li>
+            <li>LED-versioonil: ⚡ LED badge + soovitatud LED-riba spec</li>
+            <li>Värvivalik (anodeeritud / must / valge / RAL järgi)</li>
+            <li>Hind 1m kohta</li>
+            <li>Saadavus (LAOS / tellimisel)</li>
+            <li>"Sarnased tooted" (3–4 toodet samast kategooriast)</li>
+            <li>Breadcrumb: Avaleht → [Hub] → [Asukoht] → [SKU]</li>
+          </ul>
+
+          <div class="brief-label">Schema markup (Product)</div>
+          <ul>
+            <li>name, sku, description, image</li>
+            <li>brand (Varjuprofiilid.ee)</li>
+            <li>offers (price, priceCurrency, availability)</li>
+            <li>aggregateRating (kui on hinnangud)</li>
+            <li>additionalProperty (LED-valmidus, asukoht, sügavus)</li>
+          </ul>
+
+          <div class="brief-label">Sõnu kokku</div>
+          <p>250–500 sõna per toode</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin: 36px 0 16px;">Slug-konventsioon</h3>
+    <div class="twocol">
+      <div>
+        <h3>Reeglid</h3>
+        <p>1. SKU-d kasutatakse väiketähtedega slug'is: <code class="inline">ast50</code>, mitte <code class="inline">AST50</code>.</p>
+        <p>2. Alakriipsud asendatakse sidekriipsudega: <code class="inline">AST14_12</code> → <code class="inline">ast14-12</code>.</p>
+        <p>3. Erimärgid (täpid, ülakomad) eemaldatakse.</p>
+        <p>4. URL ei sisalda toote nime — ainult SKU.</p>
+      </div>
+      <div>
+        <h3>Miks SKU-põhine?</h3>
+        <p>Praegune Wix-süsteem kasutab pikki nime-baas slug'e nagu <code class="inline">/product-page/universaalne-lae-led-varjuprofiil</code>. See on:</p>
+        <p>1. Pikem kui vaja</p>
+        <p>2. Ebakindel — toote nime muutmine murraks URL-i</p>
+        <p>3. Mittedubleeritav — paljud tooted jagavad sama nime</p>
+        <p>SKU on stabiilne, unikaalne ja semantiline. SEO-mõttes piisab, et kategoorialehe URL kannab märksõna.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 — LINK MATRIX -->
+  <section class="sec" id="linkimine">
+    <div class="sec-head"><div class="sec-num">08 / Linking</div><h2>Sisemise linkimise maatriks</h2></div>
+    <p class="sec-lede">Iga leht peab linkima teatud lehtedele, et autoriteet liiguks õigesti. See maatriks näitab, milline leht peab linkima millisele.</p>
+
+    <div class="matrix-tbl">
+      <table>
+        <thead>
+          <tr>
+            <th>Allikleht ↓ / Sihtleht →</th>
+            <th>Avaleht</th>
+            <th>Tooted</th>
+            <th>Mis on…</th>
+            <th>LED hub</th>
+            <th>Dek. hub</th>
+            <th>LED · lae</th>
+            <th>LED · pra</th>
+            <th>LED · sein</th>
+            <th>LED · ksk</th>
+            <th>Dek · lae</th>
+            <th>Dek · sein</th>
+            <th>Dek · pra</th>
+            <th>Põr.liistud</th>
+            <th>Tooted (üks)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="row-label">Avaleht</td><td class="dot">—</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot yes">●</td><td class="dot">·</td></tr>
+          <tr><td class="row-label">Tooted</td><td class="dot yes">●</td><td class="dot">—</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot yes">●</td><td class="dot yes">●</td></tr>
+          <tr><td class="row-label">Mis on varjuprofiil</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot">—</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot">·</td></tr>
+          <tr><td class="row-label">LED hub</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot">—</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td></tr>
+          <tr><td class="row-label">Dek. hub</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot">—</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot">·</td><td class="dot">·</td></tr>
+          <tr><td class="row-label">LED · lae</td><td class="dot yes">●</td><td class="dot">·</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot">—</td><td class="dot">·</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot yes">●</td></tr>
+          <tr><td class="row-label">LED · poranda</td><td class="dot yes">●</td><td class="dot">·</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot">·</td><td class="dot">—</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td></tr>
+          <tr><td class="row-label">Dek · lae</td><td class="dot yes">●</td><td class="dot">·</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">—</td><td class="dot yes">●</td><td class="dot">·</td><td class="dot">·</td><td class="dot yes">●</td></tr>
+          <tr><td class="row-label">Põrandaliistud</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot yes">●</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot yes">●</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot yes">●</td><td class="dot">—</td><td class="dot yes">●</td></tr>
+          <tr><td class="row-label">Tooteleht (üks)</td><td class="dot yes">●</td><td class="dot">·</td><td class="dot yes">●</td><td class="dot">·</td><td class="dot">·</td><td class="dot yes">●</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot">·</td><td class="dot yes">●</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size: 12px; color: var(--muted); margin-top: 12px; font-family: 'JetBrains Mono', monospace;">● = kohustuslik link · · = vajadusel · — = sama leht. Tooteleht lingib alati oma kategoorialehele (breadcrumb) + 3–4 sarnasele tootele.</p>
+
+    <div class="pull">"Cornerstone leht ('Mis on varjuprofiil') lingib kõikjale, ning kõik lingivad temale. See on Sinu sisemise PageRank'i süda."</div>
+  </section>
+
+  <!-- 09 — TEHNILINE CHECKLIST -->
+  <section class="sec" id="tehniline">
+    <div class="sec-head"><div class="sec-num">09 / Tehniline</div><h2>Checklist Claude Code'ile</h2></div>
+    <p class="sec-lede">Konkreetne tehnilise implementatsiooni spetsifikatsioon. See list peaks katma ~90% sellest, mida arendaja vajab teadma enne tööde alustamist.</p>
+
+    <div class="checklist">
+      <div class="checklist-item">
+        <div class="num">9.01</div>
+        <div>
+          <h4>URL routing & trailing slash</h4>
+          <p>Kõik URL-id lõppevad trailing slash'iga (<code>/led-varjuprofiilid/lae/</code>). Konfigureeri serverivärbet nii, et <code>/led-varjuprofiilid/lae</code> redirectib 301-ga <code>/led-varjuprofiilid/lae/</code>-le.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="num">9.02</div>
+        <div>
+          <h4>301-redirectide tabel</h4>
+          <p>Implementeeri redirect-tabel sektsioonist 02 serveritasandil (Nginx/Apache rewrite, või kui Next.js/Astro siis <code>redirects.js</code>). Kõik vanad <code>/product-page/*</code> URL-id peavad 301-ga jõudma uutele. Säilita admin'is mehhanism uute redirectide lisamiseks.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="num">9.03</div>
+        <div>
+          <h4>Sitemap.xml</h4>
+          <p>Genereeri dünaamiline sitemap, mis sisaldab kõiki tootelehti, kategoorialehti, cornerstone-i ja avalehte. Iga URL <code>&lt;lastmod&gt;</code> auto-uuendub. Esita Google Search Console'ile.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="num">9.04</div>
+        <div>
+          <h4>robots.txt</h4>
+          <p>Blokeeri admin-, kassa-, otsingu-tulemuste-, filtreerimise-URL-id (näiteks <code>?filter=...</code>). Lubatud: kõik kategoorialehed, tooted, cornerstone, blog.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="num">9.05</div>
+        <div>
+          <h4>Canonical-tag iga lehel</h4>
+          <p>Kõikidel lehtedel peab olema <code>&lt;link rel="canonical" href="..." /&gt;</code>. Filtreerimise URL-id (näiteks <code>?vari=must</code>) canonical viitab puhtaks kategoorialehele.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="num">9.06</div>
+        <div>
+          <h4>Schema markup per leht-tüüp</h4>
+          <p>Avaleht: Organization + WebSite + SearchAction. Cornerstone: Article + FAQPage + BreadcrumbList. Kategoorialeht: CollectionPage + BreadcrumbList. Tooteleht: Product + Offer + BreadcrumbList. Kõikjal: BreadcrumbList.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="num">9.07</div>
+        <div>
+          <h4>Breadcrumb-komponent</h4>
+          <p>Renderda igal lehel (välja arvatud avaleht). Muster: <code>Avaleht / [Hub] / [Asukoht] / [Toode]</code>. Iga element on klikitav link. Schema BreadcrumbList renderdab samaaegselt.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="num">9.08</div>
+        <div>
+          <h4>LED-badge komponent</h4>
+          <p>Toote-cardil ja toote ülemises servas renderda <code>⚡ LED</code> badge, kui toote schema/data sisaldab <code>led_compatible: true</code>. Värv: kollane/oranž (<code>#F4B400</code>). Vt cornerstone-lehe disain.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="num">9.09</div>
+        <div>
+          <h4>Filter-süsteem kataloog-lehel</h4>
+          <p>Filtrid: asukoht, LED-võimalus, värv, sügavus, laos. Filtreerimine peab töötama URL-i query-paramidena (<code>?led=jah&amp;color=must</code>), aga canonical jääb põhilehel. Filtreeritud vaated EI INDEKSEERITA Google'i poolt (robots meta = noindex).</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="num">9.10</div>
+        <div>
+          <h4>Open Graph + Twitter cards</h4>
+          <p>Iga leht: <code>og:title</code>, <code>og:description</code>, <code>og:image</code>, <code>og:url</code>, <code>og:type</code>. Tootepilt 1200x630 OG-pilt-vormis. Twitter card = summary_large_image.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="num">9.11</div>
+        <div>
+          <h4>Lehtede load-aeg (Core Web Vitals)</h4>
+          <p>LCP &lt;2.5s, FID &lt;100ms, CLS &lt;0.1. Tootepildid lazy-load + WebP/AVIF. Fontide preload. Inline kriitiline CSS. Cache-Control header'id staatilistele assettidele.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="num">9.12</div>
+        <div>
+          <h4>Alt-tekstid tootepildid</h4>
+          <p>Iga tootepilt: <code>alt="[SKU] – [toote nimi koos asukohaga]"</code>. Näide: <code>alt="AST50 – universaalne lae LED varjuprofiil"</code>. Mitte tühjad alt-tekstid, mitte SKU üksinda.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="num">9.13</div>
+        <div>
+          <h4>Google Search Console + Analytics</h4>
+          <p>Pärast deploy: 1) Esita uus sitemap.xml SC'ile. 2) Kontrolli "Coverage" raport: vana URL → uus URL kõik 301'd. 3) Monitooring 30 päeva, et 404'd ei tekiks.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="num">9.14</div>
+        <div>
+          <h4>hreflang (kui lisad inglise keele)</h4>
+          <p>Ettevalmistus: kui tulevikus lisad <code>/en/</code> versiooni, on URL-struktuur sama. Iga leht saab <code>hreflang="et"</code> ja <code>hreflang="en"</code> tag'id koos vastavate URL-idega.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="num">9.15</div>
+        <div>
+          <h4>404-leht</h4>
+          <p>Konkreetne 404-leht, mis pakub: 1) Otsingu-välja, 2) Linke peamistele kategooriatele, 3) Linki "Mis on varjuprofiil"-le, 4) Kontakt-linki. Mitte tühi 404.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="num">9.16</div>
+        <div>
+          <h4>Blogi-arhitektuur</h4>
+          <p>Säilita olemasolev <code>/blog/</code> URL. Iga blogi-postitus: <code>/blog/[slug]/</code>. Article schema + author + datePublished. Blogi lingib kategooriatele anchor-tekstiga märksõnaga.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="sec" style="background: var(--ink); color: var(--paper); border-bottom: none;">
+    <div class="sec-head" style="border-color: rgba(245,242,236,0.15);">
+      <div class="sec-num" style="color: var(--accent);">Edasi</div>
+      <h2 style="color: var(--paper);">Mis järgmine.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+      <div>
+        <div class="brief-label" style="color: var(--accent);">Sina kinnitad</div>
+        <ul style="font-size: 15px; line-height: 1.7; color: rgba(245,242,236,0.85); padding: 0; list-style: none;">
+          <li>1 · URL-struktuur sektsioonist 02</li>
+          <li>2 · Kategooriapuu sektsioonist 06</li>
+          <li>3 · Toote slug-konventsioon</li>
+          <li>4 · LED-badge süsteem</li>
+        </ul>
+      </div>
+      <div>
+        <div class="brief-label" style="color: var(--accent);">Mina koostan järgmiseks</div>
+        <ul style="font-size: 15px; line-height: 1.7; color: rgba(245,242,236,0.85); padding: 0; list-style: none;">
+          <li>1 · Kategoorialehtede täielik copy (mitte ainult brief)</li>
+          <li>2 · 12-kuune sisukalender (Instagram + blog)</li>
+          <li>3 · Tehnilise arenduse projekti briefi Claude Code'ile</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top: 36px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(245,242,236,0.5);">VARJUPROFIILID.EE · Master-dokument v1.0 · 27. mai 2026</p>
+  </section>
+
+</div>
+
+</body>
+</html>

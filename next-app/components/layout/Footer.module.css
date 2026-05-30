@@ -1,0 +1,118 @@
+.footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 60px 32px 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+/* Brand column */
+.brand {}
+
+.logoText {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 18px;
+}
+
+.tagline {
+  max-width: 280px;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.7;
+  margin: 0 0 16px;
+}
+
+.contact {
+  font-size: 13px;
+  line-height: 1.8;
+  opacity: 0.75;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.social {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.socialBtn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.socialBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Link columns */
+.colHeading {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 14px;
+}
+
+.colLink {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 8px;
+  opacity: 0.85;
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.colLink:hover {
+  opacity: 1;
+}
+
+/* Bottom bar */
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+}
+
+.sisters {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.sisters a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.4);
+}

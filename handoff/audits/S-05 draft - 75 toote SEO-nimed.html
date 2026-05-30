@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="et"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>S-05 v2 · 79 toote SEO-nimed ja URL-id</title>
+<link rel="stylesheet" href="hifi/style.css"/>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .doc { max-width: 1280px; margin: 0 auto; }
+  .head { padding: 56px 56px 32px; border-bottom: 1.5px solid var(--ink); }
+  .head h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px, 7vw, 96px); line-height: 0.88; margin: 12px 0; letter-spacing: 0.005em; }
+  .head h1 em { font-family: 'Inter', serif; font-style: italic; font-weight: 300; font-size: 0.42em; letter-spacing: -0.02em; }
+  .head p { font-size: 16px; line-height: 1.6; color: var(--ink-2); max-width: 720px; }
+  .hub { border-bottom: 1.5px solid var(--ink); }
+  .hub-head { padding: 36px 56px 18px; background: var(--paper-2); }
+  .hub-head h2 { font-family: 'Bebas Neue', sans-serif; font-size: 36px; margin: 0 0 6px; line-height: 1; }
+  .hub-head .url { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--accent); letter-spacing: 0.04em; }
+  .hub-head .count { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.1); vertical-align: top; }
+  th { background: var(--ink); color: var(--paper); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+  td.mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+  td.led { text-align: center; color: #d97e29; font-weight: 700; }
+  td .url-cell { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); word-break: break-all; }
+  td .old { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+  .legend { padding: 24px 56px; background: var(--paper-2); border-bottom: 1.5px solid var(--ink); font-size: 13px; line-height: 1.6; color: var(--ink-2); }
+  .legend strong { color: var(--ink); }
+</style>
+</head>
+<body class="vp">
+<div class="doc">
+  <header class="head">
+    <div class="vp-eyebrow">S-05 v2 · 79 toote SEO-nimed + URL-id · 28. mai 2026</div>
+    <h1>Tootenimed.<br/><em>SEO-friendly, dimension-vaba, SKU URL lõpus.</em></h1>
+    <p>Iga toote uus <code>seoName</code> ja <code>urlPath</code>. Vaata üle, märgi kus on probleeme, siis kirjutame catalog-data.js-i. URL muster: <code>/[hub]/[asukoht]/[sku]/</code>.</p>
+    <p style="margin-top:14px; padding:12px 16px; background:var(--paper-2); border-left:4px solid #2c7a4b; font-size:14px;"><strong>v2 update (28.05):</strong> Lisatud 4 uut SKU-d — <strong>AST25</strong> (LED lae 25 mm), <strong>LPA126</strong> (lae 6 mm), <strong>KA1</strong> ja <strong>KA2</strong> (peidetud paigaldusega kardinaprofiilid). Kokku 79 SKU-d (74 → 78 unikaalset; LHV10 esineb 2 hubis). Uus hub <code>/kardinaprofiilid/</code> KA1+KA2 jaoks.</p>
+  </header>
+  <div class="legend">
+    <strong>Slug-reeglid:</strong> SKU väiketähtedega · alakriips → kriips (AST14_12 → ast14-12) · numbrid OK. &nbsp; &nbsp;
+    <strong>⚡ LED</strong> = LED-valmidusega; URL läheb <code>/led-varjuprofiilid/</code> hubba. &nbsp; &nbsp;
+    <strong>Topelt-kategooriad:</strong> mõni toode (ASPL100 jt) on Põranda + Seina — URL läheb PRIMARY kategooria järgi.
+  </div>
+<section class="hub">
+    <div class="hub-head">
+      <h2>LED varjuprofiilid</h2>
+      <div class="url">/led-varjuprofiilid/ · <span class="count">28 toodet</span></div>
+    </div>
+    <table>
+      <thead><tr>
+        <th style="width:80px">SKU</th>
+        <th style="width:50px">LED</th>
+        <th style="width:200px">Vana nimi</th>
+        <th style="width:280px">Uus seoName</th>
+        <th>URL</th>
+      </tr></thead>
+      <tbody><tr>
+      <td class="mono"><strong>ASP102</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">ASP102</span></td>
+      <td>Põranda LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/poranda/asp102/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>LHV10</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">LHV10</span></td>
+      <td>Põranda LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/poranda/lhv10/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>LHV10</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">LHV10</span></td>
+      <td>Lae LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/lae/lhv10/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>RST14</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">RST14_12</span></td>
+      <td>Lae LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/lae/rst14/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>AST201</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">AST201</span></td>
+      <td>Lae LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/lae/ast201/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>AST50</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">AST50</span></td>
+      <td>Lae LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/lae/ast50/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>AST35</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">AST35</span></td>
+      <td>Lae LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/lae/ast35/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>AST30</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">AST30</span></td>
+      <td>Lae LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/lae/ast30/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>AST22</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">AST22</span></td>
+      <td>Lae LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/lae/ast22/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>AST14_12</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">AST14_12</span></td>
+      <td>Lae LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/lae/ast14-12/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>RST25</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">RST25</span></td>
+      <td>Lae LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/lae/rst25/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASPL100</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">ASPL100</span></td>
+      <td>Põranda LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/poranda/aspl100/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASPL60</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">ASPL60</span></td>
+      <td>Põranda LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/poranda/aspl60/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASPL35</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">ASPL35</span></td>
+      <td>Põranda LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/poranda/aspl35/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP905</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">ASP905</span></td>
+      <td>Põranda LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/poranda/asp905/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP904</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">ASP904</span></td>
+      <td>Põranda LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/poranda/asp904/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP610</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">ASP610</span></td>
+      <td>Seina LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/seina/asp610/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP410</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">ASP410</span></td>
+      <td>Seina LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/seina/asp410/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP238</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">ASP238</span></td>
+      <td>Põranda LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/poranda/asp238/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASPL130</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">ASPL130</span></td>
+      <td>Põranda LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/poranda/aspl130/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP106</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">ASP106</span></td>
+      <td>Põranda LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/poranda/asp106/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASPL120</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">ASPL120</span></td>
+      <td>Põranda LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/poranda/aspl120/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>AST218</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">AST218</span></td>
+      <td>Lae LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/lae/ast218/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>AST12</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">AST12</span></td>
+      <td>Lae LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/lae/ast12/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>RST12</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">RST12</span></td>
+      <td>Lae LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/lae/rst12/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>RST22</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">RST22</span></td>
+      <td>Lae LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/lae/rst22/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>RST40</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">RST40</span></td>
+      <td>Lae LED varjuprofiil</td>
+      <td><span class="url-cell">/led-varjuprofiilid/lae/rst40/</span></td>
+    </tr><tr style="background:rgba(44,122,75,0.05);">
+      <td class="mono" style="position:relative;"><span style="position:absolute;left:-4px;top:0;font-size:9px;background:#2c7a4b;color:#fff;padding:1px 4px;letter-spacing:0.05em;">UUS</span><strong>AST25</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">—</span></td>
+      <td>Lae LED varjuprofiil · 25 mm</td>
+      <td><span class="url-cell">/led-varjuprofiilid/lae/ast25/</span></td>
+    </tr></tbody></table></section><section class="hub">
+    <div class="hub-head">
+      <h2>Dekoratiivsed varjuprofiilid</h2>
+      <div class="url">/varjuprofiilid/ · <span class="count">19 toodet</span></div>
+    </div>
+    <table>
+      <thead><tr>
+        <th style="width:80px">SKU</th>
+        <th style="width:50px">LED</th>
+        <th style="width:200px">Vana nimi</th>
+        <th style="width:280px">Uus seoName</th>
+        <th>URL</th>
+      </tr></thead>
+      <tbody><tr>
+      <td class="mono"><strong>AST20</strong></td>
+      <td class="led"></td>
+      <td><span class="old">AST20</span></td>
+      <td>Lae varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/lae/ast20/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>AST10</strong></td>
+      <td class="led"></td>
+      <td><span class="old">AST10</span></td>
+      <td>Lae varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/lae/ast10/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>AST8</strong></td>
+      <td class="led"></td>
+      <td><span class="old">AST8</span></td>
+      <td>Lae varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/lae/ast8/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>AST5</strong></td>
+      <td class="led"></td>
+      <td><span class="old">AST5</span></td>
+      <td>Lae varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/lae/ast5/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>LPA909</strong></td>
+      <td class="led"></td>
+      <td><span class="old">LPA909</span></td>
+      <td>Seina varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/seina/lpa909/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP611</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP611</span></td>
+      <td>Seina varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/seina/asp611/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP411</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP411</span></td>
+      <td>Seina varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/seina/asp411/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP198</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP198</span></td>
+      <td>Seina varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/seina/asp198/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP168</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP168</span></td>
+      <td>Seina varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/seina/asp168/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP117</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP117</span></td>
+      <td>Põranda varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/poranda/asp117/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP116</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP116</span></td>
+      <td>Seina varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/seina/asp116/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP112</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP112</span></td>
+      <td>Põranda varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/poranda/asp112/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP115</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP115</span></td>
+      <td>Põranda varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/poranda/asp115/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP108</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP108</span></td>
+      <td>Põranda varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/poranda/asp108/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>AVP609</strong></td>
+      <td class="led"></td>
+      <td><span class="old">AVP609</span></td>
+      <td>Põranda varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/poranda/avp609/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>AVP859</strong></td>
+      <td class="led"></td>
+      <td><span class="old">AVP859</span></td>
+      <td>Põranda varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/poranda/avp859/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>AST101</strong></td>
+      <td class="led"></td>
+      <td><span class="old">AST101</span></td>
+      <td>Lae varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/lae/ast101/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>RST1020</strong></td>
+      <td class="led"></td>
+      <td><span class="old">RST1020</span></td>
+      <td>Lae varjuprofiil</td>
+      <td><span class="url-cell">/varjuprofiilid/lae/rst1020/</span></td>
+    </tr><tr style="background:rgba(44,122,75,0.05);">
+      <td class="mono" style="position:relative;"><span style="position:absolute;left:-4px;top:0;font-size:9px;background:#2c7a4b;color:#fff;padding:1px 4px;letter-spacing:0.05em;">UUS</span><strong>LPA126</strong></td>
+      <td class="led"></td>
+      <td><span class="old">—</span></td>
+      <td>Peen lae varjuprofiil · 6 mm</td>
+      <td><span class="url-cell">/varjuprofiilid/lae/lpa126/</span></td>
+    </tr></tbody></table></section><section class="hub">
+    <div class="hub-head">
+      <h2>Alumiinium põrandaliistud</h2>
+      <div class="url">/alumiinium-porandaliistud/ · <span class="count">16 toodet</span></div>
+    </div>
+    <table>
+      <thead><tr>
+        <th style="width:80px">SKU</th>
+        <th style="width:50px">LED</th>
+        <th style="width:200px">Vana nimi</th>
+        <th style="width:280px">Uus seoName</th>
+        <th>URL</th>
+      </tr></thead>
+      <tbody><tr>
+      <td class="mono"><strong>ASP78</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP78</span></td>
+      <td>Alumiinium põrandaliist</td>
+      <td><span class="url-cell">/alumiinium-porandaliistud/asp78/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP58</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP58</span></td>
+      <td>Alumiinium põrandaliist</td>
+      <td><span class="url-cell">/alumiinium-porandaliistud/asp58/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP36</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP36</span></td>
+      <td>Alumiinium põrandaliist</td>
+      <td><span class="url-cell">/alumiinium-porandaliistud/asp36/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>MPA217</strong></td>
+      <td class="led"></td>
+      <td><span class="old">MPA217</span></td>
+      <td>Alumiinium põrandaliist</td>
+      <td><span class="url-cell">/alumiinium-porandaliistud/mpa217/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>MPA015</strong></td>
+      <td class="led"></td>
+      <td><span class="old">MPA015</span></td>
+      <td>Alumiinium põrandaliist</td>
+      <td><span class="url-cell">/alumiinium-porandaliistud/mpa015/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP100</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP100</span></td>
+      <td>Alumiinium põrandaliist</td>
+      <td><span class="url-cell">/alumiinium-porandaliistud/asp100/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP80</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP80</span></td>
+      <td>Alumiinium põrandaliist</td>
+      <td><span class="url-cell">/alumiinium-porandaliistud/asp80/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP60</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP60</span></td>
+      <td>Alumiinium põrandaliist</td>
+      <td><span class="url-cell">/alumiinium-porandaliistud/asp60/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP40</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP40</span></td>
+      <td>Alumiinium põrandaliist</td>
+      <td><span class="url-cell">/alumiinium-porandaliistud/asp40/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASP38</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASP38</span></td>
+      <td>Alumiinium põrandaliist</td>
+      <td><span class="url-cell">/alumiinium-porandaliistud/asp38/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>MPA013</strong></td>
+      <td class="led"></td>
+      <td><span class="old">MPA013</span></td>
+      <td>Alumiinium põrandaliist</td>
+      <td><span class="url-cell">/alumiinium-porandaliistud/mpa013/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>MPA317</strong></td>
+      <td class="led"></td>
+      <td><span class="old">MPA317</span></td>
+      <td>Alumiinium põrandaliist</td>
+      <td><span class="url-cell">/alumiinium-porandaliistud/mpa317/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>MPA302</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">MPA302</span></td>
+      <td>Alumiinium põrandaliist</td>
+      <td><span class="url-cell">/alumiinium-porandaliistud/mpa302/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>MPV018</strong></td>
+      <td class="led"></td>
+      <td><span class="old">MPV018</span></td>
+      <td>Alumiinium põrandaliist</td>
+      <td><span class="url-cell">/alumiinium-porandaliistud/mpv018/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>MPV172</strong></td>
+      <td class="led"></td>
+      <td><span class="old">MPV172</span></td>
+      <td>Alumiinium põrandaliist</td>
+      <td><span class="url-cell">/alumiinium-porandaliistud/mpv172/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>MPV301</strong></td>
+      <td class="led">⚡</td>
+      <td><span class="old">MPV301</span></td>
+      <td>Alumiinium põrandaliist</td>
+      <td><span class="url-cell">/alumiinium-porandaliistud/mpv301/</span></td>
+    </tr></tbody></table></section><section class="hub">
+    <div class="hub-head">
+      <h2>Nurgaprofiilid</h2>
+      <div class="url">/nurgaprofiilid/ · <span class="count">3 toodet</span></div>
+    </div>
+    <table>
+      <thead><tr>
+        <th style="width:80px">SKU</th>
+        <th style="width:50px">LED</th>
+        <th style="width:200px">Vana nimi</th>
+        <th style="width:280px">Uus seoName</th>
+        <th>URL</th>
+      </tr></thead>
+      <tbody><tr>
+      <td class="mono"><strong>DKP1010</strong></td>
+      <td class="led"></td>
+      <td><span class="old">DKP1010</span></td>
+      <td>Alumiinium nurgaprofiil</td>
+      <td><span class="url-cell">/nurgaprofiilid/dkp1010/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>DKP1515</strong></td>
+      <td class="led"></td>
+      <td><span class="old">DKP1515</span></td>
+      <td>Alumiinium nurgaprofiil</td>
+      <td><span class="url-cell">/nurgaprofiilid/dkp1515/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>DKP2020</strong></td>
+      <td class="led"></td>
+      <td><span class="old">DKP2020</span></td>
+      <td>Alumiinium nurgaprofiil</td>
+      <td><span class="url-cell">/nurgaprofiilid/dkp2020/</span></td>
+    </tr></tbody></table></section><section class="hub">
+    <div class="hub-head">
+      <h2>Lisatarvikud</h2>
+      <div class="url">/tarvikud/ · <span class="count">11 toodet</span></div>
+    </div>
+    <table>
+      <thead><tr>
+        <th style="width:80px">SKU</th>
+        <th style="width:50px">LED</th>
+        <th style="width:200px">Vana nimi</th>
+        <th style="width:280px">Uus seoName</th>
+        <th>URL</th>
+      </tr></thead>
+      <tbody><tr>
+      <td class="mono"><strong>ASL302</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASL302</span></td>
+      <td>LED-profiili hajuti</td>
+      <td><span class="url-cell">/tarvikud/asl302/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASL312</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASL312</span></td>
+      <td>LED-profiili hajuti</td>
+      <td><span class="url-cell">/tarvikud/asl312/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASL300</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASL300</span></td>
+      <td>LED-profiili hajuti</td>
+      <td><span class="url-cell">/tarvikud/asl300/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASL25</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASL25</span></td>
+      <td>LED-profiili hajuti</td>
+      <td><span class="url-cell">/tarvikud/asl25/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASL40</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASL40</span></td>
+      <td>LED-profiili hajuti</td>
+      <td><span class="url-cell">/tarvikud/asl40/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>ASK100</strong></td>
+      <td class="led"></td>
+      <td><span class="old">ASK100</span></td>
+      <td>LED-profiili hajuti</td>
+      <td><span class="url-cell">/tarvikud/ask100/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>P1</strong></td>
+      <td class="led"></td>
+      <td><span class="old">P1</span></td>
+      <td>Põrandaliistu kinnitusvedru</td>
+      <td><span class="url-cell">/tarvikud/p1/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>F40</strong></td>
+      <td class="led"></td>
+      <td><span class="old">F40</span></td>
+      <td>Põrandaliistu otsakomplekt</td>
+      <td><span class="url-cell">/tarvikud/f40/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>F60</strong></td>
+      <td class="led"></td>
+      <td><span class="old">F60</span></td>
+      <td>Põrandaliistu otsakomplekt</td>
+      <td><span class="url-cell">/tarvikud/f60/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>F80</strong></td>
+      <td class="led"></td>
+      <td><span class="old">F80</span></td>
+      <td>Põrandaliistu otsakomplekt</td>
+      <td><span class="url-cell">/tarvikud/f80/</span></td>
+    </tr><tr>
+      <td class="mono"><strong>F100</strong></td>
+      <td class="led"></td>
+      <td><span class="old">F100</span></td>
+      <td>Põrandaliistu otsakomplekt</td>
+      <td><span class="url-cell">/tarvikud/f100/</span></td>
+    </tr></tbody></table></section><section class="hub" style="border-top:3px solid #2c7a4b;">
+    <div class="hub-head" style="background:rgba(44,122,75,0.06);">
+      <h2>Kardinaprofiilid <span style="font-size:11px;font-family:'JetBrains Mono',monospace;background:#2c7a4b;color:#fff;padding:3px 8px;letter-spacing:0.05em;vertical-align:middle;margin-left:8px;">UUS HUB</span></h2>
+      <div class="url">/kardinaprofiilid/ · <span class="count">2 toodet</span></div>
+    </div>
+    <table>
+      <thead><tr>
+        <th style="width:80px">SKU</th>
+        <th style="width:50px">LED</th>
+        <th style="width:200px">Vana nimi</th>
+        <th style="width:280px">Uus seoName</th>
+        <th>URL</th>
+      </tr></thead>
+      <tbody><tr>
+        <td class="mono"><strong>KA1</strong></td>
+        <td class="led"></td>
+        <td><span class="old">—</span></td>
+        <td>Peidetud paigaldusega kardinaprofiil</td>
+        <td><span class="url-cell">/kardinaprofiilid/ka1/</span></td>
+      </tr><tr>
+        <td class="mono"><strong>KA2</strong></td>
+        <td class="led"></td>
+        <td><span class="old">—</span></td>
+        <td>Peidetud paigaldusega kardinaprofiil · 2-rea</td>
+        <td><span class="url-cell">/kardinaprofiilid/ka2/</span></td>
+      </tr></tbody></table></section>
+<section class="hub-head" style="background:var(--ink); color:var(--paper); padding:32px 56px;">
+  <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.08em; color:rgba(245,242,236,0.6); margin-bottom:8px;">Edasi</div>
+  <h2 style="color:var(--paper); margin:0 0 10px;">Sinu otsus.</h2>
+  <p style="color:rgba(245,242,236,0.85); font-size:15px; line-height:1.65; max-width:720px;">
+    Vaata üle. Kui sobib → kirjutan need catalog-data.js-i (seoName, slug, urlPath väljad). Kui mõni nimi tahad teisiti → ütle ja ma muudan enne kirjutamist.
+  </p>
+</section>
+</div></body></html>

@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>5 uut toodet · KA1, KA2, AST25, RST12, LPA126</title>
+<link rel="stylesheet" href="hifi/style.css"/>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .doc { max-width: 1320px; margin: 0 auto; }
+  .head { padding: 56px 56px 32px; border-bottom: 1.5px solid var(--ink); }
+  .head h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px, 7vw, 96px); line-height: 0.88; margin: 12px 0; letter-spacing: 0.005em; }
+  .head h1 em { font-family: 'Inter', serif; font-style: italic; font-weight: 300; font-size: 0.42em; letter-spacing: -0.02em; color: var(--ink-2); }
+  .head p { font-size: 15px; line-height: 1.65; color: var(--ink-2); max-width: 760px; }
+
+  .v2-note {
+    margin-top: 18px;
+    padding: 14px 18px;
+    border-left: 4px solid var(--accent);
+    background: var(--paper-2);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+  .v2-note strong { color: var(--ink); }
+
+  /* SEO table */
+  .sec { padding: 36px 56px; border-bottom: 1.5px solid var(--ink); }
+  .sec h2 { font-family: 'Bebas Neue', sans-serif; font-size: 36px; line-height: 1; margin: 0 0 6px; }
+  .sec .sub { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 18px; }
+  table.seo { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+  table.seo th, table.seo td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.1); vertical-align: top; }
+  table.seo th { background: var(--ink); color: var(--paper); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+  table.seo td.mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+  table.seo td.led { text-align: center; color: #d97e29; font-weight: 700; }
+  table.seo td .url-cell { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); word-break: break-all; }
+  table.seo td .badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    background: #2c7a4b; color: #fff;
+    padding: 2px 6px; margin-right: 6px;
+    letter-spacing: 0.04em;
+  }
+  table.seo td .badge.exist {
+    background: var(--paper-2); color: var(--muted); border: 1px solid rgba(0,0,0,0.15);
+  }
+
+  /* Descriptions — same as v3 file */
+  .product { border-bottom: 1.5px solid var(--ink); padding: 48px 56px; }
+  .product-head {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    gap: 24px;
+    align-items: baseline;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+  }
+  .product-head .sku { font-family: 'Bebas Neue', sans-serif; font-size: 48px; line-height: 1; }
+  .product-head .meta { display: flex; flex-direction: column; gap: 4px; }
+  .product-head .seoname { font-family: 'Inter', serif; font-style: italic; font-weight: 300; font-size: 22px; color: var(--ink-2); line-height: 1.2; }
+  .product-head .tags {
+    display: flex; gap: 8px; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--muted);
+  }
+  .product-head .led-badge {
+    background: #F4B400; color: #3a2400; padding: 3px 7px;
+    border: 1.5px solid #3a2400; font-weight: 700;
+  }
+  .product-head .new-badge {
+    background: #2c7a4b; color: #fff; padding: 3px 7px;
+    border: 1.5px solid #143a23; font-weight: 700;
+  }
+  .product-head .price {
+    font-family: 'Bebas Neue', sans-serif; font-size: 36px; text-align: right;
+  }
+  .product-head .price small {
+    display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;
+  }
+  .product-head .price.tbd { color: var(--muted); font-size: 24px; }
+
+  .product-body { font-size: 14px; line-height: 1.7; color: var(--ink); }
+  .product-body h4 {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 12px;
+  }
+  .product-body p { margin: 0 0 14px; max-width: 820px; }
+  .product-body strong { font-weight: 600; }
+  .product-body em { font-style: italic; color: var(--ink-2); }
+
+  .specs {
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: var(--paper-2);
+    border: 1px solid rgba(0,0,0,0.12);
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr;
+    gap: 8px 18px;
+    font-size: 12px;
+  }
+  .specs .k {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
+  }
+  .specs .v { font-weight: 500; }
+
+  .meta-row {
+    margin-top: 20px; padding-top: 16px;
+    border-top: 1px dotted rgba(0,0,0,0.15);
+    display: grid; grid-template-columns: auto 1fr;
+    gap: 6px 16px; font-size: 12px; line-height: 1.6;
+  }
+  .meta-row .k {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
+  }
+  .meta-row code {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    background: var(--paper); padding: 1px 5px;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .footer-cta { background: var(--ink); color: var(--paper); padding: 56px 56px; }
+  .footer-cta h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 5vw, 64px); margin: 0 0 18px; color: var(--paper); }
+  .footer-cta p { font-size: 15px; line-height: 1.65; color: rgba(245,242,236,0.85); max-width: 720px; margin: 0 0 14px; }
+  .footer-cta ul { margin: 16px 0 0; padding-left: 22px; color: rgba(245,242,236,0.95); line-height: 1.8; font-size: 14px; }
+
+  @media (max-width: 900px) {
+    .head, .product, .sec, .footer-cta { padding-left: 24px; padding-right: 24px; }
+    .product-head { grid-template-columns: 1fr; }
+    .specs { grid-template-columns: auto 1fr; }
+  }
+</style>
+</head>
+
+<body class="vp">
+<div class="doc">
+
+  <header class="head">
+    <div class="vp-eyebrow">5 uut toodet · 28. mai 2026</div>
+    <h1>Lisame valikusse.<br/><em>KA1, KA2, AST25, RST12, LPA126.</em></h1>
+    <p>
+      Spec'id loetud Sinu antud referents-spec'idelt (mõõdud, materjal, värvid).
+      Kirjeldused kirjutatud meie enda häälel S-06 v3 mallide järgi (134–155 sõna, LED-spec lisatud kus asjakohane).
+      <strong>Pildid lisad ise hiljem</strong> — failinime muster <code>SKU_1.jpg, SKU_2.jpg, …</code>, kataloog <code>assets/products/</code>.
+    </p>
+    <div class="v2-note">
+      <strong>Uus hub catalog'is:</strong>
+      KA1 ja KA2 on <em>peidetud paigaldusega kardinaprofiilid</em> — ei kuulu olemasolevatesse 5 hubi.
+      Soovitan luua uue kategooria <code>/kardinaprofiilid/</code> või paigutada need olemasoleva LED-laeprofiilide hubi alla (kuna mainisime juba AST50 kirjelduses, et "ühildub KA1-ga"). Sinu otsus.
+    </p>
+  </header>
+
+  <!-- SEO TABLE -->
+  <section class="sec">
+    <h2>SEO-nimed + URL-id</h2>
+    <div class="sub">S-05 nimekirjale lisatav · 4 päris uut SKU + 1 olemasolev (RST12)</div>
+    <table class="seo">
+      <thead><tr>
+        <th style="width:80px">SKU</th>
+        <th style="width:50px">LED</th>
+        <th style="width:290px">SeoName</th>
+        <th style="width:140px">Hub</th>
+        <th>URL</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>KA1</strong></td>
+          <td class="led"></td>
+          <td>Peidetud paigaldusega kardinaprofiil</td>
+          <td class="mono">Kardinaprofiilid</td>
+          <td><span class="url-cell">/kardinaprofiilid/ka1/</span></td>
+        </tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>KA2</strong></td>
+          <td class="led"></td>
+          <td>Peidetud paigaldusega kardinaprofiil · 2-rea</td>
+          <td class="mono">Kardinaprofiilid</td>
+          <td><span class="url-cell">/kardinaprofiilid/ka2/</span></td>
+        </tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>AST25</strong></td>
+          <td class="led">⚡</td>
+          <td>Lae LED varjuprofiil · 25 mm</td>
+          <td class="mono">LED varjuprofiilid</td>
+          <td><span class="url-cell">/led-varjuprofiilid/lae/ast25/</span></td>
+        </tr>
+        <tr>
+          <td class="mono"><span class="badge exist">OLEMAS</span><strong>RST12</strong></td>
+          <td class="led">⚡</td>
+          <td>Lae LED varjuprofiil · eraldatud 12 mm</td>
+          <td class="mono">LED varjuprofiilid</td>
+          <td><span class="url-cell">/led-varjuprofiilid/lae/rst12/</span></td>
+        </tr>
+        <tr>
+          <td class="mono"><span class="badge">UUS</span><strong>LPA126</strong></td>
+          <td class="led"></td>
+          <td>Peen lae varjuprofiil · 6 mm</td>
+          <td class="mono">Varjuprofiilid</td>
+          <td><span class="url-cell">/varjuprofiilid/lae/lpa126/</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- KA1 -->
+  <article class="product">
+    <header class="product-head">
+      <div class="sku">KA1</div>
+      <div class="meta">
+        <div class="seoname">Peidetud paigaldusega kardinaprofiil</div>
+        <div class="tags">
+          <span class="new-badge">UUS</span>
+          <span>Kardinaprofiilid · 1-rea</span>
+        </div>
+      </div>
+      <div class="price tbd">Hind TBD<small>/ jooksev meeter</small></div>
+    </header>
+    <div class="product-body">
+      <h4>v1 · 138 sõna · uus kirjeldus</h4>
+      <p><strong>KA1 on peidetud paigaldusega kardinaprofiil</strong> — alumiinium-profiil, mille kardinasiin paigaldatakse kipsplaadi sisse nii, et see ei ole pärast viimistlust ruumist nähtav. Kardin näib rippuvat otse laest, ilma nähtava karniisi või kardinasiinita.</p>
+      <p>Visuaalne mõju on selge: silm ei näe enam <em>kardinasiini-asukohta</em>, vaid ainult kanga ülemist äärt. Ruum tundub kõrgem ja minimalistlikum; aknad muutuvad arhitektuurseks elemendiks, mitte tehniliseks detailiks. Eriti hästi sobib lahendus elutubadesse, magamistubadesse ja konverentsiruumidesse, kus on suured aknad ja madal lagi.</p>
+      <p>KA1 ühildub meie AST50 lae LED varjuprofiiliga — kombinatsioon annab peidetud kardinasiini koos pehme valgusjoonega kardina taga. Standardpikkus <strong>3 m</strong>, materjal alumiinium. Värvid: töötlemata, valge, must; RAL-tellimusel mistahes toon. LED-funktsiooni KA1-l otseselt pole.</p>
+      <div class="specs">
+        <span class="k">Materjal</span><span class="v">Alumiinium</span>
+        <span class="k">Pikkus</span><span class="v">3000 mm</span>
+        <span class="k">Värvid</span><span class="v">Töötlemata · valge · must · RAL</span>
+        <span class="k">LED</span><span class="v">Ei</span>
+        <span class="k">Read</span><span class="v">1</span>
+        <span class="k">Paigaldus</span><span class="v">Kipsplaadi sisse</span>
+      </div>
+    </div>
+    <div class="meta-row">
+      <span class="k">URL</span><span><code>/kardinaprofiilid/ka1/</code></span>
+      <span class="k">Title-tag</span><span>KA1 – Peidetud paigaldusega kardinaprofiil | Varjuprofiilid.ee</span>
+    </div>
+  </article>
+
+  <!-- KA2 -->
+  <article class="product">
+    <header class="product-head">
+      <div class="sku">KA2</div>
+      <div class="meta">
+        <div class="seoname">Peidetud paigaldusega kardinaprofiil · 2-rea</div>
+        <div class="tags">
+          <span class="new-badge">UUS</span>
+          <span>Kardinaprofiilid · 2-rea</span>
+        </div>
+      </div>
+      <div class="price tbd">Hind TBD<small>/ jooksev meeter</small></div>
+    </header>
+    <div class="product-body">
+      <h4>v1 · 142 sõna · uus kirjeldus</h4>
+      <p><strong>KA2 on kahe-realine peidetud paigaldusega kardinaprofiil</strong> — sama paigalduspõhimõte kui KA1-l, kuid kahe paralleelse kardinasiiniga, mis võimaldab paigaldada näiteks <em>läbipaistva päevakardina ja pimendava öökardina</em> kõrvuti. Mõlemad kardinasiinid jäävad lae sisse peidetuks; ruumist on nähtav ainult kahe kihi kangas.</p>
+      <p>Lahendus on tüüpiline magamistubades ja hotellides, kus on vaja korraga päevavalguse pehmendust ja täielikku pimendust, kuid ei taheta nähtavat karniisi-konstruktsiooni. KA2 võimaldab seda ilma ruumi minimalismi rikkumata.</p>
+      <p>Standardpikkus <strong>3 m</strong>, materjal alumiinium. Värvid: valge ja must (pulbervärvitud); RAL-tellimusel mistahes toon (~5 nädalat). Paigaldatakse kipsplaadi sisse ehituse käigus. Profiili korpus on KA1-st mahukam, mistõttu lae-kõrgus paigalduskohas peab seda arvestama — vajalik paigaldussüvend on ~80 mm.</p>
+      <div class="specs">
+        <span class="k">Materjal</span><span class="v">Alumiinium</span>
+        <span class="k">Pikkus</span><span class="v">3000 mm</span>
+        <span class="k">Värvid</span><span class="v">Valge · must · RAL</span>
+        <span class="k">LED</span><span class="v">Ei</span>
+        <span class="k">Read</span><span class="v">2</span>
+        <span class="k">Paigaldus</span><span class="v">Kipsplaadi sisse, ~80 mm süvend</span>
+      </div>
+    </div>
+    <div class="meta-row">
+      <span class="k">URL</span><span><code>/kardinaprofiilid/ka2/</code></span>
+      <span class="k">Title-tag</span><span>KA2 – Kahe-realine kardinaprofiil | Varjuprofiilid.ee</span>
+    </div>
+  </article>
+
+  <!-- AST25 -->
+  <article class="product">
+    <header class="product-head">
+      <div class="sku">AST25</div>
+      <div class="meta">
+        <div class="seoname">Lae LED varjuprofiil · 25 mm</div>
+        <div class="tags">
+          <span class="new-badge">UUS</span>
+          <span class="led-badge">⚡ LED</span>
+          <span>Laeprofiilid</span>
+        </div>
+      </div>
+      <div class="price tbd">Hind TBD<small>/ jooksev meeter</small></div>
+    </header>
+    <div class="product-body">
+      <h4>v1 · 148 sõna · uus kirjeldus</h4>
+      <p><strong>AST25 on 25 mm laiusega lae LED varjuprofiil</strong> — meie valiku <em>kõige laiem standard-laelookoht profiil</em>. Võrdluseks: AST22 on 22,5 mm, AST5 on 5 mm. AST25 sobib siis, kui projekt nõuab silmatorkavamat varjujoont — suuremad eluruumid, kõrged laed, esinduslikud avalikud ruumid, kus 22 mm jääks liiga peeneks.</p>
+      <p>Profiili sees on integreeritud LED-kanal, mis annab pehme peitevalgustuse perimeetri ulatuses. Laiem süvend tähendab ka rohkem ruumi hajutile — valgus jaotub ühtlasemalt ja silm ei näe nii kergesti LED-täppe profiili sees.</p>
+      <p>Paigaldatakse lae ja seina ühenduskohta, pahteldatav servaga. Standardpikkus <strong>3 m</strong>. Värvid: töötlemata, valge, must; RAL-tellimusel mistahes toon. Soovitatud LED-riba: <strong>12 W/m, 234 LED/m, 3000K, 24V</strong> (lae-standard). LED-riba ja hajuti tellitakse eraldi.</p>
+      <div class="specs">
+        <span class="k">Materjal</span><span class="v">Alumiinium</span>
+        <span class="k">Pikkus</span><span class="v">3000 mm</span>
+        <span class="k">Värvid</span><span class="v">Töötlemata · valge · must · RAL</span>
+        <span class="k">LED</span><span class="v">Jah</span>
+        <span class="k">Varjujoon</span><span class="v">25 mm</span>
+        <span class="k">LED-spec</span><span class="v">12 W/m · 234 LED/m · 3000K · 24V</span>
+      </div>
+    </div>
+    <div class="meta-row">
+      <span class="k">URL</span><span><code>/led-varjuprofiilid/lae/ast25/</code></span>
+      <span class="k">Title-tag</span><span>AST25 – Lae LED varjuprofiil (25 mm) | Varjuprofiilid.ee</span>
+    </div>
+  </article>
+
+  <!-- RST12 -->
+  <article class="product">
+    <header class="product-head">
+      <div class="sku">RST12</div>
+      <div class="meta">
+        <div class="seoname">Lae LED varjuprofiil · eraldatud 12 mm</div>
+        <div class="tags">
+          <span class="led-badge">⚡ LED</span>
+          <span>Laeprofiilid · eraldatud konstruktsioon</span>
+        </div>
+      </div>
+      <div class="price tbd">Hind TBD<small>/ jooksev meeter</small></div>
+    </header>
+    <div class="product-body">
+      <h4>v1 · 145 sõna · uus kirjeldus</h4>
+      <p><strong>RST12 on eraldatud konstruktsiooniga 12 mm lae LED varjuprofiil</strong> — kahest osast koosnev süsteem, kus LED-kanal ja varjujoon on füüsiliselt eraldi profiilides. See lahendus annab paigaldusele rohkem mängu: LED-osa saab paigaldada täpselt sinna, kus see kõige paremini valgustab, varjujoon jääb omaette dekoratiivseks elemendiks.</p>
+      <p>RST12 vahesüvend on 12 mm — keskmine laius, mis sobib enamikku ruumidesse: kodud, kontorid, kohvikud. Erinevus monoblokk-profiilidest (näiteks AST14_12) seisneb just paigaldusvõimaluste paindlikkuses — kui projekt nõuab LED-i ja varju eri laiustes või eri kõrgustel, on RST12 ainuvalik.</p>
+      <p>Standardpikkus <strong>2,5 m</strong>. Materjal alumiinium. Värvid: töötlemata, valge, must; RAL-tellimusel mistahes toon. Soovitatud LED-riba: <strong>12 W/m, 234 LED/m, 3000K, 24V</strong>. Hajuti tellitakse eraldi.</p>
+      <div class="specs">
+        <span class="k">Materjal</span><span class="v">Alumiinium</span>
+        <span class="k">Pikkus</span><span class="v">2500 mm</span>
+        <span class="k">Värvid</span><span class="v">Töötlemata · valge · must · RAL</span>
+        <span class="k">LED</span><span class="v">Jah</span>
+        <span class="k">Varjujoon</span><span class="v">12 mm (eraldatud)</span>
+        <span class="k">LED-spec</span><span class="v">12 W/m · 234 LED/m · 3000K · 24V</span>
+      </div>
+    </div>
+    <div class="meta-row">
+      <span class="k">URL</span><span><code>/led-varjuprofiilid/lae/rst12/</code></span>
+      <span class="k">Title-tag</span><span>RST12 – Lae LED varjuprofiil (eraldatud, 12 mm) | Varjuprofiilid.ee</span>
+    </div>
+  </article>
+
+  <!-- LPA126 -->
+  <article class="product">
+    <header class="product-head">
+      <div class="sku">LPA126</div>
+      <div class="meta">
+        <div class="seoname">Peen lae varjuprofiil · 6 mm</div>
+        <div class="tags">
+          <span class="new-badge">UUS</span>
+          <span>Laeprofiilid · Dekoratiivne (ilma LED)</span>
+        </div>
+      </div>
+      <div class="price tbd">Hind TBD<small>/ jooksev meeter</small></div>
+    </header>
+    <div class="product-body">
+      <h4>v1 · 140 sõna · uus kirjeldus</h4>
+      <p><strong>LPA126 on 6 mm peen lae varjuprofiil</strong> — pärast AST5 (5 mm) meie teine kõige õhem varjujoon. Mõeldud projektidesse, kus on vaja arhitektuurset detaili, kuid mitte LED-valgustust. Tulemus on vaoshoitud <em>varjujoon</em> lae ja seina vahel, mida silm registreerib alateadlikult — ruum tundub viimistletum ilma, et üksi detail tähelepanu tõmbaks.</p>
+      <p>Erinevus AST5-st: LPA126 on 1 mm laiem (6 mm vs 5 mm) ja pikem (2,6 m vs 2,5 m), mis vähendab jätkukohtade arvu pikkades ruumides. AST5 on pisut neutraalsem ja peenem, LPA126 annab veidi kindlama joone.</p>
+      <p>Pahteldatav servaga, paigaldatakse kipsplaadi tasapinnaga ühte. Üleminek on viimistlusjärgselt nähtamatu. Standardpikkus <strong>2,6 m</strong>. Värvid: töötlemata, must; RAL-tellimusel mistahes toon (~5 nädalat). LED-funktsiooni ei ole.</p>
+      <div class="specs">
+        <span class="k">Materjal</span><span class="v">Alumiinium</span>
+        <span class="k">Pikkus</span><span class="v">2600 mm</span>
+        <span class="k">Värvid</span><span class="v">Töötlemata · must · RAL</span>
+        <span class="k">LED</span><span class="v">Ei</span>
+        <span class="k">Varjujoon</span><span class="v">6 mm</span>
+        <span class="k">Paigaldus</span><span class="v">Pahteldatav, kipsplaadi tasapind</span>
+      </div>
+    </div>
+    <div class="meta-row">
+      <span class="k">URL</span><span><code>/varjuprofiilid/lae/lpa126/</code></span>
+      <span class="k">Title-tag</span><span>LPA126 – Peen lae varjuprofiil (6 mm) | Varjuprofiilid.ee</span>
+    </div>
+  </article>
+
+  <!-- FOOTER -->
+  <section class="footer-cta">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.08em; color:rgba(245,242,236,0.6); margin-bottom:8px;">Mida kontrollida</div>
+    <h2>Vaata üle.</h2>
+    <p>
+      Iga kirjelduse all on faktiline <strong>specs</strong>-blokk — see on osa, mida ma loen otse Sinu antud referents-spec'idelt.
+      Kui mõni number on vale (pikkus, värvivalik, LED jah/ei), ütle ja parandan enne, kui need lähevad <code>catalog-data.js</code>-i.
+    </p>
+    <ul>
+      <li><strong>Hinnad on TBD</strong> — pole olemasolevatest UAH-hindadest tuletatud, sest kursimäär ei ole õige viis hinnastamiseks. Saada EUR-hinnad ja täidan.</li>
+      <li><strong>Uus hub <code>/kardinaprofiilid/</code></strong> — KA1 ja KA2 ei kuulu olemasolevatesse 5 hubi (LED-varjuprofiilid, varjuprofiilid, põrandaliistud, nurgaprofiilid, tarvikud). Vajavad uut kategooriat menüüsse + breadcrumb'i.</li>
+      <li><strong>AST50 kirjeldus juba viitab KA1-le</strong> — "AST50 ühildub meie müüdava kardinasiini profiiliga (KA1 — varsti valikus)". Pärast KA1 lisamist tasub eemaldada "varsti valikus" osa.</li>
+      <li><strong>Pildid lisad ise</strong> — kataloog <code>assets/products/</code>, soovitatud failinime muster: <code>KA1_1.jpg</code>, <code>KA2_paigaldus.png</code> jne. SKU eesliide on oluline, kuna catalog-loader otsib piltide juurde just selle järgi.</li>
+    </ul>
+  </section>
+
+</div>
+</body>
+</html>

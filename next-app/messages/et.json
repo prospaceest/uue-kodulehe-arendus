@@ -1,0 +1,214 @@
+{
+  "locale": {
+    "et": "ET",
+    "ru": "RU",
+    "switch": { "aria": "Vali keel" }
+  },
+  "nav": {
+    "shop": "Pood",
+    "about": "Toodetest",
+    "inspiration": "Inspiratsioon",
+    "blog": "Uudised",
+    "salon": "Salong",
+    "search": "Otsi",
+    "cart": "Korv",
+    "account": "Konto",
+    "b2b": "B2B",
+    "contact": "Kontakt",
+    "faq": "KKK"
+  },
+  "footer": {
+    "shop": "Pood",
+    "help": "Abi",
+    "company": "Ettevõte",
+    "legal": "Õigus",
+    "follow": "Jälgi meid",
+    "newsletter": "Uudiskiri",
+    "newsletterPlaceholder": "Sinu e-mail",
+    "newsletterCta": "Telli",
+    "rights": "© 2026 PROSPACE OÜ. Kõik õigused kaitstud."
+  },
+  "hero": {
+    "collection": "★ Kollektsioon 026 — Kevad 2026",
+    "live": "Live · {count} toodet laos",
+    "ctaPrimary": "Avasta tooted →",
+    "stats": {
+      "inStock": "Toodet laos",
+      "delivery": "Tasuta tarne Eestis",
+      "ral": "RAL värvitoone",
+      "return": "Tagastusõigus",
+      "days": "p"
+    }
+  },
+  "marquee": {
+    "delivery": "TASUTA TARNE 200 €+",
+    "return": "14 PÄEVA TAGASTUS (V.A. RAL)",
+    "ral": "RAL VÄRVITUD"
+  },
+  "home": {
+    "collections": {
+      "eyebrow": "02 / Kollektsioonid",
+      "title": "Osta kategooria järgi",
+      "viewAll": "Vaata kõiki →"
+    },
+    "configurator": {
+      "eyebrow": "03 / Tööriist",
+      "title": "Konfiguraator",
+      "desc": "Sisesta vajalik meetrite kogus ja vali profiili tüüp - arvutame välja vajaliku tükkide arvu.",
+      "fieldMeters": "Vajalik kogus (m)",
+      "fieldType": "Profiili tüüp",
+      "typeCeiling": "Lae profiil · 2,5 m",
+      "typeFloor": "Põranda profiil · 2,6 m",
+      "pieces": "profiili tükki",
+      "totalLength": "= {len} m kogupikkus",
+      "note": "Profiile ei poolitata — kogus ümardatakse järgmise täistükini.",
+      "ctaCeiling": "Vaata laeprofiile →",
+      "ctaFloor": "Vaata põrandaprofiile →"
+    },
+    "bestsellers": {
+      "eyebrow": "04 / Enimmüüdud",
+      "title": "Top 10"
+    },
+    "inspiration": {
+      "eyebrow": "05 / Päris projektid",
+      "title": "Inspiratsioon"
+    },
+    "social": { "eyebrow": "06 / Sotsiaalmeedia" },
+    "blog": {
+      "eyebrow": "07 / Uudised",
+      "title": "Juhendid & inspiratsioon"
+    },
+    "partners": {
+      "eyebrow": "08 / Kliendid ja koostööpartnerid",
+      "title": "Usaldatud eesti arhitektide ja ehitajate poolt"
+    }
+  },
+  "catalog": {
+    "title": "Pood",
+    "filter": {
+      "category": "Kategooria",
+      "color": "Värv",
+      "price": "Hind",
+      "led": "LED",
+      "ledWith": "LED-iga",
+      "ledWithout": "Ilma LED",
+      "ledAll": "Kõik"
+    },
+    "sort": {
+      "label": "Sorteeri",
+      "popular": "Populaarsed",
+      "priceAsc": "Hind ↑",
+      "priceDesc": "Hind ↓",
+      "new": "Uuemad"
+    },
+    "results": "{count} toodet"
+  },
+  "product": {
+    "ribbon": {
+      "inStock": "LAOS",
+      "order": "TELLI",
+      "new": "UUS"
+    },
+    "ledBadge": "⚡ LED",
+    "priceFrom": "alates",
+    "priceUnit": "€/jm",
+    "priceVatIncluded": "sisaldab 24% KM",
+    "tab": {
+      "specs": "Tehnilised andmed",
+      "colors": "Värvid",
+      "installation": "Paigaldus",
+      "faq": "KKK"
+    },
+    "color": {
+      "select": "Vali värv",
+      "ral": "RAL värv (eritellimus)",
+      "lead": "Tarne 4–5 nädalat"
+    },
+    "qty": "Kogus (m)",
+    "qtyPieces": "tükki vaja",
+    "cta": {
+      "addToCart": "Lisa korvi",
+      "askQuote": "Küsi pakkumist"
+    },
+    "relatedTitle": "Seotud tooted"
+  },
+  "cart": {
+    "title": "Sinu korv",
+    "empty": "Korv on tühi",
+    "emptyCta": "Vaata tooteid →",
+    "subtotal": "Vahesumma",
+    "shipping": "Tarne",
+    "shippingFree": "Tasuta",
+    "total": "Kokku",
+    "vat": "sisaldab 24% KM",
+    "promoCode": "Sooduskood",
+    "promoCodeApply": "Rakenda",
+    "ctaCheckout": "Jätka tellimusega →"
+  },
+  "checkout": {
+    "title": "Tellimuse vormistamine",
+    "contact": "Kontaktandmed",
+    "delivery": "Tarne",
+    "payment": "Makseviis",
+    "field": {
+      "name": "Nimi",
+      "email": "E-mail",
+      "phone": "Telefon",
+      "address": "Aadress",
+      "city": "Linn",
+      "zip": "Sihtnumber",
+      "notes": "Märkused"
+    },
+    "ctaPlaceOrder": "Esita tellimus →"
+  },
+  "contact": {
+    "title": "Võta ühendust",
+    "intro": "Salongi külastus, RAL-tellimused, B2B partnerlus — vastame kõikidele.",
+    "form": {
+      "subject": "Teema",
+      "message": "Sõnum",
+      "submit": "Saada sõnum",
+      "success": "Aitäh — vastame 24 tunni jooksul."
+    }
+  },
+  "b2b": {
+    "title": "B2B partneritele",
+    "intro": "Arhitektidele, sisekujundajatele, ehitajatele. Allahindlused, makseterminid, isiklik nõustamine.",
+    "formSubmit": "Saada päring →"
+  },
+  "faq": { "title": "Korduma kippuvad küsimused" },
+  "info": {
+    "installation": "Paigaldusjuhend",
+    "delivery": "Tarne ja tagastus",
+    "warranty": "Garantii",
+    "contact": "Kontakt",
+    "salon": "Salong"
+  },
+  "legal": {
+    "impressum": "Impressum",
+    "terms": "Müügitingimused",
+    "privacy": "Privaatsus",
+    "cookies": "Küpsised"
+  },
+  "btn": {
+    "viewAll": "Vaata kõiki →",
+    "readMore": "Loe rohkem →",
+    "learnMore": "Tutvu lähemalt →",
+    "discover": "Avasta →",
+    "back": "← Tagasi",
+    "close": "Sulge",
+    "cancel": "Tühista",
+    "save": "Salvesta"
+  },
+  "status": {
+    "loading": "Laadin…",
+    "error": "Ilmnes viga",
+    "empty": "Sisu pole",
+    "notFound": "Ei leitud"
+  },
+  "search": {
+    "placeholder": "Otsi tooteid",
+    "empty": "Otsing ei andnud tulemusi",
+    "tryAgain": "Proovi teisi märksõnu või vaata kogu valikut."
+  }
+}

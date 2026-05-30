@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# next.js build
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# secrets / env (EI tohi kunagi git'i minna)
+.env
+.env.local
+.env*.local
+
+# vercel
+.vercel/
+
+# macOS
+.DS_Store

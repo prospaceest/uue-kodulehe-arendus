@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>S-06 demo v2 · 10 toote unikaalsed kirjeldused (parandustega)</title>
+<link rel="stylesheet" href="hifi/style.css"/>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .doc { max-width: 1320px; margin: 0 auto; }
+  .head { padding: 56px 56px 32px; border-bottom: 1.5px solid var(--ink); }
+  .head h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px, 7vw, 96px); line-height: 0.88; margin: 12px 0; letter-spacing: 0.005em; }
+  .head h1 em { font-family: 'Inter', serif; font-style: italic; font-weight: 300; font-size: 0.42em; letter-spacing: -0.02em; }
+  .head p { font-size: 16px; line-height: 1.6; color: var(--ink-2); max-width: 760px; }
+  .v2-note {
+    margin-top: 18px;
+    padding: 14px 18px;
+    border-left: 4px solid var(--accent);
+    background: var(--paper-2);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+  .v2-note strong { color: var(--ink); }
+
+  .product { border-bottom: 1.5px solid var(--ink); padding: 48px 56px; }
+  .product-head {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    gap: 24px;
+    align-items: baseline;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+  }
+  .product-head .sku { font-family: 'Bebas Neue', sans-serif; font-size: 48px; line-height: 1; }
+  .product-head .meta { display: flex; flex-direction: column; gap: 4px; }
+  .product-head .seoname { font-family: 'Inter', serif; font-style: italic; font-weight: 300; font-size: 22px; color: var(--ink-2); line-height: 1.2; }
+  .product-head .tags {
+    display: flex; gap: 8px; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--muted);
+  }
+  .product-head .led-badge {
+    background: #F4B400; color: #3a2400; padding: 3px 7px;
+    border: 1.5px solid #3a2400; font-weight: 700;
+  }
+  .product-head .price {
+    font-family: 'Bebas Neue', sans-serif; font-size: 36px; text-align: right;
+  }
+  .product-head .price small {
+    display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;
+  }
+
+  .product-body { font-size: 14px; line-height: 1.7; color: var(--ink); }
+  .product-body h4 {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 12px;
+  }
+  .product-body p { margin: 0 0 14px; max-width: 820px; }
+  .product-body strong { font-weight: 600; }
+  .product-body em { font-style: italic; color: var(--ink-2); }
+
+  .fixes {
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: var(--paper-2);
+    border: 1px dashed rgba(0,0,0,0.2);
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .fixes b {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .fixes ul { margin: 0; padding-left: 18px; }
+  .fixes li { margin-bottom: 3px; }
+
+  .meta-row {
+    margin-top: 20px; padding-top: 16px;
+    border-top: 1px dotted rgba(0,0,0,0.15);
+    display: grid; grid-template-columns: auto 1fr;
+    gap: 6px 16px; font-size: 12px; line-height: 1.6;
+  }
+  .meta-row .k {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
+  }
+  .meta-row code {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    background: var(--paper); padding: 1px 5px;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .footer-cta { background: var(--ink); color: var(--paper); padding: 56px 56px; }
+  .footer-cta h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 5vw, 64px); margin: 0 0 18px; color: var(--paper); }
+  .footer-cta p { font-size: 16px; line-height: 1.65; color: rgba(245,242,236,0.85); max-width: 720px; margin: 0 0 14px; }
+  .footer-cta ul { margin: 16px 0 0; padding-left: 22px; color: rgba(245,242,236,0.95); line-height: 1.8; }
+
+  @media (max-width: 900px) {
+    .head, .product, .footer-cta { padding-left: 24px; padding-right: 24px; }
+    .product-head { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+
+<body class="vp">
+
+<div class="doc">
+
+  <header class="head">
+    <div class="vp-eyebrow">S-06 · demo v2 · 27. mai 2026</div>
+    <h1>Unikaalsed<br/>kirjeldused v2.<br/><em>tagasiside rakendatud, faktivigad parandatud.</em></h1>
+    <div class="v2-note">
+      <strong>v2 → v3 (28.05) uuendus:</strong>
+      LED-soovitused uuendatud Sinu täpsete spec'idega.
+      <strong>Lae:</strong> 12 W/m · 234 LED/m · 3000K (ühtlane valgusjoon, hubane toon).
+      <strong>Põrand:</strong> COB 16 W/m · 1350 lm/m · CRI 94 · 24V (parim kompromiss hind/heledus/kvaliteet).
+      Lisaks: 24V > 12V (vähem pingelangust), CRI ≥ 90 (ideaalis 94), profiili laius ~10 mm, 2700–3000K hubasem toon.
+    </div>
+  </header>
+
+  <!-- 01 — AST22 -->
+  <article class="product">
+    <header class="product-head">
+      <div class="sku">AST22</div>
+      <div class="meta">
+        <div class="seoname">Lae LED varjuprofiil</div>
+        <div class="tags">
+          <span class="led-badge">⚡ LED</span>
+          <span>Laeprofiilid · Top 10 · LAOS</span>
+        </div>
+      </div>
+      <div class="price">19,37 €<small>/ jooksev meeter</small></div>
+    </header>
+    <div class="product-body">
+      <h4>v2 · 134 sõna</h4>
+      <p><strong>AST22 on meie populaarseim lae LED varjuprofiil</strong> — 22,5 mm laiune alumiiniumprofiil, mis paigaldatakse lae ja seina ühenduskohta. Sisseehitatud LED-kanal teeb sellest lahenduse, mis korraga loob <em>varjuefekti</em> ja pehme peitevalgustuse ruumi perimeetri ulatuses.</p>
+      <p>Saadaval värvides: anodeeritud hõbe (toon, mis sarnaneb anodeeritud pinnale), must, valge ja töötlemata viimistlus; RAL-tellimusel mistahes toon. Standardpikkus 2,5 m.</p>
+      <p>Sobib ripplagede ning monoliitse seina ühenduseks. AST22 on universaalne — paigaldatakse mistahes ruumi lakke, olgu see kodu, kontor või ärihoone. Soovitatud LED-riba: <strong>12 W/m, 234 LED/m, 3000K, 24V</strong> — kõrge LED-tihedus annab täiesti ühtlase valgusjoone ilma nähtavate täppideta, hubane 3000K toon on kodusesse interjööri kõige universaalsem. LED-riba ja hajuti tellitakse eraldi.</p>
+      <div class="fixes">
+        <b>Parandused (v2 → v3)</b>
+        <ul>
+          <li>LED-spec uuendatud: 12 W/m · 234 LED/m · 3000K (lae-profiilide standard)</li>
+          <li>v2-parandused säilitatud (eemaldatud vale pahteldus-lause, valed kasutuskohad)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta-row">
+      <span class="k">URL</span><span><code>/led-varjuprofiilid/lae/ast22/</code></span>
+      <span class="k">Title-tag</span><span>AST22 – Lae LED varjuprofiil | Varjuprofiilid.ee</span>
+    </div>
+  </article>
+
+  <!-- 02 — AST5 -->
+  <article class="product">
+    <header class="product-head">
+      <div class="sku">AST5</div>
+      <div class="meta">
+        <div class="seoname">Lae varjuprofiil</div>
+        <div class="tags"><span>Laeprofiilid · Dekoratiivne (ilma LED)</span></div>
+      </div>
+      <div class="price">12,35 €<small>/ jooksev meeter</small></div>
+    </header>
+    <div class="product-body">
+      <h4>v2 · 139 sõna</h4>
+      <p><strong>AST5 on kõige õhem dekoratiivne lae varjuprofiil</strong> meie valikus — vaid 5 mm tahtlik vari lae ja seina vahel. Erinevalt LED-versioonidega profiilidest pole AST5-l valgustus-funktsiooni, fookus on puhtalt arhitektuursel detailil: peen, vaoshoitud <em>varjujoon</em>, mis loob mulje hõljuvast laest ilma silmatorkavalt visuaalseta.</p>
+      <p>Sobib kõige paremini väiksemate ruumide (vannituba, esik, väike magamistuba) lakke, kus suurem varjujoon mõjuks ülemääraselt. Madala lae korral on AST5 ideaalne — annab kaasaegse joone, kuid ei rõhuta kõrgust väiksemaks.</p>
+      <p>Pahteldatav servaga: paigaldatakse kipsplaadi tasapinnaga ühte, üleminek on viimistlusjärgselt nähtamatu. Saadaval valges, mustas ja töötlemata viimistluses; RAL-tellimusel mistahes toon. Standardpikkus 2,5 m.</p>
+      <div class="fixes">
+        <b>Parandused</b>
+        <ul>
+          <li>"subtiilne shadow gap" → "vaoshoitud varjujoon"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta-row">
+      <span class="k">URL</span><span><code>/varjuprofiilid/lae/ast5/</code></span>
+      <span class="k">Title-tag</span><span>AST5 – Lae varjuprofiil (5 mm) | Varjuprofiilid.ee</span>
+    </div>
+  </article>
+
+  <!-- 03 — AST50 -->
+  <article class="product">
+    <header class="product-head">
+      <div class="sku">AST50</div>
+      <div class="meta">
+        <div class="seoname">Lae LED varjuprofiil · vaba paigaldus</div>
+        <div class="tags">
+          <span class="led-badge">⚡ LED</span>
+          <span>Laeprofiilid · Top 10 · LAOS</span>
+        </div>
+      </div>
+      <div class="price">15,88 €<small>/ jooksev meeter</small></div>
+    </header>
+    <div class="product-body">
+      <h4>v2 · 155 sõna · TÄIELIKULT ÜMBER KIRJUTATUD</h4>
+      <p><strong>AST50 on universaalne lae LED varjuprofiil</strong>, mis erineb teistest selle poolest, et <strong>profiil ei kinnitu seinale</strong> — seda saab paigaldada lakke täpselt nii kaugele seinast, kui projekt nõuab. See vabadus muudab AST50 ainuvalikuks olukordades, kus standardne perimeetri-profiil ei sobi.</p>
+      <p>Kõige populaarsem kasutus on <em>kardinate ülemine valgustus</em> — profiil paigaldatakse mõnest sentimeetrist kuni meetri kaugusele seinast, sõltuvalt kardinasiini asukohast. AST50 ühildub hästi meie kardinaprofiilidega <strong>KA1</strong> ja <strong>KA2</strong> (peidetud paigaldusega kardinasiinid).</p>
+      <p>Standardpikkus 2,5 m. Värvid: anodeeritud (hõbe), pulbervärvitud (must, valge), töötlemata. RAL-tellimusel mistahes toon (~5 nädalat). Soovitatud LED-riba: <strong>12 W/m, 234 LED/m, 3000K, 24V</strong>. Hajuti tellitakse eraldi. AST50 on laos.</p>
+      <div class="fixes">
+        <b>Parandused (v2 → v3)</b>
+        <ul>
+          <li>LED-spec uuendatud lae-standardi spec'iks</li>
+          <li>v2-parandused säilitatud (profiil ei kinnitu seinale + KA1 kardinasiin)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta-row">
+      <span class="k">URL</span><span><code>/led-varjuprofiilid/lae/ast50/</code></span>
+      <span class="k">Title-tag</span><span>AST50 – Lae LED varjuprofiil (vaba paigaldus) | Varjuprofiilid.ee</span>
+    </div>
+  </article>
+
+  <!-- 04 — AST201 -->
+  <article class="product">
+    <header class="product-head">
+      <div class="sku">AST201</div>
+      <div class="meta">
+        <div class="seoname">Lae LED varjuprofiil</div>
+        <div class="tags">
+          <span class="led-badge">⚡ LED</span>
+          <span>Laeprofiilid</span>
+        </div>
+      </div>
+      <div class="price">22,03 €<small>/ jooksev meeter</small></div>
+    </header>
+    <div class="product-body">
+      <h4>v2 · 128 sõna</h4>
+      <p><strong>AST201 on lae LED varjuprofiil 22,5 mm laiusega</strong> — sama mõõt kui populaarsel AST22-l, kuid erineva geomeetriaga süvend. Alternatiiv neile, kes eelistavad AST201 profiili kuju ja viimistlust.</p>
+      <p>Sobib paigaldamiseks lae ja seina ühenduskohta. Üldjuhul kasutatakse AST22-te (laoseis, hind), AST201 on valikus neile, kelle projekt nõuab just selle profiili geomeetriat.</p>
+      <p>Pahteldatav servaga, paigaldatakse kipsplaadi taha. Standardpikkus 2,5 m. Värvid: töötlemata, valge, must; RAL-eritellimusel mistahes toon. Soovitatud LED-riba: <strong>12 W/m, 234 LED/m, 3000K, 24V</strong> — kõrge LED-tihedus (234 LED/m) annab ühtlaseima valgusjoone, mis sobib AST201 sügavama süvendiga eriti hästi.</p>
+      <div class="fixes">
+        <b>Parandused (v2 → v3)</b>
+        <ul>
+          <li>LED-spec uuendatud lae-standardi spec'iks</li>
+          <li>v2-parandused säilitatud ("premium" eemaldatud, neutraalne geomeetria-viide)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta-row">
+      <span class="k">URL</span><span><code>/led-varjuprofiilid/lae/ast201/</code></span>
+      <span class="k">Title-tag</span><span>AST201 – Lae LED varjuprofiil | Varjuprofiilid.ee</span>
+    </div>
+  </article>
+
+  <!-- 05 — ASPL100 -->
+  <article class="product">
+    <header class="product-head">
+      <div class="sku">ASPL100</div>
+      <div class="meta">
+        <div class="seoname">Põranda LED varjuprofiil (suur)</div>
+        <div class="tags">
+          <span class="led-badge">⚡ LED</span>
+          <span>Põrandaprofiilid · Seina peiteprofiilid</span>
+        </div>
+      </div>
+      <div class="price">21,01 €<small>/ jooksev meeter</small></div>
+    </header>
+    <div class="product-body">
+      <h4>v2 · 152 sõna</h4>
+      <p><strong>ASPL100 on suurim põranda LED varjuprofiil</strong> meie valikus — 100 mm kõrgune alumiinium-profiil, mida saab kasutada nii traditsioonilise põrandaliistu asendamiseks kui ka seinasiseste peiteprofiilina. Sobib eriti hästi kõrgematesse ruumidesse, kus tavaline põrandaliist mõjuks tähtsusetuna.</p>
+      <p>Profiili soonde paigaldatav LED-riba annab pehme peitevalgustuse köögitööpinna, garderoobikappide või TV-seina alumisel perimeetril — ilma nähtavate valgusti-asukohtadeta. Topelt-funktsioon (LED + arhitektuurne piir) muudab selle eriti populaarseks kontorites ja hotellides.</p>
+      <p>Paigaldatav kipsplaadi sisse — paigaldamine toimub ehituse käigus. Pikkus <strong>2,6 m</strong>. Värvid: anodeeritud (hõbe) ja töötlemata; RAL-tellimusel mistahes toon. Soovitatud LED-riba: <strong>COB 16 W/m, 1350 lm/m, CRI 94, 24V</strong> — COB-tehnoloogia annab täiesti ühtlase valgusjoone ilma nähtavate täppideta, mis on põrandapinna valgustamiseks oluline (silm näeb põranda pinnal LED-täppide peegelpilti). CRI 94 tagab, et põranda värv ja struktuur näevad välja naturaalsed.</p>
+      <div class="fixes">
+        <b>Parandused (v2 → v3)</b>
+        <ul>
+          <li>LED-spec uuendatud: COB 16 W/m · 1350 lm/m · CRI 94 · 24V</li>
+          <li>v2-parandused säilitatud (pikkus 2,6 m)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta-row">
+      <span class="k">URL</span><span><code>/led-varjuprofiilid/poranda/aspl100/</code></span>
+      <span class="k">Title-tag</span><span>ASPL100 – Suur põranda LED varjuprofiil | Varjuprofiilid.ee</span>
+    </div>
+  </article>
+
+  <!-- 06 — ASP102 -->
+  <article class="product">
+    <header class="product-head">
+      <div class="sku">ASP102</div>
+      <div class="meta">
+        <div class="seoname">Põranda LED varjuprofiil</div>
+        <div class="tags">
+          <span class="led-badge">⚡ LED</span>
+          <span>Põrandaprofiilid · LAOS</span>
+        </div>
+      </div>
+      <div class="price">13,84 €<small>/ jooksev meeter</small></div>
+    </header>
+    <div class="product-body">
+      <h4>v2 · 138 sõna</h4>
+      <p><strong>ASP102 on populaarne põranda LED varjuprofiil</strong> — 20 mm kõrgune peidetud paigaldusega alumiinium-profiil, mis asendab traditsioonilise põrandaliistu. Erinevalt liistust ei jää profiil seinapinna ette välja, vaid asetseb seinaga ühte tasapinda.</p>
+      <p>Tulemus: ruum näeb välja, nagu sein algaks otse põrandalt — täiesti puhas, sirge joon. Profiili soonde paigaldatav LED-riba lisab pehme peitevalgustuse põranda lähedal — sobib eriti hästi magamistubadesse ja koridoridesse.</p>
+      <p>Profiil paigaldatakse <strong>kipsplaadi alla</strong> enne viimistlust. Standardpikkus <strong>2,6 m</strong>. Saadaval värvides: anodeeritud hõbe, must, valge ja töötlemata pinnaviimistlus. Soovitatud LED-riba: <strong>COB 16 W/m, 1350 lm/m, CRI 94, 24V</strong>. Klips-hajutid ja otsakorgid eraldi tellimusel. ASP102 on laos.</p>
+      <div class="fixes">
+        <b>Parandused (v2 → v3)</b>
+        <ul>
+          <li>LED-spec uuendatud põranda-standardi spec'iks (COB 16 W/m, CRI 94)</li>
+          <li>v2-parandused säilitatud ("populaarne" mitte "kõige populaarsem", pikkus 2,6 m)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta-row">
+      <span class="k">URL</span><span><code>/led-varjuprofiilid/poranda/asp102/</code></span>
+      <span class="k">Title-tag</span><span>ASP102 – Põranda LED varjuprofiil | Varjuprofiilid.ee</span>
+    </div>
+  </article>
+
+  <!-- 07 — ASP116 -->
+  <article class="product">
+    <header class="product-head">
+      <div class="sku">ASP116</div>
+      <div class="meta">
+        <div class="seoname">Seina varjuprofiil</div>
+        <div class="tags"><span>Seina peiteprofiilid · Dekoratiivne</span></div>
+      </div>
+      <div class="price">16,45 €<small>/ jooksev meeter</small></div>
+    </header>
+    <div class="product-body">
+      <h4>v2 · 121 sõna · ÜMBER KIRJUTATUD</h4>
+      <p><strong>ASP116 on dekoratiivne seina varjuprofiil</strong> — 60 mm kõrgune alumiiniumprofiil ilma LED-funktsioonita. Sobib neile, kes soovivad selget arhitektuurset joont seinas, kuid ei vaja sinna integreeritud valgustust.</p>
+      <p>Erinevalt LED-versioonidega seina peiteprofiilidest (ASP610, ASP410), kus profiili sisse paigaldatakse LED-riba, on ASP116 puhtalt esteetiline detail. See lihtsustab paigaldust — pole vaja elektrit ette planeerida — ja vähendab kogukulu projekti.</p>
+      <p>Profiil paigaldatakse seina sisse <strong>kipsplaadi alla</strong> enne viimistlust. Pikkus 2,6 m. Saadaval värvides: anodeeritud hõbe, must, valge; RAL-toonid tellimisel. Sobib minimalistlikku interjööri, kus on vaja puhast joont ilma valgustuse-elemendita.</p>
+      <div class="fixes">
+        <b>Parandused</b>
+        <ul>
+          <li>EEMALDATUD vale kasutuskoht "uksepiitade peitmine, sissetõmmatud (flush) uste paigaldamisel..."</li>
+          <li>Lisatud Sinu antud õige kasutus: "kes LEDi ei taha aga tahavad puhast joont"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta-row">
+      <span class="k">URL</span><span><code>/varjuprofiilid/seina/asp116/</code></span>
+      <span class="k">Title-tag</span><span>ASP116 – Seina varjuprofiil | Varjuprofiilid.ee</span>
+    </div>
+  </article>
+
+  <!-- 08 — ASP610 -->
+  <article class="product">
+    <header class="product-head">
+      <div class="sku">ASP610</div>
+      <div class="meta">
+        <div class="seoname">Seina LED varjuprofiil</div>
+        <div class="tags">
+          <span class="led-badge">⚡ LED</span>
+          <span>Seina peiteprofiilid</span>
+        </div>
+      </div>
+      <div class="price">14,67 €<small>/ jooksev meeter</small></div>
+    </header>
+    <div class="product-body">
+      <h4>v2 · 138 sõna</h4>
+      <p><strong>ASP610 on seina LED varjuprofiil</strong> — 60 mm kõrgune alumiiniumprofiil sisseehitatud LED-kanaliga, mille saab paigaldada vertikaalselt seinapinda dekoratiivse valgus-joonena.</p>
+      <p>Erinevus dekoratiivsest ASP116-st seisneb LED-valmiduses: ASP610-l on integreeritud soone LED-riba jaoks ning klõpsuv hajuti, mis pehmendab valgust. Tulemus on <em>ambient-valgus</em> ilma punkt-allikateta — sein ise muutub valgusallikaks.</p>
+      <p>Levinud projektides, kus on vaja luua arhitektuurne valgus-aktsent — TV-seina taga, magamistoa peatugi seina ümbrus, või restoranide eraldajad. Paigaldatakse kipsplaadi sisse. Pikkus 2,6 m. Värvus: töötlemata; RAL-tellimusel kõik toonid (~5 nädalat). Sobivad ASL-seeria hajutid (ASL302). Soovitatud LED-riba: <strong>COB 16 W/m, 1350 lm/m, CRI 94, 24V</strong>.</p>
+      <div class="fixes">
+        <b>Parandused (v2 → v3)</b>
+        <ul>
+          <li>LED-spec uuendatud (seinaprofiil sai ka COB-spec'i, kuna ASP610 toimib pinna lähedal — silm näeb täppe sama hästi kui põrandal)</li>
+          <li>v2-parandused säilitatud (eemaldatud aknad ja uksepiit kasutuskohtadest)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta-row">
+      <span class="k">URL</span><span><code>/led-varjuprofiilid/seina/asp610/</code></span>
+      <span class="k">Title-tag</span><span>ASP610 – Seina LED varjuprofiil | Varjuprofiilid.ee</span>
+    </div>
+  </article>
+
+  <!-- 09 — LPA909 -->
+  <article class="product">
+    <header class="product-head">
+      <div class="sku">LPA909</div>
+      <div class="meta">
+        <div class="seoname">Seina varjuprofiil (peen)</div>
+        <div class="tags"><span>Seina peiteprofiilid · Dekoratiivne</span></div>
+      </div>
+      <div class="price">10,55 €<small>/ jooksev meeter</small></div>
+    </header>
+    <div class="product-body">
+      <h4>v2 · 134 sõna</h4>
+      <p><strong>LPA909 on kõige peenem dekoratiivne seina varjuprofiil</strong> meie valikus — vaid 8,8 mm laiune alumiiniumprofiil ilma LED-toeta. Selle peamine kasutus on seinasiseste pindade üleminekute peitmine: kahe seinakihi ühenduskoht või lihtsalt dekoratiivne joon seinas.</p>
+      <p>Kus ASP116 ja teised laiemad seina-profiilid loovad selgelt nähtava joone, jätab LPA909 vaid peene varju, mida silm registreerib alateadlikult. Sobib minimalistlikku interjööri, kus iga liigne detail oleks häiriv.</p>
+      <p>Pahteldatav servaga, paigaldatakse kipsplaadi tasapinnaga ühte. Standardpikkus <strong>3 m</strong>. Saadaval töötlemata ja must viimistlus, RAL-tellimusel kõik toonid. Madala hinna tõttu (10,55 €/m) on LPA909 ka kõige soodsam viis seina arhitektuurse detaili lisamiseks.</p>
+      <div class="fixes">
+        <b>Parandused</b>
+        <ul>
+          <li>"Subtiilsus" → "peen" (eestipärasem sõna)</li>
+          <li>Pikkus 2,5 m → <strong>3 m</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta-row">
+      <span class="k">URL</span><span><code>/varjuprofiilid/seina/lpa909/</code></span>
+      <span class="k">Title-tag</span><span>LPA909 – Peen seina varjuprofiil | Varjuprofiilid.ee</span>
+    </div>
+  </article>
+
+  <!-- 10 — ASP78 -->
+  <article class="product">
+    <header class="product-head">
+      <div class="sku">ASP78</div>
+      <div class="meta">
+        <div class="seoname">Alumiinium põrandaliist (Arrow)</div>
+        <div class="tags"><span>Põrandaliistud · Arrow seeria</span></div>
+      </div>
+      <div class="price">14,86 €<small>/ jooksev meeter</small></div>
+    </header>
+    <div class="product-body">
+      <h4>v2 · 134 sõna</h4>
+      <p><strong>ASP78 on Arrow-seeria kõrgeim alumiinium põrandaliist</strong> — 78 mm kõrgune profiil, mida paigaldatakse traditsioonilise põrandaliistu asemel. Erinevalt varjuprofiilidest ei asetse Arrow-seeria seina sees, vaid seinapinnal.</p>
+      <p>Liist <strong>liimitakse seina külge</strong> — see tähendab, et seda saab paigaldada ka olemasolevasse interjööri ilma seina avamiseta. Paigaldus on kiire ja ei vaja erilist ettevalmistust pinnale.</p>
+      <p>Disain järgib minimalistlikku põhimõtet — sirge ülemine serv, ilma profileeritud kaunistusteta. Sobib kaasaegsesse interjööri, kus on vaja klassikalise puidust või MDF-liistu modernsem alternatiiv. Pikkus 2,6 m. Saadaval anodeeritud (hõbe), pulbervärvitud (valge, must) ja töötlemata pinnaga; RAL-tellimusel kõik toonid. Otsa- ja nurgakomplekt (F-seeria) tellitakse eraldi vastavalt seinapikkusele.</p>
+      <div class="fixes">
+        <b>Parandused</b>
+        <ul>
+          <li>"Klipsidega kruvitakse" → <strong>liimitakse seina</strong> (õige paigaldusviis)</li>
+          <li>Eemaldatud "Eemaldamine ja taas-paigaldamine on lihtne, mis tuleb kasuks renoveerimistöödel"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta-row">
+      <span class="k">URL</span><span><code>/alumiinium-porandaliistud/asp78/</code></span>
+      <span class="k">Title-tag</span><span>ASP78 – Alumiinium põrandaliist 78 mm (Arrow) | Varjuprofiilid.ee</span>
+    </div>
+  </article>
+
+  <!-- FOOTER -->
+  <section class="footer-cta">
+    <div class="vp-eyebrow" style="color: rgba(245,242,236,0.6); margin-bottom: 14px;">Edasi · Sinu otsus</div>
+    <h2>v2 sobib?</h2>
+    <p>Vaata see versioon üle. Kui kõik 10 toodet on nüüd faktiliselt korrektsed ja stiil sobib, siis genereerin ülejäänud 65 toote kirjeldused sama mustriga, kasutades:</p>
+    <ul>
+      <li><strong>Lae LED-profiilidele:</strong> 12 W/m · 234 LED/m · 3000K · 24V</li>
+      <li><strong>Põranda LED-profiilidele:</strong> COB 16 W/m · 1350 lm/m · CRI 94 · 24V</li>
+      <li><strong>Seina LED-profiilidele:</strong> COB 16 W/m · 1350 lm/m · CRI 94 · 24V (sama, sest silm registreerib LED-täppe seinal sama hästi kui põrandal)</li>
+      <li>24V on parem kui 12V (vähem pingelangust pikematel jooksudel)</li>
+      <li>CRI ≥ 90 (ideaalis 94), profiili laius ~10 mm</li>
+      <li>Lae-profiilide standardpikkus: 2,5 m (erandid: AST35 — 3 m)</li>
+      <li>Põrandaprofiilide standardpikkus: 2,6 m</li>
+      <li>LPA909 ja võimalik et teisi seinaprofiile: 3 m</li>
+      <li>Sõnastik: "varjuefekt / varjujoon" (mitte "shadow gap"), "peen" (mitte "subtiilne"), eemaldatud "premium"</li>
+    </ul>
+    <p style="margin-top: 24px;">Kui Sa vaatad faktivigu — tooda mulle nimekirja stiilis "SKU - viga - paranda nii". Mina ja kohandan enne 65 ülejäänut.</p>
+  </section>
+
+</div>
+
+</body>
+</html>
