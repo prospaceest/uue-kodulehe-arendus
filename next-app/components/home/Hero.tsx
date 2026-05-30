@@ -98,7 +98,7 @@ export default async function Hero() {
         }}>
           {ru
             ? 'Эстонский магазин алюминиевых теневых профилей. LED и декоративные модели для потолка, стены, пола. Окраска RAL, прямо со склада.'
-            : 'Eesti alumiinium varjuprofiilide pood. LED-iga ja dekoratiivsed mudelid laele, seinale, põrandale. RAL-värvitud, saadaval otse laost.'}
+            : 'Eesti varjuprofiilide pood. Alumiinium, LED-iga ja dekoratiivsed mudelid laele, seinale, põrandale. RAL-värvitud, saadaval otse laost.'}
         </p>
 
         <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 32 }}>

@@ -241,7 +241,7 @@ export default function AboutPage() {
           <div className="vp-eyebrow" style={{ marginBottom: 24, textAlign: 'center' }}>{ru ? '09 / Почему мы' : '09 / Miks meie'}</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 0, border: 'var(--border)', background: 'var(--paper)' }}>
             {[
-              { big: '5+', eyEt: 'aastat tootmist', eyRu: 'лет производства', dEt: 'Eesti tehases — alumiiniumi pressimine, lõikamine, viimistlus.', dRu: 'На эстонском заводе — прессование алюминия, резка, отделка.' },
+              { big: '5+', eyEt: 'aastat turul', eyRu: 'лет на рынке', dEt: 'Alumiinium varjuprofiilide ja põrandaliistude müük — laost ja eritellimusel.', dRu: 'Продажа алюминиевых теневых профилей и плинтусов — со склада и под заказ.' },
               { big: 'RAL', eyEt: 'mistahes toon', eyRu: 'любой оттенок', dEt: 'Pulbervärvimine eritellimusel — ~4–5 nädalat.', dRu: 'Порошковая окраска под заказ — ~4–5 недель.' },
               { big: '1:1', eyEt: 'tehniline tugi', eyRu: 'техподдержка', dEt: 'Arhitektidele ja ehitajatele — paigaldusjoonised, näidised, projektikonsultatsioon.', dRu: 'Для архитекторов и строителей — монтажные чертежи, образцы, проектная консультация.' },
             ].map((b, i) => (
