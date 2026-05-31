@@ -13,6 +13,18 @@ const isProtectedRoute = createRouteMatcher([
 ]);
 
 export default clerkMiddleware(async (auth, req: NextRequest) => {
+  const { pathname } = req.nextUrl;
+
+  // API, tRPC and Clerk internal routes must bypass the next-intl middleware —
+  // otherwise it rewrites them into the [locale] route tree and they 404.
+  if (
+    pathname.startsWith('/api') ||
+    pathname.startsWith('/trpc') ||
+    pathname.startsWith('/__clerk')
+  ) {
+    return NextResponse.next();
+  }
+
   // Protect B2B account routes — redirect to login if not authenticated
   if (isProtectedRoute(req)) {
     const { userId } = await auth();
