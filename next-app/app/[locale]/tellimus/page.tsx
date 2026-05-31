@@ -19,6 +19,7 @@ export default function CheckoutPage() {
   const [delivery, setDelivery] = useState<DeliveryType>('venipak');
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [terms, setTerms] = useState(false);
   const [newsletter, setNewsletter] = useState(false);
   const [form, setForm] = useState({
@@ -46,6 +47,7 @@ export default function CheckoutPage() {
     e.preventDefault();
     if (!terms) return;
     setLoading(true);
+    setError(false);
     try {
       const res = await fetch('/api/order', {
         method: 'POST',
@@ -55,7 +57,11 @@ export default function CheckoutPage() {
       if (res.ok) {
         clear();
         setSubmitted(true);
+      } else {
+        setError(true);
       }
+    } catch {
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -222,6 +228,20 @@ export default function CheckoutPage() {
                 ? (ru ? 'Отправка…' : 'Saadan…')
                 : (ru ? `Отправить заказ → ${fmt(total)} €` : `Esita tellimus → ${fmt(total)} €`)}
             </button>
+
+            {!terms && (
+              <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 10, textAlign: 'center' }}>
+                {ru ? 'Отметьте согласие с условиями, чтобы отправить заказ.' : 'Märgi nõustumine tingimustega, et tellimust esitada.'}
+              </div>
+            )}
+            {error && (
+              <div role="alert" style={{ fontSize: 13, color: '#b00020', background: 'rgba(176,0,32,0.06)', border: '1.5px solid rgba(176,0,32,0.3)', padding: '12px 14px', marginTop: 12 }}>
+                {ru
+                  ? 'Не удалось отправить заказ. Попробуйте ещё раз или напишите нам: '
+                  : 'Tellimuse saatmine ebaõnnestus. Proovi uuesti või kirjuta meile: '}
+                <a href={site.emailUrl} style={{ color: 'inherit', borderBottom: '1px solid currentColor' }}>{site.email}</a>
+              </div>
+            )}
 
             <div style={{ fontSize: 12, lineHeight: 1.6, color: 'var(--ink-2)', padding: '12px 14px', border: '1.5px dashed rgba(0,0,0,0.2)', marginTop: 16 }}>
               {ru

@@ -7,36 +7,53 @@ import { site } from '@/lib/site';
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { form, items, subtotal, shipping, total, locale } = body;
+    const { form, buyerType, delivery, items, subtotal, total, locale } = body;
     const ru = locale === 'ru';
 
-    const itemLines = items.map((i: { sku: string; color: string; ralCode?: string; qty: number; pieceLengthM: number; pricePerM: number }) =>
+    // Frontend sends `shippingCost`; keep `shipping` as a fallback.
+    const shipping = Number(body.shippingCost ?? body.shipping ?? 0);
+    const sub = Number(subtotal ?? 0);
+    const tot = Number(total ?? sub + shipping);
+
+    const isCompany = buyerType === 'ettevote';
+    const buyerName = isCompany
+      ? `${form.company || '—'}${form.contact ? ` (${form.contact})` : ''}`
+      : `${form.firstName || ''} ${form.lastName || ''}`.trim() || '—';
+
+    const itemLines = (items || []).map((i: { sku: string; color: string; ralCode?: string; qty: number; pieceLengthM: number; pricePerM: number }) =>
       `  ${i.sku} · ${i.color}${i.ralCode ? ` RAL ${i.ralCode}` : ''} · ${i.qty} tk × ${i.pieceLengthM} m = ${(i.qty * i.pieceLengthM).toFixed(1)} m · ${(i.pricePerM * i.qty * i.pieceLengthM).toFixed(2)} €`
     ).join('\n');
 
     const subject = ru
-      ? `Новый заказ varjuprofiilid.ee — ${form.name}`
-      : `Uus tellimus varjuprofiilid.ee — ${form.name}`;
+      ? `Новый заказ varjuprofiilid.ee — ${buyerName}`
+      : `Uus tellimus varjuprofiilid.ee — ${buyerName}`;
+
+    const companyBlock = isCompany
+      ? `${ru ? 'Рег.№' : 'Reg.nr'}: ${form.regNr || '—'}${form.kmkr ? `\n  ${ru ? 'ИНН/KMKR' : 'KMKR'}: ${form.kmkr}` : ''}\n  `
+      : '';
+
+    const deliveryBlock = delivery === 'salong'
+      ? `${ru ? 'Самовывоз из салона' : 'Tulen ise salongist'} — Vana-Kalamaja 8–110, Tallinn`
+      : `Venipak — ${ru ? 'доставка' : 'tarne'}:\n  ${form.address || '—'}\n  ${form.city || ''} ${form.zip || ''}`;
 
     const text = `
 ${ru ? 'НОВЫЙ ЗАКАЗ' : 'UUS TELLIMUS'} — varjuprofiilid.ee
 ${'─'.repeat(50)}
 
-${ru ? 'Kontakt' : 'Kontakt'}:
-  ${form.name}
-  ${form.email}
+${ru ? 'Покупатель' : 'Ostja'} (${isCompany ? (ru ? 'компания' : 'ettevõte') : (ru ? 'частное лицо' : 'eraisik')}):
+  ${buyerName}
+  ${companyBlock}${form.email}
   ${form.phone || '—'}
 
-${ru ? 'Адрес доставки' : 'Tarneaadress'}:
-  ${form.address}
-  ${form.city} ${form.zip}
+${ru ? 'Доставка' : 'Tarneviis'}:
+  ${deliveryBlock}
 
 ${ru ? 'Товары' : 'Tooted'}:
 ${itemLines}
 
-${ru ? 'Промежуточный итог' : 'Vahesumma'}: ${subtotal.toFixed(2)} €
+${ru ? 'Промежуточный итог' : 'Vahesumma'}: ${sub.toFixed(2)} €
 ${ru ? 'Доставка' : 'Tarne'}: ${shipping === 0 ? (ru ? 'Бесплатно' : 'Tasuta') : `${shipping.toFixed(2)} €`}
-${ru ? 'Итого' : 'Kokku'}: ${total.toFixed(2)} €
+${ru ? 'Итого' : 'Kokku'}: ${tot.toFixed(2)} €
 
 ${form.notes ? `${ru ? 'Комментарий' : 'Märkused'}:\n  ${form.notes}` : ''}
 `.trim();
