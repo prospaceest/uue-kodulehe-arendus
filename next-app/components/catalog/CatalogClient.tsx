@@ -111,7 +111,7 @@ export default function CatalogClient({ products, categories, initialCat }: Prop
       {/* Sidebar + grid */}
       <section style={{ display: 'grid', gridTemplateColumns: '260px 1fr' }}>
         {/* Sidebar */}
-        <aside style={{ padding: '28px 24px', borderRight: 'var(--border)', position: 'sticky', top: 60, alignSelf: 'start', maxHeight: 'calc(100vh - 60px)', overflowY: 'auto' }}>
+        <aside className="vp-catalog-sidebar" style={{ padding: '28px 24px', borderRight: 'var(--border)', position: 'sticky', top: 60, alignSelf: 'start', maxHeight: 'calc(100vh - 60px)', overflowY: 'auto' }}>
           <div className="vp-eyebrow" style={{ marginBottom: 18, display: 'flex', justifyContent: 'space-between' }}>
             <span>{ru ? 'Фильтры' : 'Filtrid'}</span>
             <span>{activeFilterCount} {ru ? 'активных' : 'aktiivset'}</span>

@@ -502,6 +502,17 @@ button { cursor: pointer; }
   /* Catalog filters — horizontal scroll */
   .vp-catalog-filters { overflow-x: auto; flex-wrap: nowrap !important; padding-bottom: 8px; }
 
+  /* Catalog sidebar — un-stick on mobile so product cards don't scroll over
+     the filters. Grid is already collapsed to 1 column, so filters stack
+     above the products as a normal block. */
+  .vp-catalog-sidebar {
+    position: static !important;
+    max-height: none !important;
+    overflow: visible !important;
+    border-right: none !important;
+    border-bottom: var(--border) !important;
+  }
+
   /* Marquee — faster on mobile */
   .vp-marquee-track { animation-duration: 20s !important; }
 
