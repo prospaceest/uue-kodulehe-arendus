@@ -11,6 +11,29 @@
   margin-bottom: 48px;
 }
 
+/* Grid lapsed peavad saama kahaneda kitsamaks kui sisu min-laius,
+   muidu pikad sõnad/lingid venitavad veeru üle ekraani serva. */
+.grid > * { min-width: 0; }
+
+/* Mobiil — varisesta 5 veergu kaheks (brändiveerg üle kogu rea).
+   Footer kasutab CSS-moodulit, seega globals.css .vp-footer-grid override
+   siia EI rakendu — responsiivsus peab olema siin failis. */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+  }
+  .brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 380px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Brand column */
 .brand {}
 

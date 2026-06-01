@@ -1,5 +1,5 @@
 import '@/app/globals.css';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -34,6 +34,14 @@ export const metadata: Metadata = {
       ru: 'https://varjuprofiilid.ee/ru',
     },
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  // Zoom jäetud sisse ligipääsetavuse huvides (ära lisa maximumScale/userScalable).
+  // Vaba "panimise" tõkestab globals.css overflow-x: clip.
+  viewportFit: 'cover',
 };
 
 type Props = {
