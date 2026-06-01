@@ -1931,7 +1931,8 @@
       "seoNameRu": "Алюминиевый плинтус",
       "slug": "mpa217",
       "urlPath": "/alumiinium-porandaliistud/mpa217/",
-      "urlPathRu": "/alyuminievye-plintusy/mpa217/"
+      "urlPathRu": "/alyuminievye-plintusy/mpa217/",
+      "hidden": true
     },
     {
       "sku": "MPA015",
@@ -1984,7 +1985,8 @@
       "seoNameRu": "Алюминиевый плинтус",
       "slug": "mpa015",
       "urlPath": "/alumiinium-porandaliistud/mpa015/",
-      "urlPathRu": "/alyuminievye-plintusy/mpa015/"
+      "urlPathRu": "/alyuminievye-plintusy/mpa015/",
+      "hidden": true
     },
     {
       "sku": "ASP100",
@@ -4970,7 +4972,7 @@
       "name": "KA1",
       "nameRu": "KA1",
       "collection": "Kardinaprofiilid",
-      "price": 1.24,
+      "price": 21.7,
       "ribbon": "UUS",
       "inStock": false,
       "description": "KA1 on peidetud paigaldusega kardinaprofiil — alumiinium-profiil, mille kardinasiin paigaldatakse kipsplaadi sisse nii, et see ei ole pärast viimistlust ruumist nähtav. Kardin näib rippuvat otse laest, ilma nähtava karniisi või kardinasiinita. Visuaalne mõju on selge: silm ei näe enam kardinasiini-asukohta, vaid ainult kanga ülemist äärt. Ruum tundub kõrgem ja minimalistlikum; aknad muutuvad arhitektuurseks elemendiks, mitte tehniliseks detailiks. Eriti hästi sobib elutubadesse, magamistubadesse ja konverentsiruumidesse, kus on suured aknad. KA1 ühildub meie AST50 lae LED varjuprofiiliga — kombinatsioon annab peidetud kardinasiini koos pehme valgusjoonega kardina taga. Standardpikkus 3 m, materjal alumiinium. Värvid: töötlemata, valge, must; RAL-tellimusel mistahes toon.",
@@ -4979,17 +4981,17 @@
         {
           "hex": "#A8A8A8",
           "name": "Töötlemata",
-          "price": 1
+          "price": 21.7
         },
         {
           "hex": "#FFFFFF",
           "name": "Valge",
-          "price": 1
+          "price": 21.7
         },
         {
           "hex": "#0a0a0a",
           "name": "Must",
-          "price": 1
+          "price": 21.7
         }
       ],
       "specs": [
@@ -5018,7 +5020,7 @@
           "v": "Ei"
         }
       ],
-      "ralPrice": 1.24,
+      "ralPrice": 21.7,
       "ledCompatible": false,
       "seoName": "Peidetud paigaldusega kardinaprofiil",
       "seoNameRu": "Карнизный профиль скрытого монтажа",
@@ -5031,7 +5033,7 @@
       "name": "KA2",
       "nameRu": "KA2",
       "collection": "Kardinaprofiilid",
-      "price": 1.24,
+      "price": 47.74,
       "ribbon": "UUS",
       "inStock": false,
       "description": "KA2 on kahe-realine peidetud paigaldusega kardinaprofiil — sama paigalduspõhimõte kui KA1-l, kuid kahe paralleelse kardinasiiniga, mis võimaldab paigaldada näiteks läbipaistva päevakardina ja pimendava öökardina kõrvuti. Mõlemad kardinasiinid jäävad lae sisse peidetuks; ruumist on nähtav ainult kahe kihi kangas. Lahendus on tüüpiline magamistubades ja hotellides, kus on vaja korraga päevavalguse pehmendust ja täielikku pimendust, kuid ei taheta nähtavat karniisi-konstruktsiooni. KA2 võimaldab seda ilma ruumi minimalismi rikkumata. Standardpikkus 3 m, materjal alumiinium. Värvid: valge ja must (pulbervärvitud); RAL-tellimusel mistahes toon (~5 nädalat). Paigaldatakse kipsplaadi sisse ehituse käigus. Profiili korpus on KA1-st mahukam, mistõttu lae-kõrgus paigalduskohas peab seda arvestama — vajalik paigaldussüvend on ~80 mm.",
@@ -5040,12 +5042,12 @@
         {
           "hex": "#FFFFFF",
           "name": "Valge",
-          "price": 1
+          "price": 47.74
         },
         {
           "hex": "#0a0a0a",
           "name": "Must",
-          "price": 1
+          "price": 47.74
         }
       ],
       "specs": [
@@ -5074,7 +5076,7 @@
           "v": "Ei"
         }
       ],
-      "ralPrice": 1.24,
+      "ralPrice": 47.74,
       "ledCompatible": false,
       "seoName": "Peidetud paigaldusega kardinaprofiil · 2-rea",
       "seoNameRu": "Карнизный профиль скрытого монтажа · 2-рядный",
@@ -5087,7 +5089,7 @@
       "name": "AST25",
       "nameRu": "AST25",
       "collection": "Laeprofiilid",
-      "price": 1.24,
+      "price": 25.28,
       "ribbon": "UUS",
       "inStock": false,
       "description": "AST25 on 25 mm laiusega lae LED varjuprofiil — meie valiku kõige laiem standard-laelookoht profiil. Võrdluseks: AST22 on 22,5 mm, AST5 on 5 mm. AST25 sobib siis, kui projekt nõuab silmatorkavamat varjujoont — suuremad eluruumid, kõrged laed, esinduslikud avalikud ruumid, kus 22 mm jääks liiga peeneks. Profiili sees on integreeritud LED-kanal, mis annab pehme peitevalgustuse perimeetri ulatuses. Laiem süvend tähendab ka rohkem ruumi hajutile — valgus jaotub ühtlasemalt ja silm ei näe nii kergesti LED-täppe profiili sees. Paigaldatakse lae ja seina ühenduskohta, pahteldatav servaga. Standardpikkus 3 m. Värvid: töötlemata, valge, must; RAL-tellimusel mistahes toon. Soovitatud LED-riba: 12 W/m, 234 LED/m, 3000K, 24V (lae-standard). LED-riba ja hajuti tellitakse eraldi.",
@@ -5096,17 +5098,17 @@
         {
           "hex": "#A8A8A8",
           "name": "Töötlemata",
-          "price": 1
+          "price": 25.28
         },
         {
           "hex": "#FFFFFF",
           "name": "Valge",
-          "price": 1
+          "price": 25.28
         },
         {
           "hex": "#0a0a0a",
           "name": "Must",
-          "price": 1
+          "price": 25.28
         }
       ],
       "specs": [
@@ -5131,7 +5133,7 @@
           "v": "12 W/m · 234 LED/m · 3000K · 24V"
         }
       ],
-      "ralPrice": 1.24,
+      "ralPrice": 25.28,
       "ledCompatible": true,
       "seoName": "Lae LED varjuprofiil · 25 mm",
       "seoNameRu": "Потолочный LED-профиль скрытого монтажа · 25 мм",
@@ -5144,7 +5146,7 @@
       "name": "LPA126",
       "nameRu": "LPA126",
       "collection": "Laeprofiilid",
-      "price": 1.24,
+      "price": 19.22,
       "ribbon": "UUS",
       "inStock": false,
       "description": "LPA126 on 6 mm peen lae varjuprofiil — pärast AST5 (5 mm) meie teine kõige õhem varjujoon. Mõeldud projektidesse, kus on vaja arhitektuurset detaili, kuid mitte LED-valgustust. Tulemus on vaoshoitud varjujoon lae ja seina vahel, mida silm registreerib alateadlikult — ruum tundub viimistletum ilma, et üksi detail tähelepanu tõmbaks. Erinevus AST5-st: LPA126 on 1 mm laiem (6 mm vs 5 mm) ja pikem (2,6 m vs 2,5 m), mis vähendab jätkukohtade arvu pikkades ruumides. AST5 on pisut neutraalsem ja peenem, LPA126 annab veidi kindlama joone. Pahteldatav servaga, paigaldatakse kipsplaadi tasapinnaga ühte. Üleminek on viimistlusjärgselt nähtamatu. Standardpikkus 2,6 m. Värvid: töötlemata, must; RAL-tellimusel mistahes toon (~5 nädalat). LED-funktsiooni ei ole.",
@@ -5153,12 +5155,12 @@
         {
           "hex": "#A8A8A8",
           "name": "Töötlemata",
-          "price": 1
+          "price": 19.22
         },
         {
           "hex": "#0a0a0a",
           "name": "Must",
-          "price": 1
+          "price": 19.22
         }
       ],
       "specs": [
@@ -5187,7 +5189,7 @@
           "v": "Ei"
         }
       ],
-      "ralPrice": 1.24,
+      "ralPrice": 19.22,
       "ledCompatible": false,
       "seoName": "Peen lae varjuprofiil · 6 mm",
       "seoNameRu": "Тонкий потолочный профиль · 6 мм",

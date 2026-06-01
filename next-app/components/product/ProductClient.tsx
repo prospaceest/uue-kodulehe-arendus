@@ -353,7 +353,15 @@ export default function ProductClient({ product, related, locale }: Props) {
               const href = ru ? `/ru${p.urlPathRu}` : p.urlPath;
               return (
                 <Link key={p.sku} href={href} style={{ border: 'var(--border)', display: 'block', textDecoration: 'none', color: 'inherit', background: 'var(--paper)' }}>
-                  <div className="vp-photo" style={{ aspectRatio: '1', borderBottom: 'var(--border)' }}>
+                  <div className="vp-photo" style={{ aspectRatio: '1', borderBottom: 'var(--border)', position: 'relative' }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`/assets/products/${p.sku.toUpperCase()}_1.jpg`}
+                      alt={p.sku}
+                      loading="lazy"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                    />
                     <span className="label">{p.sku.toLowerCase()}</span>
                   </div>
                   <div style={{ padding: '14px 16px' }}>

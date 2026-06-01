@@ -17,8 +17,7 @@ const PROJECTS = [
   { id: 'eduardi-maja',       labelEt: 'Eramaja · Harjumaa · 2025',  labelRu: 'Частный дом · Харьюмаа · 2025',   titleEt: 'Üks maja, kolm SKU-d, üks pidev joon',               titleRu: 'Один дом, три SKU, одна непрерывная линия',     cover: '/assets/projects/eduardi-maja/00-home-cover.png',       profiles: 'AST22 · AST30 · AST50',          meters: '184 jm' },
   { id: 'tallinna-korter',    labelEt: 'Korter · Tallinn · 2025',     labelRu: 'Квартира · Таллинн · 2025',        titleEt: 'Valgus ja jooned ilma sisearhitektita',               titleRu: 'Свет и линии без дизайнера интерьера',         cover: '/assets/projects/tallinna-korter/00-home-cover.png',    profiles: 'AST22 · AST30 · AST50 · MPA015', meters: '144 jm' },
   { id: 'viimsi-vannituba',   labelEt: 'Eramaja · Viimsi · 2026',     labelRu: 'Частный дом · Виймси · 2026',      titleEt: 'Üks vann, kaks LED-joont, kolm stseeni',              titleRu: 'Одна ванна, две LED-линии, три сцены',         cover: '/assets/projects/viimsi-vannituba/00-home-cover.png',   profiles: 'AST30 · ASPL130',                meters: '8 jm'  },
-  { id: 'narva-büroo',        labelEt: 'Büroo · Narva · 2025',        labelRu: 'Офис · Нарва · 2025',              titleEt: 'Avatud kontor — üks pikk joon laest põrandani',        titleRu: 'Открытый офис — одна длинная линия от потолка до пола', cover: '/assets/projects/projekt01.webp',    profiles: 'AST22 · ASP102',                 meters: '320 jm' },
-  { id: 'parnu-hotell',       labelEt: 'Hotell · Pärnu · 2025',       labelRu: 'Гостиница · Пярну · 2025',         titleEt: '42 tuba, üks süsteem, null kompromissi',              titleRu: '42 номера, одна система, ноль компромиссов',   cover: '/assets/projects/projekt02.webp',                       profiles: 'LHV10 · ASPL35',                 meters: '860 jm' },
+  // Peidetud (ajutiselt): narva-büroo, parnu-hotell — taasta vajadusel git-ajaloost
 ];
 
 export default async function InspirationIndexPage() {

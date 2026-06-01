@@ -26,7 +26,7 @@ const BLOG_SLUGS = [
 ];
 
 const INSPIRATION_SLUGS = [
-  'eduardi-maja', 'tallinna-korter', 'viimsi-vannituba', 'narva-büroo', 'parnu-hotell',
+  'eduardi-maja', 'tallinna-korter', 'viimsi-vannituba',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

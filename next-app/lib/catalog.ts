@@ -29,6 +29,7 @@ export type Product = {
   specs: ProductSpec[];
   ralPrice?: number;
   ledCompatible: boolean;
+  hidden?: boolean;        // true = peidetud kõikjalt (loendid, otsing, sitemap, otse-URL 404)
   seoName: string;
   seoNameRu: string;
   slug: string;
@@ -47,7 +48,9 @@ export type Category = {
 
 const raw = catalogJson as { products: Product[]; categories: Category[] };
 
-export const products: Product[] = raw.products;
+// Peidetud tooted (hidden: true) jäetakse kõikjalt välja — loendid, otsing,
+// sitemap, seotud tooted ja otse-URL (generateStaticParams ei genereeri → 404).
+export const products: Product[] = raw.products.filter((p) => !p.hidden);
 export const categories: Category[] = raw.categories;
 
 // ----------------------------------------------------------------
