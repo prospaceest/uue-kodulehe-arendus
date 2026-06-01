@@ -20,6 +20,7 @@ export default function CheckoutPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [orderNr, setOrderNr] = useState('');
   const [terms, setTerms] = useState(false);
   const [newsletter, setNewsletter] = useState(false);
   const [form, setForm] = useState({
@@ -48,13 +49,15 @@ export default function CheckoutPage() {
     if (!terms) return;
     setLoading(true);
     setError(false);
+    const nr = 'VP-2026-' + String(Math.floor(Math.random() * 9000) + 1000);
     try {
       const res = await fetch('/api/order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ form, buyerType, delivery, items, subtotal, shippingCost, total, locale }),
+        body: JSON.stringify({ form, buyerType, delivery, items, subtotal, shippingCost, total, locale, orderNr: nr }),
       });
       if (res.ok) {
+        setOrderNr(nr);
         clear();
         setSubmitted(true);
       } else {
@@ -83,15 +86,61 @@ export default function CheckoutPage() {
 
   if (submitted) {
     return (
-      <div style={{ padding: '120px 56px', maxWidth: 640 }}>
-        <div className="vp-eyebrow" style={{ marginBottom: 14, color: 'var(--accent)' }}>✓ {ru ? 'Заказ принят' : 'Tellimus esitatud'}</div>
-        <h1 className="vp-display" style={{ fontSize: 80, margin: '0 0 24px' }}>{ru ? 'Спасибо!' : 'Aitäh!'}</h1>
-        <p style={{ fontSize: 17, lineHeight: 1.65, color: 'var(--ink-2)', marginBottom: 32 }}>
-          {ru
-            ? `Ваш заказ принят. В течение 24 часов мы отправим счёт на ${form.email || 'указанный адрес'}. После оплаты SEPA-переводом отгружаем товар.`
-            : `Sinu tellimus on vastu võetud. Saadame 24 h jooksul e-arve aadressile ${form.email || 'sinu e-posti'}. Peale SEPA ülekande laekumist paneme kauba teele.`}
-        </p>
-        <Link href={pfx || '/'} className="vp-btn vp-btn--lg">{ru ? '← На главную' : '← Avalehele'}</Link>
+      <div>
+        {/* Steps header */}
+        <section style={{ padding: '48px 56px 24px', borderBottom: 'var(--border)' }}>
+          <div style={{ display: 'flex', gap: 18, alignItems: 'center', flexWrap: 'wrap', fontFamily: 'JetBrains Mono, monospace', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--muted)' }}>
+            <span>{ru ? '1. Корзина ✓' : '1. Korv ✓'}</span><span>→</span>
+            <span>{ru ? '2. Данные ✓' : '2. Andmed ✓'}</span><span>→</span>
+            <span style={{ color: 'var(--ink)', borderBottom: '1.5px solid var(--ink)', paddingBottom: 2 }}>{ru ? '3. Отправлено' : '3. Saadetud'}</span>
+          </div>
+        </section>
+
+        <section style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', borderBottom: 'var(--border)', minHeight: 560 }}>
+          {/* Left */}
+          <div style={{ padding: '72px 56px', borderRight: 'var(--border)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div className="vp-eyebrow" style={{ marginBottom: 10 }}>{ru ? 'Заказ отправлен' : 'Tellimus saadetud'}</div>
+            <h1 className="vp-display" style={{ fontSize: 'clamp(72px, 11vw, 168px)', margin: '0 0 24px', lineHeight: 0.9 }}>
+              {ru ? 'Спасибо!' : 'Aitäh!'}<br />
+              <span style={{ fontFamily: "'Inter', serif", fontStyle: 'italic', fontWeight: 300, fontSize: '0.4em', letterSpacing: '-0.02em' }}>{ru ? 'ответим в течение 24 ч.' : 'vastame 24 h jooksul.'}</span>
+            </h1>
+            <div style={{ display: 'inline-flex', gap: 18, alignItems: 'center', padding: '14px 20px', border: 'var(--border)', alignSelf: 'flex-start', background: 'var(--paper-2)' }}>
+              <span className="vp-eyebrow">{ru ? '№ заказа' : 'Tellimuse nr'}</span>
+              <span className="vp-mono" style={{ fontSize: 20, fontWeight: 600 }}>{orderNr}</span>
+            </div>
+            <p style={{ fontSize: 16, lineHeight: 1.6, color: 'var(--ink-2)', maxWidth: 560, marginTop: 32 }}>
+              {ru
+                ? <>Отправили подтверждение на ваш e-mail. <strong>В течение 24 ч</strong> (Пн–Пт 10–17) получите по почте счёт и реквизиты. Если товар на складе, доставка Venipak 2–4 рабочих дня.</>
+                : <>Saatsime kinnituse e-posti aadressile{form.email ? <> <span className="vp-mono">{form.email}</span></> : ''}. <strong>24 tunni jooksul</strong> (E–R 10–17) saad meilile arve ja makseinfo. Kui kaup on laos, jõuab Venipakiga 2–4 tööpäevaga.</>}
+            </p>
+            <div style={{ display: 'flex', gap: 14, marginTop: 32, flexWrap: 'wrap' }}>
+              <Link href={pfx || '/'} className="vp-btn vp-btn--lg">{ru ? '← На главную' : '← Avalehele'}</Link>
+              <Link href={`${pfx}/tooted`} className="vp-btn vp-btn--ghost vp-btn--lg">{ru ? 'Продолжить покупки' : 'Jätka ostlemist'}</Link>
+            </div>
+          </div>
+
+          {/* Right: Mis edasi */}
+          <div style={{ padding: '48px', background: 'var(--paper-2)', display: 'flex', flexDirection: 'column', gap: 24 }}>
+            <div className="vp-eyebrow">{ru ? 'Что дальше' : 'Mis edasi'}</div>
+            {[
+              { n: '01', t: ru ? 'Получите письмо в течение 24 ч' : 'Saad meili 24 h jooksul', d: ru ? 'Счёт, реквизиты (SEPA-перевод) и точный срок доставки.' : 'Arve, makseinfo (SEPA ülekanne) ja täpne tarne aeg.' },
+              { n: '02', t: ru ? 'Оплачиваете счёт' : 'Tasud arve', d: ru ? 'Перевод на счёт PROSPACE OÜ. После поступления отправляем товар.' : 'Ülekanne PROSPACE OÜ kontole. Pärast laekumist paneme kauba teele.' },
+              { n: '03', t: ru ? 'Получаете трек-номер' : 'Saad jälgimisnumbri', d: ru ? 'Отправляем трек-номер. Venipak звонит перед доставкой.' : 'Saadame sulle jälgimisnumbri. Venipak helistab enne kauba kätte toimetamist.' },
+              { n: '04', t: ru ? 'На месте' : 'Kohal', d: ru ? 'Курьер доставляет товар или забираете в салоне, если выбрали.' : 'Kuller toimetab kauba sinuni või saad kätte salongist, kui oled nii valinud.' },
+            ].map((s) => (
+              <div key={s.n} style={{ display: 'grid', gridTemplateColumns: '48px 1fr', gap: 14 }}>
+                <div className="vp-display" style={{ fontSize: 40, color: 'var(--muted)' }}>{s.n}</div>
+                <div>
+                  <div style={{ fontWeight: 600, fontSize: 16, marginBottom: 4 }}>{s.t}</div>
+                  <div style={{ fontSize: 13, lineHeight: 1.5, color: 'var(--ink-2)' }}>{s.d}</div>
+                </div>
+              </div>
+            ))}
+            <div style={{ marginTop: 'auto', paddingTop: 18, borderTop: '1px solid rgba(0,0,0,0.15)', fontSize: 13, lineHeight: 1.6 }}>
+              <strong>{ru ? 'Вопросы?' : 'Küsimusi?'}</strong> {ru ? 'Напишите' : 'Kirjuta'} <a href={site.emailUrl} className="vp-mono" style={{ color: 'inherit' }}>{site.email}</a> {ru ? 'или позвоните' : 'või helista'} <a href={site.phoneUrl} className="vp-mono" style={{ color: 'inherit' }}>{site.phone}</a>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }

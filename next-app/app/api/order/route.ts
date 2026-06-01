@@ -24,9 +24,11 @@ export async function POST(req: NextRequest) {
       `  ${i.sku} · ${i.color}${i.ralCode ? ` RAL ${i.ralCode}` : ''} · ${i.qty} tk × ${i.pieceLengthM} m = ${(i.qty * i.pieceLengthM).toFixed(1)} m · ${(i.pricePerM * i.qty * i.pieceLengthM).toFixed(2)} €`
     ).join('\n');
 
+    const orderNr = body.orderNr || '';
+
     const subject = ru
-      ? `Новый заказ varjuprofiilid.ee — ${buyerName}`
-      : `Uus tellimus varjuprofiilid.ee — ${buyerName}`;
+      ? `Новый заказ ${orderNr} varjuprofiilid.ee — ${buyerName}`
+      : `Uus tellimus ${orderNr} varjuprofiilid.ee — ${buyerName}`;
 
     const companyBlock = isCompany
       ? `${ru ? 'Рег.№' : 'Reg.nr'}: ${form.regNr || '—'}${form.kmkr ? `\n  ${ru ? 'ИНН/KMKR' : 'KMKR'}: ${form.kmkr}` : ''}\n  `
@@ -37,7 +39,7 @@ export async function POST(req: NextRequest) {
       : `Venipak — ${ru ? 'доставка' : 'tarne'}:\n  ${form.address || '—'}\n  ${form.city || ''} ${form.zip || ''}`;
 
     const text = `
-${ru ? 'НОВЫЙ ЗАКАЗ' : 'UUS TELLIMUS'} — varjuprofiilid.ee
+${ru ? 'НОВЫЙ ЗАКАЗ' : 'UUS TELLIMUS'}${orderNr ? ` ${orderNr}` : ''} — varjuprofiilid.ee
 ${'─'.repeat(50)}
 
 ${ru ? 'Покупатель' : 'Ostja'} (${isCompany ? (ru ? 'компания' : 'ettevõte') : (ru ? 'частное лицо' : 'eraisik')}):
