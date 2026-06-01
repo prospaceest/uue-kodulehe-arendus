@@ -14,11 +14,12 @@ export default async function Footer() {
     {
       heading: ru ? 'Магазин' : 'Pood',
       links: [
+        // Catalog filters via ?cat=<collection>; /tooted/<slug> paths 404.
         { label: ru ? 'Все товары' : 'Kõik tooted',             href: `${pfx}/tooted` },
-        { label: ru ? 'Потолочные профили' : 'Laeprofiilid',    href: `${pfx}/tooted/laeprofiilid` },
-        { label: ru ? 'Напольные профили' : 'Põrandaprofiilid', href: `${pfx}/tooted/porandaprofiilid` },
-        { label: ru ? 'Плинтусы' : 'Põrandaliistud',            href: `${pfx}/tooted/porandaliistud` },
-        { label: ru ? 'Аксессуары' : 'Lisatarvikud',            href: `${pfx}/tooted/lisatarvikud` },
+        { label: ru ? 'Потолочные профили' : 'Laeprofiilid',    href: `${pfx}/tooted?cat=${encodeURIComponent('Laeprofiilid')}` },
+        { label: ru ? 'Напольные профили' : 'Põrandaprofiilid', href: `${pfx}/tooted?cat=${encodeURIComponent('Põrandaprofiilid')}` },
+        { label: ru ? 'Плинтусы' : 'Põrandaliistud',            href: `${pfx}/tooted?cat=${encodeURIComponent('Põrandaliistud')}` },
+        { label: ru ? 'Аксессуары' : 'Lisatarvikud',            href: `${pfx}/tooted?cat=${encodeURIComponent('Lisatarvikud')}` },
       ],
     },
     {

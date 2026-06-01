@@ -117,3 +117,27 @@ export function getProductImagePath(sku: string): string | null {
   if (!img) return null;
   return `/assets/products/${img}`;
 }
+
+// Full gallery for a SKU. Starts from the known-correct primary filename
+// (PRODUCT_IMAGES) and derives sibling numbered variants by swapping the
+// trailing _<n>.<ext> (e.g. ASP168_60mm_1.jpg → _2, _3). Non-existent
+// candidates are hidden client-side via <img onError>. Returns [] when the
+// SKU has no image, so the product page shows the SKU-text fallback —
+// matching the catalog card behaviour.
+export function getProductImages(sku: string): string[] {
+  const primary = PRODUCT_IMAGES[sku] ?? null;
+  if (!primary) return [];
+
+  const files = [primary];
+  const m = primary.match(/^(.*_)(\d+)(\.[a-z0-9]+)$/i);
+  if (m) {
+    const [, base, numStr, ext] = m;
+    const num = parseInt(numStr, 10);
+    for (let i = 1; i <= 8; i++) {
+      if (i === num) continue;
+      const cand = `${base}${i}${ext}`;
+      if (!files.includes(cand)) files.push(cand);
+    }
+  }
+  return files.map((f) => `/assets/products/${f}`);
+}

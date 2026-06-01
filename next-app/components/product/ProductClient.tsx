@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCart } from '@/lib/cart';
 import type { Product } from '@/lib/catalog';
+import { getProductImages, getProductImagePath } from '@/lib/productImages';
 
 const CAT_RU: Record<string, string> = {
   Laeprofiilid: 'Потолочные',
@@ -94,9 +95,9 @@ export default function ProductClient({ product, related, locale }: Props) {
   const subtitle = ru ? product.seoNameRu : product.seoName;
   const description = ru ? product.descriptionRu : product.description;
 
-  // Image URLs for gallery
-  const imgBase = `/assets/products/${product.sku.toUpperCase()}`;
-  const imgSlots = Array.from({ length: 6 }, (_, i) => `${imgBase}_${i + 1}.jpg`);
+  // Image URLs for gallery — resolved from the PRODUCT_IMAGES manifest
+  // (same source the catalog cards use), not a naive {SKU}_1.jpg guess.
+  const imgSlots = getProductImages(product.sku);
   const validSlots = imgSlots.filter((_, i) => !imgFailed[i]);
 
   const faqItems = ru ? FAQ_RU : FAQ_ET;
@@ -351,17 +352,20 @@ export default function ProductClient({ product, related, locale }: Props) {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
             {related.map((p) => {
               const href = ru ? `/ru${p.urlPathRu}` : p.urlPath;
+              const relImg = getProductImagePath(p.sku);
               return (
                 <Link key={p.sku} href={href} style={{ border: 'var(--border)', display: 'block', textDecoration: 'none', color: 'inherit', background: 'var(--paper)' }}>
                   <div className="vp-photo" style={{ aspectRatio: '1', borderBottom: 'var(--border)', position: 'relative' }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={`/assets/products/${p.sku.toUpperCase()}_1.jpg`}
-                      alt={p.sku}
-                      loading="lazy"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                      onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
-                    />
+                    {relImg && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={relImg}
+                        alt={p.sku}
+                        loading="lazy"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                        onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                      />
+                    )}
                     <span className="label">{p.sku.toLowerCase()}</span>
                   </div>
                   <div style={{ padding: '14px 16px' }}>

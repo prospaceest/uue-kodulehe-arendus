@@ -57,7 +57,9 @@ export default async function CategoryGrid() {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
         {CATEGORIES.map((cat) => {
           const count = countByCollection(cat.collectionKey);
-          const href = ru ? cat.hrefRu : cat.hrefEt;
+          // Catalog filters by ?cat=<collection name>; path segments like
+          // /tooted/laeprofiilid have no route and 404.
+          const href = `${ru ? '/ru' : ''}/tooted?cat=${encodeURIComponent(cat.collectionKey)}`;
           const label = ru ? cat.labelRu : cat.labelEt;
 
           return (
