@@ -15,6 +15,16 @@ const isProtectedRoute = createRouteMatcher([
 export default clerkMiddleware(async (auth, req: NextRequest) => {
   const { pathname } = req.nextUrl;
 
+  // Retired domain → canonical domain. viimistlussiinid.ee (and its www) was a
+  // separate legacy site; permanently redirect everything to varjuprofiilid.ee,
+  // preserving path + query so old deep links resolve (further path-level
+  // redirects are handled in next.config.ts).
+  const host = (req.headers.get('host') || '').toLowerCase().split(':')[0];
+  if (host === 'viimistlussiinid.ee' || host === 'www.viimistlussiinid.ee') {
+    const target = new URL(pathname + req.nextUrl.search, 'https://varjuprofiilid.ee');
+    return NextResponse.redirect(target, 308);
+  }
+
   // API, tRPC and Clerk internal routes must bypass the next-intl middleware —
   // otherwise it rewrites them into the [locale] route tree and they 404.
   if (
