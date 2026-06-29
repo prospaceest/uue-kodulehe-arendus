@@ -12,6 +12,9 @@ next-env.d.ts
 .env.local
 .env*.local
 
+# Claude Code lokaalsed lubatud-käsud (võivad sisaldada tokeneid URL-ides)
+.claude/settings.local.json
+
 # vercel
 .vercel/
 
