@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
+import JsonLd from '@/components/seo/JsonLd';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Mis on varjuprofiil? Shadow gap profiili täielik juhend | Varjuprofiilid.ee',
-    description: 'Varjuprofiil on alumiiniumprofiil, mis loob kahe pinna vahele tahtliku varjujoone. Sõnastik, tüübid, LED vs dekoratiivne, paigaldusnõuanded ja KKK.',
+    title: 'Mis on varjuprofiil? Täielik juhend',
+    description: 'Varjuprofiil (ingl shadow gap profile) on alumiiniumprofiil, mis loob kahe pinna vahele tahtliku varjujoone. Sõnastik, tüübid, LED vs dekoratiivne, paigaldusnõuanded ja KKK.',
   };
 }
 
@@ -57,8 +58,20 @@ export default async function MisOnVarjuprofiilPage() {
   const ru = locale === 'ru';
   const pfx = ru ? '/ru' : '';
 
+  // FAQPage structured data — same Q&A the page renders below.
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQ.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
     <div>
+      <JsonLd data={faqSchema} />
       {/* Hero */}
       <section style={{ padding: '72px 56px 48px', borderBottom: 'var(--border)' }}>
         <div className="vp-eyebrow" style={{ marginBottom: 14 }}>
@@ -490,11 +503,12 @@ export default async function MisOnVarjuprofiilPage() {
       <section id="sonastik" style={{ padding: '64px 56px', borderBottom: 'var(--border)', background: 'var(--paper-2)' }}>
         <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{ru ? '10 / Словарь' : '10 / Sõnastik'}</div>
         <h2 className="vp-display" style={{ fontSize: 64, margin: '0 0 40px', lineHeight: 0.92 }}>
-          {ru ? 'Словарь варjuprofiil.' : 'Varjuprofiili sõnastik.'}
+          {ru ? 'Словарь терминов.' : 'Varjuprofiili sõnastik.'}
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 1, background: 'var(--ink)', border: 'var(--border)' }}>
           {[
             { term: 'Varjuprofiil', en: 'EN · shadow gap', dEt: 'Ülemmõiste — alumiiniumprofiil, mis loob tahtliku varjujoone. Kasutusel nii LED-iga kui ilma.', dRu: 'Общий термин — алюминиевый профиль, создающий намеренную теневую линию. Используется со светом и без.' },
+            { term: 'Viimistlussiin', en: 'ka: laesiin, varjuliist', dEt: 'Varjuprofiili rahvapärased sünonüümid. Viimistlussiin ja laesiin viitavad samale alumiiniumprofiilile — meie kasutame täpsemat terminit varjuprofiil.', dRu: 'Народные синонимы теневого профиля. Отделочная шина и потолочная шина — тот же алюминиевый профиль; мы используем более точный термин.' },
             { term: 'LED varjuprofiil', en: 'EN · LED profile', dEt: 'Varjuprofiili alaliik, mille soonde paigaldatakse LED-riba. Sünonüümid: LED laeprofiil, LED põrandaprofiil.', dRu: 'Подвид теневого профиля, в канал которого монтируется LED-лента. Синонимы: LED для потолка, LED для пола.' },
             { term: 'Süvisprofiil', en: 'EN · recessed profile', dEt: 'Profiil, mis paigaldatakse pinnaga ühte tasapinda (kipsplaadi sisse). Tihti LED-iga, kuid mitte alati.', dRu: 'Профиль, монтируемый заподлицо с поверхностью (в гипсокартон). Часто с LED, но не всегда.' },
             { term: 'Seina peiteprofiil', en: 'shadow line profile', dEt: 'Seina varjuprofiil seinasiseste pindade üleminekute peitmiseks. Sageli ASP610, ASPL100, ASPL60.', dRu: 'Настенный теневой профиль для скрытия переходов внутри стен. Чаще всего ASP610, ASPL100, ASPL60.' },

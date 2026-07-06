@@ -9,16 +9,16 @@ export async function generateMetadata(): Promise<Metadata> {
   const ru = locale === 'ru';
   return {
     title: ru
-      ? 'LED теневые профили — LED профили для потолка и пола | Varjuprofiilid.ee'
-      : 'LED varjuprofiilid – LED laeprofiilid ja LED põrandaprofiilid | Varjuprofiilid.ee',
+      ? 'LED теневые профили — LED профили для потолка и пола'
+      : 'LED varjuprofiilid – LED laeprofiilid ja LED põrandaprofiilid',
     description: ru
       ? 'LED теневые профили — алюминиевые профили с каналом для LED-ленты. Для потолка, пола, стены, центрального потолка. Склад в Таллинне, доставка по Эстонии.'
       : 'LED varjuprofiilid — alumiiniumprofiilid LED-riba paigalduseks. Laele, põrandale, seinale, kesklakke. Ladu Tallinnas, tarne üle Eesti.',
     alternates: {
-      canonical: 'https://varjuprofiilid.ee/led-varjuprofiilid/',
+      canonical: 'https://varjuprofiilid.ee/led-varjuprofiilid',
       languages: {
-        et: 'https://varjuprofiilid.ee/led-varjuprofiilid/',
-        ru: 'https://varjuprofiilid.ee/ru/led-profili/',
+        et: 'https://varjuprofiilid.ee/led-varjuprofiilid',
+        ru: 'https://varjuprofiilid.ee/ru/led-profili',
       },
     },
   };

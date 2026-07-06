@@ -2,6 +2,22 @@ import { notFound } from 'next/navigation';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { site } from '@/lib/site';
+import JsonLd from '@/components/seo/JsonLd';
+
+// Estonian month labels (from POSTS `yearEt`, e.g. "2026 · mai") → ISO month,
+// so BlogPosting can carry an approximate datePublished.
+const ET_MONTHS: Record<string, string> = {
+  jaan: '01', veebr: '02', märts: '03', apr: '04', mai: '05', juuni: '06',
+  juuli: '07', aug: '08', sept: '09', okt: '10', nov: '11', dets: '12',
+};
+
+function isoDateFromYearEt(yearEt: string): string | undefined {
+  const [year, month] = yearEt.split('·').map((s) => s.trim().toLowerCase());
+  if (!year) return undefined;
+  const mm = month ? ET_MONTHS[month] : undefined;
+  return mm ? `${year}-${mm}-01` : `${year}-01-01`;
+}
 
 // ── Markdown renderer ─────────────────────────────────────────────────────────
 // Converts a subset of markdown (h2, h3, bold, italic, bullets) to JSX strings.
@@ -1836,12 +1852,29 @@ PLACEHOLDER_SLUGS.forEach((slug) => {
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const p = POSTS[slug];
   if (!p) return {};
+  const ru = locale === 'ru';
   return {
-    title: p.titleEt + ' | Varjuprofiilid.ee',
-    description: p.excerptEt,
+    // NB: the intermediate uudised/layout.tsx title blocks the root template,
+    // so the brand suffix must be added manually here.
+    title: `${ru ? p.titleRu : p.titleEt} | Varjuprofiilid.ee`,
+    description: ru ? p.excerptRu : p.excerptEt,
+    alternates: {
+      canonical: ru ? `${site.url}/ru/uudised/${slug}` : `${site.url}/uudised/${slug}`,
+      languages: {
+        et: `${site.url}/uudised/${slug}`,
+        ru: `${site.url}/ru/uudised/${slug}`,
+      },
+    },
+    openGraph: {
+      title: ru ? p.titleRu : p.titleEt,
+      description: ru ? p.excerptRu : p.excerptEt,
+      type: 'article',
+      images: [{ url: p.cover }],
+      locale: ru ? 'ru_RU' : 'et_EE',
+    },
   };
 }
 
@@ -1866,8 +1899,31 @@ export default async function BlogPostPage({ params }: Props) {
 
   const relatedSlugs = Object.keys(POSTS).filter((s) => s !== slug).slice(0, 3);
 
+  // BlogPosting structured data. Date parsed from the Estonian label (yearEt)
+  // regardless of locale, since the publish date is the same in both.
+  const canonical = ru ? `${site.url}/ru/uudised/${slug}` : `${site.url}/uudised/${slug}`;
+  const cover = p.cover.startsWith('http') ? p.cover : `${site.url}${p.cover}`;
+  const datePublished = isoDateFromYearEt(p.yearEt);
+  const blogSchema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description: ru ? p.excerptRu : p.excerptEt,
+    image: cover,
+    author: { '@type': 'Organization', name: site.legal, url: site.url },
+    publisher: {
+      '@type': 'Organization',
+      name: site.legal,
+      logo: { '@type': 'ImageObject', url: `${site.url}/assets/logo-must.svg` },
+    },
+    mainEntityOfPage: canonical,
+    inLanguage: ru ? 'ru-RU' : 'et-EE',
+  };
+  if (datePublished) blogSchema.datePublished = datePublished;
+
   return (
     <div>
+      <JsonLd data={blogSchema} />
       {/* Breadcrumb + title */}
       <section style={{ padding: '72px 56px 48px', borderBottom: 'var(--border)' }}>
         <div className="vp-eyebrow" style={{ marginBottom: 10 }}>

@@ -9,16 +9,16 @@ export async function generateMetadata(): Promise<Metadata> {
   const ru = locale === 'ru';
   return {
     title: ru
-      ? 'Теневые профили – алюминиевый shadow gap для потолка, стены, пола | Varjuprofiilid.ee'
-      : 'Varjuprofiilid – alumiinium shadow gap profiilid laele, seinale, põrandale | Varjuprofiilid.ee',
+      ? 'Теневые профили – декоративные алюминиевые профили для потолка, стены, пола'
+      : 'Varjuprofiilid – dekoratiivsed alumiiniumprofiilid laele, seinale, põrandale',
     description: ru
-      ? 'Декоративные теневые профили без LED — архитектурный shadow gap из алюминия. Для потолка, стены и пола. Любой оттенок RAL. Склад в Таллинне.'
-      : 'Dekoratiivsed varjuprofiilid ilma LED-ita — arhitektuurne shadow gap alumiiniumist. Laele, seinale ja põrandale. Iga RAL-toon. Ladu Tallinnas.',
+      ? 'Декоративные теневые профили без LED — чистая архитектурная теневая линия из алюминия. Для потолка, стены и пола. Любой оттенок RAL. Склад в Таллинне.'
+      : 'Dekoratiivsed varjuprofiilid ilma LED-ita — puhas arhitektuurne varjujoon alumiiniumist. Laele, seinale ja põrandale. Iga RAL-toon. Ladu Tallinnas.',
     alternates: {
-      canonical: 'https://varjuprofiilid.ee/varjuprofiilid/',
+      canonical: 'https://varjuprofiilid.ee/varjuprofiilid',
       languages: {
-        et: 'https://varjuprofiilid.ee/varjuprofiilid/',
-        ru: 'https://varjuprofiilid.ee/ru/varjuprofiily/',
+        et: 'https://varjuprofiilid.ee/varjuprofiilid',
+        ru: 'https://varjuprofiilid.ee/ru/varjuprofiily',
       },
     },
   };
@@ -35,8 +35,8 @@ const SUBCATEGORIES = [
   {
     slug: 'seina',
     labelEt: 'Seina varjuprofiilid', labelRu: 'Настенные теневые профили',
-    descEt: 'Seinasiseste pindade üleminekud, akna- ja ukseraamid — dekoratiivne shadow gap.',
-    descRu: 'Переходы внутри стен, обрамление окон и дверей — декоративный shadow gap.',
+    descEt: 'Seinasiseste pindade üleminekud, akna- ja ukseraamid — dekoratiivne varjujoon.',
+    descRu: 'Переходы внутри стен, обрамление окон и дверей — декоративная теневая линия.',
     skus: 'LPA909 · ASP611 · ASP411 · ASP168', n: '02',
   },
   {

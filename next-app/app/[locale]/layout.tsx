@@ -10,6 +10,40 @@ import Header from '@/components/layout/Header';
 import Marquee from '@/components/layout/Marquee';
 import Footer from '@/components/layout/Footer';
 import { CartProvider } from '@/lib/cart';
+import JsonLd from '@/components/seo/JsonLd';
+import { site } from '@/lib/site';
+
+// Site-wide structured data. Organization identifies the business (used for
+// knowledge-panel / brand entity); WebSite names the site. Both read from
+// lib/site.ts — never hardcode company info.
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: site.legal,
+  alternateName: site.storefront,
+  url: site.url,
+  logo: `${site.url}/assets/logo-must.svg`,
+  email: site.email,
+  telephone: site.phone,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.addressLine1,
+    addressLocality: site.city,
+    postalCode: '10412',
+    addressCountry: 'EE',
+  },
+  vatID: site.kmkr,
+  sameAs: [site.instagram, site.facebook],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: site.storefront,
+  url: site.url,
+  inLanguage: ['et-EE', 'ru-RU'],
+  publisher: { '@type': 'Organization', name: site.legal },
+};
 
 export const metadata: Metadata = {
   title: {
@@ -66,6 +100,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           {process.env.NEXT_PUBLIC_YANDEX_VERIFICATION && (
             <meta name="yandex-verification" content={process.env.NEXT_PUBLIC_YANDEX_VERIFICATION} />
           )}
+          <JsonLd data={[orgSchema, websiteSchema]} />
         </head>
         <body>
           <NextIntlClientProvider messages={messages}>

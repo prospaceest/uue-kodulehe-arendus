@@ -7,6 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: ru ? 'Корзина' : 'Ostukorv',
     description: ru ? 'Ваша корзина — просмотрите добавленные товары, измените количество и оформите заказ.' : 'Sinu ostukorv — vaata lisatud tooteid, muuda koguseid ja vormista tellimus.',
+    robots: { index: false, follow: true },
   };
 }
 

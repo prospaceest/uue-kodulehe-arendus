@@ -15,8 +15,8 @@ const CONFIG: Record<Asukoht, {
   intlSlug: string;
 }> = {
   lae: {
-    titleEt: 'Lae LED varjuprofiilid – LED laeprofiilid alumiiniumist | Varjuprofiilid.ee',
-    titleRu: 'Потолочные LED теневые профили – LED профили для потолка | Varjuprofiilid.ee',
+    titleEt: 'Lae LED varjuprofiilid – LED laeprofiilid alumiiniumist',
+    titleRu: 'Потолочные LED теневые профили – LED профили для потолка',
     h1Et: 'Lae LED varjuprofiilid – LED laeprofiilid alumiiniumist',
     h1Ru: 'Потолочные LED профили – LED профили для потолка из алюминия',
     descEt: 'Lae LED varjuprofiilid (tuntud ka kui LED laeprofiilid või LED süvisprofiilid) on alumiiniumprofiilid, mis paigaldatakse lae ja seina ühenduskohta. Profiili soonde paigaldatakse LED-riba, mis loob nii tahtliku varjujoone kui ka pehme perimeetrivalgustuse — hõljuva lae efekti.',
@@ -26,8 +26,8 @@ const CONFIG: Record<Asukoht, {
     intlSlug: 'potolok',
   },
   poranda: {
-    titleEt: 'Põranda LED varjuprofiilid – LED põrandaprofiilid alumiiniumist | Varjuprofiilid.ee',
-    titleRu: 'Напольные LED теневые профили – LED профили для пола | Varjuprofiilid.ee',
+    titleEt: 'Põranda LED varjuprofiilid – LED põrandaprofiilid alumiiniumist',
+    titleRu: 'Напольные LED теневые профили – LED профили для пола',
     h1Et: 'Põranda LED varjuprofiilid – LED põrandaprofiilid alumiiniumist',
     h1Ru: 'Напольные LED профили – LED профили для пола из алюминия',
     descEt: 'Põranda LED varjuprofiilid asendavad traditsioonilise põrandaliistu, lisades pehme peitevalgustuse põranda servale. Profiil paigaldatakse kipsplaadi alla enne viimistlust — ei ulatuta seinast välja, pind jääb ühes tasapinnas.',
@@ -37,8 +37,8 @@ const CONFIG: Record<Asukoht, {
     intlSlug: 'pol',
   },
   seina: {
-    titleEt: 'Seina LED varjuprofiilid – seina peiteprofiilid LED-iga | Varjuprofiilid.ee',
-    titleRu: 'Настенные LED профили – LED профили скрытого монтажа для стен | Varjuprofiilid.ee',
+    titleEt: 'Seina LED varjuprofiilid – seina peiteprofiilid LED-iga',
+    titleRu: 'Настенные LED профили – LED профили скрытого монтажа для стен',
     h1Et: 'Seina LED varjuprofiilid – LED peiteprofiilid',
     h1Ru: 'Настенные LED профили – профили скрытого монтажа',
     descEt: 'Seina LED varjuprofiilid paigaldatakse seinasiseste pindade üleminekutesse — akna ja ukse raamidesse, kahe seinakihi vahelisse üleminekusse, riiuliservade alla. LED-riba loob pehme ambient-valguse mõjul.',
@@ -48,8 +48,8 @@ const CONFIG: Record<Asukoht, {
     intlSlug: 'stena',
   },
   kesklae: {
-    titleEt: 'Kesklae LED varjuprofiilid – dekoratiivsed LED-read lakke | Varjuprofiilid.ee',
-    titleRu: 'LED профили для центрального потолка | Varjuprofiilid.ee',
+    titleEt: 'Kesklae LED varjuprofiilid – dekoratiivsed LED-read lakke',
+    titleRu: 'LED профили для центрального потолка',
     h1Et: 'Kesklae LED varjuprofiilid',
     h1Ru: 'LED профили для центрального потолка',
     descEt: 'Kesklae LED varjuprofiilid paigaldatakse lae keskele dekoratiivseks elemendiks — eraldi reana, ringina, geomeetrilise kujundina. Loovad graafilise valgusjoone, mis määratleb ruumi visuaalselt.',

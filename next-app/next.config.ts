@@ -42,10 +42,8 @@ const redirects = async () => [
   { source: '/minu-konto',                               destination: '/konto',                              permanent: true },
   { source: '/account/:path*',                           destination: '/konto/:path*',                       permanent: true },
 
-  // ── Trailing slash normalisation (no-slash → with-slash for product URLs) ─
-  // Next.js handles this automatically, but explicit rules for known patterns:
-  { source: '/led-varjuprofiilid',                       destination: '/tooted',                             permanent: true },
-  { source: '/varjuprofiilid',                           destination: '/tooted',                             permanent: true },
+  // NB: /led-varjuprofiilid and /varjuprofiilid are REAL hub pages — do not
+  // redirect them. /kardinaprofiilid has no hub page, so it goes to the catalog.
   { source: '/kardinaprofiilid',                         destination: '/tooted',                             permanent: true },
 
   // ── Russian equivalents of old URLs ─────────────────────────────────────

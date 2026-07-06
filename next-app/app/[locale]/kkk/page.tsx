@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { site } from '@/lib/site';
+import JsonLd from '@/components/seo/JsonLd';
 
 type FAQItem = [string, string];
 type FAQGroup = { h: string; items: FAQItem[] };
@@ -52,8 +53,22 @@ export default function FaqPage() {
   const [open, setOpen] = useState<Record<string, boolean>>({});
   const totalCount = groups.reduce((s, g) => s + g.items.length, 0);
 
+  // FAQPage structured data — built from the same groups the UI renders.
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: groups.flatMap((g) =>
+      g.items.map(([q, a]) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    ),
+  };
+
   return (
     <div>
+      <JsonLd data={faqSchema} />
       <section style={{ padding: '72px 56px 32px', borderBottom: 'var(--border)' }}>
         <div className="vp-eyebrow" style={{ marginBottom: 10 }}>
           {ru ? 'Часто задаваемые вопросы' : 'Korduvad küsimused'} · {totalCount} {ru ? 'ответов' : 'vastust'}

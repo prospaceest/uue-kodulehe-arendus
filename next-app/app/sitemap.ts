@@ -5,8 +5,9 @@ const BASE = 'https://varjuprofiilid.ee';
 
 const STATIC_ET = [
   '/', '/tooted', '/kkk', '/tarne', '/garantii', '/impressum',
-  '/kontakt', '/salong', '/meist', '/professionaalidele', '/otsing',
+  '/kontakt', '/salong', '/meist', '/professionaalidele',
   '/uudised', '/inspiratsioon', '/mis-on-varjuprofiil',
+  // NB: /otsing (search) is noindex — deliberately excluded from the sitemap.
   // Hub pages
   '/led-varjuprofiilid',
   '/led-varjuprofiilid/lae',
@@ -63,11 +64,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Product pages
+  // Product pages. urlPath carries a trailing slash, but Next serves the
+  // slash-less form (308-normalised) — the sitemap must list final URLs.
+  const noSlash = (path: string) => `${BASE}${path}`.replace(/\/$/, '');
   for (const p of products) {
     entries.push({
-      url: `${BASE}${p.urlPath}`,
-      alternates: { languages: { et: `${BASE}${p.urlPath}`, ru: `${BASE}/ru${p.urlPathRu}` } },
+      url: noSlash(p.urlPath),
+      alternates: { languages: { et: noSlash(p.urlPath), ru: noSlash(`/ru${p.urlPathRu}`) } },
       changeFrequency: 'monthly',
       priority: 0.9,
     });
