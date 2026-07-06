@@ -5,7 +5,8 @@ import ConfiguratorSection from '@/components/home/ConfiguratorSection';
 import InspirationGrid from '@/components/home/InspirationGrid';
 import B2BSalon from '@/components/home/B2BSalon';
 import InstagramFeed from '@/components/home/InstagramFeed';
-import BlogPosts from '@/components/home/BlogPosts';
+// Uudised peidetud kuni päris postitused valmis (2026-07). Taasta import + <BlogPosts />.
+// import BlogPosts from '@/components/home/BlogPosts';
 import Partners from '@/components/home/Partners';
 
 import type { Metadata } from 'next';
@@ -30,7 +31,7 @@ export default function HomePage() {
       <InspirationGrid />
       <B2BSalon />
       <InstagramFeed />
-      <BlogPosts />
+      {/* <BlogPosts /> — peidetud kuni päris postitused valmis (2026-07) */}
       <Partners />
     </div>
   );

@@ -28,7 +28,8 @@ export default async function Footer() {
         { label: ru ? 'Что такое теневой профиль?' : 'Mis on varjuprofiil?', href: `${pfx}/mis-on-varjuprofiil` },
         { label: ru ? 'О продукции' : 'Toodetest',      href: `${pfx}/meist` },
         { label: ru ? 'Вдохновение' : 'Inspiratsioon',  href: `${pfx}/inspiratsioon` },
-        { label: ru ? 'Журнал' : 'Uudised',             href: `${pfx}/uudised` },
+        // Uudised peidetud kuni päris postitused valmis (2026-07). Taasta see rida.
+        // { label: ru ? 'Журнал' : 'Uudised',             href: `${pfx}/uudised` },
         { label: ru ? 'Поиск' : 'Otsing',               href: `${pfx}/otsing` },
       ],
     },

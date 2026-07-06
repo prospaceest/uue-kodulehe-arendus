@@ -6,8 +6,9 @@ const BASE = 'https://varjuprofiilid.ee';
 const STATIC_ET = [
   '/', '/tooted', '/kkk', '/tarne', '/garantii', '/impressum',
   '/kontakt', '/salong', '/meist', '/professionaalidele',
-  '/uudised', '/inspiratsioon', '/mis-on-varjuprofiil',
+  '/inspiratsioon', '/mis-on-varjuprofiil',
   // NB: /otsing (search) is noindex — deliberately excluded from the sitemap.
+  // NB: /uudised (blog) is temporarily hidden (2026-07) — restore with BLOG_SLUGS loop below.
   // Hub pages
   '/led-varjuprofiilid',
   '/led-varjuprofiilid/lae',
@@ -44,14 +45,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Blog posts
-  for (const slug of BLOG_SLUGS) {
-    entries.push({
-      url: `${BASE}/uudised/${slug}`,
-      alternates: { languages: { et: `${BASE}/uudised/${slug}`, ru: `${BASE}/ru/uudised/${slug}` } },
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    });
+  // Blog posts — temporarily hidden (2026-07) until real posts are ready.
+  // Flip BLOG_ENABLED back to true together with the /uudised nav links + noindex removal.
+  const BLOG_ENABLED = false;
+  if (BLOG_ENABLED) {
+    for (const slug of BLOG_SLUGS) {
+      entries.push({
+        url: `${BASE}/uudised/${slug}`,
+        alternates: { languages: { et: `${BASE}/uudised/${slug}`, ru: `${BASE}/ru/uudised/${slug}` } },
+        changeFrequency: 'monthly',
+        priority: 0.6,
+      });
+    }
   }
 
   // Inspiration projects

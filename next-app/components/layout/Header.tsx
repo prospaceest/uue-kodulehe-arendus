@@ -12,7 +12,8 @@ const NAV_LINKS = [
   { key: 'shop',        href: '/tooted',         hrefRu: '/ru/tooted'         },
   { key: 'about',       href: '/meist',           hrefRu: '/ru/meist'          },
   { key: 'inspiration', href: '/inspiratsioon',   hrefRu: '/ru/inspiratsioon'  },
-  { key: 'blog',        href: '/uudised',         hrefRu: '/ru/uudised'        },
+  // Uudised peidetud kuni päris postitused valmis (2026-07). Taasta see rida.
+  // { key: 'blog',        href: '/uudised',         hrefRu: '/ru/uudised'        },
   { key: 'salon',       href: '/salong',          hrefRu: '/ru/salong'         },
 ];
 
