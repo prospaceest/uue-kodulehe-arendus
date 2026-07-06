@@ -19,8 +19,9 @@ const redirects = async () => [
   { source: '/lae-varjuprofiilid/:path*',                destination: '/varjuprofiilid/lae/',          permanent: true },
   { source: '/poranda-alumiiniumist-varjuprofiilid',     destination: '/varjuprofiilid/poranda/',      permanent: true },
   { source: '/poranda-alumiiniumist-varjuprofiilid/:path*', destination: '/varjuprofiilid/poranda/',   permanent: true },
+  // NB: /alumiinium-porandaliistud/{sku} are REAL product pages (15 SKUs) —
+  // only the bare hub path (which has no page) may redirect to the catalog.
   { source: '/alumiinium-porandaliistud',                destination: '/tooted',                        permanent: true },
-  { source: '/alumiinium-porandaliistud/:path*',         destination: '/tooted',                        permanent: true },
 
   // ── Old product-page/* URLs → catalog ───────────────────────────────────
   // Specific known redirects
