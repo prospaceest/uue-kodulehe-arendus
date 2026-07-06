@@ -21,6 +21,24 @@ import path from 'node:path';
 
 const MODEL = 'claude-opus-4-8';
 
+// Loeb ANTHROPIC_API_KEY .env.local / .env failist, KUI seda pole juba keskkonnas.
+// Nii ei pea võtit kunagi käsureale ega vestlusesse kirjutama. .env.local on
+// gitignore'itud — võti ei jõua kunagi git'i.
+function loadApiKeyFromEnvFile(): void {
+  if (process.env.ANTHROPIC_API_KEY) return;
+  for (const file of ['.env.local', '.env']) {
+    const p = path.join(process.cwd(), file);
+    if (!fs.existsSync(p)) continue;
+    for (const line of fs.readFileSync(p, 'utf8').split('\n')) {
+      const m = line.match(/^\s*ANTHROPIC_API_KEY\s*=\s*(.+?)\s*$/);
+      if (m) {
+        process.env.ANTHROPIC_API_KEY = m[1].replace(/^["']|["']$/g, '');
+        return;
+      }
+    }
+  }
+}
+
 // ── BRAND_VOICE ─────────────────────────────────────────────────────────────
 // Peegeldab handoff/CLAUDE.md reegleid (ainus tõeallikas). Hoia see stabiilsena —
 // iga muudatus tühistab prompt-cache'i (cache on prefiks-põhine).
@@ -163,6 +181,15 @@ async function main() {
     return;
   }
 
+  loadApiKeyFromEnvFile();
+  if (!process.env.ANTHROPIC_API_KEY) {
+    console.error(
+      'ANTHROPIC_API_KEY puudub. Lisa see faili next-app/.env.local:\n' +
+        '  ANTHROPIC_API_KEY=sk-ant-...\n' +
+        '(.env.local on gitignores — voti ei joua versioonihaldusesse.)',
+    );
+    process.exit(1);
+  }
   const client = new Anthropic(); // loeb ANTHROPIC_API_KEY keskkonnast
 
   process.stderr.write(`Genereerin mustandit (${MODEL})… `);
