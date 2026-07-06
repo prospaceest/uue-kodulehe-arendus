@@ -119,11 +119,11 @@ export default function ContactPage() {
         <div style={{ minHeight: 480, borderRight: 'var(--border)', position: 'relative' }}>
           <iframe
             title={ru ? 'Карта салона' : 'Salongi kaart'}
-            src="https://www.openstreetmap.org/export/embed.html?bbox=24.7323%2C59.4439%2C24.7423%2C59.4479&layer=mapnik&marker=59.4459%2C24.7373"
+            src={site.osmEmbed}
             style={{ width: '100%', height: '100%', position: 'absolute', inset: 0, border: 0, filter: 'grayscale(0.4) contrast(1.05)' }}
             loading="lazy"
           />
-          <a href="https://www.google.com/maps/search/?api=1&query=Vana-Kalamaja+8,+Tallinn,+Estonia" target="_blank" rel="noopener" className="vp-mono" style={{ position: 'absolute', left: 16, bottom: 16, background: 'var(--paper)', border: 'var(--border)', padding: '8px 12px', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', textDecoration: 'none', color: 'var(--ink)' }}>
+          <a href={`https://www.google.com/maps/search/?api=1&query=${site.mapsQuery}`} target="_blank" rel="noopener" className="vp-mono" style={{ position: 'absolute', left: 16, bottom: 16, background: 'var(--paper)', border: 'var(--border)', padding: '8px 12px', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', textDecoration: 'none', color: 'var(--ink)' }}>
             {ru ? 'Открыть в картах →' : 'Ava kaardirakenduses →'}
           </a>
         </div>

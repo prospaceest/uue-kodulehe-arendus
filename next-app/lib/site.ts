@@ -27,8 +27,9 @@ export const site = {
   kmkr: 'EE102661499',
 
   mapsQuery: 'Vana-Kalamaja+8,+Tallinn,+Estonia',
+  // Vana-Kalamaja 8 hoone tsentroid (Nominatim): 59.4422, 24.7387
   osmEmbed:
-    'https://www.openstreetmap.org/export/embed.html?bbox=24.7395%2C59.4418%2C24.7495%2C59.4458&layer=mapnik&marker=59.4438%2C24.7445',
+    'https://www.openstreetmap.org/export/embed.html?bbox=24.7337%2C59.4402%2C24.7437%2C59.4442&layer=mapnik&marker=59.4422%2C24.7387',
 
   sisters: [
     { name: 'PROSPACE', url: 'https://prospace.ee', role: 'Umbrella bränd · tulekul' },
