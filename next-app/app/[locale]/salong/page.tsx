@@ -36,7 +36,7 @@ export default async function SalonPage() {
             </p>
           </div>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 40 }}>
-            <a href={site.phoneUrl} className="vp-btn vp-btn--lg">{ru ? 'Забронировать визит →' : 'Broneeri visiit →'}</a>
+            <a href={site.booking} target="_blank" rel="noopener" className="vp-btn vp-btn--lg">{ru ? 'Забронировать визит →' : 'Broneeri visiit →'}</a>
             <Link href={`${pfx}/kontakt`} className="vp-btn vp-btn--ghost vp-btn--lg">{ru ? 'Написать нам' : 'Kirjuta meile'}</Link>
           </div>
         </div>
@@ -111,7 +111,7 @@ export default async function SalonPage() {
         <div>
           <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{ru ? 'Забронировать визит' : 'Broneeri visiit'}</div>
           <h2 className="vp-display" style={{ fontSize: 56, margin: 0, lineHeight: 0.95 }}>
-            {ru ? '30 минут · бесплатно.' : '30 minutit · tasuta.'}
+            {ru ? '1 час · бесплатно.' : '1 tund · tasuta.'}
           </h2>
           <p style={{ fontSize: 16, lineHeight: 1.6, color: 'var(--ink-2)', marginTop: 18 }}>
             {ru
@@ -120,7 +120,10 @@ export default async function SalonPage() {
           </p>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-          <a href={site.phoneUrl} className="vp-btn vp-btn--lg" style={{ textAlign: 'center' }}>
+          <a href={site.booking} target="_blank" rel="noopener" className="vp-btn vp-btn--lg" style={{ textAlign: 'center' }}>
+            {ru ? 'Забронировать онлайн →' : 'Broneeri online →'}
+          </a>
+          <a href={site.phoneUrl} className="vp-btn vp-btn--ghost vp-btn--lg" style={{ textAlign: 'center' }}>
             {ru ? `Позвонить: ${site.phone}` : `Helista: ${site.phone}`}
           </a>
           <a href={site.emailUrl} className="vp-btn vp-btn--ghost vp-btn--lg" style={{ textAlign: 'center' }}>

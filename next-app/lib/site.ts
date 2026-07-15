@@ -11,6 +11,7 @@ export const site = {
   emailUrl: 'mailto:info@prospace.ee',
   phone: '+372 56 989 780',
   phoneUrl: 'tel:+37256989780',
+  booking: 'https://calendly.com/prospace-info/prospace-salongi-kulastus',
   hours: 'E–R 10:00–17:00',
   hoursLong: 'E–R 10:00–17:00 · L–P kokkuleppel',
 

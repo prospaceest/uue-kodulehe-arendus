@@ -95,7 +95,7 @@ export default function ContactPage() {
               {ru ? 'Пн–Пт 10:00–17:00' : 'E–R 10:00–17:00'}<br />
               {ru ? 'Сб–Вс по договорённости' : 'L–P kokkuleppel'}
               <span style={{ display: 'block', marginTop: 8, fontSize: 13, color: 'var(--ink-2)' }}>
-                {ru ? 'Чтобы предложить максимально персональный опыт, просим заранее забронировать визит по телефону.' : 'Et saaksime pakkuda võimalikult personaalset kogemust, palume salongi külastus eelnevalt kokku leppida telefoni teel.'}
+                {ru ? 'Чтобы предложить максимально персональный опыт, просим заранее забронировать визит — онлайн, по телефону или e-mail.' : 'Et saaksime pakkuda võimalikult personaalset kogemust, palume salongi külastus eelnevalt kokku leppida — broneeri online, helista või kirjuta.'}
               </span>
             </span>
           </div>
@@ -104,9 +104,9 @@ export default function ContactPage() {
             <span style={{ fontSize: 32 }}>◉</span>
             <div style={{ flex: 1 }}>
               <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 2 }}>{ru ? 'Забронировать 1:1 консультацию' : 'Broneeri 1:1 konsultatsioon'}</div>
-              <div style={{ fontSize: 12, color: 'var(--ink-2)' }}>{ru ? '30-минутная встреча со специалистом · бесплатно' : '30-minutiline kohtumine spetsialistiga · tasuta'}</div>
+              <div style={{ fontSize: 12, color: 'var(--ink-2)' }}>{ru ? 'Часовая встреча со специалистом · бесплатно' : 'Tunniajane kohtumine spetsialistiga · tasuta'}</div>
             </div>
-            <a href={site.phoneUrl} className="vp-btn" style={{ whiteSpace: 'nowrap' }}>{ru ? 'Позвонить →' : 'Helista →'}</a>
+            <a href={site.booking} target="_blank" rel="noopener" className="vp-btn" style={{ whiteSpace: 'nowrap' }}>{ru ? 'Забронировать →' : 'Broneeri →'}</a>
           </div>
         </div>
 
