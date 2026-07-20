@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { products } from '@/lib/catalog';
+import { products, productUrl } from '@/lib/catalog';
 import { getProductImagePath } from '@/lib/productImages';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -88,7 +88,7 @@ export default async function Varjuprofiilid() {
             </div>
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
               <Link href={`${pfx}/tooted`} className="vp-btn vp-btn--lg">{ru ? 'Все товары →' : 'Vaata kõiki →'}</Link>
-              <Link href={`${pfx}/led-varjuprofiilid/`} className="vp-btn vp-btn--ghost">{ru ? 'LED версии →' : 'LED versioonid →'}</Link>
+              <Link href={`${pfx}/led-varjuprofiilid`} className="vp-btn vp-btn--ghost">{ru ? 'LED версии →' : 'LED versioonid →'}</Link>
             </div>
           </div>
           <div>
@@ -121,7 +121,7 @@ export default async function Varjuprofiilid() {
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 1, background: 'var(--ink)', border: 'var(--border)' }}>
           {SUBCATEGORIES.map((cat) => (
-            <Link key={cat.slug} href={`${pfx}/varjuprofiilid/${cat.slug}/`} style={{ display: 'block', background: 'var(--paper)', padding: '36px 32px', textDecoration: 'none', color: 'inherit' }}>
+            <Link key={cat.slug} href={`${pfx}/varjuprofiilid/${cat.slug}`} style={{ display: 'block', background: 'var(--paper)', padding: '36px 32px', textDecoration: 'none', color: 'inherit' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 12 }}>
                 <span className="vp-display" style={{ fontSize: 48, lineHeight: 1, color: 'var(--accent)' }}>{cat.n}</span>
                 <span style={{ fontSize: 20 }}>→</span>
@@ -149,7 +149,7 @@ export default async function Varjuprofiilid() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
             {dekorProducts.map((p) => {
               const img = getProductImagePath(p.sku);
-              const href = ru ? `/ru${p.urlPathRu}` : p.urlPath;
+              const href = productUrl(p, ru);
               return (
                 <Link key={p.sku} href={href} style={{ border: 'var(--border)', display: 'block', textDecoration: 'none', color: 'inherit', background: 'var(--paper)' }}>
                   <div style={{ aspectRatio: '1', borderBottom: 'var(--border)', background: 'var(--paper-2)', overflow: 'hidden' }}>
@@ -176,9 +176,9 @@ export default async function Varjuprofiilid() {
         <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', alignItems: 'center' }}>
           <span className="vp-eyebrow" style={{ color: 'rgba(255,255,255,0.5)' }}>{ru ? 'Смотрите также:' : 'Vaata ka:'}</span>
           {[
-            { hrefEt: '/led-varjuprofiilid/', labelEt: 'LED varjuprofiilid', labelRu: 'LED теневые профили' },
-            { hrefEt: '/mis-on-varjuprofiil/', labelEt: 'Mis on varjuprofiil?', labelRu: 'Что такое теневой профиль?' },
-            { hrefEt: '/alumiinium-porandaliistud/', labelEt: 'Alumiinium põrandaliistud', labelRu: 'Алюминиевые плинтусы' },
+            { hrefEt: '/led-varjuprofiilid', labelEt: 'LED varjuprofiilid', labelRu: 'LED теневые профили' },
+            { hrefEt: '/mis-on-varjuprofiil', labelEt: 'Mis on varjuprofiil?', labelRu: 'Что такое теневой профиль?' },
+            { hrefEt: '/alumiinium-porandaliistud', labelEt: 'Alumiinium põrandaliistud', labelRu: 'Алюминиевые плинтусы' },
           ].map((l) => (
             <Link key={l.hrefEt} href={`${pfx}${l.hrefEt}`} style={{ color: 'var(--paper)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.4)', paddingBottom: 2, fontFamily: 'JetBrains Mono', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
               {ru ? l.labelRu : l.labelEt}

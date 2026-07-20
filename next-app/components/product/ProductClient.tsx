@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCart } from '@/lib/cart';
-import type { Product } from '@/lib/catalog';
+import { productUrl, type Product } from '@/lib/catalog';
 import { getProductImages, getProductImagePath } from '@/lib/productImages';
 
 const CAT_RU: Record<string, string> = {
@@ -351,7 +351,7 @@ export default function ProductClient({ product, related, locale }: Props) {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
             {related.map((p) => {
-              const href = ru ? `/ru${p.urlPathRu}` : p.urlPath;
+              const href = productUrl(p, ru);
               const relImg = getProductImagePath(p.sku);
               return (
                 <Link key={p.sku} href={href} style={{ border: 'var(--border)', display: 'block', textDecoration: 'none', color: 'inherit', background: 'var(--paper)' }}>

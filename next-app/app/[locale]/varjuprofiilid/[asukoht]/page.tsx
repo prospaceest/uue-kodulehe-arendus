@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { products } from '@/lib/catalog';
+import { products, productUrl } from '@/lib/catalog';
 import { getProductImagePath } from '@/lib/productImages';
 
 type Asukoht = 'lae' | 'seina' | 'poranda';
@@ -76,7 +76,7 @@ export default async function DekorCategoryPage({ params }: Props) {
         <div className="vp-eyebrow">
           <Link href={pfx || '/'}>{ru ? 'Главная' : 'Avaleht'}</Link>
           {' / '}
-          <Link href={`${pfx}/varjuprofiilid/`}>{ru ? 'Теневые профили' : 'Varjuprofiilid'}</Link>
+          <Link href={`${pfx}/varjuprofiilid`}>{ru ? 'Теневые профили' : 'Varjuprofiilid'}</Link>
           {' / '}
           <span style={{ color: 'var(--ink)' }}>{ru ? cfg.eyebrowRu : cfg.eyebrowEt}</span>
         </div>
@@ -96,7 +96,7 @@ export default async function DekorCategoryPage({ params }: Props) {
         {categoryProducts.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '80px 0' }}>
             <div className="vp-display" style={{ fontSize: 48, marginBottom: 16 }}>{ru ? 'Скоро.' : 'Tulekul.'}</div>
-            <Link href={`${pfx}/varjuprofiilid/`} className="vp-btn">{ru ? '← Назад' : '← Tagasi'}</Link>
+            <Link href={`${pfx}/varjuprofiilid`} className="vp-btn">{ru ? '← Назад' : '← Tagasi'}</Link>
           </div>
         ) : (
           <>
@@ -106,7 +106,7 @@ export default async function DekorCategoryPage({ params }: Props) {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
               {categoryProducts.map((p) => {
                 const img = getProductImagePath(p.sku);
-                const href = ru ? `/ru${p.urlPathRu}` : p.urlPath;
+                const href = productUrl(p, ru);
                 return (
                   <Link key={p.sku} href={href} style={{ border: 'var(--border)', display: 'block', textDecoration: 'none', color: 'inherit', background: 'var(--paper)' }}>
                     <div style={{ aspectRatio: '1', borderBottom: 'var(--border)', background: 'var(--paper-2)', overflow: 'hidden' }}>
@@ -133,11 +133,11 @@ export default async function DekorCategoryPage({ params }: Props) {
         <div className="vp-eyebrow" style={{ marginBottom: 16 }}>{ru ? 'Другие категории' : 'Teised kategooriad'}</div>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           {(['lae', 'seina', 'poranda'] as Asukoht[]).filter((a) => a !== asukoht).map((a) => (
-            <Link key={a} href={`${pfx}/varjuprofiilid/${a}/`} className="vp-btn vp-btn--ghost">
+            <Link key={a} href={`${pfx}/varjuprofiilid/${a}`} className="vp-btn vp-btn--ghost">
               {ru ? CONFIG[a].eyebrowRu : CONFIG[a].eyebrowEt} →
             </Link>
           ))}
-          <Link href={`${pfx}/led-varjuprofiilid/`} className="vp-btn vp-btn--ghost">
+          <Link href={`${pfx}/led-varjuprofiilid`} className="vp-btn vp-btn--ghost">
             {ru ? 'LED версии →' : 'LED versioonid →'}
           </Link>
         </div>

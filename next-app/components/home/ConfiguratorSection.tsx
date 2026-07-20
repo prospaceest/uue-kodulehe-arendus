@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
 
-import { products } from '@/lib/catalog';
+import { products, productUrl } from '@/lib/catalog';
 
 const TOP10_SKUS = ['AST22', 'AST14_12', 'RST14', 'AST30', 'AST50', 'ASPL35', 'ASP112', 'ASP904', 'ASP60', 'ASP198'];
 
@@ -151,7 +151,7 @@ function Bestsellers() {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
         {top10.map((prod, i) => {
           if (!prod) return null;
-          const href = ru ? `/ru${prod.urlPathRu}` : prod.urlPath;
+          const href = productUrl(prod, ru);
           const priceStr = prod.price ? prod.price.toFixed(2).replace('.', ',') : '—';
 
           return (

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { products } from '@/lib/catalog';
+import { products, productUrl } from '@/lib/catalog';
 import { getProductImagePath } from '@/lib/productImages';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -146,7 +146,7 @@ export default async function LedVarjuprofiilid() {
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 1, background: 'var(--ink)', border: 'var(--border)' }}>
           {SUBCATEGORIES.map((cat) => {
-            const href = `${pfx}/led-varjuprofiilid/${cat.slugEt}/`;
+            const href = `${pfx}/led-varjuprofiilid/${cat.slugEt}`;
             return (
               <Link key={cat.slugEt} href={href} style={{ display: 'block', background: 'var(--paper)', padding: '36px 32px', textDecoration: 'none', color: 'inherit' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 12 }}>
@@ -179,7 +179,7 @@ export default async function LedVarjuprofiilid() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
             {ledProducts.map((p) => {
               const img = getProductImagePath(p.sku);
-              const href = ru ? `/ru${p.urlPathRu}` : p.urlPath;
+              const href = productUrl(p, ru);
               return (
                 <Link key={p.sku} href={href} style={{ border: 'var(--border)', display: 'block', textDecoration: 'none', color: 'inherit', background: 'var(--paper)' }}>
                   <div style={{ aspectRatio: '1', borderBottom: 'var(--border)', background: 'var(--paper-2)', overflow: 'hidden' }}>
@@ -250,10 +250,10 @@ export default async function LedVarjuprofiilid() {
         <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', alignItems: 'center' }}>
           <span className="vp-eyebrow" style={{ color: 'rgba(255,255,255,0.5)' }}>{ru ? 'Смотрите также:' : 'Vaata ka:'}</span>
           {[
-            { hrefEt: '/varjuprofiilid/', labelEt: 'Dekoratiivsed varjuprofiilid', labelRu: 'Декоративные теневые профили' },
-            { hrefEt: '/mis-on-varjuprofiil/', labelEt: 'Mis on varjuprofiil?', labelRu: 'Что такое теневой профиль?' },
-            { hrefEt: '/alumiinium-porandaliistud/', labelEt: 'Alumiinium põrandaliistud', labelRu: 'Алюминиевые плинтусы' },
-            { hrefEt: '/tooted/', labelEt: 'Kõik tooted', labelRu: 'Все товары' },
+            { hrefEt: '/varjuprofiilid', labelEt: 'Dekoratiivsed varjuprofiilid', labelRu: 'Декоративные теневые профили' },
+            { hrefEt: '/mis-on-varjuprofiil', labelEt: 'Mis on varjuprofiil?', labelRu: 'Что такое теневой профиль?' },
+            { hrefEt: '/alumiinium-porandaliistud', labelEt: 'Alumiinium põrandaliistud', labelRu: 'Алюминиевые плинтусы' },
+            { hrefEt: '/tooted', labelEt: 'Kõik tooted', labelRu: 'Все товары' },
           ].map((l) => (
             <Link key={l.hrefEt} href={`${pfx}${l.hrefEt}`} style={{ color: 'var(--paper)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.4)', paddingBottom: 2, fontFamily: 'JetBrains Mono', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
               {ru ? l.labelRu : l.labelEt}

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { products } from '@/lib/catalog';
+import { products, productUrl } from '@/lib/catalog';
 import { getProductImagePath } from '@/lib/productImages';
 
 type Asukoht = 'lae' | 'poranda' | 'seina' | 'kesklae';
@@ -72,10 +72,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: ru ? cfg.titleRu : cfg.titleEt,
     description: ru ? cfg.descRu : cfg.descEt,
     alternates: {
-      canonical: `https://varjuprofiilid.ee/led-varjuprofiilid/${asukoht}/`,
+      canonical: `https://varjuprofiilid.ee/led-varjuprofiilid/${asukoht}`,
       languages: {
-        et: `https://varjuprofiilid.ee/led-varjuprofiilid/${asukoht}/`,
-        ru: `https://varjuprofiilid.ee/ru/led-profili/${cfg.intlSlug}/`,
+        et: `https://varjuprofiilid.ee/led-varjuprofiilid/${asukoht}`,
+        ru: `https://varjuprofiilid.ee/ru/led-profili/${cfg.intlSlug}`,
       },
     },
   };
@@ -108,7 +108,7 @@ export default async function LedCategoryPage({ params }: Props) {
         <div className="vp-eyebrow">
           <Link href={pfx || '/'}>{ru ? 'Главная' : 'Avaleht'}</Link>
           {' / '}
-          <Link href={`${pfx}/led-varjuprofiilid/`}>{ru ? 'LED профили' : 'LED varjuprofiilid'}</Link>
+          <Link href={`${pfx}/led-varjuprofiilid`}>{ru ? 'LED профили' : 'LED varjuprofiilid'}</Link>
           {' / '}
           <span style={{ color: 'var(--ink)' }}>{ru ? cfg.eyebrowRu : cfg.eyebrowEt}</span>
         </div>
@@ -135,7 +135,7 @@ export default async function LedCategoryPage({ params }: Props) {
             <p style={{ color: 'var(--ink-2)', marginBottom: 24 }}>
               {ru ? 'Товары этой категории появятся в ближайшее время.' : 'Selle kategooria tooted on varsti saadaval.'}
             </p>
-            <Link href={`${pfx}/led-varjuprofiilid/`} className="vp-btn">{ru ? '← Назад' : '← Tagasi'}</Link>
+            <Link href={`${pfx}/led-varjuprofiilid`} className="vp-btn">{ru ? '← Назад' : '← Tagasi'}</Link>
           </div>
         ) : (
           <>
@@ -145,7 +145,7 @@ export default async function LedCategoryPage({ params }: Props) {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
               {categoryProducts.map((p) => {
                 const img = getProductImagePath(p.sku);
-                const href = ru ? `/ru${p.urlPathRu}` : p.urlPath;
+                const href = productUrl(p, ru);
                 return (
                   <Link key={p.sku} href={href} style={{ border: 'var(--border)', display: 'block', textDecoration: 'none', color: 'inherit', background: 'var(--paper)' }}>
                     <div style={{ aspectRatio: '1', borderBottom: 'var(--border)', background: 'var(--paper-2)', overflow: 'hidden', position: 'relative' }}>
@@ -178,11 +178,11 @@ export default async function LedCategoryPage({ params }: Props) {
         <div className="vp-eyebrow" style={{ marginBottom: 16 }}>{ru ? 'Другие LED профили' : 'Teised LED varjuprofiilid'}</div>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           {(['lae', 'poranda', 'seina', 'kesklae'] as Asukoht[]).filter((a) => a !== asukoht).map((a) => (
-            <Link key={a} href={`${pfx}/led-varjuprofiilid/${a}/`} className="vp-btn vp-btn--ghost">
+            <Link key={a} href={`${pfx}/led-varjuprofiilid/${a}`} className="vp-btn vp-btn--ghost">
               {ru ? CONFIG[a].eyebrowRu : CONFIG[a].eyebrowEt} →
             </Link>
           ))}
-          <Link href={`${pfx}/varjuprofiilid/`} className="vp-btn vp-btn--ghost">
+          <Link href={`${pfx}/varjuprofiilid`} className="vp-btn vp-btn--ghost">
             {ru ? 'Декоративные →' : 'Dekoratiivsed →'}
           </Link>
         </div>

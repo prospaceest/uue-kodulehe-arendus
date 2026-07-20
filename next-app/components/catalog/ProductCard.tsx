@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import type { Product } from '@/lib/catalog';
+import { productUrl, type Product } from '@/lib/catalog';
 import { getProductImagePath } from '@/lib/productImages';
 
 const TOP10_SKUS = ['AST22', 'AST14_12', 'RST14', 'AST30', 'AST50', 'ASPL35', 'ASP112', 'ASP904', 'ASP60', 'ASP198'];
@@ -16,7 +16,7 @@ export default function ProductCard({ product: p, locale }: Props) {
   const topRank = TOP10_RANK[p.sku];
   const ru = locale === 'ru';
 
-  const href = ru ? `/ru${p.urlPathRu}` : p.urlPath;
+  const href = productUrl(p, ru);
   const label = ru ? p.seoNameRu : p.seoName;
 
   return (

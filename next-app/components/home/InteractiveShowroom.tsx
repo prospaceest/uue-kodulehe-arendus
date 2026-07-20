@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
-import { products } from '@/lib/catalog';
+import { products, productUrl } from '@/lib/catalog';
 
 type Hotspot = { x: number; y: number; sku: string; label: string; labelRu: string; price: string };
 type Scene = { id: string; nameEt: string; nameRu: string; img: string; eyebrow: string; hotspots: Hotspot[] };
@@ -110,7 +110,7 @@ function Lightbox({ sceneIdx, setSceneIdx, onClose, ru }: { sceneIdx: number; se
 
   // Find product URL
   const product = products.find((p) => p.sku === sel.sku || p.sku === sel.sku.replace('AST1412', 'AST14_12'));
-  const productHref = product ? (ru ? `/ru${product.urlPathRu}` : product.urlPath) : (ru ? '/ru/tooted' : '/tooted');
+  const productHref = product ? productUrl(product, ru) : (ru ? '/ru/tooted' : '/tooted');
 
   return (
     <div style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(0,0,0,0.92)', display: 'grid', gridTemplateColumns: '1fr 380px', color: '#fff' }} role="dialog" aria-modal>

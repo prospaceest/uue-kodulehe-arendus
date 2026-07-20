@@ -66,6 +66,14 @@ export function getProductByUrlPath(urlPath: string): Product | undefined {
   return products.find((p) => p.urlPath === normalized || p.urlPathRu === normalized);
 }
 
+// Internal-link helper. urlPath/urlPathRu are stored WITH a trailing slash, but
+// Next serves the slash-less form (308-normalised) — so <Link> targets must be
+// slash-less too, otherwise every click/crawl hits a redirect. Mirrors the
+// sitemap's noSlash() and the product page's absUrl().
+export function productUrl(p: Product, ru: boolean): string {
+  return (ru ? `/ru${p.urlPathRu}` : p.urlPath).replace(/\/$/, '');
+}
+
 export function getProductsByCollection(collection: string): Product[] {
   return products.filter((p) => p.collection === collection);
 }
