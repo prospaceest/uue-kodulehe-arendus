@@ -18,6 +18,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: ru ? 'Varjuprofiilid.ee — Алюминиевые теневые профили в Эстонии' : 'Varjuprofiilid.ee — Alumiinium varjuprofiilid Eestis',
     description: ru ? 'Алюминиевые теневые профили с LED и декоративные — для потолка, пола и стены. PROSPACE OÜ, Таллинн. На складе 98 SKU.' : 'Alumiinium varjuprofiilid LED-valgustuse ja dekoratiivsete profiilidega — lae, põranda ja seina lahendused. PROSPACE OÜ, Tallinn. Laos 98 SKU.',
+    // Selgesõnaline apex-canonical (ilma www) — Google valis muidu ise www.
+    alternates: {
+      canonical: ru ? 'https://varjuprofiilid.ee/ru' : 'https://varjuprofiilid.ee',
+      languages: {
+        et: 'https://varjuprofiilid.ee',
+        ru: 'https://varjuprofiilid.ee/ru',
+      },
+    },
   };
 }
 
