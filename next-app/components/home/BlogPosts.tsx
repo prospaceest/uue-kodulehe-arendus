@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getLocale } from 'next-intl/server';
+import { lp } from '@/lib/pageUrls';
 
 const POSTS = [
   {
@@ -37,7 +38,6 @@ const POSTS = [
 export default async function BlogPosts() {
   const locale = await getLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
 
   return (
     <section style={{ padding: '80px 56px', borderBottom: 'var(--border)', background: 'var(--paper-2)' }}>
@@ -56,7 +56,7 @@ export default async function BlogPosts() {
               : 'Avaldame soovitusi, tutvustame uusi tooteid ja jagame, kuidas teised on lahendused oma kodus ellu viinud.'}
           </p>
         </div>
-        <Link href={`${pfx}/uudised`} style={{ fontFamily: 'JetBrains Mono', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.08em', borderBottom: 'var(--border)', paddingBottom: 2 }}>
+        <Link href={lp(`/uudised`, locale)} style={{ fontFamily: 'JetBrains Mono', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.08em', borderBottom: 'var(--border)', paddingBottom: 2 }}>
           {ru ? 'Все статьи →' : 'Vaata kõiki artikleid →'}
         </Link>
       </div>
@@ -64,7 +64,7 @@ export default async function BlogPosts() {
       {/* 3-column grid */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
         {POSTS.map((p) => (
-          <Link key={p.id} href={`${pfx}/uudised/${p.id}`} style={{ display: 'flex', flexDirection: 'column', border: 'var(--border)', background: 'var(--paper)', textDecoration: 'none', color: 'inherit' }}>
+          <Link key={p.id} href={lp(`/uudised/${p.id}`, locale)} style={{ display: 'flex', flexDirection: 'column', border: 'var(--border)', background: 'var(--paper)', textDecoration: 'none', color: 'inherit' }}>
             {/* Cover */}
             <div style={{ aspectRatio: '4/3', borderBottom: 'var(--border)', position: 'relative', overflow: 'hidden', background: 'var(--paper-2)' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}

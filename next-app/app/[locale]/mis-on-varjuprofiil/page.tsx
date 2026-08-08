@@ -2,11 +2,19 @@ import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 import JsonLd from '@/components/seo/JsonLd';
+import { lp, pageAlternates } from '@/lib/pageUrls';
 
 export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const ru = locale === 'ru';
   return {
-    title: 'Mis on varjuprofiil? Täielik juhend',
-    description: 'Varjuprofiil (ingl shadow gap profile) on alumiiniumprofiil, mis loob kahe pinna vahele tahtliku varjujoone. Sõnastik, tüübid, LED vs dekoratiivne, paigaldusnõuanded ja KKK.',
+    title: ru
+      ? 'Что такое теневой профиль? Полное руководство'
+      : 'Mis on varjuprofiil? Täielik juhend',
+    description: ru
+      ? 'Теневой профиль — алюминиевый профиль, создающий намеренную теневую линию между двумя поверхностями. Словарь терминов, типы, LED и декоративные, монтаж и FAQ.'
+      : 'Varjuprofiil (ingl shadow gap profile) on alumiiniumprofiil, mis loob kahe pinna vahele tahtliku varjujoone. Sõnastik, tüübid, LED vs dekoratiivne, paigaldusnõuanded ja KKK.',
+    alternates: pageAlternates('/mis-on-varjuprofiil', locale),
   };
 }
 
@@ -56,7 +64,6 @@ const FAQ = [
 export default async function MisOnVarjuprofiilPage() {
   const locale = await getLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
 
   // FAQPage structured data — same Q&A the page renders below.
   const faqSchema = {
@@ -75,7 +82,7 @@ export default async function MisOnVarjuprofiilPage() {
       {/* Hero */}
       <section style={{ padding: '72px 56px 48px', borderBottom: 'var(--border)' }}>
         <div className="vp-eyebrow" style={{ marginBottom: 14 }}>
-          <Link href={pfx || '/'}>{ru ? 'Главная' : 'Avaleht'}</Link>
+          <Link href={lp('/', locale)}>{ru ? 'Главная' : 'Avaleht'}</Link>
           {' / '}
           <span style={{ color: 'var(--ink)' }}>{ru ? 'Что такое теневой профиль' : 'Mis on varjuprofiil'}</span>
         </div>
@@ -536,10 +543,10 @@ export default async function MisOnVarjuprofiilPage() {
           {ru ? 'Смотреть все профили.' : 'Vaata kõiki tooteid.'}
         </h2>
         <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 32 }}>
-          <Link href={`${pfx}/tooted`} className="vp-btn vp-btn--lg" style={{ background: 'var(--paper)', color: 'var(--ink)', borderColor: 'var(--paper)' }}>
+          <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg" style={{ background: 'var(--paper)', color: 'var(--ink)', borderColor: 'var(--paper)' }}>
             {ru ? 'Смотреть все товары →' : 'Vaata kõiki tooteid →'}
           </Link>
-          <Link href={`${pfx}/kontakt`} className="vp-btn vp-btn--ghost vp-btn--lg" style={{ borderColor: 'rgba(255,255,255,0.4)', color: 'var(--paper)' }}>
+          <Link href={lp(`/kontakt`, locale)} className="vp-btn vp-btn--ghost vp-btn--lg" style={{ borderColor: 'rgba(255,255,255,0.4)', color: 'var(--paper)' }}>
             {ru ? 'Бесплатная консультация' : 'Tasuta konsultatsioon'}
           </Link>
         </div>

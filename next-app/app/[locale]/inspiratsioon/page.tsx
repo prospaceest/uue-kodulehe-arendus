@@ -2,12 +2,14 @@ import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 
 import type { Metadata } from 'next';
+import { lp, pageAlternates } from '@/lib/pageUrls';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { getLocale } = await import('next-intl/server');
   const locale = await getLocale();
   const ru = locale === 'ru';
   return {
+    alternates: pageAlternates('/inspiratsioon', locale),
     title: ru ? 'Вдохновение — Реальные проекты с теневыми профилями' : 'Inspiratsioon — Päriseluprojektid varjuprofiilide',
     description: ru ? 'Реальные проекты с теневыми профилями PROSPACE — частные дома, квартиры, ванные, офисы. Фото, список профилей, размеры.' : 'Päriseluprojektid PROSPACE varjuprofiilide — eramajad, korterid, vannitoad, bürood. Fotod, profiilide loetelu, mõõtmed.',
   };
@@ -23,7 +25,6 @@ const PROJECTS = [
 export default async function InspirationIndexPage() {
   const locale = await getLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
 
   return (
     <div>
@@ -40,7 +41,7 @@ export default async function InspirationIndexPage() {
       <section style={{ padding: '56px', borderBottom: 'var(--border)' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 18 }}>
           {PROJECTS.map((p) => (
-            <Link key={p.id} href={`${pfx}/inspiratsioon/${p.id}`} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
+            <Link key={p.id} href={lp(`/inspiratsioon/${p.id}`, locale)} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
               <div style={{ aspectRatio: '4/5', marginBottom: 14, overflow: 'hidden', border: 'var(--border)', background: 'var(--paper-2)' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={p.cover} alt={ru ? p.titleRu : p.titleEt} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />

@@ -3,54 +3,54 @@ import { useTranslations } from 'next-intl';
 import { getLocale } from 'next-intl/server';
 import { site } from '@/lib/site';
 import styles from './Footer.module.css';
+import { lp } from '@/lib/pageUrls';
 
 export default async function Footer() {
   const locale = await getLocale();
   const t = useTranslations;
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
 
   const columns = [
     {
       heading: ru ? 'Магазин' : 'Pood',
       links: [
         // Catalog filters via ?cat=<collection>; /tooted/<slug> paths 404.
-        { label: ru ? 'Все товары' : 'Kõik tooted',             href: `${pfx}/tooted` },
-        { label: ru ? 'Потолочные профили' : 'Laeprofiilid',    href: `${pfx}/tooted?cat=${encodeURIComponent('Laeprofiilid')}` },
-        { label: ru ? 'Напольные профили' : 'Põrandaprofiilid', href: `${pfx}/tooted?cat=${encodeURIComponent('Põrandaprofiilid')}` },
-        { label: ru ? 'Плинтусы' : 'Põrandaliistud',            href: `${pfx}/tooted?cat=${encodeURIComponent('Põrandaliistud')}` },
-        { label: ru ? 'Аксессуары' : 'Lisatarvikud',            href: `${pfx}/tooted?cat=${encodeURIComponent('Lisatarvikud')}` },
+        { label: ru ? 'Все товары' : 'Kõik tooted',             href: lp(`/tooted`, locale) },
+        { label: ru ? 'Потолочные профили' : 'Laeprofiilid',    href: lp(`/tooted?cat=${encodeURIComponent('Laeprofiilid')}`, locale) },
+        { label: ru ? 'Напольные профили' : 'Põrandaprofiilid', href: lp(`/tooted?cat=${encodeURIComponent('Põrandaprofiilid')}`, locale) },
+        { label: ru ? 'Плинтусы' : 'Põrandaliistud',            href: lp(`/tooted?cat=${encodeURIComponent('Põrandaliistud')}`, locale) },
+        { label: ru ? 'Аксессуары' : 'Lisatarvikud',            href: lp(`/tooted?cat=${encodeURIComponent('Lisatarvikud')}`, locale) },
       ],
     },
     {
       heading: ru ? 'Информация' : 'Info',
       links: [
-        { label: ru ? 'Что такое теневой профиль?' : 'Mis on varjuprofiil?', href: `${pfx}/mis-on-varjuprofiil` },
-        { label: ru ? 'О продукции' : 'Toodetest',      href: `${pfx}/meist` },
-        { label: ru ? 'Вдохновение' : 'Inspiratsioon',  href: `${pfx}/inspiratsioon` },
+        { label: ru ? 'Что такое теневой профиль?' : 'Mis on varjuprofiil?', href: lp(`/mis-on-varjuprofiil`, locale) },
+        { label: ru ? 'О продукции' : 'Toodetest',      href: lp(`/meist`, locale) },
+        { label: ru ? 'Вдохновение' : 'Inspiratsioon',  href: lp(`/inspiratsioon`, locale) },
         // Uudised peidetud kuni päris postitused valmis (2026-07). Taasta see rida.
-        // { label: ru ? 'Журнал' : 'Uudised',             href: `${pfx}/uudised` },
-        { label: ru ? 'Поиск' : 'Otsing',               href: `${pfx}/otsing` },
+        // { label: ru ? 'Журнал' : 'Uudised',             href: lp(`/uudised`, locale) },
+        { label: ru ? 'Поиск' : 'Otsing',               href: lp(`/otsing`, locale) },
       ],
     },
     {
       heading: ru ? 'Поддержка' : 'Tugi',
       links: [
-        { label: ru ? 'Контакты' : 'Kontakt',    href: `${pfx}/kontakt` },
-        { label: ru ? 'Салон' : 'Salong',        href: `${pfx}/salong` },
-        { label: ru ? 'Доставка' : 'Tarne',      href: `${pfx}/tarne` },
-        { label: ru ? 'Гарантия' : 'Garantii',   href: `${pfx}/garantii` },
-        { label: ru ? 'Вопросы' : 'KKK',         href: `${pfx}/kkk` },
-        { label: ru ? 'Условия' : 'Tingimused',  href: `${pfx}/impressum` },
+        { label: ru ? 'Контакты' : 'Kontakt',    href: lp(`/kontakt`, locale) },
+        { label: ru ? 'Салон' : 'Salong',        href: lp(`/salong`, locale) },
+        { label: ru ? 'Доставка' : 'Tarne',      href: lp(`/tarne`, locale) },
+        { label: ru ? 'Гарантия' : 'Garantii',   href: lp(`/garantii`, locale) },
+        { label: ru ? 'Вопросы' : 'KKK',         href: lp(`/kkk`, locale) },
+        { label: ru ? 'Условия' : 'Tingimused',  href: lp(`/impressum`, locale) },
       ],
     },
     {
       heading: ru ? 'B2B / Кабинет' : 'B2B / Konto',
       links: [
-        { label: ru ? 'Партнёрская программа' : 'Partneriprogramm', href: `${pfx}/professionaalidele` },
-        { label: ru ? 'Войти' : 'Logi sisse',                       href: `${pfx}/konto/login` },
-        { label: ru ? 'Личный кабинет' : 'Minu konto',              href: `${pfx}/konto` },
-        { label: ru ? 'Корзина' : 'Korv',                           href: `${pfx}/korv` },
+        { label: ru ? 'Партнёрская программа' : 'Partneriprogramm', href: lp(`/professionaalidele`, locale) },
+        { label: ru ? 'Войти' : 'Logi sisse',                       href: lp(`/konto/login`, locale) },
+        { label: ru ? 'Личный кабинет' : 'Minu konto',              href: lp(`/konto`, locale) },
+        { label: ru ? 'Корзина' : 'Korv',                           href: lp(`/korv`, locale) },
       ],
     },
   ];

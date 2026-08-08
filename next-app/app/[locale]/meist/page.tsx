@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
+import { lp } from '@/lib/pageUrls';
 
 export default function AboutPage() {
   const locale = useLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const faqItems = [
@@ -49,8 +49,8 @@ export default function AboutPage() {
             </p>
           </div>
           <div style={{ display: 'flex', gap: 14, marginTop: 40 }}>
-            <Link href={`${pfx}/tooted`} className="vp-btn vp-btn--lg">{ru ? 'Смотреть товары →' : 'Vaata tooteid →'}</Link>
-            <Link href={`${pfx}/kontakt`} className="vp-btn vp-btn--ghost vp-btn--lg">{ru ? 'Бесплатная консультация' : 'Tasuta nõustamine'}</Link>
+            <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg">{ru ? 'Смотреть товары →' : 'Vaata tooteid →'}</Link>
+            <Link href={lp(`/kontakt`, locale)} className="vp-btn vp-btn--ghost vp-btn--lg">{ru ? 'Бесплатная консультация' : 'Tasuta nõustamine'}</Link>
           </div>
         </div>
         <div style={{ minHeight: 480, backgroundImage: 'url("/assets/hero-hoeljuv-lagi.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative' }}>
@@ -296,7 +296,7 @@ export default function AboutPage() {
             <h2 className="vp-display" style={{ fontSize: 48, margin: 0, lineHeight: 0.95 }}>
               {ru ? 'Знакомитесь' : 'Uurid'}<br />{ru ? 'впервые?' : 'esmakordselt?'}
             </h2>
-            <Link href={`${pfx}/kkk`} className="vp-btn vp-btn--ghost" style={{ display: 'inline-block', marginTop: 24 }}>{ru ? 'Все вопросы →' : 'Kõik KKK-d →'}</Link>
+            <Link href={lp(`/kkk`, locale)} className="vp-btn vp-btn--ghost" style={{ display: 'inline-block', marginTop: 24 }}>{ru ? 'Все вопросы →' : 'Kõik KKK-d →'}</Link>
           </div>
           <div>
             {faqItems.map(([q, a], i) => (
@@ -321,7 +321,7 @@ export default function AboutPage() {
           {ru ? 'отделка.' : 'viimistlus.'}
         </h2>
         <div style={{ display: 'flex', gap: 14, justifyContent: 'center', marginTop: 48, flexWrap: 'wrap' }}>
-          <Link href={`${pfx}/tooted`} className="vp-btn vp-btn--lg" style={{ background: 'var(--paper)', color: 'var(--ink)', borderColor: 'var(--paper)' }}>
+          <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg" style={{ background: 'var(--paper)', color: 'var(--ink)', borderColor: 'var(--paper)' }}>
             {ru ? 'Смотреть все товары →' : 'Vaata kõiki tooteid →'}
           </Link>
         </div>

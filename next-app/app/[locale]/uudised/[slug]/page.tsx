@@ -4,6 +4,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { site } from '@/lib/site';
 import JsonLd from '@/components/seo/JsonLd';
+import { lp, abs, ruPath } from '@/lib/pageUrls';
 
 // Estonian month labels (from POSTS `yearEt`, e.g. "2026 · mai") → ISO month,
 // so BlogPosting can carry an approximate datePublished.
@@ -1874,10 +1875,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${ru ? p.titleRu : p.titleEt} | Varjuprofiilid.ee`,
     description: ru ? p.excerptRu : p.excerptEt,
     alternates: {
-      canonical: ru ? `${site.url}/ru/uudised/${slug}` : `${site.url}/uudised/${slug}`,
+      canonical: abs(lp(`/uudised/${slug}`, locale)),
       languages: {
         et: `${site.url}/uudised/${slug}`,
-        ru: `${site.url}/ru/uudised/${slug}`,
+        ru: abs(ruPath(`/uudised/${slug}`)),
       },
     },
     openGraph: {
@@ -1903,8 +1904,6 @@ export default async function BlogPostPage({ params }: Props) {
   const ru = locale === 'ru';
   const p = POSTS[slug];
   if (!p) notFound();
-
-  const pfx = ru ? '/ru' : '';
   const title = ru ? p.titleRu : p.titleEt;
   const body = ru ? p.bodyRu : p.bodyEt;
   const cat = ru ? p.catRu : p.catEt;
@@ -1913,7 +1912,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   // BlogPosting structured data. Date parsed from the Estonian label (yearEt)
   // regardless of locale, since the publish date is the same in both.
-  const canonical = ru ? `${site.url}/ru/uudised/${slug}` : `${site.url}/uudised/${slug}`;
+  const canonical = abs(lp(`/uudised/${slug}`, locale));
   const cover = p.cover.startsWith('http') ? p.cover : `${site.url}${p.cover}`;
   const datePublished = isoDateFromYearEt(p.yearEt);
   const blogSchema: Record<string, unknown> = {
@@ -1939,9 +1938,9 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Breadcrumb + title */}
       <section style={{ padding: '72px 56px 48px', borderBottom: 'var(--border)' }}>
         <div className="vp-eyebrow" style={{ marginBottom: 10 }}>
-          <Link href={pfx || '/'}>{ru ? 'Главная' : 'Avaleht'}</Link>
+          <Link href={lp('/', locale)}>{ru ? 'Главная' : 'Avaleht'}</Link>
           {' / '}
-          <Link href={`${pfx}/uudised`}>{ru ? 'Журнал' : 'Uudised'}</Link>
+          <Link href={lp(`/uudised`, locale)}>{ru ? 'Журнал' : 'Uudised'}</Link>
           {' / '}
           <span style={{ color: 'var(--ink)' }}>{cat}</span>
         </div>
@@ -1966,8 +1965,8 @@ export default async function BlogPostPage({ params }: Props) {
         <article>
           <MarkdownBody text={body} />
           <div style={{ marginTop: 48, paddingTop: 32, borderTop: 'var(--border)', display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <Link href={`${pfx}/tooted`} className="vp-btn vp-btn--lg">{ru ? 'Открыть каталог →' : 'Vaata kataloogi →'}</Link>
-            <Link href={`${pfx}/kontakt`} className="vp-btn vp-btn--ghost">{ru ? 'Бесплатная консультация' : 'Tasuta nõustamine'}</Link>
+            <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg">{ru ? 'Открыть каталог →' : 'Vaata kataloogi →'}</Link>
+            <Link href={lp(`/kontakt`, locale)} className="vp-btn vp-btn--ghost">{ru ? 'Бесплатная консультация' : 'Tasuta nõustamine'}</Link>
           </div>
         </article>
 
@@ -1977,7 +1976,7 @@ export default async function BlogPostPage({ params }: Props) {
           {relatedSlugs.map((s) => {
             const rel = POSTS[s];
             return (
-              <Link key={s} href={`${pfx}/uudised/${s}`} style={{ display: 'block', padding: '16px 0', borderBottom: '1px solid rgba(0,0,0,0.1)', textDecoration: 'none', color: 'inherit' }}>
+              <Link key={s} href={lp(`/uudised/${s}`, locale)} style={{ display: 'block', padding: '16px 0', borderBottom: '1px solid rgba(0,0,0,0.1)', textDecoration: 'none', color: 'inherit' }}>
                 <div className="vp-mono" style={{ fontSize: 10, color: 'var(--muted)', marginBottom: 4 }}>{ru ? rel.catRu : rel.catEt}</div>
                 <div style={{ fontSize: 14, fontWeight: 600, lineHeight: 1.4 }}>{ru ? rel.titleRu : rel.titleEt}</div>
               </Link>
@@ -1988,7 +1987,7 @@ export default async function BlogPostPage({ params }: Props) {
             <p style={{ fontSize: 13, lineHeight: 1.6, color: 'var(--ink-2)', margin: '0 0 14px' }}>
               {ru ? 'Помогаем с выбором профилей бесплатно.' : 'Aitame profiilide valikul tasuta.'}
             </p>
-            <Link href={`${pfx}/kontakt`} className="vp-btn" style={{ display: 'inline-block' }}>
+            <Link href={lp(`/kontakt`, locale)} className="vp-btn" style={{ display: 'inline-block' }}>
               {ru ? 'Написать →' : 'Võta ühendust →'}
             </Link>
           </div>

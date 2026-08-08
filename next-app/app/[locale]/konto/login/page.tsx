@@ -3,11 +3,11 @@
 import { SignIn } from '@clerk/nextjs';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
+import { lp } from '@/lib/pageUrls';
 
 export default function LoginPage() {
   const locale = useLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderBottom: 'var(--border)', minHeight: '60vh' }}>
@@ -42,8 +42,8 @@ export default function LoginPage() {
               footerActionLink: { color: 'var(--accent)' },
             },
           }}
-          forceRedirectUrl={`${pfx}/konto`}
-          signUpForceRedirectUrl={`${pfx}/konto`}
+          forceRedirectUrl={lp(`/konto`, locale)}
+          signUpForceRedirectUrl={lp(`/konto`, locale)}
         />
       </div>
 
@@ -70,7 +70,7 @@ export default function LoginPage() {
             </div>
           ))}
         </div>
-        <Link href={`${pfx}/professionaalidele`} className="vp-btn vp-btn--lg" style={{ display: 'inline-block' }}>
+        <Link href={lp(`/professionaalidele`, locale)} className="vp-btn vp-btn--lg" style={{ display: 'inline-block' }}>
           {ru ? 'Зарегистрироваться →' : 'Taotle partnerstaatust →'}
         </Link>
       </div>

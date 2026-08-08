@@ -45,30 +45,37 @@ const websiteSchema = {
   publisher: { '@type': 'Organization', name: site.legal },
 };
 
-export const metadata: Metadata = {
-  title: {
-    template: '%s | Varjuprofiilid.ee',
-    default: 'Varjuprofiilid.ee — Alumiinium varjuprofiilid',
-  },
-  description:
-    'Alumiinium varjuprofiilid LED-valgustusega ja dekoratiivsed — laele, põrandale, seinale. PROSPACE OÜ, Tallinn.',
-  metadataBase: new URL('https://varjuprofiilid.ee'),
-  openGraph: {
-    siteName: 'Varjuprofiilid.ee',
-    type: 'website',
-    images: [{ url: '/assets/hero-hoeljuv-lagi.jpg', width: 1200, height: 630, alt: 'Varjuprofiilid — hõljuva lae efekt' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: ['/assets/hero-hoeljuv-lagi.jpg'],
-  },
-  alternates: {
-    languages: {
-      et: 'https://varjuprofiilid.ee',
-      ru: 'https://varjuprofiilid.ee/ru',
+// Locale-aware defaults. NB: no `alternates` here — every indexable page sets
+// its own canonical + hreflang pair via pageAlternates(). A site-wide default
+// would make the noindex utility routes advertise the homepage as their
+// translation.
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const ru = locale === 'ru';
+  return {
+    title: {
+      template: '%s | Varjuprofiilid.ee',
+      default: ru
+        ? 'Varjuprofiilid.ee — Алюминиевые теневые профили'
+        : 'Varjuprofiilid.ee — Alumiinium varjuprofiilid',
     },
-  },
-};
+    description: ru
+      ? 'Алюминиевые теневые профили с LED-подсветкой и декоративные — для потолка, пола, стены. PROSPACE OÜ, Таллинн.'
+      : 'Alumiinium varjuprofiilid LED-valgustusega ja dekoratiivsed — laele, põrandale, seinale. PROSPACE OÜ, Tallinn.',
+    metadataBase: new URL('https://varjuprofiilid.ee'),
+    openGraph: {
+      siteName: 'Varjuprofiilid.ee',
+      type: 'website',
+      locale: ru ? 'ru_RU' : 'et_EE',
+      alternateLocale: ru ? 'et_EE' : 'ru_RU',
+      images: [{ url: '/assets/hero-hoeljuv-lagi.jpg', width: 1200, height: 630, alt: 'Varjuprofiilid — hõljuva lae efekt' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: ['/assets/hero-hoeljuv-lagi.jpg'],
+    },
+  };
+}
 
 export const viewport: Viewport = {
   width: 'device-width',

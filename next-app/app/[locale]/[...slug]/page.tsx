@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { getLocale } from 'next-intl/server';
-import { products } from '@/lib/catalog';
+import { products, productUrl } from '@/lib/catalog';
 import ProductClient from '@/components/product/ProductClient';
 import { getProductImages } from '@/lib/productImages';
 import { site } from '@/lib/site';
@@ -17,6 +17,17 @@ function findProduct(slug: string[], locale: string) {
     return products.find((p) => p.urlPathRu === path);
   }
   return products.find((p) => p.urlPath === path);
+}
+
+// Same product, wrong locale prefix — e.g. /ru/led-varjuprofiilid/lae/ast12
+// (ET slugs under /ru) instead of /ru/led-profili/potolok/ast12. Google knows a
+// batch of these from an earlier hreflang pass; 308 them to the locale-correct
+// URL so they consolidate instead of 404-ing with a noindex tag.
+function findCrossLocale(slug: string[], locale: string) {
+  const path = '/' + slug.join('/') + '/';
+  return locale === 'ru'
+    ? products.find((p) => p.urlPath === path)
+    : products.find((p) => p.urlPathRu === path);
 }
 
 // urlPath fields carry a trailing slash, but Next serves the slash-less form
@@ -44,6 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: {
         et: absUrl(product.urlPath),
         ru: absUrl(`/ru${product.urlPathRu}`),
+        'x-default': absUrl(product.urlPath),
       },
     },
     openGraph: {
@@ -75,7 +87,11 @@ export default async function ProductPage({ params }: Props) {
   const locale = await getLocale();
 
   const product = findProduct(slug, locale);
-  if (!product) notFound();
+  if (!product) {
+    const wrongLocale = findCrossLocale(slug, locale);
+    if (wrongLocale) permanentRedirect(productUrl(wrongLocale, locale === 'ru'));
+    notFound();
+  }
 
   const cat = product.collection.split(';')[0].trim();
   const related = products

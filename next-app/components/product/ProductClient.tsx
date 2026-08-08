@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useCart } from '@/lib/cart';
 import { productUrl, type Product } from '@/lib/catalog';
 import { getProductImages, getProductImagePath } from '@/lib/productImages';
+import { lp } from '@/lib/pageUrls';
 
 const CAT_RU: Record<string, string> = {
   Laeprofiilid: 'Потолочные',
@@ -90,7 +91,7 @@ export default function ProductClient({ product, related, locale }: Props) {
   const stdMax = stdPrices.length ? Math.max(...stdPrices) : product.price;
   const hasPriceRange = hasMill || (hasRal && product.ralPrice! - stdMax > 0.01);
 
-  const catalogHref = ru ? `/ru/tooted` : `/tooted`;
+  const catalogHref = lp('/tooted', locale);
   const catLabel = ru ? CAT_RU[cat] ?? cat : cat;
   const subtitle = ru ? product.seoNameRu : product.seoName;
   const description = ru ? product.descriptionRu : product.description;
@@ -106,7 +107,7 @@ export default function ProductClient({ product, related, locale }: Props) {
     <div>
       {/* Breadcrumb */}
       <div style={{ padding: '18px 56px', fontFamily: 'JetBrains Mono', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--muted)' }}>
-        <Link href={ru ? '/ru' : '/'}>{ru ? 'Главная' : 'Avaleht'}</Link>
+        <Link href={lp('/', locale)}>{ru ? 'Главная' : 'Avaleht'}</Link>
         {' / '}
         <Link href={catalogHref}>{ru ? 'Магазин' : 'Pood'}</Link>
         {' / '}
@@ -279,7 +280,7 @@ export default function ProductClient({ product, related, locale }: Props) {
                   qty,
                   pricePerM: activePrice,
                 });
-                router.push(ru ? '/ru/korv' : '/korv');
+                router.push(lp('/korv', locale));
               }}
             >
               {ru ? `В корзину → ${total} €` : `Lisa korvi → ${total} €`}

@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { getLocale } from 'next-intl/server';
 import { site } from '@/lib/site';
+import { lp } from '@/lib/pageUrls';
 
 export default async function B2BSalon() {
   const locale = await getLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
 
   return (
     <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderBottom: 'var(--border)' }}>
@@ -23,7 +23,7 @@ export default async function B2BSalon() {
             ? 'Скидки, образцы, техническая поддержка и совместный маркетинг.'
             : 'Soodushinnad, näidiskomplektid, tehniline tugi ja kaasturundus.'}
         </p>
-        <Link href={`${pfx}/professionaalidele`} className="vp-btn vp-btn--ghost">
+        <Link href={lp(`/professionaalidele`, locale)} className="vp-btn vp-btn--ghost">
           {ru ? 'Стать партнёром →' : 'Liitu partneriprogrammiga →'}
         </Link>
       </div>
@@ -43,7 +43,7 @@ export default async function B2BSalon() {
             {site.phone}
           </a>
         </p>
-        <Link href={`${pfx}/salong`} className="vp-btn vp-btn--ghost">
+        <Link href={lp(`/salong`, locale)} className="vp-btn vp-btn--ghost">
           {ru ? 'Записаться на визит →' : 'Broneeri visiit →'}
         </Link>
       </div>

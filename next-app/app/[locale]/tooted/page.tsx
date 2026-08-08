@@ -2,11 +2,13 @@ import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
 import { products, categories } from '@/lib/catalog';
 import CatalogClient from '@/components/catalog/CatalogClient';
+import { pageAlternates } from '@/lib/pageUrls';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const ru = locale === 'ru';
   return {
+    alternates: pageAlternates('/tooted', locale),
     title: ru ? 'Магазин — все товары' : 'Pood — kõik tooted',
     description: ru
       ? 'Все алюминиевые теневые профили — потолочные, напольные, настенные. Фильтр по категории, цвету и LED.'

@@ -10,6 +10,7 @@ import InstagramFeed from '@/components/home/InstagramFeed';
 import Partners from '@/components/home/Partners';
 
 import type { Metadata } from 'next';
+import { pageAlternates } from '@/lib/pageUrls';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { getLocale } = await import('next-intl/server');
@@ -19,13 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: ru ? 'Varjuprofiilid.ee — Алюминиевые теневые профили в Эстонии' : 'Varjuprofiilid.ee — Alumiinium varjuprofiilid Eestis',
     description: ru ? 'Алюминиевые теневые профили с LED и декоративные — для потолка, пола и стены. PROSPACE OÜ, Таллинн. На складе 98 SKU.' : 'Alumiinium varjuprofiilid LED-valgustuse ja dekoratiivsete profiilidega — lae, põranda ja seina lahendused. PROSPACE OÜ, Tallinn. Laos 98 SKU.',
     // Selgesõnaline apex-canonical (ilma www) — Google valis muidu ise www.
-    alternates: {
-      canonical: ru ? 'https://varjuprofiilid.ee/ru' : 'https://varjuprofiilid.ee',
-      languages: {
-        et: 'https://varjuprofiilid.ee',
-        ru: 'https://varjuprofiilid.ee/ru',
-      },
-    },
+    alternates: pageAlternates('/', locale),
   };
 }
 

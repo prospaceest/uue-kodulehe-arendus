@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getLocale } from 'next-intl/server';
+import { lp } from '@/lib/pageUrls';
 
 const PROJECTS = [
   {
@@ -37,7 +38,6 @@ const PROJECTS = [
 export default async function InspirationGrid() {
   const locale = await getLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
 
   return (
     <section style={{ padding: '80px 56px', borderBottom: 'var(--border)' }}>
@@ -50,14 +50,14 @@ export default async function InspirationGrid() {
             {ru ? 'Вдохновение' : 'Inspiratsioon'}
           </h2>
         </div>
-        <Link href={`${pfx}/inspiratsioon`} style={{ fontFamily: 'JetBrains Mono', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.08em', borderBottom: 'var(--border)' }}>
+        <Link href={lp(`/inspiratsioon`, locale)} style={{ fontFamily: 'JetBrains Mono', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.08em', borderBottom: 'var(--border)' }}>
           {ru ? 'Смотреть все →' : 'Vaata kõiki →'}
         </Link>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 18 }}>
         {PROJECTS.map((p) => (
-          <Link key={p.id} href={`${pfx}/inspiratsioon/${p.id}`} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
+          <Link key={p.id} href={lp(`/inspiratsioon/${p.id}`, locale)} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
             <div style={{ aspectRatio: '4/5', marginBottom: 14, overflow: 'hidden', border: 'var(--border)', background: 'var(--paper-2)' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={p.img} alt={ru ? p.titleRu : p.titleEt} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />

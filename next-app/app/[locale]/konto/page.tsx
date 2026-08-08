@@ -3,12 +3,12 @@
 import { useUser, SignOutButton } from '@clerk/nextjs';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
+import { lp } from '@/lib/pageUrls';
 
 export default function KontoPage() {
   const { user, isLoaded } = useUser();
   const locale = useLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
 
   if (!isLoaded) {
     return (
@@ -70,13 +70,13 @@ export default function KontoPage() {
         <div style={{ padding: '40px 40px', borderRight: 'var(--border)' }}>
           <div className="vp-eyebrow" style={{ marginBottom: 18 }}>{ru ? 'Быстрые действия' : 'Kiirtoimingud'}</div>
           <div style={{ display: 'grid', gap: 10 }}>
-            <Link href={`${pfx}/tooted`} className="vp-btn vp-btn--lg" style={{ textAlign: 'center' }}>
+            <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg" style={{ textAlign: 'center' }}>
               {ru ? 'Смотреть каталог →' : 'Vaata kataloogi →'}
             </Link>
-            <Link href={`${pfx}/kontakt`} className="vp-btn vp-btn--ghost" style={{ textAlign: 'center' }}>
+            <Link href={lp(`/kontakt`, locale)} className="vp-btn vp-btn--ghost" style={{ textAlign: 'center' }}>
               {ru ? 'Связаться с нами' : 'Võta meiega ühendust'}
             </Link>
-            <Link href={`${pfx}/professionaalidele`} className="vp-btn vp-btn--ghost" style={{ textAlign: 'center' }}>
+            <Link href={lp(`/professionaalidele`, locale)} className="vp-btn vp-btn--ghost" style={{ textAlign: 'center' }}>
               {ru ? 'Программа партнёров' : 'Partneriprogramm'}
             </Link>
           </div>
@@ -91,7 +91,7 @@ export default function KontoPage() {
               ? 'Ваша персональная скидка и условия оговариваются индивидуально. Для уточнения условий напишите нам.'
               : 'Sinu personaalne soodustus ja tingimused lepitakse kokku individuaalselt. Tingimuste täpsustamiseks võta meiega ühendust.'}
           </p>
-          <Link href={`${pfx}/kontakt`} style={{ fontFamily: 'JetBrains Mono', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.06em', borderBottom: 'var(--border)', paddingBottom: 2, color: 'var(--ink)', textDecoration: 'none' }}>
+          <Link href={lp(`/kontakt`, locale)} style={{ fontFamily: 'JetBrains Mono', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.06em', borderBottom: 'var(--border)', paddingBottom: 2, color: 'var(--ink)', textDecoration: 'none' }}>
             {ru ? 'Уточнить условия →' : 'Küsi tingimusi →'}
           </Link>
         </div>
@@ -109,7 +109,7 @@ export default function KontoPage() {
               ? 'История заказов появится здесь после первого оформленного заказа.'
               : 'Tellimuste ajalugu ilmub siia pärast esimest esitatud tellimust.'}
           </p>
-          <Link href={`${pfx}/tooted`} className="vp-btn vp-btn--lg">
+          <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg">
             {ru ? 'Начать покупки →' : 'Alusta ostlemist →'}
           </Link>
         </div>

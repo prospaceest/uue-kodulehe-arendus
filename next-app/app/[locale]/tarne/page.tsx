@@ -3,12 +3,14 @@ import Link from 'next/link';
 import { site } from '@/lib/site';
 
 import type { Metadata } from 'next';
+import { lp, pageAlternates } from '@/lib/pageUrls';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { getLocale } = await import('next-intl/server');
   const locale = await getLocale();
   const ru = locale === 'ru';
   return {
+    alternates: pageAlternates('/tarne', locale),
     title: ru ? 'Доставка и возврат' : 'Tarne ja tagastus',
     description: ru ? 'Условия доставки: бесплатно от 200 €, Venipak 1–4 рабочих дня. Возврат 14 дней. Счёт SEPA.' : 'Tarnetingimused: tasuta tarne üle 200 €, Venipak 1–4 tööpäevaga. Tagastusõigus 14 päeva. SEPA arve.',
   };
@@ -17,7 +19,6 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ShippingPage() {
   const locale = await getLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
 
   const boxes = [
     { n: '25 €', t: ru ? 'Venipak по Эстонии' : 'Venipak üle Eesti', d: ru ? '+ НДС 24%. Доставка 2–4 рабочих дня при наличии на складе.' : '+ KM 24%. Tarne 2–4 tööpäeva, kui kaup on laos.' },
@@ -97,8 +98,8 @@ export default async function ShippingPage() {
 
       <section style={{ padding: '56px', borderBottom: 'var(--border)' }}>
         <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-          <Link href={`${pfx}/professionaalidele`} className="vp-btn vp-btn--lg">{ru ? 'Стать B2B-партнёром →' : 'Liitu B2B partneriks →'}</Link>
-          <Link href={`${pfx}/kontakt`} className="vp-btn vp-btn--ghost vp-btn--lg">{ru ? 'Запросить предложение' : 'Küsi pakkumist'}</Link>
+          <Link href={lp(`/professionaalidele`, locale)} className="vp-btn vp-btn--lg">{ru ? 'Стать B2B-партнёром →' : 'Liitu B2B partneriks →'}</Link>
+          <Link href={lp(`/kontakt`, locale)} className="vp-btn vp-btn--ghost vp-btn--lg">{ru ? 'Запросить предложение' : 'Küsi pakkumist'}</Link>
         </div>
       </section>
     </div>

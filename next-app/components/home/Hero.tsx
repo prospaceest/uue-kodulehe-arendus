@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { products } from '@/lib/catalog';
+import { lp } from '@/lib/pageUrls';
 
 export default async function Hero() {
   const locale = await getLocale();
@@ -16,7 +17,7 @@ export default async function Hero() {
     { n: ru ? '14 дн.' : '14 p', l: ru ? 'Право возврата'          : 'Tagastusõigus'          },
   ];
 
-  const catalogHref = ru ? '/ru/tooted' : '/tooted';
+  const catalogHref = lp('/tooted', locale);
 
   return (
     <section

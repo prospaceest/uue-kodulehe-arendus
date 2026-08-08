@@ -3,11 +3,11 @@
 import { SignUp } from '@clerk/nextjs';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
+import { lp } from '@/lib/pageUrls';
 
 export default function RegistreeruPage() {
   const locale = useLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderBottom: 'var(--border)', minHeight: '60vh' }}>
@@ -35,8 +35,8 @@ export default function RegistreeruPage() {
               },
             },
           }}
-          forceRedirectUrl={`${pfx}/konto`}
-          signInForceRedirectUrl={`${pfx}/konto`}
+          forceRedirectUrl={lp(`/konto`, locale)}
+          signInForceRedirectUrl={lp(`/konto`, locale)}
         />
       </div>
       <div style={{ padding: '80px 56px', background: 'var(--paper-2)' }}>
@@ -44,13 +44,13 @@ export default function RegistreeruPage() {
         <h2 className="vp-display" style={{ fontSize: 48, margin: '0 0 24px', lineHeight: 0.95 }}>
           {ru ? 'Войдите.' : 'Logi sisse.'}
         </h2>
-        <Link href={`${pfx}/konto/login`} className="vp-btn vp-btn--lg">{ru ? 'Войти →' : 'Sisselogimine →'}</Link>
+        <Link href={lp(`/konto/login`, locale)} className="vp-btn vp-btn--lg">{ru ? 'Войти →' : 'Sisselogimine →'}</Link>
         <div style={{ marginTop: 48, paddingTop: 32, borderTop: 'var(--border)' }}>
           <div className="vp-eyebrow" style={{ marginBottom: 12 }}>{ru ? 'Нужна консультация?' : 'Küsimusi?'}</div>
           <p style={{ fontSize: 14, color: 'var(--ink-2)', lineHeight: 1.65, marginBottom: 16 }}>
             {ru ? 'Позвоните или напишите — поможем настроить партнёрский аккаунт.' : 'Helista või kirjuta — aitame partnerkonto seadistada.'}
           </p>
-          <Link href={`${pfx}/kontakt`} className="vp-btn vp-btn--ghost">{ru ? 'Контакт' : 'Kontakt'}</Link>
+          <Link href={lp(`/kontakt`, locale)} className="vp-btn vp-btn--ghost">{ru ? 'Контакт' : 'Kontakt'}</Link>
         </div>
       </div>
     </div>

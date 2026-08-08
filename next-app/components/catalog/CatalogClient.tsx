@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import ProductCard from './ProductCard';
 import type { Product, Category } from '@/lib/catalog';
+import { lp } from '@/lib/pageUrls';
 
 const CAT_RU: Record<string, string> = {
   Laeprofiilid: 'Потолочные',
@@ -93,9 +94,9 @@ export default function CatalogClient({ products, categories, initialCat }: Prop
       {/* Page header */}
       <section style={{ padding: '48px 56px', borderBottom: 'var(--border)' }}>
         <div className="vp-eyebrow" style={{ marginBottom: 10 }}>
-          <Link href={ru ? '/ru' : '/'}>{ru ? 'Главная' : 'Avaleht'}</Link>
+          <Link href={lp('/', locale)}>{ru ? 'Главная' : 'Avaleht'}</Link>
           {' / '}
-          <Link href={ru ? '/ru/tooted' : '/tooted'}>{ru ? 'Магазин' : 'Pood'}</Link>
+          <Link href={lp('/tooted', locale)}>{ru ? 'Магазин' : 'Pood'}</Link>
           {activeCat && <> / <span style={{ color: 'var(--ink)' }}>{catLabel(activeCat)}</span></>}
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 32 }}>

@@ -4,6 +4,7 @@ import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { products, productUrl } from '@/lib/catalog';
 import { getProductImagePath } from '@/lib/productImages';
+import { lp, pageAlternates } from '@/lib/pageUrls';
 
 type Asukoht = 'lae' | 'seina' | 'poranda';
 
@@ -48,7 +49,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cfg = CONFIG[asukoht as Asukoht];
   if (!cfg) return {};
   const ru = locale === 'ru';
-  return { title: ru ? cfg.titleRu : cfg.titleEt, description: ru ? cfg.descRu : cfg.descEt };
+  return {
+    title: ru ? cfg.titleRu : cfg.titleEt,
+    description: ru ? cfg.descRu : cfg.descEt,
+    alternates: pageAlternates(`/varjuprofiilid/${asukoht}`, locale),
+  };
 }
 
 export function generateStaticParams() {
@@ -64,7 +69,6 @@ export default async function DekorCategoryPage({ params }: Props) {
   const cfg = CONFIG[asukoht as Asukoht];
   if (!cfg) notFound();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
 
   const categoryProducts = products.filter((p) =>
     p.urlPath.startsWith(`/varjuprofiilid/${asukoht}/`)
@@ -74,9 +78,9 @@ export default async function DekorCategoryPage({ params }: Props) {
     <div>
       <section style={{ padding: '32px 56px 0' }}>
         <div className="vp-eyebrow">
-          <Link href={pfx || '/'}>{ru ? 'Главная' : 'Avaleht'}</Link>
+          <Link href={lp('/', locale)}>{ru ? 'Главная' : 'Avaleht'}</Link>
           {' / '}
-          <Link href={`${pfx}/varjuprofiilid`}>{ru ? 'Теневые профили' : 'Varjuprofiilid'}</Link>
+          <Link href={lp(`/varjuprofiilid`, locale)}>{ru ? 'Теневые профили' : 'Varjuprofiilid'}</Link>
           {' / '}
           <span style={{ color: 'var(--ink)' }}>{ru ? cfg.eyebrowRu : cfg.eyebrowEt}</span>
         </div>
@@ -96,7 +100,7 @@ export default async function DekorCategoryPage({ params }: Props) {
         {categoryProducts.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '80px 0' }}>
             <div className="vp-display" style={{ fontSize: 48, marginBottom: 16 }}>{ru ? 'Скоро.' : 'Tulekul.'}</div>
-            <Link href={`${pfx}/varjuprofiilid`} className="vp-btn">{ru ? '← Назад' : '← Tagasi'}</Link>
+            <Link href={lp(`/varjuprofiilid`, locale)} className="vp-btn">{ru ? '← Назад' : '← Tagasi'}</Link>
           </div>
         ) : (
           <>
@@ -133,11 +137,11 @@ export default async function DekorCategoryPage({ params }: Props) {
         <div className="vp-eyebrow" style={{ marginBottom: 16 }}>{ru ? 'Другие категории' : 'Teised kategooriad'}</div>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           {(['lae', 'seina', 'poranda'] as Asukoht[]).filter((a) => a !== asukoht).map((a) => (
-            <Link key={a} href={`${pfx}/varjuprofiilid/${a}`} className="vp-btn vp-btn--ghost">
+            <Link key={a} href={lp(`/varjuprofiilid/${a}`, locale)} className="vp-btn vp-btn--ghost">
               {ru ? CONFIG[a].eyebrowRu : CONFIG[a].eyebrowEt} →
             </Link>
           ))}
-          <Link href={`${pfx}/led-varjuprofiilid`} className="vp-btn vp-btn--ghost">
+          <Link href={lp(`/led-varjuprofiilid`, locale)} className="vp-btn vp-btn--ghost">
             {ru ? 'LED версии →' : 'LED versioonid →'}
           </Link>
         </div>

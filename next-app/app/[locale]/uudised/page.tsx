@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
+import { lp } from '@/lib/pageUrls';
 
 const POSTS = [
   { id: 'varjuprofiil-pohjalik-juhend',  feat: true,  catEt: 'Juhend',       catRu: 'Гид',           yearEt: '2026 · mai',   yearRu: '2026 · май',   read: '10 min', cover: '/assets/projects/eduardi-maja/00-home-cover.png', titleEt: 'Põrandaliist, mida sa ei märka: täisjuhend varjuprofiilide valikule (2026)', titleRu: 'Плинтус, который не замечают: полный гид по выбору теневых профилей (2026)', excerptEt: 'Mis on varjuprofiil, kuidas see asendab põrandaliistu ja millised tüübid sobivad Eesti korterisse? Tüübid, hinnad, paigaldus ja kolm levinud viga.', excerptRu: 'Что такое теневой профиль, как он заменяет плинтус и какие типы подходят для эстонской квартиры? Типы, цены, монтаж и три распространённые ошибки.' },
@@ -18,7 +19,6 @@ const POSTS = [
 export default function BlogIndexPage() {
   const locale = useLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
 
   const [activeCat, setActiveCat] = useState(ru ? 'Все' : 'Kõik');
   const [search, setSearch] = useState('');
@@ -78,7 +78,7 @@ export default function BlogIndexPage() {
       {/* Featured article — only when no filter active */}
       {feat && activeCat === allLabel && !search && (
         <section style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', borderBottom: 'var(--border)', minHeight: 520 }}>
-          <Link href={`${pfx}/uudised/${feat.id}`} style={{ display: 'block', textDecoration: 'none' }}>
+          <Link href={lp(`/uudised/${feat.id}`, locale)} style={{ display: 'block', textDecoration: 'none' }}>
             <div style={{ height: '100%', minHeight: 520, backgroundImage: `url("${feat.cover}")`, backgroundSize: 'cover', backgroundPosition: 'center', borderRight: 'var(--border)' }} />
           </Link>
           <div style={{ padding: '56px 48px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
@@ -95,7 +95,7 @@ export default function BlogIndexPage() {
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 32 }}>
               <span className="vp-mono" style={{ fontSize: 11, color: 'var(--muted)' }}>{feat.read} {ru ? 'чтение' : 'lugemine'}</span>
-              <Link href={`${pfx}/uudised/${feat.id}`} className="vp-btn">
+              <Link href={lp(`/uudised/${feat.id}`, locale)} className="vp-btn">
                 {ru ? 'Читать статью →' : 'Loe artiklit →'}
               </Link>
             </div>
@@ -106,7 +106,7 @@ export default function BlogIndexPage() {
       {/* Article grid */}
       <section style={{ padding: '48px 56px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, borderBottom: 'var(--border)' }}>
         {(activeCat === allLabel && !search ? rest : filtered).map((p) => (
-          <Link key={p.id} href={`${pfx}/uudised/${p.id}`} style={{ display: 'flex', flexDirection: 'column', gap: 14, textDecoration: 'none', color: 'inherit' }}>
+          <Link key={p.id} href={lp(`/uudised/${p.id}`, locale)} style={{ display: 'flex', flexDirection: 'column', gap: 14, textDecoration: 'none', color: 'inherit' }}>
             <div style={{ aspectRatio: '4/3', border: 'var(--border)', overflow: 'hidden', backgroundImage: `url("${p.cover}")`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
             <div className="vp-eyebrow">{ru ? p.catRu : p.catEt} · {ru ? p.yearRu : p.yearEt} · {p.read}</div>
             <div className="vp-display" style={{ fontSize: 30, lineHeight: 1, margin: 0 }}>{ru ? p.titleRu : p.titleEt}</div>

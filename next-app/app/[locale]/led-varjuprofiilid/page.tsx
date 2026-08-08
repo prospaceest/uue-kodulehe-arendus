@@ -3,6 +3,7 @@ import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { products, productUrl } from '@/lib/catalog';
 import { getProductImagePath } from '@/lib/productImages';
+import { lp, pageAlternates } from '@/lib/pageUrls';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -14,13 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: ru
       ? 'LED теневые профили — алюминиевые профили с каналом для LED-ленты. Для потолка, пола, стены, центрального потолка. Склад в Таллинне, доставка по Эстонии.'
       : 'LED varjuprofiilid — alumiiniumprofiilid LED-riba paigalduseks. Laele, põrandale, seinale, kesklakke. Ladu Tallinnas, tarne üle Eesti.',
-    alternates: {
-      canonical: 'https://varjuprofiilid.ee/led-varjuprofiilid',
-      languages: {
-        et: 'https://varjuprofiilid.ee/led-varjuprofiilid',
-        ru: 'https://varjuprofiilid.ee/ru/led-profili',
-      },
-    },
+    alternates: pageAlternates('/led-varjuprofiilid', locale),
   };
 }
 
@@ -85,7 +80,6 @@ const FAQ = [
 export default async function LedVarjuprofiilid() {
   const locale = await getLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
 
   const ledProducts = products.filter((p) =>
     p.urlPath.startsWith('/led-varjuprofiilid/')
@@ -96,7 +90,7 @@ export default async function LedVarjuprofiilid() {
       {/* Breadcrumb */}
       <section style={{ padding: '32px 56px 0', borderBottom: 'none' }}>
         <div className="vp-eyebrow">
-          <Link href={pfx || '/'}>{ru ? 'Главная' : 'Avaleht'}</Link>
+          <Link href={lp('/', locale)}>{ru ? 'Главная' : 'Avaleht'}</Link>
           {' / '}
           <span style={{ color: 'var(--ink)' }}>{ru ? 'LED теневые профили' : 'LED varjuprofiilid'}</span>
         </div>
@@ -118,8 +112,8 @@ export default async function LedVarjuprofiilid() {
                 : 'LED varjuprofiilid on alumiiniumprofiilid, mille soonde paigaldatakse LED-riba — nii saad ühe lahendusega tahtliku varjujoone ja integreeritud valgustuse. Eesti turul tuntakse neid ka kui LED laeprofiile, LED põrandaprofiile või LED süvisprofiile.'}
             </p>
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-              <Link href={`${pfx}/tooted`} className="vp-btn vp-btn--lg">{ru ? 'Все товары →' : 'Vaata kõiki →'}</Link>
-              <Link href={`${pfx}/mis-on-varjuprofiil`} className="vp-btn vp-btn--ghost">{ru ? 'Что такое теневой профиль?' : 'Mis on varjuprofiil?'}</Link>
+              <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg">{ru ? 'Все товары →' : 'Vaata kõiki →'}</Link>
+              <Link href={lp(`/mis-on-varjuprofiil`, locale)} className="vp-btn vp-btn--ghost">{ru ? 'Что такое теневой профиль?' : 'Mis on varjuprofiil?'}</Link>
             </div>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: 'var(--ink)', border: 'var(--border)', alignSelf: 'start' }}>
@@ -146,7 +140,7 @@ export default async function LedVarjuprofiilid() {
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 1, background: 'var(--ink)', border: 'var(--border)' }}>
           {SUBCATEGORIES.map((cat) => {
-            const href = `${pfx}/led-varjuprofiilid/${cat.slugEt}`;
+            const href = lp(`/led-varjuprofiilid/${cat.slugEt}`, locale);
             return (
               <Link key={cat.slugEt} href={href} style={{ display: 'block', background: 'var(--paper)', padding: '36px 32px', textDecoration: 'none', color: 'inherit' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 12 }}>
@@ -172,7 +166,7 @@ export default async function LedVarjuprofiilid() {
               <div className="vp-eyebrow" style={{ marginBottom: 8 }}>{ru ? 'Популярные LED профили' : 'Populaarsed LED varjuprofiilid'}</div>
               <h2 className="vp-display" style={{ fontSize: 48, margin: 0 }}>{ru ? 'Выбор покупателей' : 'Ostjate valik'}</h2>
             </div>
-            <Link href={`${pfx}/tooted`} style={{ fontFamily: 'JetBrains Mono', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', borderBottom: 'var(--border)', paddingBottom: 2, color: 'var(--ink)', textDecoration: 'none' }}>
+            <Link href={lp(`/tooted`, locale)} style={{ fontFamily: 'JetBrains Mono', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', borderBottom: 'var(--border)', paddingBottom: 2, color: 'var(--ink)', textDecoration: 'none' }}>
               {ru ? 'Все товары →' : 'Kõik tooted →'}
             </Link>
           </div>
@@ -255,7 +249,7 @@ export default async function LedVarjuprofiilid() {
             { hrefEt: '/alumiinium-porandaliistud', labelEt: 'Alumiinium põrandaliistud', labelRu: 'Алюминиевые плинтусы' },
             { hrefEt: '/tooted', labelEt: 'Kõik tooted', labelRu: 'Все товары' },
           ].map((l) => (
-            <Link key={l.hrefEt} href={`${pfx}${l.hrefEt}`} style={{ color: 'var(--paper)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.4)', paddingBottom: 2, fontFamily: 'JetBrains Mono', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+            <Link key={l.hrefEt} href={lp(l.hrefEt, locale)} style={{ color: 'var(--paper)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.4)', paddingBottom: 2, fontFamily: 'JetBrains Mono', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
               {ru ? l.labelRu : l.labelEt}
             </Link>
           ))}

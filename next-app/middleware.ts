@@ -1,6 +1,7 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 import createIntlMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
+import { internalRuPath } from './lib/pageUrls';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
@@ -43,6 +44,19 @@ export default clerkMiddleware(async (auth, req: NextRequest) => {
       const loginUrl = new URL(`${locale}/konto/login`, req.url);
       loginUrl.searchParams.set('redirect_url', req.url);
       return NextResponse.redirect(loginUrl);
+    }
+  }
+
+  // Russian pages are published at Russian slugs (/ru/katalog, /ru/led-profili/
+  // potolok) but served by the Estonian-named routes (app/[locale]/tooted, …).
+  // Rewrite the pathname before next-intl sees it — the address bar keeps the
+  // Russian URL, so it is the only URL Google and Yandex ever get. Product URLs
+  // are not in the table: they reach the [...slug] catch-all, which resolves
+  // them via urlPathRu.
+  if (pathname === '/ru' || pathname.startsWith('/ru/')) {
+    const internal = internalRuPath(pathname);
+    if (internal) {
+      req.nextUrl.pathname = internal;
     }
   }
 

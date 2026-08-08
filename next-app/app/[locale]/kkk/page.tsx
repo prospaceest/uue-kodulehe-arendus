@@ -5,6 +5,7 @@ import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { site } from '@/lib/site';
 import JsonLd from '@/components/seo/JsonLd';
+import { lp } from '@/lib/pageUrls';
 
 type FAQItem = [string, string];
 type FAQGroup = { h: string; items: FAQItem[] };
@@ -93,7 +94,7 @@ export default function FaqPage() {
           <div style={{ marginTop: 32, padding: '18px 20px', border: 'var(--border)', background: 'var(--paper-2)' }}>
             <div className="vp-eyebrow" style={{ marginBottom: 6 }}>{ru ? 'Не нашли ответа?' : 'Ei leia vastust?'}</div>
             <div style={{ fontSize: 13, marginBottom: 10, lineHeight: 1.55 }}>{ru ? 'Напишите нам — ответим в течение 24 ч.' : 'Kirjuta meile — vastame 24 h jooksul.'}</div>
-            <Link href={ru ? '/ru/kontakt' : '/kontakt'} className="vp-btn vp-btn--block">{ru ? 'Контакты →' : 'Kontakt →'}</Link>
+            <Link href={lp('/kontakt', locale)} className="vp-btn vp-btn--block">{ru ? 'Контакты →' : 'Kontakt →'}</Link>
           </div>
         </aside>
 

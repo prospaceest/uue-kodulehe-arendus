@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { lp, pageAlternates } from '@/lib/pageUrls';
 
 type GalleryItem = { src: string; alt: string };
 type UsageItem = { role: string; roleRu: string; m: string; where: string; whereRu: string; finish: string };
@@ -348,7 +349,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const p = PROJECTS[slug];
   if (!p) return {};
-  return { title: `${p.titleEt} | Inspiratsioon | Varjuprofiilid.ee` };
+  const locale = await getLocale();
+  const ru = locale === 'ru';
+  return {
+    title: ru
+      ? `${p.titleRu} | Вдохновение | Varjuprofiilid.ee`
+      : `${p.titleEt} | Inspiratsioon | Varjuprofiilid.ee`,
+    alternates: pageAlternates(`/inspiratsioon/${slug}`, locale),
+  };
 }
 
 export async function generateStaticParams() {
@@ -364,8 +372,6 @@ export default async function InspirationProjectPage({ params }: Props) {
   const ru = locale === 'ru';
   const p = PROJECTS[slug];
   if (!p) notFound();
-
-  const pfx = ru ? '/ru' : '';
   const title = ru ? p.titleRu : p.titleEt;
   const label = ru ? p.labelRu : p.labelEt;
   const body = (ru ? p.bodyRu : p.bodyEt).split('\n\n');
@@ -375,9 +381,9 @@ export default async function InspirationProjectPage({ params }: Props) {
       {/* Breadcrumb + title */}
       <section style={{ padding: '48px 56px 24px', borderBottom: 'var(--border)' }}>
         <div className="vp-eyebrow" style={{ marginBottom: 10 }}>
-          <Link href={pfx || '/'}>{ru ? 'Главная' : 'Avaleht'}</Link>
+          <Link href={lp('/', locale)}>{ru ? 'Главная' : 'Avaleht'}</Link>
           {' / '}
-          <Link href={`${pfx}/inspiratsioon`}>{ru ? 'Вдохновение' : 'Inspiratsioon'}</Link>
+          <Link href={lp(`/inspiratsioon`, locale)}>{ru ? 'Вдохновение' : 'Inspiratsioon'}</Link>
           {' / '}
           <span style={{ color: 'var(--ink)' }}>{label}</span>
         </div>
@@ -404,8 +410,8 @@ export default async function InspirationProjectPage({ params }: Props) {
             <p key={i} style={{ fontSize: 17, lineHeight: 1.75, color: 'var(--ink-2)', marginBottom: 24 }}>{para}</p>
           ))}
           <div style={{ marginTop: 48, paddingTop: 32, borderTop: 'var(--border)', display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <Link href={`${pfx}/tooted`} className="vp-btn vp-btn--lg">{ru ? 'Открыть каталог →' : 'Vaata kataloogi →'}</Link>
-            <Link href={`${pfx}/inspiratsioon`} className="vp-btn vp-btn--ghost">{ru ? '← Все проекты' : '← Kõik projektid'}</Link>
+            <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg">{ru ? 'Открыть каталог →' : 'Vaata kataloogi →'}</Link>
+            <Link href={lp(`/inspiratsioon`, locale)} className="vp-btn vp-btn--ghost">{ru ? '← Все проекты' : '← Kõik projektid'}</Link>
           </div>
         </article>
 
@@ -480,10 +486,10 @@ export default async function InspirationProjectPage({ params }: Props) {
           {ru ? 'Nõustame tasuta.' : 'Nõustame tasuta.'}
         </h2>
         <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href={`${pfx}/tooted`} className="vp-btn vp-btn--lg" style={{ background: 'var(--paper)', color: 'var(--ink)', borderColor: 'var(--paper)' }}>
+          <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg" style={{ background: 'var(--paper)', color: 'var(--ink)', borderColor: 'var(--paper)' }}>
             {ru ? 'Смотреть каталог →' : 'Vaata kataloogi →'}
           </Link>
-          <Link href={`${pfx}/kontakt`} className="vp-btn vp-btn--ghost vp-btn--lg" style={{ borderColor: 'rgba(255,255,255,0.4)', color: 'var(--paper)' }}>
+          <Link href={lp(`/kontakt`, locale)} className="vp-btn vp-btn--ghost vp-btn--lg" style={{ borderColor: 'rgba(255,255,255,0.4)', color: 'var(--paper)' }}>
             {ru ? 'Связаться →' : 'Võta ühendust →'}
           </Link>
         </div>

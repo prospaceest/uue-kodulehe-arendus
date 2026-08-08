@@ -2,12 +2,14 @@ import { getLocale } from 'next-intl/server';
 import { site } from '@/lib/site';
 
 import type { Metadata } from 'next';
+import { pageAlternates } from '@/lib/pageUrls';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { getLocale } = await import('next-intl/server');
   const locale = await getLocale();
   const ru = locale === 'ru';
   return {
+    alternates: pageAlternates('/garantii', locale),
     title: ru ? 'Гарантия и претензии' : 'Garantii ja pretensioonid',
     description: ru ? 'Условия гарантии на теневые профили — 5 лет против производственных дефектов. Как подать претензию в PROSPACE OÜ.' : 'Varjuprofiilide garantiitingimused — 5 aastat tootmisdefektide vastu. Kuidas esitada pretensiooni PROSPACE OÜ-le.',
   };

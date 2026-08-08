@@ -5,6 +5,7 @@ import { useLocale } from 'next-intl';
 import { useCart } from '@/lib/cart';
 import { site } from '@/lib/site';
 import Link from 'next/link';
+import { lp } from '@/lib/pageUrls';
 
 type BuyerType = 'eraisik' | 'ettevote';
 type DeliveryType = 'venipak' | 'salong';
@@ -12,7 +13,6 @@ type DeliveryType = 'venipak' | 'salong';
 export default function CheckoutPage() {
   const locale = useLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
   const { items, subtotal, clear } = useCart();
 
   const [buyerType, setBuyerType] = useState<BuyerType>('eraisik');
@@ -79,7 +79,7 @@ export default function CheckoutPage() {
         <p style={{ fontSize: 16, color: 'var(--ink-2)', marginBottom: 32 }}>
           {ru ? 'Добавьте товары в корзину, чтобы оформить заказ.' : 'Lisa tooteid korvi, et tellimust vormistada.'}
         </p>
-        <Link href={`${pfx}/tooted`} className="vp-btn vp-btn--lg">{ru ? 'Смотреть товары →' : 'Vaata tooteid →'}</Link>
+        <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg">{ru ? 'Смотреть товары →' : 'Vaata tooteid →'}</Link>
       </div>
     );
   }
@@ -114,8 +114,8 @@ export default function CheckoutPage() {
                 : <>Saatsime kinnituse e-posti aadressile{form.email ? <> <span className="vp-mono">{form.email}</span></> : ''}. <strong>24 tunni jooksul</strong> (E–R 10–17) saad meilile arve ja makseinfo. Kui kaup on laos, jõuab Venipakiga 2–4 tööpäevaga.</>}
             </p>
             <div style={{ display: 'flex', gap: 14, marginTop: 32, flexWrap: 'wrap' }}>
-              <Link href={pfx || '/'} className="vp-btn vp-btn--lg">{ru ? '← На главную' : '← Avalehele'}</Link>
-              <Link href={`${pfx}/tooted`} className="vp-btn vp-btn--ghost vp-btn--lg">{ru ? 'Продолжить покупки' : 'Jätka ostlemist'}</Link>
+              <Link href={lp('/', locale)} className="vp-btn vp-btn--lg">{ru ? '← На главную' : '← Avalehele'}</Link>
+              <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--ghost vp-btn--lg">{ru ? 'Продолжить покупки' : 'Jätka ostlemist'}</Link>
             </div>
           </div>
 
@@ -150,7 +150,7 @@ export default function CheckoutPage() {
       {/* Steps header */}
       <section style={{ padding: '48px 56px 24px', borderBottom: 'var(--border)' }}>
         <div style={{ display: 'flex', gap: 18, alignItems: 'center', flexWrap: 'wrap', marginBottom: 18, fontFamily: 'JetBrains Mono, monospace', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-          <Link href={`${pfx}/korv`} style={{ color: 'var(--muted)', textDecoration: 'none' }}>{ru ? '1. Корзина ✓' : '1. Korv ✓'}</Link>
+          <Link href={lp(`/korv`, locale)} style={{ color: 'var(--muted)', textDecoration: 'none' }}>{ru ? '1. Корзина ✓' : '1. Korv ✓'}</Link>
           <span style={{ color: 'var(--muted)' }}>→</span>
           <span style={{ borderBottom: '1.5px solid var(--ink)', paddingBottom: 2 }}>{ru ? '2. Данные' : '2. Andmed'}</span>
           <span style={{ color: 'var(--muted)' }}>→</span>
@@ -262,9 +262,9 @@ export default function CheckoutPage() {
               <input type="checkbox" checked={terms} onChange={(e) => setTerms(e.target.checked)} style={{ marginTop: 3 }} required />
               <span>
                 {ru ? 'Ознакомлен с ' : 'Olen tutvunud '}
-                <Link href={`${pfx}/impressum`} style={{ borderBottom: '1px solid var(--ink)', color: 'inherit' }}>{ru ? 'условиями продажи' : 'müügitingimustega'}</Link>
+                <Link href={lp(`/impressum`, locale)} style={{ borderBottom: '1px solid var(--ink)', color: 'inherit' }}>{ru ? 'условиями продажи' : 'müügitingimustega'}</Link>
                 {ru ? ' и ' : ' ja '}
-                <Link href={`${pfx}/impressum`} style={{ borderBottom: '1px solid var(--ink)', color: 'inherit' }}>{ru ? 'политикой конфиденциальности' : 'privaatsuspoliitikaga'}</Link>.
+                <Link href={lp(`/impressum`, locale)} style={{ borderBottom: '1px solid var(--ink)', color: 'inherit' }}>{ru ? 'политикой конфиденциальности' : 'privaatsuspoliitikaga'}</Link>.
               </span>
             </label>
             <label style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginTop: 10, fontSize: 13, color: 'var(--ink-2)', cursor: 'pointer' }}>

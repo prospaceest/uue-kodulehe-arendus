@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 import { products, productUrl } from '@/lib/catalog';
+import { lp } from '@/lib/pageUrls';
 
 const TOP10_SKUS = ['AST22', 'AST14_12', 'RST14', 'AST30', 'AST50', 'ASPL35', 'ASP112', 'ASP904', 'ASP60', 'ASP198'];
 
@@ -20,9 +21,12 @@ function Configurator() {
   const pieces = Math.ceil(meters / profileLength);
   const totalLength = pieces * profileLength;
 
-  const catalogHref = ru
-    ? `/ru/tooted/${type === 'lae' ? 'laeprofiilid' : 'porandaprofiilid'}`
-    : `/tooted/${type === 'lae' ? 'laeprofiilid' : 'porandaprofiilid'}`;
+  // Kataloog filtreerib kollektsiooni query-parameetriga; /tooted/<kategooria>
+  // marsruuti ei ole olemas (andis 404).
+  const catalogHref = lp(
+    `/tooted?cat=${encodeURIComponent(type === 'lae' ? 'Laeprofiilid' : 'Põrandaprofiilid')}`,
+    locale,
+  );
 
   return (
     <div style={{ padding: '56px 48px', borderRight: 'var(--border)', background: 'var(--paper)' }}>

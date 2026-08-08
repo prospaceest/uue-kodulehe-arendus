@@ -37,6 +37,39 @@ The same SKU lives at TWO URLs (one per locale). Both URLs return canonical-self
 | `/nurgaprofiilid/` | `/ru/uglovye-profili/` |
 | `/tarvikud/` | `/ru/aksessuary/` |
 
+### Static & info page mapping (added 8.08.2026)
+
+Implemented in `next-app/lib/pageUrls.ts` — **that table is the source of truth**;
+canonical, hreflang, internal links and both sitemaps all read from it. Adding or
+renaming a RU URL = one line there + a 308 in `next.config.ts`.
+
+| Estonian path | Russian path |
+|---|---|
+| `/tooted` | `/ru/katalog` |
+| `/kkk` | `/ru/faq` |
+| `/tarne` | `/ru/dostavka` |
+| `/garantii` | `/ru/garantiya` |
+| `/impressum` | `/ru/rekvizity` |
+| `/kontakt` | `/ru/kontakty` |
+| `/salong` | `/ru/salon` |
+| `/meist` | `/ru/o-nas` |
+| `/professionaalidele` | `/ru/professionalam` |
+| `/inspiratsioon` | `/ru/vdohnovenie` |
+| `/mis-on-varjuprofiil` | `/ru/chto-takoe-tenevoy-profil` |
+| `/uudised` | `/ru/novosti` |
+| `/otsing` · `/korv` · `/tellimus` | `/ru/poisk` · `/ru/korzina` · `/ru/zakaz` |
+
+Child slugs under `/inspiratsioon/*` and `/uudised/*` pass through untranslated —
+they are content names, not navigation (`/ru/vdohnovenie/eduardi-maja`).
+
+`/konto*`, `/sign-in`, `/sign-up` stay on Estonian paths: they are matched by name
+in Clerk's `isProtectedRoute`, so renaming them is an auth change, not an SEO one.
+All are noindex.
+
+**Serving:** RU pages have no route directories of their own. `middleware.ts`
+rewrites the Russian slug onto the Estonian-named route, so the browser (and
+Googlebot / YandexBot) only ever sees the Russian URL.
+
 ### Location segment mapping (used under led-profili / dekor-profili)
 
 | Estonian | Russian |
@@ -44,6 +77,7 @@ The same SKU lives at TWO URLs (one per locale). Both URLs return canonical-self
 | `/lae/` | `/potolok/` |
 | `/poranda/` | `/pol/` |
 | `/seina/` | `/stena/` |
+| `/kesklae/` | `/centralnyj/` |
 
 ### Tarvikud descriptor suffix mapping
 

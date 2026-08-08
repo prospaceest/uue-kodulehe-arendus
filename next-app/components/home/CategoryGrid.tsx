@@ -1,22 +1,21 @@
 import Link from 'next/link';
 import { getLocale } from 'next-intl/server';
 import { products } from '@/lib/catalog';
+import { lp } from '@/lib/pageUrls';
 
 type Category = {
   n: string;
   labelEt: string;
   labelRu: string;
   img: string;
-  hrefEt: string;
-  hrefRu: string;
   collectionKey: string;
 };
 
 const CATEGORIES: Category[] = [
-  { n: '01', labelEt: 'Laeprofiilid',           labelRu: 'Потолочные',           img: '/assets/categories/laeprofiilid.webp',       hrefEt: '/tooted/laeprofiilid',          hrefRu: '/ru/tooted/laeprofiilid',         collectionKey: 'Laeprofiilid' },
-  { n: '02', labelEt: 'Põrandaprofiilid',        labelRu: 'Напольные',            img: '/assets/categories/porandaprofiilid.webp',   hrefEt: '/tooted/porandaprofiilid',      hrefRu: '/ru/tooted/porandaprofiilid',     collectionKey: 'Põrandaprofiilid' },
-  { n: '03', labelEt: 'Põrandaliistud',          labelRu: 'Плинтусы',             img: '/assets/categories/porandaliistud.webp',     hrefEt: '/tooted/porandaliistud',        hrefRu: '/ru/tooted/porandaliistud',       collectionKey: 'Põrandaliistud' },
-  { n: '04', labelEt: 'Seina peiteprofiilid',    labelRu: 'Настенные скрытые',    img: '/assets/categories/seina-peitesiinid.webp',  hrefEt: '/tooted/seina-peiteprofiilid',  hrefRu: '/ru/tooted/seina-peiteprofiilid', collectionKey: 'Seina peiteprofiilid' },
+  { n: '01', labelEt: 'Laeprofiilid',           labelRu: 'Потолочные',           img: '/assets/categories/laeprofiilid.webp',         collectionKey: 'Laeprofiilid' },
+  { n: '02', labelEt: 'Põrandaprofiilid',        labelRu: 'Напольные',            img: '/assets/categories/porandaprofiilid.webp',     collectionKey: 'Põrandaprofiilid' },
+  { n: '03', labelEt: 'Põrandaliistud',          labelRu: 'Плинтусы',             img: '/assets/categories/porandaliistud.webp',       collectionKey: 'Põrandaliistud' },
+  { n: '04', labelEt: 'Seina peiteprofiilid',    labelRu: 'Настенные скрытые',    img: '/assets/categories/seina-peitesiinid.webp', collectionKey: 'Seina peiteprofiilid' },
 ];
 
 function countByCollection(key: string) {
@@ -46,7 +45,7 @@ export default async function CategoryGrid() {
           </h2>
         </div>
         <Link
-          href={ru ? '/ru/tooted' : '/tooted'}
+          href={lp('/tooted', locale)}
           style={{ fontFamily: 'JetBrains Mono', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.08em', borderBottom: 'var(--border)' }}
         >
           {ru ? 'Смотреть все →' : 'Vaata kõiki →'}
@@ -59,7 +58,7 @@ export default async function CategoryGrid() {
           const count = countByCollection(cat.collectionKey);
           // Catalog filters by ?cat=<collection name>; path segments like
           // /tooted/laeprofiilid have no route and 404.
-          const href = `${ru ? '/ru' : ''}/tooted?cat=${encodeURIComponent(cat.collectionKey)}`;
+          const href = lp(`/tooted?cat=${encodeURIComponent(cat.collectionKey)}`, locale);
           const label = ru ? cat.labelRu : cat.labelEt;
 
           return (

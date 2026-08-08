@@ -26,6 +26,11 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: '*', allow: '/' },
       { userAgent: BLOCKED_BOTS, disallow: '/' },
     ],
-    sitemap: 'https://varjuprofiilid.ee/sitemap.xml',
+    // Two sitemaps: Estonian and Russian. Both are submitted in Google Search
+    // Console; /sitemap-ru.xml is also submitted in Yandex Webmaster.
+    sitemap: [
+      'https://varjuprofiilid.ee/sitemap.xml',
+      'https://varjuprofiilid.ee/sitemap-ru.xml',
+    ],
   };
 }

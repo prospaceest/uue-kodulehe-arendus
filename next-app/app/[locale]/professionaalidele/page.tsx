@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { site } from '@/lib/site';
+import { lp } from '@/lib/pageUrls';
 
 export default function B2BPage() {
   const locale = useLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -55,7 +55,7 @@ export default function B2BPage() {
           </div>
           <div style={{ display: 'flex', gap: 14, marginTop: 40 }}>
             <a href="#b2b-form" className="vp-btn vp-btn--lg">{ru ? 'Стать партнёром →' : 'Liitu partneriks →'}</a>
-            <Link href={`${pfx}/konto/login`} className="vp-btn vp-btn--ghost vp-btn--lg">{ru ? 'Войти' : 'Logi sisse'}</Link>
+            <Link href={lp(`/konto/login`, locale)} className="vp-btn vp-btn--ghost vp-btn--lg">{ru ? 'Войти' : 'Logi sisse'}</Link>
           </div>
         </div>
         <div className="vp-photo" style={{ backgroundImage: 'url("/assets/b2b-vannituba.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
@@ -160,7 +160,7 @@ export default function B2BPage() {
                 {ru ? 'Ответим в течение 24 ч (Пн–Пт).' : 'Vastame 24 h jooksul (E–R).'}
               </p>
               <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link href={`${pfx}/tooted`} className="vp-btn">{ru ? 'Смотреть товары →' : 'Sirvi tooteid →'}</Link>
+                <Link href={lp(`/tooted`, locale)} className="vp-btn">{ru ? 'Смотреть товары →' : 'Sirvi tooteid →'}</Link>
                 <button className="vp-btn vp-btn--ghost" onClick={() => setSubmitted(false)}>{ru ? 'Отправить ещё анкету' : 'Saada veel ankeet'}</button>
               </div>
             </div>

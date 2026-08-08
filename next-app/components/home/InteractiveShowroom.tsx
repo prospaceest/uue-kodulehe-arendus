@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { products, productUrl } from '@/lib/catalog';
+import { lp } from '@/lib/pageUrls';
 
 type Hotspot = { x: number; y: number; sku: string; label: string; labelRu: string; price: string };
 type Scene = { id: string; nameEt: string; nameRu: string; img: string; eyebrow: string; hotspots: Hotspot[] };
@@ -109,8 +110,9 @@ function Lightbox({ sceneIdx, setSceneIdx, onClose, ru }: { sceneIdx: number; se
   }, [handleKey]);
 
   // Find product URL
+  const locale = ru ? 'ru' : 'et';
   const product = products.find((p) => p.sku === sel.sku || p.sku === sel.sku.replace('AST1412', 'AST14_12'));
-  const productHref = product ? productUrl(product, ru) : (ru ? '/ru/tooted' : '/tooted');
+  const productHref = product ? productUrl(product, ru) : lp('/tooted', locale);
 
   return (
     <div style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(0,0,0,0.92)', display: 'grid', gridTemplateColumns: '1fr 380px', color: '#fff' }} role="dialog" aria-modal>
@@ -188,7 +190,7 @@ function Lightbox({ sceneIdx, setSceneIdx, onClose, ru }: { sceneIdx: number; se
 
         {/* Bottom CTA */}
         <div style={{ padding: '20px 28px', borderTop: '1px solid rgba(255,255,255,0.15)', flexShrink: 0 }}>
-          <Link href={ru ? '/ru/tooted' : '/tooted'} onClick={onClose} className="vp-btn" style={{ display: 'flex', justifyContent: 'center', background: 'transparent', color: '#fff', borderColor: 'rgba(255,255,255,0.55)' }}>
+          <Link href={lp('/tooted', locale)} onClick={onClose} className="vp-btn" style={{ display: 'flex', justifyContent: 'center', background: 'transparent', color: '#fff', borderColor: 'rgba(255,255,255,0.55)' }}>
             {ru ? 'Заказать такое же →' : 'Telli sama lahendus →'}
           </Link>
         </div>

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { site } from '@/lib/site';
+import { lp } from '@/lib/pageUrls';
 
 const FAQ_ITEMS = [
   { q: ['Kas saan tooteid kohapeal näha?', 'Можно ли посмотреть товары на месте?'], a: ['Jah, salongis Vana-Kalamaja 8, Tallinn. E–R 10–17. Soovitame salongi külastus eelnevalt kokku leppida — nii võtame sinu jaoks aega ja ei ole ohtu, et peate teiste klientide järgi ootama.', 'Да, в салоне Vana-Kalamaja 8, Tallinn. Пн–Пт 10–17. Рекомендуем заранее забронировать визит — выделим вам время и вы не будете ждать в очереди.'] },
@@ -16,7 +17,6 @@ const FAQ_ITEMS = [
 export default function ContactPage() {
   const locale = useLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
 
   const [form, setForm] = useState({ name: '', email: '', topic: '', message: '' });
   const [loading, setLoading] = useState(false);
@@ -166,7 +166,7 @@ export default function ContactPage() {
       <section style={{ padding: '56px', borderBottom: 'var(--border)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 28, flexWrap: 'wrap', gap: 16 }}>
           <h2 className="vp-display" style={{ fontSize: 48, margin: 0 }}>{ru ? 'Часто задаваемые' : 'Korduvad küsimused'}</h2>
-          <Link href={`${pfx}/kkk`} className="vp-mono" style={{ fontSize: 12, textTransform: 'uppercase', borderBottom: 'var(--border)', paddingBottom: 2 }}>
+          <Link href={lp(`/kkk`, locale)} className="vp-mono" style={{ fontSize: 12, textTransform: 'uppercase', borderBottom: 'var(--border)', paddingBottom: 2 }}>
             {ru ? 'Все вопросы →' : 'Kõik KKK-d →'}
           </Link>
         </div>

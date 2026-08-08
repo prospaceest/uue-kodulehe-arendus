@@ -3,12 +3,14 @@ import Link from 'next/link';
 import { site } from '@/lib/site';
 
 import type { Metadata } from 'next';
+import { lp, pageAlternates } from '@/lib/pageUrls';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { getLocale } = await import('next-intl/server');
   const locale = await getLocale();
   const ru = locale === 'ru';
   return {
+    alternates: pageAlternates('/salong', locale),
     title: ru ? 'Салон в Таллинне — Vana-Kalamaja 8–110' : 'Salong Tallinnas — Vana-Kalamaja 8–110',
     description: ru ? 'Салон PROSPACE в Таллинне — посмотрите образцы профилей, получите консультацию, заберите сами. Пн–Пт 10–17.' : 'PROSPACE salong Tallinnas — vaata profiilide näidiseid, otsi nõu ja tule ise järele. Avatud E–R 10–17.',
   };
@@ -17,7 +19,6 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function SalonPage() {
   const locale = await getLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
 
   return (
     <div>
@@ -37,7 +38,7 @@ export default async function SalonPage() {
           </div>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 40 }}>
             <a href={site.booking} target="_blank" rel="noopener" className="vp-btn vp-btn--lg">{ru ? 'Забронировать визит →' : 'Broneeri visiit →'}</a>
-            <Link href={`${pfx}/kontakt`} className="vp-btn vp-btn--ghost vp-btn--lg">{ru ? 'Написать нам' : 'Kirjuta meile'}</Link>
+            <Link href={lp(`/kontakt`, locale)} className="vp-btn vp-btn--ghost vp-btn--lg">{ru ? 'Написать нам' : 'Kirjuta meile'}</Link>
           </div>
         </div>
         <div style={{ backgroundImage: 'url("/assets/salong-tallinn.jpg")', backgroundSize: 'cover', backgroundPosition: '30% center', minHeight: 480 }} />

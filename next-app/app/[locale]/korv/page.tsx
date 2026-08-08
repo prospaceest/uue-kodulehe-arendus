@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { useCart } from '@/lib/cart';
 import { site } from '@/lib/site';
+import { lp } from '@/lib/pageUrls';
 
 export default function CartPage() {
   const locale = useLocale();
   const ru = locale === 'ru';
-  const pfx = ru ? '/ru' : '';
   const { items, subtotal, shipping, total, removeItem, updateQty } = useCart();
 
   const fmt = (n: number) => n.toFixed(2).replace('.', ',');
@@ -33,7 +33,7 @@ export default function CartPage() {
               <div className="vp-mono" style={{ fontSize: 13, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--muted)' }}>
                 {ru ? 'Корзина пуста' : 'Korv on tühi'}
               </div>
-              <Link href={`${pfx}/tooted`} className="vp-btn">{ru ? 'Смотреть товары →' : 'Vaata tooteid →'}</Link>
+              <Link href={lp(`/tooted`, locale)} className="vp-btn">{ru ? 'Смотреть товары →' : 'Vaata tooteid →'}</Link>
             </div>
           ) : (
             <>
@@ -73,7 +73,7 @@ export default function CartPage() {
                 );
               })}
               <div style={{ padding: '28px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <Link href={`${pfx}/tooted`} className="vp-mono" style={{ fontSize: 12, textTransform: 'uppercase', borderBottom: 'var(--border)' }}>
+                <Link href={lp(`/tooted`, locale)} className="vp-mono" style={{ fontSize: 12, textTransform: 'uppercase', borderBottom: 'var(--border)' }}>
                   {ru ? '← Продолжить покупки' : '← Jätka ostlemist'}
                 </Link>
               </div>
@@ -106,7 +106,7 @@ export default function CartPage() {
             <span className="vp-display" style={{ fontSize: 48 }}>{fmt(total)}&nbsp;€</span>
           </div>
           <Link
-            href={items.length > 0 ? `${pfx}/tellimus` : '#'}
+            href={items.length > 0 ? lp(`/tellimus`, locale) : '#'}
             className="vp-btn vp-btn--lg vp-btn--block"
             style={{ marginBottom: 10, display: 'flex', justifyContent: 'center', opacity: items.length === 0 ? 0.4 : 1, pointerEvents: items.length === 0 ? 'none' : 'auto' }}
           >

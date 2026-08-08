@@ -5,16 +5,18 @@ import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 import { useCart } from '@/lib/cart';
+import { lp } from '@/lib/pageUrls';
 import { Show, UserButton } from '@clerk/nextjs';
 import styles from './Header.module.css';
 
+// Estonian paths only — lp() resolves the Russian slug from lib/pageUrls.ts.
 const NAV_LINKS = [
-  { key: 'shop',        href: '/tooted',         hrefRu: '/ru/tooted'         },
-  { key: 'about',       href: '/meist',           hrefRu: '/ru/meist'          },
-  { key: 'inspiration', href: '/inspiratsioon',   hrefRu: '/ru/inspiratsioon'  },
+  { key: 'shop',        href: '/tooted'        },
+  { key: 'about',       href: '/meist'         },
+  { key: 'inspiration', href: '/inspiratsioon' },
   // Uudised peidetud kuni päris postitused valmis (2026-07). Taasta see rida.
-  // { key: 'blog',        href: '/uudised',         hrefRu: '/ru/uudised'        },
-  { key: 'salon',       href: '/salong',          hrefRu: '/ru/salong'         },
+  // { key: 'blog',        href: '/uudised'       },
+  { key: 'salon',       href: '/salong'        },
 ];
 
 export default function Header() {
@@ -26,18 +28,29 @@ export default function Header() {
 
   function switchLocale(next: string) {
     if (next === locale) return;
-    if (next === 'ru') {
-      // ET → RU: prepend /ru unless already there
-      router.push('/ru' + (pathname === '/' ? '' : pathname));
-    } else {
-      // RU → ET: strip /ru prefix
-      router.push(pathname.replace(/^\/ru/, '') || '/');
+
+    // Read the target URL off the page's own hreflang link. That way the switcher
+    // can never disagree with what we tell Google — and it handles the cases
+    // prefix-juggling got wrong: product URLs differ per locale
+    // (/led-varjuprofiilid/lae/ast12 vs /ru/led-profili/potolok/ast12), as do all
+    // page slugs now. Importing the catalog here would ship it to the browser.
+    const alt = document.querySelector<HTMLLinkElement>(
+      `link[rel="alternate"][hreflang="${next}"]`,
+    );
+    if (alt) {
+      router.push(new URL(alt.href).pathname + window.location.search);
+      return;
     }
+
+    // Fallback for pages without alternates (noindex utility routes).
+    router.push(
+      next === 'ru' ? '/ru' + (pathname === '/' ? '' : pathname) : pathname.replace(/^\/ru/, '') || '/',
+    );
   }
 
   const { totalItems } = useCart();
-  const cartHref = locale === 'ru' ? '/ru/korv' : '/korv';
-  const accountHref = locale === 'ru' ? '/ru/konto' : '/konto';
+  const cartHref = lp('/korv', locale);
+  const accountHref = lp('/konto', locale);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -46,8 +59,8 @@ export default function Header() {
     {mobileOpen && (
       <div className="vp-mobile-nav open" role="dialog" aria-label="Navigatsioon">
         <button onClick={() => setMobileOpen(false)} style={{ alignSelf: 'flex-end', fontSize: 28, background: 'none', border: 'none', cursor: 'pointer', marginBottom: 16 }} aria-label="Sulge">✕</button>
-        {NAV_LINKS.map(({ key, href, hrefRu }) => (
-          <Link key={key} href={locale === 'ru' ? hrefRu : href} onClick={() => setMobileOpen(false)}>
+        {NAV_LINKS.map(({ key, href }) => (
+          <Link key={key} href={lp(href, locale)} onClick={() => setMobileOpen(false)}>
             {t(key as Parameters<typeof t>[0])}
           </Link>
         ))}
@@ -61,14 +74,14 @@ export default function Header() {
     )}
     <header className={styles.header}>
       <div className={styles.left}>
-        <Link href={locale === 'ru' ? '/ru' : '/'} className={styles.logo} aria-label="PROSPACE">
+        <Link href={lp('/', locale)} className={styles.logo} aria-label="PROSPACE">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/prospace-must.svg" alt="PROSPACE" style={{ height: 28, width: 'auto', display: 'block' }} />
         </Link>
 
         <nav className="vp-nav" aria-label="Peamine navigatsioon">
-          {NAV_LINKS.map(({ key, href, hrefRu }) => (
-            <Link key={key} href={locale === 'ru' ? hrefRu : href}>
+          {NAV_LINKS.map(({ key, href }) => (
+            <Link key={key} href={lp(href, locale)}>
               {t(key as Parameters<typeof t>[0])}
             </Link>
           ))}
@@ -79,7 +92,7 @@ export default function Header() {
       <button className="vp-hamburger" onClick={() => setMobileOpen(true)} aria-label="Menüü">☰</button>
       <div className="vp-nav-right">
         {/* Search */}
-        <Link href={locale === 'ru' ? '/ru/otsing' : '/otsing'} aria-label={t('search')} className={styles.iconBtn}>
+        <Link href={lp('/otsing', locale)} aria-label={t('search')} className={styles.iconBtn}>
           ⌕
         </Link>
 

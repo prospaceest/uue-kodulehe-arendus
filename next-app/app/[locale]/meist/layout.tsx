@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
+import { pageAlternates } from '@/lib/pageUrls';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const ru = locale === 'ru';
   return {
+    alternates: pageAlternates('/meist', locale),
     title: ru ? 'Теневые профили в современном интерьере' : 'Varjuprofiilid kaasaegsesse interjööri',
     description: ru
       ? 'Почему теневые профили: скрытые соединения создают эффект парящего потолка или стены. Минималистичный, архитектурно цельный результат. PROSPACE OÜ, Таллинн.'
