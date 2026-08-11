@@ -208,6 +208,42 @@ button { cursor: pointer; }
 }
 
 /* ----------------------------------------------------------------
+   Tootekirjelduse faktiread — pikkus / värvid / LED-riba ostuveerus.
+   Sisu tuleb lib/productCopy.ts parserist. Klassiga, mitte inline-stiiliga:
+   mobiili reegel div[style*="grid-template-columns"] surub inline-gridid
+   ühte veergu ja silt kaoks väärtuse kohale.
+   ---------------------------------------------------------------- */
+.vp-facts {
+  border: var(--border);
+  background: var(--paper-2);
+  margin: 0 0 24px;
+}
+.vp-facts > div {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 14px;
+  padding: 10px 14px;
+}
+.vp-facts > div + div { border-top: 1px solid rgba(0, 0, 0, 0.12); }
+.vp-facts dt {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  padding-top: 3px;
+}
+.vp-facts dd {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+@media (max-width: 400px) {
+  .vp-facts > div { grid-template-columns: 74px 1fr; gap: 10px; padding: 10px 12px; }
+}
+
+/* ----------------------------------------------------------------
    Product spec table
    ---------------------------------------------------------------- */
 .vp-spec-row {

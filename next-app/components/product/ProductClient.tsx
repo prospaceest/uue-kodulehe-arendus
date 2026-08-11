@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useCart } from '@/lib/cart';
 import { productUrl, type Product } from '@/lib/catalog';
 import { getProductImages, getProductImagePath, getImageRole } from '@/lib/productImages';
+import { splitDescription } from '@/lib/productCopy';
 import { lp } from '@/lib/pageUrls';
 
 const CAT_RU: Record<string, string> = {
@@ -55,10 +56,15 @@ export default function ProductClient({ product, related, locale }: Props) {
     return cat.startsWith('Põranda') ? 2.6 : 2.5;
   })();
 
+  // Kirjeldus tükeldatakse loetavateks osadeks: avalause ostuveergu, faktid
+  // loetellu, ülejäänud proosa allapoole "Kirjeldus"-vahekaardile.
+  const copy = splitDescription(ru ? product.descriptionRu : product.description, ru);
+  const hasDescTab = copy.body.length > 0 || copy.notes.length > 0 || copy.priceNote !== '';
+
   const [color, setColor] = useState(product.colors[0]?.hex ?? '#000000');
   const [ralCode, setRalCode] = useState('');
   const [qty, setQty] = useState(1);
-  const [tab, setTab] = useState<'specs' | 'faq'>('specs');
+  const [tab, setTab] = useState<'desc' | 'specs' | 'faq'>(hasDescTab ? 'desc' : 'specs');
   const [mainImg, setMainImg] = useState(0);
   const [imgFailed, setImgFailed] = useState<Record<number, boolean>>({});
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
@@ -68,6 +74,8 @@ export default function ProductClient({ product, related, locale }: Props) {
     setRalCode('');
     setMainImg(0);
     setImgFailed({});
+    setTab(hasDescTab ? 'desc' : 'specs');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [product.sku]);
 
   const isRal = color === 'RAL';
@@ -94,7 +102,6 @@ export default function ProductClient({ product, related, locale }: Props) {
   const catalogHref = lp('/tooted', locale);
   const catLabel = ru ? CAT_RU[cat] ?? cat : cat;
   const subtitle = ru ? product.seoNameRu : product.seoName;
-  const description = ru ? product.descriptionRu : product.description;
 
   // Image URLs for gallery — resolved from the PRODUCT_IMAGES manifest
   // (same source the catalog cards use), not a naive {SKU}_1.jpg guess.
@@ -181,8 +188,26 @@ export default function ProductClient({ product, related, locale }: Props) {
           <h1 className="vp-display" style={{ fontSize: 96, margin: '0 0 6px', lineHeight: 0.92 }}>{product.sku}</h1>
           <div style={{ fontFamily: "'Inter', serif", fontStyle: 'italic', fontWeight: 300, fontSize: 24, lineHeight: 1.2, color: 'var(--ink-2)', marginBottom: 16 }}>{subtitle}</div>
 
-          {description && (
-            <p style={{ fontSize: 15, color: 'var(--ink-2)', lineHeight: 1.5, marginTop: 0, marginBottom: 20 }}>{description}</p>
+          {/* Avalause — mis toode on. Varem seisis siin kogu 800-tähemärgiline
+              kirjeldus ühe lõiguna, mis lükkas hinna ja ostunupu ekraanilt välja
+              ega olnud skannitav. Ülejäänu on allpool "Kirjeldus"-vahekaardil. */}
+          {copy.lead && (
+            <p style={{ fontSize: 17, lineHeight: 1.55, color: 'var(--ink)', maxWidth: '58ch', margin: '0 0 20px' }}>
+              {copy.lead}
+            </p>
+          )}
+
+          {/* Otsustusfaktid loeteluna: pikkus, värvid, LED-riba. Need laused olid
+              kirjelduse lõpus vormelina — loetelus leiab need ühe pilguga. */}
+          {copy.facts.length > 0 && (
+            <dl className="vp-facts">
+              {copy.facts.map((f) => (
+                <div key={f.label}>
+                  <dt>{f.label}</dt>
+                  <dd>{f.value}</dd>
+                </div>
+              ))}
+            </dl>
           )}
 
           {/* Price */}
@@ -314,17 +339,44 @@ export default function ProductClient({ product, related, locale }: Props) {
       {/* Tabs */}
       <section style={{ borderTop: 'var(--border)' }}>
         <div style={{ display: 'flex', borderBottom: 'var(--border)', flexWrap: 'wrap' }}>
-          {(['specs', 'faq'] as const).map((id) => (
+          {(hasDescTab ? (['desc', 'specs', 'faq'] as const) : (['specs', 'faq'] as const)).map((id) => (
             <button
               key={id}
               onClick={() => setTab(id)}
               style={{ padding: '18px 28px', background: tab === id ? 'var(--ink)' : 'var(--paper)', color: tab === id ? 'var(--paper)' : 'var(--ink)', border: 'none', borderRight: 'var(--border)', fontFamily: 'JetBrains Mono', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.06em', cursor: 'pointer' }}
             >
-              {id === 'specs' ? (ru ? 'Технические данные' : 'Tehnilised andmed') : (ru ? 'Вопросы' : 'Küsimused')}
+              {id === 'desc'
+                ? (ru ? 'Описание' : 'Kirjeldus')
+                : id === 'specs'
+                  ? (ru ? 'Технические данные' : 'Tehnilised andmed')
+                  : (ru ? 'Вопросы' : 'Küsimused')}
             </button>
           ))}
         </div>
         <div style={{ padding: '40px 56px' }}>
+          {tab === 'desc' && (
+            // 68ch mõõt — pikem rida väsitab silma, lühem killustab lõigu.
+            <div style={{ maxWidth: '68ch' }}>
+              {copy.body.map((para, i) => (
+                <p key={i} style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--ink-2)', margin: i === 0 ? '0 0 20px' : '0 0 20px' }}>
+                  {para}
+                </p>
+              ))}
+
+              {copy.notes.map((note) => (
+                <p key={note} style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--ink)', margin: '0 0 14px', padding: '14px 16px', background: 'var(--paper-2)', borderLeft: '3px solid var(--accent)' }}>
+                  <span className="vp-mono" style={{ fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--accent)', marginRight: 10 }}>
+                    {ru ? 'Важно' : 'Pane tähele'}
+                  </span>
+                  {note}
+                </p>
+              ))}
+
+              {copy.priceNote && (
+                <p style={{ fontSize: 12.5, lineHeight: 1.6, color: 'var(--muted)', margin: '20px 0 0' }}>{copy.priceNote}</p>
+              )}
+            </div>
+          )}
           {tab === 'specs' && (
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 56px' }}>
               {(product.specs.length > 0 ? product.specs : [{ k: ru ? 'Длина' : 'Pikkus', v: '2500 mm' }]).map(({ k, v }) => (
