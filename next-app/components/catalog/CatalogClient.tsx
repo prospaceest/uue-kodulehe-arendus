@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import ProductCard from './ProductCard';
-import type { Product, Category } from '@/lib/catalog';
+import { byDisplayOrder, type Product, type Category } from '@/lib/catalog';
 import { lp } from '@/lib/pageUrls';
 
 const CAT_RU: Record<string, string> = {
@@ -31,7 +31,7 @@ type Props = {
 };
 
 type LedFilter = 'all' | 'led' | 'no-led';
-type SortKey = 'popular' | 'price-asc' | 'price-desc';
+type SortKey = 'catalog' | 'price-asc' | 'price-desc';
 
 export default function CatalogClient({ products, categories, initialCat }: Props) {
   const locale = useLocale();
@@ -41,7 +41,7 @@ export default function CatalogClient({ products, categories, initialCat }: Prop
   const [activeColors, setActiveColors] = useState<string[]>([]);
   const [ledFilter, setLedFilter] = useState<LedFilter>('all');
   const [maxPrice, setMaxPrice] = useState(50);
-  const [sort, setSort] = useState<SortKey>('popular');
+  const [sort, setSort] = useState<SortKey>('catalog');
 
   function catLabel(name: string) {
     return ru && CAT_RU[name] ? CAT_RU[name] : name;
@@ -58,7 +58,7 @@ export default function CatalogClient({ products, categories, initialCat }: Prop
     setActiveColors([]);
     setLedFilter('all');
     setMaxPrice(50);
-    setSort('popular');
+    setSort('catalog');
   }
 
   const filtered = useMemo(() => {
@@ -76,6 +76,9 @@ export default function CatalogClient({ products, categories, initialCat }: Prop
       seen.add(p.sku);
       return true;
     });
+    // Vaikimisi kataloogi järjestus (lib/catalog.ts DISPLAY_ORDER) — lagi →
+    // põrand → pealepandavad liistud → süvistatavad → nurga/kardina.
+    if (sort === 'catalog')    items = [...items].sort(byDisplayOrder);
     if (sort === 'price-asc')  items = [...items].sort((a, b) => a.price - b.price);
     if (sort === 'price-desc') items = [...items].sort((a, b) => b.price - a.price);
     return items;
@@ -223,7 +226,7 @@ export default function CatalogClient({ products, categories, initialCat }: Prop
                 onChange={(e) => setSort(e.target.value as SortKey)}
                 style={{ border: 'var(--border)', background: 'var(--paper)', padding: '6px 10px', fontFamily: 'JetBrains Mono', fontSize: 11, color: 'var(--ink)', cursor: 'pointer' }}
               >
-                <option value="popular">{ru ? 'Популярные' : 'Populaarsed'}</option>
+                <option value="catalog">{ru ? 'По каталогу' : 'Kataloogi järjestus'}</option>
                 <option value="price-asc">{ru ? 'Цена ↑' : 'Hind ↑'}</option>
                 <option value="price-desc">{ru ? 'Цена ↓' : 'Hind ↓'}</option>
               </select>
