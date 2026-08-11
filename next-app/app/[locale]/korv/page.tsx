@@ -42,10 +42,13 @@ export default function CartPage() {
                 const lineTotal = item.pricePerM * item.qty * item.pieceLengthM;
                 return (
                   <div key={item.sku + item.color + (item.ralCode ?? '')} style={{ display: 'grid', gridTemplateColumns: '130px 1fr auto', gap: 24, padding: '28px 40px', borderBottom: 'var(--border)', alignItems: 'center' }}>
-                    <div className="vp-photo" style={{ aspectRatio: '1', border: 'var(--border)' }}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={getProductImagePath(item.sku.toUpperCase()) ?? undefined} alt={item.sku} style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-                      <span className="label" style={{ fontSize: 9 }}>{item.sku.toLowerCase()}</span>
+                    <div className="vp-photo" style={{ aspectRatio: '1', border: 'var(--border)', position: 'relative' }}>
+                      {getProductImagePath(item.sku.toUpperCase()) ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={getProductImagePath(item.sku.toUpperCase())!} alt={item.sku} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                      ) : (
+                        <span className="label" style={{ fontSize: 9 }}>{item.sku.toLowerCase()}</span>
+                      )}
                     </div>
                     <div>
                       <div className="vp-mono" style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 4 }}>{item.sku}</div>

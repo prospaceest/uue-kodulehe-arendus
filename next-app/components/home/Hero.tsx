@@ -77,38 +77,59 @@ export default async function Hero() {
         padding: '100px 56px 140px',
       }}>
         <h1 className="vp-display" style={{
-          fontSize: 'clamp(64px, 9vw, 160px)',
-          margin: 0, lineHeight: 0.92, color: '#fff',
-          maxWidth: '14ch', textShadow: '0 2px 40px rgba(0,0,0,0.3)',
+          fontSize: 'clamp(56px, 7.5vw, 132px)',
+          margin: 0, lineHeight: 0.94, color: '#fff',
+          maxWidth: '18ch', textShadow: '0 2px 40px rgba(0,0,0,0.3)',
         }}>
-          {ru ? 'Профили,' : 'Profiilid,'}<br />
-          <span style={{
-            fontFamily: "'Inter', serif", fontStyle: 'italic',
-            fontWeight: 300, fontSize: '0.62em', letterSpacing: '-0.02em',
-            display: 'inline-block', transform: 'translateY(-0.05em)',
-          }}>
-            {ru ? 'которые исчезают' : 'mis kaovad'}
-          </span><br />
-          {ru ? 'в стене.' : 'seinte sisse.'}
+          {ru ? 'Чистая линия.' : 'Puhas joon.'}<br />
+          {ru ? 'Скрытый свет.' : 'Peidetud valgus.'}
         </h1>
 
         <p style={{
           maxWidth: 480, fontSize: 17, lineHeight: 1.55,
-          marginTop: 28, color: 'rgba(255,255,255,0.85)',
+          marginTop: 24, color: 'rgba(255,255,255,0.85)',
           textShadow: '0 1px 12px rgba(0,0,0,0.4)',
         }}>
           {ru
-            ? 'Эстонский магазин алюминиевых теневых профилей. LED и декоративные модели для потолка, стены, пола. Окраска RAL, прямо со склада.'
-            : 'Eesti varjuprofiilide pood. Alumiinium, LED-iga ja dekoratiivsed mudelid laele, seinale, põrandale. RAL-värvitud, saadaval otse laost.'}
+            ? 'Алюминиевые теневые профили для потолка, пола и стены. Вместо плинтусов и карнизов — тонкая теневая линия, при желании с мягкой LED-подсветкой.'
+            : 'Alumiiniumist varjuprofiilid laele, põrandale ja seinale. Liistude ja karniiside asemel peen varjufuuga — soovi korral pehme LED-valgusega.'}
         </p>
 
-        <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 32 }}>
+        {/* Faktimärgised — samad piirjooned ja mono-kiri nagu mujal, ilma ümarnurkade ja varjudeta */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 26 }}>
+          {(ru
+            ? ['LED опция', 'Оттенки RAL', 'Доставка 1–3 дня', 'Склад в Таллинне']
+            : ['LED võimalus', 'RAL toonid', 'Tarne 1–3 päeva', 'Ladu Tallinnas']
+          ).map((chip) => (
+            <span
+              key={chip}
+              className="vp-mono"
+              style={{
+                padding: '8px 14px',
+                border: '1.5px solid rgba(255,255,255,0.55)',
+                fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.1em',
+                color: 'rgba(255,255,255,0.92)',
+              }}
+            >
+              {chip}
+            </span>
+          ))}
+        </div>
+
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center', marginTop: 28 }}>
           <Link
             href={catalogHref}
             className="vp-btn vp-btn--lg"
             style={{ background: '#fff', color: '#000', borderColor: '#fff' }}
           >
-            {ru ? 'Открыть каталог →' : 'Avasta tooted →'}
+            {ru ? 'В магазин →' : 'Vaata poodi →'}
+          </Link>
+          <Link
+            href={lp('/mis-on-varjuprofiil', locale)}
+            className="vp-btn vp-btn--lg"
+            style={{ background: 'transparent', color: '#fff', borderColor: 'rgba(255,255,255,0.55)' }}
+          >
+            {ru ? 'Что такое теневой профиль?' : 'Mis on varjuprofiil?'}
           </Link>
         </div>
       </div>

@@ -367,17 +367,20 @@ export default function ProductClient({ product, related, locale }: Props) {
               return (
                 <Link key={p.sku} href={href} style={{ border: 'var(--border)', display: 'block', textDecoration: 'none', color: 'inherit', background: 'var(--paper)' }}>
                   <div className="vp-photo" style={{ aspectRatio: '1', borderBottom: 'var(--border)', position: 'relative' }}>
-                    {relImg && (
+                    {/* SKU-silt on AINULT pildi puudumise varuvariant. Varem renderdati
+                        seda alati ja .vp-photo flex-paigutus surus selle pildi kõrvale
+                        paremasse serva, kus see poolikult välja paistis ("ASP…"). */}
+                    {relImg ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={relImg}
                         alt={p.sku}
                         loading="lazy"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                        onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                       />
+                    ) : (
+                      <span className="label">{p.sku.toLowerCase()}</span>
                     )}
-                    <span className="label">{p.sku.toLowerCase()}</span>
                   </div>
                   <div style={{ padding: '14px 16px' }}>
                     <div className="vp-mono" style={{ fontSize: 12 }}>{p.sku}</div>

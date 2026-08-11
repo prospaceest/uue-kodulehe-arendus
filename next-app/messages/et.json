@@ -2,7 +2,9 @@
   "locale": {
     "et": "ET",
     "ru": "RU",
-    "switch": { "aria": "Vali keel" }
+    "switch": {
+      "aria": "Vali keel"
+    }
   },
   "nav": {
     "shop": "Pood",
@@ -15,7 +17,8 @@
     "account": "Konto",
     "b2b": "B2B",
     "contact": "Kontakt",
-    "faq": "KKK"
+    "faq": "KKK",
+    "architects": "Arhitektidele"
   },
   "footer": {
     "shop": "Pood",
@@ -73,7 +76,9 @@
       "eyebrow": "05 / Päris projektid",
       "title": "Inspiratsioon"
     },
-    "social": { "eyebrow": "06 / Sotsiaalmeedia" },
+    "social": {
+      "eyebrow": "06 / Sotsiaalmeedia"
+    },
     "blog": {
       "eyebrow": "07 / Uudised",
       "title": "Juhendid & inspiratsioon"
@@ -176,7 +181,9 @@
     "intro": "Arhitektidele, sisekujundajatele, ehitajatele. Allahindlused, makseterminid, isiklik nõustamine.",
     "formSubmit": "Saada päring →"
   },
-  "faq": { "title": "Korduma kippuvad küsimused" },
+  "faq": {
+    "title": "Korduma kippuvad küsimused"
+  },
   "info": {
     "installation": "Paigaldusjuhend",
     "delivery": "Tarne ja tagastus",

@@ -14,6 +14,7 @@ const NAV_LINKS = [
   { key: 'shop',        href: '/tooted'        },
   { key: 'about',       href: '/meist'         },
   { key: 'inspiration', href: '/inspiratsioon' },
+  { key: 'architects',  href: '/professionaalidele' },
   // Uudised peidetud kuni päris postitused valmis (2026-07). Taasta see rida.
   // { key: 'blog',        href: '/uudised'       },
   { key: 'salon',       href: '/salong'        },
