@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCart } from '@/lib/cart';
 import { productUrl, type Product } from '@/lib/catalog';
-import { getProductImages, getProductImagePath } from '@/lib/productImages';
+import { getProductImages, getProductImagePath, getImageRole } from '@/lib/productImages';
 import { lp } from '@/lib/pageUrls';
 
 const CAT_RU: Record<string, string> = {
@@ -101,6 +101,16 @@ export default function ProductClient({ product, related, locale }: Props) {
   const imgSlots = getProductImages(product.sku);
   const validSlots = imgSlots.filter((_, i) => !imgFailed[i]);
 
+  // Sisukas alt igale pildile: mõõtjoonis ja värvivariant said varem tühja alt'i,
+  // mis jättis nad nii ekraanilugejale kui pildiotsingule nimetuks.
+  const COLOR_RU: Record<string, string> = { hõbe: 'серебристый', valge: 'белый', must: 'чёрный' };
+  function imgAlt(src: string): string {
+    const { dimension, color } = getImageRole(src);
+    if (dimension) return ru ? `${product.sku} — чертёж с размерами` : `${product.sku} mõõtjoonis`;
+    if (color) return `${product.sku} ${ru ? COLOR_RU[color] ?? color : color} – ${subtitle}`;
+    return `${product.sku} – ${subtitle}`;
+  }
+
   const faqItems = ru ? FAQ_RU : FAQ_ET;
 
   return (
@@ -126,7 +136,7 @@ export default function ProductClient({ product, related, locale }: Props) {
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={imgSlots[mainImg] ?? imgSlots[0]}
-                alt={`${product.sku} – ${subtitle}`}
+                alt={imgAlt(imgSlots[mainImg] ?? imgSlots[0] ?? '')}
                 onError={() => setImgFailed((prev) => ({ ...prev, [mainImg]: true }))}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 loading="eager"
@@ -149,7 +159,7 @@ export default function ProductClient({ product, related, locale }: Props) {
                     style={{ aspectRatio: '1', border: mainImg === i ? '2px solid var(--accent)' : 'var(--border)', cursor: 'pointer', overflow: 'hidden', background: 'var(--paper)' }}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={src} alt="" onError={() => setImgFailed((prev) => ({ ...prev, [i]: true }))} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
+                    <img src={src} alt={imgAlt(src)} onError={() => setImgFailed((prev) => ({ ...prev, [i]: true }))} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
                   </div>
                 )
               )}

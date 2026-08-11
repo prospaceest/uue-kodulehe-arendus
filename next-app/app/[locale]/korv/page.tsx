@@ -5,6 +5,7 @@ import { useLocale } from 'next-intl';
 import { useCart } from '@/lib/cart';
 import { site } from '@/lib/site';
 import { lp } from '@/lib/pageUrls';
+import { getProductImagePath } from '@/lib/productImages';
 
 export default function CartPage() {
   const locale = useLocale();
@@ -43,7 +44,7 @@ export default function CartPage() {
                   <div key={item.sku + item.color + (item.ralCode ?? '')} style={{ display: 'grid', gridTemplateColumns: '130px 1fr auto', gap: 24, padding: '28px 40px', borderBottom: 'var(--border)', alignItems: 'center' }}>
                     <div className="vp-photo" style={{ aspectRatio: '1', border: 'var(--border)' }}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={`/assets/products/${item.sku.toUpperCase()}_1.jpg`} alt={item.sku} style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+                      <img src={getProductImagePath(item.sku.toUpperCase()) ?? undefined} alt={item.sku} style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.currentTarget.style.display = 'none'; }} />
                       <span className="label" style={{ fontSize: 9 }}>{item.sku.toLowerCase()}</span>
                     </div>
                     <div>

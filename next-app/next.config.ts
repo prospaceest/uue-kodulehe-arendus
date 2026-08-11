@@ -1,5 +1,6 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
+import legacyImages from './content/legacy-images.json';
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
@@ -8,6 +9,7 @@ const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 // NB: destinations carry NO trailing slash — Next 308-normalises `/x/` → `/x`,
 // so a slashed destination turns every legacy hit into a 301 → 308 chain.
 const redirects = async () => [
+  ...legacyImageRedirects,
   // ── Category pages ──────────────────────────────────────────────────────
   { source: '/lae-led-varjuprofiilid',                   destination: '/led-varjuprofiilid/lae',       permanent: true },
   { source: '/lae-led-varjuprofiilid/:path*',            destination: '/led-varjuprofiilid/lae',       permanent: true },
@@ -115,6 +117,17 @@ const redirects = async () => [
   { source: '/ru/uglovye-profili',                       destination: '/ru/katalog',                           permanent: true },
   { source: '/ru/karniznye-profili',                     destination: '/ru/katalog',                           permanent: true },
 ];
+
+// Pildifailid, mis nimetati SEO-nimedele ümber või mille duplikaat eemaldati
+// (08.2026). Vanad URL-id võivad olla Google Images'is — suuna need uuele failile,
+// et pildiotsingu tulemused ei jääks katki.
+const legacyImageRedirects = Object.entries(legacyImages as Record<string, string>).map(
+  ([from, to]) => ({
+    source: `/assets/products/${from}`,
+    destination: `/assets/products/${to}`,
+    permanent: true,
+  }),
+);
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,

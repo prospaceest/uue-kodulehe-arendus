@@ -6,6 +6,7 @@ import { useCart } from '@/lib/cart';
 import { site } from '@/lib/site';
 import Link from 'next/link';
 import { lp } from '@/lib/pageUrls';
+import { getProductImagePath } from '@/lib/productImages';
 
 type BuyerType = 'eraisik' | 'ettevote';
 type DeliveryType = 'venipak' | 'salong';
@@ -309,7 +310,7 @@ export default function CheckoutPage() {
               <div key={item.sku + item.color} style={{ display: 'grid', gridTemplateColumns: '48px 1fr auto', gap: 12, alignItems: 'center' }}>
                 <div style={{ aspectRatio: '1', border: 'var(--border)', background: 'var(--paper)', overflow: 'hidden' }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/assets/products/${item.sku}_1.jpg`} alt={item.sku} style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                  <img src={getProductImagePath(item.sku) ?? undefined} alt={item.sku} style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                 </div>
                 <div>
                   <div className="vp-mono" style={{ fontSize: 11, color: 'var(--muted)' }}>{item.sku} · {item.color}</div>
