@@ -49,9 +49,16 @@ const RULES_RU: Rule[] = [
   { re: /^Цвета\s*:/i,                  label: 'Цвета',     strip: /^Цвета\s*:\s*/i },
   { re: /^Цвет\s*:/i,                   label: 'Цвета',     strip: /^Цвет\s*:\s*/i },
   { re: /^Рекомендуемая LED-лента\s*:/i, label: 'LED-лента', strip: /^Рекомендуемая LED-лента\s*:\s*/i },
-  { re: /^LED-лента и диффузор\s/i,     label: 'LED-лента', strip: /^LED-лента и диффузор\s+/i },
+  // Ilma stripita: "заказываются" on mitmuses ja vajab mõlemat alust, muidu
+  // jääks faktireale rippuv "заказываются отдельно".
+  { re: /^LED-лента и диффузор\s/i,     label: 'LED-лента' },
   { re: /^LED-функции нет/i,            label: 'LED',       strip: /^LED-функции\s+/i },
 ];
+
+// Faktiread kuvatakse alati samas järjekorras, sõltumata sellest kus lause
+// kirjelduses seisis — mõõt enne materjali, tehnika lõppu.
+const LABEL_ORDER_ET = ['Pikkus', 'Materjal', 'Värvid', 'RAL', 'LED-riba', 'LED'];
+const LABEL_ORDER_RU = ['Длина', 'Материал', 'Цвета', 'LED-лента', 'LED'];
 
 const PRICE_RE_ET = /^Hind (on|kehtib)\s/i;
 const PRICE_RE_RU = /^Цена за\s/i;
@@ -136,8 +143,9 @@ export function splitDescription(text: string, ru: boolean): ProductCopy {
 
     // "COB 16 W/m, 1350 lm/m, CRI 94, 24V — COB annab ühtlase joone ilma
     // täppideta" — number on fakt, mõttekriipsu järgne selgitus on proosa.
-    // Faktirida peab jääma ühe-kahe reani, muidu kaob loetelu mõte.
-    if (value.length > 90) {
+    // Ainult LED-ridadel: seal on "spets — selgitus" muster süstemaatiline ja
+    // just need read venivad pärast liitmist üle kahe rea.
+    if (rule.label.startsWith('LED') && value.length > 70) {
       const cut = value.indexOf(' — ');
       if (cut > 15) {
         const tail = tidy(value.slice(cut + 3));
@@ -155,6 +163,13 @@ export function splitDescription(text: string, ru: boolean): ProductCopy {
   for (let i = 0; i < narrative.length; i += 2) {
     body.push(narrative.slice(i, i + 2).join(' '));
   }
+
+  const order = ru ? LABEL_ORDER_RU : LABEL_ORDER_ET;
+  const rank = (f: CopyFact) => {
+    const i = order.indexOf(f.label);
+    return i === -1 ? order.length : i;
+  };
+  facts.sort((a, b) => rank(a) - rank(b));
 
   return { lead, body, facts, notes, priceNote };
 }
