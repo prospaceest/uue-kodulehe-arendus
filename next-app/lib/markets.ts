@@ -1,8 +1,12 @@
 // Turud — üks tõeallikas kõigele, mis sõltub domeenist.
 //
-// varjuprofiilid.ee = Eesti turg (et + ru), www.prospace.fi = Soome turg
+// varjuprofiilid.ee = Eesti turg (et + ru), varjoprofiilit.fi = Soome turg
 // (fi + sv). Sama koodibaas, sama kataloog, aga käibemaks, tarne, e-post,
 // brändinimi ja keelevalik tulevad siit — mitte komponendist.
+//
+// Poe domeen on mõlemal turul märksõnadomeen (varjuprofiilid.ee /
+// varjoprofiilit.fi), e-post aga firmadomeenil (@prospace.ee / @prospace.fi) —
+// sama muster, mis Eestis juba töötab.
 //
 // Reegel: kui väärtus sõltub turust, EI tohi see olla komponendis kõva ega
 // lib/site.ts-is. site.ts jääb firmafaktide jaoks, mis on mõlemal turul
@@ -61,16 +65,19 @@ export const MARKETS: Record<MarketId, Market> = {
 
   fi: {
     id: 'fi',
-    hosts: ['prospace.fi', 'www.prospace.fi'],
-    origin: 'https://www.prospace.fi',
+    // Kanooniline on apex, nagu Eestis: Google valis muidu ise www-variandi.
+    hosts: ['varjoprofiilit.fi', 'www.varjoprofiilit.fi'],
+    origin: 'https://varjoprofiilit.fi',
     locales: ['fi', 'sv'],
     defaultLocale: 'fi',
-    storefront: 'PROSPACE',
+    storefront: 'Varjoprofiilit.fi',
     email: 'info@prospace.fi',
+    // NB: saatja-domeen peab olema Resendis kinnitatud (SPF + DKIM TXT-kirjed
+    // varjoprofiilit.fi tsooni). Vastused lähevad ikka info@prospace.fi peale.
     mailFrom: {
-      order: 'tilaukset@prospace.fi',
-      contact: 'info@prospace.fi',
-      b2b: 'info@prospace.fi',
+      order: 'tilaukset@varjoprofiilit.fi',
+      contact: 'asiakaspalvelu@varjoprofiilit.fi',
+      b2b: 'b2b@varjoprofiilit.fi',
     },
     // Soome standardmäär alates 1.09.2024. Eesti müüja jaoks tähendab see
     // OSS-i kaudu deklareerimist, kui EL-i sisene kaugmüük ületab 10 000 €/a.
