@@ -3,6 +3,7 @@ import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 import JsonLd from '@/components/seo/JsonLd';
 import { lp, pageAlternates } from '@/lib/pageUrls';
+import { pageMetaOverride } from '@/lib/pageMeta';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -15,6 +16,9 @@ export async function generateMetadata(): Promise<Metadata> {
       ? 'Теневой профиль — алюминиевый профиль, создающий намеренную теневую линию между двумя поверхностями. Словарь терминов, типы, LED и декоративные, монтаж и FAQ.'
       : 'Varjuprofiil (ingl shadow gap profile) on alumiiniumprofiil, mis loob kahe pinna vahele tahtliku varjujoone. Sõnastik, tüübid, LED vs dekoratiivne, paigaldusnõuanded ja KKK.',
     alternates: pageAlternates('/mis-on-varjuprofiil', locale),
+    // Soome/rootsi title + description (lib/pageMeta.ts) kirjutavad
+    // ülemised read üle; eesti ja vene keele puhul on see tühi objekt.
+    ...pageMetaOverride('/mis-on-varjuprofiil', locale),
   };
 }
 

@@ -11,6 +11,7 @@ import Partners from '@/components/home/Partners';
 
 import type { Metadata } from 'next';
 import { pageAlternates } from '@/lib/pageUrls';
+import { pageMetaOverride } from '@/lib/pageMeta';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { getLocale } = await import('next-intl/server');
@@ -21,6 +22,9 @@ export async function generateMetadata(): Promise<Metadata> {
     description: ru ? 'Алюминиевые теневые профили с LED и декоративные — для потолка, пола и стены. PROSPACE OÜ, Таллинн. На складе 98 SKU.' : 'Alumiinium varjuprofiilid LED-valgustuse ja dekoratiivsete profiilidega — lae, põranda ja seina lahendused. PROSPACE OÜ, Tallinn. Laos 98 SKU.',
     // Selgesõnaline apex-canonical (ilma www) — Google valis muidu ise www.
     alternates: pageAlternates('/', locale),
+    // Soome/rootsi title + description (lib/pageMeta.ts) kirjutavad
+    // ülemised read üle; eesti ja vene keele puhul on see tühi objekt.
+    ...pageMetaOverride('/', locale),
   };
 }
 

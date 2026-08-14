@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { products, productUrl } from '@/lib/catalog';
 import { getProductImagePath } from '@/lib/productImages';
 import { lp, pageAlternates } from '@/lib/pageUrls';
+import { pageMetaOverride } from '@/lib/pageMeta';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -16,6 +17,9 @@ export async function generateMetadata(): Promise<Metadata> {
       ? 'LED теневые профили — алюминиевые профили с каналом для LED-ленты. Для потолка, пола, стены, центрального потолка. Склад в Таллинне, доставка по Эстонии.'
       : 'LED varjuprofiilid — alumiiniumprofiilid LED-riba paigalduseks. Laele, põrandale, seinale, kesklakke. Ladu Tallinnas, tarne üle Eesti.',
     alternates: pageAlternates('/led-varjuprofiilid', locale),
+    // Soome/rootsi title + description (lib/pageMeta.ts) kirjutavad
+    // ülemised read üle; eesti ja vene keele puhul on see tühi objekt.
+    ...pageMetaOverride('/led-varjuprofiilid', locale),
   };
 }
 

@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import type { Metadata } from 'next';
 import { lp, pageAlternates } from '@/lib/pageUrls';
+import { pageMetaOverride } from '@/lib/pageMeta';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { getLocale } = await import('next-intl/server');
@@ -12,6 +13,9 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: pageAlternates('/inspiratsioon', locale),
     title: ru ? 'Вдохновение — Реальные проекты с теневыми профилями' : 'Inspiratsioon — Päriseluprojektid varjuprofiilide',
     description: ru ? 'Реальные проекты с теневыми профилями PROSPACE — частные дома, квартиры, ванные, офисы. Фото, список профилей, размеры.' : 'Päriseluprojektid PROSPACE varjuprofiilide — eramajad, korterid, vannitoad, bürood. Fotod, profiilide loetelu, mõõtmed.',
+    // Soome/rootsi title + description (lib/pageMeta.ts) kirjutavad
+    // ülemised read üle; eesti ja vene keele puhul on see tühi objekt.
+    ...pageMetaOverride('/inspiratsioon', locale),
   };
 }
 

@@ -4,6 +4,7 @@ import { site } from '@/lib/site';
 
 import type { Metadata } from 'next';
 import { lp, pageAlternates } from '@/lib/pageUrls';
+import { pageMetaOverride } from '@/lib/pageMeta';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { getLocale } = await import('next-intl/server');
@@ -13,6 +14,9 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: pageAlternates('/salong', locale),
     title: ru ? 'Салон в Таллинне — Vana-Kalamaja 8–110' : 'Salong Tallinnas — Vana-Kalamaja 8–110',
     description: ru ? 'Салон PROSPACE в Таллинне — посмотрите образцы профилей, получите консультацию, заберите сами. Пн–Пт 10–17.' : 'PROSPACE salong Tallinnas — vaata profiilide näidiseid, otsi nõu ja tule ise järele. Avatud E–R 10–17.',
+    // Soome/rootsi title + description (lib/pageMeta.ts) kirjutavad
+    // ülemised read üle; eesti ja vene keele puhul on see tühi objekt.
+    ...pageMetaOverride('/salong', locale),
   };
 }
 

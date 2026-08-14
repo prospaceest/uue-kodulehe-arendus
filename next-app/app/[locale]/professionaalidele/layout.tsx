@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
 import { pageAlternates } from '@/lib/pageUrls';
+import { pageMetaOverride } from '@/lib/pageMeta';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -9,6 +10,9 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: pageAlternates('/professionaalidele', locale),
     title: ru ? 'B2B Партнёрская программа — Дизайнерам и Строителям' : 'B2B Partneriprogramm — Sisearhitektidele ja Ehitajatele',
     description: ru ? 'Станьте партнёром PROSPACE — персональные скидки, приоритетная доставка, техподдержка. Для дизайнеров, монтажников, реселлеров.' : 'Liitu PROSPACE partneriks — personaalsed soodustused, prioriteetne tarne, tehniline tugi. Sisearhitektidele, paigaldajatele, edasimüüjatele.',
+    // Soome/rootsi title + description (lib/pageMeta.ts) kirjutavad
+    // ülemised read üle; eesti ja vene keele puhul on see tühi objekt.
+    ...pageMetaOverride('/professionaalidele', locale),
   };
 }
 

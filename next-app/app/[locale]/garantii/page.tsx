@@ -3,6 +3,7 @@ import { site } from '@/lib/site';
 
 import type { Metadata } from 'next';
 import { pageAlternates } from '@/lib/pageUrls';
+import { pageMetaOverride } from '@/lib/pageMeta';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { getLocale } = await import('next-intl/server');
@@ -12,6 +13,9 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: pageAlternates('/garantii', locale),
     title: ru ? 'Гарантия и претензии' : 'Garantii ja pretensioonid',
     description: ru ? 'Условия гарантии на теневые профили — 5 лет против производственных дефектов. Как подать претензию в PROSPACE OÜ.' : 'Varjuprofiilide garantiitingimused — 5 aastat tootmisdefektide vastu. Kuidas esitada pretensiooni PROSPACE OÜ-le.',
+    // Soome/rootsi title + description (lib/pageMeta.ts) kirjutavad
+    // ülemised read üle; eesti ja vene keele puhul on see tühi objekt.
+    ...pageMetaOverride('/garantii', locale),
   };
 }
 

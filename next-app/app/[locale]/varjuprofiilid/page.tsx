@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { products, productUrl } from '@/lib/catalog';
 import { getProductImagePath } from '@/lib/productImages';
 import { lp, pageAlternates } from '@/lib/pageUrls';
+import { pageMetaOverride } from '@/lib/pageMeta';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -16,6 +17,9 @@ export async function generateMetadata(): Promise<Metadata> {
       ? 'Декоративные теневые профили без LED — чистая архитектурная теневая линия из алюминия. Для потолка, стены и пола. Любой оттенок RAL. Склад в Таллинне.'
       : 'Dekoratiivsed varjuprofiilid ilma LED-ita — puhas arhitektuurne varjujoon alumiiniumist. Laele, seinale ja põrandale. Iga RAL-toon. Ladu Tallinnas.',
     alternates: pageAlternates('/varjuprofiilid', locale),
+    // Soome/rootsi title + description (lib/pageMeta.ts) kirjutavad
+    // ülemised read üle; eesti ja vene keele puhul on see tühi objekt.
+    ...pageMetaOverride('/varjuprofiilid', locale),
   };
 }
 

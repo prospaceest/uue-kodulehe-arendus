@@ -3,6 +3,7 @@ import { getLocale } from 'next-intl/server';
 import { products, categories } from '@/lib/catalog';
 import CatalogClient from '@/components/catalog/CatalogClient';
 import { pageAlternates } from '@/lib/pageUrls';
+import { pageMetaOverride } from '@/lib/pageMeta';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -13,6 +14,9 @@ export async function generateMetadata(): Promise<Metadata> {
     description: ru
       ? 'Все алюминиевые теневые профили — потолочные, напольные, настенные. Фильтр по категории, цвету и LED.'
       : 'Kõik alumiinium varjuprofiilid — lae-, põranda-, seinaprofiilid. Filtreeri kategooria, värvi ja LED järgi.',
+    // Soome/rootsi title + description (lib/pageMeta.ts) kirjutavad
+    // ülemised read üle; eesti ja vene keele puhul on see tühi objekt.
+    ...pageMetaOverride('/tooted', locale),
   };
 }
 

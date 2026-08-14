@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
 import { pageAlternates } from '@/lib/pageUrls';
+import { pageMetaOverride } from '@/lib/pageMeta';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -9,6 +10,9 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: pageAlternates('/kkk', locale),
     title: ru ? 'Часто задаваемые вопросы' : 'Korduma kippuvad küsimused',
     description: ru ? 'Часто задаваемые вопросы о монтаже, доставке, ценах и заказе RAL-оттенков теневых профилей.' : 'Korduma kippuvad küsimused varjuprofiilide paigalduse, tarnimise, hindade ja RAL-tellimuste kohta.',
+    // Soome/rootsi title + description (lib/pageMeta.ts) kirjutavad
+    // ülemised read üle; eesti ja vene keele puhul on see tühi objekt.
+    ...pageMetaOverride('/kkk', locale),
   };
 }
 

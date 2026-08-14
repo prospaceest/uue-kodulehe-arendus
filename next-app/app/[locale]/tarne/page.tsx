@@ -4,6 +4,7 @@ import { site } from '@/lib/site';
 
 import type { Metadata } from 'next';
 import { lp, pageAlternates } from '@/lib/pageUrls';
+import { pageMetaOverride } from '@/lib/pageMeta';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { getLocale } = await import('next-intl/server');
@@ -13,6 +14,9 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: pageAlternates('/tarne', locale),
     title: ru ? 'Доставка и возврат' : 'Tarne ja tagastus',
     description: ru ? 'Условия доставки: бесплатно от 200 €, Venipak 1–4 рабочих дня. Возврат 14 дней. Счёт SEPA.' : 'Tarnetingimused: tasuta tarne üle 200 €, Venipak 1–4 tööpäevaga. Tagastusõigus 14 päeva. SEPA arve.',
+    // Soome/rootsi title + description (lib/pageMeta.ts) kirjutavad
+    // ülemised read üle; eesti ja vene keele puhul on see tühi objekt.
+    ...pageMetaOverride('/tarne', locale),
   };
 }
 
