@@ -5,6 +5,7 @@ import { products, productUrl } from '@/lib/catalog';
 import ProductClient from '@/components/product/ProductClient';
 import { getProductImages } from '@/lib/productImages';
 import { site } from '@/lib/site';
+import { MARKETS, marketForLocale, marketPrice } from '@/lib/markets';
 import JsonLd from '@/components/seo/JsonLd';
 
 type Props = {
@@ -32,8 +33,10 @@ function findCrossLocale(slug: string[], locale: string) {
 
 // urlPath fields carry a trailing slash, but Next serves the slash-less form
 // (308-normalised) — canonicals must point at the final URL, not the redirect.
-function absUrl(path: string): string {
-  return `https://varjuprofiilid.ee${path}`.replace(/\/$/, '');
+// Päritolu tuleb turult: /ru/... elab varjuprofiilid.ee peal, /sv/... läheb
+// www.prospace.fi peale. Vaikimisi Eesti turg (marketForLocale('et')).
+function absUrl(path: string, origin: string = MARKETS.ee.origin): string {
+  return `${origin}${path}`.replace(/\/$/, '');
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -45,7 +48,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const name = ru ? product.nameRu : product.name;
   const seoName = ru ? product.seoNameRu : product.seoName;
   const description = ru ? product.descriptionRu : product.description;
-  const canonical = absUrl(ru ? `/ru${product.urlPathRu}` : product.urlPath);
+  const origin = marketForLocale(locale).origin;
+  const canonical = absUrl(ru ? `/ru${product.urlPathRu}` : product.urlPath, origin);
 
   return {
     title: `${name} – ${seoName}`,
@@ -99,12 +103,14 @@ export default async function ProductPage({ params }: Props) {
     .slice(0, 4);
 
   // Product structured data — enables rich results (price, availability).
-  // Prices include 24% VAT; image paths resolved via the same manifest the UI uses.
+  // Hind ja pildilingid tulevad turult: Eestis 24% KM ja varjuprofiilid.ee,
+  // Soomes 25,5% KM ja www.prospace.fi.
   const ru = locale === 'ru';
+  const market = marketForLocale(locale);
   const seoName = ru ? product.seoNameRu : product.seoName;
-  const canonical = absUrl(ru ? `/ru${product.urlPathRu}` : product.urlPath);
+  const canonical = absUrl(ru ? `/ru${product.urlPathRu}` : product.urlPath, market.origin);
   const images = getProductImages(product.sku).map((u) =>
-    u.startsWith('http') ? u : `${site.url}${u}`,
+    u.startsWith('http') ? u : `${market.origin}${u}`,
   );
   const productSchema: Record<string, unknown> = {
     '@context': 'https://schema.org',
@@ -112,10 +118,10 @@ export default async function ProductPage({ params }: Props) {
     name: `${ru ? product.nameRu : product.name} – ${seoName}`,
     sku: product.sku,
     description: (ru ? product.descriptionRu : product.description).slice(0, 300),
-    brand: { '@type': 'Brand', name: site.storefront },
+    brand: { '@type': 'Brand', name: market.storefront },
     offers: {
       '@type': 'Offer',
-      price: product.price.toFixed(2),
+      price: marketPrice(product.price, market).toFixed(2),
       priceCurrency: 'EUR',
       availability: product.inStock
         ? 'https://schema.org/InStock'

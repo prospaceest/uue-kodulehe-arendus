@@ -12,7 +12,11 @@
 // I18N_SPEC.md §1: RU slugs are Russian transliterated to Latin — ranks in
 // Google.ee + Yandex, and survives copy-paste (Cyrillic would percent-encode).
 
-export const BASE = 'https://varjuprofiilid.ee';
+import { MARKETS, marketForLocale } from './markets';
+
+// Eesti turu päritolu. Jäetud eksporti tagasiühilduvuse pärast — uus kood
+// küsigu päritolu turult (lib/markets.ts), sest .fi peal on see teine.
+export const BASE = MARKETS.ee.origin;
 
 // ── ET path → RU path ───────────────────────────────────────────────────────
 // The RU side is the PUBLIC url. Internally every RU page is still served by the
@@ -146,15 +150,22 @@ export function internalRuPath(publicPath: string): string | null {
 
 // Self-canonical for the current locale + the hreflang pair. x-default points at
 // Estonian: primary market, and the prefix-less URL.
-export function abs(path: string): string {
-  return path === '/' ? BASE : `${BASE}${path}`;
+//
+// Päritolu on parameeter, sest sama tee elab kahel domeenil: /tooted on
+// varjuprofiilid.ee peal, /tuotteet www.prospace.fi peal. Vaikeväärtus on Eesti
+// turg, nii et olemasolevad kutsed käituvad täpselt nagu enne.
+export function abs(path: string, origin: string = MARKETS.ee.origin): string {
+  return path === '/' ? origin : `${origin}${path}`;
 }
 
 export function pageAlternates(etPath: string, locale: string) {
   const ru = ruPath(etPath);
   const self = locale === 'ru' ? ru : etPath;
+  // Turg tuletatakse keelest, mitte hostist — nii jääb leht staatiliseks
+  // (headers() lugemine muudaks iga lehe dünaamiliseks).
+  const origin = marketForLocale(locale).origin;
   return {
-    canonical: abs(self),
+    canonical: abs(self, origin),
     languages: {
       et: abs(etPath),
       ru: abs(ru),
