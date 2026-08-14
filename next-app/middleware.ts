@@ -1,7 +1,7 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 import createIntlMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
-import { internalRuPath, internalPath } from './lib/pageUrls';
+import { internalRuPath, internalPath, publicPath } from './lib/pageUrls';
 import { marketFromHost, MARKETS } from './lib/markets';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
@@ -74,10 +74,14 @@ export default clerkMiddleware(async (auth, req: NextRequest) => {
     return intlMiddleware(req);
   }
 
-  // Soome keeled ei kuulu Eesti domeenile.
+  // Soome keeled ei kuulu Eesti domeenile. Tee tõlgitakse ka slugi tasemel —
+  // /fi/tooted peab jõudma /tuotteet peale, mitte tekitama .fi peale teist
+  // URL-i sama sisuga.
   if (/^\/(fi|sv)(\/|$)/.test(pathname)) {
+    const isSv = pathname === '/sv' || pathname.startsWith('/sv/');
+    const etPath = pathname.replace(/^\/(fi|sv)/, '') || '/';
     return NextResponse.redirect(
-      new URL(pathname.replace(/^\/fi/, '') || '/', MARKETS.fi.origin),
+      new URL(publicPath(etPath, isSv ? 'sv' : 'fi') + req.nextUrl.search, MARKETS.fi.origin),
       308,
     );
   }
