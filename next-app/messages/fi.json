@@ -1,0 +1,223 @@
+{
+  "locale": {
+    "et": "ET",
+    "ru": "RU",
+    "fi": "FI",
+    "sv": "SV",
+    "switch": {
+      "aria": "Valitse kieli"
+    }
+  },
+  "nav": {
+    "shop": "Kauppa",
+    "about": "Tuotteista",
+    "inspiration": "Inspiraatio",
+    "blog": "Uutiset",
+    "salon": "Näyttelytila",
+    "search": "Haku",
+    "cart": "Kori",
+    "account": "Tili",
+    "b2b": "B2B",
+    "contact": "Yhteystiedot",
+    "faq": "UKK",
+    "architects": "Arkkitehdeille"
+  },
+  "footer": {
+    "shop": "Kauppa",
+    "help": "Asiakaspalvelu",
+    "company": "Yritys",
+    "legal": "Ehdot",
+    "follow": "Seuraa meitä",
+    "newsletter": "Uutiskirje",
+    "newsletterPlaceholder": "Sähköpostisi",
+    "newsletterCta": "Tilaa",
+    "rights": "© 2026 PROSPACE OÜ. Kaikki oikeudet pidätetään."
+  },
+  "hero": {
+    "collection": "★ Kokoelma 026 — kevät 2026",
+    "live": "Live · {count} tuotetta varastossa",
+    "ctaPrimary": "Tutustu tuotteisiin →",
+    "stats": {
+      "inStock": "Tuotetta varastossa",
+      "delivery": "Ilmainen toimitus Suomeen",
+      "ral": "RAL-sävyä",
+      "return": "Palautusoikeus",
+      "days": "pv"
+    }
+  },
+  "marquee": {
+    "delivery": "ILMAINEN TOIMITUS 300 €+",
+    "return": "14 PÄIVÄN PALAUTUSOIKEUS (EI RAL)",
+    "ral": "RAL-MAALATTU"
+  },
+  "home": {
+    "collections": {
+      "eyebrow": "02 / Kokoelmat",
+      "title": "Osta kategorian mukaan",
+      "viewAll": "Katso kaikki →"
+    },
+    "configurator": {
+      "eyebrow": "03 / Työkalu",
+      "title": "Laskuri",
+      "desc": "Syötä tarvittava metrimäärä ja valitse profiilityyppi — laskemme tarvittavan kappalemäärän.",
+      "fieldMeters": "Tarvittava määrä (m)",
+      "fieldType": "Profiilityyppi",
+      "typeCeiling": "Kattoprofiili · 2,5 m",
+      "typeFloor": "Lattiaprofiili · 2,6 m",
+      "pieces": "profiilikappaletta",
+      "totalLength": "= {len} m kokonaispituus",
+      "note": "Profiileja ei katkaista — määrä pyöristetään ylöspäin seuraavaan kokonaiseen kappaleeseen.",
+      "ctaCeiling": "Katso kattoprofiilit →",
+      "ctaFloor": "Katso lattiaprofiilit →"
+    },
+    "bestsellers": {
+      "eyebrow": "04 / Myydyimmät",
+      "title": "Top 10"
+    },
+    "inspiration": {
+      "eyebrow": "05 / Todelliset projektit",
+      "title": "Inspiraatio"
+    },
+    "social": {
+      "eyebrow": "06 / Sosiaalinen media"
+    },
+    "blog": {
+      "eyebrow": "07 / Uutiset",
+      "title": "Oppaat & inspiraatio"
+    },
+    "partners": {
+      "eyebrow": "08 / Asiakkaat ja kumppanit",
+      "title": "Virolaisten arkkitehtien ja rakentajien luottama"
+    }
+  },
+  "catalog": {
+    "title": "Kauppa",
+    "filter": {
+      "category": "Kategoria",
+      "color": "Väri",
+      "price": "Hinta",
+      "led": "LED",
+      "ledWith": "LED-kanavalla",
+      "ledWithout": "Ilman LEDiä",
+      "ledAll": "Kaikki"
+    },
+    "sort": {
+      "label": "Järjestä",
+      "popular": "Suositut",
+      "priceAsc": "Hinta ↑",
+      "priceDesc": "Hinta ↓",
+      "new": "Uusimmat"
+    },
+    "results": "{count} tuotetta"
+  },
+  "product": {
+    "ribbon": {
+      "inStock": "VARASTOSSA",
+      "order": "TILAUKSESTA",
+      "new": "UUSI"
+    },
+    "ledBadge": "⚡ LED",
+    "priceFrom": "alkaen",
+    "priceUnit": "€/m",
+    "priceVatIncluded": "sis. ALV 25,5 %",
+    "tab": {
+      "specs": "Tekniset tiedot",
+      "colors": "Värit",
+      "installation": "Asennus",
+      "faq": "UKK"
+    },
+    "color": {
+      "select": "Valitse väri",
+      "ral": "RAL-sävy (tilaustyö)",
+      "lead": "Toimitus 4–5 viikkoa"
+    },
+    "qty": "Määrä (m)",
+    "qtyPieces": "kappaletta tarvitaan",
+    "cta": {
+      "addToCart": "Lisää koriin",
+      "askQuote": "Pyydä tarjous"
+    },
+    "relatedTitle": "Samankaltaiset tuotteet"
+  },
+  "cart": {
+    "title": "Korisi",
+    "empty": "Kori on tyhjä",
+    "emptyCta": "Katso tuotteet →",
+    "subtotal": "Välisumma",
+    "shipping": "Toimitus",
+    "shippingFree": "Ilmainen",
+    "total": "Yhteensä",
+    "vat": "sis. ALV 25,5 %",
+    "promoCode": "Alennuskoodi",
+    "promoCodeApply": "Käytä",
+    "ctaCheckout": "Jatka tilaukseen →"
+  },
+  "checkout": {
+    "title": "Tilauksen viimeistely",
+    "contact": "Yhteystiedot",
+    "delivery": "Toimitus",
+    "payment": "Maksutapa",
+    "field": {
+      "name": "Nimi",
+      "email": "Sähköposti",
+      "phone": "Puhelin",
+      "address": "Osoite",
+      "city": "Kaupunki",
+      "zip": "Postinumero",
+      "notes": "Lisätiedot"
+    },
+    "ctaPlaceOrder": "Lähetä tilaus →"
+  },
+  "contact": {
+    "title": "Ota yhteyttä",
+    "intro": "RAL-tilaukset, jälleenmyyjäkumppanuus, tekninen neuvonta — vastaamme kaikkiin.",
+    "form": {
+      "subject": "Aihe",
+      "message": "Viesti",
+      "submit": "Lähetä viesti",
+      "success": "Kiitos — vastaamme 24 tunnin kuluessa."
+    }
+  },
+  "b2b": {
+    "title": "Jälleenmyyjille ja ammattilaisille",
+    "intro": "Arkkitehdeille, sisustussuunnittelijoille, rakentajille ja jälleenmyyjille. Alennukset, maksuehdot, henkilökohtainen neuvonta.",
+    "formSubmit": "Lähetä kysely →"
+  },
+  "faq": {
+    "title": "Usein kysytyt kysymykset"
+  },
+  "info": {
+    "installation": "Asennusohje",
+    "delivery": "Toimitus ja palautus",
+    "warranty": "Takuu",
+    "contact": "Yhteystiedot",
+    "salon": "Näyttelytila"
+  },
+  "legal": {
+    "impressum": "Yritystiedot",
+    "terms": "Myyntiehdot",
+    "privacy": "Tietosuoja",
+    "cookies": "Evästeet"
+  },
+  "btn": {
+    "viewAll": "Katso kaikki →",
+    "readMore": "Lue lisää →",
+    "learnMore": "Tutustu tarkemmin →",
+    "discover": "Tutustu →",
+    "back": "← Takaisin",
+    "close": "Sulje",
+    "cancel": "Peruuta",
+    "save": "Tallenna"
+  },
+  "status": {
+    "loading": "Ladataan…",
+    "error": "Tapahtui virhe",
+    "empty": "Ei sisältöä",
+    "notFound": "Ei löytynyt"
+  },
+  "search": {
+    "placeholder": "Hae tuotteita",
+    "empty": "Haku ei tuottanut tuloksia",
+    "tryAgain": "Kokeile muita hakusanoja tai selaa koko valikoimaa."
+  }
+}

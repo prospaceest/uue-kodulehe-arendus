@@ -1,0 +1,223 @@
+{
+  "locale": {
+    "et": "ET",
+    "ru": "RU",
+    "fi": "FI",
+    "sv": "SV",
+    "switch": {
+      "aria": "Välj språk"
+    }
+  },
+  "nav": {
+    "shop": "Butik",
+    "about": "Om produkterna",
+    "inspiration": "Inspiration",
+    "blog": "Nyheter",
+    "salon": "Showroom",
+    "search": "Sök",
+    "cart": "Varukorg",
+    "account": "Konto",
+    "b2b": "B2B",
+    "contact": "Kontakt",
+    "faq": "Vanliga frågor",
+    "architects": "För arkitekter"
+  },
+  "footer": {
+    "shop": "Butik",
+    "help": "Kundtjänst",
+    "company": "Företag",
+    "legal": "Villkor",
+    "follow": "Följ oss",
+    "newsletter": "Nyhetsbrev",
+    "newsletterPlaceholder": "Din e-post",
+    "newsletterCta": "Prenumerera",
+    "rights": "© 2026 PROSPACE OÜ. Alla rättigheter förbehållna."
+  },
+  "hero": {
+    "collection": "★ Kollektion 026 — våren 2026",
+    "live": "Live · {count} produkter i lager",
+    "ctaPrimary": "Utforska produkterna →",
+    "stats": {
+      "inStock": "Produkter i lager",
+      "delivery": "Fri frakt till Finland",
+      "ral": "RAL-nyanser",
+      "return": "Returrätt",
+      "days": "dgr"
+    }
+  },
+  "marquee": {
+    "delivery": "FRI FRAKT 300 €+",
+    "return": "14 DAGARS RETURRÄTT (EJ RAL)",
+    "ral": "RAL-MÅLAD"
+  },
+  "home": {
+    "collections": {
+      "eyebrow": "02 / Kollektioner",
+      "title": "Handla per kategori",
+      "viewAll": "Se alla →"
+    },
+    "configurator": {
+      "eyebrow": "03 / Verktyg",
+      "title": "Kalkylator",
+      "desc": "Ange antal meter och välj profiltyp — vi räknar ut hur många stycken du behöver.",
+      "fieldMeters": "Behövd mängd (m)",
+      "fieldType": "Profiltyp",
+      "typeCeiling": "Takprofil · 2,5 m",
+      "typeFloor": "Golvprofil · 2,6 m",
+      "pieces": "profilstycken",
+      "totalLength": "= {len} m total längd",
+      "note": "Vi kapar inte profiler — mängden avrundas uppåt till nästa hela stycke.",
+      "ctaCeiling": "Se takprofiler →",
+      "ctaFloor": "Se golvprofiler →"
+    },
+    "bestsellers": {
+      "eyebrow": "04 / Bästsäljare",
+      "title": "Topp 10"
+    },
+    "inspiration": {
+      "eyebrow": "05 / Verkliga projekt",
+      "title": "Inspiration"
+    },
+    "social": {
+      "eyebrow": "06 / Sociala medier"
+    },
+    "blog": {
+      "eyebrow": "07 / Nyheter",
+      "title": "Guider & inspiration"
+    },
+    "partners": {
+      "eyebrow": "08 / Kunder och samarbetspartner",
+      "title": "Anlitade av estniska arkitekter och byggare"
+    }
+  },
+  "catalog": {
+    "title": "Butik",
+    "filter": {
+      "category": "Kategori",
+      "color": "Färg",
+      "price": "Pris",
+      "led": "LED",
+      "ledWith": "Med LED-kanal",
+      "ledWithout": "Utan LED",
+      "ledAll": "Alla"
+    },
+    "sort": {
+      "label": "Sortera",
+      "popular": "Populära",
+      "priceAsc": "Pris ↑",
+      "priceDesc": "Pris ↓",
+      "new": "Nyaste"
+    },
+    "results": "{count} produkter"
+  },
+  "product": {
+    "ribbon": {
+      "inStock": "I LAGER",
+      "order": "BESTÄLLNINGSVARA",
+      "new": "NY"
+    },
+    "ledBadge": "⚡ LED",
+    "priceFrom": "från",
+    "priceUnit": "€/m",
+    "priceVatIncluded": "inkl. moms 25,5 %",
+    "tab": {
+      "specs": "Tekniska data",
+      "colors": "Färger",
+      "installation": "Montering",
+      "faq": "Vanliga frågor"
+    },
+    "color": {
+      "select": "Välj färg",
+      "ral": "RAL-nyans (specialbeställning)",
+      "lead": "Leverans 4–5 veckor"
+    },
+    "qty": "Mängd (m)",
+    "qtyPieces": "stycken behövs",
+    "cta": {
+      "addToCart": "Lägg i varukorgen",
+      "askQuote": "Begär offert"
+    },
+    "relatedTitle": "Liknande produkter"
+  },
+  "cart": {
+    "title": "Din varukorg",
+    "empty": "Varukorgen är tom",
+    "emptyCta": "Se produkter →",
+    "subtotal": "Delsumma",
+    "shipping": "Frakt",
+    "shippingFree": "Gratis",
+    "total": "Totalt",
+    "vat": "inkl. moms 25,5 %",
+    "promoCode": "Rabattkod",
+    "promoCodeApply": "Använd",
+    "ctaCheckout": "Fortsätt till kassan →"
+  },
+  "checkout": {
+    "title": "Slutför beställning",
+    "contact": "Kontaktuppgifter",
+    "delivery": "Leverans",
+    "payment": "Betalningssätt",
+    "field": {
+      "name": "Namn",
+      "email": "E-post",
+      "phone": "Telefon",
+      "address": "Adress",
+      "city": "Stad",
+      "zip": "Postnummer",
+      "notes": "Meddelande"
+    },
+    "ctaPlaceOrder": "Skicka beställning →"
+  },
+  "contact": {
+    "title": "Kontakta oss",
+    "intro": "RAL-beställningar, återförsäljarsamarbete, teknisk rådgivning — vi svarar på allt.",
+    "form": {
+      "subject": "Ämne",
+      "message": "Meddelande",
+      "submit": "Skicka meddelande",
+      "success": "Tack — vi svarar inom 24 timmar."
+    }
+  },
+  "b2b": {
+    "title": "För återförsäljare och yrkesfolk",
+    "intro": "För arkitekter, inredningsarkitekter, byggare och återförsäljare. Rabatter, betalningsvillkor, personlig rådgivning.",
+    "formSubmit": "Skicka förfrågan →"
+  },
+  "faq": {
+    "title": "Vanliga frågor"
+  },
+  "info": {
+    "installation": "Monteringsanvisning",
+    "delivery": "Leverans och retur",
+    "warranty": "Garanti",
+    "contact": "Kontakt",
+    "salon": "Showroom"
+  },
+  "legal": {
+    "impressum": "Företagsuppgifter",
+    "terms": "Försäljningsvillkor",
+    "privacy": "Integritetspolicy",
+    "cookies": "Cookies"
+  },
+  "btn": {
+    "viewAll": "Se alla →",
+    "readMore": "Läs mer →",
+    "learnMore": "Läs mer om produkten →",
+    "discover": "Upptäck →",
+    "back": "← Tillbaka",
+    "close": "Stäng",
+    "cancel": "Avbryt",
+    "save": "Spara"
+  },
+  "status": {
+    "loading": "Laddar…",
+    "error": "Ett fel uppstod",
+    "empty": "Inget innehåll",
+    "notFound": "Hittades inte"
+  },
+  "search": {
+    "placeholder": "Sök produkter",
+    "empty": "Sökningen gav inga resultat",
+    "tryAgain": "Prova andra sökord eller se hela utbudet."
+  }
+}

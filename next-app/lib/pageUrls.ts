@@ -65,6 +65,95 @@ const RU_PARENTS: [ruParent: string, etParent: string][] = [
   ['/ru/novosti', '/uudised'],
 ];
 
+// ── ET path → FI / SV path (www.prospace.fi) ───────────────────────────────
+// Soome turul on soome keel eesliiteta (nagu eesti keel .ee peal) ja rootsi
+// keel /sv all. Slugid on ASCII-tähtedega meelega: ä/ö URL-is muutub
+// protsendikoodiks ja lõhub kopeerimise, Google mõistab mõlemat.
+//
+// Terminoloogia: soome kaubanduses käibivad nii "varjolista" kui
+// "varjoprofiili"; valitud on varjoprofiili(t), sest see katab ka LED-versiooni
+// ja on lähem tootekategooriale. Põrandal on eraldi suur otsingumaht sõnal
+// "jalkalista" — see kuulub pealkirjadesse ja meta-teksti, mitte URL-i.
+const FI_PATHS: Record<string, string> = {
+  '/': '/',
+  '/tooted': '/tuotteet',
+  '/kkk': '/ukk',
+  '/tarne': '/toimitus',
+  '/garantii': '/takuu',
+  '/impressum': '/yritystiedot',
+  '/kontakt': '/yhteystiedot',
+  '/salong': '/nayttelytila',
+  '/meist': '/meista',
+  '/professionaalidele': '/jalleenmyyjille',
+  '/inspiratsioon': '/inspiraatio',
+  '/mis-on-varjuprofiil': '/mika-on-varjoprofiili',
+  '/uudised': '/uutiset',
+  '/led-varjuprofiilid': '/led-varjoprofiilit',
+  '/led-varjuprofiilid/lae': '/led-varjoprofiilit/katto',
+  '/led-varjuprofiilid/poranda': '/led-varjoprofiilit/lattia',
+  '/led-varjuprofiilid/seina': '/led-varjoprofiilit/seina',
+  '/led-varjuprofiilid/kesklae': '/led-varjoprofiilit/keskikatto',
+  '/varjuprofiilid': '/varjoprofiilit',
+  '/varjuprofiilid/lae': '/varjoprofiilit/katto',
+  '/varjuprofiilid/poranda': '/varjoprofiilit/lattia',
+  '/varjuprofiilid/seina': '/varjoprofiilit/seina',
+  '/otsing': '/haku',
+  '/korv': '/kori',
+  '/tellimus': '/tilaus',
+};
+
+const SV_PATHS: Record<string, string> = {
+  '/': '/sv',
+  '/tooted': '/sv/produkter',
+  '/kkk': '/sv/vanliga-fragor',
+  '/tarne': '/sv/leverans',
+  '/garantii': '/sv/garanti',
+  '/impressum': '/sv/foretagsuppgifter',
+  '/kontakt': '/sv/kontakt',
+  '/salong': '/sv/showroom',
+  '/meist': '/sv/om-oss',
+  '/professionaalidele': '/sv/aterforsaljare',
+  '/inspiratsioon': '/sv/inspiration',
+  '/mis-on-varjuprofiil': '/sv/vad-ar-en-skuggprofil',
+  '/uudised': '/sv/nyheter',
+  '/led-varjuprofiilid': '/sv/led-skuggprofiler',
+  '/led-varjuprofiilid/lae': '/sv/led-skuggprofiler/tak',
+  '/led-varjuprofiilid/poranda': '/sv/led-skuggprofiler/golv',
+  '/led-varjuprofiilid/seina': '/sv/led-skuggprofiler/vagg',
+  '/led-varjuprofiilid/kesklae': '/sv/led-skuggprofiler/mittentak',
+  '/varjuprofiilid': '/sv/skuggprofiler',
+  '/varjuprofiilid/lae': '/sv/skuggprofiler/tak',
+  '/varjuprofiilid/poranda': '/sv/skuggprofiler/golv',
+  '/varjuprofiilid/seina': '/sv/skuggprofiler/vagg',
+  '/otsing': '/sv/sok',
+  '/korv': '/sv/varukorg',
+  '/tellimus': '/sv/bestallning',
+};
+
+const FI_PARENTS: [publicParent: string, etParent: string][] = [
+  ['/inspiraatio', '/inspiratsioon'],
+  ['/uutiset', '/uudised'],
+];
+
+const SV_PARENTS: [publicParent: string, etParent: string][] = [
+  ['/sv/inspiration', '/inspiratsioon'],
+  ['/sv/nyheter', '/uudised'],
+];
+
+// Kõik tõlgitud teetabelid ühes kohas, et marsruutimine ja sitemapid saaksid
+// neid ühtemoodi lugeda. RU on jäetud eraldi funktsioonidesse allpool, kuna
+// see loogika on livis ja töötab — uut üldistust ei tasu talle peale suruda
+// enne, kui Soome pool on püsti ja kontrollitud.
+export const LOCALE_PATHS: Record<string, Record<string, string>> = {
+  fi: FI_PATHS,
+  sv: SV_PATHS,
+};
+
+export const LOCALE_PARENTS: Record<string, [string, string][]> = {
+  fi: FI_PARENTS,
+  sv: SV_PARENTS,
+};
+
 // Reverse lookup for middleware: public RU path → Estonian-named internal path.
 const RU_TO_INTERNAL: Record<string, string> = Object.fromEntries(
   Object.entries(RU_PATHS).map(([et, ru]) => [ru, et === '/' ? '/ru' : `/ru${et}`]),
@@ -127,10 +216,49 @@ export function ruPath(etPath: string): string {
   return `/ru${etPath}`;
 }
 
+// ET path → avalik tee soome/rootsi keeles. Sama muster kui ruPath(), aga
+// tabel tuleb keele järgi. Tundmatu tee puhul jääb eestikeelne tee alles —
+// nii on uus leht kohe kättesaadav, kuigi slug on veel tõlkimata.
+export function localePath(etPath: string, locale: string): string {
+  const table = LOCALE_PATHS[locale];
+  if (!table) return etPath;
+
+  const [path, query] = etPath.split('?');
+  const mapped = table[path];
+  if (mapped) return query ? `${mapped}?${query}` : mapped;
+
+  for (const [publicParent, etParent] of LOCALE_PARENTS[locale] ?? []) {
+    if (path.startsWith(`${etParent}/`)) {
+      return `${publicParent}${path.slice(etParent.length)}${query ? `?${query}` : ''}`;
+    }
+  }
+  return locale === 'sv' ? `/sv${etPath}` : etPath;
+}
+
+// Avalik tee → eestikeelne sisemine tee, middleware'i rewrite'i jaoks.
+// Vaste puudumisel null (nt tootelehed, mis lahenevad [...slug] kaudu).
+export function internalPath(publicPath: string, locale: string): string | null {
+  const table = LOCALE_PATHS[locale];
+  if (!table) return null;
+
+  for (const [etPath, mapped] of Object.entries(table)) {
+    if (mapped === publicPath) return etPath === '/' ? `/${locale}` : `/${locale}${etPath}`;
+  }
+
+  for (const [publicParent, etParent] of LOCALE_PARENTS[locale] ?? []) {
+    if (publicPath.startsWith(`${publicParent}/`)) {
+      return `/${locale}${etParent}${publicPath.slice(publicParent.length)}`;
+    }
+  }
+  return null;
+}
+
 // Internal-link helper — the only correct way to build a locale-aware href.
 // Pass the Estonian path (with optional query): lp('/tooted?cat=Tarvikud', locale)
 export function lp(etPath: string, locale: string): string {
-  return locale === 'ru' ? ruPath(etPath) : etPath;
+  if (locale === 'ru') return ruPath(etPath);
+  if (LOCALE_PATHS[locale]) return localePath(etPath, locale);
+  return etPath;
 }
 
 // Public RU path → Estonian-named internal path, for the middleware rewrite.
