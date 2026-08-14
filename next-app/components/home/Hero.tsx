@@ -92,7 +92,7 @@ export default async function Hero() {
         }}>
           {ru
             ? 'Алюминиевые теневые профили для потолка, пола и стены. Вместо плинтусов и карнизов — тонкая теневая линия, при желании с мягкой LED-подсветкой.'
-            : 'Alumiiniumist varjuprofiilid laele, põrandale ja seinale. Liistude ja karniiside asemel peen varjufuuga — soovi korral pehme LED-valgusega.'}
+            : 'Alumiiniumist varjuprofiilid laele, põrandale ja seinale. Liistude ja karniiside asemel peen varjujoon — soovi korral pehme LED-valgusega.'}
         </p>
 
         {/* Faktimärgised — samad piirjooned ja mono-kiri nagu mujal, ilma ümarnurkade ja varjudeta */}
