@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 import { useCart } from '@/lib/cart';
 import { lp } from '@/lib/pageUrls';
+import { marketForLocale } from '@/lib/markets';
 import { Show, UserButton } from '@clerk/nextjs';
 import styles from './Header.module.css';
 
@@ -27,6 +28,12 @@ export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
 
+  // Keelevalik piirdub selle turu keeltega: varjuprofiilid.ee peal ET/RU,
+  // www.prospace.fi peal FI/SV. Muidu satuks .fi külastaja ühe klikiga Eesti
+  // domeenile — talle peab paistma, et kogu sait on prospace.fi.
+  const market = marketForLocale(locale);
+  const localeChoices = market.locales;
+
   function switchLocale(next: string) {
     if (next === locale) return;
 
@@ -35,17 +42,28 @@ export default function Header() {
     // prefix-juggling got wrong: product URLs differ per locale
     // (/led-varjuprofiilid/lae/ast12 vs /ru/led-profili/potolok/ast12), as do all
     // page slugs now. Importing the catalog here would ship it to the browser.
+    //
+    // NB: hreflang-sildid katavad ka teise turu keeli (Google vajab seda), aga
+    // siia jõuavad ainult oma turu keeled — teise domeeni linki me ei ava.
     const alt = document.querySelector<HTMLLinkElement>(
       `link[rel="alternate"][hreflang="${next}"]`,
     );
     if (alt) {
-      router.push(new URL(alt.href).pathname + window.location.search);
-      return;
+      const target = new URL(alt.href);
+      // Kaitse: kui hreflang viitab teisele domeenile, ära navigeeri sinna.
+      if (target.host === window.location.host) {
+        router.push(target.pathname + window.location.search);
+        return;
+      }
     }
 
     // Fallback for pages without alternates (noindex utility routes).
+    // Turu vaikekeel on eesliiteta, ülejäänud eesliitega (as-needed).
+    const stripped = pathname.replace(new RegExp(`^/(${localeChoices.join('|')})(?=/|$)`), '') || '/';
     router.push(
-      next === 'ru' ? '/ru' + (pathname === '/' ? '' : pathname) : pathname.replace(/^\/ru/, '') || '/',
+      next === market.defaultLocale
+        ? stripped
+        : `/${next}${stripped === '/' ? '' : stripped}`,
     );
   }
 
@@ -67,9 +85,17 @@ export default function Header() {
         ))}
         <Link href={cartHref} onClick={() => setMobileOpen(false)}>{t('cart')} {totalItems > 0 && `(${totalItems})`}</Link>
         <div style={{ display: 'flex', gap: 12, marginTop: 16, paddingTop: 16, borderTop: 'var(--border)' }}>
-          <button onClick={() => { switchLocale('et'); setMobileOpen(false); }} style={{ fontFamily: 'JetBrains Mono', fontWeight: locale === 'et' ? 700 : 400, opacity: locale === 'et' ? 1 : 0.5, background: 'none', border: 'none', cursor: 'pointer', fontSize: 14 }}>ET</button>
-          <span style={{ opacity: 0.3 }}>|</span>
-          <button onClick={() => { switchLocale('ru'); setMobileOpen(false); }} style={{ fontFamily: 'JetBrains Mono', fontWeight: locale === 'ru' ? 700 : 400, opacity: locale === 'ru' ? 1 : 0.5, background: 'none', border: 'none', cursor: 'pointer', fontSize: 14 }}>RU</button>
+          {localeChoices.map((code, i) => (
+            <span key={code} style={{ display: 'contents' }}>
+              {i > 0 && <span style={{ opacity: 0.3 }}>|</span>}
+              <button
+                onClick={() => { switchLocale(code); setMobileOpen(false); }}
+                style={{ fontFamily: 'JetBrains Mono', fontWeight: locale === code ? 700 : 400, opacity: locale === code ? 1 : 0.5, background: 'none', border: 'none', cursor: 'pointer', fontSize: 14 }}
+              >
+                {code.toUpperCase()}
+              </button>
+            </span>
+          ))}
         </div>
       </div>
     )}
@@ -103,25 +129,20 @@ export default function Header() {
           aria-label={tLocale('switch.aria')}
           className={styles.localeSwitcher}
         >
-          <button
-            type="button"
-            onClick={() => switchLocale('et')}
-            aria-pressed={locale === 'et'}
-            className={styles.localeBtn}
-            data-active={locale === 'et'}
-          >
-            {tLocale('et')}
-          </button>
-          <span aria-hidden className={styles.localeSep}>|</span>
-          <button
-            type="button"
-            onClick={() => switchLocale('ru')}
-            aria-pressed={locale === 'ru'}
-            className={styles.localeBtn}
-            data-active={locale === 'ru'}
-          >
-            {tLocale('ru')}
-          </button>
+          {localeChoices.map((code, i) => (
+            <span key={code} style={{ display: 'contents' }}>
+              {i > 0 && <span aria-hidden className={styles.localeSep}>|</span>}
+              <button
+                type="button"
+                onClick={() => switchLocale(code)}
+                aria-pressed={locale === code}
+                className={styles.localeBtn}
+                data-active={locale === code}
+              >
+                {code === 'et' || code === 'ru' ? tLocale(code) : code.toUpperCase()}
+              </button>
+            </span>
+          ))}
         </span>
 
         {/* Account — shows UserButton when signed in, link when signed out */}

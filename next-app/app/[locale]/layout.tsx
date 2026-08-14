@@ -12,38 +12,49 @@ import Footer from '@/components/layout/Footer';
 import { CartProvider } from '@/lib/cart';
 import JsonLd from '@/components/seo/JsonLd';
 import { site } from '@/lib/site';
+import { marketForLocale, type Market } from '@/lib/markets';
 
 // Site-wide structured data. Organization identifies the business (used for
-// knowledge-panel / brand entity); WebSite names the site. Both read from
-// lib/site.ts — never hardcode company info.
-const orgSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: site.legal,
-  alternateName: site.storefront,
-  url: site.url,
-  logo: `${site.url}/assets/logo-must.svg`,
-  email: site.email,
-  telephone: site.phone,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: site.addressLine1,
-    addressLocality: site.city,
-    postalCode: '10412',
-    addressCountry: 'EE',
-  },
-  vatID: site.kmkr,
-  sameAs: [site.instagram, site.facebook],
+// knowledge-panel / brand entity); WebSite names the site. Firmafaktid tulevad
+// lib/site.ts-ist (samad mõlemal turul), poe nimi ja aadress turult — .fi peal
+// on need PROSPACE / www.prospace.fi.
+function orgSchema(market: Market) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: site.legal,
+    alternateName: market.storefront,
+    url: market.origin,
+    logo: `${market.origin}/assets/logo-must.svg`,
+    email: market.email,
+    telephone: site.phone,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: site.addressLine1,
+      addressLocality: site.city,
+      postalCode: '10412',
+      addressCountry: 'EE',
+    },
+    vatID: site.kmkr,
+    sameAs: [site.instagram, site.facebook],
+  };
+}
+
+// inLanguage peab katma ainult selle turu keeled — .fi ei ole eestikeelne sait.
+const SCHEMA_LANGS: Record<string, string> = {
+  et: 'et-EE', ru: 'ru-RU', fi: 'fi-FI', sv: 'sv-FI',
 };
 
-const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: site.storefront,
-  url: site.url,
-  inLanguage: ['et-EE', 'ru-RU'],
-  publisher: { '@type': 'Organization', name: site.legal },
-};
+function websiteSchema(market: Market) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: market.storefront,
+    url: market.origin,
+    inLanguage: market.locales.map((l) => SCHEMA_LANGS[l] ?? l),
+    publisher: { '@type': 'Organization', name: site.legal },
+  };
+}
 
 // Locale-aware defaults. NB: no `alternates` here — every indexable page sets
 // its own canonical + hreflang pair via pageAlternates(). A site-wide default
@@ -52,9 +63,10 @@ const websiteSchema = {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const ru = locale === 'ru';
+  const market = marketForLocale(locale);
   return {
     title: {
-      template: '%s | Varjuprofiilid.ee',
+      template: `%s | ${market.storefront}`,
       default: ru
         ? 'Varjuprofiilid.ee — Алюминиевые теневые профили'
         : 'Varjuprofiilid.ee — Alumiinium varjuprofiilid',
@@ -62,9 +74,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: ru
       ? 'Алюминиевые теневые профили с LED-подсветкой и декоративные — для потолка, пола, стены. PROSPACE OÜ, Таллинн.'
       : 'Alumiinium varjuprofiilid LED-valgustusega ja dekoratiivsed — laele, põrandale, seinale. PROSPACE OÜ, Tallinn.',
-    metadataBase: new URL('https://varjuprofiilid.ee'),
+    // Turu päritolu, mitte kõva domeen: .fi lehtede OG- ja pildilingid peavad
+    // jääma prospace.fi peale, muidu satub jagaja Eesti saidile.
+    metadataBase: new URL(market.origin),
     openGraph: {
-      siteName: 'Varjuprofiilid.ee',
+      siteName: market.storefront,
       type: 'website',
       locale: ru ? 'ru_RU' : 'et_EE',
       alternateLocale: ru ? 'et_EE' : 'ru_RU',
@@ -97,6 +111,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound();
   }
 
+  const market = marketForLocale(locale);
   const messages = await getMessages();
 
   return (
@@ -107,7 +122,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           {process.env.NEXT_PUBLIC_YANDEX_VERIFICATION && (
             <meta name="yandex-verification" content={process.env.NEXT_PUBLIC_YANDEX_VERIFICATION} />
           )}
-          <JsonLd data={[orgSchema, websiteSchema]} />
+          <JsonLd data={[orgSchema(market), websiteSchema(market)]} />
         </head>
         <body>
           <NextIntlClientProvider messages={messages}>

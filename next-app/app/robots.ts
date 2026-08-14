@@ -1,4 +1,6 @@
 import type { MetadataRoute } from 'next';
+import { headers } from 'next/headers';
+import { marketFromHost } from '@/lib/markets';
 
 // Aggressive AI / scraper crawlers that generate heavy request volume without
 // SEO value. Blocking them here cuts load (the well-behaved ones obey robots.txt)
@@ -20,17 +22,30 @@ const BLOCKED_BOTS = [
   'Applebot-Extended',
 ];
 
-export default function robots(): MetadataRoute.Robots {
+// Sitemapid turu kaupa. Kummalgi domeenil peab robots.txt reklaamima ainult
+// oma sitemappe — vastasel juhul saadaks prospace.fi Google'i Eesti URL-idele.
+const SITEMAPS: Record<string, string[]> = {
+  ee: ['/sitemap.xml', '/sitemap-ru.xml'],
+  fi: ['/sitemap-fi.xml', '/sitemap-sv.xml'],
+};
+
+// Hosti lugemine muudab selle marsruudi dünaamiliseks — see on ainult
+// robots.txt, mitte leheküljed, seega hind on olematu.
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const h = await headers();
+  const market = marketFromHost(h.get('x-forwarded-host') ?? h.get('host'));
+
+  // Turg, mille sisu pole veel valmis, jääb otsimootoritele kinni. Nii ei jõua
+  // pooleldi tõlgitud lehed indeksisse ja hiljem ei pea vigu välja roomama.
+  if (!market.indexable) {
+    return { rules: [{ userAgent: '*', disallow: '/' }] };
+  }
+
   return {
     rules: [
       { userAgent: '*', allow: '/' },
       { userAgent: BLOCKED_BOTS, disallow: '/' },
     ],
-    // Two sitemaps: Estonian and Russian. Both are submitted in Google Search
-    // Console; /sitemap-ru.xml is also submitted in Yandex Webmaster.
-    sitemap: [
-      'https://varjuprofiilid.ee/sitemap.xml',
-      'https://varjuprofiilid.ee/sitemap-ru.xml',
-    ],
+    sitemap: (SITEMAPS[market.id] ?? SITEMAPS.ee).map((p) => `${market.origin}${p}`),
   };
 }
