@@ -11,11 +11,21 @@ import {
   BLOG_ENABLED,
   abs,
   ruPath,
+  publicPath,
 } from './pageUrls';
+import { MARKETS } from './markets';
+import { productPath } from './catalog';
+
+// Soome turu URL-id ehitatakse teisele päritolule — sitemapis peavad olema
+// absoluutsed lõplikud aadressid, mitte Eesti domeen soome slugiga.
+const FI_ORIGIN = MARKETS.fi.origin;
+const fiAbs = (path: string) => abs(path, FI_ORIGIN);
 
 export type SitemapEntry = {
   et: string;   // absolute ET url
   ru: string;   // absolute RU url
+  fi: string;   // absolute FI url (varjoprofiilit.fi)
+  sv: string;   // absolute SV url (varjoprofiilit.fi/sv)
   priority: number;
   changeFrequency: 'weekly' | 'monthly';
 };
@@ -31,6 +41,8 @@ export function sitemapEntries(): SitemapEntry[] {
     entries.push({
       et: abs(path),
       ru: abs(ruPath(path)),
+      fi: fiAbs(publicPath(path, 'fi')),
+      sv: fiAbs(publicPath(path, 'sv')),
       priority: path === '/' ? 1 : 0.8,
       changeFrequency: 'weekly',
     });
@@ -38,13 +50,21 @@ export function sitemapEntries(): SitemapEntry[] {
 
   for (const slug of INSPIRATION_SLUGS) {
     const path = `/inspiratsioon/${slug}`;
-    entries.push({ et: abs(path), ru: abs(ruPath(path)), priority: 0.6, changeFrequency: 'monthly' });
+    entries.push({
+      et: abs(path), ru: abs(ruPath(path)),
+      fi: fiAbs(publicPath(path, 'fi')), sv: fiAbs(publicPath(path, 'sv')),
+      priority: 0.6, changeFrequency: 'monthly',
+    });
   }
 
   if (BLOG_ENABLED) {
     for (const slug of BLOG_SLUGS) {
       const path = `/uudised/${slug}`;
-      entries.push({ et: abs(path), ru: abs(ruPath(path)), priority: 0.6, changeFrequency: 'monthly' });
+      entries.push({
+        et: abs(path), ru: abs(ruPath(path)),
+        fi: fiAbs(publicPath(path, 'fi')), sv: fiAbs(publicPath(path, 'sv')),
+        priority: 0.6, changeFrequency: 'monthly',
+      });
     }
   }
 
@@ -52,6 +72,8 @@ export function sitemapEntries(): SitemapEntry[] {
     entries.push({
       et: abs(noSlash(p.urlPath)),
       ru: abs(noSlash(`/ru${p.urlPathRu}`)),
+      fi: fiAbs(noSlash(productPath(p, 'fi'))),
+      sv: fiAbs(noSlash(productPath(p, 'sv'))),
       priority: 0.9,
       changeFrequency: 'monthly',
     });
