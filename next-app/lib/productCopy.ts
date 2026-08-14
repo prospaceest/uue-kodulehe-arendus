@@ -59,13 +59,44 @@ const RULES_RU: Rule[] = [
 // kirjelduses seisis — mõõt enne materjali, tehnika lõppu.
 const LABEL_ORDER_ET = ['Pikkus', 'Materjal', 'Värvid', 'RAL', 'LED-riba', 'LED'];
 const LABEL_ORDER_RU = ['Длина', 'Материал', 'Цвета', 'LED-лента', 'LED'];
+const LABEL_ORDER_FI = ['Pituus', 'Materiaali', 'Värit', 'RAL', 'LED-nauha', 'LED'];
+const LABEL_ORDER_SV = ['Längd', 'Material', 'Färger', 'RAL', 'LED-list', 'LED'];
+
+// Soome ja rootsi kirjeldused kirjutatakse TÄPSELT nende sissejuhatustega
+// (scripts/translate-catalog.ts sunnib need tõlkes peale) — nii saab sama
+// faktiploki ka Soome turul, ilma et parser peaks keelt "arvama".
+const RULES_FI: Rule[] = [
+  { re: /^Vakiopituus\s/i,               label: 'Pituus',     strip: /^Vakiopituus\s+/i },
+  { re: /^Pituus\s/i,                    label: 'Pituus',     strip: /^Pituus\s+/i },
+  { re: /^Materiaali\s/i,                label: 'Materiaali', strip: /^Materiaali\s+/i },
+  { re: /^Värit\s*:/i,                   label: 'Värit',      strip: /^Värit\s*:\s*/i },
+  { re: /^RAL-tilauksesta\s/i,           label: 'RAL',        strip: /^RAL-tilauksesta\s+/i },
+  { re: /^Suositeltu LED-nauha\s*:/i,    label: 'LED-nauha',  strip: /^Suositeltu LED-nauha\s*:\s*/i },
+  { re: /^LED-nauha ja diffuusori\s/i,   label: 'LED-nauha',  strip: /^LED-nauha ja diffuusori\s+/i },
+  { re: /^LED-toimintoa ei ole/i,        label: 'LED',        strip: /^LED-toimintoa\s+/i },
+];
+
+const RULES_SV: Rule[] = [
+  { re: /^Standardlängd\s/i,             label: 'Längd',      strip: /^Standardlängd\s+/i },
+  { re: /^Längd\s/i,                     label: 'Längd',      strip: /^Längd\s+/i },
+  { re: /^Material\s/i,                  label: 'Material',   strip: /^Material\s+/i },
+  { re: /^Färger\s*:/i,                  label: 'Färger',     strip: /^Färger\s*:\s*/i },
+  { re: /^RAL-beställning\s*:/i,         label: 'RAL',        strip: /^RAL-beställning\s*:\s*/i },
+  { re: /^Rekommenderad LED-list\s*:/i,  label: 'LED-list',   strip: /^Rekommenderad LED-list\s*:\s*/i },
+  { re: /^LED-list och diffusor\s/i,     label: 'LED-list',   strip: /^LED-list och diffusor\s+/i },
+  { re: /^LED-funktion saknas/i,         label: 'LED',        strip: /^LED-funktion\s+/i },
+];
 
 const PRICE_RE_ET = /^Hind (on|kehtib)\s/i;
 const PRICE_RE_RU = /^Цена за\s/i;
+const PRICE_RE_FI = /^Hinta (on|koskee)\s/i;
+const PRICE_RE_SV = /^Priset (gäller|är)\s/i;
 
 // "Standardpikkus 2,5 m, materjal alumiinium." → kaks eraldi fakti.
 const MATERIAL_TAIL_ET = /,\s*materjal\s+/i;
 const MATERIAL_TAIL_RU = /,\s*материал\s+—?\s*/i;
+const MATERIAL_TAIL_FI = /,\s*materiaali\s+/i;
+const MATERIAL_TAIL_SV = /,\s*material\s+/i;
 
 function sentences(text: string): string[] {
   // Lause lõpp = punkt/hüüumärk + tühik + suurtäht või number. Ilma
@@ -84,14 +115,25 @@ function tidy(value: string): string {
   return value.replace(/\s*[.;]\s*$/, '').trim();
 }
 
-export function splitDescription(text: string, ru: boolean): ProductCopy {
+// Keelepõhised tabelid ühte kohta, et splitDescription() ei kasvaks if-ahelaks.
+const BY_LOCALE = {
+  et: { rules: RULES_ET, price: PRICE_RE_ET, material: MATERIAL_TAIL_ET, materialLabel: 'Materjal',   order: LABEL_ORDER_ET },
+  ru: { rules: RULES_RU, price: PRICE_RE_RU, material: MATERIAL_TAIL_RU, materialLabel: 'Материал',   order: LABEL_ORDER_RU },
+  fi: { rules: RULES_FI, price: PRICE_RE_FI, material: MATERIAL_TAIL_FI, materialLabel: 'Materiaali', order: LABEL_ORDER_FI },
+  sv: { rules: RULES_SV, price: PRICE_RE_SV, material: MATERIAL_TAIL_SV, materialLabel: 'Material',   order: LABEL_ORDER_SV },
+} as const;
+
+/**
+ * @param locale 'et' | 'ru' | 'fi' | 'sv'. Tagasiühilduvus: boolean tähendab
+ *   endist `ru`-lippu.
+ */
+export function splitDescription(text: string, locale: string | boolean): ProductCopy {
   const empty: ProductCopy = { lead: '', body: [], facts: [], notes: [], priceNote: '' };
   if (!text || !text.trim()) return empty;
 
-  const rules = ru ? RULES_RU : RULES_ET;
-  const priceRe = ru ? PRICE_RE_RU : PRICE_RE_ET;
-  const materialTail = ru ? MATERIAL_TAIL_RU : MATERIAL_TAIL_ET;
-  const materialLabel = ru ? 'Материал' : 'Materjal';
+  const lang = typeof locale === 'boolean' ? (locale ? 'ru' : 'et') : locale;
+  const cfg = BY_LOCALE[lang as keyof typeof BY_LOCALE] ?? BY_LOCALE.et;
+  const { rules, price: priceRe, material: materialTail, materialLabel } = cfg;
 
   const all = sentences(text);
   const lead = all[0] ?? '';
@@ -164,7 +206,7 @@ export function splitDescription(text: string, ru: boolean): ProductCopy {
     body.push(narrative.slice(i, i + 2).join(' '));
   }
 
-  const order = ru ? LABEL_ORDER_RU : LABEL_ORDER_ET;
+  const order = cfg.order;
   const rank = (f: CopyFact) => {
     const i = order.indexOf(f.label);
     return i === -1 ? order.length : i;

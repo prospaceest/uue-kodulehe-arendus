@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCart } from '@/lib/cart';
-import { productUrl, type Product } from '@/lib/catalog';
+import { productUrl, productText, type Product } from '@/lib/catalog';
 import { getProductImages, getProductImagePath, getImageRole } from '@/lib/productImages';
 import { splitDescription } from '@/lib/productCopy';
 import { lp } from '@/lib/pageUrls';
@@ -58,7 +58,11 @@ export default function ProductClient({ product, related, locale }: Props) {
 
   // Kirjeldus tükeldatakse loetavateks osadeks: avalause ostuveergu, faktid
   // loetellu, ülejäänud proosa allapoole "Kirjeldus"-vahekaardile.
-  const copy = splitDescription(ru ? product.descriptionRu : product.description, ru);
+  // Tekstid keele kaupa (lib/catalog.ts productText). `lang` ütleb, mis keeles
+  // tekst tegelikult on — tõlke puudumisel on see eesti keel ja parser peab
+  // kasutama eesti reegleid, muidu ei tuvasta ta faktilauseid.
+  const text = productText(product, locale);
+  const copy = splitDescription(text.description, text.lang);
   const hasDescTab = copy.body.length > 0 || copy.notes.length > 0 || copy.priceNote !== '';
 
   const [color, setColor] = useState(product.colors[0]?.hex ?? '#000000');
@@ -101,7 +105,7 @@ export default function ProductClient({ product, related, locale }: Props) {
 
   const catalogHref = lp('/tooted', locale);
   const catLabel = ru ? CAT_RU[cat] ?? cat : cat;
-  const subtitle = ru ? product.seoNameRu : product.seoName;
+  const subtitle = text.seoName;
 
   // Image URLs for gallery — resolved from the PRODUCT_IMAGES manifest
   // (same source the catalog cards use), not a naive {SKU}_1.jpg guess.

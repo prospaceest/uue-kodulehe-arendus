@@ -25,6 +25,11 @@ export type Product = {
   inStock: boolean;
   description: string;
   descriptionRu: string;
+  // Soome ja rootsi tekstid. Valikulised: kuni tõlge puudub, kuvatakse
+  // eestikeelset teksti (parem kui tühi leht) ja kirjelduse parser lülitub
+  // sama loogika alusel eesti reeglitele.
+  descriptionFi?: string;
+  descriptionSv?: string;
   colors: ProductColor[];
   specs: ProductSpec[];
   ralPrice?: number;
@@ -32,6 +37,10 @@ export type Product = {
   hidden?: boolean;        // true = peidetud kõikjalt (loendid, otsing, sitemap, otse-URL 404)
   seoName: string;
   seoNameRu: string;
+  nameFi?: string;
+  nameSv?: string;
+  seoNameFi?: string;
+  seoNameSv?: string;
   slug: string;
   urlPath: string;         // e.g. '/led-varjuprofiilid/lae/ast22/'
   urlPathRu: string;       // e.g. '/led-profili/potolok/ast22/'
@@ -95,6 +104,42 @@ export function productUrl(p: Product, localeOrRu: string | boolean): string {
   const locale =
     typeof localeOrRu === 'boolean' ? (localeOrRu ? 'ru' : 'et') : localeOrRu;
   return productPath(p, locale).replace(/\/$/, '');
+}
+
+// Tootetekstid keele kaupa ühest kohast — nii ei teki komponentidesse
+// nelja-haruga ternareid ja tõlke puudumine on käsitletud ühes reeglis.
+export type ProductText = {
+  name: string;
+  seoName: string;
+  description: string;
+  /** Keel, milles tekst tegelikult on — kirjelduse parser vajab seda. */
+  lang: string;
+};
+
+export function productText(p: Product, locale: string): ProductText {
+  const pick = (translated: string | undefined, fallback: string) =>
+    translated && translated.trim() ? translated : fallback;
+
+  switch (locale) {
+    case 'ru':
+      return { name: p.nameRu, seoName: p.seoNameRu, description: p.descriptionRu, lang: 'ru' };
+    case 'fi':
+      return {
+        name: pick(p.nameFi, p.name),
+        seoName: pick(p.seoNameFi, p.seoName),
+        description: pick(p.descriptionFi, p.description),
+        lang: p.descriptionFi?.trim() ? 'fi' : 'et',
+      };
+    case 'sv':
+      return {
+        name: pick(p.nameSv, p.name),
+        seoName: pick(p.seoNameSv, p.seoName),
+        description: pick(p.descriptionSv, p.description),
+        lang: p.descriptionSv?.trim() ? 'sv' : 'et',
+      };
+    default:
+      return { name: p.name, seoName: p.seoName, description: p.description, lang: 'et' };
+  }
 }
 
 export function getProductsByCollection(collection: string): Product[] {

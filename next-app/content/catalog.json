@@ -53,7 +53,10 @@
    "urlPath": "/led-varjuprofiilid/poranda/asp102/",
    "urlPathRu": "/led-profili/pol/asp102/",
    "urlPathFi": "/led-varjoprofiilit/lattia/asp102/",
-   "urlPathSv": "/led-skuggprofiler/golv/asp102/"
+   "urlPathSv": "/led-skuggprofiler/golv/asp102/",
+   "nameFi": "ASP102",
+   "seoNameFi": "Lattian LED-varjoprofiili",
+   "descriptionFi": "ASP102 on suosittu lattian LED-varjoprofiili — 20 mm korkea, piiloasennettava alumiiniprofiili, joka korvaa perinteisen jalkalistan. Toisin kuin jalkalista, profiili ei jää seinäpinnan eteen ulkonemaan, vaan on seinän kanssa samassa tasossa. Tulos: huone näyttää siltä, kuin seinä alkaisi suoraan lattiasta — täysin puhdas, suora linja. Profiilin uraan asennettava LED-nauha tuo pehmeän piilovalaistuksen lattian lähelle — sopii erityisen hyvin makuuhuoneisiin ja käytäviin. Profiili asennetaan kipsilevyn alle ennen pintakäsittelyä. Vakiopituus 2,6 m. Saatavana väreissä: anodisoitu hopea, musta, valkoinen ja käsittelemätön pinta. Suositeltu LED-nauha: COB 16 W/m, 1350 lm/m, CRI 94, 24V. Klipsidiffuusorit ja päätytulpat erillisellä tilauksella. ASP102 on varastossa."
   },
   {
    "sku": "LHV10",
@@ -107,7 +110,10 @@
    "urlPath": "/led-varjuprofiilid/poranda/lhv10/",
    "urlPathRu": "/led-profili/pol/lhv10/",
    "urlPathFi": "/led-varjoprofiilit/lattia/lhv10/",
-   "urlPathSv": "/led-skuggprofiler/golv/lhv10/"
+   "urlPathSv": "/led-skuggprofiler/golv/lhv10/",
+   "nameFi": "LHV10",
+   "seoNameFi": "Lattian LED-varjoprofiili",
+   "descriptionFi": "LHV10:n lattiaversio on 10 mm leveä piiloasennettava LED-varjoprofiili — asennetaan lattian ja seinän liitoskohtaan niin, että profiili korvaa perinteisen jalkalistan. Sisällä oleva LED-kanava antaa pehmeän valolinjan lattian koko kehän mitalla — vaikutelma on selkeä: leijuvan seinän tuntu, pehmeä ja hillitty yövalaistus kulkureitille ilman seinään asennettavaa valaisinta. 20 mm profiilin korkeus tarkoittaa, että LED-kanavasta jää näkyviin vain valoa säteilevä linjaosa; muu rakenne sulautuu seinän tasoon. Asennetaan seinäpinnan kanssa samaan tasoon — piiloreunalla, ilman näkyviä kiinnikkeitä. Vakiopituus 2,5 m, materiaali alumiini. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy. Suositeltu LED-nauha: COB 16 W/m, 1350 lm/m, CRI 94, 24V — yhtenäinen valolinja ilman LED-pisteitä. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %."
   },
   {
    "sku": "LHV10",
@@ -161,7 +167,10 @@
    "urlPath": "/led-varjuprofiilid/poranda/lhv10/",
    "urlPathRu": "/led-profili/pol/lhv10/",
    "urlPathFi": "/led-varjoprofiilit/lattia/lhv10/",
-   "urlPathSv": "/led-skuggprofiler/golv/lhv10/"
+   "urlPathSv": "/led-skuggprofiler/golv/lhv10/",
+   "nameFi": "LHV10",
+   "seoNameFi": "Lattian LED-varjoprofiili",
+   "descriptionFi": "LHV10:n kattoversio on 10 mm leveä piiloasennettava LED-varjoprofiili — sama malli kuin lattiassa, mutta sopii myös katon ja seinän liitoskohtaan. Hienovarainen 10 mm varjolinja antaa silmälle alitajuisen vihjeen katon rajasta, ilman että mikään yksityiskohta vetäisi huomiota. Sisäänrakennettu LED-kanava antaa pehmeän piilovalaistuksen koko kehän mitalla; valo ei näy LED-nauhana, vaan tasaisena linjavalona katon reunassa. Sopii erityisen hyvin korkeisiin tiloihin, joissa leveämpi profiili vaikuttaisi raskaalta. Tasoitettavalla reunalla — asennetaan kipsilevyn alle niin, että profiilin reuna jää levyn tason kanssa samaan tasoon; siirtymä on pintakäsittelyn jälkeen näkymätön. Vakiopituus 2,5 m. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V. Hinta koskee 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi."
   },
   {
    "sku": "AST20",
@@ -215,7 +224,10 @@
    "urlPath": "/varjuprofiilid/lae/ast20/",
    "urlPathRu": "/dekor-profili/potolok/ast20/",
    "urlPathFi": "/varjoprofiilit/katto/ast20/",
-   "urlPathSv": "/skuggprofiler/tak/ast20/"
+   "urlPathSv": "/skuggprofiler/tak/ast20/",
+   "nameFi": "AST20",
+   "seoNameFi": "Katon varjoprofiili",
+   "descriptionFi": "AST20 on 10 mm hienovarainen katon varjoprofiili ilman LED-toimintoa — sopii projekteihin, joissa tarvitaan arkkitehtonista varjolinjaa katon ja seinän väliin, mutta ei piilovalaistusta. Tulos on hillitty linja, jonka silmä rekisteröi alitajuisesti — tila tuntuu viimeistellymmältä ilman, että yksikään yksityiskohta vetäisi huomiota. Sopii hyvin pienempiin tiloihin, joissa leveämpi profiili vaikuttaisi raskaalta, sekä projekteihin, joissa budjetissa ei ole tilaa LED-järjestelmälle, mutta varjolinjan yksityiskohta halutaan silti. Tasoitettavalla reunalla — asennetaan kipsilevyn alle niin, että profiilin reuna jää levyn tason kanssa samaan tasoon; siirtymä on pintakäsittelyn jälkeen näkymätön. Vakiopituus 2,5 m, materiaali alumiini. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, kysy tarjousta."
   },
   {
    "sku": "AST10",
@@ -269,7 +281,10 @@
    "urlPath": "/varjuprofiilid/lae/ast10/",
    "urlPathRu": "/dekor-profili/potolok/ast10/",
    "urlPathFi": "/varjoprofiilit/katto/ast10/",
-   "urlPathSv": "/skuggprofiler/tak/ast10/"
+   "urlPathSv": "/skuggprofiler/tak/ast10/",
+   "nameFi": "AST10",
+   "seoNameFi": "Katon varjoprofiili",
+   "descriptionFi": "AST10 on 10 mm hoikka katon varjoprofiili ilman LED-toimintoa — sama mitta kuin AST20:ssa, mutta erilaisella sisäprofiilin muodolla ja hieman edullisempaan hintaan. Vaihtoehto niille, joiden rakenteissa AST20:n asennus on hankalaa tai jotka suosivat hieman toisenlaista syvennyksen geometriaa. Tuloksena on hillitty varjolinja katon ja seinän liitoskohdassa — tila vaikuttaa viimeistellymmältä ilman huomiota herättävää yksityiskohtaa. Sopii erityisen hyvin pienempiin tiloihin ja asuntoihin, joissa leveämpi profiili vaikuttaisi dominoivalta. Tasoitettava reuna — kipsilevyn alle, profiilin reuna jää levyn tason kanssa samaan tasoon. Vakiopituus 2,5 m, materiaali alumiini. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). LED-toimintoa ei ole — jos haluat katon LED-valolla, katso AST12 (samanleveyinen LED-versio). Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %."
   },
   {
    "sku": "AST8",
@@ -323,7 +338,10 @@
    "urlPath": "/varjuprofiilid/lae/ast8/",
    "urlPathRu": "/dekor-profili/potolok/ast8/",
    "urlPathFi": "/varjoprofiilit/katto/ast8/",
-   "urlPathSv": "/skuggprofiler/tak/ast8/"
+   "urlPathSv": "/skuggprofiler/tak/ast8/",
+   "nameFi": "AST8",
+   "seoNameFi": "Katon varjoprofiili",
+   "descriptionFi": "AST8 on 8 mm hoikka katon varjoprofiili — AST5:n (5 mm) jälkeen toinen ohuin mallimme. Tarkoitettu projekteihin, joissa tarvitaan mahdollisimman hillittyä varjolinjaa — sellaista, jonka silmä aistii alitajuisesti, mutta jonka olemassaoloa ei suoranaisesti huomaa. Sopii hyvin pienempiin tiloihin, makuuhuoneisiin ja työhuoneisiin, joissa leveämpi profiili vaikuttaisi raskaalta. Tuloksena on selkeä arkkitehtoninen yksityiskohta — ilman huomiota herättävää elementtiä. Tasoitettava reuna — asennetaan kipsilevyn alle niin, että profiilin reuna jää levyn tason kanssa samaan tasoon; siirtymä on viimeistelyn jälkeen näkymätön. Vakiopituus 2,5 m, materiaali alumiini. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). LED-toimintoa ei ole — tämän leveyden profiilin sisään LED-nauha ei mahdu. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi."
   },
   {
    "sku": "AST5",
@@ -377,7 +395,10 @@
    "urlPath": "/varjuprofiilid/lae/ast5/",
    "urlPathRu": "/dekor-profili/potolok/ast5/",
    "urlPathFi": "/varjoprofiilit/katto/ast5/",
-   "urlPathSv": "/skuggprofiler/tak/ast5/"
+   "urlPathSv": "/skuggprofiler/tak/ast5/",
+   "nameFi": "AST5",
+   "seoNameFi": "Katon varjoprofiili",
+   "descriptionFi": "AST5 on valikoimamme ohuin koristeellinen katon varjoprofiili — vain 5 mm tarkoituksellinen varjo katon ja seinän välissä. Toisin kuin LED-versioisissa profiileissa, AST5:ssä ei ole valaistustoimintoa, painopiste on puhtaasti arkkitehtonisessa yksityiskohdassa: hieno, hillitty varjolinja. Sopii pienempiin tiloihin (kylpyhuone, eteinen, pieni makuuhuone), joissa suurempi varjolinja vaikuttaisi liialliselta. Matalan katon tapauksessa AST5 on ideaali. Tasoitettava reuna: asennetaan kipsilevyn tason kanssa samaan tasoon, siirtymä on viimeistelyn jälkeen näkymätön. Saatavana valkoisena, mustana ja käsittelemättömänä; RAL-tilauksesta mikä tahansa sävy. Vakiopituus 2,5 m."
   },
   {
    "sku": "AST45",
@@ -448,7 +469,10 @@
    "urlPath": "/led-varjuprofiilid/lae/ast45/",
    "urlPathRu": "/led-profili/potolok/ast45/",
    "urlPathFi": "/led-varjoprofiilit/katto/ast45/",
-   "urlPathSv": "/led-skuggprofiler/tak/ast45/"
+   "urlPathSv": "/led-skuggprofiler/tak/ast45/",
+   "nameFi": "Katon uppo-LED-varjoprofiili 45mm",
+   "seoNameFi": "Katon uppo-LED-varjoprofiili",
+   "descriptionFi": "Kattoon upotettava katon varjoprofiili sisäänrakennetulla LED-kanavalla — tasoitettava reuna sulautuu kipsipintaan ja muodostaa siistin leijuvan valolistan. Syvä 68 mm profiili mahduttaa LED-nauhan ja luo seinän ja katon väliin kontrastisen varjolinjan. Sopii myös piilovalon asennukseen. Hinta koskee RAL-maalattua 1 m profiilia — käsittelemättömän alumiinin saa edullisemmin."
   },
   {
    "sku": "LPA909",
@@ -498,7 +522,10 @@
    "urlPath": "/varjuprofiilid/seina/lpa909/",
    "urlPathRu": "/dekor-profili/stena/lpa909/",
    "urlPathFi": "/varjoprofiilit/seina/lpa909/",
-   "urlPathSv": "/skuggprofiler/vagg/lpa909/"
+   "urlPathSv": "/skuggprofiler/vagg/lpa909/",
+   "nameFi": "LPA909",
+   "seoNameFi": "Seinän varjoprofiili",
+   "descriptionFi": "LPA909 on valikoimamme ohuin koristeellinen seinän varjoprofiili — vain 8,8 mm leveä alumiiniprofiili ilman LED-tukea. Sen pääkäyttö on seinäpintojen siirtymien piilottaminen: kahden seinäkerroksen liitoskohta tai yksinkertaisesti koristeellinen linja seinässä. Siinä missä ASP116 ja muut leveämmät seinäprofiilit luovat selvästi näkyvän linjan, LPA909 jättää vain hienon varjon, jonka silmä rekisteröi alitajuisesti. Sopii minimalistiseen sisustukseen, jossa jokainen ylimääräinen yksityiskohta olisi häiritsevä. Tasoitettava reuna, asennetaan kipsilevyn pinnan tasoon. Vakiopituus 3 m. Saatavana käsittelemätön ja musta viimeistely, RAL-tilauksesta kaikki sävyt. Alhaisen hinnan vuoksi LPA909 on myös edullisin tapa lisätä seinään arkkitehtoninen yksityiskohta."
   },
   {
    "sku": "RST14",
@@ -557,7 +584,10 @@
    "urlPath": "/led-varjuprofiilid/lae/rst14/",
    "urlPathRu": "/led-profili/potolok/rst14/",
    "urlPathFi": "/led-varjoprofiilit/katto/rst14/",
-   "urlPathSv": "/led-skuggprofiler/tak/rst14/"
+   "urlPathSv": "/led-skuggprofiler/tak/rst14/",
+   "nameFi": "RST14_12",
+   "seoNameFi": "Katon LED-varjoprofiili",
+   "descriptionFi": "RST14 on katon LED-varjoprofiili, leveys 13 mm — asennetaan katon ja seinän liitoskohtaan niin, että toinen reuna sulautuu kipsilevyn pinnan tasoon ja toinen jää seinäpinnan tasoon. Sisällä oleva LED-kanava antaa pehmeän valolinjan huoneen kehän mitalta. Profiili sopii hyvin neutraaliksi kattoyksityiskohdaksi, kun ei haluta liian leveää varjolinjaa — 13 mm jää havaittavaksi, mutta ei dominoivaksi. Värivalikoimassa on myös anodisoitu hopea, joka sopii hopeanvärisillä pintakäsittelyillä varustettuihin tiloihin. Tasoitettava reuna, asennus kipsilevyn alle. Vakiopituus 2,5 m, materiaali alumiini. Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V — korkea LED-tiheys antaa täysin tasaisen valon ilman näkyviä pisteitä. LED-nauha ja diffuusori tilataan erikseen. Hinnat ovat 1 m maalattua profiilia kohti, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi."
   },
   {
    "sku": "AST201",
@@ -611,7 +641,10 @@
    "urlPath": "/led-varjuprofiilid/lae/ast201/",
    "urlPathRu": "/led-profili/potolok/ast201/",
    "urlPathFi": "/led-varjoprofiilit/katto/ast201/",
-   "urlPathSv": "/led-skuggprofiler/tak/ast201/"
+   "urlPathSv": "/led-skuggprofiler/tak/ast201/",
+   "nameFi": "AST201",
+   "seoNameFi": "Katon LED-varjoprofiili",
+   "descriptionFi": "AST201 on katon LED-varjoprofiili, leveys 22,5 mm — sama mitta kuin suositulla AST22:lla, mutta syvennyksen geometria on erilainen. Vaihtoehto niille, jotka pitävät AST201:n profiilin muodosta ja viimeistelystä. Yleensä käytetään AST22:ta (varastotilanne, hinta); AST201 on valikoimassa niille, joiden projekti vaatii juuri tämän profiilin geometriaa. Tasoitettava reuna, asennetaan kipsilevyn alle. Vakiopituus 2,5 m. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy. Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V — korkea LED-tiheys antaa tasaisimman valolinjan, joka sopii AST201:n syvempään syvennykseen erityisen hyvin."
   },
   {
    "sku": "AST50",
@@ -661,7 +694,10 @@
    "urlPath": "/led-varjuprofiilid/lae/ast50/",
    "urlPathRu": "/led-profili/potolok/ast50/",
    "urlPathFi": "/led-varjoprofiilit/katto/ast50/",
-   "urlPathSv": "/led-skuggprofiler/tak/ast50/"
+   "urlPathSv": "/led-skuggprofiler/tak/ast50/",
+   "nameFi": "AST50",
+   "seoNameFi": "Katon LED-varjoprofiili",
+   "descriptionFi": "AST50 on monikäyttöinen katon LED-varjoprofiili, joka eroaa muista siinä, että profiili ei kiinnity seinään — se voidaan asentaa kattoon juuri niin kauas seinästä kuin projekti vaatii. Tämä vapaus tekee AST50:stä ainoan valinnan tilanteissa, joissa tavallinen kehäprofiili ei sovi. Suosituin käyttö on verhojen ylävalaistus — profiili asennetaan muutamasta senttimetristä metrin etäisyydelle seinästä. AST50 sopii hyvin yhteen verhoprofiiliemme KA1 ja KA2 kanssa. Vakiopituus 2,5 m. Värit: anodisoitu hopea, musta, valkoinen, käsittelemätön. RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V. Diffuusori tilataan erikseen."
   },
   {
    "sku": "AST35",
@@ -715,7 +751,10 @@
    "urlPath": "/led-varjuprofiilid/lae/ast35/",
    "urlPathRu": "/led-profili/potolok/ast35/",
    "urlPathFi": "/led-varjoprofiilit/katto/ast35/",
-   "urlPathSv": "/led-skuggprofiler/tak/ast35/"
+   "urlPathSv": "/led-skuggprofiler/tak/ast35/",
+   "nameFi": "AST35",
+   "seoNameFi": "Katon LED-varjoprofiili",
+   "descriptionFi": "AST35 on 35 mm leveä katon LED-varjoprofiili — leveämpi vakiomallimme, joka sopii avarampiin tiloihin, korkeampiin huoneisiin ja julkisiin tiloihin, joissa leveämpi varjolinja toimii edustavana yksityiskohtana. Vertailun vuoksi: AST22 on 22,5 mm, AST25 on 25 mm. Leveämpi syvennys tarkoittaa enemmän tilaa LED-nauhalle ja diffuusorille — valo jakautuu tasaisesti eikä silmä näe LED-pisteitä profiilin sisällä. Profiili antaa yhtä aikaa varjovaikutelman ja pehmeän piilovalaistuksen koko kehän matkalla. Asennetaan katon ja seinän liitoskohtaan, tasoitettavalla reunalla; siirtymä kipsilevyn pinnan tasoon. Vakiopituus 2,5 m. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V. LED-nauha ja diffuusori tilataan erikseen. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %."
   },
   {
    "sku": "AST30",
@@ -769,7 +808,10 @@
    "urlPath": "/led-varjuprofiilid/lae/ast30/",
    "urlPathRu": "/led-profili/potolok/ast30/",
    "urlPathFi": "/led-varjoprofiilit/katto/ast30/",
-   "urlPathSv": "/led-skuggprofiler/tak/ast30/"
+   "urlPathSv": "/led-skuggprofiler/tak/ast30/",
+   "nameFi": "AST30",
+   "seoNameFi": "Katon LED-varjoprofiili",
+   "descriptionFi": "AST30 on 30 mm leveä katon LED-varjoprofiili — välimitta AST25:n (25 mm) ja AST35:n (35 mm) väliltä. Sopii silloin, kun projekti vaatii huomattavampaa varjolinjaa kuin 25 mm, mutta 35 mm tuntuisi jo liian leveältä. Profiilin sisällä on integroitu LED-kanava, joka antaa pehmeän piilovalaistuksen koko kehän matkalla. 30 mm syvennys antaa riittävästi tilaa LED-nauhalle + diffuusorille, jotta valo jakautuu tasaisesti ilman näkyviä pisteitä. Asennetaan katon ja seinän liitoskohtaan — tasoitettavalla reunalla, kipsilevyn pinnan tasoon. Käytetään usein olohuoneissa ja käytävissä, joissa halutaan vahvempaa varjolinjaa, mutta joissa AST35 vaikuttaisi raskaalta. Vakiopituus 2,5 m. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy. Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V. LED-nauha ja diffuusori tilataan erikseen."
   },
   {
    "sku": "AST22",
@@ -823,7 +865,10 @@
    "urlPath": "/led-varjuprofiilid/lae/ast22/",
    "urlPathRu": "/led-profili/potolok/ast22/",
    "urlPathFi": "/led-varjoprofiilit/katto/ast22/",
-   "urlPathSv": "/led-skuggprofiler/tak/ast22/"
+   "urlPathSv": "/led-skuggprofiler/tak/ast22/",
+   "nameFi": "AST22",
+   "seoNameFi": "Katon LED-varjoprofiili",
+   "descriptionFi": "AST22 on suosituin katon LED-varjoprofiilimme — 22,5 mm leveä alumiiniprofiili, joka asennetaan katon ja seinän liitoskohtaan. Sisäänrakennettu LED-kanava tekee siitä ratkaisun, joka luo yhtä aikaa varjovaikutelman ja pehmeän piilovalaistuksen tilan koko kehän matkalla. Saatavana väreissä: anodisoitu hopea, musta, valkoinen ja käsittelemätön pinta; RAL-tilauksesta mikä tahansa sävy. Vakiopituus 2,5 m. Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V — korkea LED-tiheys antaa täysin tasaisen valolinjan ilman näkyviä pisteitä. LED-nauha ja diffuusori tilataan erikseen."
   },
   {
    "sku": "AST14_12",
@@ -882,7 +927,10 @@
    "urlPath": "/led-varjuprofiilid/lae/ast14-12/",
    "urlPathRu": "/led-profili/potolok/ast14-12/",
    "urlPathFi": "/led-varjoprofiilit/katto/ast14-12/",
-   "urlPathSv": "/led-skuggprofiler/tak/ast14-12/"
+   "urlPathSv": "/led-skuggprofiler/tak/ast14-12/",
+   "nameFi": "AST14_12",
+   "seoNameFi": "Katon LED-varjoprofiili",
+   "descriptionFi": "AST14_12 on 14 mm leveä katon LED-varjoprofiili — hienon varjolinjan malli sisäänrakennetulla LED-kanavalla. Välivalinta niille, joille AST5 / AST8 / AST10 on liian hieno ja AST22 / AST25 liian leveä. 14 mm linja jää havaittavaksi arkkitehtoniseksi yksityiskohdaksi, mutta ei hallitse tilaa. Väripaletissa on anodisoitu hopea, joka sopii erityisesti hopeisiin tai neutraaleihin pintakäsittelyihin. Asennetaan katon ja seinän liitoskohtaan, tasoitettavalla reunalla — siirtymä kipsilevyn pinnan tasoon on viimeistelyn jälkeen näkymätön. Vakiopituus 2,5 m, materiaali alumiini. Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V — korkea tiheys antaa tasaisen valon. LED-nauha ja diffuusori tilataan erikseen. Hinnat ovat 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, pyydä tarjous."
   },
   {
    "sku": "RST25",
@@ -936,7 +984,10 @@
    "urlPath": "/led-varjuprofiilid/lae/rst25/",
    "urlPathRu": "/led-profili/potolok/rst25/",
    "urlPathFi": "/led-varjoprofiilit/katto/rst25/",
-   "urlPathSv": "/led-skuggprofiler/tak/rst25/"
+   "urlPathSv": "/led-skuggprofiler/tak/rst25/",
+   "nameFi": "RST25",
+   "seoNameFi": "Katon LED-varjoprofiili",
+   "descriptionFi": "RST25 on 25 mm leveä katon LED-varjoprofiili — sama mitta kuin suositussa AST25:ssä, mutta syvennyksen geometria on erilainen. Vaihtoehto niille, jotka suosivat RST-sarjan profiilin muotoa ja asennustapaa. Sisäänrakennettu LED-kanava antaa pehmeän piilovalaistuksen koko kehän mitalle; 25 mm leveys jättää riittävästi tilaa sekä LED-nauhalle että diffuusorille, joten valo jakautuu tasaisesti ilman näkyviä pisteitä. Sopii olohuoneisiin, makuuhuoneisiin ja suurempiin käytäviin, joissa leveämpi varjolinja toimii edustavana yksityiskohtana. Asennetaan katon ja seinän liitoskohtaan — tasoitettava reuna, kipsilevyn pinnan tasoon. Vakiopituus 2,5 m, materiaali alumiini. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V. LED-nauha ja diffuusori tilataan erikseen. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %."
   },
   {
    "sku": "ASP611",
@@ -981,7 +1032,10 @@
    "urlPath": "/varjuprofiilid/seina/asp611/",
    "urlPathRu": "/dekor-profili/stena/asp611/",
    "urlPathFi": "/varjoprofiilit/seina/asp611/",
-   "urlPathSv": "/skuggprofiler/vagg/asp611/"
+   "urlPathSv": "/skuggprofiler/vagg/asp611/",
+   "nameFi": "ASP611",
+   "seoNameFi": "Seinän varjoprofiili",
+   "descriptionFi": "ASP611 on 60 mm korkea seinän varjoprofiili — tasoitettava seinän piiloprofiili, jota käytetään upotettuihin ovenkarmeihin ja seinän varjoksi. Asennetaan pystysuoraan seinäpinnan ja ovenkarmin väliin niin, että tuloksena on tasainen siirtymä seinäpintaan, jossa ovi näyttää kasvavan seinän sisältä ilman perinteisen ovenkarmin näkyvää yksityiskohtaa. Sopii erityisen hyvin nykyaikaisiin sisustuksiin, joissa halutaan minimalistinen siirtymä ovien ja seinien välillä. Tasoitettava reuna — kipsilevyn alle, profiilin reuna jää levyn pinnan tasoon; siirtymä on viimeistelyn jälkeen näkymätön. Vakiopituus 2,6 m, materiaali alumiini. Väri: käsittelemätön; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Hinta koskee RAL-maalattua 1 m profiilia, sisältää ALV 25,5 %; käsittelemättömän profiilin saa edullisemmin, kysy tarjousta."
   },
   {
    "sku": "ASP411",
@@ -1025,7 +1079,10 @@
    "urlPath": "/varjuprofiilid/seina/asp411/",
    "urlPathRu": "/dekor-profili/stena/asp411/",
    "urlPathFi": "/varjoprofiilit/seina/asp411/",
-   "urlPathSv": "/skuggprofiler/vagg/asp411/"
+   "urlPathSv": "/skuggprofiler/vagg/asp411/",
+   "nameFi": "ASP411",
+   "seoNameFi": "Seinän varjoprofiili",
+   "descriptionFi": "ASP411 on 40 mm korkea seinän varjoprofiili — kompaktimpi versio ASP611:sta (60 mm), jonka korkeutta on pienennetty, jotta se sopii pienempiin tiloihin ja kohtiin, joissa 60 mm vaikuttaisi liian leveältä. Sama tasoitettava asennus — sopii upotettuihin ovenkarmeihin ja seinien pystysuoraan korostamiseen. 40 mm tarkoittaa, että profiili tuntuu silmälle arkkitehtoniselta yksityiskohdalta, mutta ei dominoi. Sopii asuntoihin, makuuhuoneisiin ja käytäviin, joissa 60 mm profiilin käyttö olisi liikaa. Asennetaan kipsilevyn alle — profiilin reuna jää levyn pinnan tasoon; siirtymä on viimeistelyn jälkeen näkymätön. Vakiopituus 2,6 m, materiaali alumiini. Väri: käsittelemätön; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Hinta koskee RAL-maalattua 1 m profiilia, sisältää ALV 25,5 %; käsittelemättömän profiilin saa edullisemmin, kysy tarjousta."
   },
   {
    "sku": "ASP198",
@@ -1069,7 +1126,10 @@
    "urlPath": "/varjuprofiilid/seina/asp198/",
    "urlPathRu": "/dekor-profili/stena/asp198/",
    "urlPathFi": "/varjoprofiilit/seina/asp198/",
-   "urlPathSv": "/skuggprofiler/vagg/asp198/"
+   "urlPathSv": "/skuggprofiler/vagg/asp198/",
+   "nameFi": "ASP198",
+   "seoNameFi": "Seinän varjoprofiili",
+   "descriptionFi": "ASP198 on 91 mm korkea seinän varjoprofiili — korkein seinän piiloprofiilimme. Tarkoitettu julkisiin ja edustustiloihin, joissa tarvitaan huomiota herättävä seinäyksityiskohta: hotellien auloihin, toimistoihin, liiketiloihin. 91 mm leveys tarkoittaa, että profiili vaikuttaa arkkitehtonisesti hallitsevana yksityiskohtana — sopii seinälevyjen välisten liitoskohtien korostamiseen, kerrossiirtymän visuaaliseen painottamiseen tai suurten seinien jaksottamiseen. Tasoitettava reuna — asennetaan kipsilevyn alle niin, että profiilin reuna jää levyn pinnan tasoon; siirtymä on viimeistelyn jälkeen näkymätön. Vakiopituus 2,6 m, materiaali alumiini. Väri: käsittelemätön; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). LED-toimintoa ei ole. Hinta koskee RAL-maalattua 1 m profiilia, sisältää ALV 25,5 %; käsittelemättömän profiilin saa edullisemmin, kysy tarjousta."
   },
   {
    "sku": "ASP168",
@@ -1113,7 +1173,10 @@
    "urlPath": "/varjuprofiilid/seina/asp168/",
    "urlPathRu": "/dekor-profili/stena/asp168/",
    "urlPathFi": "/varjoprofiilit/seina/asp168/",
-   "urlPathSv": "/skuggprofiler/vagg/asp168/"
+   "urlPathSv": "/skuggprofiler/vagg/asp168/",
+   "nameFi": "ASP168",
+   "seoNameFi": "Seinän varjoprofiili",
+   "descriptionFi": "ASP168 on 60 mm korkea seinän varjoprofiili — sama korkeus kuin ASP611:llä, mutta sisäprofiilin muoto on erilainen ja hintaluokka edullisempi. Vaihtoehto niille, jotka rakentamisessa suosivat ASP168:n asennusgeometriaa tai joiden budjetti ei riitä ASP611:een. Käyttöalue on sama: tasoitettava seinän piiloprofiili sisäänvedettyihin ovenkarmeihin ja seinien pystysuuntaiseen korostamiseen. Tuloksena on tasainen siirtymä seinäpintaan — ovi vaikuttaa kasvavan seinään. Tasoitettava reuna — asennetaan kipsilevyn alle, profiilin reuna jää levyn tasoon; siirtymä on viimeistelyn jälkeen näkymätön. Vakiopituus 2,6 m, materiaali alumiini. Väri: käsittelemätön; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). LED-toimintoa ei ole. Hinta on 1 m RAL-maalattua profiilia, sisältää ALV 25,5 %; käsittelemättömän profiilin saa edullisemmin, kysy tarjousta."
   },
   {
    "sku": "ASP117",
@@ -1163,7 +1226,10 @@
    "urlPath": "/varjuprofiilid/poranda/asp117/",
    "urlPathRu": "/dekor-profili/pol/asp117/",
    "urlPathFi": "/varjoprofiilit/lattia/asp117/",
-   "urlPathSv": "/skuggprofiler/golv/asp117/"
+   "urlPathSv": "/skuggprofiler/golv/asp117/",
+   "nameFi": "ASP117",
+   "seoNameFi": "Lattian varjoprofiili",
+   "descriptionFi": "ASP117 on 70 mm korkea lattian varjoprofiili — keskikorkea malli ilman LED-toimintoa. Sopii hyvin perinteisen jalkalistan tilalle, kun lattian ja seinän väliin halutaan selkeä arkkitehtoninen linja, mutta ei piilovalaistusta. Värivalikoimassa on anodisoitu hopea, joka sopii tiloihin, joissa on hopeanvärisiä pintakäsittelyjä — yhdistelmä toimii erityisen hyvin nykyaikaisten keittiöiden ja kylpyhuoneiden kanssa. Asennetaan piiloreunalla, kipsilevyn alle — siirtymä seinäpintaan on viimeistelyn jälkeen näkymätön. Vakiopituus 2,6 m, materiaali alumiini. Värit: käsittelemätön, hopea; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). LED-toimintoa ei ole — jos haluat saman korkuisen LED-version, katso ASP905 (49,5 mm, LED:llä). Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, kysy tarjousta."
   },
   {
    "sku": "ASP116",
@@ -1214,7 +1280,10 @@
    "urlPath": "/varjuprofiilid/seina/asp116/",
    "urlPathRu": "/dekor-profili/stena/asp116/",
    "urlPathFi": "/varjoprofiilit/seina/asp116/",
-   "urlPathSv": "/skuggprofiler/vagg/asp116/"
+   "urlPathSv": "/skuggprofiler/vagg/asp116/",
+   "nameFi": "ASP116",
+   "seoNameFi": "Seinän varjoprofiili",
+   "descriptionFi": "ASP116 on koristeellinen seinän varjoprofiili — 60 mm korkea alumiiniprofiili ilman LED-toimintoa. Sopii niille, jotka haluavat seinään selkeän arkkitehtonisen linjan, mutta eivät tarvitse siihen integroitua valaistusta. Toisin kuin LED-versioiset seinän piiloprofiilit (ASP610, ASP410), joiden sisään asennetaan LED-nauha, ASP116 on puhtaasti esteettinen yksityiskohta. Tämä yksinkertaistaa asennusta — sähköä ei tarvitse suunnitella ennakkoon — ja pienentää projektin kokonaiskulua. Profiili asennetaan seinän sisään kipsilevyn alle ennen viimeistelyä. Pituus 2,6 m. Saatavana väreissä: anodisoitu hopea, musta, valkoinen; RAL-sävyt tilauksesta. Sopii minimalistiseen sisustukseen, jossa tarvitaan puhdas linja ilman valaistuselementtiä."
   },
   {
    "sku": "ASP112",
@@ -1269,7 +1338,10 @@
    "urlPath": "/varjuprofiilid/poranda/asp112/",
    "urlPathRu": "/dekor-profili/pol/asp112/",
    "urlPathFi": "/varjoprofiilit/lattia/asp112/",
-   "urlPathSv": "/skuggprofiler/golv/asp112/"
+   "urlPathSv": "/skuggprofiler/golv/asp112/",
+   "nameFi": "ASP112",
+   "seoNameFi": "Lattian varjoprofiili",
+   "descriptionFi": "ASP112 on 20 mm korkea lattian varjoprofiili — kompakti malli ilman LED-toimintoa. Sopii hyvin pienempiin asuintiloihin ja asuntoihin, joissa halutaan korvata perinteinen jalkalista, mutta ei ASPL35:n tai ASPL60:n hallitsevaa valorakennetta. Kompakti korkeus tarkoittaa hillittyä linjayksityiskohtaa lattian ja seinän välissä — silmä rekisteröi sen alitajuisesti, tila vaikuttaa viimeistellymmältä. Värivalikoimassa on anodisoitu hopea ja musta, jotka sopivat sekä vaaleisiin että tummiin sisustuksiin. Asennetaan piiloreunalla, kipsilevyn alle — siirtymä seinäpintaan on viimeistelyn jälkeen näkymätön. Vakiopituus 2,6 m, materiaali alumiini. Värit: käsittelemätön, hopea, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). LED-toimintoa ei ole — jos haluat saman korkuisen LED-version, katso ASP238. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi."
   },
   {
    "sku": "ASPL100",
@@ -1319,7 +1391,10 @@
    "urlPath": "/led-varjuprofiilid/poranda/aspl100/",
    "urlPathRu": "/led-profili/pol/aspl100/",
    "urlPathFi": "/led-varjoprofiilit/lattia/aspl100/",
-   "urlPathSv": "/led-skuggprofiler/golv/aspl100/"
+   "urlPathSv": "/led-skuggprofiler/golv/aspl100/",
+   "nameFi": "ASPL100",
+   "seoNameFi": "Lattian LED-varjoprofiili",
+   "descriptionFi": "ASPL100 on valikoimamme suurin lattian LED-varjoprofiili — 100 mm korkea alumiiniprofiili, jota voi käyttää sekä perinteisen jalkalistan tilalla että seinän sisäisenä piiloprofiilina. Sopii erityisen hyvin korkeisiin tiloihin, joissa tavallinen jalkalista vaikuttaisi merkityksettömältä. Profiilin uraan asennettava LED-nauha antaa pehmeän piilovalaistuksen keittiön työtason, vaatekaappien tai TV-seinän alareunan kehälle — ilman näkyviä valaisinpaikkoja. Kaksoistoiminto (LED + arkkitehtoninen raja) tekee siitä erityisen suositun toimistoissa ja hotelleissa. Asennetaan kipsilevyn sisään — asennus tehdään rakentamisen aikana. Pituus 2,6 m. Värit: anodisoitu hopea, käsittelemätön; RAL-tilauksesta mikä tahansa sävy. Suositeltu LED-nauha: COB 16 W/m, 1350 lm/m, CRI 94, 24V — COB-tekniikka antaa tasaisen valolinjan ilman näkyviä pisteitä."
   },
   {
    "sku": "ASPL60",
@@ -1374,7 +1449,10 @@
    "urlPath": "/led-varjuprofiilid/poranda/aspl60/",
    "urlPathRu": "/led-profili/pol/aspl60/",
    "urlPathFi": "/led-varjoprofiilit/lattia/aspl60/",
-   "urlPathSv": "/led-skuggprofiler/golv/aspl60/"
+   "urlPathSv": "/led-skuggprofiler/golv/aspl60/",
+   "nameFi": "ASPL60",
+   "seoNameFi": "Lattian LED-varjoprofiili",
+   "descriptionFi": "ASPL60 on 35 mm korkea lattian + seinän LED-varjoprofiili — monikäyttöinen malli, jonka voi asentaa sekä lattian ja seinän liitokseen että pystysuoraan seinäpintaan. Sisäänrakennettu LED-kanava antaa pehmeän piilotetun valon — sopii yövalotilanteisiin, käytävien valaisemiseen ilman seinävalaisimia tai koristeelliseksi valorakenteeksi suurille pinnoille. 35 mm korkeus antaa riittävästi tilaa sekä COB LED:lle että diffuusorille. Värivalikoimassa on anodisoitu hopea ja musta, jotka sopivat sekä vaaleisiin että tummiin sisustuksiin. Asennetaan piilotetulla reunalla — kipsilevyn alle, profiilin reuna jää seinäpinnan tasoon. Vakiopituus 2,6 m, materiaali alumiini. Värit: käsittelemätön, hopea, musta; RAL-tilauksesta mikä tahansa sävy. Suositeltu LED-nauha: COB 16 W/m, 1350 lm/m, CRI 94, 24V — yhtenäinen, tasainen valolinja. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %."
   },
   {
    "sku": "ASPL35",
@@ -1429,7 +1507,10 @@
    "urlPath": "/led-varjuprofiilid/poranda/aspl35/",
    "urlPathRu": "/led-profili/pol/aspl35/",
    "urlPathFi": "/led-varjoprofiilit/lattia/aspl35/",
-   "urlPathSv": "/led-skuggprofiler/golv/aspl35/"
+   "urlPathSv": "/led-skuggprofiler/golv/aspl35/",
+   "nameFi": "ASPL35",
+   "seoNameFi": "Lattian LED-varjoprofiili",
+   "descriptionFi": "ASPL35 on 35 mm korkea lattian LED-varjoprofiili — kompaktimpi malli ASPL100:n ja ASPL60:n rinnalla. Sopii hyvin tavallisen asuintilan jalkalistan tilalle, kun näyttävää profiilimassaa ei tarvita, mutta lattialinjaan halutaan pehmeä piilotettu valo. Sisäänrakennettu LED-kanava antaa valoa lattian kehän mitalla — vaikutelmana on leijuva seinä sekä hillitty yövalotilanteen mahdollisuus. Värivalikoimaan kuuluvat käsittelemätön, anodisoitu hopea, musta sekä RAL-tilauksesta mikä tahansa sävy. Asennetaan piiloasennuksena — profiilin reuna jää seinäpinnan tasoon, ilman näkyviä kiinnikkeitä. Vakiopituus 2,6 m, materiaali alumiini. Suositeltu LED-nauha: COB 16 W/m, 1350 lm/m, CRI 94, 24V — yhtenäinen valolinja ilman LED-pisteitä. LED-nauha ja diffuusori tilataan erikseen. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi."
   },
   {
    "sku": "ASP905",
@@ -1479,7 +1560,10 @@
    "urlPath": "/led-varjuprofiilid/poranda/asp905/",
    "urlPathRu": "/led-profili/pol/asp905/",
    "urlPathFi": "/led-varjoprofiilit/lattia/asp905/",
-   "urlPathSv": "/led-skuggprofiler/golv/asp905/"
+   "urlPathSv": "/led-skuggprofiler/golv/asp905/",
+   "nameFi": "ASP905",
+   "seoNameFi": "Lattian LED-varjoprofiili",
+   "descriptionFi": "ASP905 on 49,5 mm korkea lattian LED-varjoprofiili — keskikorkea malli, joka on visuaalisesti selkeämpi kuin kompaktit 30 mm profiilit, mutta ei yhtä hallitseva kuin ASPL100. Sopii hyvin avarampiin asuintiloihin ja arkkitehtonista yksityiskohtaa hakeviin projekteihin, joissa jalkalistan sijaan halutaan selkeä valorakenne. Sisäänrakennettu LED-kanava antaa pehmeän piilovalaistuksen lattialinjaan — sitä voi käyttää myös itsenäisenä yövalona. Asennetaan piilotetulla reunalla, kipsilevyn alle — siirtymä seinäpintaan on viimeistelyn jälkeen näkymätön. Vakiopituus 2,6 m, materiaali alumiini. Värit: käsittelemätön, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Suositeltu LED-nauha: COB 16 W/m, 1350 lm/m, CRI 94, 24V — yhtenäinen, tasainen valolinja ilman LED-pisteitä. LED-nauha ja diffuusori tilataan erikseen. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %."
   },
   {
    "sku": "ASP904",
@@ -1529,7 +1613,10 @@
    "urlPath": "/led-varjuprofiilid/poranda/asp904/",
    "urlPathRu": "/led-profili/pol/asp904/",
    "urlPathFi": "/led-varjoprofiilit/lattia/asp904/",
-   "urlPathSv": "/led-skuggprofiler/golv/asp904/"
+   "urlPathSv": "/led-skuggprofiler/golv/asp904/",
+   "nameFi": "ASP904",
+   "seoNameFi": "Lattian LED-varjoprofiili",
+   "descriptionFi": "ASP904 on 49,5 mm korkea lattian LED-varjoprofiili — sama korkeus kuin ASP905:llä, mutta erilaisella sisägeometrialla ja toisenlaisella asennussyvennyksellä. Vaihtoehto niille, joiden rakenteessa ASP905:n asennus on hankalaa tai jotka suosivat toisenlaista profiilin muotoa. LED-kanava antaa pehmeän valolinjan lattian koko kehälle. Sopii asuintiloihin ja julkisiin tiloihin, joissa on tarpeen yhdistää perinteisen jalkalistan toiminto (seinän alareunan suojaus) ja nykyaikainen LED-valaistusratkaisu. Asennetaan piiloreunalla — kipsilevyn alle, ilman näkyviä kiinnikkeitä. Vakiopituus 2,6 m, materiaali alumiini. Värit: käsittelemätön, musta; RAL-tilauksesta mikä tahansa sävy. Suositeltu LED-nauha: COB 16 W/m, 1350 lm/m, CRI 94, 24V — jatkuva valolinja ilman LED-pisteitä. LED-nauha ja diffuusori tilataan erikseen. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi."
   },
   {
    "sku": "ASP610",
@@ -1573,7 +1660,10 @@
    "urlPath": "/led-varjuprofiilid/seina/asp610/",
    "urlPathRu": "/led-profili/stena/asp610/",
    "urlPathFi": "/led-varjoprofiilit/seina/asp610/",
-   "urlPathSv": "/led-skuggprofiler/vagg/asp610/"
+   "urlPathSv": "/led-skuggprofiler/vagg/asp610/",
+   "nameFi": "ASP610",
+   "seoNameFi": "Seinän LED-varjoprofiili",
+   "descriptionFi": "ASP610 on seinän LED-varjoprofiili — 60 mm korkea alumiiniprofiili sisäänrakennetulla LED-kanavalla, joka voidaan asentaa pystysuoraan seinäpintaan koristeellisena valolinjana. Ero koristeelliseen ASP116:een on LED-valmius: ASP610:ssä on integroitu ura LED-nauhalle sekä napsautettava diffuusori, joka pehmentää valoa. Tulos on ambient-valo ilman pistemäisiä lähteitä — seinä itse muuttuu valonlähteeksi. Yleinen projekteissa, joissa halutaan luoda arkkitehtoninen valokorostus — TV-seinän taakse, makuuhuoneen sängynpäädyn seinän ympärille tai ravintoloiden tilanjakajiin. Asennetaan kipsilevyn sisään. Pituus 2,6 m. Väri: käsittelemätön; RAL-tilauksesta kaikki sävyt (~5 viikkoa). Sopivat ASL-sarjan diffuusorit (ASL302). Suositeltu LED-nauha: COB 16 W/m, 1350 lm/m, CRI 94, 24V."
   },
   {
    "sku": "ASP410",
@@ -1617,7 +1707,10 @@
    "urlPath": "/led-varjuprofiilid/seina/asp410/",
    "urlPathRu": "/led-profili/stena/asp410/",
    "urlPathFi": "/led-varjoprofiilit/seina/asp410/",
-   "urlPathSv": "/led-skuggprofiler/vagg/asp410/"
+   "urlPathSv": "/led-skuggprofiler/vagg/asp410/",
+   "nameFi": "ASP410",
+   "seoNameFi": "Seinän LED-varjoprofiili",
+   "descriptionFi": "ASP410 on seinän LED-varjoprofiili 40 mm korkeudella — alumiiniprofiili sisäänrakennetulla LED-kanavalla, asennetaan pystysuoraan seinäpintaan koristevalaistusta varten. Eroaa tyypillisestä katto- tai lattiaprofiilista siinä, että ASP410 on tarkoitettu seinän sisään asennettavaksi — sitä voi käyttää esimerkiksi ovilinjojen kohdalla, seinän kehällä tai koristeellisena pystysuorana valolinjana. 40 mm korkeus antaa riittävästi tilaa LED-nauhalle ja diffuusorille, jotta valo jakautuu tasaisesti; sopii erityisen hyvin toimistoihin, edustustiloihin ja hotellien aulatiloihin. Asennetaan tasoitettavalla reunalla, kipsilevyn pinnan tasoon. Vakiopituus 2,6 m, materiaali alumiini. Väri: käsittelemätön; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Suositeltu LED-nauha: COB 16 W/m, 1350 lm/m, CRI 94, 24V — jatkuva valolinja. LED-nauha ja diffuusori tilataan erikseen. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %."
   },
   {
    "sku": "ASP238",
@@ -1672,7 +1765,10 @@
    "urlPath": "/led-varjuprofiilid/poranda/asp238/",
    "urlPathRu": "/led-profili/pol/asp238/",
    "urlPathFi": "/led-varjoprofiilit/lattia/asp238/",
-   "urlPathSv": "/led-skuggprofiler/golv/asp238/"
+   "urlPathSv": "/led-skuggprofiler/golv/asp238/",
+   "nameFi": "ASP238",
+   "seoNameFi": "Lattian LED-varjoprofiili",
+   "descriptionFi": "ASP238 on 20 mm korkea lattian LED-varjoprofiili — kompaktimpi LED-mallimme lattiaan. Sisältää kaikkien suurempien mallien edut (piiloasennus, pehmeä valolinja, leijuvan seinän vaikutelma), mutta kompaktimmassa muodossa. Sopii erityisen hyvin pienempiin asuintiloihin ja kerrostaloasuntoihin, joissa 35+ mm profiilin käyttö vaikuttaisi raskaalta. Värivalikoima kattaa anodisoidun hopean, mustan ja RAL-tilauksesta minkä tahansa sävyn. Asennetaan piiloreunalla, kipsilevyn alle — profiilin reuna jää seinäpinnan tasoon, ilman näkyviä kiinnikkeitä. Vakiopituus 2,6 m, materiaali alumiini. Suositeltu LED-nauha: COB 16 W/m, 1350 lm/m, CRI 94, 24V — jatkuva valolinja ilman LED-pisteitä. LED-nauha ja diffuusori tilataan erikseen. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, kysy tarjousta."
   },
   {
    "sku": "ASPL130",
@@ -1722,7 +1818,10 @@
    "urlPath": "/led-varjuprofiilid/poranda/aspl130/",
    "urlPathRu": "/led-profili/pol/aspl130/",
    "urlPathFi": "/led-varjoprofiilit/lattia/aspl130/",
-   "urlPathSv": "/led-skuggprofiler/golv/aspl130/"
+   "urlPathSv": "/led-skuggprofiler/golv/aspl130/",
+   "nameFi": "ASPL130",
+   "seoNameFi": "Lattian LED-varjoprofiili",
+   "descriptionFi": "ASPL130 on 30 mm korkea lattian LED-varjoprofiili — välimalli ASPL35:n (35 mm) ja kompaktimpien versioiden välillä. Sopii hyvin tavallisen asuintilan jalkalistan tilalle, kun halutaan pehmeää piilovaloa mutta ei hallitsevaa profiilirakennetta. Sisäänrakennettu LED-kanava antaa valoa lattian koko kehän pituudelta. Asennetaan piiloreunalla, kipsilevyn alle — liittymä seinäpintaan on viimeistelyn jälkeen näkymätön. Värivalikoimassa on musta, joka sopii erityisen hyvin tummien seinien ja voimakkaan kontrastin sisustuksiin. Vakiopituus 2,6 m, materiaali alumiini. Värit: käsittelemätön, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Suositeltu LED-nauha: COB 16 W/m, 1350 lm/m, CRI 94, 24V — jatkuva tasainen valolinja ilman LED-pisteitä. LED-nauha ja diffuusori tilataan erikseen. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, kysy tarjousta."
   },
   {
    "sku": "ASP106",
@@ -1777,7 +1876,10 @@
    "urlPath": "/led-varjuprofiilid/poranda/asp106/",
    "urlPathRu": "/led-profili/pol/asp106/",
    "urlPathFi": "/led-varjoprofiilit/lattia/asp106/",
-   "urlPathSv": "/led-skuggprofiler/golv/asp106/"
+   "urlPathSv": "/led-skuggprofiler/golv/asp106/",
+   "nameFi": "ASP106",
+   "seoNameFi": "Lattian LED-varjoprofiili",
+   "descriptionFi": "ASP106 on 60 mm korkea yleiskäyttöinen LED-varjoprofiili — sopii sekä lattia- että seinäasennukseen. Yleiskäyttöisyys tarkoittaa, että saman tuotenumeron voi tilata kaikkiin projektin kohtiin, mikä vähentää toimituksen monimutkaisuutta ja yhtenäistää tilan ilmeen. 60 mm korkeus antaa riittävästi tilaa LED-nauhalle ja kunnolliselle diffuusorille — valo jakautuu tasaisesti ilman näkyviä LED-pisteitä. Sopii erityisen hyvin suurempiin projekteihin, joissa halutaan käyttää samaa profiilia useassa tilassa. Värivalikoimassa anodisoitu hopea, musta ja RAL-tilauksesta mikä tahansa sävy. Asennetaan piiloreunalla, kipsilevyn alle — profiilin reuna jää pinnan tasoon. Vakiopituus 2,6 m, materiaali alumiini. Suositeltu LED-nauha: COB 16 W/m, 1350 lm/m, CRI 94, 24V — jatkuva valolinja. LED-nauha ja diffuusori tilataan erikseen. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %."
   },
   {
    "sku": "ASP78",
@@ -1837,7 +1939,10 @@
    "urlPath": "/alumiinium-porandaliistud/asp78/",
    "urlPathRu": "/alyuminievye-plintusy/asp78/",
    "urlPathFi": "/alumiinijalkalistat/asp78/",
-   "urlPathSv": "/aluminiumgolvlister/asp78/"
+   "urlPathSv": "/aluminiumgolvlister/asp78/",
+   "nameFi": "ASP78",
+   "seoNameFi": "Alumiininen jalkalista",
+   "descriptionFi": "ASP78 on Arrow-sarjan korkein alumiininen jalkalista — 78 mm korkea profiili, joka asennetaan perinteisen jalkalistan sijaan. Toisin kuin varjoprofiilit, Arrow-sarja ei sijaitse seinän sisällä vaan seinäpinnalla. Lista liimataan seinään — se tarkoittaa, että sen voi asentaa myös olemassa olevaan sisustukseen seinää avaamatta. Asennus on nopea eikä vaadi erityistä pinnan esikäsittelyä. Muotoilu noudattaa minimalistista periaatetta — suora yläreuna ilman profiloituja koristeita. Sopii nykyaikaiseen sisustukseen, jossa tarvitaan modernimpi vaihtoehto klassiselle puu- tai MDF-listalle. Pituus 2,6 m. Saatavana anodisoitu hopea, jauhemaalattu (valkoinen, musta) ja käsittelemätön pinta; RAL-tilauksesta kaikki sävyt. Pääty- ja kulmasarja (F-sarja) tilataan erikseen."
   },
   {
    "sku": "ASP58",
@@ -1897,7 +2002,10 @@
    "urlPath": "/alumiinium-porandaliistud/asp58/",
    "urlPathRu": "/alyuminievye-plintusy/asp58/",
    "urlPathFi": "/alumiinijalkalistat/asp58/",
-   "urlPathSv": "/aluminiumgolvlister/asp58/"
+   "urlPathSv": "/aluminiumgolvlister/asp58/",
+   "nameFi": "ASP58",
+   "seoNameFi": "Alumiininen jalkalista",
+   "descriptionFi": "ASP58 on 58 mm korkea alumiininen jalkalista Arrow-sarjasta — kompaktimpi versio ASP78:sta, sama näkyvänä lattiadetaljina asennettava ratkaisu (ei piilotettu varjoprofiili). Sijaitsee lattian päällä seinän vierellä, mutta moderni alumiinimuoto eroaa perinteisestä puu- tai MDF-listasta — ei vedä katsetta puoleensa, vaan sopii visuaalisesti sekä nykyaikaisiin että klassisiin sisustuksiin. Värivalikoimassa anodisoitu hopea — sopii hyvin nykyaikaisiin keittiöihin ja kylpyhuoneisiin. Helppo asennus klipseillä; ei vaadi erityistä rakennusosaamista eikä kipsilevysyvennystä. Vakiopituus 2,6 m, materiaali alumiini. Värit: käsittelemätön, hopea, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). LED-toimintoa ei ole. Hinta on 1 m maalattua listaa, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, kysy tarjousta."
   },
   {
    "sku": "ASP36",
@@ -1952,7 +2060,10 @@
    "urlPath": "/alumiinium-porandaliistud/asp36/",
    "urlPathRu": "/alyuminievye-plintusy/asp36/",
    "urlPathFi": "/alumiinijalkalistat/asp36/",
-   "urlPathSv": "/aluminiumgolvlister/asp36/"
+   "urlPathSv": "/aluminiumgolvlister/asp36/",
+   "nameFi": "ASP36",
+   "seoNameFi": "Alumiininen jalkalista",
+   "descriptionFi": "ASP36 on 36 mm korkea alumiininen jalkalista — kompakti, näkyvällä asennuksella varustettu lista. Sopii hyvin pienempiin asuintiloihin ja kerrostaloasuntoihin, joissa suuremmat ASP58/ASP78-listat vaikuttaisivat raskailta, mutta joissa halutaan silti alumiininen nykyaikainen yksityiskohta perinteisen puulistan sijaan. Helppo asennus klipseillä; sopii uusiin ja saneerattaviin lattioihin. Värivalikoima (hopea, valkoinen, musta) antaa joustavuutta niin vaaleisiin kuin tummiin sisustuksiin. RAL-tilauksesta mikä tahansa sävy. Ero varjoprofiileihin (ASP905, ASPL35 jne.): ASP36 on perinteisempi näkyvä lista, ei piiloasennuksella — sopii silloin, kun rakennusprojektiin ei haluta kipsilevysyvennystä tai kun saneerauksessa seinäpintaa ei voi muuttaa. Vakiopituus 2,5 m, materiaali alumiini. LED-toimintoa ei ole. Hinta on 1 m maalattua listaa, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi."
   },
   {
    "sku": "MPA217",
@@ -2008,7 +2119,10 @@
    "urlPathRu": "/alyuminievye-plintusy/mpa217/",
    "hidden": true,
    "urlPathFi": "/alumiinijalkalistat/mpa217/",
-   "urlPathSv": "/aluminiumgolvlister/mpa217/"
+   "urlPathSv": "/aluminiumgolvlister/mpa217/",
+   "nameFi": "MPA217",
+   "seoNameFi": "Alumiininen jalkalista",
+   "descriptionFi": "MPA217 on 22 mm korkea alumiininen jalkalista — valikoimamme kompaktein MPA-sarjan lista. Sopii erityisen hyvin pienempiin tiloihin, joissa leveämpi jalkalista vaikuttaisi raskaalta — pienet makuuhuoneet, vaatehuoneet, kylpyhuoneiden WC-osat. Pidättyväinen korkeus antaa silmälle alitajuisen lattian ja seinän välisen siirtymän ilman että lista vetää huomiota puoleensa. Helppo asennus klipseillä — sopii uusiin ja saneerattaviin lattioihin. Värivalikoima (hopea, valkoinen, musta) antaa joustavuutta erilaisiin sisustuksiin. RAL-tilauksesta mikä tahansa sävy. Vakiopituus 2,6 m, materiaali alumiini. LED-toimintoa ei ole. Ero tavalliseen puu- tai MDF-listaan: alumiini ei ime kosteutta, ei turpoa eikä muuta väriään ajan myötä — käyttöikä vuosikymmeniä. Hinta on 1 m maalattua listaa, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, pyydä tarjous."
   },
   {
    "sku": "MPA015",
@@ -2064,7 +2178,10 @@
    "urlPathRu": "/alyuminievye-plintusy/mpa015/",
    "hidden": true,
    "urlPathFi": "/alumiinijalkalistat/mpa015/",
-   "urlPathSv": "/aluminiumgolvlister/mpa015/"
+   "urlPathSv": "/aluminiumgolvlister/mpa015/",
+   "nameFi": "MPA015",
+   "seoNameFi": "Alumiininen jalkalista",
+   "descriptionFi": "MPA015 on 6,6 mm korkea alumiininen jalkalista — ohuin MPA-sarjan mallimme. Lähes näkymätön — antaa silmälle vain alitajuisen lattian ja seinän välisen siirtymän ilman että lista vaikuttaisi koristeelliselta yksityiskohdalta. Sopii erityisen hyvin minimalistisiin sisustuksiin, galleria- ja näyttelytiloihin tai projekteihin, joissa tarvitaan mahdollisimman pidättyväinen siirtymä lattian ja seinän välillä. Helppo asennus klipseillä — sopii uusiin ja saneerattaviin lattioihin. Värivalikoima (hopea, valkoinen, musta) antaa joustavuutta niin vaaleisiin kuin tummiin sisustuksiin. RAL-tilauksesta mikä tahansa sävy. Vakiopituus 2,6 m, materiaali alumiini. LED-toimintoa ei ole — 6,6 mm sisään ei mahdu LED-nauha. Ero varjoprofiileihin: MPA015 asennetaan näkyvästi, se ei vaadi kipsilevysyvennystä. Hinta on 1 m maalattua listaa, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi."
   },
   {
    "sku": "ASP100",
@@ -2124,7 +2241,10 @@
    "urlPath": "/alumiinium-porandaliistud/asp100/",
    "urlPathRu": "/alyuminievye-plintusy/asp100/",
    "urlPathFi": "/alumiinijalkalistat/asp100/",
-   "urlPathSv": "/aluminiumgolvlister/asp100/"
+   "urlPathSv": "/aluminiumgolvlister/asp100/",
+   "nameFi": "ASP100",
+   "seoNameFi": "Alumiininen jalkalista",
+   "descriptionFi": "ASP100 on 100 mm korkea alumiininen jalkalista — korkeampi Arrow-sarjan listamme näkyvällä asennuksella. Sopii edustustiloihin, suurempiin asuintiloihin ja julkisiin tiloihin, joissa korkeampi lista toimii edustavana yksityiskohtana. 100 mm korkeus antaa vahvan visuaalisen signaalin lattian ja seinän siirtymässä — sopii erityisen hyvin korkeampiin kattoihin ja suurempiin tiloihin, joissa pienempi lista (ASP36, MPA217) vaikuttaisi epäsuhtaiselta. Helppo asennus klipseillä; ei vaadi kipsilevysyvennystä. Päätesarja F100 (tilataan erikseen) antaa siistin viimeistelyn sisänurkkiin, ulkonurkkiin ja päätyihin. Värivalikoimassa anodisoitu hopea, valkoinen, musta ja RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Vakiopituus 2,5 m, materiaali alumiini. LED-toimintoa ei ole. Hinta on 1 m maalattua listaa, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi."
   },
   {
    "sku": "ASP80",
@@ -2184,7 +2304,10 @@
    "urlPath": "/alumiinium-porandaliistud/asp80/",
    "urlPathRu": "/alyuminievye-plintusy/asp80/",
    "urlPathFi": "/alumiinijalkalistat/asp80/",
-   "urlPathSv": "/aluminiumgolvlister/asp80/"
+   "urlPathSv": "/aluminiumgolvlister/asp80/",
+   "nameFi": "ASP80",
+   "seoNameFi": "Alumiininen jalkalista",
+   "descriptionFi": "ASP80 on 80 mm korkea alumiininen jalkalista Arrow-sarjasta — keskikorkea lista näkyvällä asennuksella. Sopii suurempiin asuintiloihin, joissa pienemmät listat (ASP36, ASP58) vaikuttaisivat liian pieniltä, mutta 100 mm tuntuisi jo liian hallitsevalta. 80 mm korkeus antaa selkeän visuaalisen signaalin lattian ja seinän liitoskohdassa ilman, että lista vaikuttaisi epäsuhtaiselta. Helppo asennus klipseillä; päätesarja F80 (tilattava erikseen) antaa siistin viimeistelyn sisäkulmiin, ulkokulmiin ja päätyihin. Värivalikoimassa anodisoitu hopea, valkoinen, musta ja RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Vakiopituus 2,6 m, materiaali alumiini. LED-toimintoa ei ole — jos haluat LED-toiminnolla lähellä olevan korkeuden, katso ASP106 (60 mm, LED:llä). Hinta on 1 m maalattua listaa, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi."
   },
   {
    "sku": "ASP60",
@@ -2244,7 +2367,10 @@
    "urlPath": "/alumiinium-porandaliistud/asp60/",
    "urlPathRu": "/alyuminievye-plintusy/asp60/",
    "urlPathFi": "/alumiinijalkalistat/asp60/",
-   "urlPathSv": "/aluminiumgolvlister/asp60/"
+   "urlPathSv": "/aluminiumgolvlister/asp60/",
+   "nameFi": "ASP60",
+   "seoNameFi": "Alumiininen jalkalista",
+   "descriptionFi": "ASP60 on 60 mm korkea alumiininen jalkalista Arrow-sarjasta — suosittu keskikorkea malli näkyvällä asennuksella. Sopii hyvin tavallisen asuintilan jalkalistaksi, kun tarvitaan nykyaikaista alumiinidetaljia perinteisen puu- tai MDF-listan sijaan. 60 mm jää huomattavaksi arkkitehtoniseksi detaljiksi, mutta ei hallitse tilaa. Helppo asennus klipseillä; päätesarja F60 (tilattava erikseen) antaa siistin viimeistelyn sisäkulmiin, ulkokulmiin ja päätyihin. Värivalikoimassa anodisoitu hopea, valkoinen, musta ja RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Vakiopituus 2,6 m, materiaali alumiini. LED-toimintoa ei ole — jos haluat samankorkuisen version LED-toiminnolla, katso ASP106. Hinta on 1 m maalattua listaa, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, pyydä tarjous."
   },
   {
    "sku": "ASP40",
@@ -2308,7 +2434,10 @@
    "urlPath": "/alumiinium-porandaliistud/asp40/",
    "urlPathRu": "/alyuminievye-plintusy/asp40/",
    "urlPathFi": "/alumiinijalkalistat/asp40/",
-   "urlPathSv": "/aluminiumgolvlister/asp40/"
+   "urlPathSv": "/aluminiumgolvlister/asp40/",
+   "nameFi": "ASP40",
+   "seoNameFi": "Alumiininen jalkalista",
+   "descriptionFi": "ASP40 on 40 mm korkea alumiininen jalkalista Arrow-sarjasta — kompaktimpi näkyvällä asennuksella varustettu lista anodisoidulla pinnoitteella. Anodisoitu pinta antaa listalle suuremman pintalujuuden ja paremman naarmunkeston kuin tavallinen maalattu pinnoite — käyttöikä vuosikymmeniä. Sopii hyvin nykyaikaisiin keittiöihin, kylpyhuoneisiin ja käytäviin, joissa lista joutuu jatkuvan puhdistuksen ja kosketuksen kohteeksi. 40 mm korkeus on hillitty — sopii pieniin ja keskikokoisiin asuintiloihin. Helppo asennus klipseillä; päätesarja F40 (tilattava erikseen) antaa siistin viimeistelyn sisäkulmiin, ulkokulmiin ja päätyihin. Värivalikoimassa anodisoitu hopea, valkoinen, musta ja RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Vakiopituus 2,5 m, materiaali alumiini. LED-toimintoa ei ole. Hinta on 1 m maalattua listaa, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi."
   },
   {
    "sku": "ASP115",
@@ -2352,7 +2481,10 @@
    "urlPath": "/varjuprofiilid/poranda/asp115/",
    "urlPathRu": "/dekor-profili/pol/asp115/",
    "urlPathFi": "/varjoprofiilit/lattia/asp115/",
-   "urlPathSv": "/skuggprofiler/golv/asp115/"
+   "urlPathSv": "/skuggprofiler/golv/asp115/",
+   "nameFi": "ASP115",
+   "seoNameFi": "Lattian varjoprofiili",
+   "descriptionFi": "ASP115 on 53 mm korkea lattian varjoprofiili — keskikorkea malli ilman LED-toimintoa. Sopii kohteisiin, joissa tarvitaan selkeä lattian ja seinän liitos, mutta ei LED-järjestelmän monimutkaisuutta ja kustannuksia. 53 mm antaa linjan, joka on silmälle havaittava arkkitehtonisena detaljina ilman, että profiili vaikuttaisi hallitsevalta. Asennetaan piiloreunalla, kipsilevyn alle — liitos seinäpintaan on viimeistelyn jälkeen näkymätön, ilman näkyviä kiinnikkeitä. Vakiopituus 2,6 m, materiaali alumiini. Väri: käsittelemätön; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). LED-toimintoa ei ole — jos haluat LED-toiminnolla lähellä olevan mitan, katso ASP904 tai ASP905 (49,5 mm, LED:llä). Hinta koskee RAL-maalattua 1 m profiilia, sisältää ALV 25,5 %; käsittelemättömän profiilin saa edullisemmin, pyydä tarjous."
   },
   {
    "sku": "ASP108",
@@ -2402,7 +2534,10 @@
    "urlPath": "/varjuprofiilid/poranda/asp108/",
    "urlPathRu": "/dekor-profili/pol/asp108/",
    "urlPathFi": "/varjoprofiilit/lattia/asp108/",
-   "urlPathSv": "/skuggprofiler/golv/asp108/"
+   "urlPathSv": "/skuggprofiler/golv/asp108/",
+   "nameFi": "ASP108",
+   "seoNameFi": "Lattian varjoprofiili",
+   "descriptionFi": "ASP108 on 80 mm korkea lattian varjoprofiili — korkeampi koristeellinen lattiaprofiilimme ilman LED-toimintoa. 80 mm tarkoittaa, että profiili vaikuttaa edustavalta yksityiskohdalta — se sopii erityisen hyvin suurempiin asuintiloihin, edustustiloihin ja myös työkäyttöön järjestettyihin julkisiin tiloihin, joissa perinteinen jalkalista vaikuttaisi tekniseltä ja joissa halutaan arkkitehtonista siirtymää lattian ja seinän välillä. Värivalikoimassa on anodisoitu hopea, joka sopii tiloihin, joissa on hopeanväriset pintakäsittelyt. Asennetaan piilotetulla reunalla, kipsilevyn alle — siirtymä seinäpintaan on viimeistelyn jälkeen näkymätön. Vakiopituus 2,6 m, materiaali alumiini. Värit: käsittelemätön, hopea; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). LED-toimintoa ei ole — jos haluat saman korkuisen LED-version, katso ASPL100 (100 mm, LED:llä). Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi."
   },
   {
    "sku": "ASPL120",
@@ -2456,7 +2591,10 @@
    "urlPath": "/led-varjuprofiilid/poranda/aspl120/",
    "urlPathRu": "/led-profili/pol/aspl120/",
    "urlPathFi": "/led-varjoprofiilit/lattia/aspl120/",
-   "urlPathSv": "/led-skuggprofiler/golv/aspl120/"
+   "urlPathSv": "/led-skuggprofiler/golv/aspl120/",
+   "nameFi": "ASPL120",
+   "seoNameFi": "Lattian LED-varjoprofiili",
+   "descriptionFi": "ASPL120 on 30 mm korkea lattian LED-varjoprofiili — vaihtoehto ASPL130:lle, jossa on hieman erilainen sisärakenne ja toisenlainen asennussyvennys. Sopii hyvin tavallisen asuintilan jalkalistan tilalle, kun halutaan hillittyä piilovaloa ilman hallitsevaa profiilirakennetta. Sisäänrakennettu LED-kanava antaa pehmeän valolinjan lattian koko kehälle — sitä voi käyttää myös ainoana yövalaistuksena pidemmissä käytävissä. Asennetaan piilotetulla reunalla, kipsilevyn alle — siirtymä seinäpintaan on viimeistelyn jälkeen näkymätön. Vakiopituus 2,6 m, materiaali alumiini. Värit: käsittelemätön, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Suositeltu LED-nauha: COB 16 W/m, 1350 lm/m, CRI 94, 24V — yhtenäinen, tasainen valolinja ilman LED-pisteitä. LED-nauha ja diffuusori tilataan erikseen. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, pyydä tarjous."
   },
   {
    "sku": "AVP609",
@@ -2510,7 +2648,10 @@
    "urlPath": "/varjuprofiilid/poranda/avp609/",
    "urlPathRu": "/dekor-profili/pol/avp609/",
    "urlPathFi": "/varjoprofiilit/lattia/avp609/",
-   "urlPathSv": "/skuggprofiler/golv/avp609/"
+   "urlPathSv": "/skuggprofiler/golv/avp609/",
+   "nameFi": "AVP609",
+   "seoNameFi": "Lattian varjoprofiili",
+   "descriptionFi": "AVP609 on 60 mm korkea suorakulmainen lattiaprofiili — vaihtoehto tyypilliselle piiloasennettavalle varjoprofiilille. Suorakulmainen geometria tarkoittaa, että profiili ei sulaudu seinäpintaan, vaan jää asennuksen jälkeen silmin havaittavaksi suorakulmaiseksi rakenteeksi lattian linjassa. Sopii projekteihin, joissa tarvitaan selkeää ja teknisesti luettavaa siirtymää lattian ja seinän välillä — esimerkiksi liiketiloihin, toimistojen käytäviin tai asuintiloihin, joissa halutaan industriaalisempaa estetiikkaa. Värivalikoimassa on anodisoitu hopea, joka sopii erityisen hyvin tekniseen tai minimalistiseen sisustukseen. Vakiopituus 2,6 m, materiaali alumiini. Värit: käsittelemätön, hopea; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). LED-toimintoa ei ole. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, pyydä tarjous."
   },
   {
    "sku": "AVP859",
@@ -2564,7 +2705,10 @@
    "urlPath": "/varjuprofiilid/poranda/avp859/",
    "urlPathRu": "/dekor-profili/pol/avp859/",
    "urlPathFi": "/varjoprofiilit/lattia/avp859/",
-   "urlPathSv": "/skuggprofiler/golv/avp859/"
+   "urlPathSv": "/skuggprofiler/golv/avp859/",
+   "nameFi": "AVP859",
+   "seoNameFi": "Lattian varjoprofiili",
+   "descriptionFi": "AVP859 on 85 mm korkea suorakulmainen lattiaprofiili — korkeampi versio AVP609:stä. Sama suorakulmainen geometria — profiili jää asennuksen jälkeen silmin havaittavaksi suorakulmaiseksi rakenteeksi lattian linjassa, ei tasaisena piilotettuna siirtymänä. Korkeampi mitta (85 mm) tarkoittaa vahvempaa visuaalista signaalia — sopii erityisen hyvin suurempiin projekteihin, edustustiloihin ja toimistojen aulatiloihin, joissa teknisesti luettava jalkalista on suunnitteluun sopiva ratkaisu. Värivalikoimassa on anodisoitu hopea, joka sopii industriaalisempaan ja minimalistiseen sisustukseen. Vakiopituus 2,6 m, materiaali alumiini. Värit: käsittelemätön, hopea; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). LED-toimintoa ei ole. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, pyydä tarjous."
   },
   {
    "sku": "DKP1010",
@@ -2619,7 +2763,10 @@
    "urlPath": "/nurgaprofiilid/dkp1010/",
    "urlPathRu": "/uglovye-profili/dkp1010/",
    "urlPathFi": "/kulmaprofiilit/dkp1010/",
-   "urlPathSv": "/hornprofiler/dkp1010/"
+   "urlPathSv": "/hornprofiler/dkp1010/",
+   "nameFi": "DKP1010",
+   "seoNameFi": "Alumiininen kulmaprofiili",
+   "descriptionFi": "DKP1010 on 10×10 mm alumiininen kulmaprofiili — koristeellinen suojaprofiili seinien ulkokulmiin. Asennetaan seinän ulkokulmaan, suojaa kulmaa naarmuilta ja iskuilta ja antaa samalla selkeän arkkitehtonisen linjan. Sopii erityisen hyvin paikkoihin, joissa on paljon liikennettä — käytävät, liiketilat, hotellit, vaatehuoneet — tai joissa seinän kulmat ovat alttiita vaurioille (kipsilevy, maalattu rapattu seinä). 10×10 mm geometria on kompakti — sopii silloin, kun suurempi profiili vaikuttaisi raskaalta. Väripaletti (valkoinen, musta) antaa joustavuutta erilaisiin sisustuksiin. RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Vakiopituus 3 m, materiaali alumiini. Liimataan tai ruuvataan seinään — kiinnitystarvikkeet tilataan erikseen. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi."
   },
   {
    "sku": "DKP1515",
@@ -2674,7 +2821,10 @@
    "urlPath": "/nurgaprofiilid/dkp1515/",
    "urlPathRu": "/uglovye-profili/dkp1515/",
    "urlPathFi": "/kulmaprofiilit/dkp1515/",
-   "urlPathSv": "/hornprofiler/dkp1515/"
+   "urlPathSv": "/hornprofiler/dkp1515/",
+   "nameFi": "DKP1515",
+   "seoNameFi": "Alumiininen kulmaprofiili",
+   "descriptionFi": "DKP1515 on 15×15 mm alumiininen kulmaprofiili — keskikokoinen koristeellinen suojaprofiili seinien ulkokulmiin. 15×15 mm tarkoittaa, että profiili antaa vahvemman visuaalisen signaalin kuin DKP1010 (10×10 mm), mutta ei vaikuta vielä hallitsevalta. Sopii erityisen hyvin keskikokoisiin asuintiloihin ja käytäviin, joissa seinän kulma pitää suojata vaurioilta ja samalla lisätä arkkitehtonista yksityiskohtaa. Väripaletti (valkoinen, musta) antaa joustavuutta erilaisiin sisustuksiin. RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Vakiopituus 3 m, materiaali alumiini. Liimataan tai ruuvataan seinään — kiinnitystarvikkeet tilataan erikseen. Sopii sekä uusiin että saneerattaviin kohteisiin. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, kysy tarjousta."
   },
   {
    "sku": "DKP2020",
@@ -2729,7 +2879,10 @@
    "urlPath": "/nurgaprofiilid/dkp2020/",
    "urlPathRu": "/uglovye-profili/dkp2020/",
    "urlPathFi": "/kulmaprofiilit/dkp2020/",
-   "urlPathSv": "/hornprofiler/dkp2020/"
+   "urlPathSv": "/hornprofiler/dkp2020/",
+   "nameFi": "DKP2020",
+   "seoNameFi": "Alumiininen kulmaprofiili",
+   "descriptionFi": "DKP2020 on 20×20 mm alumiininen kulmaprofiili — DKP-sarjan suurin mallimme. 20×20 mm tarkoittaa huomiota herättävää arkkitehtonista yksityiskohtaa seinän kulmassa — sopii kohteisiin, joissa tarvitaan samanaikaisesti selkeä visuaalinen signaali ja vahva suoja seinän kulman vaurioita vastaan. Sopii hyvin julkisiin tiloihin (hotellit, liiketilat, toimistot, aulat), joissa seinien kulmat ovat jatkuvasti kontaktissa kulkijoiden kanssa ja joissa suurempi profiili toimii osana edustavan sisustuksen suunnittelua. Väripaletti (valkoinen, musta) antaa joustavuutta erilaisiin sisustuksiin. RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Vakiopituus 3 m, materiaali alumiini. Liimataan tai ruuvataan seinään — kiinnitystarvikkeet tilataan erikseen. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, kysy tarjousta."
   },
   {
    "sku": "ASL302",
@@ -2764,7 +2917,10 @@
    "urlPath": "/tarvikud/asl302/",
    "urlPathRu": "/aksessuary/asl302/",
    "urlPathFi": "/lisavarusteet/asl302/",
-   "urlPathSv": "/tillbehor/asl302/"
+   "urlPathSv": "/tillbehor/asl302/",
+   "nameFi": "ASL302",
+   "seoNameFi": "LED-profiilin diffuusori",
+   "descriptionFi": "ASL302 on LED-profiilin valonhajotin (diffuusori) — taipuisa linssi, joka asennetaan profiilin LED-kanavan päälle valon hajottamiseksi. Hajottamaton LED-nauha näkyy erillisinä pisteinä, diffuusorin kanssa taas tasaisena valolinjana. Sopii ASP-410- ja ASP-610-profiileihin. Polykarbonaattia (läpikuultava valkoinen), silikonitiivisteellä — asennetaan profiiliin liu'uttamalla, ilman liimausta. Taipuisa: mahdollistaa asennuksen myös kaarteisiin. Hinta on 1 m diffuusoria, sisältää ALV 25,5 %. NB! Diffuusoria tarvitaan jokaiseen LED-profiiliin, jos halutaan yhtenäinen valolinja — ilman diffuusoria LED-nauha on toimiva, mutta valo jää tekniseksi (pisteet näkyvät). Tilataan LED-profiilien määrän mukaan. Tutustu myös ASL312:een (ASPL-130 ja AST-14_12 varten) sekä ASL300:aan (ASPL-sarjaa varten)."
   },
   {
    "sku": "ASL312",
@@ -2799,7 +2955,10 @@
    "urlPath": "/tarvikud/asl312/",
    "urlPathRu": "/aksessuary/asl312/",
    "urlPathFi": "/lisavarusteet/asl312/",
-   "urlPathSv": "/tillbehor/asl312/"
+   "urlPathSv": "/tillbehor/asl312/",
+   "nameFi": "ASL312",
+   "seoNameFi": "LED-profiilin diffuusori",
+   "descriptionFi": "ASL312 on LED-profiilin valonhajotin (diffuusori) — taipuisa linssi, joka asennetaan profiilin LED-kanavan päälle valon hajottamiseksi. Ilman diffuusoria LED-nauha näkyy erillisinä pisteinä, diffuusorilla taas tasaisena valolinjana. Sopii ASPL-130-, RST-13/12- ja AST-14/12-profiileihin. Polykarbonaatista (läpikuultava valkoinen), silikonitiivisteellä — asennetaan profiiliin liu'uttamalla, ilman liimausta. Taipuisa: mahdollistaa asennuksen myös kaarteisiin. Hinta on 1 m diffuusoria, sisältää ALV 25,5 %. NB! Diffuusoria tarvitaan jokaiseen LED-profiiliin, jos halutaan yhtenäinen valolinja — ilman diffuusoria LED-nauha toimii kyllä, mutta valo jää tekniseksi (pisteet näkyvät). Tilataan LED-profiilin määrän mukaan. Tutustu myös ASL302:een (ASP-410/610:lle) sekä ASL300:aan (ASPL-35/60/100:lle)."
   },
   {
    "sku": "ASL300",
@@ -2834,7 +2993,10 @@
    "urlPath": "/tarvikud/asl300/",
    "urlPathRu": "/aksessuary/asl300/",
    "urlPathFi": "/lisavarusteet/asl300/",
-   "urlPathSv": "/tillbehor/asl300/"
+   "urlPathSv": "/tillbehor/asl300/",
+   "nameFi": "ASL300",
+   "seoNameFi": "LED-profiilin diffuusori",
+   "descriptionFi": "ASL300 on LED-profiilin valonhajotin (diffuusori) — taipuisa linssi, joka asennetaan profiilin LED-kanavan päälle valon hajottamiseksi. Ilman diffuusoria LED-nauha näkyy erillisinä pisteinä, diffuusorilla taas tasaisena valolinjana. Sopii ASPL-35-, ASPL-60- ja ASPL-100-profiileihin — valikoimamme useimmin tilattu diffuusori, koska ASPL-sarja on suosituin lattian LED-profiili. Polykarbonaatista (läpikuultava valkoinen), silikonitiivisteellä — asennetaan profiiliin liu'uttamalla, ilman liimausta. Taipuisa: mahdollistaa asennuksen myös kaarteisiin. Hinta on 1 m diffuusoria, sisältää ALV 25,5 %. NB! Diffuusoria tarvitaan jokaiseen LED-profiiliin, jos halutaan yhtenäinen valolinja — ilman diffuusoria valo on teknistä (pisteet näkyvät). Tilataan LED-profiilin määrän mukaan."
   },
   {
    "sku": "ASL25",
@@ -2877,7 +3039,10 @@
    "urlPath": "/tarvikud/asl25/",
    "urlPathRu": "/aksessuary/asl25/",
    "urlPathFi": "/lisavarusteet/asl25/",
-   "urlPathSv": "/tillbehor/asl25/"
+   "urlPathSv": "/tillbehor/asl25/",
+   "nameFi": "ASL25",
+   "seoNameFi": "LED-profiilin diffuusori",
+   "descriptionFi": "ASL25 on LED-profiilin valonhajotin (diffuusori) — taipuisa linssi, joka asennetaan RST-25-profiilin LED-kanavan päälle. Ilman diffuusoria LED-nauha näkyy erillisinä pisteinä, diffuusorilla taas tasaisena valolinjana. Polykarbonaatista (läpikuultava valkoinen) — asennetaan profiiliin liu'uttamalla, ilman liimausta. Toimitetaan 3 m vakiopituudessa, joka vastaa RST-25-profiilin tyypillistä pituutta. Taipuisa: mahdollistaa asennuksen myös kaarteisiin. Hinta on 3 m diffuusoria (ei 1 m), sisältää ALV 25,5 %. NB! Diffuusoria tarvitaan jokaiseen LED-profiiliin, jos halutaan yhtenäinen valolinja — ilman diffuusoria valo on teknistä. RST-25 ja ASL25 yhdessä antavat tasaisen varjolinjan ja LED-valolinjan yhdistelmän, joka on RST-sarjan tärkein etu tavallisiin LED-profiileihin verrattuna."
   },
   {
    "sku": "ASL40",
@@ -2920,7 +3085,10 @@
    "urlPath": "/tarvikud/asl40/",
    "urlPathRu": "/aksessuary/asl40/",
    "urlPathFi": "/lisavarusteet/asl40/",
-   "urlPathSv": "/tillbehor/asl40/"
+   "urlPathSv": "/tillbehor/asl40/",
+   "nameFi": "ASL40",
+   "seoNameFi": "LED-profiilin diffuusori",
+   "descriptionFi": "ASL40 on LED-profiilin valonhajotin (diffuusori) — taipuisa linssi, joka asennetaan AST-35- ja RST-40-profiilien LED-kanavan päälle. Tarkoitettu suuremmille profiileille — leveämpi linssimuoto hajottaa valon kunnolla myös leveämmissä profiileissa, joissa tavallinen kapeampi diffuusori (ASL300, ASL302) ei peittäisi LED-nauhaa kokonaan. Polykarbonaatista (läpikuultava valkoinen) — asennetaan profiiliin liu'uttamalla, ilman liimausta. Toimitetaan 3 m vakiopituudessa. Taipuisa: mahdollistaa asennuksen myös kaarteisiin. Hinta on 3 m diffuusoria (ei 1 m), sisältää ALV 25,5 %. NB! Diffuusoria tarvitaan jokaiseen LED-profiiliin, jos halutaan yhtenäinen valolinja — ilman diffuusoria LED-nauha toimii kyllä, mutta valo jää tekniseksi. AST-35 ja RST-40 yhdessä ASL40:n kanssa antavat tasaisen leveän valolinjan, joka sopii erityisesti suuriin julkisiin tiloihin."
   },
   {
    "sku": "ASK100",
@@ -2955,7 +3123,10 @@
    "urlPath": "/tarvikud/ask100/",
    "urlPathRu": "/aksessuary/ask100/",
    "urlPathFi": "/lisavarusteet/ask100/",
-   "urlPathSv": "/tillbehor/ask100/"
+   "urlPathSv": "/tillbehor/ask100/",
+   "nameFi": "ASK100",
+   "seoNameFi": "LED-profiilin diffuusori",
+   "descriptionFi": "ASK100 on itseliimautuva taipuisa LED-profiilin valodiffuusori (diffuusori) — kompaktimpi versio diffuusorivalikoimastamme, tarkoitettu MPV-301- ja MPV-302-miniprofiilien LED-kanavan peittämiseen. Itseliimautuva tarkoittaa, että diffuusori kiinnitetään suoraan profiilin sisään — erillistä silikonitiivistettä tai liu'utusmenetelmää ei tarvita. Polykarbonaattia (läpikuultava valkoinen). Taipuisa: mahdollistaa asennuksen myös kaarteisiin. Hinta on 1 m diffuusoria, sisältää ALV 25,5 %. NB! Diffuusoria tarvitaan jokaiseen LED-profiiliin, jos halutaan yhtenäinen valolinja. MPV-301 ja MPV-302 yhdessä ASK100:n kanssa antavat hienon valolinjan jalkalistan viereen, mikä sopii erityisen hyvin käytävien pehmeäksi yövalaistukseksi. Tilataan LED-profiilin määrän mukaan."
   },
   {
    "sku": "P1",
@@ -2991,7 +3162,10 @@
    "urlPath": "/tarvikud/p1/",
    "urlPathRu": "/aksessuary/p1/",
    "urlPathFi": "/lisavarusteet/p1/",
-   "urlPathSv": "/tillbehor/p1/"
+   "urlPathSv": "/tillbehor/p1/",
+   "nameFi": "P1",
+   "seoNameFi": "Jalkalistan kiinnitysjousi",
+   "descriptionFi": "P1 on alumiininen kiinnitysjousi — TINLINE-sarjan mini-jalkalistan (MPA013, MPA302, MPA317, MVP018, MVP172, MPV301) kiinnitykseen. Ero klipsikiinnitykseen: jousijärjestelmä antaa tukevamman ja äänettömän kiinnityksen ja mahdollistaa listan irrottamisen tarvittaessa vahingoittamatta. Asennetaan seinään 50 cm välein — lista itse kiinnittyy jousiin liu'uttamalla. Myydään kappalehintaan (0,50 € + ALV = 0,61 € / kpl). Sopii uusiin ja remontoitaviin lattioihin. Määrä tarpeen mukaan: 2 jousta jokaista juoksumetriä listaa kohti (aloita 5 cm seinän nurkasta). 2,6 m listaa varten tarvitaan 6 jousta; 10 m kohti 20 jousta. NB! Jouset ovat TINLINE-sarjan listojen pakollinen tarvike — ilman niitä listaa ei voi asentaa. Tilataan aina yhdessä TINLINE-listan kanssa."
   },
   {
    "sku": "F40",
@@ -3048,7 +3222,10 @@
    "urlPath": "/tarvikud/f40/",
    "urlPathRu": "/aksessuary/f40/",
    "urlPathFi": "/lisavarusteet/f40/",
-   "urlPathSv": "/tillbehor/f40/"
+   "urlPathSv": "/tillbehor/f40/",
+   "nameFi": "F40",
+   "seoNameFi": "Jalkalistan päätesarja",
+   "descriptionFi": "F40 on alumiininen päätesarja ASP-40-jalkalistalle — sisältää sisäkulman, ulkokulman, jatkoksen (kahden listan päiden yhdistämiseen), oikean ja vasemman päätykappaleen (seinää vasten päättämiseen). Tarvitaan kaikkien kulmien ja päätyjen viimeistelyyn — ilman päätesarjaa jalkalistan päät jäävät avoimiksi ja kulmat ovat vaikeampia viimeistellä. Myydään sarjahintaan (kaikki 5 osaa yhdessä). Sopii tarkasti ASP-40-listalle (40 mm korkeus). Värivalikoima on yhteensopiva listan kanssa — hopea, valkoinen, musta; RAL-tilauksesta sama sävy kuin listassa (~5 viikkoa). Materiaali alumiini — sama kestävyys ja käyttöikä kuin listalla. Hinta on sarjaa kohti, sisältää ALV 25,5 %. NB! Päätesarja on jokaiselle ASP-sarjan listalle erikseen (F40 → ASP-40, F60 → ASP-60, jne)."
   },
   {
    "sku": "F60",
@@ -3105,7 +3282,10 @@
    "urlPath": "/tarvikud/f60/",
    "urlPathRu": "/aksessuary/f60/",
    "urlPathFi": "/lisavarusteet/f60/",
-   "urlPathSv": "/tillbehor/f60/"
+   "urlPathSv": "/tillbehor/f60/",
+   "nameFi": "F60",
+   "seoNameFi": "Jalkalistan päätesarja",
+   "descriptionFi": "F60 on alumiininen päätesarja ASP-60-jalkalistalle — sisältää sisäkulman, ulkokulman, jatkoksen (kahden listan päiden yhdistämiseen), oikean ja vasemman päätykappaleen (seinää vasten päättämiseen). Tarvitaan kaikkien kulmien ja päätyjen viimeistelyyn — ilman päätesarjaa jalkalistan päät jäävät avoimiksi ja kulmat ovat vaikeampia viimeistellä. Myydään sarjahintaan (kaikki 5 osaa yhdessä). Sopii tarkasti ASP-60-listalle (60 mm korkeus). Värivalikoima on yhteensopiva listan kanssa — hopea, valkoinen, musta; RAL-tilauksesta sama sävy kuin listassa (~5 viikkoa). Materiaali alumiini — sama kestävyys ja käyttöikä kuin listalla. Hinta on sarjaa kohti, sisältää ALV 25,5 %. NB! Päätesarja on jokaiselle ASP-sarjan listalle erikseen (F40 → ASP-40, F60 → ASP-60, jne) eikä ole vaihtokelpoinen."
   },
   {
    "sku": "F80",
@@ -3162,7 +3342,10 @@
    "urlPath": "/tarvikud/f80/",
    "urlPathRu": "/aksessuary/f80/",
    "urlPathFi": "/lisavarusteet/f80/",
-   "urlPathSv": "/tillbehor/f80/"
+   "urlPathSv": "/tillbehor/f80/",
+   "nameFi": "F80",
+   "seoNameFi": "Jalkalistan päätesarja",
+   "descriptionFi": "F80 on alumiininen päätesarja ASP-80-jalkalistalle — sisältää sisäkulman, ulkokulman, jatkoksen (kahden listan päiden yhdistämiseen) sekä oikean ja vasemman päätykappaleen (seinää vasten päättämiseen). Tarvitaan kaikkien kulmien ja päätyjen viimeistelyyn — ilman päätesarjaa jalkalistan päät jäävät avoimiksi ja kulmat ovat vaikeampia viimeistellä. Myydään sarjahintaan (kaikki 5 kappaletta yhdessä). Sopii tarkasti ASP-80-listaan (80 mm korkeus). Värivalikoima on yhteensopiva listan kanssa — hopea, valkoinen, musta; RAL-tilauksesta sama sävy kuin listassa (~5 viikkoa). Materiaali alumiini — sama kestävyys ja käyttöikä kuin listalla. Hinta on sarjaa kohti, sisältää ALV 25,5 %. NB! Päätesarja on jokaiselle ASP-sarjan listalle erikseen (F40 → ASP-40, F60 → ASP-60, F80 → ASP-80, F100 → ASP-100)."
   },
   {
    "sku": "F100",
@@ -3219,7 +3402,10 @@
    "urlPath": "/tarvikud/f100/",
    "urlPathRu": "/aksessuary/f100/",
    "urlPathFi": "/lisavarusteet/f100/",
-   "urlPathSv": "/tillbehor/f100/"
+   "urlPathSv": "/tillbehor/f100/",
+   "nameFi": "F100",
+   "seoNameFi": "Jalkalistan päätesarja",
+   "descriptionFi": "F100 on alumiininen päätesarja ASP-100-jalkalistalle — sisältää sisäkulman, ulkokulman, jatkoksen (kahden listan päiden yhdistämiseen) sekä oikean ja vasemman päätykappaleen (seinää vasten päättämiseen). Tarvitaan kaikkien kulmien ja päätyjen viimeistelyyn — ilman päätesarjaa jalkalistan päät jäävät avoimiksi ja kulmat ovat vaikeampia viimeistellä. Myydään sarjahintaan (kaikki 5 kappaletta yhdessä). Sopii tarkasti ASP-100-listaan (100 mm korkeus) — korkein Arrow-sarjan listamme. Värivalikoima on yhteensopiva listan kanssa — hopea, valkoinen, musta; RAL-tilauksesta sama sävy kuin listassa (~5 viikkoa). Materiaali alumiini — sama kestävyys ja käyttöikä kuin listalla. Hinta on sarjaa kohti, sisältää ALV 25,5 %. NB! Päätesarja on jokaiselle ASP-sarjan listalle erikseen eikä se ole vaihdettavissa toisen sarjan päätesarjaan."
   },
   {
    "sku": "ASP38",
@@ -3274,7 +3460,10 @@
    "urlPath": "/alumiinium-porandaliistud/asp38/",
    "urlPathRu": "/alyuminievye-plintusy/asp38/",
    "urlPathFi": "/alumiinijalkalistat/asp38/",
-   "urlPathSv": "/aluminiumgolvlister/asp38/"
+   "urlPathSv": "/aluminiumgolvlister/asp38/",
+   "nameFi": "ASP38",
+   "seoNameFi": "Alumiininen jalkalista",
+   "descriptionFi": "ASP38 on 38 mm korkea alumiininen jalkalista — kompakti, näkyvällä asennuksella toteutettu malli, jonka korkeus on ASP36:n ja ASP40:n välissä. Sopii projekteihin, joissa 36 mm jäisi liian hennoksi ja 40 mm tuntuisi jo liian leveältä. Hieman korkeampi kuin ASP36 — antaa silmälle selkeän lattian ja seinän välisen siirtymän, mutta ei silti vaikuta hallitsevalta. Helppo asennus klipseillä — sopii uusiin ja saneerattaviin lattioihin. Värivalikoima (hopea, valkoinen, musta) antaa joustavuutta niin vaaleisiin kuin tummiin sisustuksiin. RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Vakiopituus 2,6 m, materiaali alumiini. LED-toimintoa ei ole. Ero perinteiseen puu- tai MDF-listaan: alumiini ei ime kosteutta, ei turpoa eikä muuta väriään ajan myötä. Hinta on 1 m maalattua listaa, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, pyydä tarjous."
   },
   {
    "sku": "MPA013",
@@ -3345,7 +3534,10 @@
    "urlPath": "/alumiinium-porandaliistud/mpa013/",
    "urlPathRu": "/alyuminievye-plintusy/mpa013/",
    "urlPathFi": "/alumiinijalkalistat/mpa013/",
-   "urlPathSv": "/aluminiumgolvlister/mpa013/"
+   "urlPathSv": "/aluminiumgolvlister/mpa013/",
+   "nameFi": "Alumiininen jalkalista 19mm",
+   "seoNameFi": "Alumiininen jalkalista",
+   "descriptionFi": "MPA013 on 19,2 mm korkea alumiininen jalkalista TINLINE-sarjasta — hento ja pidättyväinen malli. Näkyvä korkeus on vain 13 mm (loput 6 mm jää lattian alle), profiilin leveys 16 mm. Sopii erityisen hyvin minimalistisiin sisustuksiin, joissa tarvitaan pidättyväinen lattian ja seinän välinen siirtymä. Ero tavalliseen klipsikiinnitteiseen listaan: MPA013 kiinnitetään jousijärjestelmällä (jousi 50 cm välein; tilataan erikseen, 0,50 € / kpl + ALV) — antaa tukevan ja äänettömän kiinnityksen ja mahdollistaa listan irrottamisen tarvittaessa. Vakiopituus 2,6 m, materiaali alumiini. Värit: hopea, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). LED-toimintoa ei ole — jos haluat TINLINE:n LEDillä, katso MPA302 tai MPV301. Hinta on 1 m maalattua listaa, sisältää ALV 25,5 %."
   },
   {
    "sku": "MPA317",
@@ -3400,7 +3592,10 @@
    "urlPath": "/alumiinium-porandaliistud/mpa317/",
    "urlPathRu": "/alyuminievye-plintusy/mpa317/",
    "urlPathFi": "/alumiinijalkalistat/mpa317/",
-   "urlPathSv": "/aluminiumgolvlister/mpa317/"
+   "urlPathSv": "/aluminiumgolvlister/mpa317/",
+   "nameFi": "MPA317",
+   "seoNameFi": "Alumiininen jalkalista",
+   "descriptionFi": "MPA317 on TINLINE-sarjan alumiininen jalkalista — hienovarainen ja pidättyvä lista näkyvällä asennuksella. Kuten muut TINLINE-mallit, se kiinnitetään jousijärjestelmällä — sopii uusiin ja saneerattaviin lattioihin. Värivalikoima (hopea, valkoinen, musta) antaa joustavuutta sekä vaaleisiin että tummiin sisustuksiin. RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Sopii erityisen hyvin minimalistisiin sisustuksiin ja nykyaikaisiin asuntoremontteihin, joissa tarvitaan hillittyä lattian ja seinän välistä siirtymää. Vakiopituus 2,6 m, materiaali alumiini. LED-toimintoa ei ole — jos haluat TINLINE-mallin LED-valolla, katso MPA302 tai MPV301. Hinta on 1 m maalattua listaa, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, kysy tarjousta. NB! Tarkista varastotilanne ennen tilaamista — MPA317 on harvemmin tilattava versio, toimitus voi kestää 2–3 viikkoa."
   },
   {
    "sku": "MPA301",
@@ -3471,7 +3666,10 @@
    "urlPath": "/alumiinium-porandaliistud/mpa301/",
    "urlPathRu": "/alyuminievye-plintusy/mpa301/",
    "urlPathFi": "/alumiinijalkalistat/mpa301/",
-   "urlPathSv": "/aluminiumgolvlister/mpa301/"
+   "urlPathSv": "/aluminiumgolvlister/mpa301/",
+   "nameFi": "Alumiininen jalkalista LED-valolla 27mm",
+   "seoNameFi": "Alumiininen jalkalista LED-valolla",
+   "descriptionFi": "Päälle asennettava alumiininen jalkalista sisäänrakennetulla LED-kanavalla (TINLINE-sarja) — kiinnittyy seinään yläreunasta ilman erillistä jousta ja muodostaa lattiapinnan suuntaisen hienon valonauhan. LED-nauha piilotetaan profiilin sisään, haluttaessa voi lisätä valodiffuusorin (2,50 € / m). Hinta koskee 1 m RAL-maalattua profiilia."
   },
   {
    "sku": "MPA302",
@@ -3546,7 +3744,10 @@
    "urlPath": "/alumiinium-porandaliistud/mpa302/",
    "urlPathRu": "/alyuminievye-plintusy/mpa302/",
    "urlPathFi": "/alumiinijalkalistat/mpa302/",
-   "urlPathSv": "/aluminiumgolvlister/mpa302/"
+   "urlPathSv": "/aluminiumgolvlister/mpa302/",
+   "nameFi": "Alumiininen jalkalista LED-valolla 31mm",
+   "seoNameFi": "Alumiininen jalkalista",
+   "descriptionFi": "MPA302 on 31,2 mm korkea TINLINE-sarjan alumiininen jalkalista LED-kanavalla — se antaa pehmeän piilotetun valolinjan lattian rajaan ja toimii samalla nykyaikaisena listana. Näkyvä korkeus on 25 mm (loput 6 mm jää lattian alle), profiilin leveys 16 mm. Sisäänrakennettu LED-kanava sopii pitkien käytävien valaisuun, asuintilojen yövalotilanteisiin ja koristeelliseksi lattian yksityiskohdaksi. Valodiffuusori tilataan erikseen (2,50 € / m + ALV); LED-nauha ja virtalähteet myös erikseen. Kiinnitys jousijärjestelmällä (jousi 50 cm välein; 0,50 € / kpl + ALV). Vakiopituus 2,6 m, materiaali alumiini. Värit: hopea, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Suositeltu LED-nauha: COB 16 W/m, 1350 lm/m, CRI 94, 24V. Hinta on 1 m maalattua listaa, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi."
   },
   {
    "sku": "MVP018",
@@ -3617,7 +3818,10 @@
    "urlPath": "/alumiinium-porandaliistud/mvp018/",
    "urlPathRu": "/alyuminievye-plintusy/mvp018/",
    "urlPathFi": "/alumiinijalkalistat/mvp018/",
-   "urlPathSv": "/aluminiumgolvlister/mvp018/"
+   "urlPathSv": "/aluminiumgolvlister/mvp018/",
+   "nameFi": "Alumiininen jalkalista seinään 9mm",
+   "seoNameFi": "Alumiininen jalkalista seinään",
+   "descriptionFi": "MVP018 on 9 mm korkea alumiininen jalkalista — erittäin korkea ja hienovarainen malli seinäasennukseen. Tarkoitettu projekteihin, joissa tarvitaan mahdollisimman hillittyä siirtymää lattian ja seinän välillä — sellaista, jonka silmä havaitsee vain alitajuisesti, mutta jonka olemassaolo ei vaikuta koristeelliselta yksityiskohdalta. Sopii erityisen hyvin galleria- ja näyttelytiloihin, minimalistisiin asuntoremontteihin ja projekteihin, joissa halutaan yhdistää alumiinin kestävyys perinteisesti näkymättömän listan ilmeeseen. Kiinnitys jousijärjestelmällä (jousi 50 cm välein; tilataan erikseen). Värivalikoima (hopea, valkoinen, musta) antaa joustavuutta erilaisiin sisustuksiin. RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Vakiopituus 2,6 m, materiaali alumiini. LED-toimintoa ei ole — 9 mm:n sisään ei mahdu LED-nauhaa. Hinta on 1 m maalattua listaa, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, kysy tarjousta."
   },
   {
    "sku": "MVP172",
@@ -3688,7 +3892,10 @@
    "urlPath": "/alumiinium-porandaliistud/mvp172/",
    "urlPathRu": "/alyuminievye-plintusy/mvp172/",
    "urlPathFi": "/alumiinijalkalistat/mvp172/",
-   "urlPathSv": "/aluminiumgolvlister/mvp172/"
+   "urlPathSv": "/aluminiumgolvlister/mvp172/",
+   "nameFi": "Alumiininen jalkalista seinään 22mm",
+   "seoNameFi": "Alumiininen jalkalista seinään",
+   "descriptionFi": "MVP172 on 22 mm korkea alumiininen jalkalista — seinäasennukseen tarkoitettu TINLINE-sarjan lista. Hillitty korkeus antaa silmälle tiedostamattoman lattian ja seinän välisen siirtymän, ilman että lista vaikuttaisi koristeelliselta yksityiskohdalta. Sopii erityisen hyvin pienempiin ja keskikokoisiin asuintiloihin, myös julkisiin tiloihin, joissa 60 mm tai suuremmat listat vaikuttaisivat liian raskailta. Kiinnitys jousijärjestelmällä (jousi 50 cm välein; tilataan erikseen). Värivalikoima (hopea, valkoinen, musta) antaa joustavuutta erilaisiin sisustuksiin. RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Vakiopituus 2,6 m, materiaali alumiini. LED-toimintoa ei ole — jos haluat saman sarjan LED-mallin, katso MPV301. Ero perinteiseen puu- tai MDF-listaan: alumiini ei imetä kosteutta, ei turpoa, ei muuta väriä ajan myötä. Hinta on 1 m maalattua listaa, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi."
   },
   {
    "sku": "MPV301",
@@ -3747,7 +3954,10 @@
    "urlPath": "/alumiinium-porandaliistud/mpv301/",
    "urlPathRu": "/alyuminievye-plintusy/mpv301/",
    "urlPathFi": "/alumiinijalkalistat/mpv301/",
-   "urlPathSv": "/aluminiumgolvlister/mpv301/"
+   "urlPathSv": "/aluminiumgolvlister/mpv301/",
+   "nameFi": "MPV301",
+   "seoNameFi": "Alumiininen jalkalista",
+   "descriptionFi": "MPV301 on TINLINE-sarjan alumiininen jalkalista LED-kanavalla — antaa pehmeän piilotetun valolinjan lattian linjaan. Kuten MPA302, se on osa TINLINE-mallistoa, joka yhdistää modernin nykyaikaisen jalkalistan toiminnon LED-järjestelmään. Sopii asuintilojen iltatilanteisiin, käytävien pehmeään valaistukseen ja koristeelliseksi lattian yksityiskohdaksi. LED-nauha, valodiffuusori ja virtalähteet tilataan erikseen. Kiinnitys jousijärjestelmällä, joka antaa tukevan ja äänettömän kiinnityksen uusiin ja saneerattaviin lattioihin. Vakiopituus 2,6 m, materiaali alumiini. Värit: hopea, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Suositeltu LED-nauha: COB 16 W/m, 1350 lm/m, CRI 94, 24V — jatkuva tasainen valolinja, ilman LED-pisteitä. Hinta on 1 m maalattua listaa, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, pyydä tarjous."
   },
   {
    "sku": "AST101",
@@ -3797,7 +4007,10 @@
    "urlPath": "/varjuprofiilid/lae/ast101/",
    "urlPathRu": "/dekor-profili/potolok/ast101/",
    "urlPathFi": "/varjoprofiilit/katto/ast101/",
-   "urlPathSv": "/skuggprofiler/tak/ast101/"
+   "urlPathSv": "/skuggprofiler/tak/ast101/",
+   "nameFi": "AST101",
+   "seoNameFi": "Katon varjoprofiili",
+   "descriptionFi": "AST101 on katon varjoprofiili ilman LED-toimintoa — sopii projekteihin, joissa tarvitaan selkeä varjolinja katon ja seinän väliin, mutta ei piilovalaistusta. Tulos on arkkitehtoninen yksityiskohta — hillitty linja, joka antaa silmälle tiedostamattoman signaalin katon rajasta, ilman että yksikään elementti vetäisi huomiota. Sopii asuintiloihin ja asuntoihin, joissa budjetissa ei ole tilaa LED-järjestelmälle tai joissa sähköjohdotuksen asennus olisi remontissa hankalaa. Tasoitettavalla reunalla — asennetaan kipsilevyn alle niin, että profiilin reuna jää levyn tasopinnan kanssa samaan tasoon; siirtymä on viimeistelyn jälkeen näkymätön. Vakiopituus 2,5 m, materiaali alumiini. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). LED-toimintoa ei ole. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, pyydä tarjous."
   },
   {
    "sku": "RST1020",
@@ -3851,7 +4064,10 @@
    "urlPath": "/varjuprofiilid/lae/rst1020/",
    "urlPathRu": "/dekor-profili/potolok/rst1020/",
    "urlPathFi": "/varjoprofiilit/katto/rst1020/",
-   "urlPathSv": "/skuggprofiler/tak/rst1020/"
+   "urlPathSv": "/skuggprofiler/tak/rst1020/",
+   "nameFi": "RST1020",
+   "seoNameFi": "Katon varjoprofiili",
+   "descriptionFi": "RST1020 on erottava katon varjoprofiili ilman LED-toimintoa — sopii kahden kattopinnan erottamiseen tai katto- ja seinäpaneelin välisen siirtymän merkitsemiseen. RST-sarjan profiilit on tarkoitettu asennettaviksi kahden kipsilevytasopinnan väliin, ei katon ja seinän nurkkaan. Ilman LED-järjestelmän monimutkaisuutta ja kustannuksia — sopii projekteihin, joissa tarvitaan selkeä pintojen erottelu, mutta ei valorakennetta. Sopii erityisen hyvin suurempien tilojen segmentointiin ja kattopintojen akustiseen tai visuaaliseen jakamiseen. Asennetaan tasoitettavalla reunalla kahden pinnan väliin — siirtymä on viimeistelyn jälkeen näkymätön. Vakiopituus 2,5 m, materiaali alumiini. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). LED-toimintoa ei ole — jos haluat saman sarjan LED-version, katso RST22 tai RST40. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %."
   },
   {
    "sku": "AST218",
@@ -3905,7 +4121,10 @@
    "urlPath": "/led-varjuprofiilid/lae/ast218/",
    "urlPathRu": "/led-profili/potolok/ast218/",
    "urlPathFi": "/led-varjoprofiilit/katto/ast218/",
-   "urlPathSv": "/led-skuggprofiler/tak/ast218/"
+   "urlPathSv": "/led-skuggprofiler/tak/ast218/",
+   "nameFi": "AST218",
+   "seoNameFi": "Katon LED-varjoprofiili",
+   "descriptionFi": "AST218 on 22 mm leveä katon LED-varjoprofiili — kompakti malli sisäänrakennetulla LED-kanavalla, mitoiltaan lähellä AST22:ta mutta hieman erilaisella sisägeometrialla. Tarkoitettu sekä uudisrakennuksiin että saneerauskohteisiin, joissa halutaan yhdistää tasainen varjolinja ja pehmeä piilovalaistus huoneen koko kehälle. Vakiopituus 2,5 m tarkoittaa tyypillisessä huoneessa vähemmän jatkoskohtia, mikä pitää varjolinjan visuaalisesti katkeamattomana. Tasoitettava reuna — asennetaan kipsilevyn alle niin, että profiilin reuna jää levyn pinnan tasoon; siirtymä on viimeistelyn jälkeen näkymätön. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V. Diffuusori tilataan erikseen. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %; käsittelemätön pinta on edullisempi, pyydä tarjous."
   },
   {
    "sku": "AST12",
@@ -3959,7 +4178,10 @@
    "urlPath": "/led-varjuprofiilid/lae/ast12/",
    "urlPathRu": "/led-profili/potolok/ast12/",
    "urlPathFi": "/led-varjoprofiilit/katto/ast12/",
-   "urlPathSv": "/led-skuggprofiler/tak/ast12/"
+   "urlPathSv": "/led-skuggprofiler/tak/ast12/",
+   "nameFi": "AST12",
+   "seoNameFi": "Katon LED-varjoprofiili",
+   "descriptionFi": "AST12 on 12 mm leveä katon LED-varjoprofiili — välimalli AST10:n (10 mm, ilman LEDiä) ja AST14_12:n (14 mm) välissä. Ero AST10:een on se, että AST12:ssa on sisäänrakennettu LED-kanava. 12 mm pysyy visuaalisesti hienona, mutta antaa silmälle riittävän arkkitehtonisen signaalin. Sopii erityisen hyvin pienempiin tiloihin, joissa leveämpi varjolinja vaikuttaisi raskaalta; myös korkeampiin tiloihin, joissa profiilia katsotaan etäämmältä ja hienompi linja toimii paremmin. Sisällä oleva LED antaa pehmeän valojuovan huoneen koko kehälle. Asennetaan katon ja seinän liitoskohtaan, tasoitettavalla reunalla — siirtymä kipsilevyn pintaan on viimeistelyn jälkeen näkymätön. Vakiopituus 2,5 m, materiaali alumiini. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy. Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %."
   },
   {
    "sku": "RST12",
@@ -4017,7 +4239,10 @@
    "urlPath": "/led-varjuprofiilid/lae/rst12/",
    "urlPathRu": "/led-profili/potolok/rst12/",
    "urlPathFi": "/led-varjoprofiilit/katto/rst12/",
-   "urlPathSv": "/led-skuggprofiler/tak/rst12/"
+   "urlPathSv": "/led-skuggprofiler/tak/rst12/",
+   "nameFi": "RST12",
+   "seoNameFi": "Katon LED-varjoprofiili",
+   "descriptionFi": "RST12 on erillisrakenteinen 12 mm katon LED-varjoprofiili — kahdesta osasta koostuva järjestelmä, jossa LED-kanava ja varjolinja ovat fyysisesti eri profiileissa. Tämä ratkaisu antaa asennukseen enemmän liikkumavaraa: LED-osan voi asentaa juuri sinne, missä se valaisee parhaiten, ja varjolinja jää omaksi koristeelliseksi elementiksi. RST12:n välisyvennys on 12 mm — keskimääräinen leveys, joka sopii useimpiin tiloihin: kodit, toimistot, kahvilat. Ero monoblokkiprofiileihin (esimerkiksi AST14_12) on juuri asennusvaihtoehtojen joustavuudessa — jos projekti vaatii LEDin ja varjon eri leveyksillä tai eri korkeuksilla, RST12 on ainoa valinta. Vakiopituus 2,5 m. Materiaali alumiini. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy. Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V. Diffuusori tilataan erikseen."
   },
   {
    "sku": "RST22",
@@ -4075,7 +4300,10 @@
    "urlPath": "/led-varjuprofiilid/lae/rst22/",
    "urlPathRu": "/led-profili/potolok/rst22/",
    "urlPathFi": "/led-varjoprofiilit/katto/rst22/",
-   "urlPathSv": "/led-skuggprofiler/tak/rst22/"
+   "urlPathSv": "/led-skuggprofiler/tak/rst22/",
+   "nameFi": "RST22",
+   "seoNameFi": "Katon LED-varjoprofiili",
+   "descriptionFi": "RST22 on 22 mm leveä erottava katon LED-varjoprofiili — käytetään kahden pinnan erottamiseen (esimerkiksi kahden kattotason välissä tai katon ja seinäpaneelin välissä). Ero tavalliseen katto-seinä-varjoprofiiliin on se, että RST-sarjan profiilit on tarkoitettu asennettavaksi kahden kipsilevytason väliin, ei katon ja seinän nurkkaan. Sisäänrakennettu LED-kanava antaa pehmeän valojuovan profiilin linjalle — sopii erityisen hyvin tila- ja vyöhykerajojen visuaaliseen merkitsemiseen, missä klassinen seinäprofiili ei sovi. 22 mm leveys antaa samalla selkeän erottelun ja riittävästi tilaa LED-nauhalle. Vakiopituus 2,5 m, materiaali alumiini. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy. Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V. LED-nauha ja diffuusori tilataan erikseen. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %."
   },
   {
    "sku": "RST40",
@@ -4133,7 +4361,10 @@
    "urlPath": "/led-varjuprofiilid/lae/rst40/",
    "urlPathRu": "/led-profili/potolok/rst40/",
    "urlPathFi": "/led-varjoprofiilit/katto/rst40/",
-   "urlPathSv": "/led-skuggprofiler/tak/rst40/"
+   "urlPathSv": "/led-skuggprofiler/tak/rst40/",
+   "nameFi": "RST40",
+   "seoNameFi": "Katon LED-varjoprofiili",
+   "descriptionFi": "RST40 on 40 mm leveä erottava katon LED-varjoprofiili — valikoimamme levein RST-sarjan malli ja eniten tilaa LEDille. Tarkoitettu kahden kattopinnan erottamiseen tai suurten kattotasojen visuaaliseen jaotteluun, kun tarvitaan huomiota herättävä valolinja. 40 mm leveys antaa riittävästi tilaa sekä LED-nauhalle että kunnolliselle diffuusorille — tuloksena on tasainen valolinja, jossa LED-pisteitä ei näy edes lyhyeltä etäisyydeltä. Sopii erityisen hyvin suuriin julkisiin tiloihin, edustustiloihin ja liiketiloihin, joissa arkkitehtonista valoa tarvitaan dramaattisena yksityiskohtana. Eroaa muista RST-sarjan profiileista myös siinä, että vakiopituus on 3 m — vähemmän jatkoskohtia pitkillä suorilla pinnoilla. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy. Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V. Hinta on 1 m maalattua profiilia, sisältää ALV 25,5 %."
   },
   {
    "sku": "ASP40-NV",
@@ -4194,7 +4425,10 @@
    "urlPath": "/tarvikud/asp40-valimine-nurk/",
    "urlPathRu": "/aksessuary/asp40-vnesh-ugol/",
    "urlPathFi": "/lisavarusteet/asp40-valimine-nurk/",
-   "urlPathSv": "/tillbehor/asp40-valimine-nurk/"
+   "urlPathSv": "/tillbehor/asp40-valimine-nurk/",
+   "nameFi": "ASP40-NV",
+   "seoNameFi": "Jalkalistan ulkokulma · 40 mm",
+   "descriptionFi": "Metallinen ulkokulmaosa ASP40-jalkalistalle. Peittää listan pään siinä, missä seinä kääntyy ulospäin 90°. Klik-järjestelmä — kiinnittyy listan profiiliin ilman liimaa."
   },
   {
    "sku": "ASP40-NS",
@@ -4255,7 +4489,10 @@
    "urlPath": "/tarvikud/asp40-sisemine-nurk/",
    "urlPathRu": "/aksessuary/asp40-vnut-ugol/",
    "urlPathFi": "/lisavarusteet/asp40-sisemine-nurk/",
-   "urlPathSv": "/tillbehor/asp40-sisemine-nurk/"
+   "urlPathSv": "/tillbehor/asp40-sisemine-nurk/",
+   "nameFi": "ASP40-NS",
+   "seoNameFi": "Jalkalistan sisäkulma · 40 mm",
+   "descriptionFi": "Sisäkulmaosa ASP40-listalle — huoneen tavalliseen sisäänpäin olevaan 90° kulmaan. Takapuolen pidikkeet kiinnittävät kulman listan profiiliin ilman erillistä liimaa."
   },
   {
    "sku": "ASP40-OK",
@@ -4316,7 +4553,10 @@
    "urlPath": "/tarvikud/asp40-otsakork/",
    "urlPathRu": "/aksessuary/asp40-zaglushka/",
    "urlPathFi": "/lisavarusteet/asp40-otsakork/",
-   "urlPathSv": "/tillbehor/asp40-otsakork/"
+   "urlPathSv": "/tillbehor/asp40-otsakork/",
+   "nameFi": "ASP40-OK",
+   "seoNameFi": "Jalkalistan päätytulppa · 40 mm",
+   "descriptionFi": "Päättää ASP40-listan pään oviaukossa, kaapin kulmassa tai mattoon siirryttäessä. Saatavana vasen- ja oikeakätisenä; ilmoita tilauksessa tarvittava puoli."
   },
   {
    "sku": "ASP40-Y",
@@ -4377,7 +4617,10 @@
    "urlPath": "/tarvikud/asp40-uhendus/",
    "urlPathRu": "/aksessuary/asp40-soedinitel/",
    "urlPathFi": "/lisavarusteet/asp40-uhendus/",
-   "urlPathSv": "/tillbehor/asp40-uhendus/"
+   "urlPathSv": "/tillbehor/asp40-uhendus/",
+   "nameFi": "ASP40-Y",
+   "seoNameFi": "Jalkalistan liitoselementti · 40 mm",
+   "descriptionFi": "Yhdistää kaksi peräkkäistä ASP40-listaa pitkästä päästä. Tarvitaan yli 2,5 m seinäpituuden yhteydessä. Klik-asennus profiilin päähän."
   },
   {
    "sku": "ASP60-NV",
@@ -4438,7 +4681,10 @@
    "urlPath": "/tarvikud/asp60-valimine-nurk/",
    "urlPathRu": "/aksessuary/asp60-vnesh-ugol/",
    "urlPathFi": "/lisavarusteet/asp60-valimine-nurk/",
-   "urlPathSv": "/tillbehor/asp60-valimine-nurk/"
+   "urlPathSv": "/tillbehor/asp60-valimine-nurk/",
+   "nameFi": "ASP60-NV",
+   "seoNameFi": "Jalkalistan ulkokulma · 60 mm",
+   "descriptionFi": "Metallinen ulkokulmaelementti ASP60-jalkalistalle. Peittää listan pään siinä, missä seinä kääntyy ulospäin 90°. Klik-järjestelmä — kiinnittyy listan profiiliin ilman liimaa."
   },
   {
    "sku": "ASP60-NS",
@@ -4499,7 +4745,10 @@
    "urlPath": "/tarvikud/asp60-sisemine-nurk/",
    "urlPathRu": "/aksessuary/asp60-vnut-ugol/",
    "urlPathFi": "/lisavarusteet/asp60-sisemine-nurk/",
-   "urlPathSv": "/tillbehor/asp60-sisemine-nurk/"
+   "urlPathSv": "/tillbehor/asp60-sisemine-nurk/",
+   "nameFi": "ASP60-NS",
+   "seoNameFi": "Jalkalistan sisäkulma · 60 mm",
+   "descriptionFi": "Sisäkulmaelementti ASP60-listalle — huoneen tavanomaiseen sisäänpäin kääntyvään 90° kulmaan. Takapuolen pidikkeet kiinnittävät kulman listan profiilin sisään ilman erillistä liimaa."
   },
   {
    "sku": "ASP60-OK",
@@ -4560,7 +4809,10 @@
    "urlPath": "/tarvikud/asp60-otsakork/",
    "urlPathRu": "/aksessuary/asp60-zaglushka/",
    "urlPathFi": "/lisavarusteet/asp60-otsakork/",
-   "urlPathSv": "/tillbehor/asp60-otsakork/"
+   "urlPathSv": "/tillbehor/asp60-otsakork/",
+   "nameFi": "ASP60-OK",
+   "seoNameFi": "Jalkalistan päätytulppa · 60 mm",
+   "descriptionFi": "Päättää ASP60-listan pään oviaukossa, kaapin kulmassa tai maton liitoksessa. Saatavana vasen- ja oikeakätisenä; merkitse tilauksessa tarvittava puoli."
   },
   {
    "sku": "ASP60-Y",
@@ -4621,7 +4873,10 @@
    "urlPath": "/tarvikud/asp60-uhendus/",
    "urlPathRu": "/aksessuary/asp60-soedinitel/",
    "urlPathFi": "/lisavarusteet/asp60-uhendus/",
-   "urlPathSv": "/tillbehor/asp60-uhendus/"
+   "urlPathSv": "/tillbehor/asp60-uhendus/",
+   "nameFi": "ASP60-Y",
+   "seoNameFi": "Jalkalistan liitoselementti · 60 mm",
+   "descriptionFi": "Yhdistää kaksi peräkkäistä ASP60-listaa pitkästä päästä. Tarvitaan, kun seinän pituus on yli 2,5 m. Klik-asennus profiilin päähän."
   },
   {
    "sku": "ASP80-NV",
@@ -4682,7 +4937,10 @@
    "urlPath": "/tarvikud/asp80-valimine-nurk/",
    "urlPathRu": "/aksessuary/asp80-vnesh-ugol/",
    "urlPathFi": "/lisavarusteet/asp80-valimine-nurk/",
-   "urlPathSv": "/tillbehor/asp80-valimine-nurk/"
+   "urlPathSv": "/tillbehor/asp80-valimine-nurk/",
+   "nameFi": "ASP80-NV",
+   "seoNameFi": "Jalkalistan ulkokulma · 80 mm",
+   "descriptionFi": "Metallinen ulkokulmaelementti ASP80-jalkalistalle. Peittää listan pään siinä kohdassa, jossa seinä kääntyy ulospäin 90°. Klik-järjestelmä — kiinnittyy listan profiiliin ilman liimaa."
   },
   {
    "sku": "ASP80-NS",
@@ -4743,7 +5001,10 @@
    "urlPath": "/tarvikud/asp80-sisemine-nurk/",
    "urlPathRu": "/aksessuary/asp80-vnut-ugol/",
    "urlPathFi": "/lisavarusteet/asp80-sisemine-nurk/",
-   "urlPathSv": "/tillbehor/asp80-sisemine-nurk/"
+   "urlPathSv": "/tillbehor/asp80-sisemine-nurk/",
+   "nameFi": "ASP80-NS",
+   "seoNameFi": "Jalkalistan sisäkulma · 80 mm",
+   "descriptionFi": "Sisäkulmaelementti ASP80-listalle — huoneen tavalliseen sisäänpäin kääntyvään 90° kulmaan. Taustapuolen klipsit kiinnittävät kulman listan profiiliin ilman erillistä liimaa."
   },
   {
    "sku": "ASP80-OK",
@@ -4804,7 +5065,10 @@
    "urlPath": "/tarvikud/asp80-otsakork/",
    "urlPathRu": "/aksessuary/asp80-zaglushka/",
    "urlPathFi": "/lisavarusteet/asp80-otsakork/",
-   "urlPathSv": "/tillbehor/asp80-otsakork/"
+   "urlPathSv": "/tillbehor/asp80-otsakork/",
+   "nameFi": "ASP80-OK",
+   "seoNameFi": "Jalkalistan päätytulppa · 80 mm",
+   "descriptionFi": "Päättää ASP80-listan pään oviaukossa, kaapin kulmassa tai kokolattiamaton liittymässä. Saatavana vasen- ja oikeakätisenä; merkitse tilatessa tarvittava puoli."
   },
   {
    "sku": "ASP80-Y",
@@ -4865,7 +5129,10 @@
    "urlPath": "/tarvikud/asp80-uhendus/",
    "urlPathRu": "/aksessuary/asp80-soedinitel/",
    "urlPathFi": "/lisavarusteet/asp80-uhendus/",
-   "urlPathSv": "/tillbehor/asp80-uhendus/"
+   "urlPathSv": "/tillbehor/asp80-uhendus/",
+   "nameFi": "ASP80-Y",
+   "seoNameFi": "Jalkalistan liitoskappale · 80 mm",
+   "descriptionFi": "Yhdistää kaksi peräkkäistä ASP80-listaa pitkästä päästä. Tarvitaan, kun seinän pituus on yli 2,5 m. Klik-asennus profiilin päähän."
   },
   {
    "sku": "ASP100-NV",
@@ -4926,7 +5193,10 @@
    "urlPath": "/tarvikud/asp100-valimine-nurk/",
    "urlPathRu": "/aksessuary/asp100-vnesh-ugol/",
    "urlPathFi": "/lisavarusteet/asp100-valimine-nurk/",
-   "urlPathSv": "/tillbehor/asp100-valimine-nurk/"
+   "urlPathSv": "/tillbehor/asp100-valimine-nurk/",
+   "nameFi": "ASP100-NV",
+   "seoNameFi": "Jalkalistan ulkokulma · 100 mm",
+   "descriptionFi": "Metallinen ulkokulmakappale ASP100-jalkalistalle. Peittää listan pään siinä, missä seinä kääntyy ulospäin 90°. Klik-järjestelmä — kiinnittyy listaprofiiliin ilman liimaa."
   },
   {
    "sku": "ASP100-NS",
@@ -4987,7 +5257,10 @@
    "urlPath": "/tarvikud/asp100-sisemine-nurk/",
    "urlPathRu": "/aksessuary/asp100-vnut-ugol/",
    "urlPathFi": "/lisavarusteet/asp100-sisemine-nurk/",
-   "urlPathSv": "/tillbehor/asp100-sisemine-nurk/"
+   "urlPathSv": "/tillbehor/asp100-sisemine-nurk/",
+   "nameFi": "ASP100-NS",
+   "seoNameFi": "Jalkalistan sisäkulma · 100 mm",
+   "descriptionFi": "Sisäkulmakappale ASP100-listalle — huoneen tavalliseen sisäänpäin kääntyvään 90° kulmaan. Takapuolen kiinnikkeet lukitsevat kulman listaprofiilin sisään ilman erillistä liimaa."
   },
   {
    "sku": "ASP100-OK",
@@ -5048,7 +5321,10 @@
    "urlPath": "/tarvikud/asp100-otsakork/",
    "urlPathRu": "/aksessuary/asp100-zaglushka/",
    "urlPathFi": "/lisavarusteet/asp100-otsakork/",
-   "urlPathSv": "/tillbehor/asp100-otsakork/"
+   "urlPathSv": "/tillbehor/asp100-otsakork/",
+   "nameFi": "ASP100-OK",
+   "seoNameFi": "Jalkalistan päätytulppa · 100 mm",
+   "descriptionFi": "Päättää ASP100-listan pään oviaukossa, kaapin kulmassa tai mattoliitoksessa. Saatavana vasen- ja oikeakätisenä; merkitse tilauksessa tarvittava puoli."
   },
   {
    "sku": "ASP100-Y",
@@ -5109,7 +5385,10 @@
    "urlPath": "/tarvikud/asp100-uhendus/",
    "urlPathRu": "/aksessuary/asp100-soedinitel/",
    "urlPathFi": "/lisavarusteet/asp100-uhendus/",
-   "urlPathSv": "/tillbehor/asp100-uhendus/"
+   "urlPathSv": "/tillbehor/asp100-uhendus/",
+   "nameFi": "ASP100-Y",
+   "seoNameFi": "Jalkalistan liitoskappale · 100 mm",
+   "descriptionFi": "Yhdistää kaksi peräkkäistä ASP100-listaa pitkästä päästä. Tarvitaan, kun seinän pituus on yli 2,5 m. Klik-asennus profiilin päähän."
   },
   {
    "sku": "HAJUTI-M",
@@ -5153,7 +5432,10 @@
    "urlPath": "/tarvikud/hajuti-matt/",
    "urlPathRu": "/aksessuary/diffuzor-matovyy/",
    "urlPathFi": "/lisavarusteet/hajuti-matt/",
-   "urlPathSv": "/tillbehor/hajuti-matt/"
+   "urlPathSv": "/tillbehor/hajuti-matt/",
+   "nameFi": "Diffuusori matta",
+   "seoNameFi": "Matta LED-diffuusorinauha",
+   "descriptionFi": "Pehmeä mattapintainen silikonista valmistettu diffuusorinauha, joka asennetaan tiettyihin profiileihin, joissa käytetään LEDiä. Hajottaa LED-pisteet tasaiseksi valolinjaksi ja peittää LED-nauhan suorasta näkökentästä — asennettuna ei näy enää yksittäisiä LED-valoja, vaan ainoastaan pehmeä hehkuva linja. Myydään juoksumetreittäin — merkitse tilauksessa tarvittava määrä tarkkoina metreinä."
   },
   {
    "sku": "KA1",
@@ -5216,7 +5498,10 @@
    "urlPath": "/kardinaprofiilid/ka1/",
    "urlPathRu": "/karniznye-profili/ka1/",
    "urlPathFi": "/verhoprofiilit/ka1/",
-   "urlPathSv": "/gardinprofiler/ka1/"
+   "urlPathSv": "/gardinprofiler/ka1/",
+   "nameFi": "KA1",
+   "seoNameFi": "Piiloasennettava verhoprofiili",
+   "descriptionFi": "KA1 on piiloasennettava verhoprofiili — alumiiniprofiili, jonka verhokisko asennetaan kipsilevyn sisään niin, ettei se ole viimeistelyn jälkeen huoneesta näkyvissä. Verho näyttää riippuvan suoraan katosta, ilman näkyvää verhotankoa tai verhokiskoa. Visuaalinen vaikutus on selvä: silmä ei näe enää verhokiskon paikkaa, vaan ainoastaan kankaan ylimmän reunan. Huone tuntuu korkeammalta ja minimalistisemmalta; ikkunat muuttuvat arkkitehtoniseksi elementiksi, eivät tekniseksi yksityiskohdaksi. Sopii erityisen hyvin olohuoneisiin, makuuhuoneisiin ja kokoustiloihin, joissa on suuret ikkunat. KA1 on yhteensopiva AST50-katon LED-varjoprofiilimme kanssa — yhdistelmä antaa piiloon jäävän verhokiskon ja pehmeän valolinjan verhon takana. Vakiopituus 3 m, materiaali alumiini. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy."
   },
   {
    "sku": "KA2",
@@ -5274,7 +5559,10 @@
    "urlPath": "/kardinaprofiilid/ka2/",
    "urlPathRu": "/karniznye-profili/ka2/",
    "urlPathFi": "/verhoprofiilit/ka2/",
-   "urlPathSv": "/gardinprofiler/ka2/"
+   "urlPathSv": "/gardinprofiler/ka2/",
+   "nameFi": "KA2",
+   "seoNameFi": "Piiloasennettava verhoprofiili · 2-rivinen",
+   "descriptionFi": "KA2 on kaksirivinen piiloasennettava verhoprofiili — sama asennusperiaate kuin KA1:ssä, mutta kahdella rinnakkaisella verhokiskolla, mikä mahdollistaa esimerkiksi läpikuultavan päiväverhon ja pimentävän yöverhon asentamisen rinnakkain. Molemmat verhokiskot jäävät katon sisään piiloon; huoneesta näkyy vain kahden kerroksen kangas. Ratkaisu on tyypillinen makuuhuoneissa ja hotelleissa, joissa tarvitaan samanaikaisesti päivänvalon pehmennystä ja täydellistä pimennystä, mutta ei haluta näkyvää verhotankorakennetta. KA2 mahdollistaa tämän rikkomatta tilan minimalismia. Vakiopituus 3 m, materiaali alumiini. Värit: valkoinen ja musta (jauhemaalattu); RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Asennetaan kipsilevyn sisään rakentamisen aikana. Profiilin runko on KA1:tä tilavampi, joten katon korkeus asennuskohdassa on otettava se huomioon — tarvittava asennussyvennys on ~80 mm."
   },
   {
    "sku": "AST25",
@@ -5333,7 +5621,10 @@
    "urlPath": "/led-varjuprofiilid/lae/ast25/",
    "urlPathRu": "/led-profili/potolok/ast25/",
    "urlPathFi": "/led-varjoprofiilit/katto/ast25/",
-   "urlPathSv": "/led-skuggprofiler/tak/ast25/"
+   "urlPathSv": "/led-skuggprofiler/tak/ast25/",
+   "nameFi": "AST25",
+   "seoNameFi": "Katon LED-varjoprofiili · 25 mm",
+   "descriptionFi": "AST25 on 25 mm leveä katon LED-varjoprofiili — valikoimamme levein vakiomallinen kattovarjoprofiili. Vertailuksi: AST22 on 22,5 mm, AST5 on 5 mm. AST25 sopii silloin, kun projekti vaatii näkyvämpää varjolinjaa — suuremmat oleskelutilat, korkeat katot, edustavat julkiset tilat, joissa 22 mm jäisi liian hienoksi. Profiilin sisällä on integroitu LED-kanava, joka antaa pehmeän piilovalaistuksen koko kehän pituudelta. Leveämpi syvennys tarkoittaa myös enemmän tilaa diffuusorille — valo jakautuu tasaisemmin eikä silmä huomaa yhtä helposti LED-pisteitä profiilin sisällä. Asennetaan katon ja seinän liitoskohtaan, tasoitettava reuna. Vakiopituus 3 m. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy. Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V (kattovakio). LED-nauha ja diffuusori tilataan erikseen."
   },
   {
    "sku": "LPA126",
@@ -5391,7 +5682,10 @@
    "urlPath": "/varjuprofiilid/lae/lpa126/",
    "urlPathRu": "/dekor-profili/potolok/lpa126/",
    "urlPathFi": "/varjoprofiilit/katto/lpa126/",
-   "urlPathSv": "/skuggprofiler/tak/lpa126/"
+   "urlPathSv": "/skuggprofiler/tak/lpa126/",
+   "nameFi": "LPA126",
+   "seoNameFi": "Hieno katon varjoprofiili · 6 mm",
+   "descriptionFi": "LPA126 on 6 mm hieno katon varjoprofiili — AST5:n (5 mm) jälkeen valikoimamme toiseksi ohuin varjolinja. Tarkoitettu projekteihin, joissa tarvitaan arkkitehtonista yksityiskohtaa mutta ei LED-valaistusta. Tulos on hillitty varjolinja katon ja seinän välissä, jonka silmä rekisteröi alitajuisesti — tila vaikuttaa viimeistellymmältä ilman että yksikään yksityiskohta vetää huomiota. Ero AST5:een: LPA126 on 1 mm leveämpi (6 mm vs 5 mm) ja pidempi (2,6 m vs 2,5 m), mikä vähentää jatkoskohtien määrää pitkissä tiloissa. AST5 on hieman neutraalimpi ja hienompi, LPA126 antaa vähän vahvemman linjan. Tasoitettava reuna, asennetaan kipsilevyn pinnan tasoon. Siirtymä on viimeistelyn jälkeen näkymätön. Vakiopituus 2,6 m. Värit: käsittelemätön, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). LED-toimintoa ei ole."
   }
  ],
  "categories": [
