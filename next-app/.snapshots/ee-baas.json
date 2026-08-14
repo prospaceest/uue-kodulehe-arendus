@@ -1,0 +1,5547 @@
+{
+ "base": "https://varjuprofiilid.ee",
+ "takenAt": "2026-08-14T11:12:39.921Z",
+ "pages": [
+  {
+   "path": "/",
+   "status": 200,
+   "title": "Varjuprofiilid.ee — Alumiinium varjuprofiilid Eestis",
+   "canonical": "/",
+   "hreflang": [
+    "et=/",
+    "ru=/ru",
+    "x-default=/"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Puhas joon. Peidetud valgus.",
+   "textHash": "16b75d9b1df39c0e",
+   "textChars": 4724,
+   "prices": [
+    "11,68 €",
+    "11,99 €",
+    "13,37 €",
+    "13,84 €",
+    "15,88 €",
+    "17,93 €",
+    "19,37 €",
+    "26,13 €"
+   ]
+  },
+  {
+   "path": "/alumiinium-porandaliistud/asp100",
+   "status": 200,
+   "title": "ASP100 – Alumiinium põrandaliist | Varjuprofiilid.ee",
+   "canonical": "/alumiinium-porandaliistud/asp100",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/asp100",
+    "ru=/ru/alyuminievye-plintusy/asp100",
+    "x-default=/alumiinium-porandaliistud/asp100"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP100",
+   "textHash": "b37553cd4da4ae94",
+   "textChars": 2285,
+   "prices": [
+    "11,93 €",
+    "12,20 €",
+    "13,22 €",
+    "13,74 €",
+    "14,86 €",
+    "16,18 €",
+    "37,15 €"
+   ]
+  },
+  {
+   "path": "/alumiinium-porandaliistud/asp36",
+   "status": 200,
+   "title": "ASP36 – Alumiinium põrandaliist | Varjuprofiilid.ee",
+   "canonical": "/alumiinium-porandaliistud/asp36",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/asp36",
+    "ru=/ru/alyuminievye-plintusy/asp36",
+    "x-default=/alumiinium-porandaliistud/asp36"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP36",
+   "textHash": "9c3d97dd370d6bb9",
+   "textChars": 2268,
+   "prices": [
+    "12,20 €",
+    "13,14 €",
+    "13,22 €",
+    "13,74 €",
+    "14,86 €",
+    "30,50 €"
+   ]
+  },
+  {
+   "path": "/alumiinium-porandaliistud/asp38",
+   "status": 200,
+   "title": "ASP38 – Alumiinium põrandaliist | Varjuprofiilid.ee",
+   "canonical": "/alumiinium-porandaliistud/asp38",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/asp38",
+    "ru=/ru/alyuminievye-plintusy/asp38",
+    "x-default=/alumiinium-porandaliistud/asp38"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP38",
+   "textHash": "a5c2e59fa3e50373",
+   "textChars": 2210,
+   "prices": [
+    "12,20 €",
+    "13,14 €",
+    "13,22 €",
+    "14,86 €",
+    "31,72 €"
+   ]
+  },
+  {
+   "path": "/alumiinium-porandaliistud/asp40",
+   "status": 200,
+   "title": "ASP40 – Alumiinium põrandaliist | Varjuprofiilid.ee",
+   "canonical": "/alumiinium-porandaliistud/asp40",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/asp40",
+    "ru=/ru/alyuminievye-plintusy/asp40",
+    "x-default=/alumiinium-porandaliistud/asp40"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP40",
+   "textHash": "e9d45324a77b3922",
+   "textChars": 2303,
+   "prices": [
+    "10,66 €",
+    "11,17 €",
+    "12,20 €",
+    "13,22 €",
+    "14,86 €",
+    "26,65 €",
+    "8,41 €"
+   ]
+  },
+  {
+   "path": "/alumiinium-porandaliistud/asp58",
+   "status": 200,
+   "title": "ASP58 – Alumiinium põrandaliist | Varjuprofiilid.ee",
+   "canonical": "/alumiinium-porandaliistud/asp58",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/asp58",
+    "ru=/ru/alyuminievye-plintusy/asp58",
+    "x-default=/alumiinium-porandaliistud/asp58"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP58",
+   "textHash": "f0a8f84e5def55a1",
+   "textChars": 2255,
+   "prices": [
+    "11,12 €",
+    "12,20 €",
+    "13,22 €",
+    "13,74 €",
+    "14,26 €",
+    "14,86 €",
+    "34,37 €"
+   ]
+  },
+  {
+   "path": "/alumiinium-porandaliistud/asp60",
+   "status": 200,
+   "title": "ASP60 – Alumiinium põrandaliist | Varjuprofiilid.ee",
+   "canonical": "/alumiinium-porandaliistud/asp60",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/asp60",
+    "ru=/ru/alyuminievye-plintusy/asp60",
+    "x-default=/alumiinium-porandaliistud/asp60"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP60",
+   "textHash": "4adf16beb7c50608",
+   "textChars": 2242,
+   "prices": [
+    "11,68 €",
+    "12,20 €",
+    "12,88 €",
+    "13,22 €",
+    "14,86 €",
+    "30,37 €",
+    "9,06 €"
+   ]
+  },
+  {
+   "path": "/alumiinium-porandaliistud/asp78",
+   "status": 200,
+   "title": "ASP78 – Alumiinium põrandaliist | Varjuprofiilid.ee",
+   "canonical": "/alumiinium-porandaliistud/asp78",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/asp78",
+    "ru=/ru/alyuminievye-plintusy/asp78",
+    "x-default=/alumiinium-porandaliistud/asp78"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP78",
+   "textHash": "752624ae33fd529e",
+   "textChars": 2233,
+   "prices": [
+    "12,20 €",
+    "13,02 €",
+    "13,22 €",
+    "13,74 €",
+    "14,86 €",
+    "15,98 €",
+    "38,64 €"
+   ]
+  },
+  {
+   "path": "/alumiinium-porandaliistud/asp80",
+   "status": 200,
+   "title": "ASP80 – Alumiinium põrandaliist | Varjuprofiilid.ee",
+   "canonical": "/alumiinium-porandaliistud/asp80",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/asp80",
+    "ru=/ru/alyuminievye-plintusy/asp80",
+    "x-default=/alumiinium-porandaliistud/asp80"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP80",
+   "textHash": "b58e1a7aad15cc72",
+   "textChars": 2257,
+   "prices": [
+    "11,07 €",
+    "12,20 €",
+    "13,22 €",
+    "13,74 €",
+    "14,86 €",
+    "14,99 €",
+    "35,72 €"
+   ]
+  },
+  {
+   "path": "/alumiinium-porandaliistud/mpa013",
+   "status": 200,
+   "title": "Alumiinium põrandaliist 19mm – Alumiinium põrandaliist | Varjuprofiilid.ee",
+   "canonical": "/alumiinium-porandaliistud/mpa013",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/mpa013",
+    "ru=/ru/alyuminievye-plintusy/mpa013",
+    "x-default=/alumiinium-porandaliistud/mpa013"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "MPA013",
+   "textHash": "a783c8301f3d0511",
+   "textChars": 2183,
+   "prices": [
+    "0,50 €",
+    "12,20 €",
+    "13,22 €",
+    "13,83 €",
+    "14,86 €",
+    "15,49 €",
+    "35,96 €"
+   ]
+  },
+  {
+   "path": "/alumiinium-porandaliistud/mpa301",
+   "status": 200,
+   "title": "Alumiinium põrandaliist LED-iga 27mm – Alumiinium põrandaliist LED-iga | Varjuprofiilid.ee",
+   "canonical": "/alumiinium-porandaliistud/mpa301",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/mpa301",
+    "ru=/ru/alyuminievye-plintusy/mpa301",
+    "x-default=/alumiinium-porandaliistud/mpa301"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "MPA301",
+   "textHash": "970e700284eb1d08",
+   "textChars": 1798,
+   "prices": [
+    "12,20 €",
+    "13,22 €",
+    "13,83 €",
+    "14,86 €",
+    "15,49 €",
+    "2,50 €",
+    "35,96 €"
+   ]
+  },
+  {
+   "path": "/alumiinium-porandaliistud/mpa302",
+   "status": 200,
+   "title": "Alumiinium põrandaliist LED-iga 31mm – Alumiinium põrandaliist | Varjuprofiilid.ee",
+   "canonical": "/alumiinium-porandaliistud/mpa302",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/mpa302",
+    "ru=/ru/alyuminievye-plintusy/mpa302",
+    "x-default=/alumiinium-porandaliistud/mpa302"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "MPA302",
+   "textHash": "333c885810589b6f",
+   "textChars": 2249,
+   "prices": [
+    "0,50 €",
+    "12,20 €",
+    "13,22 €",
+    "13,83 €",
+    "14,86 €",
+    "15,49 €",
+    "2,50 €",
+    "35,96 €"
+   ]
+  },
+  {
+   "path": "/alumiinium-porandaliistud/mpa317",
+   "status": 200,
+   "title": "MPA317 – Alumiinium põrandaliist | Varjuprofiilid.ee",
+   "canonical": "/alumiinium-porandaliistud/mpa317",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/mpa317",
+    "ru=/ru/alyuminievye-plintusy/mpa317",
+    "x-default=/alumiinium-porandaliistud/mpa317"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "MPA317",
+   "textHash": "4fe5719a1d14efb6",
+   "textChars": 2254,
+   "prices": [
+    "12,20 €",
+    "12,81 €",
+    "13,22 €",
+    "14,76 €",
+    "14,86 €",
+    "33,31 €"
+   ]
+  },
+  {
+   "path": "/alumiinium-porandaliistud/mpv301",
+   "status": 200,
+   "title": "MPV301 – Alumiinium põrandaliist | Varjuprofiilid.ee",
+   "canonical": "/alumiinium-porandaliistud/mpv301",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/mpv301",
+    "ru=/ru/alyuminievye-plintusy/mpv301",
+    "x-default=/alumiinium-porandaliistud/mpv301"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "MPV301",
+   "textHash": "0676d8733280b054",
+   "textChars": 2251,
+   "prices": [
+    "12,20 €",
+    "12,28 €",
+    "13,22 €",
+    "14,01 €",
+    "14,86 €",
+    "31,93 €"
+   ]
+  },
+  {
+   "path": "/alumiinium-porandaliistud/mvp018",
+   "status": 200,
+   "title": "Alumiinium põrandaliist seinale 9mm – Alumiinium põrandaliist seinale | Varjuprofiilid.ee",
+   "canonical": "/alumiinium-porandaliistud/mvp018",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/mvp018",
+    "ru=/ru/alyuminievye-plintusy/mvp018",
+    "x-default=/alumiinium-porandaliistud/mvp018"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "MVP018",
+   "textHash": "0c0900fc4b6be6fe",
+   "textChars": 2327,
+   "prices": [
+    "11,89 €",
+    "12,20 €",
+    "13,22 €",
+    "13,63 €",
+    "14,86 €",
+    "30,91 €"
+   ]
+  },
+  {
+   "path": "/alumiinium-porandaliistud/mvp172",
+   "status": 200,
+   "title": "Alumiinium põrandaliist seinale 22mm – Alumiinium põrandaliist seinale | Varjuprofiilid.ee",
+   "canonical": "/alumiinium-porandaliistud/mvp172",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/mvp172",
+    "ru=/ru/alyuminievye-plintusy/mvp172",
+    "x-default=/alumiinium-porandaliistud/mvp172"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "MVP172",
+   "textHash": "34bf61183ba18093",
+   "textChars": 2317,
+   "prices": [
+    "12,20 €",
+    "13,22 €",
+    "13,63 €",
+    "14,86 €",
+    "15,49 €",
+    "35,44 €"
+   ]
+  },
+  {
+   "path": "/garantii",
+   "status": 200,
+   "title": "Garantii ja pretensioonid | Varjuprofiilid.ee",
+   "canonical": "/garantii",
+   "hreflang": [
+    "et=/garantii",
+    "ru=/ru/garantiya",
+    "x-default=/garantii"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Garantii profiilile ja selle värvile.",
+   "textHash": "d7e194b4ab0b2be0",
+   "textChars": 1681,
+   "prices": []
+  },
+  {
+   "path": "/impressum",
+   "status": 200,
+   "title": "Õigusteave | Varjuprofiilid.ee",
+   "canonical": "/impressum",
+   "hreflang": [
+    "et=/impressum",
+    "ru=/ru/rekvizity",
+    "x-default=/impressum"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Tingimused.",
+   "textHash": "3089b8e6645b7a97",
+   "textChars": 1729,
+   "prices": []
+  },
+  {
+   "path": "/inspiratsioon",
+   "status": 200,
+   "title": "Inspiratsioon — Päriseluprojektid varjuprofiilide | Varjuprofiilid.ee",
+   "canonical": "/inspiratsioon",
+   "hreflang": [
+    "et=/inspiratsioon",
+    "ru=/ru/vdohnovenie",
+    "x-default=/inspiratsioon"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Inspiratsioon.",
+   "textHash": "fd8863b1689f9a1a",
+   "textChars": 1308,
+   "prices": []
+  },
+  {
+   "path": "/inspiratsioon/eduardi-maja",
+   "status": 200,
+   "title": "Üks maja, kolm SKU-d, üks pidev joon | Inspiratsioon | Varjuprofiilid.ee | Varjuprofiilid.ee",
+   "canonical": "/inspiratsioon/eduardi-maja",
+   "hreflang": [
+    "et=/inspiratsioon/eduardi-maja",
+    "ru=/ru/vdohnovenie/eduardi-maja",
+    "x-default=/inspiratsioon/eduardi-maja"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "“ Üks maja, kolm SKU-d, üks pidev joon .”",
+   "textHash": "1e41ce1f03c3d9e5",
+   "textChars": 3262,
+   "prices": []
+  },
+  {
+   "path": "/inspiratsioon/tallinna-korter",
+   "status": 200,
+   "title": "Valgus ja jooned ilma sisearhitektita | Inspiratsioon | Varjuprofiilid.ee | Varjuprofiilid.ee",
+   "canonical": "/inspiratsioon/tallinna-korter",
+   "hreflang": [
+    "et=/inspiratsioon/tallinna-korter",
+    "ru=/ru/vdohnovenie/tallinna-korter",
+    "x-default=/inspiratsioon/tallinna-korter"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "“ Valgus ja jooned ilma sisearhitektita .”",
+   "textHash": "9e48fc0559fc3fd1",
+   "textChars": 3765,
+   "prices": []
+  },
+  {
+   "path": "/inspiratsioon/viimsi-vannituba",
+   "status": 200,
+   "title": "Üks vann, kaks LED-joont, kolm stseeni | Inspiratsioon | Varjuprofiilid.ee | Varjuprofiilid.ee",
+   "canonical": "/inspiratsioon/viimsi-vannituba",
+   "hreflang": [
+    "et=/inspiratsioon/viimsi-vannituba",
+    "ru=/ru/vdohnovenie/viimsi-vannituba",
+    "x-default=/inspiratsioon/viimsi-vannituba"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "“ Üks vann, kaks LED-joont, kolm stseeni .”",
+   "textHash": "b2625867449aa76d",
+   "textChars": 3051,
+   "prices": []
+  },
+  {
+   "path": "/kardinaprofiilid/ka1",
+   "status": 200,
+   "title": "KA1 – Peidetud paigaldusega kardinaprofiil | Varjuprofiilid.ee",
+   "canonical": "/kardinaprofiilid/ka1",
+   "hreflang": [
+    "et=/kardinaprofiilid/ka1",
+    "ru=/ru/karniznye-profili/ka1",
+    "x-default=/kardinaprofiilid/ka1"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "KA1",
+   "textHash": "44d474a9abf331eb",
+   "textChars": 2150,
+   "prices": [
+    "21,70 €",
+    "47,74 €",
+    "65,10 €"
+   ]
+  },
+  {
+   "path": "/kardinaprofiilid/ka2",
+   "status": 200,
+   "title": "KA2 – Peidetud paigaldusega kardinaprofiil · 2-rea | Varjuprofiilid.ee",
+   "canonical": "/kardinaprofiilid/ka2",
+   "hreflang": [
+    "et=/kardinaprofiilid/ka2",
+    "ru=/ru/karniznye-profili/ka2",
+    "x-default=/kardinaprofiilid/ka2"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "KA2",
+   "textHash": "5234624bfac3042c",
+   "textChars": 2126,
+   "prices": [
+    "143,22 €",
+    "21,70 €",
+    "47,74 €"
+   ]
+  },
+  {
+   "path": "/kkk",
+   "status": 200,
+   "title": "Korduma kippuvad küsimused | Varjuprofiilid.ee",
+   "canonical": "/kkk",
+   "hreflang": [
+    "et=/kkk",
+    "ru=/ru/faq",
+    "x-default=/kkk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "KKK.",
+   "textHash": "b6f48a89214885f1",
+   "textChars": 1633,
+   "prices": []
+  },
+  {
+   "path": "/kontakt",
+   "status": 200,
+   "title": "Kontakt — PROSPACE OÜ | Varjuprofiilid.ee",
+   "canonical": "/kontakt",
+   "hreflang": [
+    "et=/kontakt",
+    "ru=/ru/kontakty",
+    "x-default=/kontakt"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Tule külla.",
+   "textHash": "71d8646baef20e27",
+   "textChars": 1928,
+   "prices": []
+  },
+  {
+   "path": "/led-varjuprofiilid",
+   "status": 200,
+   "title": "LED varjuprofiilid – LED laeprofiilid ja LED põrandaprofiilid | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid",
+   "hreflang": [
+    "et=/led-varjuprofiilid",
+    "ru=/ru/led-profili",
+    "x-default=/led-varjuprofiilid"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "LED varjuprofiilid.",
+   "textHash": "0238d3c1c5d0f187",
+   "textChars": 4295,
+   "prices": [
+    "13,84 €",
+    "15,88 €",
+    "17,93 €",
+    "19,88 €",
+    "22,03 €",
+    "28,18 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/kesklae",
+   "status": 200,
+   "title": "Kesklae LED varjuprofiilid – dekoratiivsed LED-read lakke | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/kesklae",
+   "hreflang": [
+    "et=/led-varjuprofiilid/kesklae",
+    "ru=/ru/led-profili/centralnyj",
+    "x-default=/led-varjuprofiilid/kesklae"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Kesklae LED varjuprofiilid",
+   "textHash": "b9525bf0a74c3351",
+   "textChars": 1410,
+   "prices": []
+  },
+  {
+   "path": "/led-varjuprofiilid/lae",
+   "status": 200,
+   "title": "Lae LED varjuprofiilid – LED laeprofiilid alumiiniumist | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/lae",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae",
+    "ru=/ru/led-profili/potolok",
+    "x-default=/led-varjuprofiilid/lae"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Lae LED varjuprofiilid – LED laeprofiilid alumiiniumist",
+   "textHash": "2aad151670c0e775",
+   "textChars": 2135,
+   "prices": [
+    "15,88 €",
+    "17,93 €",
+    "19,37 €",
+    "19,88 €",
+    "20,39 €",
+    "20,40 €",
+    "22,03 €",
+    "25,28 €",
+    "26,13 €",
+    "28,18 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/lae/ast12",
+   "status": 200,
+   "title": "AST12 – Lae LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/lae/ast12",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast12",
+    "ru=/ru/led-profili/potolok/ast12",
+    "x-default=/led-varjuprofiilid/lae/ast12"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST12",
+   "textHash": "8b2015cdbe499abb",
+   "textChars": 2247,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "17,93 €",
+    "44,83 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/lae/ast14-12",
+   "status": 200,
+   "title": "AST14_12 – Lae LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/lae/ast14-12",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast14-12",
+    "ru=/ru/led-profili/potolok/ast14-12",
+    "x-default=/led-varjuprofiilid/lae/ast14-12"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST14_12",
+   "textHash": "05c5a61116c2b794",
+   "textChars": 2184,
+   "prices": [
+    "11,56 €",
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "15,88 €",
+    "39,70 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/lae/ast201",
+   "status": 200,
+   "title": "AST201 – Lae LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/lae/ast201",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast201",
+    "ru=/ru/led-profili/potolok/ast201",
+    "x-default=/led-varjuprofiilid/lae/ast201"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST201",
+   "textHash": "cbff66b0b7afbe58",
+   "textChars": 1989,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "16,39 €",
+    "22,03 €",
+    "55,08 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/lae/ast218",
+   "status": 200,
+   "title": "AST218 – Lae LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/lae/ast218",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast218",
+    "ru=/ru/led-profili/potolok/ast218",
+    "x-default=/led-varjuprofiilid/lae/ast218"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST218",
+   "textHash": "8e6a65520f522e80",
+   "textChars": 2214,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "15,07 €",
+    "20,40 €",
+    "51,00 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/lae/ast22",
+   "status": 200,
+   "title": "AST22 – Lae LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/lae/ast22",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast22",
+    "ru=/ru/led-profili/potolok/ast22",
+    "x-default=/led-varjuprofiilid/lae/ast22"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST22",
+   "textHash": "82441d4f6bf4f322",
+   "textChars": 1913,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "15,07 €",
+    "19,37 €",
+    "48,43 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/lae/ast25",
+   "status": 200,
+   "title": "AST25 – Lae LED varjuprofiil · 25 mm | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/lae/ast25",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast25",
+    "ru=/ru/led-profili/potolok/ast25",
+    "x-default=/led-varjuprofiilid/lae/ast25"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST25",
+   "textHash": "c03ea4b9a6443ae1",
+   "textChars": 2182,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "25,28 €",
+    "75,84 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/lae/ast30",
+   "status": 200,
+   "title": "AST30 – Lae LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/lae/ast30",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast30",
+    "ru=/ru/led-profili/potolok/ast30",
+    "x-default=/led-varjuprofiilid/lae/ast30"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST30",
+   "textHash": "41a0540826d56e56",
+   "textChars": 2153,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "20,55 €",
+    "26,13 €",
+    "65,33 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/lae/ast35",
+   "status": 200,
+   "title": "AST35 – Lae LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/lae/ast35",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast35",
+    "ru=/ru/led-profili/potolok/ast35",
+    "x-default=/led-varjuprofiilid/lae/ast35"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST35",
+   "textHash": "8b496ddd347eff4f",
+   "textChars": 2185,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "16,86 €",
+    "19,88 €",
+    "49,70 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/lae/ast45",
+   "status": 200,
+   "title": "Lae süvis-LED varjuprofiil 45mm – Lae süvis-LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/lae/ast45",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast45",
+    "ru=/ru/led-profili/potolok/ast45",
+    "x-default=/led-varjuprofiilid/lae/ast45"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST45",
+   "textHash": "8ad4a8b8bcb279cc",
+   "textChars": 1830,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "22,69 €",
+    "28,18 €",
+    "70,45 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/lae/ast50",
+   "status": 200,
+   "title": "AST50 – Lae LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/lae/ast50",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast50",
+    "ru=/ru/led-profili/potolok/ast50",
+    "x-default=/led-varjuprofiilid/lae/ast50"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST50",
+   "textHash": "6bfad8a7a4a5ea57",
+   "textChars": 2041,
+   "prices": [
+    "12,81 €",
+    "13,02 €",
+    "13,84 €",
+    "14,40 €",
+    "15,88 €",
+    "39,70 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/lae/rst12",
+   "status": 200,
+   "title": "RST12 – Lae LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/lae/rst12",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/rst12",
+    "ru=/ru/led-profili/potolok/rst12",
+    "x-default=/led-varjuprofiilid/lae/rst12"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "RST12",
+   "textHash": "f661843536653e32",
+   "textChars": 2179,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "15,14 €",
+    "17,93 €",
+    "44,83 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/lae/rst14",
+   "status": 200,
+   "title": "RST14_12 – Lae LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/lae/rst14",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/rst14",
+    "ru=/ru/led-profili/potolok/rst14",
+    "x-default=/led-varjuprofiilid/lae/rst14"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "RST14",
+   "textHash": "61af9e463fab79e7",
+   "textChars": 2197,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "15,14 €",
+    "17,93 €",
+    "44,83 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/lae/rst22",
+   "status": 200,
+   "title": "RST22 – Lae LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/lae/rst22",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/rst22",
+    "ru=/ru/led-profili/potolok/rst22",
+    "x-default=/led-varjuprofiilid/lae/rst22"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "RST22",
+   "textHash": "b390e7f890368e3d",
+   "textChars": 2196,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "17,62 €",
+    "20,39 €",
+    "50,98 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/lae/rst25",
+   "status": 200,
+   "title": "RST25 – Lae LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/lae/rst25",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/rst25",
+    "ru=/ru/led-profili/potolok/rst25",
+    "x-default=/led-varjuprofiilid/lae/rst25"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "RST25",
+   "textHash": "a01466fff37df629",
+   "textChars": 2245,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "17,62 €",
+    "20,39 €",
+    "50,98 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/lae/rst40",
+   "status": 200,
+   "title": "RST40 – Lae LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/lae/rst40",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/rst40",
+    "ru=/ru/led-profili/potolok/rst40",
+    "x-default=/led-varjuprofiilid/lae/rst40"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "RST40",
+   "textHash": "3293103bc2f1ef3d",
+   "textChars": 2262,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "20,55 €",
+    "26,13 €",
+    "78,39 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/poranda",
+   "status": 200,
+   "title": "Põranda LED varjuprofiilid – LED põrandaprofiilid alumiiniumist | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/poranda",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda",
+    "ru=/ru/led-profili/pol",
+    "x-default=/led-varjuprofiilid/poranda"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Põranda LED varjuprofiilid – LED põrandaprofiilid alumiiniumist",
+   "textHash": "a6fd6062b699c0a4",
+   "textChars": 2011,
+   "prices": [
+    "13,84 €",
+    "14,76 €",
+    "14,86 €",
+    "15,69 €",
+    "15,88 €",
+    "17,93 €",
+    "21,01 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/poranda/asp102",
+   "status": 200,
+   "title": "ASP102 – Põranda LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/poranda/asp102",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/asp102",
+    "ru=/ru/led-profili/pol/asp102",
+    "x-default=/led-varjuprofiilid/poranda/asp102"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP102",
+   "textHash": "09ebadb54a748896",
+   "textChars": 2185,
+   "prices": [
+    "10,53 €",
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "21,01 €",
+    "35,98 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/poranda/asp106",
+   "status": 200,
+   "title": "ASP106 – Põranda LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/poranda/asp106",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/asp106",
+    "ru=/ru/led-profili/pol/asp106",
+    "x-default=/led-varjuprofiilid/poranda/asp106"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP106",
+   "textHash": "f5239a683b4ec73c",
+   "textChars": 2300,
+   "prices": [
+    "11,56 €",
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "14,86 €",
+    "38,64 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/poranda/asp238",
+   "status": 200,
+   "title": "ASP238 – Põranda LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/poranda/asp238",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/asp238",
+    "ru=/ru/led-profili/pol/asp238",
+    "x-default=/led-varjuprofiilid/poranda/asp238"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP238",
+   "textHash": "6341873952cdec7b",
+   "textChars": 2235,
+   "prices": [
+    "10,53 €",
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "35,98 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/poranda/asp904",
+   "status": 200,
+   "title": "ASP904 – Põranda LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/poranda/asp904",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/asp904",
+    "ru=/ru/led-profili/pol/asp904",
+    "x-default=/led-varjuprofiilid/poranda/asp904"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP904",
+   "textHash": "51f1affc84b78b5b",
+   "textChars": 2327,
+   "prices": [
+    "11,99 €",
+    "12,81 €",
+    "12,85 €",
+    "13,84 €",
+    "15,88 €",
+    "41,29 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/poranda/asp905",
+   "status": 200,
+   "title": "ASP905 – Põranda LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/poranda/asp905",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/asp905",
+    "ru=/ru/led-profili/pol/asp905",
+    "x-default=/led-varjuprofiilid/poranda/asp905"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP905",
+   "textHash": "ba66ba691db46de4",
+   "textChars": 2298,
+   "prices": [
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "13,91 €",
+    "17,93 €",
+    "46,62 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/poranda/aspl100",
+   "status": 200,
+   "title": "ASPL100 – Põranda LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/poranda/aspl100",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/aspl100",
+    "ru=/ru/led-profili/pol/aspl100",
+    "x-default=/led-varjuprofiilid/poranda/aspl100"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASPL100",
+   "textHash": "c41b5a6a0bb664da",
+   "textChars": 2287,
+   "prices": [
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "16,74 €",
+    "21,01 €",
+    "52,53 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/poranda/aspl120",
+   "status": 200,
+   "title": "ASPL120 – Põranda LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/poranda/aspl120",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/aspl120",
+    "ru=/ru/led-profili/pol/aspl120",
+    "x-default=/led-varjuprofiilid/poranda/aspl120"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASPL120",
+   "textHash": "25ceb2854f3ef174",
+   "textChars": 2330,
+   "prices": [
+    "11,99 €",
+    "12,52 €",
+    "12,81 €",
+    "13,84 €",
+    "14,76 €",
+    "38,38 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/poranda/aspl130",
+   "status": 200,
+   "title": "ASPL130 – Põranda LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/poranda/aspl130",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/aspl130",
+    "ru=/ru/led-profili/pol/aspl130",
+    "x-default=/led-varjuprofiilid/poranda/aspl130"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASPL130",
+   "textHash": "97d68e66b78ca704",
+   "textChars": 2331,
+   "prices": [
+    "11,99 €",
+    "12,52 €",
+    "12,81 €",
+    "13,84 €",
+    "14,76 €",
+    "38,38 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/poranda/aspl35",
+   "status": 200,
+   "title": "ASPL35 – Põranda LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/poranda/aspl35",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/aspl35",
+    "ru=/ru/led-profili/pol/aspl35",
+    "x-default=/led-varjuprofiilid/poranda/aspl35"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASPL35",
+   "textHash": "e544fcd17e5aeb89",
+   "textChars": 2280,
+   "prices": [
+    "11,16 €",
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "35,98 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/poranda/aspl60",
+   "status": 200,
+   "title": "ASPL60 – Põranda LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/poranda/aspl60",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/aspl60",
+    "ru=/ru/led-profili/pol/aspl60",
+    "x-default=/led-varjuprofiilid/poranda/aspl60"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASPL60",
+   "textHash": "1dd70b03cccfd7e8",
+   "textChars": 2343,
+   "prices": [
+    "11,99 €",
+    "12,81 €",
+    "13,02 €",
+    "13,84 €",
+    "15,69 €",
+    "40,79 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/poranda/lhv10",
+   "status": 200,
+   "title": "LHV10 – Põranda LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/poranda/lhv10",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/lhv10",
+    "ru=/ru/led-profili/pol/lhv10",
+    "x-default=/led-varjuprofiilid/poranda/lhv10"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "LHV10",
+   "textHash": "ad54e875bf8e8cc4",
+   "textChars": 2318,
+   "prices": [
+    "10,14 €",
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "21,01 €",
+    "34,60 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/seina",
+   "status": 200,
+   "title": "Seina LED varjuprofiilid – seina peiteprofiilid LED-iga | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/seina",
+   "hreflang": [
+    "et=/led-varjuprofiilid/seina",
+    "ru=/ru/led-profili/stena",
+    "x-default=/led-varjuprofiilid/seina"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Seina LED varjuprofiilid – LED peiteprofiilid",
+   "textHash": "ea7573239ce0e371",
+   "textChars": 1475,
+   "prices": [
+    "13,91 €",
+    "14,67 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/seina/asp410",
+   "status": 200,
+   "title": "ASP410 – Seina LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/seina/asp410",
+   "hreflang": [
+    "et=/led-varjuprofiilid/seina/asp410",
+    "ru=/ru/led-profili/stena/asp410",
+    "x-default=/led-varjuprofiilid/seina/asp410"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP410",
+   "textHash": "d23e3884819b7738",
+   "textChars": 2291,
+   "prices": [
+    "10,23 €",
+    "11,56 €",
+    "12,09 €",
+    "13,37 €",
+    "13,91 €",
+    "36,17 €"
+   ]
+  },
+  {
+   "path": "/led-varjuprofiilid/seina/asp610",
+   "status": 200,
+   "title": "ASP610 – Seina LED varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/led-varjuprofiilid/seina/asp610",
+   "hreflang": [
+    "et=/led-varjuprofiilid/seina/asp610",
+    "ru=/ru/led-profili/stena/asp610",
+    "x-default=/led-varjuprofiilid/seina/asp610"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP610",
+   "textHash": "c02e64836d7d98f7",
+   "textChars": 2158,
+   "prices": [
+    "10,23 €",
+    "11,56 €",
+    "12,09 €",
+    "13,37 €",
+    "14,67 €",
+    "38,14 €"
+   ]
+  },
+  {
+   "path": "/meist",
+   "status": 200,
+   "title": "Varjuprofiilid kaasaegsesse interjööri | Varjuprofiilid.ee",
+   "canonical": "/meist",
+   "hreflang": [
+    "et=/meist",
+    "ru=/ru/o-nas",
+    "x-default=/meist"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Varjuprofiilid kaasaegsesse interjööri.",
+   "textHash": "639e68b475f759d0",
+   "textChars": 4756,
+   "prices": []
+  },
+  {
+   "path": "/mis-on-varjuprofiil",
+   "status": 200,
+   "title": "Mis on varjuprofiil? Täielik juhend | Varjuprofiilid.ee",
+   "canonical": "/mis-on-varjuprofiil",
+   "hreflang": [
+    "et=/mis-on-varjuprofiil",
+    "ru=/ru/chto-takoe-tenevoy-profil",
+    "x-default=/mis-on-varjuprofiil"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Mis on varjuprofiil?",
+   "textHash": "f6a41f6fa5d8a8c5",
+   "textChars": 12624,
+   "prices": []
+  },
+  {
+   "path": "/nurgaprofiilid/dkp1010",
+   "status": 200,
+   "title": "DKP1010 – Alumiinium nurgaprofiil | Varjuprofiilid.ee",
+   "canonical": "/nurgaprofiilid/dkp1010",
+   "hreflang": [
+    "et=/nurgaprofiilid/dkp1010",
+    "ru=/ru/uglovye-profili/dkp1010",
+    "x-default=/nurgaprofiilid/dkp1010"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "DKP1010",
+   "textHash": "bd1e81cbc4a2363e",
+   "textChars": 2207,
+   "prices": [
+    "10,65 €",
+    "2,43 €",
+    "3,55 €",
+    "3,89 €",
+    "4,02 €",
+    "4,44 €"
+   ]
+  },
+  {
+   "path": "/nurgaprofiilid/dkp1515",
+   "status": 200,
+   "title": "DKP1515 – Alumiinium nurgaprofiil | Varjuprofiilid.ee",
+   "canonical": "/nurgaprofiilid/dkp1515",
+   "hreflang": [
+    "et=/nurgaprofiilid/dkp1515",
+    "ru=/ru/uglovye-profili/dkp1515",
+    "x-default=/nurgaprofiilid/dkp1515"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "DKP1515",
+   "textHash": "3025cb637ac9874b",
+   "textChars": 2171,
+   "prices": [
+    "12,06 €",
+    "2,65 €",
+    "3,55 €",
+    "4,02 €",
+    "4,44 €"
+   ]
+  },
+  {
+   "path": "/nurgaprofiilid/dkp2020",
+   "status": 200,
+   "title": "DKP2020 – Alumiinium nurgaprofiil | Varjuprofiilid.ee",
+   "canonical": "/nurgaprofiilid/dkp2020",
+   "hreflang": [
+    "et=/nurgaprofiilid/dkp2020",
+    "ru=/ru/uglovye-profili/dkp2020",
+    "x-default=/nurgaprofiilid/dkp2020"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "DKP2020",
+   "textHash": "1744e805e38cbf7b",
+   "textChars": 2182,
+   "prices": [
+    "13,32 €",
+    "3,12 €",
+    "3,55 €",
+    "4,02 €",
+    "4,44 €",
+    "4,79 €"
+   ]
+  },
+  {
+   "path": "/professionaalidele",
+   "status": 200,
+   "title": "B2B Partneriprogramm — Sisearhitektidele ja Ehitajatele | Varjuprofiilid.ee",
+   "canonical": "/professionaalidele",
+   "hreflang": [
+    "et=/professionaalidele",
+    "ru=/ru/professionalam",
+    "x-default=/professionaalidele"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Tee koostööd parima hinnaga.",
+   "textHash": "95b47065454c4a86",
+   "textChars": 3093,
+   "prices": []
+  },
+  {
+   "path": "/ru",
+   "status": 200,
+   "title": "Varjuprofiilid.ee — Алюминиевые теневые профили в Эстонии",
+   "canonical": "/ru",
+   "hreflang": [
+    "et=/",
+    "ru=/ru",
+    "x-default=/"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Чистая линия. Скрытый свет.",
+   "textHash": "185b74ec4cac7fc1",
+   "textChars": 4789,
+   "prices": [
+    "11,68 €",
+    "11,99 €",
+    "13,37 €",
+    "13,84 €",
+    "15,88 €",
+    "17,93 €",
+    "19,37 €",
+    "26,13 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/ask100",
+   "status": 200,
+   "title": "ASK100 – Диффузор для LED-профиля | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/ask100",
+   "hreflang": [
+    "et=/tarvikud/ask100",
+    "ru=/ru/aksessuary/ask100",
+    "x-default=/tarvikud/ask100"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASK100",
+   "textHash": "86bc5496614bd1a4",
+   "textChars": 2138,
+   "prices": [
+    "2,57 €",
+    "5,84 €",
+    "6,42 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asl25",
+   "status": 200,
+   "title": "ASL25 – Диффузор для LED-профиля | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asl25",
+   "hreflang": [
+    "et=/tarvikud/asl25",
+    "ru=/ru/aksessuary/asl25",
+    "x-default=/tarvikud/asl25"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASL25",
+   "textHash": "31737d72b562aa97",
+   "textChars": 2137,
+   "prices": [
+    "17,52 €",
+    "2,57 €",
+    "5,84 €",
+    "9,56 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asl300",
+   "status": 200,
+   "title": "ASL300 – Диффузор для LED-профиля | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asl300",
+   "hreflang": [
+    "et=/tarvikud/asl300",
+    "ru=/ru/aksessuary/asl300",
+    "x-default=/tarvikud/asl300"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASL300",
+   "textHash": "62b89e916ac3820e",
+   "textChars": 2187,
+   "prices": [
+    "2,57 €",
+    "5,84 €",
+    "6,42 €",
+    "9,56 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asl302",
+   "status": 200,
+   "title": "ASL302 – Диффузор для LED-профиля | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asl302",
+   "hreflang": [
+    "et=/tarvikud/asl302",
+    "ru=/ru/aksessuary/asl302",
+    "x-default=/tarvikud/asl302"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASL302",
+   "textHash": "62d9a9301250dc61",
+   "textChars": 2190,
+   "prices": [
+    "2,57 €",
+    "5,84 €",
+    "6,42 €",
+    "9,56 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asl312",
+   "status": 200,
+   "title": "ASL312 – Диффузор для LED-профиля | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asl312",
+   "hreflang": [
+    "et=/tarvikud/asl312",
+    "ru=/ru/aksessuary/asl312",
+    "x-default=/tarvikud/asl312"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASL312",
+   "textHash": "846fca50e764108d",
+   "textChars": 2175,
+   "prices": [
+    "2,57 €",
+    "5,84 €",
+    "6,42 €",
+    "9,56 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asl40",
+   "status": 200,
+   "title": "ASL40 – Диффузор для LED-профиля | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asl40",
+   "hreflang": [
+    "et=/tarvikud/asl40",
+    "ru=/ru/aksessuary/asl40",
+    "x-default=/tarvikud/asl40"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASL40",
+   "textHash": "44f3a090dfb6792c",
+   "textChars": 2203,
+   "prices": [
+    "2,57 €",
+    "28,68 €",
+    "5,84 €",
+    "9,56 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asp100-soedinitel",
+   "status": 200,
+   "title": "ASP100-Y – Соединитель плинтуса · 100 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asp100-soedinitel",
+   "hreflang": [
+    "et=/tarvikud/asp100-uhendus",
+    "ru=/ru/aksessuary/asp100-soedinitel",
+    "x-default=/tarvikud/asp100-uhendus"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP100-Y",
+   "textHash": "f06fd4ac55c0d38a",
+   "textChars": 1676,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asp100-vnesh-ugol",
+   "status": 200,
+   "title": "ASP100-NV – Внешний угол плинтуса · 100 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asp100-vnesh-ugol",
+   "hreflang": [
+    "et=/tarvikud/asp100-valimine-nurk",
+    "ru=/ru/aksessuary/asp100-vnesh-ugol",
+    "x-default=/tarvikud/asp100-valimine-nurk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP100-NV",
+   "textHash": "65b26a6cf1f9c6f6",
+   "textChars": 1731,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asp100-vnut-ugol",
+   "status": 200,
+   "title": "ASP100-NS – Внутренний угол плинтуса · 100 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asp100-vnut-ugol",
+   "hreflang": [
+    "et=/tarvikud/asp100-sisemine-nurk",
+    "ru=/ru/aksessuary/asp100-vnut-ugol",
+    "x-default=/tarvikud/asp100-sisemine-nurk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP100-NS",
+   "textHash": "f68e5f743a318c13",
+   "textChars": 1748,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asp100-zaglushka",
+   "status": 200,
+   "title": "ASP100-OK – Торцевая заглушка плинтуса · 100 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asp100-zaglushka",
+   "hreflang": [
+    "et=/tarvikud/asp100-otsakork",
+    "ru=/ru/aksessuary/asp100-zaglushka",
+    "x-default=/tarvikud/asp100-otsakork"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP100-OK",
+   "textHash": "9bd41b8df123538f",
+   "textChars": 1701,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asp40-soedinitel",
+   "status": 200,
+   "title": "ASP40-Y – Соединитель плинтуса · 40 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asp40-soedinitel",
+   "hreflang": [
+    "et=/tarvikud/asp40-uhendus",
+    "ru=/ru/aksessuary/asp40-soedinitel",
+    "x-default=/tarvikud/asp40-uhendus"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP40-Y",
+   "textHash": "464c88c74adb9474",
+   "textChars": 1670,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asp40-vnesh-ugol",
+   "status": 200,
+   "title": "ASP40-NV – Внешний угол плинтуса · 40 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asp40-vnesh-ugol",
+   "hreflang": [
+    "et=/tarvikud/asp40-valimine-nurk",
+    "ru=/ru/aksessuary/asp40-vnesh-ugol",
+    "x-default=/tarvikud/asp40-valimine-nurk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP40-NV",
+   "textHash": "1411027c29cb3404",
+   "textChars": 1725,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asp40-vnut-ugol",
+   "status": 200,
+   "title": "ASP40-NS – Внутренний угол плинтуса · 40 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asp40-vnut-ugol",
+   "hreflang": [
+    "et=/tarvikud/asp40-sisemine-nurk",
+    "ru=/ru/aksessuary/asp40-vnut-ugol",
+    "x-default=/tarvikud/asp40-sisemine-nurk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP40-NS",
+   "textHash": "5b0ea2c2f31b7132",
+   "textChars": 1742,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asp40-zaglushka",
+   "status": 200,
+   "title": "ASP40-OK – Торцевая заглушка плинтуса · 40 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asp40-zaglushka",
+   "hreflang": [
+    "et=/tarvikud/asp40-otsakork",
+    "ru=/ru/aksessuary/asp40-zaglushka",
+    "x-default=/tarvikud/asp40-otsakork"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP40-OK",
+   "textHash": "5a20b1bf40b0ca03",
+   "textChars": 1695,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asp60-soedinitel",
+   "status": 200,
+   "title": "ASP60-Y – Соединитель плинтуса · 60 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asp60-soedinitel",
+   "hreflang": [
+    "et=/tarvikud/asp60-uhendus",
+    "ru=/ru/aksessuary/asp60-soedinitel",
+    "x-default=/tarvikud/asp60-uhendus"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP60-Y",
+   "textHash": "dbd80a9eb1697033",
+   "textChars": 1670,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asp60-vnesh-ugol",
+   "status": 200,
+   "title": "ASP60-NV – Внешний угол плинтуса · 60 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asp60-vnesh-ugol",
+   "hreflang": [
+    "et=/tarvikud/asp60-valimine-nurk",
+    "ru=/ru/aksessuary/asp60-vnesh-ugol",
+    "x-default=/tarvikud/asp60-valimine-nurk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP60-NV",
+   "textHash": "4ad4868b6e67de70",
+   "textChars": 1725,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asp60-vnut-ugol",
+   "status": 200,
+   "title": "ASP60-NS – Внутренний угол плинтуса · 60 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asp60-vnut-ugol",
+   "hreflang": [
+    "et=/tarvikud/asp60-sisemine-nurk",
+    "ru=/ru/aksessuary/asp60-vnut-ugol",
+    "x-default=/tarvikud/asp60-sisemine-nurk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP60-NS",
+   "textHash": "88197483361abc51",
+   "textChars": 1742,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asp60-zaglushka",
+   "status": 200,
+   "title": "ASP60-OK – Торцевая заглушка плинтуса · 60 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asp60-zaglushka",
+   "hreflang": [
+    "et=/tarvikud/asp60-otsakork",
+    "ru=/ru/aksessuary/asp60-zaglushka",
+    "x-default=/tarvikud/asp60-otsakork"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP60-OK",
+   "textHash": "c317210ff3736407",
+   "textChars": 1695,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asp80-soedinitel",
+   "status": 200,
+   "title": "ASP80-Y – Соединитель плинтуса · 80 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asp80-soedinitel",
+   "hreflang": [
+    "et=/tarvikud/asp80-uhendus",
+    "ru=/ru/aksessuary/asp80-soedinitel",
+    "x-default=/tarvikud/asp80-uhendus"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP80-Y",
+   "textHash": "993cd222933031a8",
+   "textChars": 1670,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asp80-vnesh-ugol",
+   "status": 200,
+   "title": "ASP80-NV – Внешний угол плинтуса · 80 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asp80-vnesh-ugol",
+   "hreflang": [
+    "et=/tarvikud/asp80-valimine-nurk",
+    "ru=/ru/aksessuary/asp80-vnesh-ugol",
+    "x-default=/tarvikud/asp80-valimine-nurk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP80-NV",
+   "textHash": "8ea4ede3d934ed10",
+   "textChars": 1725,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asp80-vnut-ugol",
+   "status": 200,
+   "title": "ASP80-NS – Внутренний угол плинтуса · 80 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asp80-vnut-ugol",
+   "hreflang": [
+    "et=/tarvikud/asp80-sisemine-nurk",
+    "ru=/ru/aksessuary/asp80-vnut-ugol",
+    "x-default=/tarvikud/asp80-sisemine-nurk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP80-NS",
+   "textHash": "6c84934201a9e737",
+   "textChars": 1742,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/asp80-zaglushka",
+   "status": 200,
+   "title": "ASP80-OK – Торцевая заглушка плинтуса · 80 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/asp80-zaglushka",
+   "hreflang": [
+    "et=/tarvikud/asp80-otsakork",
+    "ru=/ru/aksessuary/asp80-zaglushka",
+    "x-default=/tarvikud/asp80-otsakork"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP80-OK",
+   "textHash": "a45484219acb6126",
+   "textChars": 1695,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/diffuzor-matovyy",
+   "status": 200,
+   "title": "Диффузор матовый – Матовая лента-диффузор для LED | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/diffuzor-matovyy",
+   "hreflang": [
+    "et=/tarvikud/hajuti-matt",
+    "ru=/ru/aksessuary/diffuzor-matovyy",
+    "x-default=/tarvikud/hajuti-matt"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "HAJUTI-M",
+   "textHash": "00883c054eb4e803",
+   "textChars": 2014,
+   "prices": [
+    "2,17 €",
+    "2,57 €",
+    "5,42 €",
+    "5,84 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/f100",
+   "status": 200,
+   "title": "F100 – Комплект торцевых заглушек для плинтуса | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/f100",
+   "hreflang": [
+    "et=/tarvikud/f100",
+    "ru=/ru/aksessuary/f100",
+    "x-default=/tarvikud/f100"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "F100",
+   "textHash": "5ce4b87022fe5741",
+   "textChars": 2296,
+   "prices": [
+    "16,13 €",
+    "2,57 €",
+    "5,84 €",
+    "6,45 €",
+    "7,69 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/f40",
+   "status": 200,
+   "title": "F40 – Комплект торцевых заглушек для плинтуса | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/f40",
+   "hreflang": [
+    "et=/tarvikud/f40",
+    "ru=/ru/aksessuary/f40",
+    "x-default=/tarvikud/f40"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "F40",
+   "textHash": "2133e4f0d8d1fd6c",
+   "textChars": 2328,
+   "prices": [
+    "16,13 €",
+    "2,57 €",
+    "5,84 €",
+    "6,45 €",
+    "7,69 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/f60",
+   "status": 200,
+   "title": "F60 – Комплект торцевых заглушек для плинтуса | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/f60",
+   "hreflang": [
+    "et=/tarvikud/f60",
+    "ru=/ru/aksessuary/f60",
+    "x-default=/tarvikud/f60"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "F60",
+   "textHash": "03dcb5201ae324db",
+   "textChars": 2319,
+   "prices": [
+    "16,13 €",
+    "2,57 €",
+    "5,84 €",
+    "6,45 €",
+    "7,69 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/f80",
+   "status": 200,
+   "title": "F80 – Комплект торцевых заглушек для плинтуса | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/f80",
+   "hreflang": [
+    "et=/tarvikud/f80",
+    "ru=/ru/aksessuary/f80",
+    "x-default=/tarvikud/f80"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "F80",
+   "textHash": "6e33bef2fbf34c25",
+   "textChars": 2244,
+   "prices": [
+    "16,13 €",
+    "2,57 €",
+    "5,84 €",
+    "6,45 €",
+    "7,69 €"
+   ]
+  },
+  {
+   "path": "/ru/aksessuary/p1",
+   "status": 200,
+   "title": "P1 – Крепёжная пружина для плинтуса | Varjuprofiilid.ee",
+   "canonical": "/ru/aksessuary/p1",
+   "hreflang": [
+    "et=/tarvikud/p1",
+    "ru=/ru/aksessuary/p1",
+    "x-default=/tarvikud/p1"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "P1",
+   "textHash": "b32f462f86c0adca",
+   "textChars": 2156,
+   "prices": [
+    "0,50 €",
+    "0,51 €",
+    "0,61 €",
+    "1,27 €",
+    "2,57 €",
+    "5,84 €"
+   ]
+  },
+  {
+   "path": "/ru/alyuminievye-plintusy/asp100",
+   "status": 200,
+   "title": "ASP100 – Алюминиевый плинтус | Varjuprofiilid.ee",
+   "canonical": "/ru/alyuminievye-plintusy/asp100",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/asp100",
+    "ru=/ru/alyuminievye-plintusy/asp100",
+    "x-default=/alumiinium-porandaliistud/asp100"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP100",
+   "textHash": "a162c13c87f519af",
+   "textChars": 2372,
+   "prices": [
+    "11,93 €",
+    "12,20 €",
+    "13,22 €",
+    "13,74 €",
+    "14,86 €",
+    "16,18 €",
+    "37,15 €"
+   ]
+  },
+  {
+   "path": "/ru/alyuminievye-plintusy/asp36",
+   "status": 200,
+   "title": "ASP36 – Алюминиевый плинтус | Varjuprofiilid.ee",
+   "canonical": "/ru/alyuminievye-plintusy/asp36",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/asp36",
+    "ru=/ru/alyuminievye-plintusy/asp36",
+    "x-default=/alumiinium-porandaliistud/asp36"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP36",
+   "textHash": "9f7af88225a69b30",
+   "textChars": 2260,
+   "prices": [
+    "12,20 €",
+    "13,14 €",
+    "13,22 €",
+    "13,74 €",
+    "14,86 €",
+    "30,50 €"
+   ]
+  },
+  {
+   "path": "/ru/alyuminievye-plintusy/asp38",
+   "status": 200,
+   "title": "ASP38 – Алюминиевый плинтус | Varjuprofiilid.ee",
+   "canonical": "/ru/alyuminievye-plintusy/asp38",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/asp38",
+    "ru=/ru/alyuminievye-plintusy/asp38",
+    "x-default=/alumiinium-porandaliistud/asp38"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP38",
+   "textHash": "257bf74a498e4746",
+   "textChars": 2231,
+   "prices": [
+    "12,20 €",
+    "13,14 €",
+    "13,22 €",
+    "14,86 €",
+    "31,72 €"
+   ]
+  },
+  {
+   "path": "/ru/alyuminievye-plintusy/asp40",
+   "status": 200,
+   "title": "ASP40 – Алюминиевый плинтус | Varjuprofiilid.ee",
+   "canonical": "/ru/alyuminievye-plintusy/asp40",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/asp40",
+    "ru=/ru/alyuminievye-plintusy/asp40",
+    "x-default=/alumiinium-porandaliistud/asp40"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP40",
+   "textHash": "ac3d1ba40c9a6f0d",
+   "textChars": 2312,
+   "prices": [
+    "10,66 €",
+    "11,17 €",
+    "12,20 €",
+    "13,22 €",
+    "14,86 €",
+    "26,65 €",
+    "8,41 €"
+   ]
+  },
+  {
+   "path": "/ru/alyuminievye-plintusy/asp58",
+   "status": 200,
+   "title": "ASP58 – Алюминиевый плинтус | Varjuprofiilid.ee",
+   "canonical": "/ru/alyuminievye-plintusy/asp58",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/asp58",
+    "ru=/ru/alyuminievye-plintusy/asp58",
+    "x-default=/alumiinium-porandaliistud/asp58"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP58",
+   "textHash": "a15a36a0c7879954",
+   "textChars": 2268,
+   "prices": [
+    "11,12 €",
+    "12,20 €",
+    "13,22 €",
+    "13,74 €",
+    "14,26 €",
+    "14,86 €",
+    "34,37 €"
+   ]
+  },
+  {
+   "path": "/ru/alyuminievye-plintusy/asp60",
+   "status": 200,
+   "title": "ASP60 – Алюминиевый плинтус | Varjuprofiilid.ee",
+   "canonical": "/ru/alyuminievye-plintusy/asp60",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/asp60",
+    "ru=/ru/alyuminievye-plintusy/asp60",
+    "x-default=/alumiinium-porandaliistud/asp60"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP60",
+   "textHash": "9c558f74f3595e54",
+   "textChars": 2260,
+   "prices": [
+    "11,68 €",
+    "12,20 €",
+    "12,88 €",
+    "13,22 €",
+    "14,86 €",
+    "30,37 €",
+    "9,06 €"
+   ]
+  },
+  {
+   "path": "/ru/alyuminievye-plintusy/asp78",
+   "status": 200,
+   "title": "ASP78 – Алюминиевый плинтус | Varjuprofiilid.ee",
+   "canonical": "/ru/alyuminievye-plintusy/asp78",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/asp78",
+    "ru=/ru/alyuminievye-plintusy/asp78",
+    "x-default=/alumiinium-porandaliistud/asp78"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP78",
+   "textHash": "4dbafab2af794247",
+   "textChars": 2279,
+   "prices": [
+    "12,20 €",
+    "13,02 €",
+    "13,22 €",
+    "13,74 €",
+    "14,86 €",
+    "15,98 €",
+    "38,64 €"
+   ]
+  },
+  {
+   "path": "/ru/alyuminievye-plintusy/asp80",
+   "status": 200,
+   "title": "ASP80 – Алюминиевый плинтус | Varjuprofiilid.ee",
+   "canonical": "/ru/alyuminievye-plintusy/asp80",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/asp80",
+    "ru=/ru/alyuminievye-plintusy/asp80",
+    "x-default=/alumiinium-porandaliistud/asp80"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP80",
+   "textHash": "9b353734c868ccef",
+   "textChars": 2254,
+   "prices": [
+    "11,07 €",
+    "12,20 €",
+    "13,22 €",
+    "13,74 €",
+    "14,86 €",
+    "14,99 €",
+    "35,72 €"
+   ]
+  },
+  {
+   "path": "/ru/alyuminievye-plintusy/mpa013",
+   "status": 200,
+   "title": "Алюминиевый плинтус 19 мм – Алюминиевый плинтус | Varjuprofiilid.ee",
+   "canonical": "/ru/alyuminievye-plintusy/mpa013",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/mpa013",
+    "ru=/ru/alyuminievye-plintusy/mpa013",
+    "x-default=/alumiinium-porandaliistud/mpa013"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "MPA013",
+   "textHash": "679f2168e5339745",
+   "textChars": 2195,
+   "prices": [
+    "0,50 €",
+    "12,20 €",
+    "13,22 €",
+    "13,83 €",
+    "14,86 €",
+    "15,49 €",
+    "35,96 €"
+   ]
+  },
+  {
+   "path": "/ru/alyuminievye-plintusy/mpa301",
+   "status": 200,
+   "title": "Алюминиевый плинтус с LED 27 мм – Алюминиевый плинтус с LED-каналом | Varjuprofiilid.ee",
+   "canonical": "/ru/alyuminievye-plintusy/mpa301",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/mpa301",
+    "ru=/ru/alyuminievye-plintusy/mpa301",
+    "x-default=/alumiinium-porandaliistud/mpa301"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "MPA301",
+   "textHash": "1803264070af05c1",
+   "textChars": 2239,
+   "prices": [
+    "12,20 €",
+    "13,22 €",
+    "13,83 €",
+    "14,86 €",
+    "15,49 €",
+    "35,96 €"
+   ]
+  },
+  {
+   "path": "/ru/alyuminievye-plintusy/mpa302",
+   "status": 200,
+   "title": "Алюминиевый плинтус с LED 31 мм – Алюминиевый плинтус | Varjuprofiilid.ee",
+   "canonical": "/ru/alyuminievye-plintusy/mpa302",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/mpa302",
+    "ru=/ru/alyuminievye-plintusy/mpa302",
+    "x-default=/alumiinium-porandaliistud/mpa302"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "MPA302",
+   "textHash": "a1b14e4c696c07b5",
+   "textChars": 2266,
+   "prices": [
+    "0,50 €",
+    "12,20 €",
+    "13,22 €",
+    "13,83 €",
+    "14,86 €",
+    "15,49 €",
+    "2,50 €",
+    "35,96 €"
+   ]
+  },
+  {
+   "path": "/ru/alyuminievye-plintusy/mpa317",
+   "status": 200,
+   "title": "MPA317 – Алюминиевый плинтус | Varjuprofiilid.ee",
+   "canonical": "/ru/alyuminievye-plintusy/mpa317",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/mpa317",
+    "ru=/ru/alyuminievye-plintusy/mpa317",
+    "x-default=/alumiinium-porandaliistud/mpa317"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "MPA317",
+   "textHash": "7848ac35f4613d32",
+   "textChars": 2208,
+   "prices": [
+    "12,20 €",
+    "12,81 €",
+    "13,22 €",
+    "14,76 €",
+    "14,86 €",
+    "33,31 €"
+   ]
+  },
+  {
+   "path": "/ru/alyuminievye-plintusy/mpv301",
+   "status": 200,
+   "title": "MPV301 – Алюминиевый плинтус | Varjuprofiilid.ee",
+   "canonical": "/ru/alyuminievye-plintusy/mpv301",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/mpv301",
+    "ru=/ru/alyuminievye-plintusy/mpv301",
+    "x-default=/alumiinium-porandaliistud/mpv301"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "MPV301",
+   "textHash": "22fb041175000806",
+   "textChars": 2191,
+   "prices": [
+    "12,20 €",
+    "12,28 €",
+    "13,22 €",
+    "14,01 €",
+    "14,86 €",
+    "31,93 €"
+   ]
+  },
+  {
+   "path": "/ru/alyuminievye-plintusy/mvp018",
+   "status": 200,
+   "title": "Алюминиевый плинтус для стены 9 мм – Алюминиевый плинтус для стены | Varjuprofiilid.ee",
+   "canonical": "/ru/alyuminievye-plintusy/mvp018",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/mvp018",
+    "ru=/ru/alyuminievye-plintusy/mvp018",
+    "x-default=/alumiinium-porandaliistud/mvp018"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "MVP018",
+   "textHash": "68dc821d498338a5",
+   "textChars": 2328,
+   "prices": [
+    "11,89 €",
+    "12,20 €",
+    "13,22 €",
+    "13,63 €",
+    "14,86 €",
+    "30,91 €"
+   ]
+  },
+  {
+   "path": "/ru/alyuminievye-plintusy/mvp172",
+   "status": 200,
+   "title": "Алюминиевый плинтус для стены 22 мм – Алюминиевый плинтус для стены | Varjuprofiilid.ee",
+   "canonical": "/ru/alyuminievye-plintusy/mvp172",
+   "hreflang": [
+    "et=/alumiinium-porandaliistud/mvp172",
+    "ru=/ru/alyuminievye-plintusy/mvp172",
+    "x-default=/alumiinium-porandaliistud/mvp172"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "MVP172",
+   "textHash": "131715dd347fb3c2",
+   "textChars": 2339,
+   "prices": [
+    "12,20 €",
+    "13,22 €",
+    "13,63 €",
+    "14,86 €",
+    "15,49 €",
+    "35,44 €"
+   ]
+  },
+  {
+   "path": "/ru/chto-takoe-tenevoy-profil",
+   "status": 200,
+   "title": "Что такое теневой профиль? Полное руководство | Varjuprofiilid.ee",
+   "canonical": "/ru/chto-takoe-tenevoy-profil",
+   "hreflang": [
+    "et=/mis-on-varjuprofiil",
+    "ru=/ru/chto-takoe-tenevoy-profil",
+    "x-default=/mis-on-varjuprofiil"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Что такое теневой профиль?",
+   "textHash": "405e7d8f3d546af9",
+   "textChars": 12452,
+   "prices": []
+  },
+  {
+   "path": "/ru/dekor-profili",
+   "status": 200,
+   "title": "Теневые профили – декоративные алюминиевые профили для потолка, стены, пола | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili",
+   "hreflang": [
+    "et=/varjuprofiilid",
+    "ru=/ru/dekor-profili",
+    "x-default=/varjuprofiilid"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Теневые профили.",
+   "textHash": "97ef2273a1f43b98",
+   "textChars": 2605,
+   "prices": [
+    "10,55 €",
+    "11,56 €",
+    "12,09 €",
+    "12,35 €",
+    "12,81 €",
+    "13,37 €",
+    "13,84 €",
+    "14,40 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/pol",
+   "status": 200,
+   "title": "Напольные теневые профили – декоративные альтернативы плинтусам | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/pol",
+   "hreflang": [
+    "et=/varjuprofiilid/poranda",
+    "ru=/ru/dekor-profili/pol",
+    "x-default=/varjuprofiilid/poranda"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Напольные теневые профили – минималистичные альтернативы плинтусам",
+   "textHash": "6806ae0b08c5ada7",
+   "textChars": 1753,
+   "prices": [
+    "11,05 €",
+    "11,99 €",
+    "12,81 €",
+    "13,64 €",
+    "15,19 €",
+    "15,88 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/pol/asp108",
+   "status": 200,
+   "title": "ASP108 – Напольный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/pol/asp108",
+   "hreflang": [
+    "et=/varjuprofiilid/poranda/asp108",
+    "ru=/ru/dekor-profili/pol/asp108",
+    "x-default=/varjuprofiilid/poranda/asp108"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP108",
+   "textHash": "edd3fac3e22a3a9e",
+   "textChars": 2352,
+   "prices": [
+    "11,99 €",
+    "12,60 €",
+    "12,81 €",
+    "13,84 €",
+    "15,88 €",
+    "41,29 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/pol/asp112",
+   "status": 200,
+   "title": "ASP112 – Напольный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/pol/asp112",
+   "hreflang": [
+    "et=/varjuprofiilid/poranda/asp112",
+    "ru=/ru/dekor-profili/pol/asp112",
+    "x-default=/varjuprofiilid/poranda/asp112"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP112",
+   "textHash": "0cf81ea3ad40dda9",
+   "textChars": 2416,
+   "prices": [
+    "10,68 €",
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "21,01 €",
+    "31,17 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/pol/asp115",
+   "status": 200,
+   "title": "ASP115 – Напольный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/pol/asp115",
+   "hreflang": [
+    "et=/varjuprofiilid/poranda/asp115",
+    "ru=/ru/dekor-profili/pol/asp115",
+    "x-default=/varjuprofiilid/poranda/asp115"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP115",
+   "textHash": "875d65403ebace4b",
+   "textChars": 2224,
+   "prices": [
+    "11,05 €",
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "28,73 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/pol/asp117",
+   "status": 200,
+   "title": "ASP117 – Напольный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/pol/asp117",
+   "hreflang": [
+    "et=/varjuprofiilid/poranda/asp117",
+    "ru=/ru/dekor-profili/pol/asp117",
+    "x-default=/varjuprofiilid/poranda/asp117"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP117",
+   "textHash": "602f48107973b59b",
+   "textChars": 2321,
+   "prices": [
+    "11,90 €",
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "21,01 €",
+    "33,31 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/pol/avp609",
+   "status": 200,
+   "title": "AVP609 – Напольный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/pol/avp609",
+   "hreflang": [
+    "et=/varjuprofiilid/poranda/avp609",
+    "ru=/ru/dekor-profili/pol/avp609",
+    "x-default=/varjuprofiilid/poranda/avp609"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AVP609",
+   "textHash": "bc39bbf9d396a8f9",
+   "textChars": 2317,
+   "prices": [
+    "10,74 €",
+    "11,99 €",
+    "12,81 €",
+    "13,64 €",
+    "13,84 €",
+    "14,15 €",
+    "35,46 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/pol/avp859",
+   "status": 200,
+   "title": "AVP859 – Напольный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/pol/avp859",
+   "hreflang": [
+    "et=/varjuprofiilid/poranda/avp859",
+    "ru=/ru/dekor-profili/pol/avp859",
+    "x-default=/varjuprofiilid/poranda/avp859"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AVP859",
+   "textHash": "3f1918ef1fccd23d",
+   "textChars": 2326,
+   "prices": [
+    "11,99 €",
+    "12,15 €",
+    "12,81 €",
+    "13,84 €",
+    "15,19 €",
+    "15,98 €",
+    "39,49 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/potolok",
+   "status": 200,
+   "title": "Потолочные теневые профили – алюминиевые профили для потолка | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/potolok",
+   "hreflang": [
+    "et=/varjuprofiilid/lae",
+    "ru=/ru/dekor-profili/potolok",
+    "x-default=/varjuprofiilid/lae"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Потолочные теневые профили – теневая линия между потолком и стеной",
+   "textHash": "c48b5b57dd3bbef3",
+   "textChars": 1875,
+   "prices": [
+    "12,35 €",
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "16,29 €",
+    "19,22 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/potolok/ast10",
+   "status": 200,
+   "title": "AST10 – Потолочный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/potolok/ast10",
+   "hreflang": [
+    "et=/varjuprofiilid/lae/ast10",
+    "ru=/ru/dekor-profili/potolok/ast10",
+    "x-default=/varjuprofiilid/lae/ast10"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST10",
+   "textHash": "bf2d4baa31f04517",
+   "textChars": 2335,
+   "prices": [
+    "10,14 €",
+    "12,35 €",
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "34,60 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/potolok/ast101",
+   "status": 200,
+   "title": "AST101 – Потолочный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/potolok/ast101",
+   "hreflang": [
+    "et=/varjuprofiilid/lae/ast101",
+    "ru=/ru/dekor-profili/potolok/ast101",
+    "x-default=/varjuprofiilid/lae/ast101"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST101",
+   "textHash": "a24fb40d39aba080",
+   "textChars": 2356,
+   "prices": [
+    "10,14 €",
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "34,60 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/potolok/ast20",
+   "status": 200,
+   "title": "AST20 – Потолочный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/potolok/ast20",
+   "hreflang": [
+    "et=/varjuprofiilid/lae/ast20",
+    "ru=/ru/dekor-profili/potolok/ast20",
+    "x-default=/varjuprofiilid/lae/ast20"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST20",
+   "textHash": "09c27fca1fb5fee1",
+   "textChars": 2398,
+   "prices": [
+    "11,28 €",
+    "12,35 €",
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "36,00 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/potolok/ast5",
+   "status": 200,
+   "title": "AST5 – Потолочный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/potolok/ast5",
+   "hreflang": [
+    "et=/varjuprofiilid/lae/ast5",
+    "ru=/ru/dekor-profili/potolok/ast5",
+    "x-default=/varjuprofiilid/lae/ast5"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST5",
+   "textHash": "313e2d99fff29b43",
+   "textChars": 2351,
+   "prices": [
+    "12,35 €",
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "30,88 €",
+    "9,68 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/potolok/ast8",
+   "status": 200,
+   "title": "AST8 – Потолочный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/potolok/ast8",
+   "hreflang": [
+    "et=/varjuprofiilid/lae/ast8",
+    "ru=/ru/dekor-profili/potolok/ast8",
+    "x-default=/varjuprofiilid/lae/ast8"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST8",
+   "textHash": "d4f2a8b82a47580e",
+   "textChars": 2361,
+   "prices": [
+    "12,35 €",
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "32,02 €",
+    "9,94 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/potolok/lpa126",
+   "status": 200,
+   "title": "LPA126 – Тонкий потолочный профиль · 6 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/potolok/lpa126",
+   "hreflang": [
+    "et=/varjuprofiilid/lae/lpa126",
+    "ru=/ru/dekor-profili/potolok/lpa126",
+    "x-default=/varjuprofiilid/lae/lpa126"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "LPA126",
+   "textHash": "be31e5d2a4bfdfb0",
+   "textChars": 2353,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "19,22 €",
+    "49,97 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/potolok/rst1020",
+   "status": 200,
+   "title": "RST1020 – Потолочный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/potolok/rst1020",
+   "hreflang": [
+    "et=/varjuprofiilid/lae/rst1020",
+    "ru=/ru/dekor-profili/potolok/rst1020",
+    "x-default=/varjuprofiilid/lae/rst1020"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "RST1020",
+   "textHash": "252551023b35d20b",
+   "textChars": 2383,
+   "prices": [
+    "12,81 €",
+    "13,38 €",
+    "13,84 €",
+    "14,40 €",
+    "16,29 €",
+    "40,72 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/stena",
+   "status": 200,
+   "title": "Настенные теневые профили – декоративные профили для стен | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/stena",
+   "hreflang": [
+    "et=/varjuprofiilid/seina",
+    "ru=/ru/dekor-profili/stena",
+    "x-default=/varjuprofiilid/seina"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Настенные теневые профили – декоративная теневая линия",
+   "textHash": "28b37ef01ed6bb2a",
+   "textChars": 1733,
+   "prices": [
+    "10,23 €",
+    "10,55 €",
+    "11,56 €",
+    "12,09 €",
+    "13,37 €",
+    "16,45 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/stena/asp116",
+   "status": 200,
+   "title": "ASP116 – Настенный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/stena/asp116",
+   "hreflang": [
+    "et=/varjuprofiilid/seina/asp116",
+    "ru=/ru/dekor-profili/stena/asp116",
+    "x-default=/varjuprofiilid/seina/asp116"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP116",
+   "textHash": "66f1fb94b2e39146",
+   "textChars": 2072,
+   "prices": [
+    "10,23 €",
+    "11,56 €",
+    "12,09 €",
+    "13,37 €",
+    "16,45 €",
+    "42,77 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/stena/asp168",
+   "status": 200,
+   "title": "ASP168 – Настенный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/stena/asp168",
+   "hreflang": [
+    "et=/varjuprofiilid/seina/asp168",
+    "ru=/ru/dekor-profili/stena/asp168",
+    "x-default=/varjuprofiilid/seina/asp168"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP168",
+   "textHash": "2ac696774fd5461d",
+   "textChars": 2304,
+   "prices": [
+    "10,23 €",
+    "11,56 €",
+    "12,09 €",
+    "13,37 €",
+    "16,45 €",
+    "26,60 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/stena/asp198",
+   "status": 200,
+   "title": "ASP198 – Настенный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/stena/asp198",
+   "hreflang": [
+    "et=/varjuprofiilid/seina/asp198",
+    "ru=/ru/dekor-profili/stena/asp198",
+    "x-default=/varjuprofiilid/seina/asp198"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP198",
+   "textHash": "9a97062940380a4a",
+   "textChars": 2334,
+   "prices": [
+    "10,23 €",
+    "11,56 €",
+    "12,09 €",
+    "13,37 €",
+    "16,45 €",
+    "34,76 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/stena/asp411",
+   "status": 200,
+   "title": "ASP411 – Настенный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/stena/asp411",
+   "hreflang": [
+    "et=/varjuprofiilid/seina/asp411",
+    "ru=/ru/dekor-profili/stena/asp411",
+    "x-default=/varjuprofiilid/seina/asp411"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP411",
+   "textHash": "fea1ca9c3f9c8465",
+   "textChars": 2331,
+   "prices": [
+    "10,23 €",
+    "11,56 €",
+    "12,09 €",
+    "13,37 €",
+    "16,45 €",
+    "30,06 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/stena/asp611",
+   "status": 200,
+   "title": "ASP611 – Настенный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/stena/asp611",
+   "hreflang": [
+    "et=/varjuprofiilid/seina/asp611",
+    "ru=/ru/dekor-profili/stena/asp611",
+    "x-default=/varjuprofiilid/seina/asp611"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP611",
+   "textHash": "71696f688551ba7c",
+   "textChars": 2305,
+   "prices": [
+    "10,23 €",
+    "11,56 €",
+    "12,09 €",
+    "13,37 €",
+    "15,88 €",
+    "16,45 €",
+    "31,43 €"
+   ]
+  },
+  {
+   "path": "/ru/dekor-profili/stena/lpa909",
+   "status": 200,
+   "title": "LPA909 – Настенный декоративный профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/dekor-profili/stena/lpa909",
+   "hreflang": [
+    "et=/varjuprofiilid/seina/lpa909",
+    "ru=/ru/dekor-profili/stena/lpa909",
+    "x-default=/varjuprofiilid/seina/lpa909"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "LPA909",
+   "textHash": "890c2836279ce93f",
+   "textChars": 2112,
+   "prices": [
+    "10,55 €",
+    "11,17 €",
+    "26,38 €",
+    "8,87 €"
+   ]
+  },
+  {
+   "path": "/ru/dostavka",
+   "status": 200,
+   "title": "Доставка и возврат | Varjuprofiilid.ee",
+   "canonical": "/ru/dostavka",
+   "hreflang": [
+    "et=/tarne",
+    "ru=/ru/dostavka",
+    "x-default=/tarne"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Доставка. по всей Эстонии за 2–4 дня.",
+   "textHash": "7107edd9d27567ca",
+   "textChars": 2063,
+   "prices": []
+  },
+  {
+   "path": "/ru/faq",
+   "status": 200,
+   "title": "Часто задаваемые вопросы | Varjuprofiilid.ee",
+   "canonical": "/ru/faq",
+   "hreflang": [
+    "et=/kkk",
+    "ru=/ru/faq",
+    "x-default=/kkk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Вопросы.",
+   "textHash": "0b4630a26f4f3ab2",
+   "textChars": 1712,
+   "prices": []
+  },
+  {
+   "path": "/ru/garantiya",
+   "status": 200,
+   "title": "Гарантия и претензии | Varjuprofiilid.ee",
+   "canonical": "/ru/garantiya",
+   "hreflang": [
+    "et=/garantii",
+    "ru=/ru/garantiya",
+    "x-default=/garantii"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Гарантия на профиль и его покрытие.",
+   "textHash": "9b2d3d4a4b324289",
+   "textChars": 1769,
+   "prices": []
+  },
+  {
+   "path": "/ru/karniznye-profili/ka1",
+   "status": 200,
+   "title": "KA1 – Карнизный профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/karniznye-profili/ka1",
+   "hreflang": [
+    "et=/kardinaprofiilid/ka1",
+    "ru=/ru/karniznye-profili/ka1",
+    "x-default=/kardinaprofiilid/ka1"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "KA1",
+   "textHash": "44f1a05cb1a0a221",
+   "textChars": 2156,
+   "prices": [
+    "21,70 €",
+    "47,74 €",
+    "65,10 €"
+   ]
+  },
+  {
+   "path": "/ru/karniznye-profili/ka2",
+   "status": 200,
+   "title": "KA2 – Карнизный профиль скрытого монтажа · 2-рядный | Varjuprofiilid.ee",
+   "canonical": "/ru/karniznye-profili/ka2",
+   "hreflang": [
+    "et=/kardinaprofiilid/ka2",
+    "ru=/ru/karniznye-profili/ka2",
+    "x-default=/kardinaprofiilid/ka2"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "KA2",
+   "textHash": "481e9f7ba1f44e27",
+   "textChars": 2110,
+   "prices": [
+    "143,22 €",
+    "21,70 €",
+    "47,74 €"
+   ]
+  },
+  {
+   "path": "/ru/katalog",
+   "status": 200,
+   "title": "Магазин — все товары | Varjuprofiilid.ee",
+   "canonical": "/ru/katalog",
+   "hreflang": [
+    "et=/tooted",
+    "ru=/ru/katalog",
+    "x-default=/tooted"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Все товары.",
+   "textHash": "b95133f8a90a1017",
+   "textChars": 7448,
+   "prices": [
+    "0,51 €",
+    "10,23 €",
+    "10,55 €",
+    "10,66 €",
+    "11,05 €",
+    "11,56 €",
+    "11,68 €",
+    "11,89 €",
+    "11,99 €",
+    "12,09 €",
+    "12,20 €",
+    "12,28 €",
+    "12,35 €",
+    "12,81 €",
+    "13,22 €",
+    "13,37 €",
+    "13,63 €",
+    "13,64 €",
+    "13,74 €",
+    "13,83 €",
+    "13,84 €",
+    "13,91 €",
+    "14,40 €",
+    "14,67 €",
+    "14,76 €",
+    "14,86 €",
+    "15,19 €",
+    "15,69 €",
+    "15,88 €",
+    "16,29 €",
+    "16,45 €",
+    "17,93 €",
+    "19,22 €",
+    "19,37 €",
+    "19,88 €",
+    "2,17 €",
+    "2,57 €",
+    "20,39 €",
+    "20,40 €",
+    "21,01 €",
+    "21,70 €",
+    "22,03 €",
+    "25,28 €",
+    "26,13 €",
+    "28,18 €",
+    "3,55 €",
+    "4,02 €",
+    "4,44 €",
+    "47,74 €",
+    "5,84 €",
+    "6,45 €",
+    "6,82 €",
+    "9,56 €"
+   ]
+  },
+  {
+   "path": "/ru/kontakty",
+   "status": 200,
+   "title": "Контакт — PROSPACE OÜ | Varjuprofiilid.ee",
+   "canonical": "/ru/kontakty",
+   "hreflang": [
+    "et=/kontakt",
+    "ru=/ru/kontakty",
+    "x-default=/kontakt"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Заходите в гости.",
+   "textHash": "dbaf6f782549ffc7",
+   "textChars": 1969,
+   "prices": []
+  },
+  {
+   "path": "/ru/led-profili",
+   "status": 200,
+   "title": "LED теневые профили — LED профили для потолка и пола | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili",
+   "hreflang": [
+    "et=/led-varjuprofiilid",
+    "ru=/ru/led-profili",
+    "x-default=/led-varjuprofiilid"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "LED теневые профили.",
+   "textHash": "fbcabcaa174d1b5b",
+   "textChars": 4526,
+   "prices": [
+    "13,84 €",
+    "15,88 €",
+    "17,93 €",
+    "19,88 €",
+    "22,03 €",
+    "28,18 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/centralnyj",
+   "status": 200,
+   "title": "LED профили для центрального потолка | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/centralnyj",
+   "hreflang": [
+    "et=/led-varjuprofiilid/kesklae",
+    "ru=/ru/led-profili/centralnyj",
+    "x-default=/led-varjuprofiilid/kesklae"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "LED профили для центрального потолка",
+   "textHash": "efe306239c943b81",
+   "textChars": 1502,
+   "prices": []
+  },
+  {
+   "path": "/ru/led-profili/pol",
+   "status": 200,
+   "title": "Напольные LED теневые профили – LED профили для пола | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/pol",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda",
+    "ru=/ru/led-profili/pol",
+    "x-default=/led-varjuprofiilid/poranda"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Напольные LED профили – LED профили для пола из алюминия",
+   "textHash": "1ba8ab6fed6ea330",
+   "textChars": 2234,
+   "prices": [
+    "13,84 €",
+    "14,76 €",
+    "14,86 €",
+    "15,69 €",
+    "15,88 €",
+    "17,93 €",
+    "21,01 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/pol/asp102",
+   "status": 200,
+   "title": "ASP102 – Напольный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/pol/asp102",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/asp102",
+    "ru=/ru/led-profili/pol/asp102",
+    "x-default=/led-varjuprofiilid/poranda/asp102"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP102",
+   "textHash": "326432230ccd3b46",
+   "textChars": 2437,
+   "prices": [
+    "10,53 €",
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "21,01 €",
+    "35,98 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/pol/asp106",
+   "status": 200,
+   "title": "ASP106 – Напольный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/pol/asp106",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/asp106",
+    "ru=/ru/led-profili/pol/asp106",
+    "x-default=/led-varjuprofiilid/poranda/asp106"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP106",
+   "textHash": "da8cfee9daa4ea1a",
+   "textChars": 2408,
+   "prices": [
+    "11,56 €",
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "14,86 €",
+    "38,64 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/pol/asp238",
+   "status": 200,
+   "title": "ASP238 – Напольный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/pol/asp238",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/asp238",
+    "ru=/ru/led-profili/pol/asp238",
+    "x-default=/led-varjuprofiilid/poranda/asp238"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP238",
+   "textHash": "e0338bf9d0b36b24",
+   "textChars": 2378,
+   "prices": [
+    "10,53 €",
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "35,98 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/pol/asp904",
+   "status": 200,
+   "title": "ASP904 – Напольный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/pol/asp904",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/asp904",
+    "ru=/ru/led-profili/pol/asp904",
+    "x-default=/led-varjuprofiilid/poranda/asp904"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP904",
+   "textHash": "c6d8ceab79bbfcde",
+   "textChars": 2375,
+   "prices": [
+    "11,99 €",
+    "12,81 €",
+    "12,85 €",
+    "13,84 €",
+    "15,88 €",
+    "41,29 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/pol/asp905",
+   "status": 200,
+   "title": "ASP905 – Напольный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/pol/asp905",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/asp905",
+    "ru=/ru/led-profili/pol/asp905",
+    "x-default=/led-varjuprofiilid/poranda/asp905"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP905",
+   "textHash": "4efc88d6020ea545",
+   "textChars": 2384,
+   "prices": [
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "13,91 €",
+    "17,93 €",
+    "46,62 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/pol/aspl100",
+   "status": 200,
+   "title": "ASPL100 – Напольный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/pol/aspl100",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/aspl100",
+    "ru=/ru/led-profili/pol/aspl100",
+    "x-default=/led-varjuprofiilid/poranda/aspl100"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASPL100",
+   "textHash": "387164af7d41e2dc",
+   "textChars": 2453,
+   "prices": [
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "16,74 €",
+    "21,01 €",
+    "52,53 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/pol/aspl120",
+   "status": 200,
+   "title": "ASPL120 – Напольный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/pol/aspl120",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/aspl120",
+    "ru=/ru/led-profili/pol/aspl120",
+    "x-default=/led-varjuprofiilid/poranda/aspl120"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASPL120",
+   "textHash": "050fa584e32723fa",
+   "textChars": 2436,
+   "prices": [
+    "11,99 €",
+    "12,52 €",
+    "12,81 €",
+    "13,84 €",
+    "14,76 €",
+    "38,38 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/pol/aspl130",
+   "status": 200,
+   "title": "ASPL130 – Напольный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/pol/aspl130",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/aspl130",
+    "ru=/ru/led-profili/pol/aspl130",
+    "x-default=/led-varjuprofiilid/poranda/aspl130"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASPL130",
+   "textHash": "4d5bbc45b9fb8e6b",
+   "textChars": 2417,
+   "prices": [
+    "11,99 €",
+    "12,52 €",
+    "12,81 €",
+    "13,84 €",
+    "14,76 €",
+    "38,38 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/pol/aspl35",
+   "status": 200,
+   "title": "ASPL35 – Напольный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/pol/aspl35",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/aspl35",
+    "ru=/ru/led-profili/pol/aspl35",
+    "x-default=/led-varjuprofiilid/poranda/aspl35"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASPL35",
+   "textHash": "36d4feea36caed08",
+   "textChars": 2408,
+   "prices": [
+    "11,16 €",
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "35,98 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/pol/aspl60",
+   "status": 200,
+   "title": "ASPL60 – Напольный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/pol/aspl60",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/aspl60",
+    "ru=/ru/led-profili/pol/aspl60",
+    "x-default=/led-varjuprofiilid/poranda/aspl60"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASPL60",
+   "textHash": "43c2d9d294d9a4e4",
+   "textChars": 2402,
+   "prices": [
+    "11,99 €",
+    "12,81 €",
+    "13,02 €",
+    "13,84 €",
+    "15,69 €",
+    "40,79 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/pol/lhv10",
+   "status": 200,
+   "title": "LHV10 – Напольный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/pol/lhv10",
+   "hreflang": [
+    "et=/led-varjuprofiilid/poranda/lhv10",
+    "ru=/ru/led-profili/pol/lhv10",
+    "x-default=/led-varjuprofiilid/poranda/lhv10"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "LHV10",
+   "textHash": "5756786dd7241e6f",
+   "textChars": 2341,
+   "prices": [
+    "10,14 €",
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "21,01 €",
+    "34,60 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/potolok",
+   "status": 200,
+   "title": "Потолочные LED теневые профили – LED профили для потолка | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/potolok",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae",
+    "ru=/ru/led-profili/potolok",
+    "x-default=/led-varjuprofiilid/lae"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Потолочные LED профили – LED профили для потолка из алюминия",
+   "textHash": "db2d5272dd1846c2",
+   "textChars": 2538,
+   "prices": [
+    "15,88 €",
+    "17,93 €",
+    "19,37 €",
+    "19,88 €",
+    "20,39 €",
+    "20,40 €",
+    "22,03 €",
+    "25,28 €",
+    "26,13 €",
+    "28,18 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/potolok/ast12",
+   "status": 200,
+   "title": "AST12 – Потолочный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/potolok/ast12",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast12",
+    "ru=/ru/led-profili/potolok/ast12",
+    "x-default=/led-varjuprofiilid/lae/ast12"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST12",
+   "textHash": "ae3b14096a7a4f69",
+   "textChars": 2348,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "17,93 €",
+    "44,83 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/potolok/ast14-12",
+   "status": 200,
+   "title": "AST14_12 – Потолочный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/potolok/ast14-12",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast14-12",
+    "ru=/ru/led-profili/potolok/ast14-12",
+    "x-default=/led-varjuprofiilid/lae/ast14-12"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST14_12",
+   "textHash": "15438bd8b696cd62",
+   "textChars": 2357,
+   "prices": [
+    "11,56 €",
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "15,88 €",
+    "39,70 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/potolok/ast201",
+   "status": 200,
+   "title": "AST201 – Потолочный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/potolok/ast201",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast201",
+    "ru=/ru/led-profili/potolok/ast201",
+    "x-default=/led-varjuprofiilid/lae/ast201"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST201",
+   "textHash": "371a8af0799b5675",
+   "textChars": 2317,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "16,39 €",
+    "22,03 €",
+    "55,08 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/potolok/ast218",
+   "status": 200,
+   "title": "AST218 – Потолочный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/potolok/ast218",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast218",
+    "ru=/ru/led-profili/potolok/ast218",
+    "x-default=/led-varjuprofiilid/lae/ast218"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST218",
+   "textHash": "154726de00d62eb7",
+   "textChars": 2325,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "15,07 €",
+    "20,40 €",
+    "51,00 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/potolok/ast22",
+   "status": 200,
+   "title": "AST22 – Потолочный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/potolok/ast22",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast22",
+    "ru=/ru/led-profili/potolok/ast22",
+    "x-default=/led-varjuprofiilid/lae/ast22"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST22",
+   "textHash": "cf18d3f7598efd38",
+   "textChars": 2385,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "15,07 €",
+    "19,37 €",
+    "48,43 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/potolok/ast25",
+   "status": 200,
+   "title": "AST25 – Потолочный LED-профиль скрытого монтажа · 25 мм | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/potolok/ast25",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast25",
+    "ru=/ru/led-profili/potolok/ast25",
+    "x-default=/led-varjuprofiilid/lae/ast25"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST25",
+   "textHash": "218a8379ba6ac3a3",
+   "textChars": 2383,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "25,28 €",
+    "75,84 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/potolok/ast30",
+   "status": 200,
+   "title": "AST30 – Потолочный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/potolok/ast30",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast30",
+    "ru=/ru/led-profili/potolok/ast30",
+    "x-default=/led-varjuprofiilid/lae/ast30"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST30",
+   "textHash": "ef429b3a775e30d9",
+   "textChars": 2338,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "20,55 €",
+    "26,13 €",
+    "65,33 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/potolok/ast35",
+   "status": 200,
+   "title": "AST35 – Потолочный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/potolok/ast35",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast35",
+    "ru=/ru/led-profili/potolok/ast35",
+    "x-default=/led-varjuprofiilid/lae/ast35"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST35",
+   "textHash": "e7188fea2ede749b",
+   "textChars": 2381,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "16,86 €",
+    "19,88 €",
+    "49,70 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/potolok/ast45",
+   "status": 200,
+   "title": "Потолочный встраиваемый LED-профиль 45 мм – Потолочный встраиваемый LED-профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/potolok/ast45",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast45",
+    "ru=/ru/led-profili/potolok/ast45",
+    "x-default=/led-varjuprofiilid/lae/ast45"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST45",
+   "textHash": "9dc91d8512842b4c",
+   "textChars": 2371,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "22,69 €",
+    "28,18 €",
+    "70,45 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/potolok/ast50",
+   "status": 200,
+   "title": "AST50 – Потолочный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/potolok/ast50",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/ast50",
+    "ru=/ru/led-profili/potolok/ast50",
+    "x-default=/led-varjuprofiilid/lae/ast50"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST50",
+   "textHash": "83108b53e14fb1c5",
+   "textChars": 2410,
+   "prices": [
+    "12,81 €",
+    "13,02 €",
+    "13,84 €",
+    "14,40 €",
+    "15,88 €",
+    "39,70 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/potolok/rst12",
+   "status": 200,
+   "title": "RST12 – Потолочный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/potolok/rst12",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/rst12",
+    "ru=/ru/led-profili/potolok/rst12",
+    "x-default=/led-varjuprofiilid/lae/rst12"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "RST12",
+   "textHash": "b0c7f85867ed7edc",
+   "textChars": 2342,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "15,14 €",
+    "17,93 €",
+    "44,83 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/potolok/rst14",
+   "status": 200,
+   "title": "RST14_12 – Потолочный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/potolok/rst14",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/rst14",
+    "ru=/ru/led-profili/potolok/rst14",
+    "x-default=/led-varjuprofiilid/lae/rst14"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "RST14",
+   "textHash": "67d7bd868623959d",
+   "textChars": 2345,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "15,14 €",
+    "17,93 €",
+    "44,83 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/potolok/rst22",
+   "status": 200,
+   "title": "RST22 – Потолочный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/potolok/rst22",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/rst22",
+    "ru=/ru/led-profili/potolok/rst22",
+    "x-default=/led-varjuprofiilid/lae/rst22"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "RST22",
+   "textHash": "fb5b414a79d7252b",
+   "textChars": 2313,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "17,62 €",
+    "20,39 €",
+    "50,98 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/potolok/rst25",
+   "status": 200,
+   "title": "RST25 – Потолочный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/potolok/rst25",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/rst25",
+    "ru=/ru/led-profili/potolok/rst25",
+    "x-default=/led-varjuprofiilid/lae/rst25"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "RST25",
+   "textHash": "4ef37b5ebf2c484c",
+   "textChars": 2362,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "17,62 €",
+    "20,39 €",
+    "50,98 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/potolok/rst40",
+   "status": 200,
+   "title": "RST40 – Потолочный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/potolok/rst40",
+   "hreflang": [
+    "et=/led-varjuprofiilid/lae/rst40",
+    "ru=/ru/led-profili/potolok/rst40",
+    "x-default=/led-varjuprofiilid/lae/rst40"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "RST40",
+   "textHash": "bd77264e3413ac5b",
+   "textChars": 2425,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "20,55 €",
+    "26,13 €",
+    "78,39 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/stena",
+   "status": 200,
+   "title": "Настенные LED профили – LED профили скрытого монтажа для стен | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/stena",
+   "hreflang": [
+    "et=/led-varjuprofiilid/seina",
+    "ru=/ru/led-profili/stena",
+    "x-default=/led-varjuprofiilid/seina"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Настенные LED профили – профили скрытого монтажа",
+   "textHash": "2e0a4ada3a224d12",
+   "textChars": 1572,
+   "prices": [
+    "13,91 €",
+    "14,67 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/stena/asp410",
+   "status": 200,
+   "title": "ASP410 – Настенный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/stena/asp410",
+   "hreflang": [
+    "et=/led-varjuprofiilid/seina/asp410",
+    "ru=/ru/led-profili/stena/asp410",
+    "x-default=/led-varjuprofiilid/seina/asp410"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP410",
+   "textHash": "e4694f589990cd2d",
+   "textChars": 2328,
+   "prices": [
+    "10,23 €",
+    "11,56 €",
+    "12,09 €",
+    "13,37 €",
+    "13,91 €",
+    "36,17 €"
+   ]
+  },
+  {
+   "path": "/ru/led-profili/stena/asp610",
+   "status": 200,
+   "title": "ASP610 – Настенный LED-профиль скрытого монтажа | Varjuprofiilid.ee",
+   "canonical": "/ru/led-profili/stena/asp610",
+   "hreflang": [
+    "et=/led-varjuprofiilid/seina/asp610",
+    "ru=/ru/led-profili/stena/asp610",
+    "x-default=/led-varjuprofiilid/seina/asp610"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP610",
+   "textHash": "5b3d1ed5b1789bbb",
+   "textChars": 2441,
+   "prices": [
+    "10,23 €",
+    "11,56 €",
+    "12,09 €",
+    "13,37 €",
+    "14,67 €",
+    "38,14 €"
+   ]
+  },
+  {
+   "path": "/ru/o-nas",
+   "status": 200,
+   "title": "Теневые профили в современном интерьере | Varjuprofiilid.ee",
+   "canonical": "/ru/o-nas",
+   "hreflang": [
+    "et=/meist",
+    "ru=/ru/o-nas",
+    "x-default=/meist"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Теневые в современный интерьер.",
+   "textHash": "11994ee322a77d13",
+   "textChars": 4781,
+   "prices": []
+  },
+  {
+   "path": "/ru/professionalam",
+   "status": 200,
+   "title": "B2B Партнёрская программа — Дизайнерам и Строителям | Varjuprofiilid.ee",
+   "canonical": "/ru/professionalam",
+   "hreflang": [
+    "et=/professionaalidele",
+    "ru=/ru/professionalam",
+    "x-default=/professionaalidele"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Сотрудничайте по лучшей цене.",
+   "textHash": "8b33735dfd350279",
+   "textChars": 3186,
+   "prices": []
+  },
+  {
+   "path": "/ru/rekvizity",
+   "status": 200,
+   "title": "Правовая информация | Varjuprofiilid.ee",
+   "canonical": "/ru/rekvizity",
+   "hreflang": [
+    "et=/impressum",
+    "ru=/ru/rekvizity",
+    "x-default=/impressum"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Условия.",
+   "textHash": "ff8fcf0c7d5404ed",
+   "textChars": 1854,
+   "prices": []
+  },
+  {
+   "path": "/ru/salon",
+   "status": 200,
+   "title": "Салон в Таллинне — Vana-Kalamaja 8–110 | Varjuprofiilid.ee",
+   "canonical": "/ru/salon",
+   "hreflang": [
+    "et=/salong",
+    "ru=/ru/salon",
+    "x-default=/salong"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Приходите смотреть.",
+   "textHash": "620367069f299159",
+   "textChars": 1904,
+   "prices": []
+  },
+  {
+   "path": "/ru/uglovye-profili/dkp1010",
+   "status": 200,
+   "title": "DKP1010 – Алюминиевый угловой профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/uglovye-profili/dkp1010",
+   "hreflang": [
+    "et=/nurgaprofiilid/dkp1010",
+    "ru=/ru/uglovye-profili/dkp1010",
+    "x-default=/nurgaprofiilid/dkp1010"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "DKP1010",
+   "textHash": "d3361973fab28158",
+   "textChars": 2180,
+   "prices": [
+    "10,65 €",
+    "2,43 €",
+    "3,55 €",
+    "3,89 €",
+    "4,02 €",
+    "4,44 €"
+   ]
+  },
+  {
+   "path": "/ru/uglovye-profili/dkp1515",
+   "status": 200,
+   "title": "DKP1515 – Алюминиевый угловой профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/uglovye-profili/dkp1515",
+   "hreflang": [
+    "et=/nurgaprofiilid/dkp1515",
+    "ru=/ru/uglovye-profili/dkp1515",
+    "x-default=/nurgaprofiilid/dkp1515"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "DKP1515",
+   "textHash": "fa7a766e0243708e",
+   "textChars": 2116,
+   "prices": [
+    "12,06 €",
+    "2,65 €",
+    "3,55 €",
+    "4,02 €",
+    "4,44 €"
+   ]
+  },
+  {
+   "path": "/ru/uglovye-profili/dkp2020",
+   "status": 200,
+   "title": "DKP2020 – Алюминиевый угловой профиль | Varjuprofiilid.ee",
+   "canonical": "/ru/uglovye-profili/dkp2020",
+   "hreflang": [
+    "et=/nurgaprofiilid/dkp2020",
+    "ru=/ru/uglovye-profili/dkp2020",
+    "x-default=/nurgaprofiilid/dkp2020"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "DKP2020",
+   "textHash": "88e9fec46fa5c60e",
+   "textChars": 2196,
+   "prices": [
+    "13,32 €",
+    "3,12 €",
+    "3,55 €",
+    "4,02 €",
+    "4,44 €",
+    "4,79 €"
+   ]
+  },
+  {
+   "path": "/ru/vdohnovenie",
+   "status": 200,
+   "title": "Вдохновение — Реальные проекты с теневыми профилями | Varjuprofiilid.ee",
+   "canonical": "/ru/vdohnovenie",
+   "hreflang": [
+    "et=/inspiratsioon",
+    "ru=/ru/vdohnovenie",
+    "x-default=/inspiratsioon"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Вдохновение.",
+   "textHash": "bac15c2a0b5012e5",
+   "textChars": 1394,
+   "prices": []
+  },
+  {
+   "path": "/ru/vdohnovenie/eduardi-maja",
+   "status": 200,
+   "title": "Один дом, три SKU, одна непрерывная линия | Вдохновение | Varjuprofiilid.ee | Varjuprofiilid.ee",
+   "canonical": "/ru/vdohnovenie/eduardi-maja",
+   "hreflang": [
+    "et=/inspiratsioon/eduardi-maja",
+    "ru=/ru/vdohnovenie/eduardi-maja",
+    "x-default=/inspiratsioon/eduardi-maja"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "“ Один дом, три SKU, одна непрерывная линия .”",
+   "textHash": "89e6c2fb6e04bda5",
+   "textChars": 3367,
+   "prices": []
+  },
+  {
+   "path": "/ru/vdohnovenie/tallinna-korter",
+   "status": 200,
+   "title": "Свет и линии без дизайнера интерьера | Вдохновение | Varjuprofiilid.ee | Varjuprofiilid.ee",
+   "canonical": "/ru/vdohnovenie/tallinna-korter",
+   "hreflang": [
+    "et=/inspiratsioon/tallinna-korter",
+    "ru=/ru/vdohnovenie/tallinna-korter",
+    "x-default=/inspiratsioon/tallinna-korter"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "“ Свет и линии без дизайнера интерьера .”",
+   "textHash": "cff27b1d766c02d8",
+   "textChars": 3820,
+   "prices": []
+  },
+  {
+   "path": "/ru/vdohnovenie/viimsi-vannituba",
+   "status": 200,
+   "title": "Одна ванна, две LED-линии, три сцены | Вдохновение | Varjuprofiilid.ee | Varjuprofiilid.ee",
+   "canonical": "/ru/vdohnovenie/viimsi-vannituba",
+   "hreflang": [
+    "et=/inspiratsioon/viimsi-vannituba",
+    "ru=/ru/vdohnovenie/viimsi-vannituba",
+    "x-default=/inspiratsioon/viimsi-vannituba"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "“ Одна ванна, две LED-линии, три сцены .”",
+   "textHash": "bce07007f14fc560",
+   "textChars": 3258,
+   "prices": []
+  },
+  {
+   "path": "/salong",
+   "status": 200,
+   "title": "Salong Tallinnas — Vana-Kalamaja 8–110 | Varjuprofiilid.ee",
+   "canonical": "/salong",
+   "hreflang": [
+    "et=/salong",
+    "ru=/ru/salon",
+    "x-default=/salong"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Tule näidiseid vaatama.",
+   "textHash": "2e692fd2e7bea62d",
+   "textChars": 1850,
+   "prices": []
+  },
+  {
+   "path": "/tarne",
+   "status": 200,
+   "title": "Tarne ja tagastus | Varjuprofiilid.ee",
+   "canonical": "/tarne",
+   "hreflang": [
+    "et=/tarne",
+    "ru=/ru/dostavka",
+    "x-default=/tarne"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Tarne. kogu Eesti, 2–4 päevaga.",
+   "textHash": "6b9a16e606e8a62c",
+   "textChars": 1968,
+   "prices": []
+  },
+  {
+   "path": "/tarvikud/ask100",
+   "status": 200,
+   "title": "ASK100 – LED-profiili hajuti | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/ask100",
+   "hreflang": [
+    "et=/tarvikud/ask100",
+    "ru=/ru/aksessuary/ask100",
+    "x-default=/tarvikud/ask100"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASK100",
+   "textHash": "3bc4b072800c4921",
+   "textChars": 2057,
+   "prices": [
+    "2,57 €",
+    "5,84 €",
+    "6,42 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asl25",
+   "status": 200,
+   "title": "ASL25 – LED-profiili hajuti | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asl25",
+   "hreflang": [
+    "et=/tarvikud/asl25",
+    "ru=/ru/aksessuary/asl25",
+    "x-default=/tarvikud/asl25"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASL25",
+   "textHash": "1454f8f114f9f7fa",
+   "textChars": 2097,
+   "prices": [
+    "17,52 €",
+    "2,57 €",
+    "5,84 €",
+    "9,56 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asl300",
+   "status": 200,
+   "title": "ASL300 – LED-profiili hajuti | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asl300",
+   "hreflang": [
+    "et=/tarvikud/asl300",
+    "ru=/ru/aksessuary/asl300",
+    "x-default=/tarvikud/asl300"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASL300",
+   "textHash": "e062aaba6cd44b2c",
+   "textChars": 2121,
+   "prices": [
+    "2,57 €",
+    "5,84 €",
+    "6,42 €",
+    "9,56 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asl302",
+   "status": 200,
+   "title": "ASL302 – LED-profiili hajuti | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asl302",
+   "hreflang": [
+    "et=/tarvikud/asl302",
+    "ru=/ru/aksessuary/asl302",
+    "x-default=/tarvikud/asl302"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASL302",
+   "textHash": "817f7e5dee14822d",
+   "textChars": 2127,
+   "prices": [
+    "2,57 €",
+    "5,84 €",
+    "6,42 €",
+    "9,56 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asl312",
+   "status": 200,
+   "title": "ASL312 – LED-profiili hajuti | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asl312",
+   "hreflang": [
+    "et=/tarvikud/asl312",
+    "ru=/ru/aksessuary/asl312",
+    "x-default=/tarvikud/asl312"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASL312",
+   "textHash": "5b51fadef1f99924",
+   "textChars": 2134,
+   "prices": [
+    "2,57 €",
+    "5,84 €",
+    "6,42 €",
+    "9,56 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asl40",
+   "status": 200,
+   "title": "ASL40 – LED-profiili hajuti | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asl40",
+   "hreflang": [
+    "et=/tarvikud/asl40",
+    "ru=/ru/aksessuary/asl40",
+    "x-default=/tarvikud/asl40"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASL40",
+   "textHash": "6dd12d0051e2c202",
+   "textChars": 2170,
+   "prices": [
+    "2,57 €",
+    "28,68 €",
+    "5,84 €",
+    "9,56 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asp100-otsakork",
+   "status": 200,
+   "title": "ASP100-OK – Põrandaliistu otsakork · 100 mm | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asp100-otsakork",
+   "hreflang": [
+    "et=/tarvikud/asp100-otsakork",
+    "ru=/ru/aksessuary/asp100-zaglushka",
+    "x-default=/tarvikud/asp100-otsakork"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP100-OK",
+   "textHash": "9fa93251ad57273c",
+   "textChars": 1590,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asp100-sisemine-nurk",
+   "status": 200,
+   "title": "ASP100-NS – Põrandaliistu sisemine nurk · 100 mm | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asp100-sisemine-nurk",
+   "hreflang": [
+    "et=/tarvikud/asp100-sisemine-nurk",
+    "ru=/ru/aksessuary/asp100-vnut-ugol",
+    "x-default=/tarvikud/asp100-sisemine-nurk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP100-NS",
+   "textHash": "f3c7eb1372b3302d",
+   "textChars": 1636,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asp100-uhendus",
+   "status": 200,
+   "title": "ASP100-Y – Põrandaliistu ühenduselement · 100 mm | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asp100-uhendus",
+   "hreflang": [
+    "et=/tarvikud/asp100-uhendus",
+    "ru=/ru/aksessuary/asp100-soedinitel",
+    "x-default=/tarvikud/asp100-uhendus"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP100-Y",
+   "textHash": "8872e0810566b033",
+   "textChars": 1587,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asp100-valimine-nurk",
+   "status": 200,
+   "title": "ASP100-NV – Põrandaliistu välimine nurk · 100 mm | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asp100-valimine-nurk",
+   "hreflang": [
+    "et=/tarvikud/asp100-valimine-nurk",
+    "ru=/ru/aksessuary/asp100-vnesh-ugol",
+    "x-default=/tarvikud/asp100-valimine-nurk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP100-NV",
+   "textHash": "d1d50dc323e37ed9",
+   "textChars": 1642,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asp40-otsakork",
+   "status": 200,
+   "title": "ASP40-OK – Põrandaliistu otsakork · 40 mm | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asp40-otsakork",
+   "hreflang": [
+    "et=/tarvikud/asp40-otsakork",
+    "ru=/ru/aksessuary/asp40-zaglushka",
+    "x-default=/tarvikud/asp40-otsakork"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP40-OK",
+   "textHash": "3f89f4c9556c636e",
+   "textChars": 1584,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asp40-sisemine-nurk",
+   "status": 200,
+   "title": "ASP40-NS – Põrandaliistu sisemine nurk · 40 mm | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asp40-sisemine-nurk",
+   "hreflang": [
+    "et=/tarvikud/asp40-sisemine-nurk",
+    "ru=/ru/aksessuary/asp40-vnut-ugol",
+    "x-default=/tarvikud/asp40-sisemine-nurk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP40-NS",
+   "textHash": "acd666e34a102d2a",
+   "textChars": 1630,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asp40-uhendus",
+   "status": 200,
+   "title": "ASP40-Y – Põrandaliistu ühenduselement · 40 mm | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asp40-uhendus",
+   "hreflang": [
+    "et=/tarvikud/asp40-uhendus",
+    "ru=/ru/aksessuary/asp40-soedinitel",
+    "x-default=/tarvikud/asp40-uhendus"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP40-Y",
+   "textHash": "e88a80e20275cd7a",
+   "textChars": 1581,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asp40-valimine-nurk",
+   "status": 200,
+   "title": "ASP40-NV – Põrandaliistu välimine nurk · 40 mm | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asp40-valimine-nurk",
+   "hreflang": [
+    "et=/tarvikud/asp40-valimine-nurk",
+    "ru=/ru/aksessuary/asp40-vnesh-ugol",
+    "x-default=/tarvikud/asp40-valimine-nurk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP40-NV",
+   "textHash": "600452329a30cc2d",
+   "textChars": 1636,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asp60-otsakork",
+   "status": 200,
+   "title": "ASP60-OK – Põrandaliistu otsakork · 60 mm | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asp60-otsakork",
+   "hreflang": [
+    "et=/tarvikud/asp60-otsakork",
+    "ru=/ru/aksessuary/asp60-zaglushka",
+    "x-default=/tarvikud/asp60-otsakork"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP60-OK",
+   "textHash": "c3f9a85c445d244f",
+   "textChars": 1584,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asp60-sisemine-nurk",
+   "status": 200,
+   "title": "ASP60-NS – Põrandaliistu sisemine nurk · 60 mm | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asp60-sisemine-nurk",
+   "hreflang": [
+    "et=/tarvikud/asp60-sisemine-nurk",
+    "ru=/ru/aksessuary/asp60-vnut-ugol",
+    "x-default=/tarvikud/asp60-sisemine-nurk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP60-NS",
+   "textHash": "49c22cf88f6931ed",
+   "textChars": 1630,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asp60-uhendus",
+   "status": 200,
+   "title": "ASP60-Y – Põrandaliistu ühenduselement · 60 mm | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asp60-uhendus",
+   "hreflang": [
+    "et=/tarvikud/asp60-uhendus",
+    "ru=/ru/aksessuary/asp60-soedinitel",
+    "x-default=/tarvikud/asp60-uhendus"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP60-Y",
+   "textHash": "37a6c292ae485a55",
+   "textChars": 1581,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asp60-valimine-nurk",
+   "status": 200,
+   "title": "ASP60-NV – Põrandaliistu välimine nurk · 60 mm | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asp60-valimine-nurk",
+   "hreflang": [
+    "et=/tarvikud/asp60-valimine-nurk",
+    "ru=/ru/aksessuary/asp60-vnesh-ugol",
+    "x-default=/tarvikud/asp60-valimine-nurk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP60-NV",
+   "textHash": "589f9b029a3f0f14",
+   "textChars": 1636,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asp80-otsakork",
+   "status": 200,
+   "title": "ASP80-OK – Põrandaliistu otsakork · 80 mm | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asp80-otsakork",
+   "hreflang": [
+    "et=/tarvikud/asp80-otsakork",
+    "ru=/ru/aksessuary/asp80-zaglushka",
+    "x-default=/tarvikud/asp80-otsakork"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP80-OK",
+   "textHash": "2f175f803daf1843",
+   "textChars": 1584,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asp80-sisemine-nurk",
+   "status": 200,
+   "title": "ASP80-NS – Põrandaliistu sisemine nurk · 80 mm | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asp80-sisemine-nurk",
+   "hreflang": [
+    "et=/tarvikud/asp80-sisemine-nurk",
+    "ru=/ru/aksessuary/asp80-vnut-ugol",
+    "x-default=/tarvikud/asp80-sisemine-nurk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP80-NS",
+   "textHash": "718063d74e246aa8",
+   "textChars": 1630,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asp80-uhendus",
+   "status": 200,
+   "title": "ASP80-Y – Põrandaliistu ühenduselement · 80 mm | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asp80-uhendus",
+   "hreflang": [
+    "et=/tarvikud/asp80-uhendus",
+    "ru=/ru/aksessuary/asp80-soedinitel",
+    "x-default=/tarvikud/asp80-uhendus"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP80-Y",
+   "textHash": "2a69a96ab3f8a168",
+   "textChars": 1581,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/asp80-valimine-nurk",
+   "status": 200,
+   "title": "ASP80-NV – Põrandaliistu välimine nurk · 80 mm | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/asp80-valimine-nurk",
+   "hreflang": [
+    "et=/tarvikud/asp80-valimine-nurk",
+    "ru=/ru/aksessuary/asp80-vnesh-ugol",
+    "x-default=/tarvikud/asp80-valimine-nurk"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP80-NV",
+   "textHash": "e384b2b5248ef9d4",
+   "textChars": 1636,
+   "prices": [
+    "17,05 €",
+    "2,57 €",
+    "5,84 €",
+    "6,82 €",
+    "8,43 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/f100",
+   "status": 200,
+   "title": "F100 – Põrandaliistu otsakomplekt | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/f100",
+   "hreflang": [
+    "et=/tarvikud/f100",
+    "ru=/ru/aksessuary/f100",
+    "x-default=/tarvikud/f100"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "F100",
+   "textHash": "0649c655a9cafe14",
+   "textChars": 2224,
+   "prices": [
+    "16,13 €",
+    "2,57 €",
+    "5,84 €",
+    "6,45 €",
+    "7,69 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/f40",
+   "status": 200,
+   "title": "F40 – Põrandaliistu otsakomplekt | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/f40",
+   "hreflang": [
+    "et=/tarvikud/f40",
+    "ru=/ru/aksessuary/f40",
+    "x-default=/tarvikud/f40"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "F40",
+   "textHash": "15512c9e3f90afb9",
+   "textChars": 2169,
+   "prices": [
+    "16,13 €",
+    "2,57 €",
+    "5,84 €",
+    "6,45 €",
+    "7,69 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/f60",
+   "status": 200,
+   "title": "F60 – Põrandaliistu otsakomplekt | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/f60",
+   "hreflang": [
+    "et=/tarvikud/f60",
+    "ru=/ru/aksessuary/f60",
+    "x-default=/tarvikud/f60"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "F60",
+   "textHash": "f5367860a5c2ddcd",
+   "textChars": 2191,
+   "prices": [
+    "16,13 €",
+    "2,57 €",
+    "5,84 €",
+    "6,45 €",
+    "7,69 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/f80",
+   "status": 200,
+   "title": "F80 – Põrandaliistu otsakomplekt | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/f80",
+   "hreflang": [
+    "et=/tarvikud/f80",
+    "ru=/ru/aksessuary/f80",
+    "x-default=/tarvikud/f80"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "F80",
+   "textHash": "aa32173fbe5dffc1",
+   "textChars": 2194,
+   "prices": [
+    "16,13 €",
+    "2,57 €",
+    "5,84 €",
+    "6,45 €",
+    "7,69 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/hajuti-matt",
+   "status": 200,
+   "title": "Hajuti matt – Matt LED-hajuti riba | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/hajuti-matt",
+   "hreflang": [
+    "et=/tarvikud/hajuti-matt",
+    "ru=/ru/aksessuary/diffuzor-matovyy",
+    "x-default=/tarvikud/hajuti-matt"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "HAJUTI-M",
+   "textHash": "9e86a0e6d545c90b",
+   "textChars": 1758,
+   "prices": [
+    "2,17 €",
+    "2,57 €",
+    "5,42 €",
+    "5,84 €"
+   ]
+  },
+  {
+   "path": "/tarvikud/p1",
+   "status": 200,
+   "title": "P1 – Põrandaliistu kinnitusvedru | Varjuprofiilid.ee",
+   "canonical": "/tarvikud/p1",
+   "hreflang": [
+    "et=/tarvikud/p1",
+    "ru=/ru/aksessuary/p1",
+    "x-default=/tarvikud/p1"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "P1",
+   "textHash": "a80777239c49f8a5",
+   "textChars": 2089,
+   "prices": [
+    "0,50 €",
+    "0,51 €",
+    "0,61 €",
+    "1,27 €",
+    "2,57 €",
+    "5,84 €"
+   ]
+  },
+  {
+   "path": "/tooted",
+   "status": 200,
+   "title": "Pood — kõik tooted | Varjuprofiilid.ee",
+   "canonical": "/tooted",
+   "hreflang": [
+    "et=/tooted",
+    "ru=/ru/katalog",
+    "x-default=/tooted"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Kõik tooted.",
+   "textHash": "58cb4ebb056ff788",
+   "textChars": 6332,
+   "prices": [
+    "0,51 €",
+    "10,23 €",
+    "10,55 €",
+    "10,66 €",
+    "11,05 €",
+    "11,56 €",
+    "11,68 €",
+    "11,89 €",
+    "11,99 €",
+    "12,09 €",
+    "12,20 €",
+    "12,28 €",
+    "12,35 €",
+    "12,81 €",
+    "13,22 €",
+    "13,37 €",
+    "13,63 €",
+    "13,64 €",
+    "13,74 €",
+    "13,83 €",
+    "13,84 €",
+    "13,91 €",
+    "14,40 €",
+    "14,67 €",
+    "14,76 €",
+    "14,86 €",
+    "15,19 €",
+    "15,69 €",
+    "15,88 €",
+    "16,29 €",
+    "16,45 €",
+    "17,93 €",
+    "19,22 €",
+    "19,37 €",
+    "19,88 €",
+    "2,17 €",
+    "2,57 €",
+    "20,39 €",
+    "20,40 €",
+    "21,01 €",
+    "21,70 €",
+    "22,03 €",
+    "25,28 €",
+    "26,13 €",
+    "28,18 €",
+    "3,55 €",
+    "4,02 €",
+    "4,44 €",
+    "47,74 €",
+    "5,84 €",
+    "6,45 €",
+    "6,82 €",
+    "9,56 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid",
+   "status": 200,
+   "title": "Varjuprofiilid – dekoratiivsed alumiiniumprofiilid laele, seinale, põrandale | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid",
+   "hreflang": [
+    "et=/varjuprofiilid",
+    "ru=/ru/dekor-profili",
+    "x-default=/varjuprofiilid"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Varjuprofiilid.",
+   "textHash": "b65011ccde9d018f",
+   "textChars": 2418,
+   "prices": [
+    "10,55 €",
+    "11,56 €",
+    "12,09 €",
+    "12,35 €",
+    "12,81 €",
+    "13,37 €",
+    "13,84 €",
+    "14,40 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/lae",
+   "status": 200,
+   "title": "Lae varjuprofiilid – alumiiniumprofiilid laele | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/lae",
+   "hreflang": [
+    "et=/varjuprofiilid/lae",
+    "ru=/ru/dekor-profili/potolok",
+    "x-default=/varjuprofiilid/lae"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Lae varjuprofiilid – varjujoon lae ja seina vahele",
+   "textHash": "c9f0e31ca4420ec9",
+   "textChars": 1664,
+   "prices": [
+    "12,35 €",
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "16,29 €",
+    "19,22 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/lae/ast10",
+   "status": 200,
+   "title": "AST10 – Lae varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/lae/ast10",
+   "hreflang": [
+    "et=/varjuprofiilid/lae/ast10",
+    "ru=/ru/dekor-profili/potolok/ast10",
+    "x-default=/varjuprofiilid/lae/ast10"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST10",
+   "textHash": "dd1b7a922871df97",
+   "textChars": 2216,
+   "prices": [
+    "10,14 €",
+    "12,35 €",
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "34,60 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/lae/ast101",
+   "status": 200,
+   "title": "AST101 – Lae varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/lae/ast101",
+   "hreflang": [
+    "et=/varjuprofiilid/lae/ast101",
+    "ru=/ru/dekor-profili/potolok/ast101",
+    "x-default=/varjuprofiilid/lae/ast101"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST101",
+   "textHash": "53faf8db541ef578",
+   "textChars": 2208,
+   "prices": [
+    "10,14 €",
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "34,60 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/lae/ast20",
+   "status": 200,
+   "title": "AST20 – Lae varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/lae/ast20",
+   "hreflang": [
+    "et=/varjuprofiilid/lae/ast20",
+    "ru=/ru/dekor-profili/potolok/ast20",
+    "x-default=/varjuprofiilid/lae/ast20"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST20",
+   "textHash": "9af6bb82e720dd20",
+   "textChars": 2233,
+   "prices": [
+    "11,28 €",
+    "12,35 €",
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "36,00 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/lae/ast5",
+   "status": 200,
+   "title": "AST5 – Lae varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/lae/ast5",
+   "hreflang": [
+    "et=/varjuprofiilid/lae/ast5",
+    "ru=/ru/dekor-profili/potolok/ast5",
+    "x-default=/varjuprofiilid/lae/ast5"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST5",
+   "textHash": "eaf6d22e7221a614",
+   "textChars": 1990,
+   "prices": [
+    "12,35 €",
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "30,88 €",
+    "9,68 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/lae/ast8",
+   "status": 200,
+   "title": "AST8 – Lae varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/lae/ast8",
+   "hreflang": [
+    "et=/varjuprofiilid/lae/ast8",
+    "ru=/ru/dekor-profili/potolok/ast8",
+    "x-default=/varjuprofiilid/lae/ast8"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AST8",
+   "textHash": "86f5fe7f7d1fd8d2",
+   "textChars": 2206,
+   "prices": [
+    "12,35 €",
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "32,02 €",
+    "9,94 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/lae/lpa126",
+   "status": 200,
+   "title": "LPA126 – Peen lae varjuprofiil · 6 mm | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/lae/lpa126",
+   "hreflang": [
+    "et=/varjuprofiilid/lae/lpa126",
+    "ru=/ru/dekor-profili/potolok/lpa126",
+    "x-default=/varjuprofiilid/lae/lpa126"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "LPA126",
+   "textHash": "98ebedd34bfb35ab",
+   "textChars": 2177,
+   "prices": [
+    "12,81 €",
+    "13,84 €",
+    "14,40 €",
+    "19,22 €",
+    "49,97 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/lae/rst1020",
+   "status": 200,
+   "title": "RST1020 – Lae varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/lae/rst1020",
+   "hreflang": [
+    "et=/varjuprofiilid/lae/rst1020",
+    "ru=/ru/dekor-profili/potolok/rst1020",
+    "x-default=/varjuprofiilid/lae/rst1020"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "RST1020",
+   "textHash": "feae00ed7266f025",
+   "textChars": 2251,
+   "prices": [
+    "12,81 €",
+    "13,38 €",
+    "13,84 €",
+    "14,40 €",
+    "16,29 €",
+    "40,72 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/poranda",
+   "status": 200,
+   "title": "Põranda varjuprofiilid – dekoratiivsed põrandaliistude alternatiivid | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/poranda",
+   "hreflang": [
+    "et=/varjuprofiilid/poranda",
+    "ru=/ru/dekor-profili/pol",
+    "x-default=/varjuprofiilid/poranda"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Põranda varjuprofiilid – minimalistlikud põrandaliistu alternatiivid",
+   "textHash": "e95968ca586ba1c0",
+   "textChars": 1636,
+   "prices": [
+    "11,05 €",
+    "11,99 €",
+    "12,81 €",
+    "13,64 €",
+    "15,19 €",
+    "15,88 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/poranda/asp108",
+   "status": 200,
+   "title": "ASP108 – Põranda varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/poranda/asp108",
+   "hreflang": [
+    "et=/varjuprofiilid/poranda/asp108",
+    "ru=/ru/dekor-profili/pol/asp108",
+    "x-default=/varjuprofiilid/poranda/asp108"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP108",
+   "textHash": "b6819f797eecf230",
+   "textChars": 2314,
+   "prices": [
+    "11,99 €",
+    "12,60 €",
+    "12,81 €",
+    "13,84 €",
+    "15,88 €",
+    "41,29 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/poranda/asp112",
+   "status": 200,
+   "title": "ASP112 – Põranda varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/poranda/asp112",
+   "hreflang": [
+    "et=/varjuprofiilid/poranda/asp112",
+    "ru=/ru/dekor-profili/pol/asp112",
+    "x-default=/varjuprofiilid/poranda/asp112"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP112",
+   "textHash": "9ca4db5eada75c4a",
+   "textChars": 2347,
+   "prices": [
+    "10,68 €",
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "21,01 €",
+    "31,17 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/poranda/asp115",
+   "status": 200,
+   "title": "ASP115 – Põranda varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/poranda/asp115",
+   "hreflang": [
+    "et=/varjuprofiilid/poranda/asp115",
+    "ru=/ru/dekor-profili/pol/asp115",
+    "x-default=/varjuprofiilid/poranda/asp115"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP115",
+   "textHash": "0e822cf8b38d47dd",
+   "textChars": 2180,
+   "prices": [
+    "11,05 €",
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "28,73 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/poranda/asp117",
+   "status": 200,
+   "title": "ASP117 – Põranda varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/poranda/asp117",
+   "hreflang": [
+    "et=/varjuprofiilid/poranda/asp117",
+    "ru=/ru/dekor-profili/pol/asp117",
+    "x-default=/varjuprofiilid/poranda/asp117"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP117",
+   "textHash": "f23ddcae0ed93488",
+   "textChars": 2263,
+   "prices": [
+    "11,90 €",
+    "11,99 €",
+    "12,81 €",
+    "13,84 €",
+    "21,01 €",
+    "33,31 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/poranda/avp609",
+   "status": 200,
+   "title": "AVP609 – Põranda varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/poranda/avp609",
+   "hreflang": [
+    "et=/varjuprofiilid/poranda/avp609",
+    "ru=/ru/dekor-profili/pol/avp609",
+    "x-default=/varjuprofiilid/poranda/avp609"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AVP609",
+   "textHash": "66467969d8b4c1c1",
+   "textChars": 2283,
+   "prices": [
+    "10,74 €",
+    "11,99 €",
+    "12,81 €",
+    "13,64 €",
+    "13,84 €",
+    "14,15 €",
+    "35,46 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/poranda/avp859",
+   "status": 200,
+   "title": "AVP859 – Põranda varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/poranda/avp859",
+   "hreflang": [
+    "et=/varjuprofiilid/poranda/avp859",
+    "ru=/ru/dekor-profili/pol/avp859",
+    "x-default=/varjuprofiilid/poranda/avp859"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "AVP859",
+   "textHash": "82ab16f7bb6bd54c",
+   "textChars": 2234,
+   "prices": [
+    "11,99 €",
+    "12,15 €",
+    "12,81 €",
+    "13,84 €",
+    "15,19 €",
+    "15,98 €",
+    "39,49 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/seina",
+   "status": 200,
+   "title": "Seina varjuprofiilid – dekoratiivsed profiilid seinale | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/seina",
+   "hreflang": [
+    "et=/varjuprofiilid/seina",
+    "ru=/ru/dekor-profili/stena",
+    "x-default=/varjuprofiilid/seina"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "Seina varjuprofiilid – dekoratiivne varjujoon seinale",
+   "textHash": "ba6d049a79a4a1bb",
+   "textChars": 1598,
+   "prices": [
+    "10,23 €",
+    "10,55 €",
+    "11,56 €",
+    "12,09 €",
+    "13,37 €",
+    "16,45 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/seina/asp116",
+   "status": 200,
+   "title": "ASP116 – Seina varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/seina/asp116",
+   "hreflang": [
+    "et=/varjuprofiilid/seina/asp116",
+    "ru=/ru/dekor-profili/stena/asp116",
+    "x-default=/varjuprofiilid/seina/asp116"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP116",
+   "textHash": "bcf6d7f33555d5ac",
+   "textChars": 2050,
+   "prices": [
+    "10,23 €",
+    "11,56 €",
+    "12,09 €",
+    "13,37 €",
+    "16,45 €",
+    "42,77 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/seina/asp168",
+   "status": 200,
+   "title": "ASP168 – Seina varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/seina/asp168",
+   "hreflang": [
+    "et=/varjuprofiilid/seina/asp168",
+    "ru=/ru/dekor-profili/stena/asp168",
+    "x-default=/varjuprofiilid/seina/asp168"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP168",
+   "textHash": "55377db0a3f03d89",
+   "textChars": 2226,
+   "prices": [
+    "10,23 €",
+    "11,56 €",
+    "12,09 €",
+    "13,37 €",
+    "16,45 €",
+    "26,60 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/seina/asp198",
+   "status": 200,
+   "title": "ASP198 – Seina varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/seina/asp198",
+   "hreflang": [
+    "et=/varjuprofiilid/seina/asp198",
+    "ru=/ru/dekor-profili/stena/asp198",
+    "x-default=/varjuprofiilid/seina/asp198"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP198",
+   "textHash": "a6b1e0a13cb4b4fb",
+   "textChars": 2232,
+   "prices": [
+    "10,23 €",
+    "11,56 €",
+    "12,09 €",
+    "13,37 €",
+    "16,45 €",
+    "34,76 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/seina/asp411",
+   "status": 200,
+   "title": "ASP411 – Seina varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/seina/asp411",
+   "hreflang": [
+    "et=/varjuprofiilid/seina/asp411",
+    "ru=/ru/dekor-profili/stena/asp411",
+    "x-default=/varjuprofiilid/seina/asp411"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP411",
+   "textHash": "e82892823675f19f",
+   "textChars": 2241,
+   "prices": [
+    "10,23 €",
+    "11,56 €",
+    "12,09 €",
+    "13,37 €",
+    "16,45 €",
+    "30,06 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/seina/asp611",
+   "status": 200,
+   "title": "ASP611 – Seina varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/seina/asp611",
+   "hreflang": [
+    "et=/varjuprofiilid/seina/asp611",
+    "ru=/ru/dekor-profili/stena/asp611",
+    "x-default=/varjuprofiilid/seina/asp611"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "ASP611",
+   "textHash": "e0ac4c29fe6cd7c0",
+   "textChars": 2239,
+   "prices": [
+    "10,23 €",
+    "11,56 €",
+    "12,09 €",
+    "13,37 €",
+    "15,88 €",
+    "16,45 €",
+    "31,43 €"
+   ]
+  },
+  {
+   "path": "/varjuprofiilid/seina/lpa909",
+   "status": 200,
+   "title": "LPA909 – Seina varjuprofiil | Varjuprofiilid.ee",
+   "canonical": "/varjuprofiilid/seina/lpa909",
+   "hreflang": [
+    "et=/varjuprofiilid/seina/lpa909",
+    "ru=/ru/dekor-profili/stena/lpa909",
+    "x-default=/varjuprofiilid/seina/lpa909"
+   ],
+   "ogUrl": "",
+   "robots": "",
+   "h1": "LPA909",
+   "textHash": "e60fb3bf78447966",
+   "textChars": 1951,
+   "prices": [
+    "10,55 €",
+    "11,17 €",
+    "26,38 €",
+    "8,87 €"
+   ]
+  }
+ ]
+}
