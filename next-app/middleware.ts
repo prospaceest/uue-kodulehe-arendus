@@ -1,7 +1,8 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 import createIntlMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
-import { internalRuPath } from './lib/pageUrls';
+import { internalRuPath, internalPath } from './lib/pageUrls';
+import { marketFromHost, MARKETS } from './lib/markets';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
@@ -34,6 +35,51 @@ export default clerkMiddleware(async (auth, req: NextRequest) => {
     pathname.startsWith('/__clerk')
   ) {
     return NextResponse.next();
+  }
+
+  // ── Soome turg (varjoprofiilit.fi) ────────────────────────────────────────
+  // Sama koodibaas, aga eesliiteta keel on soome ja rootsi keel elab /sv all.
+  // Kogu haru on hostipõhine: .ee päring siia ei jõua, seega eestikeelse lehe
+  // teekond jääb täpselt endiseks.
+  const market = marketFromHost(req.headers.get('x-forwarded-host') ?? host);
+
+  if (market.id === 'fi') {
+    // Eesti turu keeled ei kuulu Soome domeenile — saada õigele saidile,
+    // et ei tekiks kahte URL-i sama sisuga.
+    if (/^\/(et|ru)(\/|$)/.test(pathname)) {
+      return NextResponse.redirect(
+        new URL(pathname + req.nextUrl.search, MARKETS.ee.origin),
+        308,
+      );
+    }
+
+    // Konto- ja sisselogimisalad jäävad esialgu ainult Eesti domeenile: Clerk
+    // vajaks teise domeeni jaoks eraldi seadistust ja katkine login on halvem
+    // kui puuduv. Soome partner jõuab meieni jälleenmyyjille-vormi kaudu.
+    if (/^\/(konto|tili|sign-in|sign-up)(\/|$)/.test(pathname)) {
+      return NextResponse.redirect(new URL('/jalleenmyyjille', req.url), 307);
+    }
+
+    const isSv = pathname === '/sv' || pathname.startsWith('/sv/');
+    const locale = isSv ? 'sv' : 'fi';
+
+    // Avalik soome/rootsi slug → eestikeelse nimega sisemine tee, täpselt nagu
+    // vene keele puhul. Tabelist puudu (tootelehed, tõlkimata teed) → jääb
+    // eestikeelne tee, ainult keeleprefiks ette.
+    const internal =
+      internalPath(pathname, locale) ??
+      (isSv ? pathname : pathname === '/' ? '/fi' : `/fi${pathname}`);
+
+    req.nextUrl.pathname = internal;
+    return intlMiddleware(req);
+  }
+
+  // Soome keeled ei kuulu Eesti domeenile.
+  if (/^\/(fi|sv)(\/|$)/.test(pathname)) {
+    return NextResponse.redirect(
+      new URL(pathname.replace(/^\/fi/, '') || '/', MARKETS.fi.origin),
+      308,
+    );
   }
 
   // Protect B2B account routes — redirect to login if not authenticated

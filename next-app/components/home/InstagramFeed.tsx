@@ -1,5 +1,5 @@
 import { getLocale } from 'next-intl/server';
-import { site } from '@/lib/site';
+import { marketForLocale } from '@/lib/markets';
 
 const TILES = [
   { img: '/assets/projects/eduardi-maja/01-elutuba-hero.jpg',        cap: 'Eduardi maja — AST50 LED perimeeter elutoas. 184 jm ühte rütmi.', likes: '742', comments: '38', tag: '#AST50 #LED' },
@@ -17,6 +17,8 @@ const TILES = [
 export default async function InstagramFeed() {
   const locale = await getLocale();
   const ru = locale === 'ru';
+  // Instagrami konto on turu oma: @varjuprofiilid.ee vs @varjoprofiilit.fi.
+  const market = marketForLocale(locale);
 
   // Duplicate for seamless loop
   const loop = [...TILES, ...TILES];
@@ -30,7 +32,7 @@ export default async function InstagramFeed() {
             {ru ? '06 / Соцсети' : '06 / Sotsiaalmeedia'}
           </div>
           <h2 className="vp-display" style={{ fontSize: 64, margin: 0, lineHeight: 0.95 }}>
-            @varjuprofiilid.ee
+            {market.social.instagramHandle}
           </h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--ink-2)', maxWidth: 520, marginTop: 14 }}>
             {ru
@@ -38,7 +40,7 @@ export default async function InstagramFeed() {
               : 'Jälgi meid Instagrammis, saa inspiratsiooni ja ole alati kursis viimaste suundadega.'}
           </p>
         </div>
-        <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="vp-btn vp-btn--ghost" style={{ alignSelf: 'flex-end' }}>
+        <a href={market.social.instagram} target="_blank" rel="noopener noreferrer" className="vp-btn vp-btn--ghost" style={{ alignSelf: 'flex-end' }}>
           {ru ? 'Подписаться в Instagram →' : 'Jälgi Instagramis →'}
         </a>
       </div>
@@ -47,7 +49,7 @@ export default async function InstagramFeed() {
       <div className="vp-ig-viewport" style={{ paddingBottom: 64 }}>
         <div className="vp-ig-track">
           {loop.map((tile, i) => (
-            <a key={i} href={site.instagram} target="_blank" rel="noopener noreferrer" className="vp-ig-tile">
+            <a key={i} href={market.social.instagram} target="_blank" rel="noopener noreferrer" className="vp-ig-tile">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={tile.img} alt={tile.cap} loading="lazy" />
               <span className="vp-ig-corner" />

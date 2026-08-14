@@ -36,7 +36,8 @@ function orgSchema(market: Market) {
       addressCountry: 'EE',
     },
     vatID: site.kmkr,
-    sameAs: [site.instagram, site.facebook],
+    // Turu enda kanalid — Soome kontot ei tohi siduda Eesti saidiga ega vastupidi.
+    sameAs: [market.social.instagram, market.social.facebook].filter(Boolean),
   };
 }
 

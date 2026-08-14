@@ -31,6 +31,10 @@ export type Market = {
   email: string;
   /** Resendi saatja-aadressid; domeen peab olema Resendis kinnitatud. */
   mailFrom: { order: string; contact: string; b2b: string };
+  /** Turu enda sotsiaalkanalid — Soomes on eraldi Instagrami konto. */
+  social: { instagram: string; instagramHandle: string; facebook?: string };
+  /** Jaluses viidatavad õdedomeenid. Soome jalus ei vii Eesti saitidele. */
+  sisters: readonly string[];
   /** Kuvatav käibemaksumäär protsentides. */
   vatPercent: number;
   shipping: {
@@ -58,6 +62,12 @@ export const MARKETS: Record<MarketId, Market> = {
       contact: 'kontakt@varjuprofiilid.ee',
       b2b: 'b2b@varjuprofiilid.ee',
     },
+    social: {
+      instagram: 'https://www.instagram.com/varjuprofiilid.ee/',
+      instagramHandle: '@varjuprofiilid.ee',
+      facebook: 'https://www.facebook.com/profile.php?id=61586852627963',
+    },
+    sisters: ['prospace.ee', 'peitlenguksed.ee'],
     vatPercent: 24,
     shipping: { carrier: 'Venipak', price: 25, freeFrom: 200 },
     indexable: true,
@@ -79,6 +89,14 @@ export const MARKETS: Record<MarketId, Market> = {
       contact: 'asiakaspalvelu@varjoprofiilit.fi',
       b2b: 'b2b@varjoprofiilit.fi',
     },
+    social: {
+      instagram: 'https://www.instagram.com/varjoprofiilit.fi/',
+      instagramHandle: '@varjoprofiilit.fi',
+      facebook: 'https://www.facebook.com/varjoprofiilit.fi',
+    },
+    // Tühi seni, kuni prospace.fi peal on päriselt midagi — surnud lingile
+    // jalusest viitamine on halvem kui puuduv link.
+    sisters: [],
     // Soome standardmäär alates 1.09.2024. Eesti müüja jaoks tähendab see
     // OSS-i kaudu deklareerimist, kui EL-i sisene kaugmüük ületab 10 000 €/a.
     vatPercent: 25.5,

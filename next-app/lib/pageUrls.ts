@@ -286,18 +286,35 @@ export function abs(path: string, origin: string = MARKETS.ee.origin): string {
   return path === '/' ? origin : `${origin}${path}`;
 }
 
+// ET tee → selle keele AVALIK tee. Iga keelel on oma slug ja canonical peab
+// osutama just sellele — muidu kuulutab soomekeelne leht end eestikeelse
+// duplikaadiks (täpselt see viga oli varem vene lehtedel).
+export function publicPath(etPath: string, locale: string): string {
+  if (locale === 'ru') return ruPath(etPath);
+  if (LOCALE_PATHS[locale]) return localePath(etPath, locale);
+  return etPath;
+}
+
 export function pageAlternates(etPath: string, locale: string) {
-  const ru = ruPath(etPath);
-  const self = locale === 'ru' ? ru : etPath;
   // Turg tuletatakse keelest, mitte hostist — nii jääb leht staatiliseks
   // (headers() lugemine muudaks iga lehe dünaamiliseks).
-  const origin = marketForLocale(locale).origin;
+  const selfMarket = marketForLocale(locale);
+
+  // hreflang katab oma turu keeled alati ja teise turu keeled ainult siis, kui
+  // see turg on otsimootoritele avatud. Nii ei viita eestikeelne leht kunagi
+  // veel valmimata soome lehele (Google loeks seda veaks), aga hetkel, mil
+  // markets.ts-is indexable: true, tekib täielik ristdomeeni-klaster ise.
+  const languages: Record<string, string> = {};
+  for (const market of Object.values(MARKETS)) {
+    if (market.id !== selfMarket.id && !market.indexable) continue;
+    for (const l of market.locales) {
+      languages[l] = abs(publicPath(etPath, l), market.origin);
+    }
+  }
+  languages['x-default'] = abs(etPath, MARKETS.ee.origin);
+
   return {
-    canonical: abs(self, origin),
-    languages: {
-      et: abs(etPath),
-      ru: abs(ru),
-      'x-default': abs(etPath),
-    },
+    canonical: abs(publicPath(etPath, locale), selfMarket.origin),
+    languages,
   };
 }

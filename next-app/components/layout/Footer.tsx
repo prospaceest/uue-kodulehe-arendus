@@ -4,9 +4,13 @@ import { getLocale } from 'next-intl/server';
 import { site } from '@/lib/site';
 import styles from './Footer.module.css';
 import { lp } from '@/lib/pageUrls';
+import { marketForLocale } from '@/lib/markets';
 
 export default async function Footer() {
   const locale = await getLocale();
+  // E-post, sotsiaalkanalid ja poe nimi tulevad turult — .fi jalus ei tohi
+  // viidata Eesti kanalitele ega saata külastajat teisele domeenile.
+  const market = marketForLocale(locale);
   const t = useTranslations;
   const ru = locale === 'ru';
 
@@ -69,14 +73,14 @@ export default async function Footer() {
           </p>
           <div className={styles.contact}>
             <a href={site.phoneUrl}>{site.phone}</a>
-            <a href={site.emailUrl}>{site.email}</a>
+            <a href={`mailto:${market.email}`}>{market.email}</a>
             <span>{site.hoursLong}</span>
           </div>
           <div className={styles.social}>
             {[
-              { label: 'IG', href: site.instagram, aria: 'Instagram' },
-              { label: 'FB', href: site.facebook,  aria: 'Facebook' },
-            ].map((s) => (
+              { label: 'IG', href: market.social.instagram, aria: 'Instagram' },
+              { label: 'FB', href: market.social.facebook,  aria: 'Facebook' },
+            ].filter((s) => s.href).map((s) => (
               <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.aria} className={styles.socialBtn}>
                 {s.label}
               </a>
@@ -100,9 +104,10 @@ export default async function Footer() {
       <div className={styles.bottom}>
         <span>© 2026 {site.legal} — {site.addressFull} — Reg {site.regNr}</span>
         <span className={styles.sisters}>
-          <a href="https://prospace.ee" target="_blank" rel="noopener">prospace.ee</a>
-          <a href="https://peitlenguksed.ee" target="_blank" rel="noopener">peitlenguksed.ee</a>
-          <span>varjuprofiilid.ee</span>
+          {market.sisters.map((s) => (
+            <a key={s} href={`https://${s}`} target="_blank" rel="noopener">{s}</a>
+          ))}
+          <span>{market.storefront.toLowerCase()}</span>
         </span>
       </div>
     </footer>

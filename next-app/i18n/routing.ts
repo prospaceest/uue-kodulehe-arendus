@@ -1,7 +1,11 @@
 import { defineRouting } from 'next-intl/routing';
 
+// NB: `domains` seadistust siin teadlikult EI kasutata. Soome turu haru on
+// middleware.ts-is oma kood, mis puudutab ainult .fi hosti — nii ei muutu
+// eestikeelse lehe teekond next-intl'i sees ühegi baiti võrra. Teegi
+// domeenitugi teeks ka domeenidevahelisi ümbersuunamisi, mida me ei taha.
 export const routing = defineRouting({
-  locales: ['et', 'ru'],
+  locales: ['et', 'ru', 'fi', 'sv'],
   defaultLocale: 'et',
   // Estonian URLs have no prefix (/tooted/...)
   // Russian URLs have /ru/ prefix (/ru/...)
