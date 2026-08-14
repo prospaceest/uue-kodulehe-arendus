@@ -35,6 +35,8 @@ export type Product = {
   slug: string;
   urlPath: string;         // e.g. '/led-varjuprofiilid/lae/ast22/'
   urlPathRu: string;       // e.g. '/led-profili/potolok/ast22/'
+  urlPathFi: string;       // e.g. '/led-varjoprofiilit/katto/ast22/'
+  urlPathSv: string;       // e.g. '/led-skuggprofiler/tak/ast22/'  (ilma /sv eesliidet)
 };
 
 export type Category = {
@@ -63,15 +65,36 @@ export function getProductBySku(sku: string): Product | undefined {
 
 export function getProductByUrlPath(urlPath: string): Product | undefined {
   const normalized = urlPath.endsWith('/') ? urlPath : `${urlPath}/`;
-  return products.find((p) => p.urlPath === normalized || p.urlPathRu === normalized);
+  return products.find(
+    (p) =>
+      p.urlPath === normalized ||
+      p.urlPathRu === normalized ||
+      p.urlPathFi === normalized ||
+      p.urlPathSv === normalized,
+  );
+}
+
+// Tootetee keele kaupa. urlPath* väljad on ANDMED — neid ei arvutata kunagi
+// slugist, sest nad kannavad ajaloolisi ja SEO-otsuseid (nt kardinaprofiilid
+// ilma asukohata). Rootsi tee saab /sv eesliite alles siin.
+export function productPath(p: Product, locale: string): string {
+  switch (locale) {
+    case 'ru': return `/ru${p.urlPathRu}`;
+    case 'fi': return p.urlPathFi;
+    case 'sv': return `/sv${p.urlPathSv}`;
+    default:   return p.urlPath;
+  }
 }
 
 // Internal-link helper. urlPath/urlPathRu are stored WITH a trailing slash, but
 // Next serves the slash-less form (308-normalised) — so <Link> targets must be
 // slash-less too, otherwise every click/crawl hits a redirect. Mirrors the
 // sitemap's noSlash() and the product page's absUrl().
-export function productUrl(p: Product, ru: boolean): string {
-  return (ru ? `/ru${p.urlPathRu}` : p.urlPath).replace(/\/$/, '');
+// Tagasiühilduvus: paljud kutsujad annavad ikka `ru`-lipu. Uus kood andku keel.
+export function productUrl(p: Product, localeOrRu: string | boolean): string {
+  const locale =
+    typeof localeOrRu === 'boolean' ? (localeOrRu ? 'ru' : 'et') : localeOrRu;
+  return productPath(p, locale).replace(/\/$/, '');
 }
 
 export function getProductsByCollection(collection: string): Product[] {
@@ -91,7 +114,7 @@ export function getTopProducts(limit = 10): Product[] {
 }
 
 export function getUrlPath(product: Product, locale: string): string {
-  return locale === 'ru' ? `/ru${product.urlPathRu}` : product.urlPath;
+  return productPath(product, locale);
 }
 
 // ----------------------------------------------------------------

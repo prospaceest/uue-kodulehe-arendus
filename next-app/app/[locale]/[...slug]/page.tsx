@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound, permanentRedirect } from 'next/navigation';
 import { getLocale } from 'next-intl/server';
-import { products, productUrl } from '@/lib/catalog';
+import { products, productUrl, productPath } from '@/lib/catalog';
 import ProductClient from '@/components/product/ProductClient';
 import { getProductImages } from '@/lib/productImages';
 import { site } from '@/lib/site';
@@ -12,23 +12,37 @@ type Props = {
   params: Promise<{ locale: string; slug: string[] }>;
 };
 
+// Igal keelel on oma tootetee. NB: võrdlus käib täpselt selle keele välja
+// vastu, mitte "kõik väljad läbi" — muidu vastaks soome domeen ka eestikeelsele
+// URL-ile ja tekiks kaks teed sama sisuni.
+const URL_FIELD = {
+  et: 'urlPath', ru: 'urlPathRu', fi: 'urlPathFi', sv: 'urlPathSv',
+} as const;
+
+function urlField(locale: string) {
+  return URL_FIELD[locale as keyof typeof URL_FIELD] ?? 'urlPath';
+}
+
 function findProduct(slug: string[], locale: string) {
   const path = '/' + slug.join('/') + '/';
-  if (locale === 'ru') {
-    return products.find((p) => p.urlPathRu === path);
-  }
-  return products.find((p) => p.urlPath === path);
+  const field = urlField(locale);
+  return products.find((p) => p[field] === path);
 }
 
 // Same product, wrong locale prefix — e.g. /ru/led-varjuprofiilid/lae/ast12
 // (ET slugs under /ru) instead of /ru/led-profili/potolok/ast12. Google knows a
 // batch of these from an earlier hreflang pass; 308 them to the locale-correct
 // URL so they consolidate instead of 404-ing with a noindex tag.
+// Vale keele tee (nt soome domeenil eestikeelne slug) → 301 õigele teele.
 function findCrossLocale(slug: string[], locale: string) {
   const path = '/' + slug.join('/') + '/';
-  return locale === 'ru'
-    ? products.find((p) => p.urlPath === path)
-    : products.find((p) => p.urlPathRu === path);
+  const own = urlField(locale);
+  for (const field of ['urlPath', 'urlPathRu', 'urlPathFi', 'urlPathSv'] as const) {
+    if (field === own) continue;
+    const hit = products.find((p) => p[field] === path);
+    if (hit) return hit;
+  }
+  return undefined;
 }
 
 // urlPath fields carry a trailing slash, but Next serves the slash-less form
@@ -48,20 +62,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const name = ru ? product.nameRu : product.name;
   const seoName = ru ? product.seoNameRu : product.seoName;
   const description = ru ? product.descriptionRu : product.description;
-  const origin = marketForLocale(locale).origin;
-  const canonical = absUrl(ru ? `/ru${product.urlPathRu}` : product.urlPath, origin);
+  const selfMarket = marketForLocale(locale);
+  const canonical = absUrl(productPath(product, locale), selfMarket.origin);
+
+  // Sama reegel kui lehtedel (lib/pageUrls.ts pageAlternates): teise turu keeled
+  // lisatakse alles siis, kui see turg on otsimootoritele avatud.
+  const languages: Record<string, string> = {};
+  for (const market of Object.values(MARKETS)) {
+    if (market.id !== selfMarket.id && !market.indexable) continue;
+    for (const l of market.locales) {
+      languages[l] = absUrl(productPath(product, l), market.origin);
+    }
+  }
+  languages['x-default'] = absUrl(product.urlPath, MARKETS.ee.origin);
 
   return {
     title: `${name} – ${seoName}`,
     description: description.slice(0, 160),
-    alternates: {
-      canonical,
-      languages: {
-        et: absUrl(product.urlPath),
-        ru: absUrl(`/ru${product.urlPathRu}`),
-        'x-default': absUrl(product.urlPath),
-      },
-    },
+    alternates: { canonical, languages },
     openGraph: {
       title: `${name} – ${seoName}`,
       description: description.slice(0, 160),
@@ -73,14 +91,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export async function generateStaticParams() {
   const params: { locale: string; slug: string[] }[] = [];
 
+  // Kõik neli keelt: igal on oma tootetee (productPath lisab /ru ja /sv
+  // eesliited, mida marsruut ootab keeleprefiksi järel juba maha võetuna).
   for (const p of products) {
-    // ET paths — strip leading and trailing slash, split
-    const etSlug = p.urlPath.replace(/^\/|\/$/g, '').split('/');
-    params.push({ locale: 'et', slug: etSlug });
-
-    // RU paths — strip slashes, split
-    const ruSlug = p.urlPathRu.replace(/^\/|\/$/g, '').split('/');
-    params.push({ locale: 'ru', slug: ruSlug });
+    for (const locale of ['et', 'ru', 'fi', 'sv'] as const) {
+      const path = productPath(p, locale)
+        .replace(new RegExp(`^/(ru|sv)(?=/)`), '')
+        .replace(/^\/|\/$/g, '');
+      params.push({ locale, slug: path.split('/') });
+    }
   }
 
   return params;
@@ -93,7 +112,7 @@ export default async function ProductPage({ params }: Props) {
   const product = findProduct(slug, locale);
   if (!product) {
     const wrongLocale = findCrossLocale(slug, locale);
-    if (wrongLocale) permanentRedirect(productUrl(wrongLocale, locale === 'ru'));
+    if (wrongLocale) permanentRedirect(productUrl(wrongLocale, locale));
     notFound();
   }
 
@@ -108,7 +127,7 @@ export default async function ProductPage({ params }: Props) {
   const ru = locale === 'ru';
   const market = marketForLocale(locale);
   const seoName = ru ? product.seoNameRu : product.seoName;
-  const canonical = absUrl(ru ? `/ru${product.urlPathRu}` : product.urlPath, market.origin);
+  const canonical = absUrl(productPath(product, locale), market.origin);
   const images = getProductImages(product.sku).map((u) =>
     u.startsWith('http') ? u : `${market.origin}${u}`,
   );
