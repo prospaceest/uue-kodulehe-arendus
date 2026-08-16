@@ -6,3 +6,7 @@ scripts/drafts/
 # on meelega repos, ülejäänud on ühekordsed võrdlusfailid.
 .snapshots/*
 !.snapshots/ee-baas.json
+
+# Codemod'i väljavõte (tx() kaudu käivate eestikeelsete stringide loend).
+# Genereeritakse skriptidest, tõlked ise elavad messages/{fi,sv}.json all.
+.tx-extract.json

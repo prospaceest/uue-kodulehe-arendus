@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import { useTx } from '@/lib/useTx';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { lp } from '@/lib/pageUrls';
@@ -19,23 +20,24 @@ const POSTS = [
 export default function BlogIndexPage() {
   const locale = useLocale();
   const ru = locale === 'ru';
+  const tx = useTx();
 
-  const [activeCat, setActiveCat] = useState(ru ? 'Все' : 'Kõik');
+  const [activeCat, setActiveCat] = useState(tx('Все', 'Kõik'));
   const [search, setSearch] = useState('');
   const [email, setEmail] = useState('');
   const [newsletterSent, setNewsletterSent] = useState(false);
 
-  const cats = Array.from(new Set(POSTS.map((p) => ru ? p.catRu : p.catEt)));
-  const allLabel = ru ? 'Все' : 'Kõik';
+  const cats = Array.from(new Set(POSTS.map((p) => tx(p.catRu, p.catEt))));
+  const allLabel = tx('Все', 'Kõik');
 
   const filtered = useMemo(() => {
     let items = POSTS;
     if (activeCat !== allLabel) {
-      items = items.filter((p) => (ru ? p.catRu : p.catEt) === activeCat);
+      items = items.filter((p) => (tx(p.catRu, p.catEt)) === activeCat);
     }
     if (search.trim()) {
       const q = search.toLowerCase();
-      items = items.filter((p) => (ru ? p.titleRu + p.excerptRu : p.titleEt + p.excerptEt).toLowerCase().includes(q));
+      items = items.filter((p) => (tx(p.titleRu, p.titleEt) + tx(p.excerptRu, p.excerptEt)).toLowerCase().includes(q));
     }
     return items;
   }, [activeCat, search, ru, allLabel]);
@@ -48,15 +50,13 @@ export default function BlogIndexPage() {
       {/* Header */}
       <section style={{ padding: '56px 56px 32px', borderBottom: 'var(--border)' }}>
         <div className="vp-eyebrow" style={{ marginBottom: 10 }}>
-          {ru ? 'Журнал' : 'Uudised'} · {POSTS.length} {ru ? 'статей' : 'artiklit'}
+          {tx('Журнал', 'Uudised')} · {POSTS.length} {tx('статей', 'artiklit')}
         </div>
         <h1 className="vp-display" style={{ fontSize: 'clamp(72px, 11vw, 168px)', margin: 0, lineHeight: 0.9 }}>
-          {ru ? 'Журнал.' : 'Uudised.'}
+          {tx('Журнал.', 'Uudised.')}
         </h1>
         <p style={{ fontSize: 17, lineHeight: 1.55, color: 'var(--ink-2)', maxWidth: 680, marginTop: 18 }}>
-          {ru
-            ? 'Гайды, сравнения и практические советы. Каждая статья проверена в нашем салоне и опробована монтажниками.'
-            : 'Juhendid, võrdlused ja praktilised nõuanded. Iga artikkel — testitud meie salongis, kontrollitud paigaldajate poolt.'}
+          {tx('Гайды, сравнения и практические советы. Каждая статья проверена в нашем салоне и опробована монтажниками.', 'Juhendid, võrdlused ja praktilised nõuanded. Iga artikkel — testitud meie salongis, kontrollitud paigaldajate poolt.')}
         </p>
       </section>
 
@@ -68,7 +68,7 @@ export default function BlogIndexPage() {
         ))}
         <input
           className="vp-input"
-          placeholder={ru ? 'Поиск статьи...' : 'Otsi artiklit...'}
+          placeholder={tx('Поиск статьи...', 'Otsi artiklit...')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           style={{ marginLeft: 'auto', maxWidth: 240 }}
@@ -84,19 +84,19 @@ export default function BlogIndexPage() {
           <div style={{ padding: '56px 48px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               <div className="vp-eyebrow" style={{ marginBottom: 14 }}>
-                ★ {ru ? 'Главная статья' : 'Esiletõstetud'} · {ru ? feat.catRu : feat.catEt} · {ru ? feat.yearRu : feat.yearEt}
+                ★ {tx('Главная статья', 'Esiletõstetud')} · {tx(feat.catRu, feat.catEt)} · {tx(feat.yearRu, feat.yearEt)}
               </div>
               <h2 className="vp-display" style={{ fontSize: 56, lineHeight: 0.95, margin: '0 0 22px' }}>
-                {ru ? feat.titleRu : feat.titleEt}
+                {tx(feat.titleRu, feat.titleEt)}
               </h2>
               <p style={{ fontSize: 16, lineHeight: 1.65, color: 'var(--ink-2)', maxWidth: 520 }}>
-                {ru ? feat.excerptRu : feat.excerptEt}
+                {tx(feat.excerptRu, feat.excerptEt)}
               </p>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 32 }}>
-              <span className="vp-mono" style={{ fontSize: 11, color: 'var(--muted)' }}>{feat.read} {ru ? 'чтение' : 'lugemine'}</span>
+              <span className="vp-mono" style={{ fontSize: 11, color: 'var(--muted)' }}>{feat.read} {tx('чтение', 'lugemine')}</span>
               <Link href={lp(`/uudised/${feat.id}`, locale)} className="vp-btn">
-                {ru ? 'Читать статью →' : 'Loe artiklit →'}
+                {tx('Читать статью →', 'Loe artiklit →')}
               </Link>
             </div>
           </div>
@@ -108,17 +108,17 @@ export default function BlogIndexPage() {
         {(activeCat === allLabel && !search ? rest : filtered).map((p) => (
           <Link key={p.id} href={lp(`/uudised/${p.id}`, locale)} style={{ display: 'flex', flexDirection: 'column', gap: 14, textDecoration: 'none', color: 'inherit' }}>
             <div style={{ aspectRatio: '4/3', border: 'var(--border)', overflow: 'hidden', backgroundImage: `url("${p.cover}")`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
-            <div className="vp-eyebrow">{ru ? p.catRu : p.catEt} · {ru ? p.yearRu : p.yearEt} · {p.read}</div>
-            <div className="vp-display" style={{ fontSize: 30, lineHeight: 1, margin: 0 }}>{ru ? p.titleRu : p.titleEt}</div>
-            <div style={{ fontSize: 14, lineHeight: 1.55, color: 'var(--ink-2)' }}>{ru ? p.excerptRu : p.excerptEt}</div>
+            <div className="vp-eyebrow">{tx(p.catRu, p.catEt)} · {tx(p.yearRu, p.yearEt)} · {p.read}</div>
+            <div className="vp-display" style={{ fontSize: 30, lineHeight: 1, margin: 0 }}>{tx(p.titleRu, p.titleEt)}</div>
+            <div style={{ fontSize: 14, lineHeight: 1.55, color: 'var(--ink-2)' }}>{tx(p.excerptRu, p.excerptEt)}</div>
             <span style={{ fontSize: 12, color: 'var(--ink)', borderBottom: 'var(--border)', alignSelf: 'flex-start', paddingBottom: 2, fontFamily: 'JetBrains Mono', textTransform: 'uppercase' }}>
-              {ru ? 'Читать →' : 'Loe →'}
+              {tx('Читать →', 'Loe →')}
             </span>
           </Link>
         ))}
         {filtered.length === 0 && (
           <div style={{ gridColumn: '1 / -1', padding: '80px 0', textAlign: 'center', color: 'var(--muted)', fontFamily: 'JetBrains Mono', fontSize: 13 }}>
-            {ru ? 'Статей не найдено.' : 'Artikleid ei leitud.'}
+            {tx('Статей не найдено.', 'Artikleid ei leitud.')}
           </div>
         )}
       </section>
@@ -128,30 +128,28 @@ export default function BlogIndexPage() {
         <div>
           <div className="vp-mono" style={{ fontSize: 11, textTransform: 'uppercase', opacity: 0.6, marginBottom: 10 }}>Newsletter</div>
           <h2 className="vp-display" style={{ fontSize: 64, margin: 0, lineHeight: 0.95 }}>
-            {ru ? 'Одно письмо в месяц.' : 'Üks meil kuus.'}<br />{ru ? 'Ноль спама.' : 'Null spämmi.'}
+            {tx('Одно письмо в месяц.', 'Üks meil kuus.')}<br />{tx('Ноль спама.', 'Null spämmi.')}
           </h2>
         </div>
         <div>
           <p style={{ fontSize: 15, lineHeight: 1.6, opacity: 0.85, marginBottom: 18, maxWidth: 440 }}>
-            {ru
-              ? 'Новые проекты, сезонные цветовые решения, акции. Бесплатно. Отписаться можно в любой момент.'
-              : 'Uued projektid, hooaja värvilahendused, sooduspakkumised. Tasuta. Lahkud millal tahad.'}
+            {tx('Новые проекты, сезонные цветовые решения, акции. Бесплатно. Отписаться можно в любой момент.', 'Uued projektid, hooaja värvilahendused, sooduspakkumised. Tasuta. Lahkud millal tahad.')}
           </p>
           {newsletterSent ? (
             <div className="vp-mono" style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)' }}>
-              ✓ {ru ? 'Подписка оформлена!' : 'Telli õnnestus!'}
+              ✓ {tx('Подписка оформлена!', 'Telli õnnestus!')}
             </div>
           ) : (
             <div style={{ display: 'flex', gap: 8 }}>
               <input
                 className="vp-input"
-                placeholder={ru ? 'ваш@email.ee' : 'su@meil.ee'}
+                placeholder={tx('ваш@email.ee', 'su@meil.ee')}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 style={{ background: 'transparent', border: '1.5px solid var(--paper)', color: 'var(--paper)' }}
               />
               <button className="vp-btn" style={{ background: 'var(--paper)', color: 'var(--ink)', borderColor: 'var(--paper)', whiteSpace: 'nowrap' }} onClick={() => email && setNewsletterSent(true)}>
-                {ru ? 'Подписаться →' : 'Liitu →'}
+                {tx('Подписаться →', 'Liitu →')}
               </button>
             </div>
           )}

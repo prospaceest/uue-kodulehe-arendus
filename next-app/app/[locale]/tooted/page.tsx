@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { tx } from '@/lib/tx';
 import { getLocale } from 'next-intl/server';
 import { products, categories } from '@/lib/catalog';
 import CatalogClient from '@/components/catalog/CatalogClient';
@@ -10,10 +11,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const ru = locale === 'ru';
   return {
     alternates: pageAlternates('/tooted', locale),
-    title: ru ? 'Магазин — все товары' : 'Pood — kõik tooted',
-    description: ru
-      ? 'Все алюминиевые теневые профили — потолочные, напольные, настенные. Фильтр по категории, цвету и LED.'
-      : 'Kõik alumiinium varjuprofiilid — lae-, põranda-, seinaprofiilid. Filtreeri kategooria, värvi ja LED järgi.',
+    title: tx(locale, 'Магазин — все товары', 'Pood — kõik tooted'),
+    description: tx(locale, 'Все алюминиевые теневые профили — потолочные, напольные, настенные. Фильтр по категории, цвету и LED.', 'Kõik alumiinium varjuprofiilid — lae-, põranda-, seinaprofiilid. Filtreeri kategooria, värvi ja LED järgi.'),
     // Soome/rootsi title + description (lib/pageMeta.ts) kirjutavad
     // ülemised read üle; eesti ja vene keele puhul on see tühi objekt.
     ...pageMetaOverride('/tooted', locale),

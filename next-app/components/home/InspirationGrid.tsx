@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { tx } from '@/lib/tx';
 import { getLocale } from 'next-intl/server';
 import { lp } from '@/lib/pageUrls';
 
@@ -44,14 +45,14 @@ export default async function InspirationGrid() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 36 }}>
         <div>
           <div className="vp-eyebrow" style={{ marginBottom: 8 }}>
-            {ru ? '05 / Реальные проекты' : '05 / Päris projektid'}
+            {tx(locale, '05 / Реальные проекты', '05 / Päris projektid')}
           </div>
           <h2 className="vp-display" style={{ fontSize: 64, margin: 0 }}>
-            {ru ? 'Вдохновение' : 'Inspiratsioon'}
+            {tx(locale, 'Вдохновение', 'Inspiratsioon')}
           </h2>
         </div>
         <Link href={lp(`/inspiratsioon`, locale)} style={{ fontFamily: 'JetBrains Mono', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.08em', borderBottom: 'var(--border)' }}>
-          {ru ? 'Смотреть все →' : 'Vaata kõiki →'}
+          {tx(locale, 'Смотреть все →', 'Vaata kõiki →')}
         </Link>
       </div>
 
@@ -60,13 +61,13 @@ export default async function InspirationGrid() {
           <Link key={p.id} href={lp(`/inspiratsioon/${p.id}`, locale)} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
             <div style={{ aspectRatio: '4/5', marginBottom: 14, overflow: 'hidden', border: 'var(--border)', background: 'var(--paper-2)' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={p.img} alt={ru ? p.titleRu : p.titleEt} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
+              <img src={p.img} alt={tx(locale, p.titleRu, p.titleEt)} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
             </div>
             <div className="vp-eyebrow" style={{ marginBottom: 6 }}>
-              {ru ? p.labelRu : p.labelEt}
+              {tx(locale, p.labelRu, p.labelEt)}
             </div>
             <h3 style={{ fontFamily: "'Inter', serif", fontStyle: 'italic', fontWeight: 400, fontSize: 22, margin: 0, lineHeight: 1.3 }}>
-              &ldquo;{ru ? p.titleRu : p.titleEt}.&rdquo;
+              &ldquo;{tx(locale, p.titleRu, p.titleEt)}.&rdquo;
             </h3>
             <div className="vp-mono" style={{ fontSize: 11, marginTop: 10, color: 'var(--muted)' }}>
               {p.profiles} · {p.meters}

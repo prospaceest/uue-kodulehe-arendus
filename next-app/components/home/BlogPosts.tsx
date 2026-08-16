@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { tx } from '@/lib/tx';
 import { getLocale } from 'next-intl/server';
 import { lp } from '@/lib/pageUrls';
 
@@ -45,19 +46,17 @@ export default async function BlogPosts() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 36, gap: 24, flexWrap: 'wrap' }}>
         <div>
           <div className="vp-eyebrow" style={{ marginBottom: 8 }}>
-            {ru ? '07 / Журнал' : '07 / Uudised'}
+            {tx(locale, '07 / Журнал', '07 / Uudised')}
           </div>
           <h2 className="vp-display" style={{ fontSize: 64, margin: 0 }}>
-            {ru ? 'Гайды и вдохновение' : 'Juhendid & inspiratsioon'}
+            {tx(locale, 'Гайды и вдохновение', 'Juhendid & inspiratsioon')}
           </h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--ink-2)', maxWidth: 520, marginTop: 14 }}>
-            {ru
-              ? 'Делимся рекомендациями, представляем новинки и показываем, как решения внедрили другие.'
-              : 'Avaldame soovitusi, tutvustame uusi tooteid ja jagame, kuidas teised on lahendused oma kodus ellu viinud.'}
+            {tx(locale, 'Делимся рекомендациями, представляем новинки и показываем, как решения внедрили другие.', 'Avaldame soovitusi, tutvustame uusi tooteid ja jagame, kuidas teised on lahendused oma kodus ellu viinud.')}
           </p>
         </div>
         <Link href={lp(`/uudised`, locale)} style={{ fontFamily: 'JetBrains Mono', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.08em', borderBottom: 'var(--border)', paddingBottom: 2 }}>
-          {ru ? 'Все статьи →' : 'Vaata kõiki artikleid →'}
+          {tx(locale, 'Все статьи →', 'Vaata kõiki artikleid →')}
         </Link>
       </div>
 
@@ -68,25 +67,25 @@ export default async function BlogPosts() {
             {/* Cover */}
             <div style={{ aspectRatio: '4/3', borderBottom: 'var(--border)', position: 'relative', overflow: 'hidden', background: 'var(--paper-2)' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={p.cover} alt={ru ? p.titleRu : p.titleEt} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+              <img src={p.cover} alt={tx(locale, p.titleRu, p.titleEt)} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
               <span style={{ position: 'absolute', top: 12, left: 12, background: 'var(--paper)', border: 'var(--border)', fontFamily: 'JetBrains Mono', fontSize: 10, padding: '4px 8px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                {ru ? p.catRu : p.catEt}
+                {tx(locale, p.catRu, p.catEt)}
               </span>
             </div>
 
             {/* Body */}
             <div style={{ padding: '22px 22px 24px', display: 'flex', flexDirection: 'column', flex: 1, gap: 12 }}>
               <div className="vp-mono" style={{ fontSize: 11, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                {p.year} · {ru ? p.readRu : p.readEt} {ru ? 'чтение' : 'lugemine'}
+                {p.year} · {tx(locale, p.readRu, p.readEt)} {tx(locale, 'чтение', 'lugemine')}
               </div>
               <h3 className="vp-display" style={{ fontSize: 26, margin: 0, lineHeight: 1.05 }}>
-                {ru ? p.titleRu : p.titleEt}
+                {tx(locale, p.titleRu, p.titleEt)}
               </h3>
               <p style={{ fontSize: 14, lineHeight: 1.55, color: 'var(--ink-2)', margin: 0 }}>
-                {ru ? p.excerptRu : p.excerptEt}
+                {tx(locale, p.excerptRu, p.excerptEt)}
               </p>
               <span style={{ marginTop: 'auto', fontFamily: 'JetBrains Mono', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', borderBottom: 'var(--border)', alignSelf: 'flex-start', paddingBottom: 2 }}>
-                {ru ? 'Читать статью →' : 'Loe artiklit →'}
+                {tx(locale, 'Читать статью →', 'Loe artiklit →')}
               </span>
             </div>
           </Link>

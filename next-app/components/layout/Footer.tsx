@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { tx } from '@/lib/tx';
 import { useTranslations } from 'next-intl';
 import { getLocale } from 'next-intl/server';
 import { site } from '@/lib/site';
@@ -16,45 +17,45 @@ export default async function Footer() {
 
   const columns = [
     {
-      heading: ru ? 'Магазин' : 'Pood',
+      heading: tx(locale, 'Магазин', 'Pood'),
       links: [
         // Catalog filters via ?cat=<collection>; /tooted/<slug> paths 404.
-        { label: ru ? 'Все товары' : 'Kõik tooted',             href: lp(`/tooted`, locale) },
-        { label: ru ? 'Потолочные профили' : 'Laeprofiilid',    href: lp(`/tooted?cat=${encodeURIComponent('Laeprofiilid')}`, locale) },
-        { label: ru ? 'Напольные профили' : 'Põrandaprofiilid', href: lp(`/tooted?cat=${encodeURIComponent('Põrandaprofiilid')}`, locale) },
-        { label: ru ? 'Плинтусы' : 'Põrandaliistud',            href: lp(`/tooted?cat=${encodeURIComponent('Põrandaliistud')}`, locale) },
-        { label: ru ? 'Аксессуары' : 'Lisatarvikud',            href: lp(`/tooted?cat=${encodeURIComponent('Lisatarvikud')}`, locale) },
+        { label: tx(locale, 'Все товары', 'Kõik tooted'),             href: lp(`/tooted`, locale) },
+        { label: tx(locale, 'Потолочные профили', 'Laeprofiilid'),    href: lp(`/tooted?cat=${encodeURIComponent('Laeprofiilid')}`, locale) },
+        { label: tx(locale, 'Напольные профили', 'Põrandaprofiilid'), href: lp(`/tooted?cat=${encodeURIComponent('Põrandaprofiilid')}`, locale) },
+        { label: tx(locale, 'Плинтусы', 'Põrandaliistud'),            href: lp(`/tooted?cat=${encodeURIComponent('Põrandaliistud')}`, locale) },
+        { label: tx(locale, 'Аксессуары', 'Lisatarvikud'),            href: lp(`/tooted?cat=${encodeURIComponent('Lisatarvikud')}`, locale) },
       ],
     },
     {
-      heading: ru ? 'Информация' : 'Info',
+      heading: tx(locale, 'Информация', 'Info'),
       links: [
-        { label: ru ? 'Что такое теневой профиль?' : 'Mis on varjuprofiil?', href: lp(`/mis-on-varjuprofiil`, locale) },
-        { label: ru ? 'О продукции' : 'Toodetest',      href: lp(`/meist`, locale) },
-        { label: ru ? 'Вдохновение' : 'Inspiratsioon',  href: lp(`/inspiratsioon`, locale) },
+        { label: tx(locale, 'Что такое теневой профиль?', 'Mis on varjuprofiil?'), href: lp(`/mis-on-varjuprofiil`, locale) },
+        { label: tx(locale, 'О продукции', 'Toodetest'),      href: lp(`/meist`, locale) },
+        { label: tx(locale, 'Вдохновение', 'Inspiratsioon'),  href: lp(`/inspiratsioon`, locale) },
         // Uudised peidetud kuni päris postitused valmis (2026-07). Taasta see rida.
-        // { label: ru ? 'Журнал' : 'Uudised',             href: lp(`/uudised`, locale) },
-        { label: ru ? 'Поиск' : 'Otsing',               href: lp(`/otsing`, locale) },
+        // { label: tx(locale, 'Журнал', 'Uudised'),             href: lp(`/uudised`, locale) },
+        { label: tx(locale, 'Поиск', 'Otsing'),               href: lp(`/otsing`, locale) },
       ],
     },
     {
-      heading: ru ? 'Поддержка' : 'Tugi',
+      heading: tx(locale, 'Поддержка', 'Tugi'),
       links: [
-        { label: ru ? 'Контакты' : 'Kontakt',    href: lp(`/kontakt`, locale) },
-        { label: ru ? 'Салон' : 'Salong',        href: lp(`/salong`, locale) },
-        { label: ru ? 'Доставка' : 'Tarne',      href: lp(`/tarne`, locale) },
-        { label: ru ? 'Гарантия' : 'Garantii',   href: lp(`/garantii`, locale) },
-        { label: ru ? 'Вопросы' : 'KKK',         href: lp(`/kkk`, locale) },
-        { label: ru ? 'Условия' : 'Tingimused',  href: lp(`/impressum`, locale) },
+        { label: tx(locale, 'Контакты', 'Kontakt'),    href: lp(`/kontakt`, locale) },
+        { label: tx(locale, 'Салон', 'Salong'),        href: lp(`/salong`, locale) },
+        { label: tx(locale, 'Доставка', 'Tarne'),      href: lp(`/tarne`, locale) },
+        { label: tx(locale, 'Гарантия', 'Garantii'),   href: lp(`/garantii`, locale) },
+        { label: tx(locale, 'Вопросы', 'KKK'),         href: lp(`/kkk`, locale) },
+        { label: tx(locale, 'Условия', 'Tingimused'),  href: lp(`/impressum`, locale) },
       ],
     },
     {
-      heading: ru ? 'B2B / Кабинет' : 'B2B / Konto',
+      heading: tx(locale, 'B2B / Кабинет', 'B2B / Konto'),
       links: [
-        { label: ru ? 'Партнёрская программа' : 'Partneriprogramm', href: lp(`/professionaalidele`, locale) },
-        { label: ru ? 'Войти' : 'Logi sisse',                       href: lp(`/konto/login`, locale) },
-        { label: ru ? 'Личный кабинет' : 'Minu konto',              href: lp(`/konto`, locale) },
-        { label: ru ? 'Корзина' : 'Korv',                           href: lp(`/korv`, locale) },
+        { label: tx(locale, 'Партнёрская программа', 'Partneriprogramm'), href: lp(`/professionaalidele`, locale) },
+        { label: tx(locale, 'Войти', 'Logi sisse'),                       href: lp(`/konto/login`, locale) },
+        { label: tx(locale, 'Личный кабинет', 'Minu konto'),              href: lp(`/konto`, locale) },
+        { label: tx(locale, 'Корзина', 'Korv'),                           href: lp(`/korv`, locale) },
       ],
     },
   ];
@@ -67,9 +68,7 @@ export default async function Footer() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/prospace-valge.svg" alt="PROSPACE" style={{ height: 34, width: 'auto', display: 'block' }} />
           <p className={styles.tagline}>
-            {ru
-              ? 'Магазин алюминиевых теневых профилей в Эстонии. Техническая точность + архитектурный дизайн.'
-              : 'Alumiinium varjuprofiilide pood Eestis. Tehniline täpsus + arhitektuurne disain.'}
+            {tx(locale, 'Магазин алюминиевых теневых профилей в Эстонии. Техническая точность + архитектурный дизайн.', 'Alumiinium varjuprofiilide pood Eestis. Tehniline täpsus + arhitektuurne disain.')}
           </p>
           <div className={styles.contact}>
             <a href={site.phoneUrl}>{site.phone}</a>

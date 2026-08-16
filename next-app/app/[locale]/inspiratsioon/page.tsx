@@ -1,4 +1,5 @@
 import { getLocale } from 'next-intl/server';
+import { tx } from '@/lib/tx';
 import Link from 'next/link';
 
 import type { Metadata } from 'next';
@@ -11,8 +12,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const ru = locale === 'ru';
   return {
     alternates: pageAlternates('/inspiratsioon', locale),
-    title: ru ? 'Вдохновение — Реальные проекты с теневыми профилями' : 'Inspiratsioon — Päriseluprojektid varjuprofiilide',
-    description: ru ? 'Реальные проекты с теневыми профилями PROSPACE — частные дома, квартиры, ванные, офисы. Фото, список профилей, размеры.' : 'Päriseluprojektid PROSPACE varjuprofiilide — eramajad, korterid, vannitoad, bürood. Fotod, profiilide loetelu, mõõtmed.',
+    title: tx(locale, 'Вдохновение — Реальные проекты с теневыми профилями', 'Inspiratsioon — Päriseluprojektid varjuprofiilide'),
+    description: tx(locale, 'Реальные проекты с теневыми профилями PROSPACE — частные дома, квартиры, ванные, офисы. Фото, список профилей, размеры.', 'Päriseluprojektid PROSPACE varjuprofiilide — eramajad, korterid, vannitoad, bürood. Fotod, profiilide loetelu, mõõtmed.'),
     // Soome/rootsi title + description (lib/pageMeta.ts) kirjutavad
     // ülemised read üle; eesti ja vene keele puhul on see tühi objekt.
     ...pageMetaOverride('/inspiratsioon', locale),
@@ -33,12 +34,12 @@ export default async function InspirationIndexPage() {
   return (
     <div>
       <section style={{ padding: '72px 56px 32px', borderBottom: 'var(--border)' }}>
-        <div className="vp-eyebrow" style={{ marginBottom: 10 }}>{ru ? 'Реальные проекты' : 'Päris projektid'}</div>
+        <div className="vp-eyebrow" style={{ marginBottom: 10 }}>{tx(locale, 'Реальные проекты', 'Päris projektid')}</div>
         <h1 className="vp-display" style={{ fontSize: 'clamp(72px, 11vw, 168px)', margin: 0, lineHeight: 0.9 }}>
-          {ru ? 'Вдохновение.' : 'Inspiratsioon.'}
+          {tx(locale, 'Вдохновение.', 'Inspiratsioon.')}
         </h1>
         <p style={{ fontSize: 17, lineHeight: 1.6, color: 'var(--ink-2)', maxWidth: 680, marginTop: 18 }}>
-          {ru ? `${PROJECTS.length} реальных проектов с нашими профилями — от частных домов до гостиниц.` : `${PROJECTS.length} päriseluprojekti meie profiilidega — eramajadestest hotellide ja büroodeni.`}
+          {`${PROJECTS.length} ${tx(locale, 'реальных проектов с нашими профилями — от частных домов до гостиниц.', 'päriseluprojekti meie profiilidega — eramajadestest hotellide ja büroodeni.')}`}
         </p>
       </section>
 
@@ -48,11 +49,11 @@ export default async function InspirationIndexPage() {
             <Link key={p.id} href={lp(`/inspiratsioon/${p.id}`, locale)} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
               <div style={{ aspectRatio: '4/5', marginBottom: 14, overflow: 'hidden', border: 'var(--border)', background: 'var(--paper-2)' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.cover} alt={ru ? p.titleRu : p.titleEt} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
+                <img src={p.cover} alt={tx(locale, p.titleRu, p.titleEt)} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} loading="lazy" />
               </div>
-              <div className="vp-eyebrow" style={{ marginBottom: 6 }}>{ru ? p.labelRu : p.labelEt}</div>
+              <div className="vp-eyebrow" style={{ marginBottom: 6 }}>{tx(locale, p.labelRu, p.labelEt)}</div>
               <h2 style={{ fontFamily: "'Inter', serif", fontStyle: 'italic', fontWeight: 400, fontSize: 22, margin: 0, lineHeight: 1.3 }}>
-                &ldquo;{ru ? p.titleRu : p.titleEt}.&rdquo;
+                &ldquo;{tx(locale, p.titleRu, p.titleEt)}.&rdquo;
               </h2>
               <div className="vp-mono" style={{ fontSize: 11, marginTop: 10, color: 'var(--muted)' }}>
                 {p.profiles} · {p.meters}

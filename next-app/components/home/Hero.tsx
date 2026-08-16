@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import { tx, txList } from '@/lib/tx';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { products } from '@/lib/catalog';
@@ -11,10 +12,10 @@ export default async function Hero() {
   const inStock = products.filter((p) => p.inStock).length;
 
   const stats = [
-    { n: String(inStock),  l: ru ? 'Товаров на складе'              : 'Toodet laos'           },
-    { n: '200 €+',         l: ru ? 'Бесплатная доставка по Эстонии' : 'Tasuta tarne Eestis'   },
-    { n: '∞',              l: ru ? 'Оттенков RAL'                   : 'RAL värvitoone'         },
-    { n: ru ? '14 дн.' : '14 p', l: ru ? 'Право возврата'          : 'Tagastusõigus'          },
+    { n: String(inStock),  l: tx(locale, 'Товаров на складе', 'Toodet laos')           },
+    { n: '200 €+',         l: tx(locale, 'Бесплатная доставка по Эстонии', 'Tasuta tarne Eestis')   },
+    { n: '∞',              l: tx(locale, 'Оттенков RAL', 'RAL värvitoone')         },
+    { n: tx(locale, '14 дн.', '14 p'), l: tx(locale, 'Право возврата', 'Tagastusõigus')          },
   ];
 
   const catalogHref = lp('/tooted', locale);
@@ -63,10 +64,10 @@ export default async function Hero() {
         textTransform: 'uppercase', letterSpacing: '0.12em',
         color: 'rgba(255,255,255,0.85)',
       }}>
-        <span>{ru ? '★ Коллекция 026 — Весна 2026' : '★ Kollektsioon 026 — Kevad 2026'}</span>
+        <span>{tx(locale, '★ Коллекция 026 — Весна 2026', '★ Kollektsioon 026 — Kevad 2026')}</span>
         <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#ff5544', display: 'inline-block', boxShadow: '0 0 8px rgba(255,85,68,0.7)' }} />
-          Live · {inStock} {ru ? 'товаров на складе' : 'toodet laos'}
+          Live · {inStock} {tx(locale, 'товаров на складе', 'toodet laos')}
         </span>
       </div>
 
@@ -81,8 +82,8 @@ export default async function Hero() {
           margin: 0, lineHeight: 0.94, color: '#fff',
           maxWidth: '18ch', textShadow: '0 2px 40px rgba(0,0,0,0.3)',
         }}>
-          {ru ? 'Чистая линия.' : 'Puhas joon.'}<br />
-          {ru ? 'Скрытый свет.' : 'Peidetud valgus.'}
+          {tx(locale, 'Чистая линия.', 'Puhas joon.')}<br />
+          {tx(locale, 'Скрытый свет.', 'Peidetud valgus.')}
         </h1>
 
         <p style={{
@@ -90,17 +91,12 @@ export default async function Hero() {
           marginTop: 24, color: 'rgba(255,255,255,0.85)',
           textShadow: '0 1px 12px rgba(0,0,0,0.4)',
         }}>
-          {ru
-            ? 'Алюминиевые теневые профили для потолка, пола и стены. Вместо плинтусов и карнизов — тонкая теневая линия, при желании с мягкой LED-подсветкой.'
-            : 'Alumiiniumist varjuprofiilid laele, põrandale ja seinale. Liistude ja karniiside asemel peen varjujoon — soovi korral pehme LED-valgusega.'}
+          {tx(locale, 'Алюминиевые теневые профили для потолка, пола и стены. Вместо плинтусов и карнизов — тонкая теневая линия, при желании с мягкой LED-подсветкой.', 'Alumiiniumist varjuprofiilid laele, põrandale ja seinale. Liistude ja karniiside asemel peen varjujoon — soovi korral pehme LED-valgusega.')}
         </p>
 
         {/* Faktimärgised — samad piirjooned ja mono-kiri nagu mujal, ilma ümarnurkade ja varjudeta */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 26 }}>
-          {(ru
-            ? ['LED опция', 'Оттенки RAL', 'Доставка 1–3 дня', 'Склад в Таллинне']
-            : ['LED võimalus', 'RAL toonid', 'Tarne 1–3 päeva', 'Ladu Tallinnas']
-          ).map((chip) => (
+          {txList(locale, ['LED опция', 'Оттенки RAL', 'Доставка 1–3 дня', 'Склад в Таллинне'], ['LED võimalus', 'RAL toonid', 'Tarne 1–3 päeva', 'Ladu Tallinnas']).map((chip) => (
             <span
               key={chip}
               className="vp-mono"
@@ -122,14 +118,14 @@ export default async function Hero() {
             className="vp-btn vp-btn--lg"
             style={{ background: '#fff', color: '#000', borderColor: '#fff' }}
           >
-            {ru ? 'В магазин →' : 'Vaata poodi →'}
+            {tx(locale, 'В магазин →', 'Vaata poodi →')}
           </Link>
           <Link
             href={lp('/mis-on-varjuprofiil', locale)}
             className="vp-btn vp-btn--lg"
             style={{ background: 'transparent', color: '#fff', borderColor: 'rgba(255,255,255,0.55)' }}
           >
-            {ru ? 'Что такое теневой профиль?' : 'Mis on varjuprofiil?'}
+            {tx(locale, 'Что такое теневой профиль?', 'Mis on varjuprofiil?')}
           </Link>
         </div>
       </div>

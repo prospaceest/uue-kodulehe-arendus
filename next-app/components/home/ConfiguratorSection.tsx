@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useTx } from '@/lib/useTx';
 import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
 
@@ -13,6 +14,7 @@ function Configurator() {
   const locale = useLocale();
   const t = useTranslations('home.configurator');
   const ru = locale === 'ru';
+  const tx = useTx();
 
   const [meters, setMeters] = useState(34);
   const [type, setType] = useState<'lae' | 'porand'>('lae');
@@ -138,6 +140,7 @@ function Top10Thumb({ sku, rank }: { sku: string; rank: number }) {
 function Bestsellers() {
   const locale = useLocale();
   const ru = locale === 'ru';
+  const tx = useTx();
 
   const top10 = TOP10_SKUS.map((key) =>
     products.find((p) => p.sku === key || p.name === key)
@@ -146,10 +149,10 @@ function Bestsellers() {
   return (
     <div style={{ padding: '56px 48px', background: 'var(--paper-2)' }}>
       <div className="vp-eyebrow" style={{ marginBottom: 14 }}>
-        {ru ? '04 / Хиты продаж' : '04 / Enimmüüdud'}
+        {tx('04 / Хиты продаж', '04 / Enimmüüdud')}
       </div>
       <h2 className="vp-display" style={{ fontSize: 48, margin: '0 0 24px' }}>
-        {ru ? 'Топ-10' : 'Top 10'}
+        {tx('Топ-10', 'Top 10')}
       </h2>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>

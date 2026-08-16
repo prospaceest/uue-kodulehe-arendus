@@ -149,3 +149,13 @@ export function marketPrice(eeGross: number, market: Market): number {
   if (market.id === 'ee') return eeGross;
   return grossPrice(netFromEeGross(eeGross), market);
 }
+
+/** Open Graph og:locale kood keele järgi. */
+export const OG_LOCALE: Record<string, string> = {
+  et: 'et_EE', ru: 'ru_RU', fi: 'fi_FI', sv: 'sv_FI',
+};
+
+/** BCP-47 keelekood (JSON-LD inLanguage). */
+export const BCP47: Record<string, string> = {
+  et: 'et-EE', ru: 'ru-RU', fi: 'fi-FI', sv: 'sv-FI',
+};

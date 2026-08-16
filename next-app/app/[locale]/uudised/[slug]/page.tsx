@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation';
+import { OG_LOCALE, BCP47 } from '@/lib/markets';
+import { tx } from '@/lib/tx';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -1872,8 +1874,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     // NB: the intermediate uudised/layout.tsx title blocks the root template,
     // so the brand suffix must be added manually here.
-    title: `${ru ? p.titleRu : p.titleEt} | Varjuprofiilid.ee`,
-    description: ru ? p.excerptRu : p.excerptEt,
+    title: `${tx(locale, p.titleRu, p.titleEt)} | Varjuprofiilid.ee`,
+    description: tx(locale, p.excerptRu, p.excerptEt),
     alternates: {
       canonical: abs(lp(`/uudised/${slug}`, locale)),
       languages: {
@@ -1882,11 +1884,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: ru ? p.titleRu : p.titleEt,
-      description: ru ? p.excerptRu : p.excerptEt,
+      title: tx(locale, p.titleRu, p.titleEt),
+      description: tx(locale, p.excerptRu, p.excerptEt),
       type: 'article',
       images: [{ url: p.cover }],
-      locale: ru ? 'ru_RU' : 'et_EE',
+      locale: OG_LOCALE[locale] ?? 'et_EE',
     },
   };
 }
@@ -1904,9 +1906,9 @@ export default async function BlogPostPage({ params }: Props) {
   const ru = locale === 'ru';
   const p = POSTS[slug];
   if (!p) notFound();
-  const title = ru ? p.titleRu : p.titleEt;
-  const body = ru ? p.bodyRu : p.bodyEt;
-  const cat = ru ? p.catRu : p.catEt;
+  const title = tx(locale, p.titleRu, p.titleEt);
+  const body = tx(locale, p.bodyRu, p.bodyEt);
+  const cat = tx(locale, p.catRu, p.catEt);
 
   const relatedSlugs = Object.keys(POSTS).filter((s) => s !== slug).slice(0, 3);
 
@@ -1919,7 +1921,7 @@ export default async function BlogPostPage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: title,
-    description: ru ? p.excerptRu : p.excerptEt,
+    description: tx(locale, p.excerptRu, p.excerptEt),
     image: cover,
     author: { '@type': 'Organization', name: site.legal, url: site.url },
     publisher: {
@@ -1928,7 +1930,7 @@ export default async function BlogPostPage({ params }: Props) {
       logo: { '@type': 'ImageObject', url: `${site.url}/assets/logo-must.svg` },
     },
     mainEntityOfPage: canonical,
-    inLanguage: ru ? 'ru-RU' : 'et-EE',
+    inLanguage: BCP47[locale] ?? 'et-EE',
   };
   if (datePublished) blogSchema.datePublished = datePublished;
 
@@ -1938,9 +1940,9 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Breadcrumb + title */}
       <section style={{ padding: '72px 56px 48px', borderBottom: 'var(--border)' }}>
         <div className="vp-eyebrow" style={{ marginBottom: 10 }}>
-          <Link href={lp('/', locale)}>{ru ? 'Главная' : 'Avaleht'}</Link>
+          <Link href={lp('/', locale)}>{tx(locale, 'Главная', 'Avaleht')}</Link>
           {' / '}
-          <Link href={lp(`/uudised`, locale)}>{ru ? 'Журнал' : 'Uudised'}</Link>
+          <Link href={lp(`/uudised`, locale)}>{tx(locale, 'Журнал', 'Uudised')}</Link>
           {' / '}
           <span style={{ color: 'var(--ink)' }}>{cat}</span>
         </div>
@@ -1949,8 +1951,8 @@ export default async function BlogPostPage({ params }: Props) {
         </h1>
         <div className="vp-mono" style={{ fontSize: 12, marginTop: 16, color: 'var(--muted)', display: 'flex', gap: 24 }}>
           <span>{cat}</span>
-          <span>{ru ? p.yearRu : p.yearEt}</span>
-          <span>{p.read} {ru ? 'чтения' : 'lugemine'}</span>
+          <span>{tx(locale, p.yearRu, p.yearEt)}</span>
+          <span>{p.read} {tx(locale, 'чтения', 'lugemine')}</span>
         </div>
       </section>
 
@@ -1965,30 +1967,30 @@ export default async function BlogPostPage({ params }: Props) {
         <article>
           <MarkdownBody text={body} />
           <div style={{ marginTop: 48, paddingTop: 32, borderTop: 'var(--border)', display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg">{ru ? 'Открыть каталог →' : 'Vaata kataloogi →'}</Link>
-            <Link href={lp(`/kontakt`, locale)} className="vp-btn vp-btn--ghost">{ru ? 'Бесплатная консультация' : 'Tasuta nõustamine'}</Link>
+            <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg">{tx(locale, 'Открыть каталог →', 'Vaata kataloogi →')}</Link>
+            <Link href={lp(`/kontakt`, locale)} className="vp-btn vp-btn--ghost">{tx(locale, 'Бесплатная консультация', 'Tasuta nõustamine')}</Link>
           </div>
         </article>
 
         {/* Sidebar */}
         <aside style={{ position: 'sticky', top: 24 }}>
-          <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{ru ? 'Другие статьи' : 'Teised artiklid'}</div>
+          <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{tx(locale, 'Другие статьи', 'Teised artiklid')}</div>
           {relatedSlugs.map((s) => {
             const rel = POSTS[s];
             return (
               <Link key={s} href={lp(`/uudised/${s}`, locale)} style={{ display: 'block', padding: '16px 0', borderBottom: '1px solid rgba(0,0,0,0.1)', textDecoration: 'none', color: 'inherit' }}>
-                <div className="vp-mono" style={{ fontSize: 10, color: 'var(--muted)', marginBottom: 4 }}>{ru ? rel.catRu : rel.catEt}</div>
-                <div style={{ fontSize: 14, fontWeight: 600, lineHeight: 1.4 }}>{ru ? rel.titleRu : rel.titleEt}</div>
+                <div className="vp-mono" style={{ fontSize: 10, color: 'var(--muted)', marginBottom: 4 }}>{tx(locale, rel.catRu, rel.catEt)}</div>
+                <div style={{ fontSize: 14, fontWeight: 600, lineHeight: 1.4 }}>{tx(locale, rel.titleRu, rel.titleEt)}</div>
               </Link>
             );
           })}
           <div style={{ marginTop: 32, padding: '20px', border: 'var(--border)', background: 'var(--paper-2)' }}>
-            <div className="vp-eyebrow" style={{ marginBottom: 8 }}>{ru ? 'Нужна консультация?' : 'Küsimusi?'}</div>
+            <div className="vp-eyebrow" style={{ marginBottom: 8 }}>{tx(locale, 'Нужна консультация?', 'Küsimusi?')}</div>
             <p style={{ fontSize: 13, lineHeight: 1.6, color: 'var(--ink-2)', margin: '0 0 14px' }}>
-              {ru ? 'Помогаем с выбором профилей бесплатно.' : 'Aitame profiilide valikul tasuta.'}
+              {tx(locale, 'Помогаем с выбором профилей бесплатно.', 'Aitame profiilide valikul tasuta.')}
             </p>
             <Link href={lp(`/kontakt`, locale)} className="vp-btn" style={{ display: 'inline-block' }}>
-              {ru ? 'Написать →' : 'Võta ühendust →'}
+              {tx(locale, 'Написать →', 'Võta ühendust →')}
             </Link>
           </div>
         </aside>

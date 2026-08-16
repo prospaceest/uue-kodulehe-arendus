@@ -1,6 +1,7 @@
 'use client';
 
 import { useUser, SignOutButton } from '@clerk/nextjs';
+import { useTx } from '@/lib/useTx';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { lp } from '@/lib/pageUrls';
@@ -9,12 +10,13 @@ export default function KontoPage() {
   const { user, isLoaded } = useUser();
   const locale = useLocale();
   const ru = locale === 'ru';
+  const tx = useTx();
 
   if (!isLoaded) {
     return (
       <div style={{ padding: '120px 56px', textAlign: 'center' }}>
         <div className="vp-mono" style={{ fontSize: 12, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-          {ru ? 'Загрузка…' : 'Laadin…'}
+          {tx('Загрузка…', 'Laadin…')}
         </div>
       </div>
     );
@@ -31,15 +33,15 @@ export default function KontoPage() {
       {/* Header */}
       <section style={{ padding: '56px 56px 32px', borderBottom: 'var(--border)', display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'center', gap: 24 }}>
         <div>
-          <div className="vp-eyebrow" style={{ marginBottom: 10 }}>{ru ? 'B2B · Мой аккаунт' : 'B2B · Minu konto'}</div>
+          <div className="vp-eyebrow" style={{ marginBottom: 10 }}>{tx('B2B · Мой аккаунт', 'B2B · Minu konto')}</div>
           <h1 className="vp-display" style={{ fontSize: 'clamp(48px, 6vw, 80px)', margin: 0, lineHeight: 0.95 }}>
-            {ru ? `Здравствуйте, ${user.firstName ?? ''}.` : `Tere, ${user.firstName ?? ''}.`}
+            {`${tx('Здравствуйте', 'Tere')}, ${user.firstName ?? ''}.`}
           </h1>
         </div>
         <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
           <SignOutButton>
             <button className="vp-btn vp-btn--ghost">
-              {ru ? 'Выйти' : 'Logi välja'}
+              {tx('Выйти', 'Logi välja')}
             </button>
           </SignOutButton>
         </div>
@@ -49,7 +51,7 @@ export default function KontoPage() {
       <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderBottom: 'var(--border)' }}>
         {/* Profile */}
         <div style={{ padding: '40px 40px', borderRight: 'var(--border)' }}>
-          <div className="vp-eyebrow" style={{ marginBottom: 18 }}>{ru ? 'Профиль' : 'Profiil'}</div>
+          <div className="vp-eyebrow" style={{ marginBottom: 18 }}>{tx('Профиль', 'Profiil')}</div>
           <div style={{ display: 'flex', gap: 16, alignItems: 'center', marginBottom: 20 }}>
             <div style={{ width: 56, height: 56, background: 'var(--ink)', color: 'var(--paper)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Bebas Neue', fontSize: 24 }}>
               {initials}
@@ -60,57 +62,51 @@ export default function KontoPage() {
             </div>
           </div>
           <div style={{ fontSize: 13, color: 'var(--ink-2)', lineHeight: 1.6 }}>
-            {ru
-              ? 'Управляйте профилем, паролем и уведомлениями в настройках Clerk.'
-              : 'Halda oma profiili, parooli ja teateid Clerk seadetes.'}
+            {tx('Управляйте профилем, паролем и уведомлениями в настройках Clerk.', 'Halda oma profiili, parooli ja teateid Clerk seadetes.')}
           </div>
         </div>
 
         {/* Quick actions */}
         <div style={{ padding: '40px 40px', borderRight: 'var(--border)' }}>
-          <div className="vp-eyebrow" style={{ marginBottom: 18 }}>{ru ? 'Быстрые действия' : 'Kiirtoimingud'}</div>
+          <div className="vp-eyebrow" style={{ marginBottom: 18 }}>{tx('Быстрые действия', 'Kiirtoimingud')}</div>
           <div style={{ display: 'grid', gap: 10 }}>
             <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg" style={{ textAlign: 'center' }}>
-              {ru ? 'Смотреть каталог →' : 'Vaata kataloogi →'}
+              {tx('Смотреть каталог →', 'Vaata kataloogi →')}
             </Link>
             <Link href={lp(`/kontakt`, locale)} className="vp-btn vp-btn--ghost" style={{ textAlign: 'center' }}>
-              {ru ? 'Связаться с нами' : 'Võta meiega ühendust'}
+              {tx('Связаться с нами', 'Võta meiega ühendust')}
             </Link>
             <Link href={lp(`/professionaalidele`, locale)} className="vp-btn vp-btn--ghost" style={{ textAlign: 'center' }}>
-              {ru ? 'Программа партнёров' : 'Partneriprogramm'}
+              {tx('Программа партнёров', 'Partneriprogramm')}
             </Link>
           </div>
         </div>
 
         {/* Partner status */}
         <div style={{ padding: '40px 40px', background: 'var(--paper-2)' }}>
-          <div className="vp-eyebrow" style={{ marginBottom: 18 }}>{ru ? 'Партнёрский статус' : 'Partneri staatus'}</div>
+          <div className="vp-eyebrow" style={{ marginBottom: 18 }}>{tx('Партнёрский статус', 'Partneri staatus')}</div>
           <div className="vp-display" style={{ fontSize: 48, color: 'var(--accent)', marginBottom: 8 }}>B2B</div>
           <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--ink-2)', marginBottom: 20 }}>
-            {ru
-              ? 'Ваша персональная скидка и условия оговариваются индивидуально. Для уточнения условий напишите нам.'
-              : 'Sinu personaalne soodustus ja tingimused lepitakse kokku individuaalselt. Tingimuste täpsustamiseks võta meiega ühendust.'}
+            {tx('Ваша персональная скидка и условия оговариваются индивидуально. Для уточнения условий напишите нам.', 'Sinu personaalne soodustus ja tingimused lepitakse kokku individuaalselt. Tingimuste täpsustamiseks võta meiega ühendust.')}
           </p>
           <Link href={lp(`/kontakt`, locale)} style={{ fontFamily: 'JetBrains Mono', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.06em', borderBottom: 'var(--border)', paddingBottom: 2, color: 'var(--ink)', textDecoration: 'none' }}>
-            {ru ? 'Уточнить условия →' : 'Küsi tingimusi →'}
+            {tx('Уточнить условия →', 'Küsi tingimusi →')}
           </Link>
         </div>
       </section>
 
       {/* Recent orders placeholder */}
       <section style={{ padding: '56px' }}>
-        <div className="vp-eyebrow" style={{ marginBottom: 20 }}>{ru ? 'Последние заказы' : 'Viimased tellimused'}</div>
+        <div className="vp-eyebrow" style={{ marginBottom: 20 }}>{tx('Последние заказы', 'Viimased tellimused')}</div>
         <div style={{ border: 'var(--border)', padding: '40px', background: 'var(--paper-2)', textAlign: 'center' }}>
           <div className="vp-display" style={{ fontSize: 40, marginBottom: 12 }}>
-            {ru ? 'Заказов пока нет.' : 'Tellimusi veel pole.'}
+            {tx('Заказов пока нет.', 'Tellimusi veel pole.')}
           </div>
           <p style={{ fontSize: 15, color: 'var(--ink-2)', marginBottom: 24 }}>
-            {ru
-              ? 'История заказов появится здесь после первого оформленного заказа.'
-              : 'Tellimuste ajalugu ilmub siia pärast esimest esitatud tellimust.'}
+            {tx('История заказов появится здесь после первого оформленного заказа.', 'Tellimuste ajalugu ilmub siia pärast esimest esitatud tellimust.')}
           </p>
           <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg">
-            {ru ? 'Начать покупки →' : 'Alusta ostlemist →'}
+            {tx('Начать покупки →', 'Alusta ostlemist →')}
           </Link>
         </div>
       </section>

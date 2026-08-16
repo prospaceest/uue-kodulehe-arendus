@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { tx } from '@/lib/tx';
 import { getLocale } from 'next-intl/server';
 import { pageAlternates } from '@/lib/pageUrls';
 import { pageMetaOverride } from '@/lib/pageMeta';
@@ -8,10 +9,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const ru = locale === 'ru';
   return {
     alternates: pageAlternates('/meist', locale),
-    title: ru ? 'Теневые профили в современном интерьере' : 'Varjuprofiilid kaasaegsesse interjööri',
-    description: ru
-      ? 'Почему теневые профили: скрытые соединения создают эффект парящего потолка или стены. Минималистичный, архитектурно цельный результат. PROSPACE OÜ, Таллинн.'
-      : 'Miks varjuprofiilid: peidetud ühenduslahendused loovad hõljuva lae või seina efekti. Minimalistlik ja arhitektuurselt terviklik tulemus. PROSPACE OÜ, Tallinn.',
+    title: tx(locale, 'Теневые профили в современном интерьере', 'Varjuprofiilid kaasaegsesse interjööri'),
+    description: tx(locale, 'Почему теневые профили: скрытые соединения создают эффект парящего потолка или стены. Минималистичный, архитектурно цельный результат. PROSPACE OÜ, Таллинн.', 'Miks varjuprofiilid: peidetud ühenduslahendused loovad hõljuva lae või seina efekti. Minimalistlik ja arhitektuurselt terviklik tulemus. PROSPACE OÜ, Tallinn.'),
     // Soome/rootsi title + description (lib/pageMeta.ts) kirjutavad
     // ülemised read üle; eesti ja vene keele puhul on see tühi objekt.
     ...pageMetaOverride('/meist', locale),

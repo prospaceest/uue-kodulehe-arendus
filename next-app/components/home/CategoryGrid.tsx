@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { tx } from '@/lib/tx';
 import { getLocale } from 'next-intl/server';
 import { products } from '@/lib/catalog';
 import { lp } from '@/lib/pageUrls';
@@ -38,17 +39,17 @@ export default async function CategoryGrid() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 36 }}>
         <div>
           <div className="vp-eyebrow" style={{ marginBottom: 8 }}>
-            {ru ? '02 / Коллекции' : '02 / Kollektsioonid'}
+            {tx(locale, '02 / Коллекции', '02 / Kollektsioonid')}
           </div>
           <h2 className="vp-display" style={{ fontSize: 64, margin: 0 }}>
-            {ru ? 'Покупки по категориям' : 'Osta kategooria järgi'}
+            {tx(locale, 'Покупки по категориям', 'Osta kategooria järgi')}
           </h2>
         </div>
         <Link
           href={lp('/tooted', locale)}
           style={{ fontFamily: 'JetBrains Mono', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.08em', borderBottom: 'var(--border)' }}
         >
-          {ru ? 'Смотреть все →' : 'Vaata kõiki →'}
+          {tx(locale, 'Смотреть все →', 'Vaata kõiki →')}
         </Link>
       </div>
 
@@ -59,7 +60,7 @@ export default async function CategoryGrid() {
           // Catalog filters by ?cat=<collection name>; path segments like
           // /tooted/laeprofiilid have no route and 404.
           const href = lp(`/tooted?cat=${encodeURIComponent(cat.collectionKey)}`, locale);
-          const label = ru ? cat.labelRu : cat.labelEt;
+          const label = tx(locale, cat.labelRu, cat.labelEt);
 
           return (
             <Link key={cat.n} href={href} style={{ border: 'var(--border)', display: 'block', position: 'relative', textDecoration: 'none', color: 'inherit' }}>
@@ -78,7 +79,7 @@ export default async function CategoryGrid() {
               {/* Card footer */}
               <div style={{ padding: '18px 18px 20px' }}>
                 <div className="vp-eyebrow">
-                  {cat.n} / {count} {ru ? 'товаров' : 'toodet'}
+                  {cat.n} / {count} {tx(locale, 'товаров', 'toodet')}
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 6 }}>
                   <span className="vp-display" style={{ fontSize: 28 }}>{label}</span>

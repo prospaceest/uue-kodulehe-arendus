@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { useTx } from '@/lib/useTx';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { products, productUrl } from '@/lib/catalog';
@@ -87,6 +88,7 @@ function SceneImage({ scene, selectedIdx, onSelect, lightOn }: { scene: Scene; s
 }
 
 function Lightbox({ sceneIdx, setSceneIdx, onClose, ru }: { sceneIdx: number; setSceneIdx: (i: number) => void; onClose: () => void; ru: boolean }) {
+  const tx = useTx();
   const [selectedHotspot, setSelectedHotspot] = useState(0);
   const [lightOn, setLightOn] = useState(true);
   const scene = SCENES[sceneIdx];
@@ -110,7 +112,7 @@ function Lightbox({ sceneIdx, setSceneIdx, onClose, ru }: { sceneIdx: number; se
   }, [handleKey]);
 
   // Find product URL
-  const locale = ru ? 'ru' : 'et';
+  const locale = useLocale();
   const product = products.find((p) => p.sku === sel.sku || p.sku === sel.sku.replace('AST1412', 'AST14_12'));
   const productHref = product ? productUrl(product, ru) : lp('/tooted', locale);
 
@@ -123,7 +125,7 @@ function Lightbox({ sceneIdx, setSceneIdx, onClose, ru }: { sceneIdx: number; se
           {SCENES.map((s, i) => (
             <button key={s.id} onClick={() => setSceneIdx(i)} style={{ flex: 1, padding: '18px 16px', background: sceneIdx === i ? 'rgba(255,255,255,0.08)' : 'transparent', border: 'none', borderRight: '1px solid rgba(255,255,255,0.15)', color: sceneIdx === i ? '#fff' : 'rgba(255,255,255,0.5)', fontFamily: 'JetBrains Mono, monospace', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.1em', cursor: 'pointer', textAlign: 'left' }}>
               <div style={{ fontSize: 10, opacity: 0.7, marginBottom: 4 }}>{s.eyebrow}</div>
-              <div>{ru ? s.nameRu : s.nameEt}</div>
+              <div>{tx(s.nameRu, s.nameEt)}</div>
             </button>
           ))}
         </div>
@@ -136,10 +138,10 @@ function Lightbox({ sceneIdx, setSceneIdx, onClose, ru }: { sceneIdx: number; se
         {/* Light toggle */}
         <div style={{ display: 'flex', borderTop: '1px solid rgba(255,255,255,0.15)', flexShrink: 0 }}>
           <button onClick={() => setLightOn(true)} style={{ flex: 1, padding: '14px', background: lightOn ? 'rgba(255,255,255,0.1)' : 'transparent', border: 'none', borderRight: '1px solid rgba(255,255,255,0.15)', color: '#fff', fontFamily: 'JetBrains Mono, monospace', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.1em', cursor: 'pointer' }}>
-            ☀ {ru ? 'Дневной свет' : 'Päevavalgus'}
+            ☀ {tx('Дневной свет', 'Päevavalgus')}
           </button>
           <button onClick={() => setLightOn(false)} style={{ flex: 1, padding: '14px', background: !lightOn ? 'rgba(255,255,255,0.1)' : 'transparent', border: 'none', color: '#fff', fontFamily: 'JetBrains Mono, monospace', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.1em', cursor: 'pointer' }}>
-            ☾ LED {ru ? 'включён' : 'sees'}
+            ☾ LED {tx('включён', 'sees')}
           </button>
         </div>
       </div>
@@ -149,30 +151,30 @@ function Lightbox({ sceneIdx, setSceneIdx, onClose, ru }: { sceneIdx: number; se
         {/* Header */}
         <div style={{ padding: '20px 24px', borderBottom: '1px solid rgba(255,255,255,0.15)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0 }}>
           <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.6)' }}>
-            {ru ? 'Сцена' : 'Stseen'} {sceneIdx + 1} / {SCENES.length}
+            {tx('Сцена', 'Stseen')} {sceneIdx + 1} / {SCENES.length}
           </span>
           <button onClick={onClose} style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.3)', color: '#fff', padding: '6px 12px', cursor: 'pointer', fontFamily: 'JetBrains Mono, monospace', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-            {ru ? 'Закрыть ✕' : 'Sulge ✕'}
+            {tx('Закрыть ✕', 'Sulge ✕')}
           </button>
         </div>
 
         {/* Selected hotspot product info */}
         <div style={{ padding: '32px 28px', borderBottom: '1px solid rgba(255,255,255,0.15)', flexShrink: 0 }}>
           <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.55)', marginBottom: 8 }}>
-            {ru ? 'Выбрано · Точка' : 'Valitud · Täpp'} {String(selectedHotspot + 1).padStart(2, '0')}
+            {tx('Выбрано · Точка', 'Valitud · Täpp')} {String(selectedHotspot + 1).padStart(2, '0')}
           </div>
           <div style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: 56, lineHeight: 0.95, marginBottom: 6 }}>{sel.sku}</div>
-          <div style={{ fontSize: 16, color: 'rgba(255,255,255,0.75)', marginBottom: 18 }}>{ru ? sel.labelRu : sel.label}</div>
+          <div style={{ fontSize: 16, color: 'rgba(255,255,255,0.75)', marginBottom: 18 }}>{tx(sel.labelRu, sel.label)}</div>
           <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 24 }}>{sel.price} €/m</div>
           <Link href={productHref} onClick={onClose} className="vp-btn" style={{ display: 'flex', justifyContent: 'center', background: '#fff', color: '#000', borderColor: '#fff' }}>
-            {ru ? 'Смотреть товар →' : 'Vaata toodet →'}
+            {tx('Смотреть товар →', 'Vaata toodet →')}
           </Link>
         </div>
 
         {/* All hotspots in this scene */}
         <div style={{ padding: '20px 28px', flex: 1, overflowY: 'auto' }}>
           <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.55)', marginBottom: 12 }}>
-            {ru ? 'Всё в этой комнате' : 'Kõik selles ruumis'}
+            {tx('Всё в этой комнате', 'Kõik selles ruumis')}
           </div>
           {scene.hotspots.map((h, i) => (
             <button key={i} onClick={() => setSelectedHotspot(i)} style={{ display: 'flex', alignItems: 'center', gap: 14, width: '100%', padding: '12px 0', background: 'transparent', border: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)', color: 'inherit', cursor: 'pointer', textAlign: 'left' }}>
@@ -181,7 +183,7 @@ function Lightbox({ sceneIdx, setSceneIdx, onClose, ru }: { sceneIdx: number; se
               </div>
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontWeight: 600, fontSize: 14 }}>{h.sku}</div>
-                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{ru ? h.labelRu : h.label}</div>
+                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{tx(h.labelRu, h.label)}</div>
               </div>
               <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: 'rgba(255,255,255,0.6)' }}>→</div>
             </button>
@@ -191,7 +193,7 @@ function Lightbox({ sceneIdx, setSceneIdx, onClose, ru }: { sceneIdx: number; se
         {/* Bottom CTA */}
         <div style={{ padding: '20px 28px', borderTop: '1px solid rgba(255,255,255,0.15)', flexShrink: 0 }}>
           <Link href={lp('/tooted', locale)} onClick={onClose} className="vp-btn" style={{ display: 'flex', justifyContent: 'center', background: 'transparent', color: '#fff', borderColor: 'rgba(255,255,255,0.55)' }}>
-            {ru ? 'Заказать такое же →' : 'Telli sama lahendus →'}
+            {tx('Заказать такое же →', 'Telli sama lahendus →')}
           </Link>
         </div>
       </div>
@@ -202,6 +204,7 @@ function Lightbox({ sceneIdx, setSceneIdx, onClose, ru }: { sceneIdx: number; se
 export default function InteractiveShowroom() {
   const locale = useLocale();
   const ru = locale === 'ru';
+  const tx = useTx();
   const [sceneIdx, setSceneIdx] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const scene = SCENES[sceneIdx];
@@ -218,29 +221,27 @@ export default function InteractiveShowroom() {
           {/* Text + controls */}
           <div>
             <div className="vp-eyebrow" style={{ color: 'rgba(255,255,255,0.6)', marginBottom: 14 }}>
-              {ru ? '01 / Смотрите в действии' : '01 / Vaata kasutuses'}
+              {tx('01 / Смотрите в действии', '01 / Vaata kasutuses')}
             </div>
             <h2 className="vp-display" style={{ fontSize: 72, margin: 0, lineHeight: 0.95 }}>
-              {ru ? 'Одна комната.' : 'Üks ruum.'}<br />
-              {ru ? 'Несколько профилей.' : 'Mitu profiili.'}
+              {tx('Одна комната.', 'Üks ruum.')}<br />
+              {tx('Несколько профилей.', 'Mitu profiili.')}
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.6, opacity: 0.75, marginTop: 24, maxWidth: 420 }}>
-              {ru
-                ? 'Откройте виртуальный шоурум и нажимайте на номера, чтобы увидеть, какой профиль где использовать.'
-                : 'Ava virtuaalne showroom ning kliki numbritele, et näha millist profiili kuskil kasutada.'}
+              {tx('Откройте виртуальный шоурум и нажимайте на номера, чтобы увидеть, какой профиль где использовать.', 'Ava virtuaalne showroom ning kliki numbritele, et näha millist profiili kuskil kasutada.')}
             </p>
 
             {/* Scene picker */}
             <div style={{ display: 'flex', marginTop: 28, border: '1px solid rgba(255,255,255,0.25)' }}>
               {SCENES.map((s, i) => (
                 <button key={s.id} onClick={() => setSceneIdx(i)} style={{ flex: 1, padding: '14px 12px', background: sceneIdx === i ? 'var(--paper)' : 'transparent', color: sceneIdx === i ? 'var(--ink)' : 'rgba(255,255,255,0.85)', border: 'none', borderRight: i < SCENES.length - 1 ? '1px solid rgba(255,255,255,0.25)' : 'none', fontFamily: 'JetBrains Mono, monospace', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', cursor: 'pointer' }}>
-                  {ru ? s.nameRu : s.nameEt}
+                  {tx(s.nameRu, s.nameEt)}
                 </button>
               ))}
             </div>
 
             <button onClick={() => setLightboxOpen(true)} className="vp-btn vp-btn--lg" style={{ background: 'var(--paper)', color: 'var(--ink)', borderColor: 'var(--paper)', marginTop: 18 }}>
-              {ru ? 'Открыть виртуальный шоурум' : 'Ava interaktiivne showroom'}
+              {tx('Открыть виртуальный шоурум', 'Ava interaktiivne showroom')}
             </button>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import '@/app/globals.css';
+import { tx } from '@/lib/tx';
 import type { Metadata, Viewport } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -12,7 +13,7 @@ import Footer from '@/components/layout/Footer';
 import { CartProvider } from '@/lib/cart';
 import JsonLd from '@/components/seo/JsonLd';
 import { site } from '@/lib/site';
-import { marketForLocale, type Market } from '@/lib/markets';
+import { marketForLocale, type Market, OG_LOCALE } from '@/lib/markets';
 
 // Site-wide structured data. Organization identifies the business (used for
 // knowledge-panel / brand entity); WebSite names the site. Firmafaktid tulevad
@@ -68,21 +69,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: {
       template: `%s | ${market.storefront}`,
-      default: ru
-        ? 'Varjuprofiilid.ee — Алюминиевые теневые профили'
-        : 'Varjuprofiilid.ee — Alumiinium varjuprofiilid',
+      default: tx(locale, 'Varjuprofiilid.ee — Алюминиевые теневые профили', 'Varjuprofiilid.ee — Alumiinium varjuprofiilid'),
     },
-    description: ru
-      ? 'Алюминиевые теневые профили с LED-подсветкой и декоративные — для потолка, пола, стены. PROSPACE OÜ, Таллинн.'
-      : 'Alumiinium varjuprofiilid LED-valgustusega ja dekoratiivsed — laele, põrandale, seinale. PROSPACE OÜ, Tallinn.',
+    description: tx(locale, 'Алюминиевые теневые профили с LED-подсветкой и декоративные — для потолка, пола, стены. PROSPACE OÜ, Таллинн.', 'Alumiinium varjuprofiilid LED-valgustusega ja dekoratiivsed — laele, põrandale, seinale. PROSPACE OÜ, Tallinn.'),
     // Turu päritolu, mitte kõva domeen: .fi lehtede OG- ja pildilingid peavad
     // jääma prospace.fi peale, muidu satub jagaja Eesti saidile.
     metadataBase: new URL(market.origin),
     openGraph: {
       siteName: market.storefront,
       type: 'website',
-      locale: ru ? 'ru_RU' : 'et_EE',
-      alternateLocale: ru ? 'et_EE' : 'ru_RU',
+      locale: OG_LOCALE[locale] ?? 'et_EE',
+      alternateLocale: market.locales.filter((l) => l !== locale).map((l) => OG_LOCALE[l]),
       images: [{ url: '/assets/hero-hoeljuv-lagi.jpg', width: 1200, height: 630, alt: 'Varjuprofiilid — hõljuva lae efekt' }],
     },
     twitter: {

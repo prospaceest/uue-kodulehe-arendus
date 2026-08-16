@@ -1,4 +1,5 @@
 import { getLocale } from 'next-intl/server';
+import { tx } from '@/lib/tx';
 import { marketForLocale } from '@/lib/markets';
 
 const TILES = [
@@ -29,19 +30,17 @@ export default async function InstagramFeed() {
       <div style={{ padding: '64px 56px 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 24, flexWrap: 'wrap' }}>
         <div>
           <div className="vp-eyebrow" style={{ marginBottom: 10 }}>
-            {ru ? '06 / Соцсети' : '06 / Sotsiaalmeedia'}
+            {tx(locale, '06 / Соцсети', '06 / Sotsiaalmeedia')}
           </div>
           <h2 className="vp-display" style={{ fontSize: 64, margin: 0, lineHeight: 0.95 }}>
             {market.social.instagramHandle}
           </h2>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--ink-2)', maxWidth: 520, marginTop: 14 }}>
-            {ru
-              ? 'Следите за нами в Instagram — вдохновение и последние тренды.'
-              : 'Jälgi meid Instagrammis, saa inspiratsiooni ja ole alati kursis viimaste suundadega.'}
+            {tx(locale, 'Следите за нами в Instagram — вдохновение и последние тренды.', 'Jälgi meid Instagrammis, saa inspiratsiooni ja ole alati kursis viimaste suundadega.')}
           </p>
         </div>
         <a href={market.social.instagram} target="_blank" rel="noopener noreferrer" className="vp-btn vp-btn--ghost" style={{ alignSelf: 'flex-end' }}>
-          {ru ? 'Подписаться в Instagram →' : 'Jälgi Instagramis →'}
+          {tx(locale, 'Подписаться в Instagram →', 'Jälgi Instagramis →')}
         </a>
       </div>
 
@@ -51,10 +50,10 @@ export default async function InstagramFeed() {
           {loop.map((tile, i) => (
             <a key={i} href={market.social.instagram} target="_blank" rel="noopener noreferrer" className="vp-ig-tile">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={tile.img} alt={tile.cap} loading="lazy" />
+              <img src={tile.img} alt={tx(locale, tile.cap, tile.cap)} loading="lazy" />
               <span className="vp-ig-corner" />
               <div className="vp-ig-tile-meta">
-                <div className="vp-ig-tile-caption">{tile.cap}</div>
+                <div className="vp-ig-tile-caption">{tx(locale, tile.cap, tile.cap)}</div>
                 <div className="vp-ig-tile-stats">
                   <span>♥ {tile.likes}</span>
                   <span>◷ {tile.comments}</span>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTx } from '@/lib/useTx';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { site } from '@/lib/site';
@@ -17,6 +18,7 @@ const FAQ_ITEMS = [
 export default function ContactPage() {
   const locale = useLocale();
   const ru = locale === 'ru';
+  const tx = useTx();
 
   const [form, setForm] = useState({ name: '', email: '', topic: '', message: '' });
   const [loading, setLoading] = useState(false);
@@ -47,16 +49,14 @@ export default function ContactPage() {
       <section style={{ padding: '56px 56px 40px', borderBottom: 'var(--border)', display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 48, alignItems: 'end' }}>
         <div>
           <div className="vp-eyebrow" style={{ marginBottom: 10 }}>
-            {ru ? 'Приходите · звоните · пишите' : 'Külasta · helista · kirjuta'}
+            {tx('Приходите · звоните · пишите', 'Külasta · helista · kirjuta')}
           </div>
           <h1 className="vp-display" style={{ fontSize: 'clamp(72px, 11vw, 180px)', margin: 0, lineHeight: 0.9 }}>
-            {ru ? 'Заходите в гости.' : 'Tule külla.'}
+            {tx('Заходите в гости.', 'Tule külla.')}
           </h1>
         </div>
         <p style={{ fontSize: 16, lineHeight: 1.65, color: 'var(--ink-2)', margin: '0 0 8px', maxWidth: 480 }}>
-          {ru
-            ? 'Хотите ли вы сделать дом уютнее или создать современные функциональные рабочие пространства — мы здесь, чтобы предложить уникальные решения для каждого проекта.'
-            : 'Olgu tegemist erakliendi sooviga kujundada kodu hubasemaks või ärikliendi sooviga luua kaasaegseid ja funktsionaalseid töökeskkondi — oleme siin, et pakkuda unikaalseid lahendusi igale projektile.'}
+          {tx('Хотите ли вы сделать дом уютнее или создать современные функциональные рабочие пространства — мы здесь, чтобы предложить уникальные решения для каждого проекта.', 'Olgu tegemist erakliendi sooviga kujundada kodu hubasemaks või ärikliendi sooviga luua kaasaegseid ja funktsionaalseid töökeskkondi — oleme siin, et pakkuda unikaalseid lahendusi igale projektile.')}
         </p>
       </section>
 
@@ -65,9 +65,9 @@ export default function ContactPage() {
         <div style={{ padding: '48px', borderRight: 'var(--border)' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16, marginBottom: 18 }}>
             <div>
-              <div className="vp-eyebrow" style={{ marginBottom: 10 }}>{ru ? 'Салон' : 'Salong'}</div>
+              <div className="vp-eyebrow" style={{ marginBottom: 10 }}>{tx('Салон', 'Salong')}</div>
               <h2 className="vp-display" style={{ fontSize: 48, margin: 0 }}>
-                {ru ? 'Таллинн · Vana-Kalamaja' : 'Tallinn · Vana-Kalamaja'}
+                {tx('Таллинн · Vana-Kalamaja', 'Tallinn · Vana-Kalamaja')}
               </h2>
             </div>
             <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
@@ -79,23 +79,23 @@ export default function ContactPage() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '14px 18px', fontSize: 15, lineHeight: 1.55 }}>
-            <span className="vp-eyebrow" style={{ alignSelf: 'start', paddingTop: 2 }}>{ru ? 'Адрес' : 'Aadress'}</span>
+            <span className="vp-eyebrow" style={{ alignSelf: 'start', paddingTop: 2 }}>{tx('Адрес', 'Aadress')}</span>
             <span>
               {site.addressLine1}<br />{site.addressLine2}
               <span style={{ display: 'block', marginTop: 8, fontSize: 13, color: 'var(--ink-2)' }}>
-                {ru ? 'Если едете на машине — улица Kesk-Kalamaja ведёт прямо к салону.' : 'Kui tuled autoga, siis Kesk-Kalamaja tänav toob otse salongi ette.'}
+                {tx('Если едете на машине — улица Kesk-Kalamaja ведёт прямо к салону.', 'Kui tuled autoga, siis Kesk-Kalamaja tänav toob otse salongi ette.')}
               </span>
             </span>
-            <span className="vp-eyebrow" style={{ alignSelf: 'center' }}>{ru ? 'Телефон' : 'Telefon'}</span>
+            <span className="vp-eyebrow" style={{ alignSelf: 'center' }}>{tx('Телефон', 'Telefon')}</span>
             <span><a href={site.phoneUrl} style={{ color: 'inherit', textDecoration: 'none' }}>{site.phone}</a></span>
             <span className="vp-eyebrow" style={{ alignSelf: 'center' }}>E-mail</span>
             <span><a href={site.emailUrl} style={{ color: 'inherit', textDecoration: 'none' }}>{site.email}</a></span>
-            <span className="vp-eyebrow" style={{ alignSelf: 'start', paddingTop: 2 }}>{ru ? 'Время работы' : 'Tööaeg'}</span>
+            <span className="vp-eyebrow" style={{ alignSelf: 'start', paddingTop: 2 }}>{tx('Время работы', 'Tööaeg')}</span>
             <span>
-              {ru ? 'Пн–Пт 10:00–17:00' : 'E–R 10:00–17:00'}<br />
-              {ru ? 'Сб–Вс по договорённости' : 'L–P kokkuleppel'}
+              {tx('Пн–Пт 10:00–17:00', 'E–R 10:00–17:00')}<br />
+              {tx('Сб–Вс по договорённости', 'L–P kokkuleppel')}
               <span style={{ display: 'block', marginTop: 8, fontSize: 13, color: 'var(--ink-2)' }}>
-                {ru ? 'Чтобы предложить максимально персональный опыт, просим заранее забронировать визит — онлайн, по телефону или e-mail.' : 'Et saaksime pakkuda võimalikult personaalset kogemust, palume salongi külastus eelnevalt kokku leppida — broneeri online, helista või kirjuta.'}
+                {tx('Чтобы предложить максимально персональный опыт, просим заранее забронировать визит — онлайн, по телефону или e-mail.', 'Et saaksime pakkuda võimalikult personaalset kogemust, palume salongi külastus eelnevalt kokku leppida — broneeri online, helista või kirjuta.')}
               </span>
             </span>
           </div>
@@ -103,10 +103,10 @@ export default function ContactPage() {
           <div style={{ marginTop: 32, padding: '18px 22px', border: 'var(--border)', background: 'var(--paper-2)', display: 'flex', alignItems: 'center', gap: 18 }}>
             <span style={{ fontSize: 32 }}>◉</span>
             <div style={{ flex: 1 }}>
-              <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 2 }}>{ru ? 'Забронировать 1:1 консультацию' : 'Broneeri 1:1 konsultatsioon'}</div>
-              <div style={{ fontSize: 12, color: 'var(--ink-2)' }}>{ru ? 'Часовая встреча со специалистом · бесплатно' : 'Tunniajane kohtumine spetsialistiga · tasuta'}</div>
+              <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 2 }}>{tx('Забронировать 1:1 консультацию', 'Broneeri 1:1 konsultatsioon')}</div>
+              <div style={{ fontSize: 12, color: 'var(--ink-2)' }}>{tx('Часовая встреча со специалистом · бесплатно', 'Tunniajane kohtumine spetsialistiga · tasuta')}</div>
             </div>
-            <a href={site.booking} target="_blank" rel="noopener" className="vp-btn" style={{ whiteSpace: 'nowrap' }}>{ru ? 'Забронировать →' : 'Broneeri →'}</a>
+            <a href={site.booking} target="_blank" rel="noopener" className="vp-btn" style={{ whiteSpace: 'nowrap' }}>{tx('Забронировать →', 'Broneeri →')}</a>
           </div>
         </div>
 
@@ -118,44 +118,44 @@ export default function ContactPage() {
       <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderBottom: 'var(--border)' }}>
         <div style={{ minHeight: 480, borderRight: 'var(--border)', position: 'relative' }}>
           <iframe
-            title={ru ? 'Карта салона' : 'Salongi kaart'}
+            title={tx('Карта салона', 'Salongi kaart')}
             src={site.osmEmbed}
             style={{ width: '100%', height: '100%', position: 'absolute', inset: 0, border: 0, filter: 'grayscale(0.4) contrast(1.05)' }}
             loading="lazy"
           />
           <a href={`https://www.google.com/maps/search/?api=1&query=${site.mapsQuery}`} target="_blank" rel="noopener" className="vp-mono" style={{ position: 'absolute', left: 16, bottom: 16, background: 'var(--paper)', border: 'var(--border)', padding: '8px 12px', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', textDecoration: 'none', color: 'var(--ink)' }}>
-            {ru ? 'Открыть в картах →' : 'Ava kaardirakenduses →'}
+            {tx('Открыть в картах →', 'Ava kaardirakenduses →')}
           </a>
         </div>
 
         <div style={{ padding: '48px', background: 'var(--paper-2)' }}>
-          <div className="vp-eyebrow" style={{ marginBottom: 10 }}>{ru ? 'Отправить сообщение' : 'Saada sõnum'}</div>
+          <div className="vp-eyebrow" style={{ marginBottom: 10 }}>{tx('Отправить сообщение', 'Saada sõnum')}</div>
           <h2 className="vp-display" style={{ fontSize: 42, margin: '0 0 22px' }}>
-            {ru ? 'Ответим не позднее, чем через 24 ч' : 'Vastame hiljemalt 24 tunni jooksul'}
+            {tx('Ответим не позднее, чем через 24 ч', 'Vastame hiljemalt 24 tunni jooksul')}
           </h2>
 
           {success ? (
             <div style={{ padding: '32px 24px', border: 'var(--border)', background: 'var(--paper)', textAlign: 'center' }}>
               <div className="vp-display" style={{ fontSize: 48, marginBottom: 12 }}>✓</div>
               <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--ink-2)' }}>
-                {ru ? 'Спасибо — ответим в течение 24 часов.' : 'Aitäh — vastame 24 tunni jooksul.'}
+                {tx('Спасибо — ответим в течение 24 часов.', 'Aitäh — vastame 24 tunni jooksul.')}
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} style={{ display: 'grid', gap: 10 }}>
-              <input className="vp-input" placeholder={ru ? 'Имя' : 'Nimi'} required value={form.name} onChange={update('name')} />
+              <input className="vp-input" placeholder={tx('Имя', 'Nimi')} required value={form.name} onChange={update('name')} />
               <input className="vp-input" type="email" placeholder="E-mail" required value={form.email} onChange={update('email')} />
               <select className="vp-input" value={form.topic} onChange={update('topic')} style={{ cursor: 'pointer' }}>
-                <option value="">{ru ? 'Тема — выберите...' : 'Teema — vali...'}</option>
-                <option>{ru ? 'Запрос по товару' : 'Toote päring'}</option>
-                <option>{ru ? 'Оптовые цены / B2B' : 'Hulgihinnad / B2B'}</option>
-                <option>{ru ? 'Техподдержка' : 'Tehniline tugi'}</option>
-                <option>{ru ? 'RAL-заказ' : 'RAL-tellimus'}</option>
-                <option>{ru ? 'Другое' : 'Muu'}</option>
+                <option value="">{tx('Тема — выберите...', 'Teema — vali...')}</option>
+                <option>{tx('Запрос по товару', 'Toote päring')}</option>
+                <option>{tx('Оптовые цены / B2B', 'Hulgihinnad / B2B')}</option>
+                <option>{tx('Техподдержка', 'Tehniline tugi')}</option>
+                <option>{tx('RAL-заказ', 'RAL-tellimus')}</option>
+                <option>{tx('Другое', 'Muu')}</option>
               </select>
-              <textarea className="vp-input" rows={5} placeholder={ru ? 'Сообщение...' : 'Sõnum...'} required value={form.message} onChange={update('message')} />
+              <textarea className="vp-input" rows={5} placeholder={tx('Сообщение...', 'Sõnum...')} required value={form.message} onChange={update('message')} />
               <button type="submit" className="vp-btn vp-btn--block" disabled={loading}>
-                {loading ? (ru ? 'Отправка…' : 'Saadan…') : (ru ? 'Отправить →' : 'Saada sõnum →')}
+                {loading ? (tx('Отправка…', 'Saadan…')) : (tx('Отправить →', 'Saada sõnum →'))}
               </button>
             </form>
           )}
@@ -165,19 +165,19 @@ export default function ContactPage() {
       {/* FAQ */}
       <section style={{ padding: '56px', borderBottom: 'var(--border)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 28, flexWrap: 'wrap', gap: 16 }}>
-          <h2 className="vp-display" style={{ fontSize: 48, margin: 0 }}>{ru ? 'Часто задаваемые' : 'Korduvad küsimused'}</h2>
+          <h2 className="vp-display" style={{ fontSize: 48, margin: 0 }}>{tx('Часто задаваемые', 'Korduvad küsimused')}</h2>
           <Link href={lp(`/kkk`, locale)} className="vp-mono" style={{ fontSize: 12, textTransform: 'uppercase', borderBottom: 'var(--border)', paddingBottom: 2 }}>
-            {ru ? 'Все вопросы →' : 'Kõik KKK-d →'}
+            {tx('Все вопросы →', 'Kõik KKK-d →')}
           </Link>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 56px' }}>
           {FAQ_ITEMS.map(({ q, a }, i) => (
             <div key={i} onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ padding: '18px 0', borderBottom: '1px solid rgba(0,0,0,0.15)', cursor: 'pointer' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 18 }}>
-                <span style={{ fontSize: 16, fontWeight: 500 }}>{ru ? q[1] : q[0]}</span>
+                <span style={{ fontSize: 16, fontWeight: 500 }}>{tx(q[1], q[0])}</span>
                 <span style={{ fontSize: 22, lineHeight: 1, color: openFaq === i ? 'var(--ink)' : 'var(--muted)' }}>{openFaq === i ? '−' : '+'}</span>
               </div>
-              {openFaq === i && <div style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--ink-2)', marginTop: 12, paddingRight: 32 }}>{ru ? a[1] : a[0]}</div>}
+              {openFaq === i && <div style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--ink-2)', marginTop: 12, paddingRight: 32 }}>{tx(a[1], a[0])}</div>}
             </div>
           ))}
         </div>

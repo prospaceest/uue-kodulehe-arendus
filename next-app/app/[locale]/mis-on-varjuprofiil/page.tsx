@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { tx, txList } from '@/lib/tx';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 import JsonLd from '@/components/seo/JsonLd';
@@ -9,12 +10,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const ru = locale === 'ru';
   return {
-    title: ru
-      ? 'Что такое теневой профиль? Полное руководство'
-      : 'Mis on varjuprofiil? Täielik juhend',
-    description: ru
-      ? 'Теневой профиль — алюминиевый профиль, создающий намеренную теневую линию между двумя поверхностями. Словарь терминов, типы, LED и декоративные, монтаж и FAQ.'
-      : 'Varjuprofiil (ingl shadow gap profile) on alumiiniumprofiil, mis loob kahe pinna vahele tahtliku varjujoone. Sõnastik, tüübid, LED vs dekoratiivne, paigaldusnõuanded ja KKK.',
+    title: tx(locale, 'Что такое теневой профиль? Полное руководство', 'Mis on varjuprofiil? Täielik juhend'),
+    description: tx(locale, 'Теневой профиль — алюминиевый профиль, создающий намеренную теневую линию между двумя поверхностями. Словарь терминов, типы, LED и декоративные, монтаж и FAQ.', 'Varjuprofiil (ingl shadow gap profile) on alumiiniumprofiil, mis loob kahe pinna vahele tahtliku varjujoone. Sõnastik, tüübid, LED vs dekoratiivne, paigaldusnõuanded ja KKK.'),
     alternates: pageAlternates('/mis-on-varjuprofiil', locale),
     // Soome/rootsi title + description (lib/pageMeta.ts) kirjutavad
     // ülemised read üle; eesti ja vene keele puhul on see tühi objekt.
@@ -86,32 +83,30 @@ export default async function MisOnVarjuprofiilPage() {
       {/* Hero */}
       <section style={{ padding: '72px 56px 48px', borderBottom: 'var(--border)' }}>
         <div className="vp-eyebrow" style={{ marginBottom: 14 }}>
-          <Link href={lp('/', locale)}>{ru ? 'Главная' : 'Avaleht'}</Link>
+          <Link href={lp('/', locale)}>{tx(locale, 'Главная', 'Avaleht')}</Link>
           {' / '}
-          <span style={{ color: 'var(--ink)' }}>{ru ? 'Что такое теневой профиль' : 'Mis on varjuprofiil'}</span>
+          <span style={{ color: 'var(--ink)' }}>{tx(locale, 'Что такое теневой профиль', 'Mis on varjuprofiil')}</span>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'flex-end' }}>
           <div>
             <div className="vp-eyebrow" style={{ marginBottom: 14 }}>
-              {ru ? 'Словарь · Определение · ~8 мин чтения' : 'Sõnastik · Definitsioon · Lugemisaeg ~8 min'}
+              {tx(locale, 'Словарь · Определение · ~8 мин чтения', 'Sõnastik · Definitsioon · Lugemisaeg ~8 min')}
             </div>
             <h1 className="vp-display" style={{ fontSize: 'clamp(56px, 8vw, 112px)', margin: 0, lineHeight: 0.9 }}>
-              {ru ? 'Что такое' : 'Mis on'}<br />
+              {tx(locale, 'Что такое', 'Mis on')}<br />
               <span style={{ fontFamily: "'Inter', serif", fontStyle: 'italic', fontWeight: 300, fontSize: '0.55em', letterSpacing: '-0.02em' }}>
-                {ru ? 'теневой профиль?' : 'varjuprofiil?'}
+                {tx(locale, 'теневой профиль?', 'varjuprofiil?')}
               </span>
             </h1>
           </div>
           <div style={{ paddingBottom: 8 }}>
             <p style={{ fontSize: 18, lineHeight: 1.65, color: 'var(--ink-2)', margin: 0 }}>
-              {ru
-                ? 'Теневой профиль — это алюминиевый профиль, который монтируется в месте соединения двух поверхностей так, чтобы создать намеренную, равномерную теневую линию. По-английски известен как shadow gap profile.'
-                : 'Varjuprofiil on alumiiniumprofiil, mis paigaldatakse kahe pinna ühenduskohta nii, et tekib tahtlik, ühtlane varjujoon. Inglise keeles tuntakse seda kui shadow gap profile.'}
+              {tx(locale, 'Теневой профиль — это алюминиевый профиль, который монтируется в месте соединения двух поверхностей так, чтобы создать намеренную, равномерную теневую линию. По-английски известен как shadow gap profile.', 'Varjuprofiil on alumiiniumprofiil, mis paigaldatakse kahe pinna ühenduskohta nii, et tekib tahtlik, ühtlane varjujoon. Inglise keeles tuntakse seda kui shadow gap profile.')}
             </p>
             <div style={{ display: 'flex', gap: 32, marginTop: 24, fontFamily: 'JetBrains Mono, monospace', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              <div><div style={{ color: 'var(--muted)', marginBottom: 4 }}>{ru ? 'Термин' : 'Termin'}</div><div>varjuprofiil</div></div>
+              <div><div style={{ color: 'var(--muted)', marginBottom: 4 }}>{tx(locale, 'Термин', 'Termin')}</div><div>{tx(locale, 'varjuprofiil', 'varjuprofiil')}</div></div>
               <div><div style={{ color: 'var(--muted)', marginBottom: 4 }}>EN</div><div>shadow gap profile</div></div>
-              <div><div style={{ color: 'var(--muted)', marginBottom: 4 }}>{ru ? 'Материал' : 'Materjal'}</div><div>Alu 6063-T5</div></div>
+              <div><div style={{ color: 'var(--muted)', marginBottom: 4 }}>{tx(locale, 'Материал', 'Materjal')}</div><div>Alu 6063-T5</div></div>
             </div>
           </div>
         </div>
@@ -121,16 +116,16 @@ export default async function MisOnVarjuprofiilPage() {
       <section style={{ padding: '32px 56px', borderBottom: 'var(--border)', background: 'var(--paper-2)' }}>
         <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', fontFamily: 'JetBrains Mono, monospace', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
           {[
-            ['#definitsioon', ru ? '01 / Определение' : '01 / Definitsioon'],
-            ['#paitolu', ru ? '02 / Происхождение' : '02 / Päritolu'],
-            ['#tyybid', ru ? '03 / Типы' : '03 / Tüübid'],
-            ['#led', ru ? '04 / LED vs деко' : '04 / LED vs deko'],
-            ['#kasutusalad', ru ? '05 / Применение' : '05 / Kasutusalad'],
-            ['#eelised', ru ? '06 / Преимущества' : '06 / Eelised'],
-            ['#valik', ru ? '07 / Как выбрать' : '07 / Valikuabi'],
-            ['#paigaldus', ru ? '08 / Монтаж' : '08 / Paigaldus'],
-            ['#kkk', ru ? '09 / Вопросы' : '09 / KKK'],
-            ['#sonastik', ru ? '10 / Словарь' : '10 / Sõnastik'],
+            ['#definitsioon', tx(locale, '01 / Определение', '01 / Definitsioon')],
+            ['#paitolu', tx(locale, '02 / Происхождение', '02 / Päritolu')],
+            ['#tyybid', tx(locale, '03 / Типы', '03 / Tüübid')],
+            ['#led', tx(locale, '04 / LED vs деко', '04 / LED vs deko')],
+            ['#kasutusalad', tx(locale, '05 / Применение', '05 / Kasutusalad')],
+            ['#eelised', tx(locale, '06 / Преимущества', '06 / Eelised')],
+            ['#valik', tx(locale, '07 / Как выбрать', '07 / Valikuabi')],
+            ['#paigaldus', tx(locale, '08 / Монтаж', '08 / Paigaldus')],
+            ['#kkk', tx(locale, '09 / Вопросы', '09 / KKK')],
+            ['#sonastik', tx(locale, '10 / Словарь', '10 / Sõnastik')],
           ].map(([href, label]) => (
             <a key={href} href={href} style={{ color: 'var(--ink-2)', textDecoration: 'none', borderBottom: '1px solid rgba(0,0,0,0.15)', paddingBottom: 2 }}>{label}</a>
           ))}
@@ -140,29 +135,23 @@ export default async function MisOnVarjuprofiilPage() {
       {/* 01 Definitsioon */}
       <section id="definitsioon" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderBottom: 'var(--border)' }}>
         <div style={{ padding: '64px 56px', borderRight: 'var(--border)' }}>
-          <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{ru ? '01 / Определение' : '01 / Definitsioon'}</div>
+          <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{tx(locale, '01 / Определение', '01 / Definitsioon')}</div>
           <h2 className="vp-display" style={{ fontSize: 72, margin: '0 0 24px', lineHeight: 0.92 }}>
-            {ru ? 'Что значит варjuprofiil.' : 'Mida tähendab varjuprofiil.'}
+            {tx(locale, 'Что значит варjuprofiil.', 'Mida tähendab varjuprofiil.')}
           </h2>
           <p style={{ fontSize: 17, lineHeight: 1.75, color: 'var(--ink-2)', marginBottom: 24 }}>
-            {ru
-              ? 'Теневой профиль — это алюминиевый архитектурный профиль, который монтируется в месте соединения двух поверхностей (например, потолка и стены, стены и пола или двух слоёв стены) таким образом, что создаёт намеренную, равномерную теневую линию.'
-              : 'Varjuprofiil on alumiiniumist arhitektuurne profiil, mis paigaldatakse kahe pinna — näiteks lae ja seina, seina ja põranda, või kahe seinakihi — ühenduskohta nii, et tekitab tahtliku, ühtlase varjujoone. Selle asemel, et kaks pinda lihtsalt kohtuksid, jätab varjuprofiil nende vahele kontrollitud lõhe, mis muutub disaini-elemendiks.'}
+            {tx(locale, 'Теневой профиль — это алюминиевый архитектурный профиль, который монтируется в месте соединения двух поверхностей (например, потолка и стены, стены и пола или двух слоёв стены) таким образом, что создаёт намеренную, равномерную теневую линию.', 'Varjuprofiil on alumiiniumist arhitektuurne profiil, mis paigaldatakse kahe pinna — näiteks lae ja seina, seina ja põranda, või kahe seinakihi — ühenduskohta nii, et tekitab tahtliku, ühtlase varjujoone. Selle asemel, et kaks pinda lihtsalt kohtuksid, jätab varjuprofiil nende vahele kontrollitud lõhe, mis muutub disaini-elemendiks.')}
           </p>
           <p style={{ fontSize: 17, lineHeight: 1.75, color: 'var(--ink-2)' }}>
-            {ru
-              ? 'Независимо от того, устанавливается ли в профиль LED-лента или нет, его основная функция одна: создать контролируемую разделительную линию с тенью, которая делает помещение визуально чище, ровнее и архитектурно целостнее.'
-              : 'Hoolimata sellest, kas profiili soonde paigaldatakse LED-riba või mitte, on selle põhifunktsioon sama: luua kontrollitud varjuga eraldusjoon, mis muudab ruumi visuaalselt puhtamaks, sirgemaks ja arhitektuurselt terviklikumaks.'}
+            {tx(locale, 'Независимо от того, устанавливается ли в профиль LED-лента или нет, его основная функция одна: создать контролируемую разделительную линию с тенью, которая делает помещение визуально чище, ровнее и архитектурно целостнее.', 'Hoolimata sellest, kas profiili soonde paigaldatakse LED-riba või mitte, on selle põhifunktsioon sama: luua kontrollitud varjuga eraldusjoon, mis muudab ruumi visuaalselt puhtamaks, sirgemaks ja arhitektuurselt terviklikumaks.')}
           </p>
         </div>
         <div style={{ padding: '64px 56px', background: 'var(--paper-2)' }}>
-          <div className="vp-eyebrow" style={{ marginBottom: 18 }}>{ru ? 'Словарная запись' : 'Sõnastiku-kanne'}</div>
+          <div className="vp-eyebrow" style={{ marginBottom: 18 }}>{tx(locale, 'Словарная запись', 'Sõnastiku-kanne')}</div>
           <div style={{ border: 'var(--border)', padding: '28px 28px', background: 'var(--paper)', marginBottom: 24 }}>
-            <div className="vp-display" style={{ fontSize: 32, marginBottom: 8 }}>Varjuprofiil</div>
+            <div className="vp-display" style={{ fontSize: 32, marginBottom: 8 }}>{tx(locale, 'Varjuprofiil', 'Varjuprofiil')}</div>
             <div style={{ fontSize: 15, lineHeight: 1.65, color: 'var(--ink-2)' }}>
-              {ru
-                ? '(сущ.) – алюминиевый профиль для отделки соединения двух поверхностей намеренной теневой линией; архитектурная деталь в современном интерьере.'
-                : '(n.) – alumiiniumprofiil kahe pinna ühenduskoha viimistlemiseks tahtliku varjujoonega; arhitektuurne detail kaasaegses interjööris.'}
+              {tx(locale, '(сущ.) – алюминиевый профиль для отделки соединения двух поверхностей намеренной теневой линией; архитектурная деталь в современном интерьере.', '(n.) – alumiiniumprofiil kahe pinna ühenduskoha viimistlemiseks tahtliku varjujoonega; arhitektuurne detail kaasaegses interjööris.')}
             </div>
             <div style={{ marginTop: 16, fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: 'var(--muted)', display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <span>EN · shadow gap profile</span>
@@ -170,7 +159,7 @@ export default async function MisOnVarjuprofiilPage() {
             </div>
           </div>
           <blockquote style={{ margin: 0, paddingLeft: 20, borderLeft: '3px solid var(--accent)', fontStyle: 'italic', fontSize: 16, lineHeight: 1.65, color: 'var(--ink-2)' }}>
-            {ru ? '«Варjuprofiil — не плинтус. Плинтус закрывает — теневой профиль разделяет.»' : '"Varjuprofiil pole liist. Liist katab — varjuprofiil eraldab."'}
+            {tx(locale, '«Варjuprofiil — не плинтус. Плинтус закрывает — теневой профиль разделяет.»', '"Varjuprofiil pole liist. Liist katab — varjuprofiil eraldab."')}
           </blockquote>
         </div>
       </section>
@@ -179,26 +168,20 @@ export default async function MisOnVarjuprofiilPage() {
       <section id="paitolu" style={{ padding: '64px 56px', borderBottom: 'var(--border)' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 64 }}>
           <div>
-            <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{ru ? '02 / Происхождение' : '02 / Päritolu'}</div>
+            <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{tx(locale, '02 / Происхождение', '02 / Päritolu')}</div>
             <h2 className="vp-display" style={{ fontSize: 64, margin: 0, lineHeight: 0.92 }}>
-              {ru ? 'Откуда слово varjuprofiil.' : 'Kust tuleb sõna varjuprofiil.'}
+              {tx(locale, 'Откуда слово varjuprofiil.', 'Kust tuleb sõna varjuprofiil.')}
             </h2>
           </div>
           <div>
             <p style={{ fontSize: 17, lineHeight: 1.75, color: 'var(--ink-2)', marginBottom: 20 }}>
-              {ru
-                ? 'Корни термина уходят в модернистскую архитектуру начала XX века — Мис ван дер Роэ, Ле Корбюзье и школа Баухауса: сокращение конструктивных деталей и выражение переходов между поверхностями через свет и тень.'
-                : 'Termini juured ulatuvad modernistlikku arhitektuuri 20. sajandi algusest — Mies van der Rohe, Le Corbusier ja Bauhausi koolkond: ehitusdetailide vähendamine ja puhaste pindade vaheliste üleminekute väljendamine valguse ja varju kaudu.'}
+              {tx(locale, 'Корни термина уходят в модернистскую архитектуру начала XX века — Мис ван дер Роэ, Ле Корбюзье и школа Баухауса: сокращение конструктивных деталей и выражение переходов между поверхностями через свет и тень.', 'Termini juured ulatuvad modernistlikku arhitektuuri 20. sajandi algusest — Mies van der Rohe, Le Corbusier ja Bauhausi koolkond: ehitusdetailide vähendamine ja puhaste pindade vaheliste üleminekute väljendamine valguse ja varju kaudu.')}
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.75, color: 'var(--ink-2)', marginBottom: 20 }}>
-              {ru
-                ? 'По-английски говорят shadow gap или reveal — намеренный зазор, создающий тень там, где традиционное строительство использовало бы накладную планку. По-немецки — Schattenfuge (буквально «теневой шов»). На эстонском языке естественный перевод — varjuprofiil — алюминиевый профиль, создающий эту теневую линию.'
-                : 'Inglise keeles räägitakse shadow gap\'ist või reveal\'ist — tahtlikust lõhest, mis loob varju seal, kus traditsiooniline ehitus kasutaks katteliistu. Saksa keeles on termin Schattenfuge (sõna-sõnalt "varju-vuuk"). Eesti keeles on loomulik tõlge varjuprofiil — alumiiniumprofiil, mis selle varjujoone tekitab.'}
+              {tx(locale, 'По-английски говорят shadow gap или reveal — намеренный зазор, создающий тень там, где традиционное строительство использовало бы накладную планку. По-немецки — Schattenfuge (буквально «теневой шов»). На эстонском языке естественный перевод — varjuprofiil — алюминиевый профиль, создающий эту теневую линию.', 'Inglise keeles räägitakse shadow gap\'ist või reveal\'ist — tahtlikust lõhest, mis loob varju seal, kus traditsiooniline ehitus kasutaks katteliistu. Saksa keeles on termin Schattenfuge (sõna-sõnalt "varju-vuuk"). Eesti keeles on loomulik tõlge varjuprofiil — alumiiniumprofiil, mis selle varjujoone tekitab.')}
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.75, color: 'var(--ink-2)' }}>
-              {ru
-                ? 'Термин varjuprofiil в качестве строительного термина используется в Эстонии как минимум 10–15 лет, однако активно закрепляется в профессиональном языке именно сейчас — с ростом интереса к минималистским интерьерам.'
-                : 'Sõna varjuprofiil on ehitusterminina kasutusel olnud Eestis vähemalt 10–15 aastat, kuid kinnistub professionaalses keeles just praegu — seoses kasvava huviga minimalistlike interjööride vastu.'}
+              {tx(locale, 'Термин varjuprofiil в качестве строительного термина используется в Эстонии как минимум 10–15 лет, однако активно закрепляется в профессиональном языке именно сейчас — с ростом интереса к минималистским интерьерам.', 'Sõna varjuprofiil on ehitusterminina kasutusel olnud Eestis vähemalt 10–15 aastat, kuid kinnistub professionaalses keeles just praegu — seoses kasvava huviga minimalistlike interjööride vastu.')}
             </p>
           </div>
         </div>
@@ -206,44 +189,42 @@ export default async function MisOnVarjuprofiilPage() {
 
       {/* 03 Tüüpide kaart */}
       <section id="tyybid" style={{ padding: '64px 56px', borderBottom: 'var(--border)' }}>
-        <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{ru ? '03 / Карта типов' : '03 / Tüüpide kaart'}</div>
+        <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{tx(locale, '03 / Карта типов', '03 / Tüüpide kaart')}</div>
         <h2 className="vp-display" style={{ fontSize: 64, margin: '0 0 32px', lineHeight: 0.92 }}>
-          {ru ? 'Карта типов варjuprofiilid.' : 'Varjuprofiilide tüüpide kaart.'}
+          {tx(locale, 'Карта типов варjuprofiilid.', 'Varjuprofiilide tüüpide kaart.')}
         </h2>
         <p style={{ fontSize: 16, lineHeight: 1.65, color: 'var(--ink-2)', maxWidth: 720, marginBottom: 40 }}>
-          {ru
-            ? 'Теневые профили классифицируются по двум осям: место монтажа (потолок, стена, пол, центральный потолок) и LED-готовность. Тёмный фон — с LED, светлый — без.'
-            : 'Varjuprofiile saab klassifitseerida kahel teljel: paigaldusasukoht (lagi, sein, põrand, kesklagi) ja LED-valmidus. Tumedad taustad — LED-iga, heledad — ilma.'}
+          {tx(locale, 'Теневые профили классифицируются по двум осям: место монтажа (потолок, стена, пол, центральный потолок) и LED-готовность. Тёмный фон — с LED, светлый — без.', 'Varjuprofiile saab klassifitseerida kahel teljel: paigaldusasukoht (lagi, sein, põrand, kesklagi) ja LED-valmidus. Tumedad taustad — LED-iga, heledad — ilma.')}
         </p>
 
         <div style={{ overflowX: 'auto' }}>
           <table style={{ borderCollapse: 'collapse', width: '100%', fontFamily: 'JetBrains Mono, monospace', fontSize: 12 }}>
             <thead>
               <tr>
-                <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: 'var(--border)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--muted)' }}>{ru ? 'Место' : 'Asukoht'}</th>
-                <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: 'var(--border)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', background: 'var(--ink)', color: '#fff' }}>⚡ LED-{ru ? 'готовые' : 'valmidusega'}</th>
-                <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: 'var(--border)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--muted)' }}>{ru ? 'Декоративные (без LED)' : 'Dekoratiivsed (ilma LED)'}</th>
+                <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: 'var(--border)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--muted)' }}>{tx(locale, 'Место', 'Asukoht')}</th>
+                <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: 'var(--border)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', background: 'var(--ink)', color: '#fff' }}>⚡ LED-{tx(locale, 'готовые', 'valmidusega')}</th>
+                <th style={{ padding: '12px 16px', textAlign: 'left', borderBottom: 'var(--border)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--muted)' }}>{tx(locale, 'Декоративные (без LED)', 'Dekoratiivsed (ilma LED)')}</th>
               </tr>
             </thead>
             <tbody>
               {[
                 {
-                  loc: ru ? 'Потолок' : 'Lagi',
+                  loc: tx(locale, 'Потолок', 'Lagi'),
                   led: 'LHV10, RST14, AST201, AST50, AST35, AST30, AST22, AST14_12, RST25, AST12, RST22, RST40',
                   deco: 'AST20, AST10, AST8, AST5',
                 },
                 {
-                  loc: ru ? 'Центральный потолок' : 'Kesklagi',
+                  loc: tx(locale, 'Центральный потолок', 'Kesklagi'),
                   led: 'RST14, RST25, RST22, RST40, RST1020',
                   deco: '—',
                 },
                 {
-                  loc: ru ? 'Стена (скрытые)' : 'Sein (peiteprofiilid)',
+                  loc: tx(locale, 'Стена (скрытые)', 'Sein (peiteprofiilid)'),
                   led: 'ASP610, ASPL100, ASPL60, ASPL35, ASP410, ASP106, LPA909',
                   deco: 'LPA909',
                 },
                 {
-                  loc: ru ? 'Пол' : 'Põrand',
+                  loc: tx(locale, 'Пол', 'Põrand'),
                   led: 'ASP102, LHV10, ASPL100, ASPL60, ASPL35, ASP905, ASP904, ASP238, ASPL130, ASP106, ASPL120',
                   deco: 'ASP112, ASP116, ASP117, ASP168',
                 },
@@ -258,7 +239,7 @@ export default async function MisOnVarjuprofiilPage() {
           </table>
         </div>
         <p style={{ fontSize: 13, color: 'var(--muted)', fontFamily: 'JetBrains Mono, monospace', marginTop: 14 }}>
-          {ru ? 'Некоторые модели (LHV10, ASPL100, ASPL60, ASPL35, ASP106) подходят для нескольких мест и отображаются в нескольких строках.' : 'Mõned mudelid (LHV10, ASPL100, ASPL60, ASPL35, ASP106) sobivad mitme asukoha jaoks ja kuvatakse seetõttu mitmes reas.'}
+          {tx(locale, 'Некоторые модели (LHV10, ASPL100, ASPL60, ASPL35, ASP106) подходят для нескольких мест и отображаются в нескольких строках.', 'Mõned mudelid (LHV10, ASPL100, ASPL60, ASPL35, ASP106) sobivad mitme asukoha jaoks ja kuvatakse seetõttu mitmes reas.')}
         </p>
       </section>
 
@@ -266,21 +247,21 @@ export default async function MisOnVarjuprofiilPage() {
       <section id="led" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderBottom: 'var(--border)' }}>
         {/* LED */}
         <div style={{ padding: '64px 56px', borderRight: 'var(--border)', background: 'var(--ink)', color: 'var(--paper)' }}>
-          <div className="vp-eyebrow" style={{ marginBottom: 14, color: 'rgba(255,255,255,0.6)' }}>{ru ? '04A / С LED' : '04A / LED varjuprofiil'}</div>
+          <div className="vp-eyebrow" style={{ marginBottom: 14, color: 'rgba(255,255,255,0.6)' }}>{tx(locale, '04A / С LED', '04A / LED varjuprofiil')}</div>
           <h2 className="vp-display" style={{ fontSize: 56, margin: '0 0 24px', lineHeight: 0.92, color: 'var(--paper)' }}>
-            {ru ? 'LED варjuprofiil.' : 'LED varjuprofiil.'}
+            {tx(locale, 'LED варjuprofiil.', 'LED varjuprofiil.')}
           </h2>
           <p style={{ fontSize: 15, lineHeight: 1.65, color: 'rgba(255,255,255,0.75)', marginBottom: 24 }}>
-            {ru ? 'Тж. LED-профиль для потолка, LED-профиль для пола, LED-профиль скрытого монтажа.' : 'Tuntakse ka kui LED laeprofiil, LED põrandaprofiil, LED süvisprofiil.'}
+            {tx(locale, 'Тж. LED-профиль для потолка, LED-профиль для пола, LED-профиль скрытого монтажа.', 'Tuntakse ka kui LED laeprofiil, LED põrandaprofiil, LED süvisprofiil.')}
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', display: 'grid', gap: 10 }}>
-            {(ru ? [
+            {txList(locale, [
               'Интегрированный канал под LED-ленту',
               'Защёлкивающийся диффузор для мягкого света',
               'Создаёт теневую линию и освещение',
               'Подходит под кухонную столешницу, за изголовьем, по периметру потолка',
               'Требует питания и проводки',
-            ] : [
+            ], [
               'Integreeritud soon LED-ribale',
               'Klõpsuv hajuti pehme valguse jaoks',
               'Loob nii varjujoone kui valgustuse',
@@ -293,27 +274,27 @@ export default async function MisOnVarjuprofiilPage() {
             ))}
           </ul>
           <div className="vp-mono" style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-            {ru ? 'Примеры:' : 'Näited:'} AST201, AST50, ASPL100, ASPL60, LHV10
+            {tx(locale, 'Примеры:', 'Näited:')} AST201, AST50, ASPL100, ASPL60, LHV10
           </div>
         </div>
 
         {/* Dekoratiivne */}
         <div style={{ padding: '64px 56px' }}>
-          <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{ru ? '04B / Без LED (декоративный)' : '04B / Dekoratiivne varjuprofiil'}</div>
+          <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{tx(locale, '04B / Без LED (декоративный)', '04B / Dekoratiivne varjuprofiil')}</div>
           <h2 className="vp-display" style={{ fontSize: 56, margin: '0 0 24px', lineHeight: 0.92 }}>
-            {ru ? 'Без LED.' : 'Ilma LED-ita.'}
+            {tx(locale, 'Без LED.', 'Ilma LED-ita.')}
           </h2>
           <p style={{ fontSize: 15, lineHeight: 1.65, color: 'var(--ink-2)', marginBottom: 24 }}>
-            {ru ? 'Чисто архитектурный. Также называется shadow gap.' : 'Puhtalt arhitektuurne — ilma LED-ita. Nimetatakse ka shadow gap\'iks.'}
+            {tx(locale, 'Чисто архитектурный. Также называется shadow gap.', 'Puhtalt arhitektuurne — ilma LED-ita. Nimetatakse ka shadow gap\'iks.')}
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', display: 'grid', gap: 10 }}>
-            {(ru ? [
+            {txList(locale, [
               'Намеренная теневая линия без подсветки',
               'Ниже цена, чем LED-вариант',
               'Проще монтаж (не нужно электричество)',
               'Подходит туда, где освещение не нужно',
               'Создаёт чисто визуальный эффект',
-            ] : [
+            ], [
               'Tahtlik varjujoon ilma valgustuseta',
               'Madalam hind kui LED-versioonil',
               'Lihtsam paigaldus (ei vaja elektrit)',
@@ -326,45 +307,45 @@ export default async function MisOnVarjuprofiilPage() {
             ))}
           </ul>
           <div className="vp-mono" style={{ fontSize: 11, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-            {ru ? 'Примеры:' : 'Näited:'} AST5, AST8, AST10, AST20, LPA909
+            {tx(locale, 'Примеры:', 'Näited:')} AST5, AST8, AST10, AST20, LPA909
           </div>
         </div>
       </section>
 
       {/* 05 Kasutusalad */}
       <section id="kasutusalad" style={{ padding: '64px 56px', borderBottom: 'var(--border)' }}>
-        <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{ru ? '05 / Применение' : '05 / Kasutusalad'}</div>
+        <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{tx(locale, '05 / Применение', '05 / Kasutusalad')}</div>
         <h2 className="vp-display" style={{ fontSize: 64, margin: '0 0 40px', lineHeight: 0.92 }}>
-          {ru ? 'Куда монтируются варjuprofiilid.' : 'Kuhu varjuprofiile paigaldatakse.'}
+          {tx(locale, 'Куда монтируются варjuprofiilid.', 'Kuhu varjuprofiile paigaldatakse.')}
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 1, background: 'var(--ink)', border: 'var(--border)' }}>
           {[
             {
               n: '01',
-              t: ru ? 'Потолок' : 'Lakke',
-              sub: ru ? 'Потолочные · LED потолочные' : 'Lae varjuprofiilid · Lae LED varjuprofiilid',
-              d: ru ? 'Монтируется в место соединения потолка и стены. Создаёт эффект «парящего потолка» и скрывает угловые планки. В LED-варианте — мягкая периметральная подсветка.' : 'Paigaldatakse lae ja seina ühenduskohta. Loob "hõljuva lae" efekti ja peidab traditsioonilise nurgaliistu vajaduse. LED-versioonis pakub pehmet perimeetrivalgustust.',
+              t: tx(locale, 'Потолок', 'Lakke'),
+              sub: tx(locale, 'Потолочные · LED потолочные', 'Lae varjuprofiilid · Lae LED varjuprofiilid'),
+              d: tx(locale, 'Монтируется в место соединения потолка и стены. Создаёт эффект «парящего потолка» и скрывает угловые планки. В LED-варианте — мягкая периметральная подсветка.', 'Paigaldatakse lae ja seina ühenduskohta. Loob "hõljuva lae" efekti ja peidab traditsioonilise nurgaliistu vajaduse. LED-versioonis pakub pehmet perimeetrivalgustust.'),
               skus: 'LHV10 · AST201 · AST50 · AST35 · AST30 · AST22 · AST14_12 · AST20 · AST10 · AST8 · AST5',
             },
             {
               n: '02',
-              t: ru ? 'Пол' : 'Põrandasse',
-              sub: ru ? 'Напольные · LED напольные' : 'Põranda varjuprofiilid · Põranda LED varjuprofiilid',
-              d: ru ? 'Монтируется в место соединения стены и пола — заменяет традиционный плинтус. В LED-варианте — мягкая скрытая подсветка по периметру пола.' : 'Paigaldatakse seina ja põranda ühenduskohta — asendab traditsioonilise põrandaliistu. LED-versioonis valgustab põranda perimeetri pehme peitevalgustusega.',
+              t: tx(locale, 'Пол', 'Põrandasse'),
+              sub: tx(locale, 'Напольные · LED напольные', 'Põranda varjuprofiilid · Põranda LED varjuprofiilid'),
+              d: tx(locale, 'Монтируется в место соединения стены и пола — заменяет традиционный плинтус. В LED-варианте — мягкая скрытая подсветка по периметру пола.', 'Paigaldatakse seina ja põranda ühenduskohta — asendab traditsioonilise põrandaliistu. LED-versioonis valgustab põranda perimeetri pehme peitevalgustusega.'),
               skus: 'ASPL100 · ASPL60 · ASPL35 · ASP102 · ASP905 · ASP904 · ASPL130 · ASP112 · ASP116 · ASP117 · ASP168',
             },
             {
               n: '03',
-              t: ru ? 'Стена' : 'Seinale',
-              sub: ru ? 'Настенные скрытые профили' : 'Seina varjuprofiilid · Seina peiteprofiilid',
-              d: ru ? 'Монтируется во внутренние переходы стен — например, между двумя слоями стены, вокруг окна или двери, или как декоративная вертикальная линия. В LED-варианте создаёт ambient-подсветку.' : 'Paigaldatakse seinasiseste pindade üleminekutesse — näiteks kahe seinakihi vahele, akna või ukse raami ümber. LED-versioonis loob ambient-valguse.',
+              t: tx(locale, 'Стена', 'Seinale'),
+              sub: tx(locale, 'Настенные скрытые профили', 'Seina varjuprofiilid · Seina peiteprofiilid'),
+              d: tx(locale, 'Монтируется во внутренние переходы стен — например, между двумя слоями стены, вокруг окна или двери, или как декоративная вертикальная линия. В LED-варианте создаёт ambient-подсветку.', 'Paigaldatakse seinasiseste pindade üleminekutesse — näiteks kahe seinakihi vahele, akna või ukse raami ümber. LED-versioonis loob ambient-valguse.'),
               skus: 'ASP610 · ASPL100 · ASPL60 · ASPL35 · ASP410 · ASP106 · LPA909',
             },
             {
               n: '04',
-              t: ru ? 'Центральный потолок' : 'Kesklakke',
-              sub: ru ? 'LED профили для центрального потолка' : 'Kesklae LED varjuprofiilid',
-              d: ru ? 'Монтируется в центр потолка как декоративный элемент — отдельной полосой, кольцом или другой формой. Создаёт графическую световую линию, визуально определяющую пространство.' : 'Paigaldatakse lae keskele dekoratiivseks elemendiks — eraldi reaga, ringina, või muu kujundina. Loob graafilise valguse-joone, mis defineerib ruumi visuaalselt.',
+              t: tx(locale, 'Центральный потолок', 'Kesklakke'),
+              sub: tx(locale, 'LED профили для центрального потолка', 'Kesklae LED varjuprofiilid'),
+              d: tx(locale, 'Монтируется в центр потолка как декоративный элемент — отдельной полосой, кольцом или другой формой. Создаёт графическую световую линию, визуально определяющую пространство.', 'Paigaldatakse lae keskele dekoratiivseks elemendiks — eraldi reaga, ringina, või muu kujundina. Loob graafilise valguse-joone, mis defineerib ruumi visuaalselt.'),
               skus: 'RST14 · RST25 · RST22 · RST40 · RST1020',
             },
           ].map((item) => (
@@ -383,9 +364,9 @@ export default async function MisOnVarjuprofiilPage() {
 
       {/* 06 Eelised */}
       <section id="eelised" style={{ padding: '64px 56px', borderBottom: 'var(--border)', background: 'var(--paper-2)' }}>
-        <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{ru ? '06 / Преимущества' : '06 / Eelised'}</div>
+        <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{tx(locale, '06 / Преимущества', '06 / Eelised')}</div>
         <h2 className="vp-display" style={{ fontSize: 64, margin: '0 0 40px', lineHeight: 0.92 }}>
-          {ru ? 'Почему выбирают варjuprofiil.' : 'Miks valida varjuprofiil.'}
+          {tx(locale, 'Почему выбирают варjuprofiil.', 'Miks valida varjuprofiil.')}
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1, background: 'var(--ink)', border: 'var(--border)' }}>
           {[
@@ -400,8 +381,8 @@ export default async function MisOnVarjuprofiilPage() {
           ].map((b, i) => (
             <div key={b.n} style={{ background: 'var(--paper)', padding: '28px 24px' }}>
               <div className="vp-display" style={{ fontSize: 40, lineHeight: 1, color: 'var(--accent)', marginBottom: 10 }}>{b.n}</div>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8 }}>{ru ? b.tRu : b.tEt}</div>
-              <p style={{ fontSize: 13, lineHeight: 1.6, color: 'var(--ink-2)', margin: 0 }}>{ru ? b.dRu : b.dEt}</p>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8 }}>{tx(locale, b.tRu, b.tEt)}</div>
+              <p style={{ fontSize: 13, lineHeight: 1.6, color: 'var(--ink-2)', margin: 0 }}>{tx(locale, b.dRu, b.dEt)}</p>
             </div>
           ))}
         </div>
@@ -411,12 +392,12 @@ export default async function MisOnVarjuprofiilPage() {
       <section id="valik" style={{ padding: '64px 56px', borderBottom: 'var(--border)' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 64 }}>
           <div>
-            <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{ru ? '07 / Как выбрать' : '07 / Valikuabi'}</div>
+            <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{tx(locale, '07 / Как выбрать', '07 / Valikuabi')}</div>
             <h2 className="vp-display" style={{ fontSize: 64, margin: 0, lineHeight: 0.92 }}>
-              {ru ? 'Как выбрать правильный профиль.' : 'Kuidas valida õige varjuprofiil.'}
+              {tx(locale, 'Как выбрать правильный профиль.', 'Kuidas valida õige varjuprofiil.')}
             </h2>
             <p style={{ fontSize: 15, lineHeight: 1.65, color: 'var(--ink-2)', marginTop: 20 }}>
-              {ru ? 'Выбор сводится к трём вопросам. Ответив на них, вы значительно сужаете выбор.' : 'Õige varjuprofiili valimine taandub kolmele küsimusele. Kui vastad nendele, saad valiku oluliselt kitsamaks.'}
+              {tx(locale, 'Выбор сводится к трём вопросам. Ответив на них, вы значительно сужаете выбор.', 'Õige varjuprofiili valimine taandub kolmele küsimusele. Kui vastad nendele, saad valiku oluliselt kitsamaks.')}
             </p>
           </div>
           <div>
@@ -454,8 +435,8 @@ export default async function MisOnVarjuprofiilPage() {
                 <div style={{ display: 'grid', gridTemplateColumns: '48px 1fr', gap: 16 }}>
                   <span className="vp-display" style={{ fontSize: 36, lineHeight: 1, color: 'var(--accent)' }}>{q.n}</span>
                   <div>
-                    <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>{ru ? q.qRu : q.qEt}</div>
-                    <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--ink-2)', margin: 0 }}>{ru ? q.aRu : q.aEt}</p>
+                    <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>{tx(locale, q.qRu, q.qEt)}</div>
+                    <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--ink-2)', margin: 0 }}>{tx(locale, q.aRu, q.aEt)}</p>
                   </div>
                 </div>
               </div>
@@ -466,9 +447,9 @@ export default async function MisOnVarjuprofiilPage() {
 
       {/* 08 Paigaldus */}
       <section id="paigaldus" style={{ padding: '64px 56px', borderBottom: 'var(--border)', background: 'var(--paper-2)' }}>
-        <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{ru ? '08 / Краткий обзор монтажа' : '08 / Lühike paigaldusülevaade'}</div>
+        <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{tx(locale, '08 / Краткий обзор монтажа', '08 / Lühike paigaldusülevaade')}</div>
         <h2 className="vp-display" style={{ fontSize: 64, margin: '0 0 40px', lineHeight: 0.92 }}>
-          {ru ? 'Монтаж.' : 'Paigaldus.'}
+          {tx(locale, 'Монтаж.', 'Paigaldus.')}
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 1, background: 'var(--ink)', border: 'var(--border)' }}>
           {[
@@ -480,8 +461,8 @@ export default async function MisOnVarjuprofiilPage() {
           ].map((s) => (
             <div key={s.n} style={{ background: 'var(--paper)', padding: '28px 20px' }}>
               <div className="vp-display" style={{ fontSize: 40, color: 'var(--accent)', marginBottom: 10 }}>{s.n}</div>
-              <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 8 }}>{ru ? s.tRu : s.tEt}</div>
-              <p style={{ fontSize: 13, lineHeight: 1.6, color: 'var(--ink-2)', margin: 0 }}>{ru ? s.dRu : s.dEt}</p>
+              <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 8 }}>{tx(locale, s.tRu, s.tEt)}</div>
+              <p style={{ fontSize: 13, lineHeight: 1.6, color: 'var(--ink-2)', margin: 0 }}>{tx(locale, s.dRu, s.dEt)}</p>
             </div>
           ))}
         </div>
@@ -491,19 +472,19 @@ export default async function MisOnVarjuprofiilPage() {
       <section id="kkk" style={{ padding: '64px 56px', borderBottom: 'var(--border)' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: 64 }}>
           <div>
-            <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{ru ? '09 / Часто задаваемые вопросы' : '09 / Korduma kippuvad küsimused'}</div>
+            <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{tx(locale, '09 / Часто задаваемые вопросы', '09 / Korduma kippuvad küsimused')}</div>
             <h2 className="vp-display" style={{ fontSize: 56, margin: 0, lineHeight: 0.95 }}>
-              {ru ? 'Вопросы и ответы.' : 'KKK.'}
+              {tx(locale, 'Вопросы и ответы.', 'KKK.')}
             </h2>
             <p style={{ fontSize: 15, lineHeight: 1.65, color: 'var(--ink-2)', marginTop: 20 }}>
-              {ru ? '10 самых частых вопросов о теневых профилях.' : '10 kõige sagedasemat küsimust varjuprofiilide kohta.'}
+              {tx(locale, '10 самых частых вопросов о теневых профилях.', '10 kõige sagedasemat küsimust varjuprofiilide kohta.')}
             </p>
           </div>
           <div>
             {FAQ.map((item, i) => (
               <div key={i} style={{ padding: '18px 0', borderTop: i === 0 ? 'none' : '1px solid rgba(0,0,0,0.1)' }}>
-                <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>{item.q}</div>
-                <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--ink-2)', margin: 0 }}>{item.a}</p>
+                <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>{tx(locale, item.q, item.q)}</div>
+                <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--ink-2)', margin: 0 }}>{tx(locale, item.a, item.a)}</p>
               </div>
             ))}
           </div>
@@ -512,9 +493,9 @@ export default async function MisOnVarjuprofiilPage() {
 
       {/* 10 Sõnastik */}
       <section id="sonastik" style={{ padding: '64px 56px', borderBottom: 'var(--border)', background: 'var(--paper-2)' }}>
-        <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{ru ? '10 / Словарь' : '10 / Sõnastik'}</div>
+        <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{tx(locale, '10 / Словарь', '10 / Sõnastik')}</div>
         <h2 className="vp-display" style={{ fontSize: 64, margin: '0 0 40px', lineHeight: 0.92 }}>
-          {ru ? 'Словарь терминов.' : 'Varjuprofiili sõnastik.'}
+          {tx(locale, 'Словарь терминов.', 'Varjuprofiili sõnastik.')}
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 1, background: 'var(--ink)', border: 'var(--border)' }}>
           {[
@@ -530,9 +511,9 @@ export default async function MisOnVarjuprofiilPage() {
             { term: 'RAL-toon', en: 'RAL colour system', dEt: 'Standardne värvikood-süsteem. Iga varjuprofiili saab tellida mistahes RAL-toonis (nt RAL 9005 — sügav must).', dRu: 'Стандартная система цветовых кодов. Любой теневой профиль можно заказать в любом оттенке RAL (напр. RAL 9005 — глубокий чёрный).' },
           ].map((g) => (
             <div key={g.term} style={{ background: 'var(--paper)', padding: '24px 22px' }}>
-              <div className="vp-display" style={{ fontSize: 22, marginBottom: 4 }}>{g.term}</div>
+              <div className="vp-display" style={{ fontSize: 22, marginBottom: 4 }}>{tx(locale, g.term, g.term)}</div>
               <div className="vp-mono" style={{ fontSize: 10, color: 'var(--muted)', marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{g.en}</div>
-              <p style={{ fontSize: 13, lineHeight: 1.65, color: 'var(--ink-2)', margin: 0 }}>{ru ? g.dRu : g.dEt}</p>
+              <p style={{ fontSize: 13, lineHeight: 1.65, color: 'var(--ink-2)', margin: 0 }}>{tx(locale, g.dRu, g.dEt)}</p>
             </div>
           ))}
         </div>
@@ -541,21 +522,21 @@ export default async function MisOnVarjuprofiilPage() {
       {/* CTA */}
       <section style={{ padding: '96px 56px', textAlign: 'center', background: 'var(--ink)', color: 'var(--paper)', borderBottom: 'var(--border)' }}>
         <div className="vp-eyebrow" style={{ color: 'rgba(255,255,255,0.6)', marginBottom: 24 }}>
-          {ru ? 'Знаешь, что такое теневой профиль. Время выбирать.' : 'Tead mis on varjuprofiil. Aeg valida.'}
+          {tx(locale, 'Знаешь, что такое теневой профиль. Время выбирать.', 'Tead mis on varjuprofiil. Aeg valida.')}
         </div>
         <h2 className="vp-display" style={{ fontSize: 'clamp(56px, 8vw, 120px)', margin: '0 0 40px', lineHeight: 0.9, color: 'var(--paper)' }}>
-          {ru ? 'Смотреть все профили.' : 'Vaata kõiki tooteid.'}
+          {tx(locale, 'Смотреть все профили.', 'Vaata kõiki tooteid.')}
         </h2>
         <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 32 }}>
           <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg" style={{ background: 'var(--paper)', color: 'var(--ink)', borderColor: 'var(--paper)' }}>
-            {ru ? 'Смотреть все товары →' : 'Vaata kõiki tooteid →'}
+            {tx(locale, 'Смотреть все товары →', 'Vaata kõiki tooteid →')}
           </Link>
           <Link href={lp(`/kontakt`, locale)} className="vp-btn vp-btn--ghost vp-btn--lg" style={{ borderColor: 'rgba(255,255,255,0.4)', color: 'var(--paper)' }}>
-            {ru ? 'Бесплатная консультация' : 'Tasuta konsultatsioon'}
+            {tx(locale, 'Бесплатная консультация', 'Tasuta konsultatsioon')}
           </Link>
         </div>
         <p className="vp-mono" style={{ fontSize: 11, opacity: 0.5, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-          {ru ? 'Обновлено: май 2026 · Varjuprofiilid.ee · Словарь' : 'Viimati uuendatud: mai 2026 · Varjuprofiilid.ee · Sõnastik'}
+          {tx(locale, 'Обновлено: май 2026 · Varjuprofiilid.ee · Словарь', 'Viimati uuendatud: mai 2026 · Varjuprofiilid.ee · Sõnastik')}
         </p>
       </section>
     </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { useTx } from '@/lib/useTx';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import ProductCard from './ProductCard';
@@ -36,6 +37,7 @@ type SortKey = 'catalog' | 'price-asc' | 'price-desc';
 export default function CatalogClient({ products, categories, initialCat }: Props) {
   const locale = useLocale();
   const ru = locale === 'ru';
+  const tx = useTx();
 
   const [activeCat, setActiveCat] = useState<string | null>(initialCat ?? null);
   const [activeColors, setActiveColors] = useState<string[]>([]);
@@ -43,8 +45,10 @@ export default function CatalogClient({ products, categories, initialCat }: Prop
   const [maxPrice, setMaxPrice] = useState(50);
   const [sort, setSort] = useState<SortKey>('catalog');
 
+  // Kategoorianimi tuleb kataloogist eesti keeles. Vene tõlge on CAT_RU
+  // kaardis, soome ja rootsi oma sõnastikus (tx).
   function catLabel(name: string) {
-    return ru && CAT_RU[name] ? CAT_RU[name] : name;
+    return tx(CAT_RU[name] ?? name, name);
   }
 
   function toggleColor(hex: string) {
@@ -90,16 +94,16 @@ export default function CatalogClient({ products, categories, initialCat }: Prop
     (ledFilter !== 'all' ? 1 : 0) +
     (maxPrice < 50 ? 1 : 0);
 
-  const pageTitle = activeCat ? catLabel(activeCat) : (ru ? 'Все товары.' : 'Kõik tooted.');
+  const pageTitle = activeCat ? catLabel(activeCat) : (tx('Все товары.', 'Kõik tooted.'));
 
   return (
     <div>
       {/* Page header */}
       <section style={{ padding: '48px 56px', borderBottom: 'var(--border)' }}>
         <div className="vp-eyebrow" style={{ marginBottom: 10 }}>
-          <Link href={lp('/', locale)}>{ru ? 'Главная' : 'Avaleht'}</Link>
+          <Link href={lp('/', locale)}>{tx('Главная', 'Avaleht')}</Link>
           {' / '}
-          <Link href={lp('/tooted', locale)}>{ru ? 'Магазин' : 'Pood'}</Link>
+          <Link href={lp('/tooted', locale)}>{tx('Магазин', 'Pood')}</Link>
           {activeCat && <> / <span style={{ color: 'var(--ink)' }}>{catLabel(activeCat)}</span></>}
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 32 }}>
@@ -117,17 +121,17 @@ export default function CatalogClient({ products, categories, initialCat }: Prop
         {/* Sidebar */}
         <aside className="vp-catalog-sidebar" style={{ padding: '28px 24px', borderRight: 'var(--border)', position: 'sticky', top: 60, alignSelf: 'start', maxHeight: 'calc(100vh - 60px)', overflowY: 'auto' }}>
           <div className="vp-eyebrow" style={{ marginBottom: 18, display: 'flex', justifyContent: 'space-between' }}>
-            <span>{ru ? 'Фильтры' : 'Filtrid'}</span>
-            <span>{activeFilterCount} {ru ? 'активных' : 'aktiivset'}</span>
+            <span>{tx('Фильтры', 'Filtrid')}</span>
+            <span>{activeFilterCount} {tx('активных', 'aktiivset')}</span>
           </div>
 
           {/* Category filter */}
           <div style={{ marginBottom: 24, paddingBottom: 18, borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
-            <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10 }}>{ru ? 'Категория' : 'Kategooria'}</div>
+            <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10 }}>{tx('Категория', 'Kategooria')}</div>
             <CheckRow
               checked={!activeCat}
               onClick={() => setActiveCat(null)}
-              label={`${ru ? 'Все' : 'Kõik'} (${products.length})`}
+              label={`${tx('Все', 'Kõik')} (${products.length})`}
             />
             {categories.map((c) => (
               <CheckRow
@@ -141,11 +145,11 @@ export default function CatalogClient({ products, categories, initialCat }: Prop
 
           {/* LED filter */}
           <div style={{ marginBottom: 24, paddingBottom: 18, borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
-            <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10 }}>{ru ? 'LED-готовность' : 'LED-valmidus'}</div>
+            <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10 }}>{tx('LED-готовность', 'LED-valmidus')}</div>
             {([
-              { k: 'all',    l: ru ? 'Все'       : 'Kõik'      },
-              { k: 'led',    l: ru ? '⚡ С LED'   : '⚡ LED-iga' },
-              { k: 'no-led', l: ru ? 'Без LED'   : 'Ilma LED'  },
+              { k: 'all',    l: tx('Все', 'Kõik')      },
+              { k: 'led',    l: tx('⚡ С LED', '⚡ LED-iga') },
+              { k: 'no-led', l: tx('Без LED', 'Ilma LED')  },
             ] as { k: LedFilter; l: string }[]).map((opt) => (
               <RadioRow
                 key={opt.k}
@@ -158,26 +162,26 @@ export default function CatalogClient({ products, categories, initialCat }: Prop
 
           {/* Color filter */}
           <div style={{ marginBottom: 24, paddingBottom: 18, borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
-            <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10 }}>{ru ? 'Цвет' : 'Värvus'}</div>
+            <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10 }}>{tx('Цвет', 'Värvus')}</div>
             {COLOR_CHOICES.map((c) => (
               <CheckRow
                 key={c.hex}
                 checked={activeColors.includes(c.hex)}
                 onClick={() => toggleColor(c.hex)}
-                label={ru ? c.nameRu : c.nameEt}
+                label={tx(c.nameRu, c.nameEt)}
                 swatch={c.hex}
               />
             ))}
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 13, color: 'var(--muted)' }}>
               <span style={{ width: 16, height: 16, border: 'var(--border)' }} />
-              {ru ? 'RAL под заказ' : 'RAL eritellimus'}
+              {tx('RAL под заказ', 'RAL eritellimus')}
             </div>
           </div>
 
           {/* Price filter */}
           <div style={{ marginBottom: 18 }}>
             <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10 }}>
-              {ru ? 'Цена (€/пог.м)' : 'Hind (€/m)'}
+              {tx('Цена (€/пог.м)', 'Hind (€/m)')}
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'JetBrains Mono', fontSize: 11, color: 'var(--muted)', marginBottom: 6 }}>
               <span>0 €</span><span>{maxPrice} €</span>
@@ -202,33 +206,33 @@ export default function CatalogClient({ products, categories, initialCat }: Prop
               )}
               {ledFilter !== 'all' && (
                 <button className="vp-chip vp-chip--active" onClick={() => setLedFilter('all')}>
-                  {ledFilter === 'led' ? (ru ? '⚡ С LED' : '⚡ LED-iga') : (ru ? 'Без LED' : 'Ilma LED')} ✕
+                  {ledFilter === 'led' ? (tx('⚡ С LED', '⚡ LED-iga')) : (tx('Без LED', 'Ilma LED'))} ✕
                 </button>
               )}
               {activeColors.map((hex) => (
                 <button key={hex} className="vp-chip vp-chip--active" onClick={() => toggleColor(hex)}>
-                  {COLOR_CHOICES.find((c) => c.hex === hex)?.[ru ? 'nameRu' : 'nameEt']} ✕
+                  {(() => { const c = COLOR_CHOICES.find((x) => x.hex === hex); return c ? tx(c.nameRu, c.nameEt) : ''; })()} ✕
                 </button>
               ))}
               {activeFilterCount > 0 && (
                 <button onClick={clearAll} style={{ fontFamily: 'JetBrains Mono', fontSize: 11, textTransform: 'uppercase', background: 'none', border: 'none', borderBottom: '1px solid var(--ink)', cursor: 'pointer', padding: 0 }}>
-                  {ru ? 'Очистить все' : 'Tühjenda kõik'}
+                  {tx('Очистить все', 'Tühjenda kõik')}
                 </button>
               )}
             </div>
 
             <div style={{ display: 'flex', gap: 14, alignItems: 'center', fontFamily: 'JetBrains Mono', fontSize: 12 }}>
               <span style={{ color: 'var(--muted)' }}>
-                {filtered.length} {ru ? 'товаров' : 'toodet'}
+                {filtered.length} {tx('товаров', 'toodet')}
               </span>
               <select
                 value={sort}
                 onChange={(e) => setSort(e.target.value as SortKey)}
                 style={{ border: 'var(--border)', background: 'var(--paper)', padding: '6px 10px', fontFamily: 'JetBrains Mono', fontSize: 11, color: 'var(--ink)', cursor: 'pointer' }}
               >
-                <option value="catalog">{ru ? 'По каталогу' : 'Kataloogi järjestus'}</option>
-                <option value="price-asc">{ru ? 'Цена ↑' : 'Hind ↑'}</option>
-                <option value="price-desc">{ru ? 'Цена ↓' : 'Hind ↓'}</option>
+                <option value="catalog">{tx('По каталогу', 'Kataloogi järjestus')}</option>
+                <option value="price-asc">{tx('Цена ↑', 'Hind ↑')}</option>
+                <option value="price-desc">{tx('Цена ↓', 'Hind ↓')}</option>
               </select>
             </div>
           </div>
@@ -242,7 +246,7 @@ export default function CatalogClient({ products, categories, initialCat }: Prop
             </div>
           ) : (
             <div style={{ padding: 80, textAlign: 'center', color: 'var(--muted)', fontFamily: 'JetBrains Mono' }}>
-              {ru ? 'По этим фильтрам товаров не найдено.' : 'Selle filtriga tooteid ei leitud.'}
+              {tx('По этим фильтрам товаров не найдено.', 'Selle filtriga tooteid ei leitud.')}
             </div>
           )}
         </div>

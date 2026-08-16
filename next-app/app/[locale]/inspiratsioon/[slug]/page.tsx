@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation';
+import { marketForLocale } from '@/lib/markets';
+import { tx } from '@/lib/tx';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -352,9 +354,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await getLocale();
   const ru = locale === 'ru';
   return {
-    title: ru
-      ? `${p.titleRu} | Вдохновение | Varjuprofiilid.ee`
-      : `${p.titleEt} | Inspiratsioon | Varjuprofiilid.ee`,
+    title: `${tx(locale, p.titleRu, p.titleEt)} | ${tx(locale, 'Вдохновение', 'Inspiratsioon')} | ${marketForLocale(locale).storefront}`,
     alternates: pageAlternates(`/inspiratsioon/${slug}`, locale),
   };
 }
@@ -372,18 +372,18 @@ export default async function InspirationProjectPage({ params }: Props) {
   const ru = locale === 'ru';
   const p = PROJECTS[slug];
   if (!p) notFound();
-  const title = ru ? p.titleRu : p.titleEt;
-  const label = ru ? p.labelRu : p.labelEt;
-  const body = (ru ? p.bodyRu : p.bodyEt).split('\n\n');
+  const title = tx(locale, p.titleRu, p.titleEt);
+  const label = tx(locale, p.labelRu, p.labelEt);
+  const body = (tx(locale, p.bodyRu, p.bodyEt)).split('\n\n');
 
   return (
     <div>
       {/* Breadcrumb + title */}
       <section style={{ padding: '48px 56px 24px', borderBottom: 'var(--border)' }}>
         <div className="vp-eyebrow" style={{ marginBottom: 10 }}>
-          <Link href={lp('/', locale)}>{ru ? 'Главная' : 'Avaleht'}</Link>
+          <Link href={lp('/', locale)}>{tx(locale, 'Главная', 'Avaleht')}</Link>
           {' / '}
-          <Link href={lp(`/inspiratsioon`, locale)}>{ru ? 'Вдохновение' : 'Inspiratsioon'}</Link>
+          <Link href={lp(`/inspiratsioon`, locale)}>{tx(locale, 'Вдохновение', 'Inspiratsioon')}</Link>
           {' / '}
           <span style={{ color: 'var(--ink)' }}>{label}</span>
         </div>
@@ -410,23 +410,23 @@ export default async function InspirationProjectPage({ params }: Props) {
             <p key={i} style={{ fontSize: 17, lineHeight: 1.75, color: 'var(--ink-2)', marginBottom: 24 }}>{para}</p>
           ))}
           <div style={{ marginTop: 48, paddingTop: 32, borderTop: 'var(--border)', display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg">{ru ? 'Открыть каталог →' : 'Vaata kataloogi →'}</Link>
-            <Link href={lp(`/inspiratsioon`, locale)} className="vp-btn vp-btn--ghost">{ru ? '← Все проекты' : '← Kõik projektid'}</Link>
+            <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg">{tx(locale, 'Открыть каталог →', 'Vaata kataloogi →')}</Link>
+            <Link href={lp(`/inspiratsioon`, locale)} className="vp-btn vp-btn--ghost">{tx(locale, '← Все проекты', '← Kõik projektid')}</Link>
           </div>
         </article>
 
         {/* Profiles used sidebar */}
         <aside>
-          <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{ru ? 'Использованные профили' : 'Kasutatud profiilid'}</div>
+          <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{tx(locale, 'Использованные профили', 'Kasutatud profiilid')}</div>
           {Object.entries(p.usage).map(([sku, u]) => (
             <div key={sku} style={{ padding: '14px 0', borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
               <div className="vp-mono" style={{ fontSize: 13, fontWeight: 700, marginBottom: 2 }}>{sku}</div>
-              <div style={{ fontSize: 12, color: 'var(--ink-2)', marginBottom: 2 }}>{ru ? u.roleRu : u.role}</div>
-              <div className="vp-mono" style={{ fontSize: 11, color: 'var(--muted)' }}>{u.m} · {u.finish}</div>
+              <div style={{ fontSize: 12, color: 'var(--ink-2)', marginBottom: 2 }}>{tx(locale, u.roleRu, u.role)}</div>
+              <div className="vp-mono" style={{ fontSize: 11, color: 'var(--muted)' }}>{u.m} · {tx(locale, u.finish, u.finish)}</div>
             </div>
           ))}
           <div style={{ marginTop: 24 }}>
-            <div className="vp-eyebrow" style={{ marginBottom: 8 }}>{ru ? 'Всего' : 'Kokku'}</div>
+            <div className="vp-eyebrow" style={{ marginBottom: 8 }}>{tx(locale, 'Всего', 'Kokku')}</div>
             <div className="vp-display" style={{ fontSize: 48 }}>{p.meters}</div>
           </div>
         </aside>
@@ -435,7 +435,7 @@ export default async function InspirationProjectPage({ params }: Props) {
       {/* Gallery */}
       {p.gallery.length > 0 && (
         <section style={{ padding: '56px', borderBottom: 'var(--border)' }}>
-          <div className="vp-eyebrow" style={{ marginBottom: 24 }}>{ru ? 'Фотографии проекта' : 'Projektifotod'}</div>
+          <div className="vp-eyebrow" style={{ marginBottom: 24 }}>{tx(locale, 'Фотографии проекта', 'Projektifotod')}</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
             {p.gallery.map((img, i) => (
               <div key={i} style={{ aspectRatio: i === 0 ? '16/9' : '4/3', overflow: 'hidden', border: 'var(--border)', background: 'var(--paper-2)', gridColumn: i === 0 ? '1 / -1' : undefined, gridRow: i === 0 ? undefined : undefined }}>
@@ -450,14 +450,14 @@ export default async function InspirationProjectPage({ params }: Props) {
       {/* Usage breakdown */}
       {Object.keys(p.usage).length > 0 && (
         <section style={{ padding: '56px', borderBottom: 'var(--border)' }}>
-          <div className="vp-eyebrow" style={{ marginBottom: 24 }}>{ru ? 'Применение профилей' : 'Profiilide kasutus'}</div>
+          <div className="vp-eyebrow" style={{ marginBottom: 24 }}>{tx(locale, 'Применение профилей', 'Profiilide kasutus')}</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 1, background: 'var(--ink)', border: 'var(--border)' }}>
             {Object.entries(p.usage).map(([sku, u]) => (
               <div key={sku} style={{ background: 'var(--paper)', padding: '32px 28px' }}>
                 <div className="vp-mono" style={{ fontSize: 14, fontWeight: 700, marginBottom: 4 }}>{sku}</div>
-                <div className="vp-display" style={{ fontSize: 28, marginBottom: 8 }}>{ru ? u.roleRu : u.role}</div>
-                <div style={{ fontSize: 13, lineHeight: 1.6, color: 'var(--ink-2)', marginBottom: 8 }}>{ru ? u.whereRu : u.where}</div>
-                <div className="vp-mono" style={{ fontSize: 11, color: 'var(--muted)' }}>{u.m} · {u.finish}</div>
+                <div className="vp-display" style={{ fontSize: 28, marginBottom: 8 }}>{tx(locale, u.roleRu, u.role)}</div>
+                <div style={{ fontSize: 13, lineHeight: 1.6, color: 'var(--ink-2)', marginBottom: 8 }}>{tx(locale, u.whereRu, u.where)}</div>
+                <div className="vp-mono" style={{ fontSize: 11, color: 'var(--muted)' }}>{u.m} · {tx(locale, u.finish, u.finish)}</div>
               </div>
             ))}
           </div>
@@ -467,12 +467,12 @@ export default async function InspirationProjectPage({ params }: Props) {
       {/* Lessons learned */}
       {p.lessons.length > 0 && (
         <section style={{ padding: '56px', borderBottom: 'var(--border)' }}>
-          <div className="vp-eyebrow" style={{ marginBottom: 24 }}>{ru ? 'Что узнали' : 'Mida õppisime'}</div>
+          <div className="vp-eyebrow" style={{ marginBottom: 24 }}>{tx(locale, 'Что узнали', 'Mida õppisime')}</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 1, background: 'var(--ink)', border: 'var(--border)' }}>
             {p.lessons.map((l, i) => (
               <div key={i} style={{ background: 'var(--paper)', padding: '32px 28px' }}>
-                <div className="vp-display" style={{ fontSize: 28, marginBottom: 10 }}>{ru ? l.kRu : l.k}</div>
-                <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--ink-2)', margin: 0 }}>{ru ? l.vRu : l.v}</p>
+                <div className="vp-display" style={{ fontSize: 28, marginBottom: 10 }}>{tx(locale, l.kRu, l.k)}</div>
+                <p style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--ink-2)', margin: 0 }}>{tx(locale, l.vRu, l.v)}</p>
               </div>
             ))}
           </div>
@@ -481,16 +481,16 @@ export default async function InspirationProjectPage({ params }: Props) {
 
       {/* CTA */}
       <section style={{ padding: '80px 56px', textAlign: 'center', background: 'var(--ink)', color: 'var(--paper)', borderBottom: 'var(--border)' }}>
-        <div className="vp-eyebrow" style={{ color: 'rgba(255,255,255,0.6)', marginBottom: 16 }}>{ru ? 'Хотите похожий результат?' : 'Soovid sarnast tulemust?'}</div>
+        <div className="vp-eyebrow" style={{ color: 'rgba(255,255,255,0.6)', marginBottom: 16 }}>{tx(locale, 'Хотите похожий результат?', 'Soovid sarnast tulemust?')}</div>
         <h2 className="vp-display" style={{ fontSize: 'clamp(48px, 7vw, 96px)', margin: '0 0 32px', color: 'var(--paper)', lineHeight: 0.92 }}>
-          {ru ? 'Nõustame tasuta.' : 'Nõustame tasuta.'}
+          {tx(locale, 'Nõustame tasuta.', 'Nõustame tasuta.')}
         </h2>
         <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <Link href={lp(`/tooted`, locale)} className="vp-btn vp-btn--lg" style={{ background: 'var(--paper)', color: 'var(--ink)', borderColor: 'var(--paper)' }}>
-            {ru ? 'Смотреть каталог →' : 'Vaata kataloogi →'}
+            {tx(locale, 'Смотреть каталог →', 'Vaata kataloogi →')}
           </Link>
           <Link href={lp(`/kontakt`, locale)} className="vp-btn vp-btn--ghost vp-btn--lg" style={{ borderColor: 'rgba(255,255,255,0.4)', color: 'var(--paper)' }}>
-            {ru ? 'Связаться →' : 'Võta ühendust →'}
+            {tx(locale, 'Связаться →', 'Võta ühendust →')}
           </Link>
         </div>
       </section>

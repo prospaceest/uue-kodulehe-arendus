@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
+import { tx } from '@/lib/tx';
 import { notFound } from 'next/navigation';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { products, productUrl } from '@/lib/catalog';
+import { products, productUrl, productText } from '@/lib/catalog';
 import { getProductImagePath } from '@/lib/productImages';
 import { lp, pageAlternates } from '@/lib/pageUrls';
 
@@ -50,8 +51,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!cfg) return {};
   const ru = locale === 'ru';
   return {
-    title: ru ? cfg.titleRu : cfg.titleEt,
-    description: ru ? cfg.descRu : cfg.descEt,
+    title: tx(locale, cfg.titleRu, cfg.titleEt),
+    description: tx(locale, cfg.descRu, cfg.descEt),
     alternates: pageAlternates(`/varjuprofiilid/${asukoht}`, locale),
   };
 }
@@ -78,34 +79,34 @@ export default async function DekorCategoryPage({ params }: Props) {
     <div>
       <section style={{ padding: '32px 56px 0' }}>
         <div className="vp-eyebrow">
-          <Link href={lp('/', locale)}>{ru ? 'Главная' : 'Avaleht'}</Link>
+          <Link href={lp('/', locale)}>{tx(locale, 'Главная', 'Avaleht')}</Link>
           {' / '}
-          <Link href={lp(`/varjuprofiilid`, locale)}>{ru ? 'Теневые профили' : 'Varjuprofiilid'}</Link>
+          <Link href={lp(`/varjuprofiilid`, locale)}>{tx(locale, 'Теневые профили', 'Varjuprofiilid')}</Link>
           {' / '}
-          <span style={{ color: 'var(--ink)' }}>{ru ? cfg.eyebrowRu : cfg.eyebrowEt}</span>
+          <span style={{ color: 'var(--ink)' }}>{tx(locale, cfg.eyebrowRu, cfg.eyebrowEt)}</span>
         </div>
       </section>
 
       <section style={{ padding: '48px 56px 56px', borderBottom: 'var(--border)' }}>
-        <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{ru ? cfg.eyebrowRu : cfg.eyebrowEt}</div>
+        <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{tx(locale, cfg.eyebrowRu, cfg.eyebrowEt)}</div>
         <h1 className="vp-display" style={{ fontSize: 'clamp(40px, 6vw, 80px)', margin: '0 0 24px', lineHeight: 0.95, maxWidth: '20ch' }}>
-          {ru ? cfg.h1Ru : cfg.h1Et}
+          {tx(locale, cfg.h1Ru, cfg.h1Et)}
         </h1>
         <p style={{ fontSize: 17, lineHeight: 1.75, color: 'var(--ink-2)', maxWidth: 720 }}>
-          {ru ? cfg.descRu : cfg.descEt}
+          {tx(locale, cfg.descRu, cfg.descEt)}
         </p>
       </section>
 
       <section style={{ padding: '56px' }}>
         {categoryProducts.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '80px 0' }}>
-            <div className="vp-display" style={{ fontSize: 48, marginBottom: 16 }}>{ru ? 'Скоро.' : 'Tulekul.'}</div>
-            <Link href={lp(`/varjuprofiilid`, locale)} className="vp-btn">{ru ? '← Назад' : '← Tagasi'}</Link>
+            <div className="vp-display" style={{ fontSize: 48, marginBottom: 16 }}>{tx(locale, 'Скоро.', 'Tulekul.')}</div>
+            <Link href={lp(`/varjuprofiilid`, locale)} className="vp-btn">{tx(locale, '← Назад', '← Tagasi')}</Link>
           </div>
         ) : (
           <>
             <div className="vp-mono" style={{ fontSize: 11, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 24 }}>
-              {categoryProducts.length} {ru ? 'товаров' : 'toodet'}
+              {categoryProducts.length} {tx(locale, 'товаров', 'toodet')}
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
               {categoryProducts.map((p) => {
@@ -121,9 +122,9 @@ export default async function DekorCategoryPage({ params }: Props) {
                     <div style={{ padding: '12px 14px' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 3 }}>
                         <span className="vp-mono" style={{ fontSize: 11 }}>{p.sku}</span>
-                        <span style={{ fontWeight: 600, fontSize: 14 }}>{p.price.toFixed(2).replace('.', ',')} {ru ? '€/пог.м' : '€/m'}</span>
+                        <span style={{ fontWeight: 600, fontSize: 14 }}>{p.price.toFixed(2).replace('.', ',')} {tx(locale, '€/пог.м', '€/m')}</span>
                       </div>
-                      <div style={{ fontSize: 12, color: 'var(--ink-2)' }}>{ru ? p.seoNameRu : p.seoName}</div>
+                      <div style={{ fontSize: 12, color: 'var(--ink-2)' }}>{productText(p, locale).seoName}</div>
                     </div>
                   </Link>
                 );
@@ -134,15 +135,15 @@ export default async function DekorCategoryPage({ params }: Props) {
       </section>
 
       <section style={{ padding: '48px 56px', borderBottom: 'var(--border)', background: 'var(--paper-2)' }}>
-        <div className="vp-eyebrow" style={{ marginBottom: 16 }}>{ru ? 'Другие категории' : 'Teised kategooriad'}</div>
+        <div className="vp-eyebrow" style={{ marginBottom: 16 }}>{tx(locale, 'Другие категории', 'Teised kategooriad')}</div>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           {(['lae', 'seina', 'poranda'] as Asukoht[]).filter((a) => a !== asukoht).map((a) => (
             <Link key={a} href={lp(`/varjuprofiilid/${a}`, locale)} className="vp-btn vp-btn--ghost">
-              {ru ? CONFIG[a].eyebrowRu : CONFIG[a].eyebrowEt} →
+              {tx(locale, CONFIG[a].eyebrowRu, CONFIG[a].eyebrowEt)} →
             </Link>
           ))}
           <Link href={lp(`/led-varjuprofiilid`, locale)} className="vp-btn vp-btn--ghost">
-            {ru ? 'LED версии →' : 'LED versioonid →'}
+            {tx(locale, 'LED версии →', 'LED versioonid →')}
           </Link>
         </div>
       </section>

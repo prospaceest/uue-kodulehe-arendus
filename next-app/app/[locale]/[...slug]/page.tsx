@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import { notFound, permanentRedirect } from 'next/navigation';
 import { getLocale } from 'next-intl/server';
-import { products, productUrl, productPath } from '@/lib/catalog';
+import { products, productUrl, productPath, productText } from '@/lib/catalog';
 import ProductClient from '@/components/product/ProductClient';
 import { getProductImages } from '@/lib/productImages';
 import { site } from '@/lib/site';
-import { MARKETS, marketForLocale, marketPrice } from '@/lib/markets';
+import { MARKETS, marketForLocale, marketPrice, OG_LOCALE } from '@/lib/markets';
 import JsonLd from '@/components/seo/JsonLd';
 
 type Props = {
@@ -59,9 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!product) return {};
 
   const ru = locale === 'ru';
-  const name = ru ? product.nameRu : product.name;
-  const seoName = ru ? product.seoNameRu : product.seoName;
-  const description = ru ? product.descriptionRu : product.description;
+  const { name, seoName, description } = productText(product, locale);
   const selfMarket = marketForLocale(locale);
   const canonical = absUrl(productPath(product, locale), selfMarket.origin);
 
@@ -83,7 +81,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${name} – ${seoName}`,
       description: description.slice(0, 160),
-      locale: ru ? 'ru_RU' : 'et_EE',
+      locale: OG_LOCALE[locale] ?? 'et_EE',
     },
   };
 }
@@ -126,7 +124,7 @@ export default async function ProductPage({ params }: Props) {
   // Soomes 25,5% KM ja www.prospace.fi.
   const ru = locale === 'ru';
   const market = marketForLocale(locale);
-  const seoName = ru ? product.seoNameRu : product.seoName;
+  const { name: pName, seoName } = productText(product, locale);
   const canonical = absUrl(productPath(product, locale), market.origin);
   const images = getProductImages(product.sku).map((u) =>
     u.startsWith('http') ? u : `${market.origin}${u}`,
@@ -134,9 +132,9 @@ export default async function ProductPage({ params }: Props) {
   const productSchema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: `${ru ? product.nameRu : product.name} – ${seoName}`,
+    name: `${pName} – ${seoName}`,
     sku: product.sku,
-    description: (ru ? product.descriptionRu : product.description).slice(0, 300),
+    description: productText(product, locale).description.slice(0, 300),
     brand: { '@type': 'Brand', name: market.storefront },
     offers: {
       '@type': 'Offer',

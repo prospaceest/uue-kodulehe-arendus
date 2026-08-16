@@ -1,4 +1,5 @@
 import { getLocale } from 'next-intl/server';
+import { tx } from '@/lib/tx';
 
 const PARTNERS = [
   { src: '/assets/partners/bildgren.svg',         alt: 'Bildgren',          h: 40 },
@@ -31,10 +32,10 @@ export default async function Partners() {
     <section style={{ padding: '48px 48px 56px', borderBottom: 'var(--border)', background: 'var(--paper)' }}>
       <div style={{ marginBottom: 32 }}>
         <div className="vp-eyebrow" style={{ marginBottom: 10 }}>
-          {ru ? '08 / Клиенты и партнёры' : '08 / Kliendid ja koostööpartnerid'}
+          {tx(locale, '08 / Клиенты и партнёры', '08 / Kliendid ja koostööpartnerid')}
         </div>
         <h3 className="vp-display" style={{ fontSize: 36, margin: 0 }}>
-          {ru ? 'Нам доверяют архитекторы и строители Эстонии' : 'Usaldatud eesti arhitektide ja ehitajate poolt'}
+          {tx(locale, 'Нам доверяют архитекторы и строители Эстонии', 'Usaldatud eesti arhitektide ja ehitajate poolt')}
         </h3>
       </div>
 
@@ -68,7 +69,7 @@ export default async function Partners() {
               />
             ) : i === cells.length - 1 ? (
               <span className="vp-mono" style={{ fontSize: 11, color: 'var(--ink-2)', opacity: 0.55, letterSpacing: '0.08em' }}>
-                {ru ? '+ И ДРУГИЕ' : '+ JA TEISED'}
+                {tx(locale, '+ И ДРУГИЕ', '+ JA TEISED')}
               </span>
             ) : null}
           </div>

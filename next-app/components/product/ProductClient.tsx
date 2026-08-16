@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useTx, useTxPairs } from '@/lib/useTx';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCart } from '@/lib/cart';
@@ -42,6 +43,8 @@ type Props = {
 
 export default function ProductClient({ product, related, locale }: Props) {
   const ru = locale === 'ru';
+  const tx = useTx();
+  const txPairs = useTxPairs();
   const cat = product.collection.split(';')[0].trim();
   const { addItem } = useCart();
   const router = useRouter();
@@ -104,7 +107,7 @@ export default function ProductClient({ product, related, locale }: Props) {
   const hasPriceRange = hasMill || (hasRal && product.ralPrice! - stdMax > 0.01);
 
   const catalogHref = lp('/tooted', locale);
-  const catLabel = ru ? CAT_RU[cat] ?? cat : cat;
+  const catLabel = tx(CAT_RU[cat] ?? cat, cat);
   const subtitle = text.seoName;
 
   // Image URLs for gallery — resolved from the PRODUCT_IMAGES manifest
@@ -117,20 +120,20 @@ export default function ProductClient({ product, related, locale }: Props) {
   const COLOR_RU: Record<string, string> = { hõbe: 'серебристый', valge: 'белый', must: 'чёрный' };
   function imgAlt(src: string): string {
     const { dimension, color } = getImageRole(src);
-    if (dimension) return ru ? `${product.sku} — чертёж с размерами` : `${product.sku} mõõtjoonis`;
-    if (color) return `${product.sku} ${ru ? COLOR_RU[color] ?? color : color} – ${subtitle}`;
+    if (dimension) return `${product.sku} ${tx('— чертёж с размерами', 'mõõtjoonis')}`;
+    if (color) return `${product.sku} ${tx(COLOR_RU[color] ?? color, color)} – ${subtitle}`;
     return `${product.sku} – ${subtitle}`;
   }
 
-  const faqItems = ru ? FAQ_RU : FAQ_ET;
+  const faqItems = txPairs(FAQ_RU, FAQ_ET);
 
   return (
     <div>
       {/* Breadcrumb */}
       <div style={{ padding: '18px 56px', fontFamily: 'JetBrains Mono', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--muted)' }}>
-        <Link href={lp('/', locale)}>{ru ? 'Главная' : 'Avaleht'}</Link>
+        <Link href={lp('/', locale)}>{tx('Главная', 'Avaleht')}</Link>
         {' / '}
-        <Link href={catalogHref}>{ru ? 'Магазин' : 'Pood'}</Link>
+        <Link href={catalogHref}>{tx('Магазин', 'Pood')}</Link>
         {' / '}
         <Link href={`${catalogHref}?cat=${encodeURIComponent(cat)}`}>{catLabel}</Link>
         {' / '}
@@ -218,16 +221,16 @@ export default function ProductClient({ product, related, locale }: Props) {
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 8, paddingBottom: 8, flexWrap: 'wrap' }}>
             <span className="vp-display" style={{ fontSize: 56 }}>{activePrice.toFixed(2).replace('.', ',')}&nbsp;€</span>
             <span className="vp-mono" style={{ fontSize: 11, textTransform: 'uppercase', color: 'var(--muted)' }}>
-              / {ru ? 'пог.м' : 'jooksev meeter'} · {ru ? 'с НДС' : 'KM-ga'}
+              / {tx('пог.м', 'jooksev meeter')} · {tx('с НДС', 'KM-ga')}
             </span>
           </div>
 
           {hasPriceRange && (
             <div className="vp-mono" style={{ fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)', marginBottom: 24, paddingBottom: 24, borderBottom: 'var(--border)' }}>
-              {hasMill && millPrice && `${ru ? 'от' : 'al.'} ${millPrice.toFixed(2).replace('.', ',')} € (${ru ? 'без покрытия' : 'töötlemata'})`}
+              {hasMill && millPrice && `${tx('от', 'al.')} ${millPrice.toFixed(2).replace('.', ',')} € (${tx('без покрытия', 'töötlemata')})`}
               {hasMill && hasRal && ' → '}
-              {hasRal && product.ralPrice && `${ru ? 'до' : 'kuni'} ${product.ralPrice.toFixed(2).replace('.', ',')} € (${ru ? 'цвет RAL' : 'RAL värv'})`}
-              {' · '}{ru ? 'выберите цвет ниже' : 'vali värv allpool'}
+              {hasRal && product.ralPrice && `${tx('до', 'kuni')} ${product.ralPrice.toFixed(2).replace('.', ',')} € (${tx('цвет RAL', 'RAL värv')})`}
+              {' · '}{tx('выберите цвет ниже', 'vali värv allpool')}
             </div>
           )}
           {!hasPriceRange && <div style={{ marginBottom: 24, paddingBottom: 24, borderBottom: 'var(--border)' }} />}
@@ -236,18 +239,18 @@ export default function ProductClient({ product, related, locale }: Props) {
           {product.colors.length > 0 && (
             <div style={{ marginBottom: 24 }}>
               <div className="vp-eyebrow" style={{ marginBottom: 12, display: 'flex', justifyContent: 'space-between' }}>
-                <span>{ru ? 'Цвет' : 'Värvus'}</span>
+                <span>{tx('Цвет', 'Värvus')}</span>
                 <span style={{ color: 'var(--ink)' }}>
                   {isRal
-                    ? (ralCode.trim() ? `RAL ${ralCode.trim()}` : (ru ? 'RAL — выберите оттенок' : 'RAL — vali toon'))
-                    : (product.colors.find((c) => c.hex === color)?.name ?? '')}
+                    ? (ralCode.trim() ? `RAL ${ralCode.trim()}` : (tx('RAL — выберите оттенок', 'RAL — vali toon')))
+                    : (() => { const n = product.colors.find((c) => c.hex === color)?.name ?? ''; return n ? tx(n, n) : ''; })()}
                 </span>
               </div>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 {product.colors.map((c) => (
                   <button key={c.hex} onClick={() => setColor(c.hex)} className={`vp-swatch${color === c.hex ? ' vp-swatch--active' : ''}`} style={{ background: 'none', border: color === c.hex ? '1.5px solid var(--ink)' : '1.5px solid transparent', cursor: 'pointer' }}>
                     <div className="dot" style={{ background: c.hex }} />
-                    <div className="name">{c.name}</div>
+                    <div className="name">{tx(c.name, c.name)}</div>
                   </button>
                 ))}
                 <button onClick={() => setColor('RAL')} className={`vp-swatch${isRal ? ' vp-swatch--active' : ''}`} style={{ background: 'none', border: isRal ? '1.5px solid var(--ink)' : '1.5px solid transparent', cursor: 'pointer' }}>
@@ -259,7 +262,7 @@ export default function ProductClient({ product, related, locale }: Props) {
               {isRal && (
                 <div style={{ marginTop: 14, padding: '14px 16px', border: 'var(--border)', background: 'var(--paper-2)' }}>
                   <label className="vp-eyebrow" style={{ display: 'block', marginBottom: 8 }} htmlFor="ral-input">
-                    {ru ? 'Код RAL' : 'RAL kood'}
+                    {tx('Код RAL', 'RAL kood')}
                   </label>
                   <div style={{ display: 'flex', alignItems: 'stretch', border: 'var(--border)', background: 'var(--paper)' }}>
                     <span className="vp-mono" style={{ padding: '10px 12px', borderRight: 'var(--border)', fontSize: 13, background: 'var(--paper-2)', display: 'flex', alignItems: 'center' }}>RAL</span>
@@ -267,13 +270,13 @@ export default function ProductClient({ product, related, locale }: Props) {
                       id="ral-input"
                       value={ralCode}
                       onChange={(e) => setRalCode(e.target.value.replace(/[^0-9 ]/g, '').slice(0, 8))}
-                      placeholder={ru ? 'напр. 9005, 7016, 9010' : 'nt 9005, 7016, 9010'}
+                      placeholder={tx('напр. 9005, 7016, 9010', 'nt 9005, 7016, 9010')}
                       style={{ flex: 1, padding: '10px 12px', border: 'none', outline: 'none', background: 'transparent', fontFamily: 'JetBrains Mono, monospace', fontSize: 14 }}
                     />
                   </div>
                   <div style={{ display: 'flex', gap: 14, marginTop: 12, fontFamily: 'JetBrains Mono', fontSize: 11, textTransform: 'uppercase', color: 'var(--accent)', flexWrap: 'wrap' }}>
-                    <span>{ru ? '⏱ Под заказ — поставка ~5 недель' : '⏱ Eritellimus — tarne ~5 nädalat'}</span>
-                    <span>{ru ? '✕ Возврат не действует' : '✕ Tagastusõigus ei kehti'}</span>
+                    <span>{tx('⏱ Под заказ — поставка ~5 недель', '⏱ Eritellimus — tarne ~5 nädalat')}</span>
+                    <span>{tx('✕ Возврат не действует', '✕ Tagastusõigus ei kehti')}</span>
                   </div>
                 </div>
               )}
@@ -284,8 +287,8 @@ export default function ProductClient({ product, related, locale }: Props) {
           <div style={{ display: 'flex', alignItems: 'flex-end', gap: 18, marginBottom: 24 }}>
             <div>
               <div className="vp-eyebrow" style={{ marginBottom: 12, display: 'flex', justifyContent: 'space-between', gap: 12 }}>
-                <span>{ru ? 'Количество (шт)' : 'Kogus (tk)'}</span>
-                <span style={{ color: 'var(--muted)' }}>1 {ru ? 'шт' : 'tk'} = {fmt(pieceLength)} {ru ? 'м' : 'm'}</span>
+                <span>{tx('Количество (шт)', 'Kogus (tk)')}</span>
+                <span style={{ color: 'var(--muted)' }}>1 {tx('шт', 'tk')} = {fmt(pieceLength)} {tx('м', 'm')}</span>
               </div>
               <div className="vp-stepper">
                 <button onClick={() => setQty(Math.max(1, qty - 1))}>−</button>
@@ -293,11 +296,11 @@ export default function ProductClient({ product, related, locale }: Props) {
                 <button onClick={() => setQty(qty + 1)}>+</button>
               </div>
               <div className="vp-mono" style={{ fontSize: 11, color: 'var(--muted)', marginTop: 8, textTransform: 'uppercase' }}>
-                {qty > 1 ? `${qty} × ${fmt(pieceLength)} ${ru ? 'м' : 'm'} = ${fmt(totalMeters)} ${ru ? 'м всего' : 'm kokku'}` : `${fmt(pieceLength)} ${ru ? 'м' : 'm'}`}
+                {qty > 1 ? `${qty} × ${fmt(pieceLength)} ${tx('м', 'm')} = ${fmt(totalMeters)} ${tx('м всего', 'm kokku')}` : `${fmt(pieceLength)} ${tx('м', 'm')}`}
               </div>
             </div>
             <div style={{ flex: 1, textAlign: 'right' }}>
-              <div className="vp-eyebrow" style={{ marginBottom: 4 }}>{ru ? 'Итого' : 'Kokku'}</div>
+              <div className="vp-eyebrow" style={{ marginBottom: 4 }}>{tx('Итого', 'Kokku')}</div>
               <div className="vp-display" style={{ fontSize: 36 }}>{total}&nbsp;€</div>
             </div>
           </div>
@@ -311,7 +314,7 @@ export default function ProductClient({ product, related, locale }: Props) {
                 const selectedColor = product.colors.find((c) => c.hex === color);
                 addItem({
                   sku: product.sku,
-                  name: ru ? product.seoNameRu : product.seoName,
+                  name: text.seoName,
                   color: isRal ? 'RAL' : (selectedColor?.name ?? color),
                   colorHex: isRal ? 'conic-gradient(red,yellow,lime,cyan,blue,magenta,red)' : color,
                   ralCode: isRal ? ralCode : undefined,
@@ -322,20 +325,20 @@ export default function ProductClient({ product, related, locale }: Props) {
                 router.push(lp('/korv', locale));
               }}
             >
-              {ru ? `В корзину → ${total} €` : `Lisa korvi → ${total} €`}
+              {`${tx('В корзину', 'Lisa korvi')} → ${total} €`}
             </button>
-            <button className="vp-btn vp-btn--ghost vp-btn--lg" style={{ padding: '18px 22px' }} aria-label={ru ? 'В избранное' : 'Soovide nimekirja'}>♡</button>
+            <button className="vp-btn vp-btn--ghost vp-btn--lg" style={{ padding: '18px 22px' }} aria-label={tx('В избранное', 'Soovide nimekirja')}>♡</button>
           </div>
 
           {/* Delivery status */}
           <div style={{ display: 'flex', gap: 18, paddingTop: 18, borderTop: '1px solid rgba(0,0,0,0.1)', fontFamily: 'JetBrains Mono', fontSize: 11, textTransform: 'uppercase', color: 'var(--ink-2)', flexWrap: 'wrap' }}>
-            {product.inStock && !isRal && <span>{ru ? '✓ На складе' : '✓ Laos'}</span>}
+            {product.inStock && !isRal && <span>{tx('✓ На складе', '✓ Laos')}</span>}
             {isRal
-              ? <span style={{ color: 'var(--accent)' }}>{ru ? '⏱ Поставка ~5 недель' : '⏱ Tarne ~5 nädalat'}</span>
-              : <span>{ru ? '✓ Доставка 2–4 дня' : '✓ Tarne 2–4 päeva'}</span>}
+              ? <span style={{ color: 'var(--accent)' }}>{tx('⏱ Поставка ~5 недель', '⏱ Tarne ~5 nädalat')}</span>
+              : <span>{tx('✓ Доставка 2–4 дня', '✓ Tarne 2–4 päeva')}</span>}
             {isRal
-              ? <span style={{ color: 'var(--accent)' }}>{ru ? '✕ Возврат не действует' : '✕ Tagastusõigus ei kehti'}</span>
-              : <span>{ru ? '✓ Возврат 14 дней' : '✓ Tagastus 14 päeva'}</span>}
+              ? <span style={{ color: 'var(--accent)' }}>{tx('✕ Возврат не действует', '✕ Tagastusõigus ei kehti')}</span>
+              : <span>{tx('✓ Возврат 14 дней', '✓ Tagastus 14 päeva')}</span>}
           </div>
         </div>
       </section>
@@ -350,10 +353,10 @@ export default function ProductClient({ product, related, locale }: Props) {
               style={{ padding: '18px 28px', background: tab === id ? 'var(--ink)' : 'var(--paper)', color: tab === id ? 'var(--paper)' : 'var(--ink)', border: 'none', borderRight: 'var(--border)', fontFamily: 'JetBrains Mono', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.06em', cursor: 'pointer' }}
             >
               {id === 'desc'
-                ? (ru ? 'Описание' : 'Kirjeldus')
+                ? (tx('Описание', 'Kirjeldus'))
                 : id === 'specs'
-                  ? (ru ? 'Технические данные' : 'Tehnilised andmed')
-                  : (ru ? 'Вопросы' : 'Küsimused')}
+                  ? (tx('Технические данные', 'Tehnilised andmed'))
+                  : (tx('Вопросы', 'Küsimused'))}
             </button>
           ))}
         </div>
@@ -370,7 +373,7 @@ export default function ProductClient({ product, related, locale }: Props) {
               {copy.notes.map((note) => (
                 <p key={note} style={{ fontSize: 14, lineHeight: 1.65, color: 'var(--ink)', margin: '0 0 14px', padding: '14px 16px', background: 'var(--paper-2)', borderLeft: '3px solid var(--accent)' }}>
                   <span className="vp-mono" style={{ fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--accent)', marginRight: 10 }}>
-                    {ru ? 'Важно' : 'Pane tähele'}
+                    {tx('Важно', 'Pane tähele')}
                   </span>
                   {note}
                 </p>
@@ -383,7 +386,7 @@ export default function ProductClient({ product, related, locale }: Props) {
           )}
           {tab === 'specs' && (
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 56px' }}>
-              {(product.specs.length > 0 ? product.specs : [{ k: ru ? 'Длина' : 'Pikkus', v: '2500 mm' }]).map(({ k, v }) => (
+              {(product.specs.length > 0 ? product.specs : [{ k: tx('Длина', 'Pikkus'), v: '2500 mm' }]).map(({ k, v }) => (
                 <div key={k} className="vp-spec-row">
                   <span className="k">{k}</span>
                   <span style={{ fontWeight: 500 }}>{v}</span>
@@ -411,9 +414,9 @@ export default function ProductClient({ product, related, locale }: Props) {
       {related.length > 0 && (
         <section style={{ padding: '72px 56px', background: 'var(--paper-2)', borderTop: 'var(--border)' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 28 }}>
-            <h2 className="vp-display" style={{ fontSize: 48, margin: 0 }}>{ru ? 'Похожие товары' : 'Sarnased tooted'}</h2>
+            <h2 className="vp-display" style={{ fontSize: 48, margin: 0 }}>{tx('Похожие товары', 'Sarnased tooted')}</h2>
             <Link href={`${catalogHref}?cat=${encodeURIComponent(cat)}`} className="vp-mono" style={{ fontSize: 12, textTransform: 'uppercase', borderBottom: 'var(--border)' }}>
-              {ru ? 'Смотреть все →' : 'Vaata kõiki →'}
+              {tx('Смотреть все →', 'Vaata kõiki →')}
             </Link>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
@@ -440,7 +443,7 @@ export default function ProductClient({ product, related, locale }: Props) {
                   </div>
                   <div style={{ padding: '14px 16px' }}>
                     <div className="vp-mono" style={{ fontSize: 12 }}>{p.sku}</div>
-                    <div style={{ fontSize: 13, color: 'var(--ink-2)' }}>{ru ? p.seoNameRu : p.seoName}</div>
+                    <div style={{ fontSize: 13, color: 'var(--ink-2)' }}>{productText(p, locale).seoName}</div>
                     <div style={{ fontWeight: 600, marginTop: 4 }}>{p.price.toFixed(2).replace('.', ',')} €/m</div>
                   </div>
                 </Link>
