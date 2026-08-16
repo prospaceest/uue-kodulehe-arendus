@@ -64,11 +64,26 @@ export default clerkMiddleware(async (auth, req: NextRequest) => {
     const locale = isSv ? 'sv' : 'fi';
 
     // Avalik soome/rootsi slug → eestikeelse nimega sisemine tee, täpselt nagu
-    // vene keele puhul. Tabelist puudu (tootelehed, tõlkimata teed) → jääb
-    // eestikeelne tee, ainult keeleprefiks ette.
-    const internal =
-      internalPath(pathname, locale) ??
-      (isSv ? pathname : pathname === '/' ? '/fi' : `/fi${pathname}`);
+    // vene keele puhul.
+    let internal = internalPath(pathname, locale);
+
+    if (!internal) {
+      // Eestikeelne slug Soome domeenil (nt /tooted) — kui sellel on soome
+      // vaste, suuna sinna. Muidu jääks .fi peale teine URL sama sisuga.
+      // Tootelehed siia ei satu: nende tee ei ole lehetabelis ja neid
+      // suunab app/[locale]/[...slug]/page.tsx cross-locale loogika.
+      // NB: rootsi tee on juba /sv-eesliitega. publicPath ootab eestikeelset
+      // teed ja lisab eesliite ise — ilma selle mahavõtmiseta tekiks /sv/sv/…
+      const bare = isSv ? pathname.slice(3) || '/' : pathname;
+      const translated = publicPath(bare, locale);
+      if (translated !== pathname) {
+        return NextResponse.redirect(
+          new URL(translated + req.nextUrl.search, req.url),
+          308,
+        );
+      }
+      internal = isSv ? pathname : pathname === '/' ? '/fi' : `/fi${pathname}`;
+    }
 
     req.nextUrl.pathname = internal;
     return intlMiddleware(req);
