@@ -112,9 +112,20 @@ export const MARKETS: Record<MarketId, Market> = {
     // Tühi seni, kuni prospace.fi peal on päriselt midagi — surnud lingile
     // jalusest viitamine on halvem kui puuduv link.
     sisters: [],
-    // Soome standardmäär alates 1.09.2024. Eesti müüja jaoks tähendab see
-    // OSS-i kaudu deklareerimist, kui EL-i sisene kaugmüük ületab 10 000 €/a.
-    vatPercent: 25.5,
+    // 24%, MITTE Soome 25,5% — ja see on teadlik.
+    //
+    // EL-i kaugmüügi reegel: kuni piiriülene B2C-müük jääb alla 10 000 €
+    // aastas (kogu EL peale kokku), rakendub MÜÜJA riigi määr ehk Eesti 24%.
+    // Alles piirmäära ületamisel tuleb küsida sihtriigi määra (Soomes 25,5%)
+    // ja deklareerida see OSS-erikorra kaudu.
+    //
+    // PROSPACE OÜ ei ole piiri ületanud (kinnitatud 16.08.2026), seega
+    // Soome eraisik maksab 24%. Kui piir ületatakse või OSS-i registreerutakse:
+    //   1. muuda see väärtus 25.5-ks
+    //   2. jooksuta `npx tsx scripts/vat-rate.ts 25,5` — see parandab määra
+    //      ka tõlgitud tekstides (messages/{fi,sv}.json + catalog kirjeldused,
+    //      ~136 kohta), sest seal on protsent lauses sees
+    vatPercent: 24,
     shipping: { carrier: 'Venipak', price: 30, freeFrom: 300 },
     // Avatud 16.08.2026: tõlked valmis (1103 stringi + 98 tootekirjeldust),
     // soomlased kinnitasid teksti, scripts/launch-check.ts andis "PUHAS".
