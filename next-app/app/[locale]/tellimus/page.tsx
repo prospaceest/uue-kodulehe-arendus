@@ -35,8 +35,10 @@ export default function CheckoutPage() {
     notes: '',
   });
 
-  const overThreshold = subtotal >= 200;
-  const shippingCost = delivery === 'salong' ? 0 : (overThreshold ? 0 : 25);
+  // Tarnehind ja tasuta piir tulevad turult: Eesti 25 € / 200 €,
+  // Soome 30 € / 300 €. Varem olid mõlemad numbrid siin kõvasti kirjas.
+  const overThreshold = subtotal >= market.shipping.freeFrom;
+  const shippingCost = delivery === 'salong' ? 0 : (overThreshold ? 0 : market.shipping.price);
   const total = subtotal + shippingCost;
   const fmt = (n: number) => n.toFixed(2).replace('.', ',');
 

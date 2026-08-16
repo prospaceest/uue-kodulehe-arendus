@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { marketForLocale, marketPrice } from '@/lib/markets';
 import { useTx } from '@/lib/useTx';
 import { useState } from 'react';
 import { productUrl, type Product, productText } from '@/lib/catalog';
@@ -17,6 +18,7 @@ export default function ProductCard({ product: p, locale }: Props) {
   const topRank = TOP10_RANK[p.sku];
   const ru = locale === 'ru';
   const tx = useTx();
+  const market = marketForLocale(locale);
 
   const href = productUrl(p, ru);
   const label = productText(p, locale).seoName;
@@ -68,7 +70,7 @@ export default function ProductCard({ product: p, locale }: Props) {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
           <span className="vp-mono" style={{ fontSize: 12, fontWeight: 500 }}>{p.sku}</span>
           <span style={{ fontSize: 15, fontWeight: 600 }}>
-            {p.price.toFixed(2).replace('.', ',')} {tx('€/пог.м', '€/m')}
+            {marketPrice(p.price, market).toFixed(2).replace('.', ',')} {tx('€/пог.м', '€/m')}
           </span>
         </div>
         <div style={{ fontSize: 13, color: 'var(--ink-2)' }}>{label}</div>

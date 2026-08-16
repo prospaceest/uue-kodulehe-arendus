@@ -1,6 +1,8 @@
 'use client';
 
 import { createContext, useContext, useEffect, useReducer, type ReactNode } from 'react';
+import { useLocale } from 'next-intl';
+import { marketForLocale } from './markets';
 
 export type CartItem = {
   sku: string;
@@ -62,6 +64,7 @@ const CartContext = createContext<CartContextValue | null>(null);
 const STORAGE_KEY = 'vp-cart';
 
 export function CartProvider({ children }: { children: ReactNode }) {
+  const market = marketForLocale(useLocale());
   const [state, dispatch] = useReducer(reducer, { items: [] });
 
   // Hydrate from localStorage on mount
@@ -78,7 +81,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [state.items]);
 
   const subtotal = state.items.reduce((s, i) => s + i.pricePerM * i.qty * i.pieceLengthM, 0);
-  const shipping = subtotal >= 200 || subtotal === 0 ? 0 : 25;
+  // Tarnehind ja tasuta piir turult: Eesti 25 € / 200 €, Soome 30 € / 300 €.
+  const shipping =
+    subtotal >= market.shipping.freeFrom || subtotal === 0 ? 0 : market.shipping.price;
   const total = subtotal + shipping;
 
   const value: CartContextValue = {

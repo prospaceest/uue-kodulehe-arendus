@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { marketForLocale, marketPrice } from '@/lib/markets';
 import { useTx, useTxPairs } from '@/lib/useTx';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -44,6 +45,7 @@ type Props = {
 export default function ProductClient({ product, related, locale }: Props) {
   const ru = locale === 'ru';
   const tx = useTx();
+  const market = marketForLocale(locale);
   const txPairs = useTxPairs();
   const cat = product.collection.split(';')[0].trim();
   const { addItem } = useCart();
@@ -87,10 +89,14 @@ export default function ProductClient({ product, related, locale }: Props) {
 
   const isRal = color === 'RAL';
 
+  // Kõik kuvatavad hinnad käivad turu käibemaksu kaudu: catalog.json hoiab
+  // Eesti brutohinda 24%-ga, Soome pool arvutatakse netost 25,5%-ga.
+  const mp = (n: number) => marketPrice(n, market);
+
   const activePrice = (() => {
-    if (isRal && product.ralPrice != null) return product.ralPrice;
+    if (isRal && product.ralPrice != null) return mp(product.ralPrice);
     const sel = product.colors.find((c) => c.hex === color);
-    return sel?.price ?? product.price;
+    return mp(sel?.price ?? product.price);
   })();
 
   const totalMeters = +(qty * pieceLength).toFixed(2);
@@ -101,10 +107,11 @@ export default function ProductClient({ product, related, locale }: Props) {
 
   const hasMill = product.colors.some((c) => c.name === 'Töötlemata');
   const hasRal = product.ralPrice != null;
-  const millPrice = product.colors.find((c) => c.name === 'Töötlemata')?.price;
-  const stdPrices = product.colors.filter((c) => c.name !== 'Töötlemata').map((c) => c.price);
-  const stdMax = stdPrices.length ? Math.max(...stdPrices) : product.price;
-  const hasPriceRange = hasMill || (hasRal && product.ralPrice! - stdMax > 0.01);
+  const millRaw = product.colors.find((c) => c.name === 'Töötlemata')?.price;
+  const millPrice = millRaw != null ? mp(millRaw) : undefined;
+  const stdPrices = product.colors.filter((c) => c.name !== 'Töötlemata').map((c) => mp(c.price));
+  const stdMax = stdPrices.length ? Math.max(...stdPrices) : mp(product.price);
+  const hasPriceRange = hasMill || (hasRal && mp(product.ralPrice!) - stdMax > 0.01);
 
   const catalogHref = lp('/tooted', locale);
   const catLabel = tx(CAT_RU[cat] ?? cat, cat);
@@ -229,7 +236,7 @@ export default function ProductClient({ product, related, locale }: Props) {
             <div className="vp-mono" style={{ fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--muted)', marginBottom: 24, paddingBottom: 24, borderBottom: 'var(--border)' }}>
               {hasMill && millPrice && `${tx('от', 'al.')} ${millPrice.toFixed(2).replace('.', ',')} € (${tx('без покрытия', 'töötlemata')})`}
               {hasMill && hasRal && ' → '}
-              {hasRal && product.ralPrice && `${tx('до', 'kuni')} ${product.ralPrice.toFixed(2).replace('.', ',')} € (${tx('цвет RAL', 'RAL värv')})`}
+              {hasRal && product.ralPrice && `${tx('до', 'kuni')} ${mp(product.ralPrice).toFixed(2).replace('.', ',')} € (${tx('цвет RAL', 'RAL värv')})`}
               {' · '}{tx('выберите цвет ниже', 'vali värv allpool')}
             </div>
           )}
@@ -444,7 +451,7 @@ export default function ProductClient({ product, related, locale }: Props) {
                   <div style={{ padding: '14px 16px' }}>
                     <div className="vp-mono" style={{ fontSize: 12 }}>{p.sku}</div>
                     <div style={{ fontSize: 13, color: 'var(--ink-2)' }}>{productText(p, locale).seoName}</div>
-                    <div style={{ fontWeight: 600, marginTop: 4 }}>{p.price.toFixed(2).replace('.', ',')} €/m</div>
+                    <div style={{ fontWeight: 600, marginTop: 4 }}>{mp(p.price).toFixed(2).replace('.', ',')} €/m</div>
                   </div>
                 </Link>
               );

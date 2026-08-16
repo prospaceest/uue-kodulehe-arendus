@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { marketForLocale, marketPrice } from '@/lib/markets';
 import { useTx } from '@/lib/useTx';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -38,6 +39,7 @@ export default function CatalogClient({ products, categories, initialCat }: Prop
   const locale = useLocale();
   const ru = locale === 'ru';
   const tx = useTx();
+  const market = marketForLocale(locale);
 
   const [activeCat, setActiveCat] = useState<string | null>(initialCat ?? null);
   const [activeColors, setActiveColors] = useState<string[]>([]);
@@ -71,7 +73,7 @@ export default function CatalogClient({ products, categories, initialCat }: Prop
       if (activeCat && !p.collection.split(';').map((s) => s.trim()).includes(activeCat)) return false;
       if (ledFilter === 'led' && !p.ledCompatible) return false;
       if (ledFilter === 'no-led' && p.ledCompatible) return false;
-      if (p.price > maxPrice) return false;
+      if (marketPrice(p.price, market) > maxPrice) return false;
       if (activeColors.length > 0) {
         const hexes = p.colors.map((c) => c.hex.toUpperCase());
         if (!activeColors.some((h) => hexes.includes(h.toUpperCase()))) return false;
@@ -83,8 +85,8 @@ export default function CatalogClient({ products, categories, initialCat }: Prop
     // Vaikimisi kataloogi järjestus (lib/catalog.ts DISPLAY_ORDER) — lagi →
     // põrand → pealepandavad liistud → süvistatavad → nurga/kardina.
     if (sort === 'catalog')    items = [...items].sort(byDisplayOrder);
-    if (sort === 'price-asc')  items = [...items].sort((a, b) => a.price - b.price);
-    if (sort === 'price-desc') items = [...items].sort((a, b) => b.price - a.price);
+    if (sort === 'price-asc')  items = [...items].sort((a, b) => marketPrice(a.price, market) - marketPrice(b.price, market));
+    if (sort === 'price-desc') items = [...items].sort((a, b) => marketPrice(b.price, market) - marketPrice(a.price, market));
     return items;
   }, [products, activeCat, activeColors, ledFilter, maxPrice, sort]);
 

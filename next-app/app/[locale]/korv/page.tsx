@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { marketForLocale } from '@/lib/markets';
 import { useTx } from '@/lib/useTx';
 import { useLocale } from 'next-intl';
 import { useCart } from '@/lib/cart';
@@ -12,6 +13,7 @@ export default function CartPage() {
   const locale = useLocale();
   const ru = locale === 'ru';
   const tx = useTx();
+  const market = marketForLocale(locale);
   const { items, subtotal, shipping, total, removeItem, updateQty } = useCart();
 
   const fmt = (n: number) => n.toFixed(2).replace('.', ',');
@@ -101,8 +103,10 @@ export default function CartPage() {
             </div>
             {subtotal > 0 && (
               <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--muted)', fontSize: 12 }}>
-                <span>{tx('в т.ч. НДС 24%', 'sh. käibemaks 24%')}</span>
-                <span>{fmt(total * 0.24 / 1.24)} €</span>
+                {/* Määr tuleb turult: Eestis 24%, Soomes 25,5%. Varem oli
+                    nii silt kui arvutus 24% peale kõvasti kirjutatud. */}
+                <span>{tx('в т.ч. НДС', 'sh. käibemaks')} {String(market.vatPercent).replace('.', ',')}%</span>
+                <span>{fmt(total * (market.vatPercent / 100) / (1 + market.vatPercent / 100))} €</span>
               </div>
             )}
           </div>
