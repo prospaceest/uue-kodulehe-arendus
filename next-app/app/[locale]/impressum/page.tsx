@@ -83,7 +83,7 @@ export default function LegalPage() {
               <span className="vp-eyebrow">{tx('Рег.№', 'Reg.nr')}</span><span>{site.regNr}</span>
               <span className="vp-eyebrow">{tx('ИНН', 'KMKR')}</span><span>{site.kmkr}</span>
               <span className="vp-eyebrow">{tx('Адрес', 'Aadress')}</span><span>{site.addressFull}</span>
-              <span className="vp-eyebrow">{tx('E-mail', 'E-post')}</span><span><a href={site.emailUrl} style={{ color: 'inherit' }}>{site.email}</a></span>
+              <span className="vp-eyebrow">{tx('E-mail', 'E-post')}</span><span><a href={`mailto:${market.email}`} style={{ color: 'inherit' }}>{market.email}</a></span>
               <span className="vp-eyebrow">{tx('Телефон', 'Telefon')}</span><span><a href={site.phoneUrl} style={{ color: 'inherit' }}>{site.phone}</a></span>
             </div>
           </>}

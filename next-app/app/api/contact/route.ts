@@ -1,8 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { site } from '@/lib/site';
+import { marketFromHost } from '@/lib/markets';
 
 export async function POST(req: NextRequest) {
   try {
+    // Turg tuleb päringu hostist: Soome tellimus peab jõudma
+    // info@prospace.fi peale, mitte Eesti postkasti.
+    const market = marketFromHost(req.headers.get('x-forwarded-host') ?? req.headers.get('host'));
     const { name, email, subject, message, locale } = await req.json();
 
     if (!name || !email || !message) {
@@ -10,7 +14,7 @@ export async function POST(req: NextRequest) {
     }
 
     const text = `
-Uus kontaktisõnum — varjuprofiilid.ee
+Uus kontaktisõnum — ${market.storefront}
 ${'─'.repeat(40)}
 
 Nimi: ${name}
@@ -27,8 +31,8 @@ ${message}
         method: 'POST',
         headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          from: process.env.RESEND_FROM_DOMAIN ?? 'kontakt@varjuprofiilid.ee',
-          to: [site.email],
+          from: process.env.RESEND_FROM_DOMAIN ?? market.mailFrom.contact,
+          to: [market.inbox],
           reply_to: email,
           subject: `Kontaktisõnum: ${subject || name}`,
           text,

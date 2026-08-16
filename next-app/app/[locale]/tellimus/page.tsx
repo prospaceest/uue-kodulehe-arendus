@@ -145,7 +145,7 @@ export default function CheckoutPage() {
               </div>
             ))}
             <div style={{ marginTop: 'auto', paddingTop: 18, borderTop: '1px solid rgba(0,0,0,0.15)', fontSize: 13, lineHeight: 1.6 }}>
-              <strong>{tx('Вопросы?', 'Küsimusi?')}</strong> {tx('Напишите', 'Kirjuta')} <a href={site.emailUrl} className="vp-mono" style={{ color: 'inherit' }}>{site.email}</a> {tx('или позвоните', 'või helista')} <a href={site.phoneUrl} className="vp-mono" style={{ color: 'inherit' }}>{site.phone}</a>
+              <strong>{tx('Вопросы?', 'Küsimusi?')}</strong> {tx('Напишите', 'Kirjuta')} <a href={`mailto:${market.email}`} className="vp-mono" style={{ color: 'inherit' }}>{market.email}</a> {tx('или позвоните', 'või helista')} <a href={site.phoneUrl} className="vp-mono" style={{ color: 'inherit' }}>{site.phone}</a>
             </div>
           </div>
         </section>
@@ -297,7 +297,7 @@ export default function CheckoutPage() {
             {error && (
               <div role="alert" style={{ fontSize: 13, color: '#b00020', background: 'rgba(176,0,32,0.06)', border: '1.5px solid rgba(176,0,32,0.3)', padding: '12px 14px', marginTop: 12 }}>
                 {tx('Не удалось отправить заказ. Попробуйте ещё раз или напишите нам: ', 'Tellimuse saatmine ebaõnnestus. Proovi uuesti või kirjuta meile: ')}
-                <a href={site.emailUrl} style={{ color: 'inherit', borderBottom: '1px solid currentColor' }}>{site.email}</a>
+                <a href={`mailto:${market.email}`} style={{ color: 'inherit', borderBottom: '1px solid currentColor' }}>{market.email}</a>
               </div>
             )}
 

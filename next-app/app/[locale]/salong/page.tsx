@@ -2,6 +2,7 @@ import { getLocale } from 'next-intl/server';
 import { tx } from '@/lib/tx';
 import Link from 'next/link';
 import { site } from '@/lib/site';
+import { marketForLocale } from '@/lib/markets';
 
 import type { Metadata } from 'next';
 import { lp, pageAlternates } from '@/lib/pageUrls';
@@ -10,6 +11,7 @@ import { pageMetaOverride } from '@/lib/pageMeta';
 export async function generateMetadata(): Promise<Metadata> {
   const { getLocale } = await import('next-intl/server');
   const locale = await getLocale();
+  const market = marketForLocale(locale);
   const ru = locale === 'ru';
   return {
     alternates: pageAlternates('/salong', locale),
@@ -23,6 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function SalonPage() {
   const locale = await getLocale();
+  const market = marketForLocale(locale);
   const ru = locale === 'ru';
 
   return (
@@ -52,7 +55,7 @@ export default async function SalonPage() {
         {[
           { n: tx(locale, 'Адрес', 'Aadress'),          v: `${site.addressLine1}\n${site.addressLine2}`, href: `https://maps.google.com/maps?q=${site.mapsQuery}` },
           { n: tx(locale, 'Часы работы', 'Lahtiolekuaeg'), v: site.hoursLong,                             href: null },
-          { n: tx(locale, 'Контакт', 'Kontakt'),          v: `${site.phone}\n${site.email}`,              href: site.phoneUrl },
+          { n: tx(locale, 'Контакт', 'Kontakt'),          v: `${site.phone}\n${market.email}`,              href: site.phoneUrl },
         ].map((b, i) => (
           <div key={b.n} style={{ padding: '48px 40px', borderRight: i < 2 ? 'var(--border)' : 'none' }}>
             <div className="vp-eyebrow" style={{ marginBottom: 14 }}>{b.n}</div>
@@ -128,8 +131,8 @@ export default async function SalonPage() {
           <a href={site.phoneUrl} className="vp-btn vp-btn--ghost vp-btn--lg" style={{ textAlign: 'center' }}>
             {`${tx(locale, 'Позвонить', 'Helista')}: ${site.phone}`}
           </a>
-          <a href={site.emailUrl} className="vp-btn vp-btn--ghost vp-btn--lg" style={{ textAlign: 'center' }}>
-            {`${tx(locale, 'Написать', 'Kirjuta')}: ${site.email}`}
+          <a href={`mailto:${market.email}`} className="vp-btn vp-btn--ghost vp-btn--lg" style={{ textAlign: 'center' }}>
+            {`${tx(locale, 'Написать', 'Kirjuta')}: ${market.email}`}
           </a>
         </div>
       </section>

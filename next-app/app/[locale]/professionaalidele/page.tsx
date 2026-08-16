@@ -5,10 +5,12 @@ import { useTx } from '@/lib/useTx';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { site } from '@/lib/site';
+import { marketForLocale } from '@/lib/markets';
 import { lp } from '@/lib/pageUrls';
 
 export default function B2BPage() {
   const locale = useLocale();
+  const market = marketForLocale(locale);
   const ru = locale === 'ru';
   const tx = useTx();
 
@@ -144,7 +146,7 @@ export default function B2BPage() {
             <div className="vp-eyebrow" style={{ marginBottom: 6 }}>{tx('Предпочитаете поговорить?', 'Eelistad rääkida?')}</div>
             <div style={{ fontSize: 14, lineHeight: 1.6 }}>
               {tx('Звоните ', 'Helista ')}<strong><a href={site.phoneUrl} style={{ color: 'inherit' }}>{site.phone}</a></strong>
-              {tx(' или пишите ', ' või kirjuta ')}<a href={site.emailUrl} className="vp-mono" style={{ color: 'inherit' }}>{site.email}</a>
+              {tx(' или пишите ', ' või kirjuta ')}<a href={`mailto:${market.email}`} className="vp-mono" style={{ color: 'inherit' }}>{market.email}</a>
             </div>
           </div>
         </div>

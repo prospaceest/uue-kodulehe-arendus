@@ -5,6 +5,7 @@ import { useTx } from '@/lib/useTx';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { site } from '@/lib/site';
+import { marketForLocale } from '@/lib/markets';
 import { lp } from '@/lib/pageUrls';
 
 const FAQ_ITEMS = [
@@ -17,6 +18,7 @@ const FAQ_ITEMS = [
 
 export default function ContactPage() {
   const locale = useLocale();
+  const market = marketForLocale(locale);
   const ru = locale === 'ru';
   const tx = useTx();
 
@@ -89,7 +91,7 @@ export default function ContactPage() {
             <span className="vp-eyebrow" style={{ alignSelf: 'center' }}>{tx('Телефон', 'Telefon')}</span>
             <span><a href={site.phoneUrl} style={{ color: 'inherit', textDecoration: 'none' }}>{site.phone}</a></span>
             <span className="vp-eyebrow" style={{ alignSelf: 'center' }}>E-mail</span>
-            <span><a href={site.emailUrl} style={{ color: 'inherit', textDecoration: 'none' }}>{site.email}</a></span>
+            <span><a href={`mailto:${market.email}`} style={{ color: 'inherit', textDecoration: 'none' }}>{market.email}</a></span>
             <span className="vp-eyebrow" style={{ alignSelf: 'start', paddingTop: 2 }}>{tx('Время работы', 'Tööaeg')}</span>
             <span>
               {tx('Пн–Пт 10:00–17:00', 'E–R 10:00–17:00')}<br />

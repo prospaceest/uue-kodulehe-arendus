@@ -1,6 +1,7 @@
 import { getLocale } from 'next-intl/server';
 import { tx } from '@/lib/tx';
 import { site } from '@/lib/site';
+import { marketForLocale } from '@/lib/markets';
 
 import type { Metadata } from 'next';
 import { pageAlternates } from '@/lib/pageUrls';
@@ -9,6 +10,7 @@ import { pageMetaOverride } from '@/lib/pageMeta';
 export async function generateMetadata(): Promise<Metadata> {
   const { getLocale } = await import('next-intl/server');
   const locale = await getLocale();
+  const market = marketForLocale(locale);
   const ru = locale === 'ru';
   return {
     alternates: pageAlternates('/garantii', locale),
@@ -22,6 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function WarrantyPage() {
   const locale = await getLocale();
+  const market = marketForLocale(locale);
   const ru = locale === 'ru';
 
   return (
@@ -68,7 +71,7 @@ export default async function WarrantyPage() {
         <h2 className="vp-display" style={{ fontSize: 48, margin: '0 0 22px' }}>{tx(locale, '3 шага.', '3 sammu.')}</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
           {[
-            { n: '01', t: tx(locale, 'Фото + описание', 'Foto + kirjeldus'), d: `${tx(locale, 'Отправьте на', 'Saada')} ${site.email} — ${tx(locale, 'товар, дата покупки, описание проблемы, фото.', 'toode, ostu kuupäev, probleemi kirjeldus, fotod.')}` },
+            { n: '01', t: tx(locale, 'Фото + описание', 'Foto + kirjeldus'), d: `${tx(locale, 'Отправьте на', 'Saada')} ${market.email} — ${tx(locale, 'товар, дата покупки, описание проблемы, фото.', 'toode, ostu kuupäev, probleemi kirjeldus, fotod.')}` },
             { n: '02', t: tx(locale, 'Отвечаем в течение 48 ч', 'Vastame 48 h jooksul'), d: tx(locale, 'Оцениваем гарантийный случай. Если да — выдаём заказ на замену.', 'Hindame: kas garantiijuhtum. Kui jah — anname asenduskorralduse.') },
             { n: '03', t: tx(locale, 'Заменяем или ремонтируем', 'Asendame või parandame'), d: tx(locale, 'Отправляем новый товар бесплатно.', 'Saadame uue toote tasuta.') },
           ].map((s) => (

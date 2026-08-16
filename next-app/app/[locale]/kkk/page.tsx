@@ -5,6 +5,7 @@ import { useTx } from '@/lib/useTx';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { site } from '@/lib/site';
+import { marketForLocale } from '@/lib/markets';
 import JsonLd from '@/components/seo/JsonLd';
 import { lp } from '@/lib/pageUrls';
 
@@ -13,6 +14,7 @@ type FAQGroup = { h: string; items: FAQItem[] };
 
 export default function FaqPage() {
   const locale = useLocale();
+  const market = marketForLocale(locale);
   const ru = locale === 'ru';
   const tx = useTx();
 
@@ -20,7 +22,7 @@ export default function FaqPage() {
     {
       h: tx('Заказ', 'Tellimine'),
       items: [
-        [tx('Как оформить заказ?', 'Kuidas tellimuse vormistamine käib?'), `${tx('Выберите товары → в корзину → оформите заказ. Заказ приходит на нашу почту', 'Vali tooted → ostukorvi → vormista. Tellimus jõuab meie meili')} (${site.email}). ${tx('В течение 24 ч отвечаем со счётом и подтверждением.', '24 h jooksul vastame arve ja kinnitusega.')}`],
+        [tx('Как оформить заказ?', 'Kuidas tellimuse vormistamine käib?'), `${tx('Выберите товары → в корзину → оформите заказ. Заказ приходит на нашу почту', 'Vali tooted → ostukorvi → vormista. Tellimus jõuab meie meili')} (${market.email}). ${tx('В течение 24 ч отвечаем со счётом и подтверждением.', '24 h jooksul vastame arve ja kinnitusega.')}`],
         [tx('Можно ли оплатить картой?', 'Kas saan maksta kohe kaardiga?'), tx('Сейчас принимаем только SEPA-переводы. Отправляем счёт по почте — после поступления отправляем товар.', 'Hetkel pakume ainult SEPA ülekande maksmist. Saadame arve meiliga — peale laekumist paneme kauba teele.')],
         [tx('Какой минимальный заказ?', 'Mis on minimaalne tellimuse kogus?'), tx('Минимального заказа нет. Можно заказывать от 1 шт.', 'Minimaalset kogust ei ole. Tellida saab alates 1 tükist.')],
         [tx('Можно ли изменить заказ после отправки?', 'Kas saan tellimust muuta peale saatmist?'), tx('Да — ответьте на письмо в течение 24 ч. После оплаты изменения сложнее.', 'Jah — vasta meilile 24 h jooksul. Pärast laekumist muutmine on keerukam.')],
@@ -81,7 +83,7 @@ export default function FaqPage() {
         </h1>
         <p style={{ fontSize: 17, lineHeight: 1.55, color: 'var(--ink-2)', maxWidth: 680, marginTop: 18 }}>
           {tx('Ответы на вопросы, которые приходят каждый день. Если вашего вопроса нет — напишите ', 'Vastused küsimustele, mis tulevad iga päev. Kui sinu küsimus puudub — kirjuta ')}
-          <a href={site.emailUrl} className="vp-mono" style={{ color: 'inherit', borderBottom: '1px solid currentColor' }}>{site.email}</a>.
+          <a href={`mailto:${market.email}`} className="vp-mono" style={{ color: 'inherit', borderBottom: '1px solid currentColor' }}>{market.email}</a>.
         </p>
       </section>
 

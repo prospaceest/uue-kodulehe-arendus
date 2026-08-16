@@ -28,7 +28,16 @@ export type Market = {
   defaultLocale: string;
   /** Poe nimi, mida kuvatakse (title'i lõpp, jalus). */
   storefront: string;
+  /** Avalikult kuvatav e-post (jalus, kontaktileht, JSON-LD). */
   email: string;
+  /**
+   * Postkast, kuhu vormide teavitused PÄRISELT lähevad. Soome turul kuvatakse
+   * info@prospace.fi, aga eraldi postkasti veel ei ole — kirjad tulevad Eesti
+   * omasse. Kui Soome postkast kunagi tehakse, muuda ainult see rida.
+   * NB: info@prospace.fi peab olema Elkdatas ümber suunatud info@prospace.ee
+   * peale, muidu põrkab klient, kes kuvatud aadressile ise kirjutab.
+   */
+  inbox: string;
   /** Resendi saatja-aadressid; domeen peab olema Resendis kinnitatud. */
   mailFrom: { order: string; contact: string; b2b: string };
   /** Turu enda sotsiaalkanalid — Soomes on eraldi Instagrami konto. */
@@ -57,6 +66,7 @@ export const MARKETS: Record<MarketId, Market> = {
     defaultLocale: 'et',
     storefront: 'Varjuprofiilid.ee',
     email: 'info@prospace.ee',
+    inbox: 'info@prospace.ee',
     mailFrom: {
       order: 'tellimused@varjuprofiilid.ee',
       contact: 'kontakt@varjuprofiilid.ee',
@@ -82,12 +92,17 @@ export const MARKETS: Record<MarketId, Market> = {
     defaultLocale: 'fi',
     storefront: 'Varjoprofiilit.fi',
     email: 'info@prospace.fi',
-    // NB: saatja-domeen peab olema Resendis kinnitatud (SPF + DKIM TXT-kirjed
-    // varjoprofiilit.fi tsooni). Vastused lähevad ikka info@prospace.fi peale.
+    inbox: 'info@prospace.ee',
+    // Saatja jääb TEADLIKULT kinnitatud .ee domeenile. Need kirjad on
+    // sisemised teavitused — need lähevad meile endale (to: market.email) ja
+    // klient näeb ainult meie vastust oma postkastist. Saatja-domeeni ta ei
+    // näe kunagi, seega teist Resendi domeeni (ja tasulist plaani) pole vaja.
+    // Kui kunagi hakkame kliendile automaatkinnitust saatma, tuleb
+    // varjoprofiilit.fi Resendis kinnitada ja see siin ümber panna.
     mailFrom: {
-      order: 'tilaukset@varjoprofiilit.fi',
-      contact: 'asiakaspalvelu@varjoprofiilit.fi',
-      b2b: 'b2b@varjoprofiilit.fi',
+      order: 'tellimused@varjuprofiilid.ee',
+      contact: 'kontakt@varjuprofiilid.ee',
+      b2b: 'b2b@varjuprofiilid.ee',
     },
     social: {
       instagram: 'https://www.instagram.com/varjoprofiilit.fi/',

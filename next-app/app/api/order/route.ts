@@ -1,11 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { site } from '@/lib/site';
+import { marketFromHost } from '@/lib/markets';
 
 // Set RESEND_API_KEY in .env.local to enable email sending.
 // Until then, orders are logged to the console.
 
 export async function POST(req: NextRequest) {
   try {
+    // Turg tuleb päringu hostist: Soome tellimus peab jõudma
+    // info@prospace.fi peale, mitte Eesti postkasti.
+    const market = marketFromHost(req.headers.get('x-forwarded-host') ?? req.headers.get('host'));
     const body = await req.json();
     const { form, buyerType, delivery, items, subtotal, total, locale } = body;
     const ru = locale === 'ru';
@@ -27,8 +31,8 @@ export async function POST(req: NextRequest) {
     const orderNr = body.orderNr || '';
 
     const subject = ru
-      ? `Новый заказ ${orderNr} varjuprofiilid.ee — ${buyerName}`
-      : `Uus tellimus ${orderNr} varjuprofiilid.ee — ${buyerName}`;
+      ? `Новый заказ ${orderNr} ${market.storefront} — ${buyerName}`
+      : `Uus tellimus ${orderNr} ${market.storefront} — ${buyerName}`;
 
     const companyBlock = isCompany
       ? `${ru ? 'Рег.№' : 'Reg.nr'}: ${form.regNr || '—'}${form.kmkr ? `\n  ${ru ? 'ИНН/KMKR' : 'KMKR'}: ${form.kmkr}` : ''}\n  `
@@ -39,7 +43,7 @@ export async function POST(req: NextRequest) {
       : `Venipak — ${ru ? 'доставка' : 'tarne'}:\n  ${form.address || '—'}\n  ${form.city || ''} ${form.zip || ''}`;
 
     const text = `
-${ru ? 'НОВЫЙ ЗАКАЗ' : 'UUS TELLIMUS'}${orderNr ? ` ${orderNr}` : ''} — varjuprofiilid.ee
+${ru ? 'НОВЫЙ ЗАКАЗ' : 'UUS TELLIMUS'}${orderNr ? ` ${orderNr}` : ''} — ${market.storefront}
 ${'─'.repeat(50)}
 
 ${ru ? 'Покупатель' : 'Ostja'} (${isCompany ? (ru ? 'компания' : 'ettevõte') : (ru ? 'частное лицо' : 'eraisik')}):
@@ -67,8 +71,8 @@ ${form.notes ? `${ru ? 'Комментарий' : 'Märkused'}:\n  ${form.notes}
         method: 'POST',
         headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          from: process.env.RESEND_FROM_DOMAIN ?? 'tellimused@varjuprofiilid.ee',
-          to: [site.email],
+          from: process.env.RESEND_FROM_DOMAIN ?? market.mailFrom.order,
+          to: [market.inbox],
           reply_to: form.email,
           subject,
           text,
