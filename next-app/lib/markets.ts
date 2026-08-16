@@ -116,8 +116,9 @@ export const MARKETS: Record<MarketId, Market> = {
     // OSS-i kaudu deklareerimist, kui EL-i sisene kaugmüük ületab 10 000 €/a.
     vatPercent: 25.5,
     shipping: { carrier: 'Venipak', price: 30, freeFrom: 300 },
-    // Jääb suletuks kuni soomekeelne sisu on valmis ja emakeelsel üle vaadatud.
-    indexable: false,
+    // Avatud 16.08.2026: tõlked valmis (1103 stringi + 98 tootekirjeldust),
+    // soomlased kinnitasid teksti, scripts/launch-check.ts andis "PUHAS".
+    indexable: true,
   },
 };
 

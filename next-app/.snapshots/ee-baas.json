@@ -1,6 +1,6 @@
 {
- "base": "https://varjuprofiilid.ee",
- "takenAt": "2026-08-14T11:12:39.921Z",
+ "base": "http://localhost:3000",
+ "takenAt": "2026-08-16T14:41:43.387Z",
  "pages": [
   {
    "path": "/",
@@ -9,7 +9,9 @@
    "canonical": "/",
    "hreflang": [
     "et=/",
+    "fi=/",
     "ru=/ru",
+    "sv=/sv",
     "x-default=/"
    ],
    "ogUrl": "",
@@ -35,7 +37,9 @@
    "canonical": "/alumiinium-porandaliistud/asp100",
    "hreflang": [
     "et=/alumiinium-porandaliistud/asp100",
+    "fi=/alumiinijalkalistat/asp100",
     "ru=/ru/alyuminievye-plintusy/asp100",
+    "sv=/sv/aluminiumgolvlister/asp100",
     "x-default=/alumiinium-porandaliistud/asp100"
    ],
    "ogUrl": "",
@@ -60,7 +64,9 @@
    "canonical": "/alumiinium-porandaliistud/asp36",
    "hreflang": [
     "et=/alumiinium-porandaliistud/asp36",
+    "fi=/alumiinijalkalistat/asp36",
     "ru=/ru/alyuminievye-plintusy/asp36",
+    "sv=/sv/aluminiumgolvlister/asp36",
     "x-default=/alumiinium-porandaliistud/asp36"
    ],
    "ogUrl": "",
@@ -84,7 +90,9 @@
    "canonical": "/alumiinium-porandaliistud/asp38",
    "hreflang": [
     "et=/alumiinium-porandaliistud/asp38",
+    "fi=/alumiinijalkalistat/asp38",
     "ru=/ru/alyuminievye-plintusy/asp38",
+    "sv=/sv/aluminiumgolvlister/asp38",
     "x-default=/alumiinium-porandaliistud/asp38"
    ],
    "ogUrl": "",
@@ -107,7 +115,9 @@
    "canonical": "/alumiinium-porandaliistud/asp40",
    "hreflang": [
     "et=/alumiinium-porandaliistud/asp40",
+    "fi=/alumiinijalkalistat/asp40",
     "ru=/ru/alyuminievye-plintusy/asp40",
+    "sv=/sv/aluminiumgolvlister/asp40",
     "x-default=/alumiinium-porandaliistud/asp40"
    ],
    "ogUrl": "",
@@ -132,7 +142,9 @@
    "canonical": "/alumiinium-porandaliistud/asp58",
    "hreflang": [
     "et=/alumiinium-porandaliistud/asp58",
+    "fi=/alumiinijalkalistat/asp58",
     "ru=/ru/alyuminievye-plintusy/asp58",
+    "sv=/sv/aluminiumgolvlister/asp58",
     "x-default=/alumiinium-porandaliistud/asp58"
    ],
    "ogUrl": "",
@@ -157,7 +169,9 @@
    "canonical": "/alumiinium-porandaliistud/asp60",
    "hreflang": [
     "et=/alumiinium-porandaliistud/asp60",
+    "fi=/alumiinijalkalistat/asp60",
     "ru=/ru/alyuminievye-plintusy/asp60",
+    "sv=/sv/aluminiumgolvlister/asp60",
     "x-default=/alumiinium-porandaliistud/asp60"
    ],
    "ogUrl": "",
@@ -182,7 +196,9 @@
    "canonical": "/alumiinium-porandaliistud/asp78",
    "hreflang": [
     "et=/alumiinium-porandaliistud/asp78",
+    "fi=/alumiinijalkalistat/asp78",
     "ru=/ru/alyuminievye-plintusy/asp78",
+    "sv=/sv/aluminiumgolvlister/asp78",
     "x-default=/alumiinium-porandaliistud/asp78"
    ],
    "ogUrl": "",
@@ -207,7 +223,9 @@
    "canonical": "/alumiinium-porandaliistud/asp80",
    "hreflang": [
     "et=/alumiinium-porandaliistud/asp80",
+    "fi=/alumiinijalkalistat/asp80",
     "ru=/ru/alyuminievye-plintusy/asp80",
+    "sv=/sv/aluminiumgolvlister/asp80",
     "x-default=/alumiinium-porandaliistud/asp80"
    ],
    "ogUrl": "",
@@ -232,7 +250,9 @@
    "canonical": "/alumiinium-porandaliistud/mpa013",
    "hreflang": [
     "et=/alumiinium-porandaliistud/mpa013",
+    "fi=/alumiinijalkalistat/mpa013",
     "ru=/ru/alyuminievye-plintusy/mpa013",
+    "sv=/sv/aluminiumgolvlister/mpa013",
     "x-default=/alumiinium-porandaliistud/mpa013"
    ],
    "ogUrl": "",
@@ -257,7 +277,9 @@
    "canonical": "/alumiinium-porandaliistud/mpa301",
    "hreflang": [
     "et=/alumiinium-porandaliistud/mpa301",
+    "fi=/alumiinijalkalistat/mpa301",
     "ru=/ru/alyuminievye-plintusy/mpa301",
+    "sv=/sv/aluminiumgolvlister/mpa301",
     "x-default=/alumiinium-porandaliistud/mpa301"
    ],
    "ogUrl": "",
@@ -282,7 +304,9 @@
    "canonical": "/alumiinium-porandaliistud/mpa302",
    "hreflang": [
     "et=/alumiinium-porandaliistud/mpa302",
+    "fi=/alumiinijalkalistat/mpa302",
     "ru=/ru/alyuminievye-plintusy/mpa302",
+    "sv=/sv/aluminiumgolvlister/mpa302",
     "x-default=/alumiinium-porandaliistud/mpa302"
    ],
    "ogUrl": "",
@@ -308,7 +332,9 @@
    "canonical": "/alumiinium-porandaliistud/mpa317",
    "hreflang": [
     "et=/alumiinium-porandaliistud/mpa317",
+    "fi=/alumiinijalkalistat/mpa317",
     "ru=/ru/alyuminievye-plintusy/mpa317",
+    "sv=/sv/aluminiumgolvlister/mpa317",
     "x-default=/alumiinium-porandaliistud/mpa317"
    ],
    "ogUrl": "",
@@ -332,7 +358,9 @@
    "canonical": "/alumiinium-porandaliistud/mpv301",
    "hreflang": [
     "et=/alumiinium-porandaliistud/mpv301",
+    "fi=/alumiinijalkalistat/mpv301",
     "ru=/ru/alyuminievye-plintusy/mpv301",
+    "sv=/sv/aluminiumgolvlister/mpv301",
     "x-default=/alumiinium-porandaliistud/mpv301"
    ],
    "ogUrl": "",
@@ -356,7 +384,9 @@
    "canonical": "/alumiinium-porandaliistud/mvp018",
    "hreflang": [
     "et=/alumiinium-porandaliistud/mvp018",
+    "fi=/alumiinijalkalistat/mvp018",
     "ru=/ru/alyuminievye-plintusy/mvp018",
+    "sv=/sv/aluminiumgolvlister/mvp018",
     "x-default=/alumiinium-porandaliistud/mvp018"
    ],
    "ogUrl": "",
@@ -380,7 +410,9 @@
    "canonical": "/alumiinium-porandaliistud/mvp172",
    "hreflang": [
     "et=/alumiinium-porandaliistud/mvp172",
+    "fi=/alumiinijalkalistat/mvp172",
     "ru=/ru/alyuminievye-plintusy/mvp172",
+    "sv=/sv/aluminiumgolvlister/mvp172",
     "x-default=/alumiinium-porandaliistud/mvp172"
    ],
    "ogUrl": "",
@@ -404,7 +436,9 @@
    "canonical": "/garantii",
    "hreflang": [
     "et=/garantii",
+    "fi=/takuu",
     "ru=/ru/garantiya",
+    "sv=/sv/garanti",
     "x-default=/garantii"
    ],
    "ogUrl": "",
@@ -421,7 +455,9 @@
    "canonical": "/impressum",
    "hreflang": [
     "et=/impressum",
+    "fi=/yritystiedot",
     "ru=/ru/rekvizity",
+    "sv=/sv/foretagsuppgifter",
     "x-default=/impressum"
    ],
    "ogUrl": "",
@@ -438,7 +474,9 @@
    "canonical": "/inspiratsioon",
    "hreflang": [
     "et=/inspiratsioon",
+    "fi=/inspiraatio",
     "ru=/ru/vdohnovenie",
+    "sv=/sv/inspiration",
     "x-default=/inspiratsioon"
    ],
    "ogUrl": "",
@@ -455,7 +493,9 @@
    "canonical": "/inspiratsioon/eduardi-maja",
    "hreflang": [
     "et=/inspiratsioon/eduardi-maja",
+    "fi=/inspiraatio/eduardi-maja",
     "ru=/ru/vdohnovenie/eduardi-maja",
+    "sv=/sv/inspiration/eduardi-maja",
     "x-default=/inspiratsioon/eduardi-maja"
    ],
    "ogUrl": "",
@@ -472,7 +512,9 @@
    "canonical": "/inspiratsioon/tallinna-korter",
    "hreflang": [
     "et=/inspiratsioon/tallinna-korter",
+    "fi=/inspiraatio/tallinna-korter",
     "ru=/ru/vdohnovenie/tallinna-korter",
+    "sv=/sv/inspiration/tallinna-korter",
     "x-default=/inspiratsioon/tallinna-korter"
    ],
    "ogUrl": "",
@@ -489,7 +531,9 @@
    "canonical": "/inspiratsioon/viimsi-vannituba",
    "hreflang": [
     "et=/inspiratsioon/viimsi-vannituba",
+    "fi=/inspiraatio/viimsi-vannituba",
     "ru=/ru/vdohnovenie/viimsi-vannituba",
+    "sv=/sv/inspiration/viimsi-vannituba",
     "x-default=/inspiratsioon/viimsi-vannituba"
    ],
    "ogUrl": "",
@@ -506,7 +550,9 @@
    "canonical": "/kardinaprofiilid/ka1",
    "hreflang": [
     "et=/kardinaprofiilid/ka1",
+    "fi=/verhoprofiilit/ka1",
     "ru=/ru/karniznye-profili/ka1",
+    "sv=/sv/gardinprofiler/ka1",
     "x-default=/kardinaprofiilid/ka1"
    ],
    "ogUrl": "",
@@ -527,7 +573,9 @@
    "canonical": "/kardinaprofiilid/ka2",
    "hreflang": [
     "et=/kardinaprofiilid/ka2",
+    "fi=/verhoprofiilit/ka2",
     "ru=/ru/karniznye-profili/ka2",
+    "sv=/sv/gardinprofiler/ka2",
     "x-default=/kardinaprofiilid/ka2"
    ],
    "ogUrl": "",
@@ -548,7 +596,9 @@
    "canonical": "/kkk",
    "hreflang": [
     "et=/kkk",
+    "fi=/ukk",
     "ru=/ru/faq",
+    "sv=/sv/vanliga-fragor",
     "x-default=/kkk"
    ],
    "ogUrl": "",
@@ -565,7 +615,9 @@
    "canonical": "/kontakt",
    "hreflang": [
     "et=/kontakt",
+    "fi=/yhteystiedot",
     "ru=/ru/kontakty",
+    "sv=/sv/kontakt",
     "x-default=/kontakt"
    ],
    "ogUrl": "",
@@ -582,7 +634,9 @@
    "canonical": "/led-varjuprofiilid",
    "hreflang": [
     "et=/led-varjuprofiilid",
+    "fi=/led-varjoprofiilit",
     "ru=/ru/led-profili",
+    "sv=/sv/led-skuggprofiler",
     "x-default=/led-varjuprofiilid"
    ],
    "ogUrl": "",
@@ -606,7 +660,9 @@
    "canonical": "/led-varjuprofiilid/kesklae",
    "hreflang": [
     "et=/led-varjuprofiilid/kesklae",
+    "fi=/led-varjoprofiilit/keskikatto",
     "ru=/ru/led-profili/centralnyj",
+    "sv=/sv/led-skuggprofiler/mittentak",
     "x-default=/led-varjuprofiilid/kesklae"
    ],
    "ogUrl": "",
@@ -623,7 +679,9 @@
    "canonical": "/led-varjuprofiilid/lae",
    "hreflang": [
     "et=/led-varjuprofiilid/lae",
+    "fi=/led-varjoprofiilit/katto",
     "ru=/ru/led-profili/potolok",
+    "sv=/sv/led-skuggprofiler/tak",
     "x-default=/led-varjuprofiilid/lae"
    ],
    "ogUrl": "",
@@ -651,7 +709,9 @@
    "canonical": "/led-varjuprofiilid/lae/ast12",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast12",
+    "fi=/led-varjoprofiilit/katto/ast12",
     "ru=/ru/led-profili/potolok/ast12",
+    "sv=/sv/led-skuggprofiler/tak/ast12",
     "x-default=/led-varjuprofiilid/lae/ast12"
    ],
    "ogUrl": "",
@@ -674,7 +734,9 @@
    "canonical": "/led-varjuprofiilid/lae/ast14-12",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast14-12",
+    "fi=/led-varjoprofiilit/katto/ast14-12",
     "ru=/ru/led-profili/potolok/ast14-12",
+    "sv=/sv/led-skuggprofiler/tak/ast14-12",
     "x-default=/led-varjuprofiilid/lae/ast14-12"
    ],
    "ogUrl": "",
@@ -698,7 +760,9 @@
    "canonical": "/led-varjuprofiilid/lae/ast201",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast201",
+    "fi=/led-varjoprofiilit/katto/ast201",
     "ru=/ru/led-profili/potolok/ast201",
+    "sv=/sv/led-skuggprofiler/tak/ast201",
     "x-default=/led-varjuprofiilid/lae/ast201"
    ],
    "ogUrl": "",
@@ -722,7 +786,9 @@
    "canonical": "/led-varjuprofiilid/lae/ast218",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast218",
+    "fi=/led-varjoprofiilit/katto/ast218",
     "ru=/ru/led-profili/potolok/ast218",
+    "sv=/sv/led-skuggprofiler/tak/ast218",
     "x-default=/led-varjuprofiilid/lae/ast218"
    ],
    "ogUrl": "",
@@ -746,7 +812,9 @@
    "canonical": "/led-varjuprofiilid/lae/ast22",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast22",
+    "fi=/led-varjoprofiilit/katto/ast22",
     "ru=/ru/led-profili/potolok/ast22",
+    "sv=/sv/led-skuggprofiler/tak/ast22",
     "x-default=/led-varjuprofiilid/lae/ast22"
    ],
    "ogUrl": "",
@@ -770,7 +838,9 @@
    "canonical": "/led-varjuprofiilid/lae/ast25",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast25",
+    "fi=/led-varjoprofiilit/katto/ast25",
     "ru=/ru/led-profili/potolok/ast25",
+    "sv=/sv/led-skuggprofiler/tak/ast25",
     "x-default=/led-varjuprofiilid/lae/ast25"
    ],
    "ogUrl": "",
@@ -793,7 +863,9 @@
    "canonical": "/led-varjuprofiilid/lae/ast30",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast30",
+    "fi=/led-varjoprofiilit/katto/ast30",
     "ru=/ru/led-profili/potolok/ast30",
+    "sv=/sv/led-skuggprofiler/tak/ast30",
     "x-default=/led-varjuprofiilid/lae/ast30"
    ],
    "ogUrl": "",
@@ -817,7 +889,9 @@
    "canonical": "/led-varjuprofiilid/lae/ast35",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast35",
+    "fi=/led-varjoprofiilit/katto/ast35",
     "ru=/ru/led-profili/potolok/ast35",
+    "sv=/sv/led-skuggprofiler/tak/ast35",
     "x-default=/led-varjuprofiilid/lae/ast35"
    ],
    "ogUrl": "",
@@ -841,7 +915,9 @@
    "canonical": "/led-varjuprofiilid/lae/ast45",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast45",
+    "fi=/led-varjoprofiilit/katto/ast45",
     "ru=/ru/led-profili/potolok/ast45",
+    "sv=/sv/led-skuggprofiler/tak/ast45",
     "x-default=/led-varjuprofiilid/lae/ast45"
    ],
    "ogUrl": "",
@@ -865,7 +941,9 @@
    "canonical": "/led-varjuprofiilid/lae/ast50",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast50",
+    "fi=/led-varjoprofiilit/katto/ast50",
     "ru=/ru/led-profili/potolok/ast50",
+    "sv=/sv/led-skuggprofiler/tak/ast50",
     "x-default=/led-varjuprofiilid/lae/ast50"
    ],
    "ogUrl": "",
@@ -889,7 +967,9 @@
    "canonical": "/led-varjuprofiilid/lae/rst12",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/rst12",
+    "fi=/led-varjoprofiilit/katto/rst12",
     "ru=/ru/led-profili/potolok/rst12",
+    "sv=/sv/led-skuggprofiler/tak/rst12",
     "x-default=/led-varjuprofiilid/lae/rst12"
    ],
    "ogUrl": "",
@@ -913,7 +993,9 @@
    "canonical": "/led-varjuprofiilid/lae/rst14",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/rst14",
+    "fi=/led-varjoprofiilit/katto/rst14",
     "ru=/ru/led-profili/potolok/rst14",
+    "sv=/sv/led-skuggprofiler/tak/rst14",
     "x-default=/led-varjuprofiilid/lae/rst14"
    ],
    "ogUrl": "",
@@ -937,7 +1019,9 @@
    "canonical": "/led-varjuprofiilid/lae/rst22",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/rst22",
+    "fi=/led-varjoprofiilit/katto/rst22",
     "ru=/ru/led-profili/potolok/rst22",
+    "sv=/sv/led-skuggprofiler/tak/rst22",
     "x-default=/led-varjuprofiilid/lae/rst22"
    ],
    "ogUrl": "",
@@ -961,7 +1045,9 @@
    "canonical": "/led-varjuprofiilid/lae/rst25",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/rst25",
+    "fi=/led-varjoprofiilit/katto/rst25",
     "ru=/ru/led-profili/potolok/rst25",
+    "sv=/sv/led-skuggprofiler/tak/rst25",
     "x-default=/led-varjuprofiilid/lae/rst25"
    ],
    "ogUrl": "",
@@ -985,7 +1071,9 @@
    "canonical": "/led-varjuprofiilid/lae/rst40",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/rst40",
+    "fi=/led-varjoprofiilit/katto/rst40",
     "ru=/ru/led-profili/potolok/rst40",
+    "sv=/sv/led-skuggprofiler/tak/rst40",
     "x-default=/led-varjuprofiilid/lae/rst40"
    ],
    "ogUrl": "",
@@ -1009,7 +1097,9 @@
    "canonical": "/led-varjuprofiilid/poranda",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda",
+    "fi=/led-varjoprofiilit/lattia",
     "ru=/ru/led-profili/pol",
+    "sv=/sv/led-skuggprofiler/golv",
     "x-default=/led-varjuprofiilid/poranda"
    ],
    "ogUrl": "",
@@ -1034,7 +1124,9 @@
    "canonical": "/led-varjuprofiilid/poranda/asp102",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/asp102",
+    "fi=/led-varjoprofiilit/lattia/asp102",
     "ru=/ru/led-profili/pol/asp102",
+    "sv=/sv/led-skuggprofiler/golv/asp102",
     "x-default=/led-varjuprofiilid/poranda/asp102"
    ],
    "ogUrl": "",
@@ -1058,7 +1150,9 @@
    "canonical": "/led-varjuprofiilid/poranda/asp106",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/asp106",
+    "fi=/led-varjoprofiilit/lattia/asp106",
     "ru=/ru/led-profili/pol/asp106",
+    "sv=/sv/led-skuggprofiler/golv/asp106",
     "x-default=/led-varjuprofiilid/poranda/asp106"
    ],
    "ogUrl": "",
@@ -1082,7 +1176,9 @@
    "canonical": "/led-varjuprofiilid/poranda/asp238",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/asp238",
+    "fi=/led-varjoprofiilit/lattia/asp238",
     "ru=/ru/led-profili/pol/asp238",
+    "sv=/sv/led-skuggprofiler/golv/asp238",
     "x-default=/led-varjuprofiilid/poranda/asp238"
    ],
    "ogUrl": "",
@@ -1105,7 +1201,9 @@
    "canonical": "/led-varjuprofiilid/poranda/asp904",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/asp904",
+    "fi=/led-varjoprofiilit/lattia/asp904",
     "ru=/ru/led-profili/pol/asp904",
+    "sv=/sv/led-skuggprofiler/golv/asp904",
     "x-default=/led-varjuprofiilid/poranda/asp904"
    ],
    "ogUrl": "",
@@ -1129,7 +1227,9 @@
    "canonical": "/led-varjuprofiilid/poranda/asp905",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/asp905",
+    "fi=/led-varjoprofiilit/lattia/asp905",
     "ru=/ru/led-profili/pol/asp905",
+    "sv=/sv/led-skuggprofiler/golv/asp905",
     "x-default=/led-varjuprofiilid/poranda/asp905"
    ],
    "ogUrl": "",
@@ -1153,7 +1253,9 @@
    "canonical": "/led-varjuprofiilid/poranda/aspl100",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/aspl100",
+    "fi=/led-varjoprofiilit/lattia/aspl100",
     "ru=/ru/led-profili/pol/aspl100",
+    "sv=/sv/led-skuggprofiler/golv/aspl100",
     "x-default=/led-varjuprofiilid/poranda/aspl100"
    ],
    "ogUrl": "",
@@ -1177,7 +1279,9 @@
    "canonical": "/led-varjuprofiilid/poranda/aspl120",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/aspl120",
+    "fi=/led-varjoprofiilit/lattia/aspl120",
     "ru=/ru/led-profili/pol/aspl120",
+    "sv=/sv/led-skuggprofiler/golv/aspl120",
     "x-default=/led-varjuprofiilid/poranda/aspl120"
    ],
    "ogUrl": "",
@@ -1201,7 +1305,9 @@
    "canonical": "/led-varjuprofiilid/poranda/aspl130",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/aspl130",
+    "fi=/led-varjoprofiilit/lattia/aspl130",
     "ru=/ru/led-profili/pol/aspl130",
+    "sv=/sv/led-skuggprofiler/golv/aspl130",
     "x-default=/led-varjuprofiilid/poranda/aspl130"
    ],
    "ogUrl": "",
@@ -1225,7 +1331,9 @@
    "canonical": "/led-varjuprofiilid/poranda/aspl35",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/aspl35",
+    "fi=/led-varjoprofiilit/lattia/aspl35",
     "ru=/ru/led-profili/pol/aspl35",
+    "sv=/sv/led-skuggprofiler/golv/aspl35",
     "x-default=/led-varjuprofiilid/poranda/aspl35"
    ],
    "ogUrl": "",
@@ -1248,7 +1356,9 @@
    "canonical": "/led-varjuprofiilid/poranda/aspl60",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/aspl60",
+    "fi=/led-varjoprofiilit/lattia/aspl60",
     "ru=/ru/led-profili/pol/aspl60",
+    "sv=/sv/led-skuggprofiler/golv/aspl60",
     "x-default=/led-varjuprofiilid/poranda/aspl60"
    ],
    "ogUrl": "",
@@ -1272,7 +1382,9 @@
    "canonical": "/led-varjuprofiilid/poranda/lhv10",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/lhv10",
+    "fi=/led-varjoprofiilit/lattia/lhv10",
     "ru=/ru/led-profili/pol/lhv10",
+    "sv=/sv/led-skuggprofiler/golv/lhv10",
     "x-default=/led-varjuprofiilid/poranda/lhv10"
    ],
    "ogUrl": "",
@@ -1296,7 +1408,9 @@
    "canonical": "/led-varjuprofiilid/seina",
    "hreflang": [
     "et=/led-varjuprofiilid/seina",
+    "fi=/led-varjoprofiilit/seina",
     "ru=/ru/led-profili/stena",
+    "sv=/sv/led-skuggprofiler/vagg",
     "x-default=/led-varjuprofiilid/seina"
    ],
    "ogUrl": "",
@@ -1316,7 +1430,9 @@
    "canonical": "/led-varjuprofiilid/seina/asp410",
    "hreflang": [
     "et=/led-varjuprofiilid/seina/asp410",
+    "fi=/led-varjoprofiilit/seina/asp410",
     "ru=/ru/led-profili/stena/asp410",
+    "sv=/sv/led-skuggprofiler/vagg/asp410",
     "x-default=/led-varjuprofiilid/seina/asp410"
    ],
    "ogUrl": "",
@@ -1340,7 +1456,9 @@
    "canonical": "/led-varjuprofiilid/seina/asp610",
    "hreflang": [
     "et=/led-varjuprofiilid/seina/asp610",
+    "fi=/led-varjoprofiilit/seina/asp610",
     "ru=/ru/led-profili/stena/asp610",
+    "sv=/sv/led-skuggprofiler/vagg/asp610",
     "x-default=/led-varjuprofiilid/seina/asp610"
    ],
    "ogUrl": "",
@@ -1364,7 +1482,9 @@
    "canonical": "/meist",
    "hreflang": [
     "et=/meist",
+    "fi=/meista",
     "ru=/ru/o-nas",
+    "sv=/sv/om-oss",
     "x-default=/meist"
    ],
    "ogUrl": "",
@@ -1381,7 +1501,9 @@
    "canonical": "/mis-on-varjuprofiil",
    "hreflang": [
     "et=/mis-on-varjuprofiil",
+    "fi=/mika-on-varjoprofiili",
     "ru=/ru/chto-takoe-tenevoy-profil",
+    "sv=/sv/vad-ar-en-skuggprofil",
     "x-default=/mis-on-varjuprofiil"
    ],
    "ogUrl": "",
@@ -1398,7 +1520,9 @@
    "canonical": "/nurgaprofiilid/dkp1010",
    "hreflang": [
     "et=/nurgaprofiilid/dkp1010",
+    "fi=/kulmaprofiilit/dkp1010",
     "ru=/ru/uglovye-profili/dkp1010",
+    "sv=/sv/hornprofiler/dkp1010",
     "x-default=/nurgaprofiilid/dkp1010"
    ],
    "ogUrl": "",
@@ -1422,7 +1546,9 @@
    "canonical": "/nurgaprofiilid/dkp1515",
    "hreflang": [
     "et=/nurgaprofiilid/dkp1515",
+    "fi=/kulmaprofiilit/dkp1515",
     "ru=/ru/uglovye-profili/dkp1515",
+    "sv=/sv/hornprofiler/dkp1515",
     "x-default=/nurgaprofiilid/dkp1515"
    ],
    "ogUrl": "",
@@ -1445,7 +1571,9 @@
    "canonical": "/nurgaprofiilid/dkp2020",
    "hreflang": [
     "et=/nurgaprofiilid/dkp2020",
+    "fi=/kulmaprofiilit/dkp2020",
     "ru=/ru/uglovye-profili/dkp2020",
+    "sv=/sv/hornprofiler/dkp2020",
     "x-default=/nurgaprofiilid/dkp2020"
    ],
    "ogUrl": "",
@@ -1469,7 +1597,9 @@
    "canonical": "/professionaalidele",
    "hreflang": [
     "et=/professionaalidele",
+    "fi=/jalleenmyyjille",
     "ru=/ru/professionalam",
+    "sv=/sv/aterforsaljare",
     "x-default=/professionaalidele"
    ],
    "ogUrl": "",
@@ -1486,7 +1616,9 @@
    "canonical": "/ru",
    "hreflang": [
     "et=/",
+    "fi=/",
     "ru=/ru",
+    "sv=/sv",
     "x-default=/"
    ],
    "ogUrl": "",
@@ -1512,7 +1644,9 @@
    "canonical": "/ru/aksessuary/ask100",
    "hreflang": [
     "et=/tarvikud/ask100",
+    "fi=/lisavarusteet/ask100",
     "ru=/ru/aksessuary/ask100",
+    "sv=/sv/tillbehor/ask100",
     "x-default=/tarvikud/ask100"
    ],
    "ogUrl": "",
@@ -1533,7 +1667,9 @@
    "canonical": "/ru/aksessuary/asl25",
    "hreflang": [
     "et=/tarvikud/asl25",
+    "fi=/lisavarusteet/asl25",
     "ru=/ru/aksessuary/asl25",
+    "sv=/sv/tillbehor/asl25",
     "x-default=/tarvikud/asl25"
    ],
    "ogUrl": "",
@@ -1555,7 +1691,9 @@
    "canonical": "/ru/aksessuary/asl300",
    "hreflang": [
     "et=/tarvikud/asl300",
+    "fi=/lisavarusteet/asl300",
     "ru=/ru/aksessuary/asl300",
+    "sv=/sv/tillbehor/asl300",
     "x-default=/tarvikud/asl300"
    ],
    "ogUrl": "",
@@ -1577,7 +1715,9 @@
    "canonical": "/ru/aksessuary/asl302",
    "hreflang": [
     "et=/tarvikud/asl302",
+    "fi=/lisavarusteet/asl302",
     "ru=/ru/aksessuary/asl302",
+    "sv=/sv/tillbehor/asl302",
     "x-default=/tarvikud/asl302"
    ],
    "ogUrl": "",
@@ -1599,7 +1739,9 @@
    "canonical": "/ru/aksessuary/asl312",
    "hreflang": [
     "et=/tarvikud/asl312",
+    "fi=/lisavarusteet/asl312",
     "ru=/ru/aksessuary/asl312",
+    "sv=/sv/tillbehor/asl312",
     "x-default=/tarvikud/asl312"
    ],
    "ogUrl": "",
@@ -1621,7 +1763,9 @@
    "canonical": "/ru/aksessuary/asl40",
    "hreflang": [
     "et=/tarvikud/asl40",
+    "fi=/lisavarusteet/asl40",
     "ru=/ru/aksessuary/asl40",
+    "sv=/sv/tillbehor/asl40",
     "x-default=/tarvikud/asl40"
    ],
    "ogUrl": "",
@@ -1643,7 +1787,9 @@
    "canonical": "/ru/aksessuary/asp100-soedinitel",
    "hreflang": [
     "et=/tarvikud/asp100-uhendus",
+    "fi=/lisavarusteet/asp100-uhendus",
     "ru=/ru/aksessuary/asp100-soedinitel",
+    "sv=/sv/tillbehor/asp100-uhendus",
     "x-default=/tarvikud/asp100-uhendus"
    ],
    "ogUrl": "",
@@ -1666,7 +1812,9 @@
    "canonical": "/ru/aksessuary/asp100-vnesh-ugol",
    "hreflang": [
     "et=/tarvikud/asp100-valimine-nurk",
+    "fi=/lisavarusteet/asp100-valimine-nurk",
     "ru=/ru/aksessuary/asp100-vnesh-ugol",
+    "sv=/sv/tillbehor/asp100-valimine-nurk",
     "x-default=/tarvikud/asp100-valimine-nurk"
    ],
    "ogUrl": "",
@@ -1689,7 +1837,9 @@
    "canonical": "/ru/aksessuary/asp100-vnut-ugol",
    "hreflang": [
     "et=/tarvikud/asp100-sisemine-nurk",
+    "fi=/lisavarusteet/asp100-sisemine-nurk",
     "ru=/ru/aksessuary/asp100-vnut-ugol",
+    "sv=/sv/tillbehor/asp100-sisemine-nurk",
     "x-default=/tarvikud/asp100-sisemine-nurk"
    ],
    "ogUrl": "",
@@ -1712,7 +1862,9 @@
    "canonical": "/ru/aksessuary/asp100-zaglushka",
    "hreflang": [
     "et=/tarvikud/asp100-otsakork",
+    "fi=/lisavarusteet/asp100-otsakork",
     "ru=/ru/aksessuary/asp100-zaglushka",
+    "sv=/sv/tillbehor/asp100-otsakork",
     "x-default=/tarvikud/asp100-otsakork"
    ],
    "ogUrl": "",
@@ -1735,7 +1887,9 @@
    "canonical": "/ru/aksessuary/asp40-soedinitel",
    "hreflang": [
     "et=/tarvikud/asp40-uhendus",
+    "fi=/lisavarusteet/asp40-uhendus",
     "ru=/ru/aksessuary/asp40-soedinitel",
+    "sv=/sv/tillbehor/asp40-uhendus",
     "x-default=/tarvikud/asp40-uhendus"
    ],
    "ogUrl": "",
@@ -1758,7 +1912,9 @@
    "canonical": "/ru/aksessuary/asp40-vnesh-ugol",
    "hreflang": [
     "et=/tarvikud/asp40-valimine-nurk",
+    "fi=/lisavarusteet/asp40-valimine-nurk",
     "ru=/ru/aksessuary/asp40-vnesh-ugol",
+    "sv=/sv/tillbehor/asp40-valimine-nurk",
     "x-default=/tarvikud/asp40-valimine-nurk"
    ],
    "ogUrl": "",
@@ -1781,7 +1937,9 @@
    "canonical": "/ru/aksessuary/asp40-vnut-ugol",
    "hreflang": [
     "et=/tarvikud/asp40-sisemine-nurk",
+    "fi=/lisavarusteet/asp40-sisemine-nurk",
     "ru=/ru/aksessuary/asp40-vnut-ugol",
+    "sv=/sv/tillbehor/asp40-sisemine-nurk",
     "x-default=/tarvikud/asp40-sisemine-nurk"
    ],
    "ogUrl": "",
@@ -1804,7 +1962,9 @@
    "canonical": "/ru/aksessuary/asp40-zaglushka",
    "hreflang": [
     "et=/tarvikud/asp40-otsakork",
+    "fi=/lisavarusteet/asp40-otsakork",
     "ru=/ru/aksessuary/asp40-zaglushka",
+    "sv=/sv/tillbehor/asp40-otsakork",
     "x-default=/tarvikud/asp40-otsakork"
    ],
    "ogUrl": "",
@@ -1827,7 +1987,9 @@
    "canonical": "/ru/aksessuary/asp60-soedinitel",
    "hreflang": [
     "et=/tarvikud/asp60-uhendus",
+    "fi=/lisavarusteet/asp60-uhendus",
     "ru=/ru/aksessuary/asp60-soedinitel",
+    "sv=/sv/tillbehor/asp60-uhendus",
     "x-default=/tarvikud/asp60-uhendus"
    ],
    "ogUrl": "",
@@ -1850,7 +2012,9 @@
    "canonical": "/ru/aksessuary/asp60-vnesh-ugol",
    "hreflang": [
     "et=/tarvikud/asp60-valimine-nurk",
+    "fi=/lisavarusteet/asp60-valimine-nurk",
     "ru=/ru/aksessuary/asp60-vnesh-ugol",
+    "sv=/sv/tillbehor/asp60-valimine-nurk",
     "x-default=/tarvikud/asp60-valimine-nurk"
    ],
    "ogUrl": "",
@@ -1873,7 +2037,9 @@
    "canonical": "/ru/aksessuary/asp60-vnut-ugol",
    "hreflang": [
     "et=/tarvikud/asp60-sisemine-nurk",
+    "fi=/lisavarusteet/asp60-sisemine-nurk",
     "ru=/ru/aksessuary/asp60-vnut-ugol",
+    "sv=/sv/tillbehor/asp60-sisemine-nurk",
     "x-default=/tarvikud/asp60-sisemine-nurk"
    ],
    "ogUrl": "",
@@ -1896,7 +2062,9 @@
    "canonical": "/ru/aksessuary/asp60-zaglushka",
    "hreflang": [
     "et=/tarvikud/asp60-otsakork",
+    "fi=/lisavarusteet/asp60-otsakork",
     "ru=/ru/aksessuary/asp60-zaglushka",
+    "sv=/sv/tillbehor/asp60-otsakork",
     "x-default=/tarvikud/asp60-otsakork"
    ],
    "ogUrl": "",
@@ -1919,7 +2087,9 @@
    "canonical": "/ru/aksessuary/asp80-soedinitel",
    "hreflang": [
     "et=/tarvikud/asp80-uhendus",
+    "fi=/lisavarusteet/asp80-uhendus",
     "ru=/ru/aksessuary/asp80-soedinitel",
+    "sv=/sv/tillbehor/asp80-uhendus",
     "x-default=/tarvikud/asp80-uhendus"
    ],
    "ogUrl": "",
@@ -1942,7 +2112,9 @@
    "canonical": "/ru/aksessuary/asp80-vnesh-ugol",
    "hreflang": [
     "et=/tarvikud/asp80-valimine-nurk",
+    "fi=/lisavarusteet/asp80-valimine-nurk",
     "ru=/ru/aksessuary/asp80-vnesh-ugol",
+    "sv=/sv/tillbehor/asp80-valimine-nurk",
     "x-default=/tarvikud/asp80-valimine-nurk"
    ],
    "ogUrl": "",
@@ -1965,7 +2137,9 @@
    "canonical": "/ru/aksessuary/asp80-vnut-ugol",
    "hreflang": [
     "et=/tarvikud/asp80-sisemine-nurk",
+    "fi=/lisavarusteet/asp80-sisemine-nurk",
     "ru=/ru/aksessuary/asp80-vnut-ugol",
+    "sv=/sv/tillbehor/asp80-sisemine-nurk",
     "x-default=/tarvikud/asp80-sisemine-nurk"
    ],
    "ogUrl": "",
@@ -1988,7 +2162,9 @@
    "canonical": "/ru/aksessuary/asp80-zaglushka",
    "hreflang": [
     "et=/tarvikud/asp80-otsakork",
+    "fi=/lisavarusteet/asp80-otsakork",
     "ru=/ru/aksessuary/asp80-zaglushka",
+    "sv=/sv/tillbehor/asp80-otsakork",
     "x-default=/tarvikud/asp80-otsakork"
    ],
    "ogUrl": "",
@@ -2011,7 +2187,9 @@
    "canonical": "/ru/aksessuary/diffuzor-matovyy",
    "hreflang": [
     "et=/tarvikud/hajuti-matt",
+    "fi=/lisavarusteet/hajuti-matt",
     "ru=/ru/aksessuary/diffuzor-matovyy",
+    "sv=/sv/tillbehor/hajuti-matt",
     "x-default=/tarvikud/hajuti-matt"
    ],
    "ogUrl": "",
@@ -2033,7 +2211,9 @@
    "canonical": "/ru/aksessuary/f100",
    "hreflang": [
     "et=/tarvikud/f100",
+    "fi=/lisavarusteet/f100",
     "ru=/ru/aksessuary/f100",
+    "sv=/sv/tillbehor/f100",
     "x-default=/tarvikud/f100"
    ],
    "ogUrl": "",
@@ -2056,7 +2236,9 @@
    "canonical": "/ru/aksessuary/f40",
    "hreflang": [
     "et=/tarvikud/f40",
+    "fi=/lisavarusteet/f40",
     "ru=/ru/aksessuary/f40",
+    "sv=/sv/tillbehor/f40",
     "x-default=/tarvikud/f40"
    ],
    "ogUrl": "",
@@ -2079,7 +2261,9 @@
    "canonical": "/ru/aksessuary/f60",
    "hreflang": [
     "et=/tarvikud/f60",
+    "fi=/lisavarusteet/f60",
     "ru=/ru/aksessuary/f60",
+    "sv=/sv/tillbehor/f60",
     "x-default=/tarvikud/f60"
    ],
    "ogUrl": "",
@@ -2102,7 +2286,9 @@
    "canonical": "/ru/aksessuary/f80",
    "hreflang": [
     "et=/tarvikud/f80",
+    "fi=/lisavarusteet/f80",
     "ru=/ru/aksessuary/f80",
+    "sv=/sv/tillbehor/f80",
     "x-default=/tarvikud/f80"
    ],
    "ogUrl": "",
@@ -2125,7 +2311,9 @@
    "canonical": "/ru/aksessuary/p1",
    "hreflang": [
     "et=/tarvikud/p1",
+    "fi=/lisavarusteet/p1",
     "ru=/ru/aksessuary/p1",
+    "sv=/sv/tillbehor/p1",
     "x-default=/tarvikud/p1"
    ],
    "ogUrl": "",
@@ -2149,7 +2337,9 @@
    "canonical": "/ru/alyuminievye-plintusy/asp100",
    "hreflang": [
     "et=/alumiinium-porandaliistud/asp100",
+    "fi=/alumiinijalkalistat/asp100",
     "ru=/ru/alyuminievye-plintusy/asp100",
+    "sv=/sv/aluminiumgolvlister/asp100",
     "x-default=/alumiinium-porandaliistud/asp100"
    ],
    "ogUrl": "",
@@ -2174,7 +2364,9 @@
    "canonical": "/ru/alyuminievye-plintusy/asp36",
    "hreflang": [
     "et=/alumiinium-porandaliistud/asp36",
+    "fi=/alumiinijalkalistat/asp36",
     "ru=/ru/alyuminievye-plintusy/asp36",
+    "sv=/sv/aluminiumgolvlister/asp36",
     "x-default=/alumiinium-porandaliistud/asp36"
    ],
    "ogUrl": "",
@@ -2198,7 +2390,9 @@
    "canonical": "/ru/alyuminievye-plintusy/asp38",
    "hreflang": [
     "et=/alumiinium-porandaliistud/asp38",
+    "fi=/alumiinijalkalistat/asp38",
     "ru=/ru/alyuminievye-plintusy/asp38",
+    "sv=/sv/aluminiumgolvlister/asp38",
     "x-default=/alumiinium-porandaliistud/asp38"
    ],
    "ogUrl": "",
@@ -2221,7 +2415,9 @@
    "canonical": "/ru/alyuminievye-plintusy/asp40",
    "hreflang": [
     "et=/alumiinium-porandaliistud/asp40",
+    "fi=/alumiinijalkalistat/asp40",
     "ru=/ru/alyuminievye-plintusy/asp40",
+    "sv=/sv/aluminiumgolvlister/asp40",
     "x-default=/alumiinium-porandaliistud/asp40"
    ],
    "ogUrl": "",
@@ -2246,7 +2442,9 @@
    "canonical": "/ru/alyuminievye-plintusy/asp58",
    "hreflang": [
     "et=/alumiinium-porandaliistud/asp58",
+    "fi=/alumiinijalkalistat/asp58",
     "ru=/ru/alyuminievye-plintusy/asp58",
+    "sv=/sv/aluminiumgolvlister/asp58",
     "x-default=/alumiinium-porandaliistud/asp58"
    ],
    "ogUrl": "",
@@ -2271,7 +2469,9 @@
    "canonical": "/ru/alyuminievye-plintusy/asp60",
    "hreflang": [
     "et=/alumiinium-porandaliistud/asp60",
+    "fi=/alumiinijalkalistat/asp60",
     "ru=/ru/alyuminievye-plintusy/asp60",
+    "sv=/sv/aluminiumgolvlister/asp60",
     "x-default=/alumiinium-porandaliistud/asp60"
    ],
    "ogUrl": "",
@@ -2296,7 +2496,9 @@
    "canonical": "/ru/alyuminievye-plintusy/asp78",
    "hreflang": [
     "et=/alumiinium-porandaliistud/asp78",
+    "fi=/alumiinijalkalistat/asp78",
     "ru=/ru/alyuminievye-plintusy/asp78",
+    "sv=/sv/aluminiumgolvlister/asp78",
     "x-default=/alumiinium-porandaliistud/asp78"
    ],
    "ogUrl": "",
@@ -2321,7 +2523,9 @@
    "canonical": "/ru/alyuminievye-plintusy/asp80",
    "hreflang": [
     "et=/alumiinium-porandaliistud/asp80",
+    "fi=/alumiinijalkalistat/asp80",
     "ru=/ru/alyuminievye-plintusy/asp80",
+    "sv=/sv/aluminiumgolvlister/asp80",
     "x-default=/alumiinium-porandaliistud/asp80"
    ],
    "ogUrl": "",
@@ -2346,7 +2550,9 @@
    "canonical": "/ru/alyuminievye-plintusy/mpa013",
    "hreflang": [
     "et=/alumiinium-porandaliistud/mpa013",
+    "fi=/alumiinijalkalistat/mpa013",
     "ru=/ru/alyuminievye-plintusy/mpa013",
+    "sv=/sv/aluminiumgolvlister/mpa013",
     "x-default=/alumiinium-porandaliistud/mpa013"
    ],
    "ogUrl": "",
@@ -2371,7 +2577,9 @@
    "canonical": "/ru/alyuminievye-plintusy/mpa301",
    "hreflang": [
     "et=/alumiinium-porandaliistud/mpa301",
+    "fi=/alumiinijalkalistat/mpa301",
     "ru=/ru/alyuminievye-plintusy/mpa301",
+    "sv=/sv/aluminiumgolvlister/mpa301",
     "x-default=/alumiinium-porandaliistud/mpa301"
    ],
    "ogUrl": "",
@@ -2395,7 +2603,9 @@
    "canonical": "/ru/alyuminievye-plintusy/mpa302",
    "hreflang": [
     "et=/alumiinium-porandaliistud/mpa302",
+    "fi=/alumiinijalkalistat/mpa302",
     "ru=/ru/alyuminievye-plintusy/mpa302",
+    "sv=/sv/aluminiumgolvlister/mpa302",
     "x-default=/alumiinium-porandaliistud/mpa302"
    ],
    "ogUrl": "",
@@ -2421,7 +2631,9 @@
    "canonical": "/ru/alyuminievye-plintusy/mpa317",
    "hreflang": [
     "et=/alumiinium-porandaliistud/mpa317",
+    "fi=/alumiinijalkalistat/mpa317",
     "ru=/ru/alyuminievye-plintusy/mpa317",
+    "sv=/sv/aluminiumgolvlister/mpa317",
     "x-default=/alumiinium-porandaliistud/mpa317"
    ],
    "ogUrl": "",
@@ -2445,7 +2657,9 @@
    "canonical": "/ru/alyuminievye-plintusy/mpv301",
    "hreflang": [
     "et=/alumiinium-porandaliistud/mpv301",
+    "fi=/alumiinijalkalistat/mpv301",
     "ru=/ru/alyuminievye-plintusy/mpv301",
+    "sv=/sv/aluminiumgolvlister/mpv301",
     "x-default=/alumiinium-porandaliistud/mpv301"
    ],
    "ogUrl": "",
@@ -2469,7 +2683,9 @@
    "canonical": "/ru/alyuminievye-plintusy/mvp018",
    "hreflang": [
     "et=/alumiinium-porandaliistud/mvp018",
+    "fi=/alumiinijalkalistat/mvp018",
     "ru=/ru/alyuminievye-plintusy/mvp018",
+    "sv=/sv/aluminiumgolvlister/mvp018",
     "x-default=/alumiinium-porandaliistud/mvp018"
    ],
    "ogUrl": "",
@@ -2493,7 +2709,9 @@
    "canonical": "/ru/alyuminievye-plintusy/mvp172",
    "hreflang": [
     "et=/alumiinium-porandaliistud/mvp172",
+    "fi=/alumiinijalkalistat/mvp172",
     "ru=/ru/alyuminievye-plintusy/mvp172",
+    "sv=/sv/aluminiumgolvlister/mvp172",
     "x-default=/alumiinium-porandaliistud/mvp172"
    ],
    "ogUrl": "",
@@ -2517,7 +2735,9 @@
    "canonical": "/ru/chto-takoe-tenevoy-profil",
    "hreflang": [
     "et=/mis-on-varjuprofiil",
+    "fi=/mika-on-varjoprofiili",
     "ru=/ru/chto-takoe-tenevoy-profil",
+    "sv=/sv/vad-ar-en-skuggprofil",
     "x-default=/mis-on-varjuprofiil"
    ],
    "ogUrl": "",
@@ -2534,7 +2754,9 @@
    "canonical": "/ru/dekor-profili",
    "hreflang": [
     "et=/varjuprofiilid",
+    "fi=/varjoprofiilit",
     "ru=/ru/dekor-profili",
+    "sv=/sv/skuggprofiler",
     "x-default=/varjuprofiilid"
    ],
    "ogUrl": "",
@@ -2560,7 +2782,9 @@
    "canonical": "/ru/dekor-profili/pol",
    "hreflang": [
     "et=/varjuprofiilid/poranda",
+    "fi=/varjoprofiilit/lattia",
     "ru=/ru/dekor-profili/pol",
+    "sv=/sv/skuggprofiler/golv",
     "x-default=/varjuprofiilid/poranda"
    ],
    "ogUrl": "",
@@ -2584,7 +2808,9 @@
    "canonical": "/ru/dekor-profili/pol/asp108",
    "hreflang": [
     "et=/varjuprofiilid/poranda/asp108",
+    "fi=/varjoprofiilit/lattia/asp108",
     "ru=/ru/dekor-profili/pol/asp108",
+    "sv=/sv/skuggprofiler/golv/asp108",
     "x-default=/varjuprofiilid/poranda/asp108"
    ],
    "ogUrl": "",
@@ -2608,7 +2834,9 @@
    "canonical": "/ru/dekor-profili/pol/asp112",
    "hreflang": [
     "et=/varjuprofiilid/poranda/asp112",
+    "fi=/varjoprofiilit/lattia/asp112",
     "ru=/ru/dekor-profili/pol/asp112",
+    "sv=/sv/skuggprofiler/golv/asp112",
     "x-default=/varjuprofiilid/poranda/asp112"
    ],
    "ogUrl": "",
@@ -2632,7 +2860,9 @@
    "canonical": "/ru/dekor-profili/pol/asp115",
    "hreflang": [
     "et=/varjuprofiilid/poranda/asp115",
+    "fi=/varjoprofiilit/lattia/asp115",
     "ru=/ru/dekor-profili/pol/asp115",
+    "sv=/sv/skuggprofiler/golv/asp115",
     "x-default=/varjuprofiilid/poranda/asp115"
    ],
    "ogUrl": "",
@@ -2655,7 +2885,9 @@
    "canonical": "/ru/dekor-profili/pol/asp117",
    "hreflang": [
     "et=/varjuprofiilid/poranda/asp117",
+    "fi=/varjoprofiilit/lattia/asp117",
     "ru=/ru/dekor-profili/pol/asp117",
+    "sv=/sv/skuggprofiler/golv/asp117",
     "x-default=/varjuprofiilid/poranda/asp117"
    ],
    "ogUrl": "",
@@ -2679,7 +2911,9 @@
    "canonical": "/ru/dekor-profili/pol/avp609",
    "hreflang": [
     "et=/varjuprofiilid/poranda/avp609",
+    "fi=/varjoprofiilit/lattia/avp609",
     "ru=/ru/dekor-profili/pol/avp609",
+    "sv=/sv/skuggprofiler/golv/avp609",
     "x-default=/varjuprofiilid/poranda/avp609"
    ],
    "ogUrl": "",
@@ -2704,7 +2938,9 @@
    "canonical": "/ru/dekor-profili/pol/avp859",
    "hreflang": [
     "et=/varjuprofiilid/poranda/avp859",
+    "fi=/varjoprofiilit/lattia/avp859",
     "ru=/ru/dekor-profili/pol/avp859",
+    "sv=/sv/skuggprofiler/golv/avp859",
     "x-default=/varjuprofiilid/poranda/avp859"
    ],
    "ogUrl": "",
@@ -2729,7 +2965,9 @@
    "canonical": "/ru/dekor-profili/potolok",
    "hreflang": [
     "et=/varjuprofiilid/lae",
+    "fi=/varjoprofiilit/katto",
     "ru=/ru/dekor-profili/potolok",
+    "sv=/sv/skuggprofiler/tak",
     "x-default=/varjuprofiilid/lae"
    ],
    "ogUrl": "",
@@ -2753,7 +2991,9 @@
    "canonical": "/ru/dekor-profili/potolok/ast10",
    "hreflang": [
     "et=/varjuprofiilid/lae/ast10",
+    "fi=/varjoprofiilit/katto/ast10",
     "ru=/ru/dekor-profili/potolok/ast10",
+    "sv=/sv/skuggprofiler/tak/ast10",
     "x-default=/varjuprofiilid/lae/ast10"
    ],
    "ogUrl": "",
@@ -2777,7 +3017,9 @@
    "canonical": "/ru/dekor-profili/potolok/ast101",
    "hreflang": [
     "et=/varjuprofiilid/lae/ast101",
+    "fi=/varjoprofiilit/katto/ast101",
     "ru=/ru/dekor-profili/potolok/ast101",
+    "sv=/sv/skuggprofiler/tak/ast101",
     "x-default=/varjuprofiilid/lae/ast101"
    ],
    "ogUrl": "",
@@ -2800,7 +3042,9 @@
    "canonical": "/ru/dekor-profili/potolok/ast20",
    "hreflang": [
     "et=/varjuprofiilid/lae/ast20",
+    "fi=/varjoprofiilit/katto/ast20",
     "ru=/ru/dekor-profili/potolok/ast20",
+    "sv=/sv/skuggprofiler/tak/ast20",
     "x-default=/varjuprofiilid/lae/ast20"
    ],
    "ogUrl": "",
@@ -2824,7 +3068,9 @@
    "canonical": "/ru/dekor-profili/potolok/ast5",
    "hreflang": [
     "et=/varjuprofiilid/lae/ast5",
+    "fi=/varjoprofiilit/katto/ast5",
     "ru=/ru/dekor-profili/potolok/ast5",
+    "sv=/sv/skuggprofiler/tak/ast5",
     "x-default=/varjuprofiilid/lae/ast5"
    ],
    "ogUrl": "",
@@ -2848,7 +3094,9 @@
    "canonical": "/ru/dekor-profili/potolok/ast8",
    "hreflang": [
     "et=/varjuprofiilid/lae/ast8",
+    "fi=/varjoprofiilit/katto/ast8",
     "ru=/ru/dekor-profili/potolok/ast8",
+    "sv=/sv/skuggprofiler/tak/ast8",
     "x-default=/varjuprofiilid/lae/ast8"
    ],
    "ogUrl": "",
@@ -2872,7 +3120,9 @@
    "canonical": "/ru/dekor-profili/potolok/lpa126",
    "hreflang": [
     "et=/varjuprofiilid/lae/lpa126",
+    "fi=/varjoprofiilit/katto/lpa126",
     "ru=/ru/dekor-profili/potolok/lpa126",
+    "sv=/sv/skuggprofiler/tak/lpa126",
     "x-default=/varjuprofiilid/lae/lpa126"
    ],
    "ogUrl": "",
@@ -2895,7 +3145,9 @@
    "canonical": "/ru/dekor-profili/potolok/rst1020",
    "hreflang": [
     "et=/varjuprofiilid/lae/rst1020",
+    "fi=/varjoprofiilit/katto/rst1020",
     "ru=/ru/dekor-profili/potolok/rst1020",
+    "sv=/sv/skuggprofiler/tak/rst1020",
     "x-default=/varjuprofiilid/lae/rst1020"
    ],
    "ogUrl": "",
@@ -2919,7 +3171,9 @@
    "canonical": "/ru/dekor-profili/stena",
    "hreflang": [
     "et=/varjuprofiilid/seina",
+    "fi=/varjoprofiilit/seina",
     "ru=/ru/dekor-profili/stena",
+    "sv=/sv/skuggprofiler/vagg",
     "x-default=/varjuprofiilid/seina"
    ],
    "ogUrl": "",
@@ -2943,7 +3197,9 @@
    "canonical": "/ru/dekor-profili/stena/asp116",
    "hreflang": [
     "et=/varjuprofiilid/seina/asp116",
+    "fi=/varjoprofiilit/seina/asp116",
     "ru=/ru/dekor-profili/stena/asp116",
+    "sv=/sv/skuggprofiler/vagg/asp116",
     "x-default=/varjuprofiilid/seina/asp116"
    ],
    "ogUrl": "",
@@ -2967,7 +3223,9 @@
    "canonical": "/ru/dekor-profili/stena/asp168",
    "hreflang": [
     "et=/varjuprofiilid/seina/asp168",
+    "fi=/varjoprofiilit/seina/asp168",
     "ru=/ru/dekor-profili/stena/asp168",
+    "sv=/sv/skuggprofiler/vagg/asp168",
     "x-default=/varjuprofiilid/seina/asp168"
    ],
    "ogUrl": "",
@@ -2991,7 +3249,9 @@
    "canonical": "/ru/dekor-profili/stena/asp198",
    "hreflang": [
     "et=/varjuprofiilid/seina/asp198",
+    "fi=/varjoprofiilit/seina/asp198",
     "ru=/ru/dekor-profili/stena/asp198",
+    "sv=/sv/skuggprofiler/vagg/asp198",
     "x-default=/varjuprofiilid/seina/asp198"
    ],
    "ogUrl": "",
@@ -3015,7 +3275,9 @@
    "canonical": "/ru/dekor-profili/stena/asp411",
    "hreflang": [
     "et=/varjuprofiilid/seina/asp411",
+    "fi=/varjoprofiilit/seina/asp411",
     "ru=/ru/dekor-profili/stena/asp411",
+    "sv=/sv/skuggprofiler/vagg/asp411",
     "x-default=/varjuprofiilid/seina/asp411"
    ],
    "ogUrl": "",
@@ -3039,7 +3301,9 @@
    "canonical": "/ru/dekor-profili/stena/asp611",
    "hreflang": [
     "et=/varjuprofiilid/seina/asp611",
+    "fi=/varjoprofiilit/seina/asp611",
     "ru=/ru/dekor-profili/stena/asp611",
+    "sv=/sv/skuggprofiler/vagg/asp611",
     "x-default=/varjuprofiilid/seina/asp611"
    ],
    "ogUrl": "",
@@ -3064,7 +3328,9 @@
    "canonical": "/ru/dekor-profili/stena/lpa909",
    "hreflang": [
     "et=/varjuprofiilid/seina/lpa909",
+    "fi=/varjoprofiilit/seina/lpa909",
     "ru=/ru/dekor-profili/stena/lpa909",
+    "sv=/sv/skuggprofiler/vagg/lpa909",
     "x-default=/varjuprofiilid/seina/lpa909"
    ],
    "ogUrl": "",
@@ -3086,7 +3352,9 @@
    "canonical": "/ru/dostavka",
    "hreflang": [
     "et=/tarne",
+    "fi=/toimitus",
     "ru=/ru/dostavka",
+    "sv=/sv/leverans",
     "x-default=/tarne"
    ],
    "ogUrl": "",
@@ -3103,7 +3371,9 @@
    "canonical": "/ru/faq",
    "hreflang": [
     "et=/kkk",
+    "fi=/ukk",
     "ru=/ru/faq",
+    "sv=/sv/vanliga-fragor",
     "x-default=/kkk"
    ],
    "ogUrl": "",
@@ -3120,7 +3390,9 @@
    "canonical": "/ru/garantiya",
    "hreflang": [
     "et=/garantii",
+    "fi=/takuu",
     "ru=/ru/garantiya",
+    "sv=/sv/garanti",
     "x-default=/garantii"
    ],
    "ogUrl": "",
@@ -3137,7 +3409,9 @@
    "canonical": "/ru/karniznye-profili/ka1",
    "hreflang": [
     "et=/kardinaprofiilid/ka1",
+    "fi=/verhoprofiilit/ka1",
     "ru=/ru/karniznye-profili/ka1",
+    "sv=/sv/gardinprofiler/ka1",
     "x-default=/kardinaprofiilid/ka1"
    ],
    "ogUrl": "",
@@ -3158,7 +3432,9 @@
    "canonical": "/ru/karniznye-profili/ka2",
    "hreflang": [
     "et=/kardinaprofiilid/ka2",
+    "fi=/verhoprofiilit/ka2",
     "ru=/ru/karniznye-profili/ka2",
+    "sv=/sv/gardinprofiler/ka2",
     "x-default=/kardinaprofiilid/ka2"
    ],
    "ogUrl": "",
@@ -3179,7 +3455,9 @@
    "canonical": "/ru/katalog",
    "hreflang": [
     "et=/tooted",
+    "fi=/tuotteet",
     "ru=/ru/katalog",
+    "sv=/sv/produkter",
     "x-default=/tooted"
    ],
    "ogUrl": "",
@@ -3250,7 +3528,9 @@
    "canonical": "/ru/kontakty",
    "hreflang": [
     "et=/kontakt",
+    "fi=/yhteystiedot",
     "ru=/ru/kontakty",
+    "sv=/sv/kontakt",
     "x-default=/kontakt"
    ],
    "ogUrl": "",
@@ -3267,7 +3547,9 @@
    "canonical": "/ru/led-profili",
    "hreflang": [
     "et=/led-varjuprofiilid",
+    "fi=/led-varjoprofiilit",
     "ru=/ru/led-profili",
+    "sv=/sv/led-skuggprofiler",
     "x-default=/led-varjuprofiilid"
    ],
    "ogUrl": "",
@@ -3291,7 +3573,9 @@
    "canonical": "/ru/led-profili/centralnyj",
    "hreflang": [
     "et=/led-varjuprofiilid/kesklae",
+    "fi=/led-varjoprofiilit/keskikatto",
     "ru=/ru/led-profili/centralnyj",
+    "sv=/sv/led-skuggprofiler/mittentak",
     "x-default=/led-varjuprofiilid/kesklae"
    ],
    "ogUrl": "",
@@ -3308,7 +3592,9 @@
    "canonical": "/ru/led-profili/pol",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda",
+    "fi=/led-varjoprofiilit/lattia",
     "ru=/ru/led-profili/pol",
+    "sv=/sv/led-skuggprofiler/golv",
     "x-default=/led-varjuprofiilid/poranda"
    ],
    "ogUrl": "",
@@ -3333,7 +3619,9 @@
    "canonical": "/ru/led-profili/pol/asp102",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/asp102",
+    "fi=/led-varjoprofiilit/lattia/asp102",
     "ru=/ru/led-profili/pol/asp102",
+    "sv=/sv/led-skuggprofiler/golv/asp102",
     "x-default=/led-varjuprofiilid/poranda/asp102"
    ],
    "ogUrl": "",
@@ -3357,7 +3645,9 @@
    "canonical": "/ru/led-profili/pol/asp106",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/asp106",
+    "fi=/led-varjoprofiilit/lattia/asp106",
     "ru=/ru/led-profili/pol/asp106",
+    "sv=/sv/led-skuggprofiler/golv/asp106",
     "x-default=/led-varjuprofiilid/poranda/asp106"
    ],
    "ogUrl": "",
@@ -3381,7 +3671,9 @@
    "canonical": "/ru/led-profili/pol/asp238",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/asp238",
+    "fi=/led-varjoprofiilit/lattia/asp238",
     "ru=/ru/led-profili/pol/asp238",
+    "sv=/sv/led-skuggprofiler/golv/asp238",
     "x-default=/led-varjuprofiilid/poranda/asp238"
    ],
    "ogUrl": "",
@@ -3404,7 +3696,9 @@
    "canonical": "/ru/led-profili/pol/asp904",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/asp904",
+    "fi=/led-varjoprofiilit/lattia/asp904",
     "ru=/ru/led-profili/pol/asp904",
+    "sv=/sv/led-skuggprofiler/golv/asp904",
     "x-default=/led-varjuprofiilid/poranda/asp904"
    ],
    "ogUrl": "",
@@ -3428,7 +3722,9 @@
    "canonical": "/ru/led-profili/pol/asp905",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/asp905",
+    "fi=/led-varjoprofiilit/lattia/asp905",
     "ru=/ru/led-profili/pol/asp905",
+    "sv=/sv/led-skuggprofiler/golv/asp905",
     "x-default=/led-varjuprofiilid/poranda/asp905"
    ],
    "ogUrl": "",
@@ -3452,7 +3748,9 @@
    "canonical": "/ru/led-profili/pol/aspl100",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/aspl100",
+    "fi=/led-varjoprofiilit/lattia/aspl100",
     "ru=/ru/led-profili/pol/aspl100",
+    "sv=/sv/led-skuggprofiler/golv/aspl100",
     "x-default=/led-varjuprofiilid/poranda/aspl100"
    ],
    "ogUrl": "",
@@ -3476,7 +3774,9 @@
    "canonical": "/ru/led-profili/pol/aspl120",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/aspl120",
+    "fi=/led-varjoprofiilit/lattia/aspl120",
     "ru=/ru/led-profili/pol/aspl120",
+    "sv=/sv/led-skuggprofiler/golv/aspl120",
     "x-default=/led-varjuprofiilid/poranda/aspl120"
    ],
    "ogUrl": "",
@@ -3500,7 +3800,9 @@
    "canonical": "/ru/led-profili/pol/aspl130",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/aspl130",
+    "fi=/led-varjoprofiilit/lattia/aspl130",
     "ru=/ru/led-profili/pol/aspl130",
+    "sv=/sv/led-skuggprofiler/golv/aspl130",
     "x-default=/led-varjuprofiilid/poranda/aspl130"
    ],
    "ogUrl": "",
@@ -3524,7 +3826,9 @@
    "canonical": "/ru/led-profili/pol/aspl35",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/aspl35",
+    "fi=/led-varjoprofiilit/lattia/aspl35",
     "ru=/ru/led-profili/pol/aspl35",
+    "sv=/sv/led-skuggprofiler/golv/aspl35",
     "x-default=/led-varjuprofiilid/poranda/aspl35"
    ],
    "ogUrl": "",
@@ -3547,7 +3851,9 @@
    "canonical": "/ru/led-profili/pol/aspl60",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/aspl60",
+    "fi=/led-varjoprofiilit/lattia/aspl60",
     "ru=/ru/led-profili/pol/aspl60",
+    "sv=/sv/led-skuggprofiler/golv/aspl60",
     "x-default=/led-varjuprofiilid/poranda/aspl60"
    ],
    "ogUrl": "",
@@ -3571,7 +3877,9 @@
    "canonical": "/ru/led-profili/pol/lhv10",
    "hreflang": [
     "et=/led-varjuprofiilid/poranda/lhv10",
+    "fi=/led-varjoprofiilit/lattia/lhv10",
     "ru=/ru/led-profili/pol/lhv10",
+    "sv=/sv/led-skuggprofiler/golv/lhv10",
     "x-default=/led-varjuprofiilid/poranda/lhv10"
    ],
    "ogUrl": "",
@@ -3595,7 +3903,9 @@
    "canonical": "/ru/led-profili/potolok",
    "hreflang": [
     "et=/led-varjuprofiilid/lae",
+    "fi=/led-varjoprofiilit/katto",
     "ru=/ru/led-profili/potolok",
+    "sv=/sv/led-skuggprofiler/tak",
     "x-default=/led-varjuprofiilid/lae"
    ],
    "ogUrl": "",
@@ -3623,7 +3933,9 @@
    "canonical": "/ru/led-profili/potolok/ast12",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast12",
+    "fi=/led-varjoprofiilit/katto/ast12",
     "ru=/ru/led-profili/potolok/ast12",
+    "sv=/sv/led-skuggprofiler/tak/ast12",
     "x-default=/led-varjuprofiilid/lae/ast12"
    ],
    "ogUrl": "",
@@ -3646,7 +3958,9 @@
    "canonical": "/ru/led-profili/potolok/ast14-12",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast14-12",
+    "fi=/led-varjoprofiilit/katto/ast14-12",
     "ru=/ru/led-profili/potolok/ast14-12",
+    "sv=/sv/led-skuggprofiler/tak/ast14-12",
     "x-default=/led-varjuprofiilid/lae/ast14-12"
    ],
    "ogUrl": "",
@@ -3670,7 +3984,9 @@
    "canonical": "/ru/led-profili/potolok/ast201",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast201",
+    "fi=/led-varjoprofiilit/katto/ast201",
     "ru=/ru/led-profili/potolok/ast201",
+    "sv=/sv/led-skuggprofiler/tak/ast201",
     "x-default=/led-varjuprofiilid/lae/ast201"
    ],
    "ogUrl": "",
@@ -3694,7 +4010,9 @@
    "canonical": "/ru/led-profili/potolok/ast218",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast218",
+    "fi=/led-varjoprofiilit/katto/ast218",
     "ru=/ru/led-profili/potolok/ast218",
+    "sv=/sv/led-skuggprofiler/tak/ast218",
     "x-default=/led-varjuprofiilid/lae/ast218"
    ],
    "ogUrl": "",
@@ -3718,7 +4036,9 @@
    "canonical": "/ru/led-profili/potolok/ast22",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast22",
+    "fi=/led-varjoprofiilit/katto/ast22",
     "ru=/ru/led-profili/potolok/ast22",
+    "sv=/sv/led-skuggprofiler/tak/ast22",
     "x-default=/led-varjuprofiilid/lae/ast22"
    ],
    "ogUrl": "",
@@ -3742,7 +4062,9 @@
    "canonical": "/ru/led-profili/potolok/ast25",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast25",
+    "fi=/led-varjoprofiilit/katto/ast25",
     "ru=/ru/led-profili/potolok/ast25",
+    "sv=/sv/led-skuggprofiler/tak/ast25",
     "x-default=/led-varjuprofiilid/lae/ast25"
    ],
    "ogUrl": "",
@@ -3765,7 +4087,9 @@
    "canonical": "/ru/led-profili/potolok/ast30",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast30",
+    "fi=/led-varjoprofiilit/katto/ast30",
     "ru=/ru/led-profili/potolok/ast30",
+    "sv=/sv/led-skuggprofiler/tak/ast30",
     "x-default=/led-varjuprofiilid/lae/ast30"
    ],
    "ogUrl": "",
@@ -3789,7 +4113,9 @@
    "canonical": "/ru/led-profili/potolok/ast35",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast35",
+    "fi=/led-varjoprofiilit/katto/ast35",
     "ru=/ru/led-profili/potolok/ast35",
+    "sv=/sv/led-skuggprofiler/tak/ast35",
     "x-default=/led-varjuprofiilid/lae/ast35"
    ],
    "ogUrl": "",
@@ -3813,7 +4139,9 @@
    "canonical": "/ru/led-profili/potolok/ast45",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast45",
+    "fi=/led-varjoprofiilit/katto/ast45",
     "ru=/ru/led-profili/potolok/ast45",
+    "sv=/sv/led-skuggprofiler/tak/ast45",
     "x-default=/led-varjuprofiilid/lae/ast45"
    ],
    "ogUrl": "",
@@ -3837,7 +4165,9 @@
    "canonical": "/ru/led-profili/potolok/ast50",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/ast50",
+    "fi=/led-varjoprofiilit/katto/ast50",
     "ru=/ru/led-profili/potolok/ast50",
+    "sv=/sv/led-skuggprofiler/tak/ast50",
     "x-default=/led-varjuprofiilid/lae/ast50"
    ],
    "ogUrl": "",
@@ -3861,7 +4191,9 @@
    "canonical": "/ru/led-profili/potolok/rst12",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/rst12",
+    "fi=/led-varjoprofiilit/katto/rst12",
     "ru=/ru/led-profili/potolok/rst12",
+    "sv=/sv/led-skuggprofiler/tak/rst12",
     "x-default=/led-varjuprofiilid/lae/rst12"
    ],
    "ogUrl": "",
@@ -3885,7 +4217,9 @@
    "canonical": "/ru/led-profili/potolok/rst14",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/rst14",
+    "fi=/led-varjoprofiilit/katto/rst14",
     "ru=/ru/led-profili/potolok/rst14",
+    "sv=/sv/led-skuggprofiler/tak/rst14",
     "x-default=/led-varjuprofiilid/lae/rst14"
    ],
    "ogUrl": "",
@@ -3909,7 +4243,9 @@
    "canonical": "/ru/led-profili/potolok/rst22",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/rst22",
+    "fi=/led-varjoprofiilit/katto/rst22",
     "ru=/ru/led-profili/potolok/rst22",
+    "sv=/sv/led-skuggprofiler/tak/rst22",
     "x-default=/led-varjuprofiilid/lae/rst22"
    ],
    "ogUrl": "",
@@ -3933,7 +4269,9 @@
    "canonical": "/ru/led-profili/potolok/rst25",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/rst25",
+    "fi=/led-varjoprofiilit/katto/rst25",
     "ru=/ru/led-profili/potolok/rst25",
+    "sv=/sv/led-skuggprofiler/tak/rst25",
     "x-default=/led-varjuprofiilid/lae/rst25"
    ],
    "ogUrl": "",
@@ -3957,7 +4295,9 @@
    "canonical": "/ru/led-profili/potolok/rst40",
    "hreflang": [
     "et=/led-varjuprofiilid/lae/rst40",
+    "fi=/led-varjoprofiilit/katto/rst40",
     "ru=/ru/led-profili/potolok/rst40",
+    "sv=/sv/led-skuggprofiler/tak/rst40",
     "x-default=/led-varjuprofiilid/lae/rst40"
    ],
    "ogUrl": "",
@@ -3981,7 +4321,9 @@
    "canonical": "/ru/led-profili/stena",
    "hreflang": [
     "et=/led-varjuprofiilid/seina",
+    "fi=/led-varjoprofiilit/seina",
     "ru=/ru/led-profili/stena",
+    "sv=/sv/led-skuggprofiler/vagg",
     "x-default=/led-varjuprofiilid/seina"
    ],
    "ogUrl": "",
@@ -4001,7 +4343,9 @@
    "canonical": "/ru/led-profili/stena/asp410",
    "hreflang": [
     "et=/led-varjuprofiilid/seina/asp410",
+    "fi=/led-varjoprofiilit/seina/asp410",
     "ru=/ru/led-profili/stena/asp410",
+    "sv=/sv/led-skuggprofiler/vagg/asp410",
     "x-default=/led-varjuprofiilid/seina/asp410"
    ],
    "ogUrl": "",
@@ -4025,7 +4369,9 @@
    "canonical": "/ru/led-profili/stena/asp610",
    "hreflang": [
     "et=/led-varjuprofiilid/seina/asp610",
+    "fi=/led-varjoprofiilit/seina/asp610",
     "ru=/ru/led-profili/stena/asp610",
+    "sv=/sv/led-skuggprofiler/vagg/asp610",
     "x-default=/led-varjuprofiilid/seina/asp610"
    ],
    "ogUrl": "",
@@ -4049,7 +4395,9 @@
    "canonical": "/ru/o-nas",
    "hreflang": [
     "et=/meist",
+    "fi=/meista",
     "ru=/ru/o-nas",
+    "sv=/sv/om-oss",
     "x-default=/meist"
    ],
    "ogUrl": "",
@@ -4066,7 +4414,9 @@
    "canonical": "/ru/professionalam",
    "hreflang": [
     "et=/professionaalidele",
+    "fi=/jalleenmyyjille",
     "ru=/ru/professionalam",
+    "sv=/sv/aterforsaljare",
     "x-default=/professionaalidele"
    ],
    "ogUrl": "",
@@ -4083,7 +4433,9 @@
    "canonical": "/ru/rekvizity",
    "hreflang": [
     "et=/impressum",
+    "fi=/yritystiedot",
     "ru=/ru/rekvizity",
+    "sv=/sv/foretagsuppgifter",
     "x-default=/impressum"
    ],
    "ogUrl": "",
@@ -4100,7 +4452,9 @@
    "canonical": "/ru/salon",
    "hreflang": [
     "et=/salong",
+    "fi=/nayttelytila",
     "ru=/ru/salon",
+    "sv=/sv/showroom",
     "x-default=/salong"
    ],
    "ogUrl": "",
@@ -4117,7 +4471,9 @@
    "canonical": "/ru/uglovye-profili/dkp1010",
    "hreflang": [
     "et=/nurgaprofiilid/dkp1010",
+    "fi=/kulmaprofiilit/dkp1010",
     "ru=/ru/uglovye-profili/dkp1010",
+    "sv=/sv/hornprofiler/dkp1010",
     "x-default=/nurgaprofiilid/dkp1010"
    ],
    "ogUrl": "",
@@ -4141,7 +4497,9 @@
    "canonical": "/ru/uglovye-profili/dkp1515",
    "hreflang": [
     "et=/nurgaprofiilid/dkp1515",
+    "fi=/kulmaprofiilit/dkp1515",
     "ru=/ru/uglovye-profili/dkp1515",
+    "sv=/sv/hornprofiler/dkp1515",
     "x-default=/nurgaprofiilid/dkp1515"
    ],
    "ogUrl": "",
@@ -4164,7 +4522,9 @@
    "canonical": "/ru/uglovye-profili/dkp2020",
    "hreflang": [
     "et=/nurgaprofiilid/dkp2020",
+    "fi=/kulmaprofiilit/dkp2020",
     "ru=/ru/uglovye-profili/dkp2020",
+    "sv=/sv/hornprofiler/dkp2020",
     "x-default=/nurgaprofiilid/dkp2020"
    ],
    "ogUrl": "",
@@ -4188,7 +4548,9 @@
    "canonical": "/ru/vdohnovenie",
    "hreflang": [
     "et=/inspiratsioon",
+    "fi=/inspiraatio",
     "ru=/ru/vdohnovenie",
+    "sv=/sv/inspiration",
     "x-default=/inspiratsioon"
    ],
    "ogUrl": "",
@@ -4205,7 +4567,9 @@
    "canonical": "/ru/vdohnovenie/eduardi-maja",
    "hreflang": [
     "et=/inspiratsioon/eduardi-maja",
+    "fi=/inspiraatio/eduardi-maja",
     "ru=/ru/vdohnovenie/eduardi-maja",
+    "sv=/sv/inspiration/eduardi-maja",
     "x-default=/inspiratsioon/eduardi-maja"
    ],
    "ogUrl": "",
@@ -4222,7 +4586,9 @@
    "canonical": "/ru/vdohnovenie/tallinna-korter",
    "hreflang": [
     "et=/inspiratsioon/tallinna-korter",
+    "fi=/inspiraatio/tallinna-korter",
     "ru=/ru/vdohnovenie/tallinna-korter",
+    "sv=/sv/inspiration/tallinna-korter",
     "x-default=/inspiratsioon/tallinna-korter"
    ],
    "ogUrl": "",
@@ -4239,7 +4605,9 @@
    "canonical": "/ru/vdohnovenie/viimsi-vannituba",
    "hreflang": [
     "et=/inspiratsioon/viimsi-vannituba",
+    "fi=/inspiraatio/viimsi-vannituba",
     "ru=/ru/vdohnovenie/viimsi-vannituba",
+    "sv=/sv/inspiration/viimsi-vannituba",
     "x-default=/inspiratsioon/viimsi-vannituba"
    ],
    "ogUrl": "",
@@ -4256,7 +4624,9 @@
    "canonical": "/salong",
    "hreflang": [
     "et=/salong",
+    "fi=/nayttelytila",
     "ru=/ru/salon",
+    "sv=/sv/showroom",
     "x-default=/salong"
    ],
    "ogUrl": "",
@@ -4273,7 +4643,9 @@
    "canonical": "/tarne",
    "hreflang": [
     "et=/tarne",
+    "fi=/toimitus",
     "ru=/ru/dostavka",
+    "sv=/sv/leverans",
     "x-default=/tarne"
    ],
    "ogUrl": "",
@@ -4290,7 +4662,9 @@
    "canonical": "/tarvikud/ask100",
    "hreflang": [
     "et=/tarvikud/ask100",
+    "fi=/lisavarusteet/ask100",
     "ru=/ru/aksessuary/ask100",
+    "sv=/sv/tillbehor/ask100",
     "x-default=/tarvikud/ask100"
    ],
    "ogUrl": "",
@@ -4311,7 +4685,9 @@
    "canonical": "/tarvikud/asl25",
    "hreflang": [
     "et=/tarvikud/asl25",
+    "fi=/lisavarusteet/asl25",
     "ru=/ru/aksessuary/asl25",
+    "sv=/sv/tillbehor/asl25",
     "x-default=/tarvikud/asl25"
    ],
    "ogUrl": "",
@@ -4333,7 +4709,9 @@
    "canonical": "/tarvikud/asl300",
    "hreflang": [
     "et=/tarvikud/asl300",
+    "fi=/lisavarusteet/asl300",
     "ru=/ru/aksessuary/asl300",
+    "sv=/sv/tillbehor/asl300",
     "x-default=/tarvikud/asl300"
    ],
    "ogUrl": "",
@@ -4355,7 +4733,9 @@
    "canonical": "/tarvikud/asl302",
    "hreflang": [
     "et=/tarvikud/asl302",
+    "fi=/lisavarusteet/asl302",
     "ru=/ru/aksessuary/asl302",
+    "sv=/sv/tillbehor/asl302",
     "x-default=/tarvikud/asl302"
    ],
    "ogUrl": "",
@@ -4377,7 +4757,9 @@
    "canonical": "/tarvikud/asl312",
    "hreflang": [
     "et=/tarvikud/asl312",
+    "fi=/lisavarusteet/asl312",
     "ru=/ru/aksessuary/asl312",
+    "sv=/sv/tillbehor/asl312",
     "x-default=/tarvikud/asl312"
    ],
    "ogUrl": "",
@@ -4399,7 +4781,9 @@
    "canonical": "/tarvikud/asl40",
    "hreflang": [
     "et=/tarvikud/asl40",
+    "fi=/lisavarusteet/asl40",
     "ru=/ru/aksessuary/asl40",
+    "sv=/sv/tillbehor/asl40",
     "x-default=/tarvikud/asl40"
    ],
    "ogUrl": "",
@@ -4421,7 +4805,9 @@
    "canonical": "/tarvikud/asp100-otsakork",
    "hreflang": [
     "et=/tarvikud/asp100-otsakork",
+    "fi=/lisavarusteet/asp100-otsakork",
     "ru=/ru/aksessuary/asp100-zaglushka",
+    "sv=/sv/tillbehor/asp100-otsakork",
     "x-default=/tarvikud/asp100-otsakork"
    ],
    "ogUrl": "",
@@ -4444,7 +4830,9 @@
    "canonical": "/tarvikud/asp100-sisemine-nurk",
    "hreflang": [
     "et=/tarvikud/asp100-sisemine-nurk",
+    "fi=/lisavarusteet/asp100-sisemine-nurk",
     "ru=/ru/aksessuary/asp100-vnut-ugol",
+    "sv=/sv/tillbehor/asp100-sisemine-nurk",
     "x-default=/tarvikud/asp100-sisemine-nurk"
    ],
    "ogUrl": "",
@@ -4467,7 +4855,9 @@
    "canonical": "/tarvikud/asp100-uhendus",
    "hreflang": [
     "et=/tarvikud/asp100-uhendus",
+    "fi=/lisavarusteet/asp100-uhendus",
     "ru=/ru/aksessuary/asp100-soedinitel",
+    "sv=/sv/tillbehor/asp100-uhendus",
     "x-default=/tarvikud/asp100-uhendus"
    ],
    "ogUrl": "",
@@ -4490,7 +4880,9 @@
    "canonical": "/tarvikud/asp100-valimine-nurk",
    "hreflang": [
     "et=/tarvikud/asp100-valimine-nurk",
+    "fi=/lisavarusteet/asp100-valimine-nurk",
     "ru=/ru/aksessuary/asp100-vnesh-ugol",
+    "sv=/sv/tillbehor/asp100-valimine-nurk",
     "x-default=/tarvikud/asp100-valimine-nurk"
    ],
    "ogUrl": "",
@@ -4513,7 +4905,9 @@
    "canonical": "/tarvikud/asp40-otsakork",
    "hreflang": [
     "et=/tarvikud/asp40-otsakork",
+    "fi=/lisavarusteet/asp40-otsakork",
     "ru=/ru/aksessuary/asp40-zaglushka",
+    "sv=/sv/tillbehor/asp40-otsakork",
     "x-default=/tarvikud/asp40-otsakork"
    ],
    "ogUrl": "",
@@ -4536,7 +4930,9 @@
    "canonical": "/tarvikud/asp40-sisemine-nurk",
    "hreflang": [
     "et=/tarvikud/asp40-sisemine-nurk",
+    "fi=/lisavarusteet/asp40-sisemine-nurk",
     "ru=/ru/aksessuary/asp40-vnut-ugol",
+    "sv=/sv/tillbehor/asp40-sisemine-nurk",
     "x-default=/tarvikud/asp40-sisemine-nurk"
    ],
    "ogUrl": "",
@@ -4559,7 +4955,9 @@
    "canonical": "/tarvikud/asp40-uhendus",
    "hreflang": [
     "et=/tarvikud/asp40-uhendus",
+    "fi=/lisavarusteet/asp40-uhendus",
     "ru=/ru/aksessuary/asp40-soedinitel",
+    "sv=/sv/tillbehor/asp40-uhendus",
     "x-default=/tarvikud/asp40-uhendus"
    ],
    "ogUrl": "",
@@ -4582,7 +4980,9 @@
    "canonical": "/tarvikud/asp40-valimine-nurk",
    "hreflang": [
     "et=/tarvikud/asp40-valimine-nurk",
+    "fi=/lisavarusteet/asp40-valimine-nurk",
     "ru=/ru/aksessuary/asp40-vnesh-ugol",
+    "sv=/sv/tillbehor/asp40-valimine-nurk",
     "x-default=/tarvikud/asp40-valimine-nurk"
    ],
    "ogUrl": "",
@@ -4605,7 +5005,9 @@
    "canonical": "/tarvikud/asp60-otsakork",
    "hreflang": [
     "et=/tarvikud/asp60-otsakork",
+    "fi=/lisavarusteet/asp60-otsakork",
     "ru=/ru/aksessuary/asp60-zaglushka",
+    "sv=/sv/tillbehor/asp60-otsakork",
     "x-default=/tarvikud/asp60-otsakork"
    ],
    "ogUrl": "",
@@ -4628,7 +5030,9 @@
    "canonical": "/tarvikud/asp60-sisemine-nurk",
    "hreflang": [
     "et=/tarvikud/asp60-sisemine-nurk",
+    "fi=/lisavarusteet/asp60-sisemine-nurk",
     "ru=/ru/aksessuary/asp60-vnut-ugol",
+    "sv=/sv/tillbehor/asp60-sisemine-nurk",
     "x-default=/tarvikud/asp60-sisemine-nurk"
    ],
    "ogUrl": "",
@@ -4651,7 +5055,9 @@
    "canonical": "/tarvikud/asp60-uhendus",
    "hreflang": [
     "et=/tarvikud/asp60-uhendus",
+    "fi=/lisavarusteet/asp60-uhendus",
     "ru=/ru/aksessuary/asp60-soedinitel",
+    "sv=/sv/tillbehor/asp60-uhendus",
     "x-default=/tarvikud/asp60-uhendus"
    ],
    "ogUrl": "",
@@ -4674,7 +5080,9 @@
    "canonical": "/tarvikud/asp60-valimine-nurk",
    "hreflang": [
     "et=/tarvikud/asp60-valimine-nurk",
+    "fi=/lisavarusteet/asp60-valimine-nurk",
     "ru=/ru/aksessuary/asp60-vnesh-ugol",
+    "sv=/sv/tillbehor/asp60-valimine-nurk",
     "x-default=/tarvikud/asp60-valimine-nurk"
    ],
    "ogUrl": "",
@@ -4697,7 +5105,9 @@
    "canonical": "/tarvikud/asp80-otsakork",
    "hreflang": [
     "et=/tarvikud/asp80-otsakork",
+    "fi=/lisavarusteet/asp80-otsakork",
     "ru=/ru/aksessuary/asp80-zaglushka",
+    "sv=/sv/tillbehor/asp80-otsakork",
     "x-default=/tarvikud/asp80-otsakork"
    ],
    "ogUrl": "",
@@ -4720,7 +5130,9 @@
    "canonical": "/tarvikud/asp80-sisemine-nurk",
    "hreflang": [
     "et=/tarvikud/asp80-sisemine-nurk",
+    "fi=/lisavarusteet/asp80-sisemine-nurk",
     "ru=/ru/aksessuary/asp80-vnut-ugol",
+    "sv=/sv/tillbehor/asp80-sisemine-nurk",
     "x-default=/tarvikud/asp80-sisemine-nurk"
    ],
    "ogUrl": "",
@@ -4743,7 +5155,9 @@
    "canonical": "/tarvikud/asp80-uhendus",
    "hreflang": [
     "et=/tarvikud/asp80-uhendus",
+    "fi=/lisavarusteet/asp80-uhendus",
     "ru=/ru/aksessuary/asp80-soedinitel",
+    "sv=/sv/tillbehor/asp80-uhendus",
     "x-default=/tarvikud/asp80-uhendus"
    ],
    "ogUrl": "",
@@ -4766,7 +5180,9 @@
    "canonical": "/tarvikud/asp80-valimine-nurk",
    "hreflang": [
     "et=/tarvikud/asp80-valimine-nurk",
+    "fi=/lisavarusteet/asp80-valimine-nurk",
     "ru=/ru/aksessuary/asp80-vnesh-ugol",
+    "sv=/sv/tillbehor/asp80-valimine-nurk",
     "x-default=/tarvikud/asp80-valimine-nurk"
    ],
    "ogUrl": "",
@@ -4789,7 +5205,9 @@
    "canonical": "/tarvikud/f100",
    "hreflang": [
     "et=/tarvikud/f100",
+    "fi=/lisavarusteet/f100",
     "ru=/ru/aksessuary/f100",
+    "sv=/sv/tillbehor/f100",
     "x-default=/tarvikud/f100"
    ],
    "ogUrl": "",
@@ -4812,7 +5230,9 @@
    "canonical": "/tarvikud/f40",
    "hreflang": [
     "et=/tarvikud/f40",
+    "fi=/lisavarusteet/f40",
     "ru=/ru/aksessuary/f40",
+    "sv=/sv/tillbehor/f40",
     "x-default=/tarvikud/f40"
    ],
    "ogUrl": "",
@@ -4835,7 +5255,9 @@
    "canonical": "/tarvikud/f60",
    "hreflang": [
     "et=/tarvikud/f60",
+    "fi=/lisavarusteet/f60",
     "ru=/ru/aksessuary/f60",
+    "sv=/sv/tillbehor/f60",
     "x-default=/tarvikud/f60"
    ],
    "ogUrl": "",
@@ -4858,7 +5280,9 @@
    "canonical": "/tarvikud/f80",
    "hreflang": [
     "et=/tarvikud/f80",
+    "fi=/lisavarusteet/f80",
     "ru=/ru/aksessuary/f80",
+    "sv=/sv/tillbehor/f80",
     "x-default=/tarvikud/f80"
    ],
    "ogUrl": "",
@@ -4881,7 +5305,9 @@
    "canonical": "/tarvikud/hajuti-matt",
    "hreflang": [
     "et=/tarvikud/hajuti-matt",
+    "fi=/lisavarusteet/hajuti-matt",
     "ru=/ru/aksessuary/diffuzor-matovyy",
+    "sv=/sv/tillbehor/hajuti-matt",
     "x-default=/tarvikud/hajuti-matt"
    ],
    "ogUrl": "",
@@ -4903,7 +5329,9 @@
    "canonical": "/tarvikud/p1",
    "hreflang": [
     "et=/tarvikud/p1",
+    "fi=/lisavarusteet/p1",
     "ru=/ru/aksessuary/p1",
+    "sv=/sv/tillbehor/p1",
     "x-default=/tarvikud/p1"
    ],
    "ogUrl": "",
@@ -4927,7 +5355,9 @@
    "canonical": "/tooted",
    "hreflang": [
     "et=/tooted",
+    "fi=/tuotteet",
     "ru=/ru/katalog",
+    "sv=/sv/produkter",
     "x-default=/tooted"
    ],
    "ogUrl": "",
@@ -4998,7 +5428,9 @@
    "canonical": "/varjuprofiilid",
    "hreflang": [
     "et=/varjuprofiilid",
+    "fi=/varjoprofiilit",
     "ru=/ru/dekor-profili",
+    "sv=/sv/skuggprofiler",
     "x-default=/varjuprofiilid"
    ],
    "ogUrl": "",
@@ -5024,7 +5456,9 @@
    "canonical": "/varjuprofiilid/lae",
    "hreflang": [
     "et=/varjuprofiilid/lae",
+    "fi=/varjoprofiilit/katto",
     "ru=/ru/dekor-profili/potolok",
+    "sv=/sv/skuggprofiler/tak",
     "x-default=/varjuprofiilid/lae"
    ],
    "ogUrl": "",
@@ -5048,7 +5482,9 @@
    "canonical": "/varjuprofiilid/lae/ast10",
    "hreflang": [
     "et=/varjuprofiilid/lae/ast10",
+    "fi=/varjoprofiilit/katto/ast10",
     "ru=/ru/dekor-profili/potolok/ast10",
+    "sv=/sv/skuggprofiler/tak/ast10",
     "x-default=/varjuprofiilid/lae/ast10"
    ],
    "ogUrl": "",
@@ -5072,7 +5508,9 @@
    "canonical": "/varjuprofiilid/lae/ast101",
    "hreflang": [
     "et=/varjuprofiilid/lae/ast101",
+    "fi=/varjoprofiilit/katto/ast101",
     "ru=/ru/dekor-profili/potolok/ast101",
+    "sv=/sv/skuggprofiler/tak/ast101",
     "x-default=/varjuprofiilid/lae/ast101"
    ],
    "ogUrl": "",
@@ -5095,7 +5533,9 @@
    "canonical": "/varjuprofiilid/lae/ast20",
    "hreflang": [
     "et=/varjuprofiilid/lae/ast20",
+    "fi=/varjoprofiilit/katto/ast20",
     "ru=/ru/dekor-profili/potolok/ast20",
+    "sv=/sv/skuggprofiler/tak/ast20",
     "x-default=/varjuprofiilid/lae/ast20"
    ],
    "ogUrl": "",
@@ -5119,7 +5559,9 @@
    "canonical": "/varjuprofiilid/lae/ast5",
    "hreflang": [
     "et=/varjuprofiilid/lae/ast5",
+    "fi=/varjoprofiilit/katto/ast5",
     "ru=/ru/dekor-profili/potolok/ast5",
+    "sv=/sv/skuggprofiler/tak/ast5",
     "x-default=/varjuprofiilid/lae/ast5"
    ],
    "ogUrl": "",
@@ -5143,7 +5585,9 @@
    "canonical": "/varjuprofiilid/lae/ast8",
    "hreflang": [
     "et=/varjuprofiilid/lae/ast8",
+    "fi=/varjoprofiilit/katto/ast8",
     "ru=/ru/dekor-profili/potolok/ast8",
+    "sv=/sv/skuggprofiler/tak/ast8",
     "x-default=/varjuprofiilid/lae/ast8"
    ],
    "ogUrl": "",
@@ -5167,7 +5611,9 @@
    "canonical": "/varjuprofiilid/lae/lpa126",
    "hreflang": [
     "et=/varjuprofiilid/lae/lpa126",
+    "fi=/varjoprofiilit/katto/lpa126",
     "ru=/ru/dekor-profili/potolok/lpa126",
+    "sv=/sv/skuggprofiler/tak/lpa126",
     "x-default=/varjuprofiilid/lae/lpa126"
    ],
    "ogUrl": "",
@@ -5190,7 +5636,9 @@
    "canonical": "/varjuprofiilid/lae/rst1020",
    "hreflang": [
     "et=/varjuprofiilid/lae/rst1020",
+    "fi=/varjoprofiilit/katto/rst1020",
     "ru=/ru/dekor-profili/potolok/rst1020",
+    "sv=/sv/skuggprofiler/tak/rst1020",
     "x-default=/varjuprofiilid/lae/rst1020"
    ],
    "ogUrl": "",
@@ -5214,7 +5662,9 @@
    "canonical": "/varjuprofiilid/poranda",
    "hreflang": [
     "et=/varjuprofiilid/poranda",
+    "fi=/varjoprofiilit/lattia",
     "ru=/ru/dekor-profili/pol",
+    "sv=/sv/skuggprofiler/golv",
     "x-default=/varjuprofiilid/poranda"
    ],
    "ogUrl": "",
@@ -5238,7 +5688,9 @@
    "canonical": "/varjuprofiilid/poranda/asp108",
    "hreflang": [
     "et=/varjuprofiilid/poranda/asp108",
+    "fi=/varjoprofiilit/lattia/asp108",
     "ru=/ru/dekor-profili/pol/asp108",
+    "sv=/sv/skuggprofiler/golv/asp108",
     "x-default=/varjuprofiilid/poranda/asp108"
    ],
    "ogUrl": "",
@@ -5262,7 +5714,9 @@
    "canonical": "/varjuprofiilid/poranda/asp112",
    "hreflang": [
     "et=/varjuprofiilid/poranda/asp112",
+    "fi=/varjoprofiilit/lattia/asp112",
     "ru=/ru/dekor-profili/pol/asp112",
+    "sv=/sv/skuggprofiler/golv/asp112",
     "x-default=/varjuprofiilid/poranda/asp112"
    ],
    "ogUrl": "",
@@ -5286,7 +5740,9 @@
    "canonical": "/varjuprofiilid/poranda/asp115",
    "hreflang": [
     "et=/varjuprofiilid/poranda/asp115",
+    "fi=/varjoprofiilit/lattia/asp115",
     "ru=/ru/dekor-profili/pol/asp115",
+    "sv=/sv/skuggprofiler/golv/asp115",
     "x-default=/varjuprofiilid/poranda/asp115"
    ],
    "ogUrl": "",
@@ -5309,7 +5765,9 @@
    "canonical": "/varjuprofiilid/poranda/asp117",
    "hreflang": [
     "et=/varjuprofiilid/poranda/asp117",
+    "fi=/varjoprofiilit/lattia/asp117",
     "ru=/ru/dekor-profili/pol/asp117",
+    "sv=/sv/skuggprofiler/golv/asp117",
     "x-default=/varjuprofiilid/poranda/asp117"
    ],
    "ogUrl": "",
@@ -5333,7 +5791,9 @@
    "canonical": "/varjuprofiilid/poranda/avp609",
    "hreflang": [
     "et=/varjuprofiilid/poranda/avp609",
+    "fi=/varjoprofiilit/lattia/avp609",
     "ru=/ru/dekor-profili/pol/avp609",
+    "sv=/sv/skuggprofiler/golv/avp609",
     "x-default=/varjuprofiilid/poranda/avp609"
    ],
    "ogUrl": "",
@@ -5358,7 +5818,9 @@
    "canonical": "/varjuprofiilid/poranda/avp859",
    "hreflang": [
     "et=/varjuprofiilid/poranda/avp859",
+    "fi=/varjoprofiilit/lattia/avp859",
     "ru=/ru/dekor-profili/pol/avp859",
+    "sv=/sv/skuggprofiler/golv/avp859",
     "x-default=/varjuprofiilid/poranda/avp859"
    ],
    "ogUrl": "",
@@ -5383,7 +5845,9 @@
    "canonical": "/varjuprofiilid/seina",
    "hreflang": [
     "et=/varjuprofiilid/seina",
+    "fi=/varjoprofiilit/seina",
     "ru=/ru/dekor-profili/stena",
+    "sv=/sv/skuggprofiler/vagg",
     "x-default=/varjuprofiilid/seina"
    ],
    "ogUrl": "",
@@ -5407,7 +5871,9 @@
    "canonical": "/varjuprofiilid/seina/asp116",
    "hreflang": [
     "et=/varjuprofiilid/seina/asp116",
+    "fi=/varjoprofiilit/seina/asp116",
     "ru=/ru/dekor-profili/stena/asp116",
+    "sv=/sv/skuggprofiler/vagg/asp116",
     "x-default=/varjuprofiilid/seina/asp116"
    ],
    "ogUrl": "",
@@ -5431,7 +5897,9 @@
    "canonical": "/varjuprofiilid/seina/asp168",
    "hreflang": [
     "et=/varjuprofiilid/seina/asp168",
+    "fi=/varjoprofiilit/seina/asp168",
     "ru=/ru/dekor-profili/stena/asp168",
+    "sv=/sv/skuggprofiler/vagg/asp168",
     "x-default=/varjuprofiilid/seina/asp168"
    ],
    "ogUrl": "",
@@ -5455,7 +5923,9 @@
    "canonical": "/varjuprofiilid/seina/asp198",
    "hreflang": [
     "et=/varjuprofiilid/seina/asp198",
+    "fi=/varjoprofiilit/seina/asp198",
     "ru=/ru/dekor-profili/stena/asp198",
+    "sv=/sv/skuggprofiler/vagg/asp198",
     "x-default=/varjuprofiilid/seina/asp198"
    ],
    "ogUrl": "",
@@ -5479,7 +5949,9 @@
    "canonical": "/varjuprofiilid/seina/asp411",
    "hreflang": [
     "et=/varjuprofiilid/seina/asp411",
+    "fi=/varjoprofiilit/seina/asp411",
     "ru=/ru/dekor-profili/stena/asp411",
+    "sv=/sv/skuggprofiler/vagg/asp411",
     "x-default=/varjuprofiilid/seina/asp411"
    ],
    "ogUrl": "",
@@ -5503,7 +5975,9 @@
    "canonical": "/varjuprofiilid/seina/asp611",
    "hreflang": [
     "et=/varjuprofiilid/seina/asp611",
+    "fi=/varjoprofiilit/seina/asp611",
     "ru=/ru/dekor-profili/stena/asp611",
+    "sv=/sv/skuggprofiler/vagg/asp611",
     "x-default=/varjuprofiilid/seina/asp611"
    ],
    "ogUrl": "",
@@ -5528,7 +6002,9 @@
    "canonical": "/varjuprofiilid/seina/lpa909",
    "hreflang": [
     "et=/varjuprofiilid/seina/lpa909",
+    "fi=/varjoprofiilit/seina/lpa909",
     "ru=/ru/dekor-profili/stena/lpa909",
+    "sv=/sv/skuggprofiler/vagg/lpa909",
     "x-default=/varjuprofiilid/seina/lpa909"
    ],
    "ogUrl": "",
