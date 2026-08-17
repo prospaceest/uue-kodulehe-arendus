@@ -96,7 +96,7 @@ export default async function Hero() {
 
         {/* Faktimärgised — samad piirjooned ja mono-kiri nagu mujal, ilma ümarnurkade ja varjudeta */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 26 }}>
-          {txList(locale, ['LED опция', 'Оттенки RAL', 'Доставка 1–3 дня', 'Склад в Таллинне'], ['LED võimalus', 'RAL toonid', 'Tarne 1–3 päeva', 'Ladu Tallinnas']).map((chip) => (
+          {txList(locale, ['LED опция', 'Оттенки RAL', 'Доставка 1–3 дня'], ['LED võimalus', 'RAL toonid', 'Tarne 1–3 päeva']).map((chip) => (
             <span
               key={chip}
               className="vp-mono"

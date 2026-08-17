@@ -1,6 +1,6 @@
 {
  "base": "http://localhost:3000",
- "takenAt": "2026-08-16T14:41:43.387Z",
+ "takenAt": "2026-08-17T13:10:22.044Z",
  "pages": [
   {
    "path": "/",
@@ -17,8 +17,8 @@
    "ogUrl": "",
    "robots": "",
    "h1": "Puhas joon. Peidetud valgus.",
-   "textHash": "16b75d9b1df39c0e",
-   "textChars": 4724,
+   "textHash": "306bf64de0893d5f",
+   "textChars": 4709,
    "prices": [
     "11,68 €",
     "11,99 €",
@@ -1624,8 +1624,8 @@
    "ogUrl": "",
    "robots": "",
    "h1": "Чистая линия. Скрытый свет.",
-   "textHash": "185b74ec4cac7fc1",
-   "textChars": 4789,
+   "textHash": "4695b2d7e2b56d7f",
+   "textChars": 4772,
    "prices": [
     "11,68 €",
     "11,99 €",
