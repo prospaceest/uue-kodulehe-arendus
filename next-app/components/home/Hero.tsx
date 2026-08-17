@@ -4,9 +4,11 @@ import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { products } from '@/lib/catalog';
 import { lp } from '@/lib/pageUrls';
+import { marketForLocale } from '@/lib/markets';
 
 export default async function Hero() {
   const locale = await getLocale();
+  const market = marketForLocale(locale);
   const t = useTranslations;
   const ru = locale === 'ru';
   const inStock = products.filter((p) => p.inStock).length;
@@ -128,6 +130,32 @@ export default async function Hero() {
             {tx(locale, 'Что такое теневой профиль?', 'Mis on varjuprofiil?')}
           </Link>
         </div>
+
+        {/* Soome turul on ärieesmärk 2–3 edasimüüja leidmine, mitte
+            üksikmüügi maht — seepärast on see kutse heros, aksentvärviga,
+            ja seepärast ainult .fi turul. Eesti hero ei muutu. */}
+        {market.id === 'fi' && (
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 14, marginTop: 26 }}>
+            <Link
+              href={lp('/professionaalidele', locale)}
+              className="vp-btn vp-btn--lg"
+              style={{ background: 'var(--accent)', color: '#fff', borderColor: 'var(--accent)' }}
+            >
+              {locale === 'sv' ? 'Bli återförsäljare →' : 'Ryhdy jälleenmyyjäksi →'}
+            </Link>
+            <span
+              className="vp-mono"
+              style={{
+                fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.1em',
+                color: 'rgba(255,255,255,0.8)', textShadow: '0 1px 12px rgba(0,0,0,0.5)',
+              }}
+            >
+              {locale === 'sv'
+                ? 'Vi söker 2–3 återförsäljare i Finland'
+                : 'Etsimme 2–3 jälleenmyyjää Suomesta'}
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Stats strip */}
