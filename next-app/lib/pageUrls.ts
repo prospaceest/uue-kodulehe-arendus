@@ -84,7 +84,8 @@ const FI_PATHS: Record<string, string> = {
   '/kontakt': '/yhteystiedot',
   '/salong': '/nayttelytila',
   '/meist': '/meista',
-  '/professionaalidele': '/jalleenmyyjille',
+  '/professionaalidele': '/ammattilaisille',
+  '/edasimuujaks': '/jalleenmyyjille',
   '/inspiratsioon': '/inspiraatio',
   '/mis-on-varjuprofiil': '/mika-on-varjoprofiili',
   '/uudised': '/uutiset',
@@ -112,7 +113,8 @@ const SV_PATHS: Record<string, string> = {
   '/kontakt': '/sv/kontakt',
   '/salong': '/sv/showroom',
   '/meist': '/sv/om-oss',
-  '/professionaalidele': '/sv/aterforsaljare',
+  '/professionaalidele': '/sv/for-proffs',
+  '/edasimuujaks': '/sv/aterforsaljare',
   '/inspiratsioon': '/sv/inspiration',
   '/mis-on-varjuprofiil': '/sv/vad-ar-en-skuggprofil',
   '/uudised': '/sv/nyheter',
@@ -186,6 +188,10 @@ export const STATIC_PAGES = [
   '/varjuprofiilid/seina',
   '/varjuprofiilid/poranda',
 ];
+
+// Lehed, mis eksisteerivad ainult Soome turul (et/ru puhul 404).
+// Need lisatakse soome ja rootsi sitemapi, aga MITTE eesti omadesse.
+export const FI_ONLY_PAGES = ['/edasimuujaks'];
 
 export const INSPIRATION_SLUGS = ['eduardi-maja', 'tallinna-korter', 'viimsi-vannituba'];
 

@@ -12,6 +12,7 @@ import {
   abs,
   ruPath,
   publicPath,
+  FI_ONLY_PAGES,
 } from './pageUrls';
 import { MARKETS } from './markets';
 import { productPath } from './catalog';
@@ -20,6 +21,18 @@ import { productPath } from './catalog';
 // absoluutsed lõplikud aadressid, mitte Eesti domeen soome slugiga.
 const FI_ORIGIN = MARKETS.fi.origin;
 const fiAbs = (path: string) => abs(path, FI_ORIGIN);
+
+/** Ainult soome/rootsi sitemapi kuuluvad kirjed (et/ru väljad on tühjad). */
+export type FiOnlyEntry = { fi: string; sv: string; priority: number; changeFrequency: 'weekly' | 'monthly' };
+
+export function fiOnlyEntries(): FiOnlyEntry[] {
+  return FI_ONLY_PAGES.map((path) => ({
+    fi: fiAbs(publicPath(path, 'fi')),
+    sv: fiAbs(publicPath(path, 'sv')),
+    priority: 0.8,
+    changeFrequency: 'monthly' as const,
+  }));
+}
 
 export type SitemapEntry = {
   et: string;   // absolute ET url

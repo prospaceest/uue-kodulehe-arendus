@@ -137,7 +137,7 @@ export default async function Hero() {
         {market.id === 'fi' && (
           <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 14, marginTop: 26 }}>
             <Link
-              href={lp('/professionaalidele', locale)}
+              href={lp('/edasimuujaks', locale)}
               className="vp-btn vp-btn--lg"
               style={{ background: 'var(--accent)', color: '#fff', borderColor: 'var(--accent)' }}
             >
@@ -151,8 +151,8 @@ export default async function Hero() {
               }}
             >
               {locale === 'sv'
-                ? 'Vi söker 2–3 återförsäljare i Finland'
-                : 'Etsimme 2–3 jälleenmyyjää Suomesta'}
+                ? 'Vi söker återförsäljare i Finland'
+                : 'Etsimme jälleenmyyjiä Suomesta'}
             </span>
           </div>
         )}

@@ -1,4 +1,5 @@
-import { sitemapEntries } from '@/lib/sitemapData';
+import { sitemapEntries, fiOnlyEntries } from '@/lib/sitemapData';
+import type { SitemapEntry, FiOnlyEntry } from '@/lib/sitemapData';
 import { MARKETS } from '@/lib/markets';
 
 // Rootsi sitemap (varjoprofiilit.fi). Kirjete allikas on sama nimekiri, mis
@@ -12,12 +13,17 @@ export const dynamic = 'force-static';
 export function GET() {
   const eeOpen = MARKETS.ee.indexable;
 
-  const urls = sitemapEntries()
+  // Soome-only lehtedel (nt /jalleenmyyjille) ei ole eesti ega vene vastet.
+  const hasEeSide = (e: SitemapEntry | FiOnlyEntry): e is SitemapEntry => 'et' in e;
+
+  const urls = [...sitemapEntries(), ...fiOnlyEntries()]
     .map((e) => {
       const alts = [
         `    <xhtml:link rel="alternate" hreflang="fi" href="${e.fi}"/>`,
         `    <xhtml:link rel="alternate" hreflang="sv" href="${e.sv}"/>`,
-        ...(eeOpen
+        // Soome-only lehtedel (nt /jalleenmyyjille) ei ole eesti ega vene
+        // vastet — 'et' in e eristab need tavalistest kirjetest.
+        ...(eeOpen && hasEeSide(e)
           ? [
               `    <xhtml:link rel="alternate" hreflang="et" href="${e.et}"/>`,
               `    <xhtml:link rel="alternate" hreflang="ru" href="${e.ru}"/>`,
