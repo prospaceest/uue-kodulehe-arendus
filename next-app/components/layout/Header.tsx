@@ -11,6 +11,12 @@ import { Show, UserButton } from '@clerk/nextjs';
 import styles from './Header.module.css';
 
 // Estonian paths only — lp() resolves the Russian slug from lib/pageUrls.ts.
+//
+// Soome turul lisandub edasimüüjate leht: partneri leidmine on seal
+// ärieesmärk ja otse Google'ist tootelehele jõudnud edasimüüja ei näeks
+// avalehe hero-nuppu kunagi. Eesti menüü ei muutu.
+const FI_NAV = { key: 'reseller', href: '/edasimuujaks' };
+
 const NAV_LINKS = [
   { key: 'shop',        href: '/tooted'        },
   { key: 'about',       href: '/meist'         },
@@ -33,6 +39,7 @@ export default function Header() {
   // domeenile — talle peab paistma, et kogu sait on prospace.fi.
   const market = marketForLocale(locale);
   const localeChoices = market.locales;
+  const navLinks = market.id === 'fi' ? [...NAV_LINKS, FI_NAV] : NAV_LINKS;
 
   function switchLocale(next: string) {
     if (next === locale) return;
@@ -78,7 +85,7 @@ export default function Header() {
     {mobileOpen && (
       <div className="vp-mobile-nav open" role="dialog" aria-label="Navigatsioon">
         <button onClick={() => setMobileOpen(false)} style={{ alignSelf: 'flex-end', fontSize: 28, background: 'none', border: 'none', cursor: 'pointer', marginBottom: 16 }} aria-label="Sulge">✕</button>
-        {NAV_LINKS.map(({ key, href }) => (
+        {navLinks.map(({ key, href }) => (
           <Link key={key} href={lp(href, locale)} onClick={() => setMobileOpen(false)}>
             {t(key as Parameters<typeof t>[0])}
           </Link>
@@ -107,7 +114,7 @@ export default function Header() {
         </Link>
 
         <nav className="vp-nav" aria-label="Peamine navigatsioon">
-          {NAV_LINKS.map(({ key, href }) => (
+          {navLinks.map(({ key, href }) => (
             <Link key={key} href={lp(href, locale)}>
               {t(key as Parameters<typeof t>[0])}
             </Link>
