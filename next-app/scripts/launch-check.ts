@@ -15,6 +15,11 @@
  *   2. eestikeelseid tunnussõnu, mida soome/rootsi keeles ei esine
  *   3. kirillitsat (vene tekst ei kuulu Soome domeenile)
  *   4. mitte-200 vastuseid ja tühje lehti
+ *   5. eesti- või venekeelseid SISELINKE — see klass jäi 23.08.2026 vahele,
+ *      sest kontroll vaatas ainult nähtavat teksti. Poe kaartidel olid
+ *      eestikeelsed tootelingid (productUrl sai boolean'i, mitte keelt) ja
+ *      leht nägi väliselt korrektne välja, kuigi iga link viis 308 kaudu
+ *      ringi ja Google nägi .fi lehelt viiteid .ee URL-idele.
  */
 import { createHash } from 'node:crypto';
 
@@ -39,6 +44,17 @@ const ET_WORDS = [
 
 // "PROSPACE OÜ" on ärinimi ja jääb igas keeles samaks.
 const ALLOWED = ['OÜ'];
+
+// Eestikeelsed teed, mida Soome domeeni siselink ei tohi kunagi sisaldada.
+// Soome vasted on teise kirjapildiga (varjoprofiilit, lisavarusteet, ...),
+// seega kattumist ei teki.
+const ET_PATHS = [
+  '/led-varjuprofiilid', '/varjuprofiilid', '/alumiinium-porandaliistud',
+  '/tarvikud', '/nurgaprofiilid', '/kardinaprofiilid', '/tooted', '/kkk',
+  '/tarne', '/garantii', '/impressum', '/kontakt', '/salong', '/meist',
+  '/professionaalidele', '/inspiratsioon', '/mis-on-varjuprofiil',
+  '/uudised', '/otsing', '/korv', '/tellimus', '/edasimuujaks', '/ru',
+];
 
 type Issue = { path: string; kind: string; detail: string };
 
@@ -118,11 +134,24 @@ async function main() {
           issues.push({ path, kind: 'eesti sõna', detail: `${hits.slice(0, 6).join(', ')} · …${sample.trim()}…` });
         }
 
-        // 3. kirillitsa
+        // 3. siselingid: ükski href ei tohi viia eesti ega vene teele
+        const hrefs = [...html.matchAll(/href="(\/[^"#?]*)/g)].map((m) => m[1]);
+        const badLinks = [...new Set(
+          hrefs.filter((h) => ET_PATHS.some((p) => h === p || h.startsWith(`${p}/`))),
+        )];
+        if (badLinks.length) {
+          issues.push({
+            path,
+            kind: 'eestikeelne siselink',
+            detail: `${badLinks.length}× · ${badLinks.slice(0, 4).join(' ')}`,
+          });
+        }
+
+        // 4. kirillitsa
         const cyr = text.match(/[А-Яа-яЁё]{3,}/);
         if (cyr) issues.push({ path, kind: 'kirillitsa', detail: cyr[0] });
 
-        // 4. identne sisu kahel lehel (tõlkimata dublikaat)
+        // 5. identne sisu kahel lehel (tõlkimata dublikaat)
         const h = createHash('sha1').update(text).digest('hex').slice(0, 12);
         const prev = seenHash.get(h);
         if (prev) issues.push({ path, kind: 'identne sisu', detail: `sama mis ${prev}` });

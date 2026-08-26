@@ -111,7 +111,7 @@ export default async function DekorCategoryPage({ params }: Props) {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
               {categoryProducts.map((p) => {
                 const img = getProductImagePath(p.sku);
-                const href = productUrl(p, ru);
+                const href = productUrl(p, locale);
                 return (
                   <Link key={p.sku} href={href} style={{ border: 'var(--border)', display: 'block', textDecoration: 'none', color: 'inherit', background: 'var(--paper)' }}>
                     <div style={{ aspectRatio: '1', borderBottom: 'var(--border)', background: 'var(--paper-2)', overflow: 'hidden' }}>

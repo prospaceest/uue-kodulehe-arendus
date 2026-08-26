@@ -158,7 +158,7 @@ function Bestsellers() {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
         {top10.map((prod, i) => {
           if (!prod) return null;
-          const href = productUrl(prod, ru);
+          const href = productUrl(prod, locale);
           const priceStr = prod.price ? prod.price.toFixed(2).replace('.', ',') : '—';
 
           return (

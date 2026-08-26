@@ -20,7 +20,7 @@ export default function ProductCard({ product: p, locale }: Props) {
   const tx = useTx();
   const market = marketForLocale(locale);
 
-  const href = productUrl(p, ru);
+  const href = productUrl(p, locale);
   const label = productText(p, locale).seoName;
 
   return (

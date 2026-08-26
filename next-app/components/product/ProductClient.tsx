@@ -428,7 +428,7 @@ export default function ProductClient({ product, related, locale }: Props) {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
             {related.map((p) => {
-              const href = productUrl(p, ru);
+              const href = productUrl(p, locale);
               const relImg = getProductImagePath(p.sku);
               return (
                 <Link key={p.sku} href={href} style={{ border: 'var(--border)', display: 'block', textDecoration: 'none', color: 'inherit', background: 'var(--paper)' }}>

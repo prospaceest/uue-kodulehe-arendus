@@ -114,7 +114,7 @@ function Lightbox({ sceneIdx, setSceneIdx, onClose, ru }: { sceneIdx: number; se
   // Find product URL
   const locale = useLocale();
   const product = products.find((p) => p.sku === sel.sku || p.sku === sel.sku.replace('AST1412', 'AST14_12'));
-  const productHref = product ? productUrl(product, ru) : lp('/tooted', locale);
+  const productHref = product ? productUrl(product, locale) : lp('/tooted', locale);
 
   return (
     <div style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(0,0,0,0.92)', display: 'grid', gridTemplateColumns: '1fr 380px', color: '#fff' }} role="dialog" aria-modal>
