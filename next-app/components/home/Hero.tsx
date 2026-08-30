@@ -15,7 +15,9 @@ export default async function Hero() {
 
   const stats = [
     { n: String(inStock),  l: tx(locale, 'Товаров на складе', 'Toodet laos')           },
-    { n: '200 €+',         l: tx(locale, 'Бесплатная доставка по Эстонии', 'Tasuta tarne Eestis')   },
+    // Piir turult: Eesti 200 €, Soome 300 €. Varem oli "200 €+" kõvasti sees
+    // ja Soome leht lubas seetõttu vale piiri.
+    { n: `${market.shipping.freeFrom} €+`, l: tx(locale, 'Бесплатная доставка по Эстонии', 'Tasuta tarne Eestis') },
     { n: '∞',              l: tx(locale, 'Оттенков RAL', 'RAL värvitoone')         },
     { n: tx(locale, '14 дн.', '14 p'), l: tx(locale, 'Право возврата', 'Tagastusõigus')          },
   ];
@@ -24,6 +26,7 @@ export default async function Hero() {
 
   return (
     <section
+      className="vp-hero"
       style={{
         position: 'relative',
         width: '100%',
@@ -59,7 +62,7 @@ export default async function Hero() {
         background: 'linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.1) 40%, transparent 60%)' }} />
 
       {/* Top eyebrow row */}
-      <div style={{
+      <div className="vp-hero-eyebrow" style={{
         position: 'absolute', top: 32, left: 56, right: 56, zIndex: 3,
         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
         fontFamily: 'JetBrains Mono, monospace', fontSize: 11,
@@ -74,7 +77,7 @@ export default async function Hero() {
       </div>
 
       {/* Headline + CTA */}
-      <div style={{
+      <div className="vp-hero-body" style={{
         position: 'absolute', inset: 0, zIndex: 3,
         display: 'flex', flexDirection: 'column', justifyContent: 'center',
         padding: '100px 56px 140px',
@@ -159,7 +162,7 @@ export default async function Hero() {
       </div>
 
       {/* Stats strip */}
-      <div style={{
+      <div className="vp-hero-stats" style={{
         position: 'absolute', left: 0, right: 0, bottom: 0, zIndex: 3,
         display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
         borderTop: '1px solid rgba(255,255,255,0.18)',

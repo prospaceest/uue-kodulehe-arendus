@@ -624,3 +624,87 @@ button { cursor: pointer; }
 @media print {
   .vp-header, .vp-marquee, .vp-footer { display: none; }
 }
+
+/* ----------------------------------------------------------------
+   Hero mobiilis
+   ----------------------------------------------------------------
+   Töölaual on hero kihiline: video täidab ala, eyebrow absoluutselt üleval,
+   sisu keskel, statistikariba all. Mobiilis murdus see: sisu (pealkiri +
+   lõik + märgised + kuni 3 nuppu) ei mahtunud fikseeritud kõrgusesse,
+   eyebrow jäi pealkirja alla ja 4-veeruline riba venis neljale reale.
+
+   Mobiilis loobume absoluutsest kihitusest ja laseme sisul voolata.
+
+   Kaks lõksu, mille otsa esimesed katsed jooksid:
+
+   1. `position: static` tühistab z-indexi (see kehtib ainult
+      positsioneeritud elementidele) → gradient-kiht (absolute, z-index 1)
+      joonistus teksti peale ja hero jäi tühjaks. Seepärast `relative`.
+
+   2. Inline-stiil võidab klassi ja globaalne reegel
+      `div[style*="grid-template-columns"]` (kaal 0,1,1) võidab `.vp-hero-stats`
+      (0,1,0). Seepärast on siin !important ja valija `div.vp-hero-stats`,
+      mis on sama kaaluga ja failis hiljem. */
+@media (max-width: 768px) {
+  div.vp-hero {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+  section.vp-hero {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+
+  div.vp-hero-eyebrow {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    padding: 18px 20px 0 !important;
+    font-size: 10px !important;
+  }
+
+  div.vp-hero-body {
+    position: relative !important;
+    inset: auto !important;
+    padding: 18px 20px 26px !important;
+  }
+  div.vp-hero-body h1 {
+    font-size: clamp(38px, 11.5vw, 60px) !important;
+    max-width: none !important;
+  }
+  div.vp-hero-body p {
+    font-size: 15px !important;
+    margin-top: 16px !important;
+  }
+
+  div.vp-hero-stats {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    grid-template-columns: 1fr 1fr !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+  }
+  /* Neli lahtrit kahes veerus: parem äär vajab joont ainult vasakul lahtril,
+     ridade vahele joon, muidu sulavad lahtrid üheks halliks plokiks. */
+  div.vp-hero-stats > div {
+    padding: 14px 16px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.18) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.18) !important;
+  }
+  div.vp-hero-stats > div:nth-child(2n) { border-right: none !important; }
+  div.vp-hero-stats > div > div:first-child { font-size: 28px !important; }
+  div.vp-hero-stats > div > div:last-child { text-align: left !important; }
+}
