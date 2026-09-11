@@ -985,7 +985,7 @@
    "name": "RST25",
    "nameRu": "RST25",
    "collection": "Laeprofiilid",
-   "price": 20.39,
+   "price": 23.60,
    "ribbon": "LAOS",
    "inStock": true,
    "description": "RST25 on 25 mm laiusega lae LED varjuprofiil — sama mõõt kui populaarsel AST25-l, kuid erineva geomeetriaga süvendiga. Alternatiiv neile, kes eelistavad RST-seeria profiili kuju ja paigaldusmeetodit. Sisseehitatud LED-kanal annab pehme peitevalgustuse perimeetri ulatuses; 25 mm laius annab piisavalt ruumi nii LED-ribale kui hajutile, mistõttu valgus jaotub ühtlaselt ilma nähtavate täppideta. Sobib elutubadesse, magamistubadesse ja suurematesse koridoridesse, kus laiem varjujoon mõjub esindusliku detailina. Paigaldatakse lae ja seina ühenduskohta — pahteldatav servaga, kipsplaadi tasapinnaga ühte. Standardpikkus 2,5 m, materjal alumiinium. Värvid: töötlemata, valge, must; RAL-tellimusel mistahes toon (~5 nädalat). Soovitatud LED-riba: 12 W/m, 234 LED/m, 3000K, 24V. LED-riba ja hajuti tellitakse eraldi. Hind on 1 m värvitud profiili kohta, sisaldab 24% käibemaksu.",
@@ -994,17 +994,17 @@
     {
      "hex": "#FFFFFF",
      "name": "Valge",
-     "price": 20.39
+     "price": 23.60
     },
     {
      "hex": "#0a0a0a",
      "name": "Must",
-     "price": 20.39
+     "price": 23.60
     },
     {
      "hex": "#A8A8A8",
      "name": "Töötlemata",
-     "price": 17.62
+     "price": 20.39
     }
    ],
    "specs": [
