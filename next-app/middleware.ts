@@ -27,6 +27,16 @@ export default clerkMiddleware(async (auth, req: NextRequest) => {
     return NextResponse.redirect(target, 308);
   }
 
+  // www → apex. The vercel.json host-redirect for www.varjuprofiilid.ee never
+  // fires (this middleware runs first), so without this www serves a full
+  // duplicate of every page (200, self-canonical to apex) — Google crawls both
+  // hosts and it muddies the canonical picture. Force it here like the retired
+  // domain above.
+  if (host === 'www.varjuprofiilid.ee') {
+    const target = new URL(pathname + req.nextUrl.search, 'https://varjuprofiilid.ee');
+    return NextResponse.redirect(target, 308);
+  }
+
   // API, tRPC and Clerk internal routes must bypass the next-intl middleware —
   // otherwise it rewrites them into the [locale] route tree and they 404.
   if (

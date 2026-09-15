@@ -10,6 +10,10 @@ import { sitemapEntries } from '@/lib/sitemapData';
 export const dynamic = 'force-static';
 
 export function GET() {
+  // Freshness signal so Google/Yandex re-crawl RU URLs that were cached as
+  // noindex during the 2026-06/07 bot-protection incident. Build date advances
+  // on every deploy — coarse but honest.
+  const lastmod = new Date().toISOString().split('T')[0];
   const urls = sitemapEntries()
     .map(
       (e) => `  <url>
@@ -17,6 +21,7 @@ export function GET() {
     <xhtml:link rel="alternate" hreflang="ru" href="${e.ru}"/>
     <xhtml:link rel="alternate" hreflang="et" href="${e.et}"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="${e.et}"/>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${e.changeFrequency}</changefreq>
     <priority>${e.priority}</priority>
   </url>`,
