@@ -191,9 +191,8 @@ export const DISPLAY_ORDER: string[] = [
   'ASP115', 'ASP108', 'AVP609', 'AVP859',
 
   // ── Pealepandavad põrandaliistud ─────────────────────────────────────────
-  // NB: MPA015 ja MPA217 on allikalehel olemas, aga catalog.json-is
-  // hidden: true — seetõttu poes ei kuvata. Rank on siin valmis, kui need
-  // kunagi nähtavaks tehakse.
+  // MPA015 ja MPA217 tehti nähtavaks (2026-09) — hidden-väli eemaldati
+  // catalog.json-ist, rank oli siin juba valmis.
   'MPA015', 'MVP172', 'MVP018', 'MPA217', 'MPA317', 'MPA013', 'MPA302',
   'MPA301', 'ASP36', 'ASP38', 'ASP58', 'ASP78', 'ASP40', 'ASP60', 'ASP80',
   'ASP100',

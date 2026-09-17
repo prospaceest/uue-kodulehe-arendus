@@ -743,8 +743,8 @@
    "price": 19.88,
    "ribbon": "LAOS",
    "inStock": true,
-   "description": "AST35 on 35 mm laiusega lae LED varjuprofiil — meie laiem standard-mudel, mis sobib avaramatesse ruumidesse, kõrgemate lagedega ruumidesse ja avalikesse ruumidesse, kus laiem varjujoon mõjub esindusliku detailina. Võrdluseks: AST22 on 22,5 mm, AST25 on 25 mm. Laiem süvend tähendab rohkem ruumi LED-ribale ja hajutile — valgus jaotub ühtlaselt ja silm ei näe LED-täppe profiili sees. Profiil annab korraga varjuefekti ja pehme peitevalgustuse perimeetri ulatuses. Paigaldatakse lae ja seina ühenduskohta, pahteldatav servaga; üleminek kipsplaadi tasapinnaga ühte. Standardpikkus 2,5 m. Värvid: töötlemata, valge, must; RAL-tellimusel mistahes toon (~5 nädalat). Soovitatud LED-riba: 12 W/m, 234 LED/m, 3000K, 24V. LED-riba ja hajuti tellitakse eraldi. Hind on 1 m värvitud profiili kohta, sisaldab 24% käibemaksu.",
-   "descriptionRu": "AST35 — потолочный LED-профиль шириной 35 мм. Наш более широкий стандартный размер — подходит для просторных помещений, высоких потолков, представительских пространств, где широкая теневая линия играет роль архитектурной детали. Для сравнения: AST22 — 22,5 мм, AST25 — 25 мм. Бо́льшая ширина паза означает больше места для LED-ленты и диффузора — свет распределяется ровно, точки LED не видны. Профиль даёт одновременно теневой эффект и мягкую скрытую подсветку по периметру. Монтируется в стык потолка и стены, край прошпаклёвывается — переход с гипсокартоном незаметен. Стандартная длина 2,5 м. Цвета: без покрытия, белый, чёрный; под заказ — любой оттенок RAL (~5 недель). Рекомендуемая LED-лента: 12 Вт/м, 234 LED/м, 3000K, 24В. LED-лента и диффузор заказываются отдельно. Цена за 1 пог.м окрашенного профиля, с НДС 24%.",
+   "description": "AST35 on 35 mm laiusega lae LED varjuprofiil — meie laiem standard-mudel, mis sobib avaramatesse ruumidesse, kõrgemate lagedega ruumidesse ja avalikesse ruumidesse, kus laiem varjujoon mõjub esindusliku detailina. Võrdluseks: AST22 on 22,5 mm, AST25 on 25 mm. Laiem süvend tähendab rohkem ruumi LED-ribale ja hajutile — valgus jaotub ühtlaselt ja silm ei näe LED-täppe profiili sees. Profiil annab korraga varjuefekti ja pehme peitevalgustuse perimeetri ulatuses. Paigaldatakse lae ja seina ühenduskohta, pahteldatav servaga; üleminek kipsplaadi tasapinnaga ühte. Standardpikkus 3 m. Värvid: töötlemata, valge, must; RAL-tellimusel mistahes toon (~5 nädalat). Soovitatud LED-riba: 12 W/m, 234 LED/m, 3000K, 24V. LED-riba ja hajuti tellitakse eraldi. Hind on 1 m värvitud profiili kohta, sisaldab 24% käibemaksu.",
+   "descriptionRu": "AST35 — потолочный LED-профиль шириной 35 мм. Наш более широкий стандартный размер — подходит для просторных помещений, высоких потолков, представительских пространств, где широкая теневая линия играет роль архитектурной детали. Для сравнения: AST22 — 22,5 мм, AST25 — 25 мм. Бо́льшая ширина паза означает больше места для LED-ленты и диффузора — свет распределяется ровно, точки LED не видны. Профиль даёт одновременно теневой эффект и мягкую скрытую подсветку по периметру. Монтируется в стык потолка и стены, край прошпаклёвывается — переход с гипсокартоном незаметен. Стандартная длина 3 м. Цвета: без покрытия, белый, чёрный; под заказ — любой оттенок RAL (~5 недель). Рекомендуемая LED-лента: 12 Вт/м, 234 LED/м, 3000K, 24В. LED-лента и диффузор заказываются отдельно. Цена за 1 пог.м окрашенного профиля, с НДС 24%.",
    "colors": [
     {
      "hex": "#FFFFFF",
@@ -765,7 +765,7 @@
    "specs": [
     {
      "k": "Pikkus",
-     "v": "2500mm"
+     "v": "3000mm"
     },
     {
      "k": "Laius",
@@ -790,10 +790,10 @@
    "urlPathSv": "/led-skuggprofiler/tak/ast35/",
    "nameFi": "AST35",
    "seoNameFi": "Katon LED-varjoprofiili",
-   "descriptionFi": "AST35 on 35 mm leveä katon LED-varjoprofiili — leveämpi vakiomallimme, joka sopii avarampiin tiloihin, korkeampiin huoneisiin ja julkisiin tiloihin, joissa leveämpi varjolinja toimii edustavana yksityiskohtana. Vertailun vuoksi: AST22 on 22,5 mm, AST25 on 25 mm. Leveämpi syvennys tarkoittaa enemmän tilaa LED-nauhalle ja diffuusorille — valo jakautuu tasaisesti eikä silmä näe LED-pisteitä profiilin sisällä. Profiili antaa yhtä aikaa varjovaikutelman ja pehmeän piilovalaistuksen koko kehän matkalla. Asennetaan katon ja seinän liitoskohtaan, tasoitettavalla reunalla; siirtymä kipsilevyn pinnan tasoon. Vakiopituus 2,5 m. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V. LED-nauha ja diffuusori tilataan erikseen. Hinta on 1 m maalattua profiilia, sisältää ALV 24 %.",
+   "descriptionFi": "AST35 on 35 mm leveä katon LED-varjoprofiili — leveämpi vakiomallimme, joka sopii avarampiin tiloihin, korkeampiin huoneisiin ja julkisiin tiloihin, joissa leveämpi varjolinja toimii edustavana yksityiskohtana. Vertailun vuoksi: AST22 on 22,5 mm, AST25 on 25 mm. Leveämpi syvennys tarkoittaa enemmän tilaa LED-nauhalle ja diffuusorille — valo jakautuu tasaisesti eikä silmä näe LED-pisteitä profiilin sisällä. Profiili antaa yhtä aikaa varjovaikutelman ja pehmeän piilovalaistuksen koko kehän matkalla. Asennetaan katon ja seinän liitoskohtaan, tasoitettavalla reunalla; siirtymä kipsilevyn pinnan tasoon. Vakiopituus 3 m. Värit: käsittelemätön, valkoinen, musta; RAL-tilauksesta mikä tahansa sävy (~5 viikkoa). Suositeltu LED-nauha: 12 W/m, 234 LED/m, 3000K, 24V. LED-nauha ja diffuusori tilataan erikseen. Hinta on 1 m maalattua profiilia, sisältää ALV 24 %.",
    "nameSv": "AST35",
    "seoNameSv": "LED-skuggprofil för tak",
-   "descriptionSv": "AST35 är en LED-skuggprofil för tak med 35 mm bredd — vår bredare standardmodell som passar i rymligare utrymmen, rum med högre tak och offentliga utrymmen, där en bredare skuggfog fungerar som en representativ detalj. Som jämförelse: AST22 är 22,5 mm, AST25 är 25 mm. En bredare fördjupning betyder mer plats för LED-listen och diffusorn — ljuset fördelas jämnt och ögat ser inga LED-punkter inne i profilen. Profilen ger samtidigt skuggverkan och mjuk dold belysning längs hela perimetern. Monteras i skarven mellan tak och vägg, med spacklingsbar kant; övergången går i jämnhöjd med gipsskivans yta. Standardlängd 2,5 m. Färger: obehandlad, vit, svart; RAL-beställning: valfri nyans (~5 veckor). Rekommenderad LED-list: 12 W/m, 234 LED/m, 3000K, 24V. LED-list och diffusor beställs separat. Priset gäller 1 m målad profil, inkl. moms 24 %."
+   "descriptionSv": "AST35 är en LED-skuggprofil för tak med 35 mm bredd — vår bredare standardmodell som passar i rymligare utrymmen, rum med högre tak och offentliga utrymmen, där en bredare skuggfog fungerar som en representativ detalj. Som jämförelse: AST22 är 22,5 mm, AST25 är 25 mm. En bredare fördjupning betyder mer plats för LED-listen och diffusorn — ljuset fördelas jämnt och ögat ser inga LED-punkter inne i profilen. Profilen ger samtidigt skuggverkan och mjuk dold belysning längs hela perimetern. Monteras i skarven mellan tak och vägg, med spacklingsbar kant; övergången går i jämnhöjd med gipsskivans yta. Standardlängd 3 m. Färger: obehandlad, vit, svart; RAL-beställning: valfri nyans (~5 veckor). Rekommenderad LED-list: 12 W/m, 234 LED/m, 3000K, 24V. LED-list och diffusor beställs separat. Priset gäller 1 m målad profil, inkl. moms 24 %."
   },
   {
    "sku": "AST30",
@@ -2228,7 +2228,6 @@
    "slug": "mpa217",
    "urlPath": "/alumiinium-porandaliistud/mpa217/",
    "urlPathRu": "/alyuminievye-plintusy/mpa217/",
-   "hidden": true,
    "urlPathFi": "/alumiinijalkalistat/mpa217/",
    "urlPathSv": "/aluminiumgolvlister/mpa217/",
    "nameFi": "MPA217",
@@ -2290,7 +2289,6 @@
    "slug": "mpa015",
    "urlPath": "/alumiinium-porandaliistud/mpa015/",
    "urlPathRu": "/alyuminievye-plintusy/mpa015/",
-   "hidden": true,
    "urlPathFi": "/alumiinijalkalistat/mpa015/",
    "urlPathSv": "/aluminiumgolvlister/mpa015/",
    "nameFi": "MPA015",
