@@ -1,10 +1,11 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+import type { ClerkMiddlewareAuth } from '@clerk/nextjs/server';
 import createIntlMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
 import { internalRuPath, internalPath, publicPath } from './lib/pageUrls';
 import { marketFromHost, MARKETS } from './lib/markets';
 import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import type { NextFetchEvent, NextRequest } from 'next/server';
 
 const intlMiddleware = createIntlMiddleware(routing);
 
@@ -14,7 +15,34 @@ const isProtectedRoute = createRouteMatcher([
   '/konto((?!/login).*)',
 ]);
 
-export default clerkMiddleware(async (auth, req: NextRequest) => {
+// Clerk jookseb AINULT seal, kus keegi päriselt sisse logib. Põhjus (15.10.2026):
+// prod kasutab Clerki test-instantsi ja test-instantsi clerkMiddleware suunab
+// iga HTML-päringu (Accept: text/html — ka Googlebot) 307-ga
+// *.clerk.accounts.dev handshake'ile, mille vastus kannab
+// `X-Robots-Tag: noindex, nofollow`. Googlebot ei hoia küpsiseid, seega jäi ta
+// sellesse ahelasse igal lehel → GSC "noindex detected in X-Robots-Tag", 0
+// indekseeritud. Avalikud lehed ei vaja Clerki serveris: kõik Clerki kasutus
+// seal on kliendikomponendid (Header UserButton/Show) ClerkProvideri all.
+// NB: ka pärast pk_live võtmetele üleminekut jäta see piirang alles — avalik
+// leht ei pea ühestki autentimisvoost sõltuma.
+const usesClerk = createRouteMatcher([
+  '/konto(.*)',
+  '/(et|ru)/konto(.*)',
+  '/sign-in(.*)',
+  '/sign-up(.*)',
+  '/(et|ru)/sign-in(.*)',
+  '/(et|ru)/sign-up(.*)',
+  '/(api|trpc)(.*)',
+  '/__clerk/(.*)',
+]);
+
+const withClerk = clerkMiddleware((auth, req) => site(req, auth));
+
+export default function middleware(req: NextRequest, event: NextFetchEvent) {
+  return usesClerk(req) ? withClerk(req, event) : site(req);
+}
+
+async function site(req: NextRequest, auth?: ClerkMiddlewareAuth) {
   const { pathname } = req.nextUrl;
 
   // Retired domain → canonical domain. viimistlussiinid.ee (and its www) was a
@@ -112,7 +140,7 @@ export default clerkMiddleware(async (auth, req: NextRequest) => {
   }
 
   // Protect B2B account routes — redirect to login if not authenticated
-  if (isProtectedRoute(req)) {
+  if (auth && isProtectedRoute(req)) {
     const { userId } = await auth();
     if (!userId) {
       const locale = req.nextUrl.pathname.startsWith('/ru') ? '/ru' : '';
@@ -137,7 +165,7 @@ export default clerkMiddleware(async (auth, req: NextRequest) => {
 
   // Run next-intl middleware for locale detection/routing
   return intlMiddleware(req);
-});
+}
 
 export const config = {
   matcher: [
